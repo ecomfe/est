@@ -1,0 +1,79 @@
+//
+// Layout
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 提供基础的布局设置。
+//
+// ### Example:
+// .page {
+//     .fixed-sidebar-layout(left, 220px);
+// }
+
+@import 'compatibility';
+
+@default-sidebar-width: 250px;
+
+// private mixin
+._fixed-sidebar-layout() {
+    position: relative;
+    // cannot use padding directly on .main/.sidebar-* elements in IE before 6/7
+    .box-sizing(border-box);
+    height: 100%;
+}
+
+.fixed-sidebar-layout(@position, @sidebar-width: @default-sidebar-width) when (@position = left) {
+    ._fixed-sidebar-layout;
+
+    .main {
+        margin-left: @sidebar-width;
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: @sidebar-width;
+    }
+}
+
+.fixed-sidebar-layout(@position, @sidebar-width: @default-sidebar-width) when (@position = right) {
+    ._fixed-sidebar-layout;
+
+    .main {
+        margin-right: @sidebar-width;
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: @sidebar-width;
+    }
+}
+
+.fixed-sidebar-layout(
+    @sidebar-primary-width: @default-sidebar-width,
+    @sidebar-secondary-width: @default-sidebar-width
+) when (isnumber(@sidebar-primary-width)) and (isnumber(sidebar-secondary-width)) {
+    ._fixed-sidebar-layout;
+
+    .main {
+        margin-left: @sidebar-primary-width;
+        margin-right: @sidebar-secondary-width;
+    }
+
+    .sidebar-primary {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: @sidebar-primary-width;
+    }
+
+    .sidebar-secondary {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: @sidebar-secondary-width;
+    }
+}

@@ -1,0 +1,23 @@
+//
+// Variables
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 根据需要修改。
+
+@import 'variables';
+
+.inline-block() {
+    display: inline-block;
+}
+.inline-block() when (@support-old-ie = true) {
+    *display: inline;
+    *zoom: 1;
+}
+
+// no support for IE 6/7
+.box-sizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+       -moz-box-sizing: @boxmodel;
+            box-sizing: @boxmodel;
+}

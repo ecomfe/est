@@ -1,0 +1,36 @@
+//
+// Util
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 提供简便的mixin工具。
+//
+// ### Example:
+// .some-floats-inside {
+//     .clearfix();
+// };
+
+@import 'variables';
+
+// clearfix via http://h5bp.com/q
+.clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// size settings
+.size(@size) {
+    width: @size;
+    height: @size;
+}
+.size(@wdith, @height) {
+    width: @wdith;
+    height: @height;
+}
