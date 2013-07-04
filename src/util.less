@@ -36,3 +36,22 @@
     width: @wdith;
     height: @height;
 }
+
+//
+// text overflow
+// 
+// Know issue:
+// 指定参数（行数）的功能只支持WebKit。
+
+.text-overflow(...) {
+    overflow: hidden;
+}
+.text-overflow() {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.text-overflow(@line-number) {
+    display: -webkit-box;
+    -webkit-line-clamp: @line-number;
+    -webkit-box-orient: vertical;  
+}
