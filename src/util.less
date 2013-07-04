@@ -14,7 +14,6 @@
 
 // clearfix via http://h5bp.com/q
 .clearfix() {
-    *zoom: 1;
     &:before,
     &:after {
         display: table;
@@ -24,13 +23,16 @@
         clear: both;
     }
 }
+.clearfix() when (@support-old-ie = true) {
+    *zoom: 1;
+}
 
 // size settings
 .size(@size) {
     width: @size;
     height: @size;
 }
-.size(@wdith, @height) {
-    width: @wdith;
+.size(@width, @height) {
+    width: @width;
     height: @height;
 }
