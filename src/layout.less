@@ -5,69 +5,19 @@
 // ### Usage:
 // 提供基础的布局设置。
 //
+// ### Example:
+// .page {
+//     .fixed-sidebar-layout(left, 220px);
+// }
 
 @import 'compatibility';
 
-@default-header-height: 80px;
-
-//
-// ## 固定定位头部布局
-// 头部固定在视口顶部的布局。
-//
-// ### Example:
-//
-// // 头部高度90px
-// #page {
-//     .fixed-header-layout(90px);
-// }
-//
-// ### Known issue:
-// 不支持IE 6
-
-.fixed-header-layout(@header-height: @default-header-height) {
-    position: relative;
-
-    .header {
-        position: fixed;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: @header-height;
-    }
-
-    .body {
-        margin-top: @header-height;
-    }
-}
-
-//
-// ## 固定边栏布局
-// 支持左右两侧各最多一个定宽（可以是px/em/%）侧边栏，主内容区域填充剩余宽度。
-//
-// ### Example:
-//
-// // 左侧单侧边栏
-// #page1 {
-//     .fixed-sidebar-layout(left, 220px);
-// }
-//
-// // 右侧单侧边栏
-// #page2 {
-//     .fixed-sidebar-layout(right, 220px);
-// }
-//
-// // 双侧边栏，左侧220px宽，右侧180px宽
-// #page3 {
-//     .fixed-sidebar-layout(220px, 180px);
-// }
-
 @default-sidebar-width: 250px;
 
-// `private`
+// private mixin
 ._fixed-sidebar-layout() {
     position: relative;
-    // 在IE 6/7下，不能直接对.main/.sidebar-*元素设置padding
+    // cannot use padding directly on .main/.sidebar-* elements in IE before 6/7
     .box-sizing(border-box);
     height: 100%;
 }
@@ -105,7 +55,7 @@
 .fixed-sidebar-layout(
     @sidebar-primary-width: @default-sidebar-width,
     @sidebar-secondary-width: @default-sidebar-width
-) when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
+) when (isnumber(@sidebar-primary-width)) and (isnumber(sidebar-secondary-width)) {
     ._fixed-sidebar-layout;
 
     .main {
@@ -127,4 +77,3 @@
         width: @sidebar-secondary-width;
     }
 }
-
