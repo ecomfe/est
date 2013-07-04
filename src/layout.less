@@ -7,8 +7,7 @@
 //
 
 @import 'compatibility';
-
-@default-header-height: 80px;
+@import 'util';
 
 //
 // ## 固定定位头部布局
@@ -22,14 +21,14 @@
 // }
 //
 // ### Known issue:
-// 不支持IE 6
+// 不支持IE 6。
 
 .fixed-header-layout(@header-height: @default-header-height) {
     position: relative;
 
     .header {
         position: fixed;
-        z-index: 10;
+        z-index: 10; // TODO: 层级需要进一步规划
         top: 0;
         left: 0;
         width: 100%;
@@ -39,6 +38,25 @@
     .body {
         margin-top: @header-height;
     }
+}
+
+//
+// ## 居中的固定宽度布局
+// 
+// ### Example:
+//
+// #page1 {
+//     .page-layout();
+// }
+//
+// ### Known issue:
+// IE的quirks mode下，需要在上层元素设置`text-align: center;`并且该元素自身重设
+// 为`text-align: left;`。
+
+.page-layout(@page-width: @default-page-width) {
+    width: @page-width;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 //
@@ -61,8 +79,6 @@
 // #page3 {
 //     .fixed-sidebar-layout(220px, 180px);
 // }
-
-@default-sidebar-width: 250px;
 
 // `private`
 ._fixed-sidebar-layout() {
@@ -128,3 +144,80 @@
     }
 }
 
+//
+// ## 弹出层布局
+// 支持不定宽度的弹出容器在某定位元素内靠上/下/左/右/居中定位显示。
+//
+// ### Example:
+// // 水平居左、垂直居中，遮罩层透明度50%
+// .overlay1 {
+//   .popup-layout(left, 50);
+// }
+//
+// // 水平/垂直居中，遮罩层透明
+// .overlay2 {
+//   .popup-layout(center);
+// }
+//
+// Known issue:
+// 不支持IE 6/7。
+
+.popup-layout(@position, ...) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.popup-layout(@position, ...)
+    when (@position = left), (@position = center), (@position = right) {
+    text-align: @position;
+    letter-spacing: -8px;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    .popup {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+.popup-layout(@position, ...) when (@position = top), (@position = bottom) {
+    text-align: center;
+    letter-spacing: -8px;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: @position;
+    }
+
+    .popup {
+        display: inline-block;
+        vertical-align: @position;
+    }
+}
+.popup-layout(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
+    pointer-events: none;
+
+    .popup {
+        pointer-events: all;
+    }
+}
+.popup-layout(@position, @overlay-opacity) when (@overlay-opacity > 0) {
+    background-color: rgba(0, 0, 0, @overlay-opacity / 100);
+}
+.popup-layout(@position, @overlay-opacity)
+    when (@overlay-opacity > 0) and (@support-old-ie = true) {
+    *background-color: #000;
+    *filter: ~`"alpha(opacity=@{overlay-opacity})"`;
+
+    .popup {
+        *filter: ~`"alpha(opacity=100)"`;
+    }
+}
