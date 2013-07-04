@@ -210,14 +210,20 @@
     }
 }
 .popup-layout(@position, @overlay-opacity) when (@overlay-opacity > 0) {
-    background-color: rgba(0, 0, 0, @overlay-opacity / 100);
-}
-.popup-layout(@position, @overlay-opacity)
-    when (@overlay-opacity > 0) and (@support-old-ie = true) {
-    *background-color: #000;
-    *filter: ~`"alpha(opacity=@{overlay-opacity})"`;
-
-    .popup {
-        *filter: ~`"alpha(opacity=100)"`;
+    // 透明图片解决IE 8下点击穿透问题
+    background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
+    background: rgba(0, 0, 0, @overlay-opacity / 100);
+    @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
+    filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
+    zoom: 1\0;
+    @media screen and (~"min-width:0\0") {
+        & {
+            filter: none;
+        }
     }
+
+}
+
+#overlay {
+    .popup-layout(center, 50);
 }
