@@ -160,11 +160,11 @@
     left: 0;
     width: 100%;
     height: 100%;
+    letter-spacing: -0.31em;
 }
 .popup-layout(@position, ...)
     when (@position = left), (@position = center), (@position = right) {
     text-align: @position;
-    letter-spacing: -8px;
 
     &:before {
         content: '';
@@ -180,7 +180,6 @@
 }
 .popup-layout(@position, ...) when (@position = top), (@position = bottom) {
     text-align: center;
-    letter-spacing: -8px;
 
     &:before {
         content: '';
@@ -213,8 +212,4 @@
             filter: none;
         }
     }
-}
-
-.page {
-    .fixed-sidebar-layout(right);
 }
