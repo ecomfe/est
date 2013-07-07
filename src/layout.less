@@ -10,34 +10,82 @@
 @import 'util';
 
 //
-// ## 固定定位头部布局
-// 头部固定在视口顶部的布局。
+// ## 垂直方向填充满高度的布局
 //
 // ### Example:
 //
-// // 头部高度90px
-// #page {
-//     .fixed-header-layout(90px);
+// // 页头高度90px，主区域撑满一屏。
+// #page1 {
+//     .full-height-layout(90px, 0);
 // }
 //
-// ### Known issue:
-// 不支持IE 6。
+// // 页脚高度90px，主区域撑满一屏。
+// #page2 {
+//     .full-height-layout(0, 90px);
+// }
+//
+// // 页头高度90px，页脚70px，主区域撑满一屏。
+// #page3 {
+//     .full-height-layout(90px, 70px);
+// }
 
-.fixed-header-layout(@header-height: @default-header-height) {
+.full-height-layout(
+    @header-height: @default-header-height, @footer-height: @default-footer-height
+) {
     position: relative;
+    height: 100%;
 
-    .header {
-        position: fixed;
-        z-index: 10; // TODO: 层级需要进一步规划
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: @header-height;
+    .set-header() {}
+    .set-header() when (@header-height > 0) {
+        .est-header {
+            position: relative;
+            height: @header-height;
+            margin-bottom: -@header-height;
+        }
+    }
+    .set-header;
+
+    .est-body {
+        .min-height(100%);
+        overflow: hidden;
+
+        .set-placeholder() when (@header-height > 0) and (@support-old-ie = false) {
+            &:before {
+                content: '';
+                display: block;
+                height: @header-height;
+            }
+        }
+        .set-placeholder() when (@footer-height > 0) and (@support-old-ie = false) {
+            &:after {
+                content: '';
+                display: block;
+                height: @footer-height;
+            }
+        }
+        .set-placeholder() when (@header-height > 0) and (@support-old-ie = true) {
+            .est-header-placeholder {
+                display: block;
+                height: @header-height;
+            }
+        }
+        .set-placeholder() when (@footer-height > 0) and (@support-old-ie = true) {
+            .est-footer-placeholder {
+                display: block;
+                height: @footer-height;
+            }
+        }
+        .set-placeholder;
     }
 
-    .body {
-        margin-top: @header-height;
+    .set-footer() {}
+    .set-footer() when (@footer-height > 0) {
+        .est-footer {
+            height: @footer-height;
+            margin-top: -@footer-height;
+        }
     }
+    .set-footer;
 }
 
 //
@@ -83,52 +131,50 @@
 .fixed-sidebar-layout(left, @sidebar-width: @default-sidebar-width) {
     position: relative;
 
-    .main {
+    .est-main {
         margin-left: @sidebar-width;
     }
 
-    .sidebar {
+    .est-sidebar {
         position: absolute;
         top: 0;
         left: 0;
         width: @sidebar-width;
     }
 }
-
-.fixed-sidebar-layout(right, @sidebar-width: @default-sidebar-width) {
+.sidebar-layout(right, @sidebar-width: @default-sidebar-width) {
     position: relative;
 
-    .main {
+    .est-main {
         margin-right: @sidebar-width;
     }
 
-    .sidebar {
+    .est-sidebar {
         position: absolute;
         top: 0;
         right: 0;
         width: @sidebar-width;
     }
 }
-
-.fixed-sidebar-layout(
+.sidebar-layout(
     @sidebar-primary-width: @default-sidebar-width,
     @sidebar-secondary-width: @default-sidebar-width
 ) when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
     position: relative;
 
-    .main {
-        margin-left: @sidebar-primary-width;
+    .est-main {
         margin-right: @sidebar-secondary-width;
+        margin-left: @sidebar-primary-width;
     }
 
-    .sidebar-primary {
+    .est-sidebar-primary {
         position: absolute;
         top: 0;
         left: 0;
         width: @sidebar-primary-width;
     }
 
-    .sidebar-secondary {
+    .est-sidebar-secondary {
         position: absolute;
         top: 0;
         right: 0;
@@ -146,16 +192,17 @@
 //   .popup-layout(left, 50);
 // }
 //
-// // 水平/垂直居中，遮罩层透明
+// // 水平/垂直居中，遮罩层全透明
 // .overlay2 {
 //   .popup-layout(center);
 // }
 //
 // Known issue:
-// 不支持IE 6/7。
+// 不支持IE 6。
 
 .popup-layout(@position, ...) {
     position: fixed;
+    z-index: @modal-z-index;
     top: 0;
     left: 0;
     width: 100%;
@@ -166,14 +213,24 @@
     when (@position = left), (@position = center), (@position = right) {
     text-align: @position;
 
-    &:before {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
+    .set-valign-ghost() when (@support-old-ie = true) {
+        .est-valign-ghost {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
     }
+    .set-valign-ghost() when (@support-old-ie = false) {
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    .set-valign-ghost;
 
-    .popup {
+    .est-popup {
         display: inline-block;
         vertical-align: middle;
     }
@@ -181,14 +238,24 @@
 .popup-layout(@position, ...) when (@position = top), (@position = bottom) {
     text-align: center;
 
-    &:before {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: @position;
+    .set-valign-ghost() when (@support-old-ie = true) {
+        .est-valign-ghost {
+            display: inline-block;
+            height: 100%;
+            vertical-align: @position;
+        }
     }
+    .set-valign-ghost() when (@support-old-ie = false) {
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: @position;
+        }
+    }
+    .set-valign-ghost;
 
-    .popup {
+    .est-popup {
         display: inline-block;
         vertical-align: @position;
     }
@@ -196,7 +263,7 @@
 .popup-layout(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
     pointer-events: none;
 
-    .popup {
+    .est-popup {
         pointer-events: all;
     }
 }
