@@ -18,6 +18,13 @@
     .ie-inline-block;
 }
 
+.min-height(@height) {
+    min-height: @height;
+}
+.min-height(@height) when (@support-old-ie = true) {
+    _height: @height;
+}
+
 //
 // Known issue:
 // 不支持IE 6/7
