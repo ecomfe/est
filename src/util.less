@@ -40,7 +40,7 @@
 //
 // text overflow
 // 
-// Know issue:
+// Known issue:
 // 指定参数（行数）的功能只支持WebKit。
 
 .text-overflow(...) {
@@ -54,4 +54,16 @@
     display: -webkit-box;
     -webkit-line-clamp: @line-number;
     -webkit-box-orient: vertical;  
+}
+
+//
+// hide text (to apply something like image replacement)
+//
+// Known issue:
+// 当元素宽度大于视口宽度时失效
+
+.hide-text() {
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
 }
