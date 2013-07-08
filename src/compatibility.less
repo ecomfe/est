@@ -71,69 +71,197 @@
     filter: ~`"alpha(opacity=@{opacity})"`;
 }
 
-//
-// Mixins below are from BootStrap
-//
-
 // Border Radius
 .border-radius(@radius: 5px) {
     -webkit-border-radius: @radius;
        -moz-border-radius: @radius;
             border-radius: @radius;
 }
+.border-radius(@radius1: 5px, @radius2: 5px) {
+    -webkit-border-radius: @radius1 ~`"/"` @radius2;
+       -moz-border-radius: @radius1 ~`"/"` @radius2;;
+            border-radius: @radius1 ~`"/"` @radius2;;
+}
+.border-top-left-radius(@radius1: 5px, @radius2...) {
+    -webkit-border-top-left-radius: @arguments;
+        -moz-border-radius-topleft: @arguments;
+            border-top-left-radius: @arguments;
+}
+.border-top-right-radius(@radius1: 5px, @radius2...) {
+    -webkit-border-top-right-radius: @arguments;
+        -moz-border-radius-topright: @arguments;
+            border-top-right-radius: @arguments;
+}
+.border-bottom-right-radius(@radius1: 5px, @radius2...) {
+    -webkit-border-bottom-right-radius: @arguments;
+        -moz-border-radius-bottomright: @arguments;
+            border-bottom-right-radius: @arguments;
+}
+.border-bottom-left-radius(@radius1: 5px, @radius2...) {
+    -webkit-border-bottom-left-radius: @arguments;
+        -moz-border-radius-bottomleft: @arguments;
+            border-bottom-left-radius: @arguments;
+}
 
 // Drop shadows
-.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
-    -webkit-box-shadow: @shadow;
-       -moz-box-shadow: @shadow;
-            box-shadow: @shadow;
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25), ...) {
+    @shadows: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-box-shadow: @shadows;
+       -moz-box-shadow: @shadows;
+            box-shadow: @shadows;
 }
 
 // Transitions
-.transition(@transition) {
-    -webkit-transition: @transition;
-       -moz-transition: @transition;
-        -ms-transition: @transition;
-         -o-transition: @transition;
-            transition: @transition;
+.transition(@transition, ...) {
+    @transitions: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-transition: @transitions;
+       -moz-transition: @transitions;
+        -ms-transition: @transitions;
+         -o-transition: @transitions;
+            transition: @transitions;
+}
+.transition-property(@property: all, ...) {
+    @properties: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-transition-property: @properties;
+       -moz-transition-property: @properties;
+        -ms-transition-property: @properties;
+         -o-transition-property: @properties;
+            transition-property: @properties;
+}
+.transition-duration(@duration: 0s, ...) {
+    @durations: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-transition-duration: @durations;
+       -moz-transition-duration: @durations;
+        -ms-transition-duration: @durations;
+         -o-transition-duration: @durations;
+            transition-duration: @durations;
+}
+.transition-timing-function(@timing-function: ease, ...) {
+    @timing-functions: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-transition-timing-function: @timing-functions;
+       -moz-transition-timing-function: @timing-functions;
+        -ms-transition-timing-function: @timing-functions;
+         -o-transition-timing-function: @timing-functions;
+            transition-timing-function: @timing-functions;
+}
+.transition-delay(@delay: 0s, ...) {
+    @delays: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-transition-delay: @delays;
+       -moz-transition-delay: @delays;
+        -ms-transition-delay: @delays;
+         -o-transition-delay: @delays;
+            transition-delay: @delays;
 }
 
+//
 // Transformations
-.rotate(@degrees) {
-    -webkit-transform: rotate(@degrees);
-       -moz-transform: rotate(@degrees);
-        -ms-transform: rotate(@degrees);
-         -o-transform: rotate(@degrees);
-            transform: rotate(@degrees);
+.transform(@transform-function, @rest...) {
+    @args: ~`("@{rest}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-transform: ~`"@{transform-function}(@{args})"`;
+       -moz-transform: ~`"@{transform-function}(@{args})"`;
+        -ms-transform: ~`"@{transform-function}(@{args})"`;
+         -o-transform: ~`"@{transform-function}(@{args})"`;
+            transform: ~`"@{transform-function}(@{args})"`;
 }
-.scale(@ratio) {
-    -webkit-transform: scale(@ratio);
-       -moz-transform: scale(@ratio);
-        -ms-transform: scale(@ratio);
-         -o-transform: scale(@ratio);
-            transform: scale(@ratio);
+
+//2D transform  functions
+
+.matrix(@a, @b, @c, @d, @tx, @ty) {
+    .transform(matrix, @arguments);
 }
-.translate(@x: 0, @y: 0) {
-    -webkit-transform: translate(@x, @y);
-       -moz-transform: translate(@x, @y);
-        -ms-transform: translate(@x, @y);
-         -o-transform: translate(@x, @y);
-            transform: translate(@x, @y);
+
+.translate(@tx) {
+    .transform(translate, @arguments);
 }
-.skew(@x: 0, @y: 0) {
-    -webkit-transform: skew(@x, @y);
-       -moz-transform: skew(@x, @y);
-        -ms-transform: skew(@x, @y);
-         -o-transform: skew(@x, @y);
-            transform: skew(@x, @y);
+.translate(@tx, @ty) {
+    .transform(translate, @arguments);
 }
-.translate3d(@x: 0, @y: 0, @z: 0) {
-    -webkit-transform: translate(@x, @y, @z);
-       -moz-transform: translate(@x, @y, @z);
-        -ms-transform: translate(@x, @y, @z);
-         -o-transform: translate(@x, @y, @z);
-            transform: translate(@x, @y, @z);
+
+.translateX(@tx) {
+    .transform(translateX, @arguments);
 }
+
+.translateY(@ty) {
+    .transform(translateY, @arguments);
+}
+
+.scale(@sx) {
+    .transform(scale, @arguments);
+}
+.scale(@sx, @sy) {
+    .transform(scale, @arguments);
+}
+
+.scaleX(@sx) {
+    .transform(scaleX, @arguments);
+}
+
+.scaleY(@sy) {
+    .transform(scaleY, @arguments);
+}
+
+.rotate(@angle) {
+    .transform(rotate, @arguments);
+}
+
+// TODO: see https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L300
+.skew(@ax) {
+    .transform(skew, @arguments);
+}
+.skew(@ax, @ay) {
+    .transform(skew, @arguments);
+}
+
+.skewX(@ax) {
+    .transform(skewX, @arguments);
+}
+
+.skewY(@ay) {
+    .transform(skewY, @arguments);
+}
+
+//3D transform  functions
+
+.maxtrix3d(@m11, @m12, @m13, @m14, @m21, @m22, @m23, @m24,
+           @m31, @m32, @m33, @m34, @m41, @m42, @m43, @m44) {
+    .transform(matrix3d, @arguments);
+}
+
+.translate3d(@tx, @ty, @tz) {
+    .transform(translate3d, @arguments);
+}
+
+.translateZ(@tz) {
+    .transform(translateZ, @arguments);
+}
+
+.scale3d(@sx, @sy, @sz) {
+    .transform(scale3d, @arguments);
+}
+
+.rotate3d(@x, @y, @z, @angle) {
+    .transform(rotate3d, @arguments);
+}
+
+.rotateX(@angle) {
+    .transform(rotateX, @arguments);
+}
+
+.rotateY(@angle) {
+    .transform(rotateY, @arguments);
+}
+
+.rotateZ(@angle) {
+    .transform(rotateZ, @arguments);
+}
+
+.perspective(@d) {
+    .transform(perspective, @d);
+}
+
+
+//
+// Mixins from BootStrap
 
 // Background clipping
 // Heads up: FF 3.6 and under need "padding" instead of "padding-box"
