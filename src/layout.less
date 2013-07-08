@@ -29,7 +29,7 @@
 //     .full-height-layout(90px, 70px);
 // }
 
-.full-height-layout(
+.est-full-height-layout(
     @header-height: @default-header-height, @footer-height: @default-footer-height
 ) {
     position: relative;
@@ -101,7 +101,7 @@
 // IE的quirks mode下，需要在上层元素设置`text-align: center;`并且该元素自身重设
 // 为`text-align: left;`。
 
-.page-layout(@page-width: @default-page-width) {
+.est-page-layout(@page-width: @default-page-width) {
     width: @page-width;
     margin-right: auto;
     margin-left: auto;
@@ -128,7 +128,7 @@
 //     .fixed-sidebar-layout(220px, 180px);
 // }
 
-.fixed-sidebar-layout(left, @sidebar-width: @default-sidebar-width) {
+.est-fixed-sidebar-layout(left, @sidebar-width: @default-sidebar-width) {
     position: relative;
 
     .est-main {
@@ -142,7 +142,7 @@
         width: @sidebar-width;
     }
 }
-.sidebar-layout(right, @sidebar-width: @default-sidebar-width) {
+.est-sidebar-layout(right, @sidebar-width: @default-sidebar-width) {
     position: relative;
 
     .est-main {
@@ -156,7 +156,7 @@
         width: @sidebar-width;
     }
 }
-.sidebar-layout(
+.est-sidebar-layout(
     @sidebar-primary-width: @default-sidebar-width,
     @sidebar-secondary-width: @default-sidebar-width
 ) when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
@@ -200,7 +200,7 @@
 // Known issue:
 // 不支持IE 6。
 
-.popup-layout(@position, ...) {
+.est-popup-layout(@position, ...) {
     position: fixed;
     z-index: @modal-z-index;
     top: 0;
@@ -209,7 +209,7 @@
     height: 100%;
     letter-spacing: -0.31em;
 }
-.popup-layout(@position, ...)
+.est-popup-layout(@position, ...)
     when (@position = left), (@position = center), (@position = right) {
     text-align: @position;
 
@@ -235,7 +235,7 @@
         vertical-align: middle;
     }
 }
-.popup-layout(@position, ...) when (@position = top), (@position = bottom) {
+.est-popup-layout(@position, ...) when (@position = top), (@position = bottom) {
     text-align: center;
 
     .set-valign-ghost() when (@support-old-ie = true) {
@@ -260,20 +260,21 @@
         vertical-align: @position;
     }
 }
-.popup-layout(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
+.est-popup-layout(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
     pointer-events: none;
 
     .est-popup {
         pointer-events: all;
     }
 }
-.popup-layout(@position, @overlay-opacity) when (@overlay-opacity > 0) {
+.est-popup-layout(@position, @overlay-opacity) when (@overlay-opacity > 0) {
     // 透明图片解决IE 8下点击穿透问题
     background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
     background: rgba(0, 0, 0, @overlay-opacity / 100);
     @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
     filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
     zoom: 1\0;
+    // IE9下的hack，避免同时识别rgba和filter
     @media screen and (~"min-width:0\0") {
         & {
             filter: none;
