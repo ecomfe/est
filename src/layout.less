@@ -14,62 +14,75 @@
 //
 // ### Example:
 //
-// // 页头高度90px，主区域撑满一屏。
+// // 页头高度90px并相对视口固定，无页脚。
 // #page1 {
-//     .full-height-layout(90px, 0);
+//     .full-height-layout(90px fixed, 0);
 // }
 //
-// // 页脚高度90px，主区域撑满一屏。
+// // 页脚高度90px，在内容不足一屏时固定在页面底部。
 // #page2 {
-//     .full-height-layout(0, 90px);
+//     .full-height-layout(none, 90px);
 // }
 //
-// // 页头高度90px，页脚70px，主区域撑满一屏。
+// // 页头高度90px，页脚70px并相对视口固定，页脚在内容不足一屏时固定在页面底部。
 // #page3 {
-//     .full-height-layout(90px, 70px);
+//     .full-height-layout(90px, 70px fixed);
 // }
 
-.est-full-height-layout(
-    @header-height: @default-header-height, @footer-height: @default-footer-height
-) {
+.est-full-height-layout(@header-config: @default-header-height, @footer-config: @default-footer-height) {
+    @header-style: ~`"@{header-config}".match(/\b(?:fixed|normal|none)\b/) || "normal"`;
+    @header-height: ~`"@{header-config}".match(/(?=\b|\s)\d+(?:\.\d+)?(?:\w+|%)?/) || "@{default-header-height}"`;
+    @footer-style: ~`"@{footer-config}".match(/\b(?:fixed|normal|none)\b/) || "normal"`;
+    @footer-height: ~`"@{footer-config}".match(/(?=\b|\s)\d+(?:\.\d+)?(?:\w+|%)?/) || "@{default-footer-height}"`;
+
     position: relative;
     height: 100%;
 
-    .set-header() {}
-    .set-header() when (@header-height > 0) {
+    .set-header(...) {}
+    .set-header(@height, normal) when (@height > 0) {
         .est-header {
             position: relative;
-            height: @header-height;
-            margin-bottom: -@header-height;
+            height: @height;
+            margin-bottom: ~`"-@{height}"`;
         }
     }
-    .set-header;
+    .set-header(@height, fixed) when (@height > 0) {
+        .est-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: @header-z-index;
+            width: 100%;
+            height: @height;
+        }
+    }
+    .set-header(@header-height, @header-style);
 
-    .est-body {
+    .est-body-wrapper {
         .min-height(100%);
         overflow: hidden;
 
-        .set-placeholder() when (@header-height > 0) and (@support-old-ie = false) {
+        .set-placeholder() when not (@header-style = none) and (@header-height > 0) and (@support-old-ie = false) {
             &:before {
                 content: '';
                 display: block;
                 height: @header-height;
             }
         }
-        .set-placeholder() when (@footer-height > 0) and (@support-old-ie = false) {
+        .set-placeholder() when not (@footer-style = none) and (@footer-height > 0) and (@support-old-ie = false) {
             &:after {
                 content: '';
                 display: block;
                 height: @footer-height;
             }
         }
-        .set-placeholder() when (@header-height > 0) and (@support-old-ie = true) {
+        .set-placeholder() when not (@header-style = none) and (@header-height > 0) and (@support-old-ie = true) {
             .est-header-placeholder {
                 display: block;
                 height: @header-height;
             }
         }
-        .set-placeholder() when (@footer-height > 0) and (@support-old-ie = true) {
+        .set-placeholder() when not (@footer-style = none) and (@footer-height > 0) and (@support-old-ie = true) {
             .est-footer-placeholder {
                 display: block;
                 height: @footer-height;
@@ -78,14 +91,29 @@
         .set-placeholder;
     }
 
-    .set-footer() {}
-    .set-footer() when (@footer-height > 0) {
+    .est-body {
+        overflow: hidden;
+    }
+
+    .set-footer(...) {}
+    .set-footer(@height, normal) when (@height > 0) {
         .est-footer {
-            height: @footer-height;
-            margin-top: -@footer-height;
+            position: relative;
+            height: @height;
+            margin-top: ~`"-@{height}"`;
         }
     }
-    .set-footer;
+    .set-footer(@height, fixed) when (@height > 0) {
+        .est-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: @footer-z-index;
+            width: 100%;
+            height: @height;
+        }
+    }
+    .set-footer(@footer-height, @footer-style);
 }
 
 //
@@ -93,7 +121,7 @@
 // 
 // ### Example:
 //
-// #page1 {
+// #page {
 //     .page-layout();
 // }
 //
@@ -115,23 +143,24 @@
 //
 // // 左侧单侧边栏
 // #page1 {
-//     .fixed-sidebar-layout(left, 220px);
+//     .est-sidebar-layout(left, 220px);
 // }
 //
 // // 右侧单侧边栏
 // #page2 {
-//     .fixed-sidebar-layout(right, 220px);
+//     .est-sidebar-layout(right, 220px);
 // }
 //
 // // 双侧边栏，左侧220px宽，右侧180px宽
 // #page3 {
-//     .fixed-sidebar-layout(220px, 180px);
+//     .est-sidebar-layout(220px, 180px);
 // }
 
-.est-fixed-sidebar-layout(left, @sidebar-width: @default-sidebar-width) {
+.est-sidebar-layout(left, @sidebar-width: @default-sidebar-width) {
     position: relative;
 
     .est-main {
+        overflow: hidden;
         margin-left: @sidebar-width;
     }
 
@@ -146,6 +175,7 @@
     position: relative;
 
     .est-main {
+        overflow: hidden;
         margin-right: @sidebar-width;
     }
 
@@ -163,6 +193,7 @@
     position: relative;
 
     .est-main {
+        overflow: hidden;
         margin-right: @sidebar-secondary-width;
         margin-left: @sidebar-primary-width;
     }
@@ -280,4 +311,17 @@
             filter: none;
         }
     }
+}
+
+body {
+    .est-full-height-layout(none, fixed);
+}
+
+.est-body {
+    .est-sidebar-layout(40px, 60px);
+}
+
+.est-header,
+.est-footer {
+    background-color: red;
 }

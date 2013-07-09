@@ -79,8 +79,8 @@
 }
 .border-radius(@radius1: 5px, @radius2: 5px) {
     -webkit-border-radius: @radius1 ~`"/"` @radius2;
-       -moz-border-radius: @radius1 ~`"/"` @radius2;;
-            border-radius: @radius1 ~`"/"` @radius2;;
+       -moz-border-radius: @radius1 ~`"/"` @radius2;
+            border-radius: @radius1 ~`"/"` @radius2;
 }
 .border-top-left-radius(@radius1: 5px, @radius2...) {
     -webkit-border-top-left-radius: @arguments;
@@ -155,7 +155,20 @@
 
 //
 // Transformations
-.transform(@transform-function, @rest...) {
+//
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+// * http://dev.w3.org/csswg/css-transforms/#transform
+
+.transform(...) {
+    -webkit-transform: @arguments;
+       -moz-transform: @arguments;
+        -ms-transform: @arguments;
+         -o-transform: @arguments;
+            transform: @arguments;
+}
+
+.transform-single(@transform-function, @rest...) {
     @args: ~`("@{rest}" + '').replace(/[\[\]]/g, '')`;
     -webkit-transform: ~`"@{transform-function}(@{args})"`;
        -moz-transform: ~`"@{transform-function}(@{args})"`;
@@ -164,117 +177,166 @@
             transform: ~`"@{transform-function}(@{args})"`;
 }
 
+//
+// Known issue:
+// IE不支持，Opera 15起以`-webkit`前缀方式支持
+
+.transform-style(@style) {
+    -webkit-transform-style: @style;
+       -moz-transform-style: @style;
+            transform-style: @style;
+}
+
+//
+// Known issue:
+// Opera 15起以`-webkit`前缀方式支持三值语法，之前以`-o`前缀方式支持
+
+.transform-origin(@origin) {
+    -webkit-transform-origin: @origin;
+       -moz-transform-origin: @origin;
+        -ms-transform-origin: @origin;
+         -o-transform-origin: @origin;
+            transform-origin: @origin;
+}
+
+//
+// Known issue:
+// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
+
+.backface-visibility(@visibility) {
+    -webkit-backface-visibility: @visibility;
+       -moz-backface-visibility: @visibility;
+            backface-visibility: @visibility;
+}
+
+//
+// Known issue:
+// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
+
+.perspective(@d) {
+    -webkit-transform-style: @style;
+       -moz-transform-style: @style;
+            transform-style: @style;
+}
+
 //2D transform  functions
 
 .matrix(@a, @b, @c, @d, @tx, @ty) {
-    .transform(matrix, @arguments);
+    .transform-single(matrix, @arguments);
 }
 
 .translate(@tx) {
-    .transform(translate, @arguments);
+    .transform-single(translate, @arguments);
 }
 .translate(@tx, @ty) {
-    .transform(translate, @arguments);
+    .transform-single(translate, @arguments);
 }
 
 .translateX(@tx) {
-    .transform(translateX, @arguments);
+    .transform-single(translateX, @arguments);
 }
 
 .translateY(@ty) {
-    .transform(translateY, @arguments);
+    .transform-single(translateY, @arguments);
 }
 
 .scale(@sx) {
-    .transform(scale, @arguments);
+    .transform-single(scale, @arguments);
 }
 .scale(@sx, @sy) {
-    .transform(scale, @arguments);
+    .transform-single(scale, @arguments);
 }
 
 .scaleX(@sx) {
-    .transform(scaleX, @arguments);
+    .transform-single(scaleX, @arguments);
 }
 
 .scaleY(@sy) {
-    .transform(scaleY, @arguments);
+    .transform-single(scaleY, @arguments);
 }
 
 .rotate(@angle) {
-    .transform(rotate, @arguments);
+    .transform-single(rotate, @arguments);
 }
 
 // TODO: see https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L300
 .skew(@ax) {
-    .transform(skew, @arguments);
+    .transform-single(skew, @arguments);
 }
 .skew(@ax, @ay) {
-    .transform(skew, @arguments);
+    .transform-single(skew, @arguments);
 }
 
 .skewX(@ax) {
-    .transform(skewX, @arguments);
+    .transform-single(skewX, @arguments);
 }
 
 .skewY(@ay) {
-    .transform(skewY, @arguments);
+    .transform-single(skewY, @arguments);
 }
 
 //3D transform  functions
 
 .maxtrix3d(@m11, @m12, @m13, @m14, @m21, @m22, @m23, @m24,
            @m31, @m32, @m33, @m34, @m41, @m42, @m43, @m44) {
-    .transform(matrix3d, @arguments);
+    .transform-single(matrix3d, @arguments);
 }
 
 .translate3d(@tx, @ty, @tz) {
-    .transform(translate3d, @arguments);
+    .transform-single(translate3d, @arguments);
 }
 
 .translateZ(@tz) {
-    .transform(translateZ, @arguments);
+    .transform-single(translateZ, @arguments);
 }
 
 .scale3d(@sx, @sy, @sz) {
-    .transform(scale3d, @arguments);
+    .transform-single(scale3d, @arguments);
+}
+
+.scaleZ(@sz) {
+    .transform-single(scaleZ, @arguments);
 }
 
 .rotate3d(@x, @y, @z, @angle) {
-    .transform(rotate3d, @arguments);
+    .transform-single(rotate3d, @arguments);
 }
 
 .rotateX(@angle) {
-    .transform(rotateX, @arguments);
+    .transform-single(rotateX, @arguments);
 }
 
 .rotateY(@angle) {
-    .transform(rotateY, @arguments);
+    .transform-single(rotateY, @arguments);
 }
 
 .rotateZ(@angle) {
-    .transform(rotateZ, @arguments);
+    .transform-single(rotateZ, @arguments);
 }
 
-.perspective(@d) {
-    .transform(perspective, @d);
-}
-
+// TODO: transform: perspective() needs a better name
+// (which will not conflict with the original perspective property mixin)
+// .perspective(@d) {
+//     .transform-single(perspective, @d);
+// }
 
 //
-// Mixins from BootStrap
+// CSS3 Background
 
-// Background clipping
-// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
-.background-clip(@clip) {
-    -webkit-background-clip: @clip;
-       -moz-background-clip: @clip;
-            background-clip: @clip;
+// FF 3.6 and under need "padding" instead of "padding-box"
+.background-clip(@clip, ...) {
+    @clips: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-background-clip: @clips;
+       -moz-background-clip: ~`"@{clips}".replace(/-box/g, "")`;
+            background-clip: @clips;
 }
 
 // Background sizing
-.background-size(@size){
-    -webkit-background-size: @size;
-       -moz-background-size: @size;
-         -o-background-size: @size;
-            background-size: @size;
+.background-size(@size, ...){
+    @sizes: ~`("@{arguments}" + '').replace(/[\[\]]/g, '')`;
+    -webkit-background-size: @sizes;
+       -moz-background-size: @sizes;
+         -o-background-size: @sizes;
+            background-size: @sizes;
 }
+
