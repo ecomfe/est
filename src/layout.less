@@ -29,7 +29,7 @@
 //     .full-height-layout(90px, 70px fixed);
 // }
 
-.est-full-height-layout(@header-config: @default-header-height, @footer-config: @default-footer-height) {
+.est-full-height-layout(@header-config, @footer-config: none) {
     @header-style: ~`"@{header-config}".match(/\b(?:fixed|normal|none)\b/) || "normal"`;
     @header-height: ~`"@{header-config}".match(/(?=\b|\s)\d+(?:\.\d+)?(?:\w+|%)?/) || "@{default-header-height}"`;
     @footer-style: ~`"@{footer-config}".match(/\b(?:fixed|normal|none)\b/) || "normal"`;
