@@ -1,0 +1,112 @@
+//
+// Util
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 提供文本相关的mixin样式。
+
+
+
+//
+// .ellipsis
+// 
+// Known issue:
+// 指定参数（行数）的功能只支持WebKit。
+
+.ellipsis(...) {
+    overflow: hidden;
+}
+.ellipsis() {
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ellipsis(@line-number) {
+    display: -webkit-box;
+    -webkit-line-clamp: @line-number;
+    -webkit-box-orient: vertical;  
+}
+
+
+
+
+//
+// force-wrap
+//
+// 阻止长字符串（例如url或无意义连续英文字符）打破布局
+
+.force-wrap() {
+    white-space: pre;           // CSS 2.0
+    white-space: pre-wrap;      // CSS 2.1
+    white-space: pre-line;      // CSS 3.0
+    white-space: -pre-wrap;     // Opera 4-6
+    white-space: -o-pre-wrap;   // Opera 7
+    white-space: -moz-pre-wrap; // Mozilla
+    white-space: -hp-pre-wrap;  // HP Printers
+    word-wrap: break-word;      // IE 5+ 
+}
+
+
+
+//
+// .nowrap
+//
+// white-space 比较难以记住，提供快捷写法
+
+.nowrap() {
+    white-space: nowrap;
+}
+
+
+
+//
+// .hide-text
+//
+// 隐藏文字
+// http://jsfiddle.net/necolas/drHaR/2/
+// https://github.com/twitter/bootstrap/issues/2362
+// https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7#commitcomment-1052728
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+
+.hide-text() when not (@support-old-ie) {
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
+}
+.hide-text() when (@support-old-ie) {
+    .ie-hide-text();
+}
+
+// ie6, ie7
+.ie-hide-text() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-align: left;
+}
+
+
+// 
+// .invisible
+//
+// 用于隐藏那些增加可访问性的文字
+
+.invisible() {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    *clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+}
+
+
+
+//
+// .image-replace
+//
+// 用图片替换文字，通常用作icon的样式
+
+.img-replace(@img-url, @img-x: 0, @img-y: 0) {
+    .hide-text();
+    background: url(@img-url) no-repeat @img-x @img-y;
+}
