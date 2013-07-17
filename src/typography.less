@@ -122,13 +122,13 @@
 // 用于辅助计算字体的em和rem值
 // https://github.com/clearleft/clearless/blob/master/mixins/typography.less
 
-.font-size-rems(@px-size){
+.font-size-rems(@px-size) {
     @rem-size: @px-size / @default-font-size;
     font-size: ~"@{px-size}px"; 
     font-size: ~"@{rem-size}rem";
 }
 
-.font-size-ems(@target-px-size, @context-px-size:@default-font-size) {
+.font-size-ems(@target-px-size, @context-px-size: @default-font-size) {
     font-size: (@target-px-size / @context-px-size) * 1em;
 }
 
@@ -141,7 +141,7 @@
 // @font-face的快捷书写方式
 // https://github.com/clearleft/clearless/blob/master/mixins/typography.less
 
-.font-face(@family-name, @font-path, @font-weight:normal, @font-style:normal, @include-svg:false) when not (@include-svg) {
+.font-face(@family-name, @font-path, @font-weight: normal, @font-style: normal, @include-svg: false) when not (@include-svg) {
     @font-face {
         font-family: @family-name;
         src: url('@{font-path}.eot');
@@ -153,7 +153,7 @@
     }
 }
 
-.font-face(@family-name, @font-path, @font-weight:normal, @font-style:normal, @include-svg:false) when (@include-svg) {
+.font-face(@family-name, @font-path, @font-weight: normal, @font-style: normal, @include-svg: false) when (@include-svg) {
     @font-face {
         font-family: @family-name;
         src: url('@{font-path}.eot');
@@ -163,5 +163,145 @@
              url('@{font-path}.svg#@{family-name}') format('svg');
         font-weight: @font-weight;
         font-style: @font-style;
+    }
+}
+
+
+
+//
+// .hover-link
+//
+// 实现链接默认无下划线，hover后有下划线的样式
+//
+
+.hover-link() {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+
+//
+// .unstyled-link
+//
+// 将链接变成默认的文字样式
+//
+
+.unstyled-link() {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+    &:active, &:focus {
+        outline: none;
+    }
+}
+
+
+
+
+
+//
+// .no-bullet
+// .no-bullets
+//
+// 去掉列表的样式，no-bullet针对li标签，no-bullets针对ul和ol标签
+
+.no-bullet() {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.no-bullets() {
+    list-style: none;
+    li {
+        .no-bullet();
+    }
+}
+
+
+
+
+//
+// .pretty-bullets('./start.png', 16, 16)
+//
+// 为ul和ol标签增加自定义的图片，注意这张图片不能是sprite
+
+.pretty-bullets(@bullet-icon, @width, @height, @line-height: @height, @padding: @width) {
+    margin-left: 0;
+    li {
+        padding-left: $padding;
+        background-repeat: no-repeat;
+        background-image: url(@bullet-icon);
+        background-position: ((@padding - @width) / 2) ((@line-height - @height) / 2);
+    }
+}
+
+
+//
+// .horizontal-list
+//
+// 把列表变成水平，在做菜单样式或是卡片样式时有用
+// html结构为：`.horizontal-list > ul > li` 或 `.horizontal-list > ol > li`
+
+.horizontal-list(@padding, @direction: "left") when (@direction = "left") {
+    .clearfix()
+    overflow: hidden;
+    ul {
+        .no-bullets();
+        float: left;
+        margin-left: -@padding;
+    }
+    li {
+        float: left;
+        margin-left: @padding;
+    }
+}
+.horizontal-list(@padding, @direction: "left") when (@direction = "left") and (@support-old-ie) {
+    ul, li {
+        _display: inline;
+    }
+}
+
+.horizontal-list(@padding, @direction: "left") when (@direction = "right") {
+    .clearfix()
+    overflow: hidden;
+    ul {
+        .no-bullets();
+        float: right;
+        margin-right: -@padding;
+    }
+    li {
+        float: left;
+        margin-right: @padding;
+    }
+}
+.horizontal-list(@padding, @direction: "left") when (@direction = "right") and (@support-old-ie) {
+    ul, li {
+        _display: inline;
+    }
+}
+
+
+
+
+//
+// .unstyled-list
+//
+// 把列表变成普通的一行文字
+//
+
+.unstyled-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    li {
+        margin: 0;
+        padding: 0;
+        display: inline;
     }
 }
