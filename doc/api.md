@@ -306,7 +306,7 @@
 ### `.rotateY()`
 ### `.rotateZ()`
 
-单个变换函数的快捷方法，参数写法见[`.transform()`](API-Documentation#transform)中的参考文档。
+单个变换函数的快捷方法，参数写法见[`.transform()`](#transform)中的参考文档。
 
 ### `.background-clip`
 
