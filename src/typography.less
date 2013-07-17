@@ -85,7 +85,8 @@
 }
 
 
-// 
+
+//
 // .invisible
 //
 // 用于隐藏那些增加可访问性的文字
@@ -172,7 +173,6 @@
 // .hover-link
 //
 // 实现链接默认无下划线，hover后有下划线的样式
-//
 
 .hover-link() {
     text-decoration: none;
@@ -188,7 +188,6 @@
 // .unstyled-link
 //
 // 将链接变成默认的文字样式
-//
 
 .unstyled-link() {
     color: inherit;
@@ -233,7 +232,7 @@
 .pretty-bullets(@bullet-icon, @width, @height, @line-height: @height, @padding: @width) {
     margin-left: 0;
     li {
-        padding-left: $padding;
+        padding-left: @padding;
         background-repeat: no-repeat;
         background-image: url(@bullet-icon);
         background-position: ((@padding - @width) / 2) ((@line-height - @height) / 2);
@@ -292,7 +291,6 @@
 // .unstyled-list
 //
 // 把列表变成普通的一行文字
-//
 
 .unstyled-list() {
     list-style: none;
