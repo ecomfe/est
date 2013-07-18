@@ -31,12 +31,16 @@
 //
 // Reference:
 // * http://css-tricks.com/snippets/css/style-placeholder-text/
+// * https://bugzilla.mozilla.org/show_bug.cgi?id=737786
 //
 // Known issue:
 // 不支持IE 9及以下
 
 .placeholder(@color: @default-input-placeholder-color) {
     :-moz-placeholder {
+        color: @color;
+    }
+    ::-moz-placeholder {
         color: @color;
     }
     ::-webkit-input-placeholder {
@@ -134,10 +138,10 @@
     @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-moz-$1")`;
     @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-ms-$1")`;
     @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-o-$1")`;
-    -webkit-transition-property: @properties;
-       -moz-transition-property: @properties;
-        -ms-transition-property: @properties;
-         -o-transition-property: @properties;
+    -webkit-transition-property: @webkit-properties;
+       -moz-transition-property: @moz-properties;
+        -ms-transition-property: @ms-properties;
+         -o-transition-property: @o-properties;
             transition-property: @properties;
 }
 .transition-duration(@duration: 0s, ...) {
