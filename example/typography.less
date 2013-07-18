@@ -1,0 +1,66 @@
+@import "../src/all.less";
+@default-font-size: 14;
+// @support-old-ie: true;
+// @support-html5: true;
+
+.est-ellipsis {
+    width: 10em;
+    .ellipsis();
+    background-color: #fee9cc;
+}
+.est-ellipsis-3 {
+    width: 30em;
+    .ellipsis(3);
+}
+
+.est-force-wrap {
+    .force-wrap();
+}
+.example-force-wrap {
+    margin-top: 10px !important;
+    width: 20em;
+    line-height: 1.5;
+    background-color: #fee9cc;
+}
+
+.est-hide-text {
+    .hide-text();
+    .inline-block();
+    background-color: #fee9cc;
+    width: 100px;
+}
+.est-hide-text2 {
+    .hide-text();
+    display: block;
+    background-color: #fee9cc;
+}
+.est-hide-text:hover,
+.est-hide-text2:hover {
+    text-indent: 0;
+    overflow: visible;
+}
+.est-invisible {
+    .invisible();
+}
+
+.est-img-replace {
+    .inline-block();
+    .img-replace('http://www.baidu.com/img/bdlogo.gif', -106px, -30px);
+    width: 55px;
+    height: 60px;
+}
+
+.est-font-size-em {
+    .font-size-em(32px);
+}
+.est-font-size-rem {
+    .font-size-rem(32px);
+}
+
+
+.est-hover-link {
+    .hover-link();
+}
+.est-unstyled-link {
+    .unstyled-link();
+}

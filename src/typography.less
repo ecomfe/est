@@ -5,6 +5,8 @@
 // ### Usage:
 // 提供文本相关的mixin样式。
 
+@import "util.less";
+
 
 
 //
@@ -49,17 +51,6 @@
 
 
 //
-// .nowrap
-//
-// white-space 比较难以记住，提供快捷写法
-
-.nowrap() {
-    white-space: nowrap;
-}
-
-
-
-//
 // .hide-text
 //
 // 隐藏文字
@@ -89,7 +80,7 @@
 //
 // .invisible
 //
-// 用于隐藏那些增加可访问性的文字
+// 用于隐藏那些增加可访问性的文字，注意与hide-text的区别是，他隐藏整个元素
 
 .invisible() {
     position: absolute !important;
@@ -103,7 +94,7 @@
 
 
 //
-// .image-replace
+// .img-replace
 //
 // 用图片替换文字，通常用作icon的样式
 
@@ -116,21 +107,25 @@
 
 
 //
-// .font-size-rems(14)
-// .font-size-ems(14)
-// .font-size-ems(14, 18)
+// .font-size-rem(14)
+// .font-size-em(14)
+// .font-size-em(14, 18)
+// .font-size-rem(14px)
+// .font-size-em(14px)
+// .font-size-em(14px, 18px)
 //
 // 用于辅助计算字体的em和rem值
 // https://github.com/clearleft/clearless/blob/master/mixins/typography.less
 
-.font-size-rems(@px-size) {
-    @rem-size: @px-size / @default-font-size;
-    font-size: ~"@{px-size}px"; 
+.font-size-rem(@px-size) {
+    @rem-size: unit(@px-size / @default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    font-size: ~"@{@px-size-no-unit}px"; 
     font-size: ~"@{rem-size}rem";
 }
 
-.font-size-ems(@target-px-size, @context-px-size: @default-font-size) {
-    font-size: (@target-px-size / @context-px-size) * 1em;
+.font-size-em(@target-px-size, @context-px-size: @default-font-size) {
+    font-size: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
 }
 
 
@@ -200,106 +195,134 @@
 
 
 
-
-
 //
-// .no-bullet
-// .no-bullets
+// .rhythm()
+// .rhythm(14px, 2);        // font-size 必须是px单位
+// .rhythm(14px, 180%);
+// .rhythm(14px, 1.8em);
+// .rhythm(14px, 28px);
 //
-// 去掉列表的样式，no-bullet针对li标签，no-bullets针对ul和ol标签
-
-.no-bullet() {
-    list-style-image: none;
-    list-style-type: none;
-    margin-left: 0;
-}
-
-.no-bullets() {
-    list-style: none;
-    li {
-        .no-bullet();
-    }
-}
-
-
-
-
+// 按照“垂直的旋律”来排版文字，适合中文阅读
+// 一般用于多段文字（文章）的显示
+// 基础高度(px) = 行高 / 2;
 //
-// .pretty-bullets('./start.png', 16, 16)
-//
-// 为ul和ol标签增加自定义的图片，注意这张图片不能是sprite
+// 辅助的mixin:
+//      设置行高为 n*2*基础高度
+//      .rhythm-line-height();      // 1*2 = 2
+//      .rhythm-line-height(1);     // 1*2 = 2
+//      .rhythm-line-height(2);     // 2*2 = 4
+//      设置margin为 n*基础高度
+//      .rhythm-margin();           // 上下margin都为 1*基础高度
+//      .rhythm-margin(1);          // 上下margin都为 1*基础高度
+//      .rhythm-margin-top();       // 上margin都为 1*基础高度
+//      .rhythm-margin-top(2);      // 上margin都为 2*基础高度
+//      .rhythm-margin-bottom();    // 下margin都为 1*基础高度
+//      .rhythm-margin-bottom(2);   // 下margin都为 2*基础高度
+//      设置padding为 n*基础高度
+//      .rhythm-padding();          // 上下padding都为 1*基础高度
+//      .rhythm-padding(2);         // 上下padding都为 2*基础高度
+//      .rhythm-padding-top();      // 上padding都为 1*基础高度
+//      .rhythm-padding-top(2);     // 上padding都为 2*基础高度
+//      .rhythm-padding-bottom();   // 下padding都为 1*基础高度
+//      .rhythm-padding-bottom(2);  // 下padding都为 2*基础高度
+//      设置padding同时设置border
+//      .rhythm-padding(2, 1px solid #CCC);         // 上下padding都为 2*基础高度-1 , 上下border宽度为 1
+//      .rhythm-padding-top(2, 4px solid #CCC);     // 上padding都为 2*基础高度-4 , 上border宽度为 4
+//      .rhythm-padding-bottom(2, 4px solid #CCC);  // 下padding都为 2*基础高度-4 , 下border宽度为 4
+//      .rhythm-padding(2, 1px);                    // 第二个值只写一部分，但是一定要先写宽度
 
-.pretty-bullets(@bullet-icon, @width, @height, @line-height: @height, @padding: @width) {
-    margin-left: 0;
-    li {
-        padding-left: @padding;
-        background-repeat: no-repeat;
-        background-image: url(@bullet-icon);
-        background-position: ((@padding - @width) / 2) ((@line-height - @height) / 2);
+.rhythm(@font-size: 14px, @line-height: 1.8) {
+    font-size: @font-size;
+    line-height: @line-height;
+
+    .rhythm-line() when (isnumber(@line-height)) {
+        @line: @font-size * @line-height / 2;
     }
-}
-
-
-//
-// .horizontal-list
-//
-// 把列表变成水平，在做菜单样式或是卡片样式时有用
-// html结构为：`.horizontal-list > ul > li` 或 `.horizontal-list > ol > li`
-
-.horizontal-list(@padding, @direction: "left") when (@direction = "left") {
-    .clearfix()
-    overflow: hidden;
-    ul {
-        .no-bullets();
-        float: left;
-        margin-left: -@padding;
+    .rhythm-line() when (ispixel(@line-height)) {
+        @line: @line-height / 2;
     }
-    li {
-        float: left;
-        margin-left: @padding;
+    .rhythm-line() when (ispercentage(@line-height)) {
+        @line: ((unit(@line-height) / 100) * @font-size) / 2;
     }
-}
-.horizontal-list(@padding, @direction: "left") when (@direction = "left") and (@support-old-ie) {
-    ul, li {
-        _display: inline;
+    .rhythm-line() when (isem(@line-height)) {
+        @line: (unit(@line-height) * @font-size) / 2;
     }
-}
 
-.horizontal-list(@padding, @direction: "left") when (@direction = "right") {
-    .clearfix()
-    overflow: hidden;
-    ul {
-        .no-bullets();
-        float: right;
-        margin-right: -@padding;
+    .rhythm-line-height(@lines: 1) {
+        .rhythm-line();
+        line-height: @line * 2 * @lines;
     }
-    li {
-        float: left;
-        margin-right: @padding;
+
+    .rhythm-margin(@lines: 1) {
+        .rhythm-line();
+        margin-top: (@line * @lines);
+        margin-bottom: (@line * @lines);
     }
-}
-.horizontal-list(@padding, @direction: "left") when (@direction = "right") and (@support-old-ie) {
-    ul, li {
-        _display: inline;
+    .rhythm-margin-top(@lines: 1) {
+        .rhythm-line();
+        margin-top: (@line * @lines);
     }
-}
+    .rhythm-margin-bottom(@lines: 1) {
+        .rhythm-line();
+        margin-bottom: (@line * @lines);
+    }
 
+    .rhythm-padding(@lines: 1, @border: false) when not (@border = false) {
+        @border-width: ~`parseInt("@{border}".replace(/[\[\]]/g, ''), 10)`;
+        .rhythm-line();
+        padding-top: (@line * @lines - @border-width);
+        padding-bottom: (@line * @lines - @border-width);
+        border-top: @border;
+        border-bottom: @border;
+    }
+    .rhythm-padding(@lines: 1, @border: false) when (@border = false) {
+        .rhythm-line();
+        padding-top: (@line * @lines);
+        padding-bottom: (@line * @lines);
+    }
+    .rhythm-padding-top(@lines: 1, @border: false) when not (@border = false) {
+        @border-width: ~`parseInt("@{border}".replace(/[\[\]]/g, ''), 10)`;
+        .rhythm-line();
+        padding-top: (@line * @lines - @border-width);
+        border-top: @border;
+    }
+    .rhythm-padding-top(@lines: 1, @border: false) when (@border = false) {
+        .rhythm-line();
+        padding-top: (@line * @lines);
+    }
+    .rhythm-padding-bottom(@lines: 1, @border: false) when not (@border = false) {
+        @border-width: ~`parseInt("@{border}".replace(/[\[\]]/g, ''), 10)`;
+        .rhythm-line();
+        padding-bottom: (@line * @lines - @border-width);
+        border-bottom: @border;
+    }
+    .rhythm-padding-bottom(@lines: 1, @border: false) when (@border = false) {
+        .rhythm-line();
+        padding-bottom: (@line * @lines);
+    }
 
-
-
-//
-// .unstyled-list
-//
-// 把列表变成普通的一行文字
-
-.unstyled-list() {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: inline;
-    li {
-        margin: 0;
+    h1, h2, h3, h4, h5, h6,
+    div, p, section, header, footer, article,
+    ul, ol, pre, table, figure {
+        .rhythm-line-height();
+        .rhythm-margin();
         padding: 0;
-        display: inline;
+    }
+
+
+    h1 {
+        .rhythm-line-height(2);
+    }
+    h1 {
+        font-size: @font-size * 2;
+    }
+    h2 {
+        font-size: @font-size * 1.5;
+    }
+    h3 {
+        font-size: @font-size * 1.2;
+    }
+    h4, h5, h6 {
+        font-size: @font-size;
     }
 }
