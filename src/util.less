@@ -37,33 +37,44 @@
     height: @height;
 }
 
-//
-// text overflow
-// 
-// Known issue:
-// 指定参数（行数）的功能只支持WebKit。
 
-.text-overflow(...) {
-    overflow: hidden;
-}
-.text-overflow() {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.text-overflow(@line-number) {
-    display: -webkit-box;
-    -webkit-line-clamp: @line-number;
-    -webkit-box-orient: vertical;  
-}
 
 //
-// hide text (to apply something like image replacement)
+// .unstyled-list
 //
-// Known issue:
-// 当元素宽度大于视口宽度时失效
+// 把列表变成普通的一行文字
 
-.hide-text() {
-    white-space: nowrap;
-    text-indent: 100%;
-    overflow: hidden;
+.unstyled-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    li {
+        margin: 0;
+        padding: 0;
+        display: inline;
+    }
 }
+
+
+
+
+//
+// .no-bullet
+// .no-bullets
+//
+// 去掉列表的样式，no-bullet针对li标签，no-bullets针对ul和ol标签
+
+.no-bullet() {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.no-bullets() {
+    list-style: none;
+    li {
+        .no-bullet();
+    }
+}
+
