@@ -1,3 +1,5 @@
+# est API Documentation
+
 ## variables
 
 全局变量设置。
@@ -14,6 +16,56 @@
 是否添加支持HTML5新元素相关的代码。
 
 默认值：`true`。
+
+
+### `@default-text-color`
+
+默认的文字颜色。
+
+默认值：`#666666`。
+
+
+### `@default-input-placeholder-color`
+
+文本输入框占位文字的默认颜色。
+
+默认值：`#999999`。
+
+
+### `@default-border-radius`
+
+默认的圆角半径。
+
+默认值：`5px`。
+
+
+### `@default-box-shadow`
+
+默认的元素阴影。
+
+默认值：`0 1px 3px rgba(0, 0, 0, 0.25)`。
+
+
+### `@header-z-index`
+
+页头的默认z-index。
+
+默认值：`1000`。
+
+
+### `@footer-z-index`
+
+页脚的默认z-index。
+
+默认值：`1000`。
+
+
+### `@modal-z-index`
+
+浮层遮罩层的默认z-index。
+
+默认值：`1050`。
+
 
 ***
 
