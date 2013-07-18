@@ -52,11 +52,11 @@
 // Known issue:
 // 不支持Opera 14及以前版本，Opera 15起支持-webkit-user-select。
 
-.user-select(@select) {
-    -webkit-user-select: @select;
-       -moz-user-select: @select;
-        -ms-user-select: @select;
-            user-select: @select;
+.user-select(@type) {
+    -webkit-user-select: @type;
+       -moz-user-select: @type;
+        -ms-user-select: @type;
+            user-select: @type;
 }
 
 .opacity(@opacity: 100) {
@@ -65,56 +65,75 @@
 }
 
 // Border Radius
-.border-radius(@radius: 5px) {
+.border-radius(@radius: @default-border-radius) {
     -webkit-border-radius: @radius;
        -moz-border-radius: @radius;
             border-radius: @radius;
 }
-.border-radius(@radius1: 5px, @radius2: 5px) {
-    -webkit-border-radius: @radius1 ~`"/"` @radius2;
-       -moz-border-radius: @radius1 ~`"/"` @radius2;
-            border-radius: @radius1 ~`"/"` @radius2;
+.border-radius(@radius-x, @radius-y) when (@radius-x = @radius-y) {
+    .border-radius(@radius-x);
 }
-.border-top-left-radius(@radius1: 5px, @radius2...) {
+.border-radius(@radius-x, @radius-y) when not (@radius-x = @radius-y) {
+    -webkit-border-radius: @radius-x ~`"/"` @radius-y;
+       -moz-border-radius: @radius-x ~`"/"` @radius-y;
+            border-radius: @radius-x ~`"/"` @radius-y;
+}
+
+.border-top-left-radius(...) {
     -webkit-border-top-left-radius: @arguments;
         -moz-border-radius-topleft: @arguments;
             border-top-left-radius: @arguments;
 }
-.border-top-right-radius(@radius1: 5px, @radius2...) {
+
+.border-top-right-radius(...) {
     -webkit-border-top-right-radius: @arguments;
         -moz-border-radius-topright: @arguments;
             border-top-right-radius: @arguments;
 }
-.border-bottom-right-radius(@radius1: 5px, @radius2...) {
+
+.border-bottom-right-radius(...) {
     -webkit-border-bottom-right-radius: @arguments;
         -moz-border-radius-bottomright: @arguments;
             border-bottom-right-radius: @arguments;
 }
-.border-bottom-left-radius(@radius1: 5px, @radius2...) {
+
+.border-bottom-left-radius(...) {
     -webkit-border-bottom-left-radius: @arguments;
         -moz-border-radius-bottomleft: @arguments;
             border-bottom-left-radius: @arguments;
 }
 
 // Drop shadows
-.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25), ...) {
-    @shadows: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+// see `../test/box-shadow.less`
+.box-shadow(@shadow: @default-box-shadow...) {
+    @shadows: ~`(function() { var args = "@{arguments}".replace(/[\[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,\s+/g, ' '); } return args;})()`;
     -webkit-box-shadow: @shadows;
        -moz-box-shadow: @shadows;
             box-shadow: @shadows;
 }
 
 // Transitions
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+
 .transition(@transition, ...) {
     @transitions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    -webkit-transition: @transitions;
-       -moz-transition: @transitions;
-        -ms-transition: @transitions;
-         -o-transition: @transitions;
+    @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-webkit-$1")`;
+    @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-moz-$1")`;
+    @ms-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-ms-$1")`;
+    @o-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-o-$1")`;
+    -webkit-transition: @webkit-transitions;
+       -moz-transition: @moz-transitions;
+        -ms-transition: @ms-transitions;
+         -o-transition: @o-transitions;
             transition: @transitions;
 }
 .transition-property(@property: all, ...) {
     @properties: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow/g, "-webkit-$1")`;
+    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-moz-$1")`;
+    @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-ms-$1")`;
+    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-o-$1")`;
     -webkit-transition-property: @properties;
        -moz-transition-property: @properties;
         -ms-transition-property: @properties;
@@ -161,15 +180,6 @@
             transform: @arguments;
 }
 
-.transform-single(@transform-function, @rest...) {
-    @args: ~`"@{rest}".replace(/[\[\]]/g, "")`;
-    -webkit-transform: ~`"@{transform-function}(@{args})"`;
-       -moz-transform: ~`"@{transform-function}(@{args})"`;
-        -ms-transform: ~`"@{transform-function}(@{args})"`;
-         -o-transform: ~`"@{transform-function}(@{args})"`;
-            transform: ~`"@{transform-function}(@{args})"`;
-}
-
 // Known issue:
 // IE不支持，Opera 15起以`-webkit`前缀方式支持
 
@@ -206,9 +216,21 @@
 // IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
 
 .perspective(@d) {
-    -webkit-transform-style: @style;
-       -moz-transform-style: @style;
-            transform-style: @style;
+    -webkit-transform-style: @d;
+       -moz-transform-style: @d;
+            transform-style: @d;
+}
+
+//
+// 单个变换函数的快捷方法
+
+.transform-single(@transform-function, @rest...) {
+    @args: ~`"@{rest}".replace(/[\[\]]/g, "")`;
+    -webkit-transform: ~`"@{transform-function}(@{args})"`;
+       -moz-transform: ~`"@{transform-function}(@{args})"`;
+        -ms-transform: ~`"@{transform-function}(@{args})"`;
+         -o-transform: ~`"@{transform-function}(@{args})"`;
+            transform: ~`"@{transform-function}(@{args})"`;
 }
 
 //2D transform  functions

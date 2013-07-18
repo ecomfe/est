@@ -1,0 +1,23 @@
+{
+    "name": "est",
+    "version": "1.0.0",
+    "maintainers": [
+        {
+            "name": "Justineo",
+            "email": "justice360@gmail.com"
+        },
+        {
+            "name": "zmmbreeze",
+            "email": "zmmbreeze0825@gmail.com"
+        },
+        {
+            "name": "firede",
+            "email": "firede@firede.us"
+        }
+    ],
+    "description": "ECOM Styling Toolkit",
+    "homepage": "https://github.com/ecomfe/est",
+    "dependencies": {
+        "lessc": ">=1.4.0"
+    }
+}
