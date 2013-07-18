@@ -109,7 +109,7 @@
 
 // Drop shadows
 // see `../test/box-shadow.less`
-.box-shadow(@shadow: @default-box-shadow...) {
+.box-shadow(@shadow: @default-box-shadow, ...) {
     @shadows: ~`(function() { var args = "@{arguments}".replace(/[\[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,\s+/g, ' '); } return args;})()`;
     -webkit-box-shadow: @shadows;
        -moz-box-shadow: @shadows;

@@ -286,12 +286,12 @@
 }
 
 //
-// .horizontal-list
+// # 水平列表布局
 //
 // 把列表变成水平，在做菜单样式或是卡片样式时有用
 // html结构为：`.horizontal-list > ul > li` 或 `.horizontal-list > ol > li`
 
-.horizontal-list(@padding, @direction: "left") when (@direction = "left") {
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = left) {
     .clearfix();
     overflow: hidden;
     ul {
@@ -304,13 +304,12 @@
         margin-left: @padding;
     }
 }
-.horizontal-list(@padding, @direction: "left") when (@direction = "left") and (@support-old-ie) {
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = left) and (@support-old-ie) {
     ul, li {
         _display: inline;
     }
 }
-
-.horizontal-list(@padding, @direction: "left") when (@direction = "right") {
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = right) {
     .clearfix();
     overflow: hidden;
     ul {
@@ -323,7 +322,7 @@
         margin-right: @padding;
     }
 }
-.horizontal-list(@padding, @direction: "left") when (@direction = "right") and (@support-old-ie) {
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = right) and (@support-old-ie) {
     ul, li {
         _display: inline;
     }
