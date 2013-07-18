@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typography - EST</title>
+    <link rel="stylesheet/less" href="example.less" />
+    <link rel="stylesheet/less" href="typography.less" />
+</head>
+<body>
+    <h1>Typography</h1>
+
+    <h2>Ellipsis</h2>
+    <p class="desc">省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。提供单行省略号和多行省略号（只支持webkit内核）两种mixin。</p>
+    <pre class="code">&lt;div class="est-ellipsis-3"&gt;
+    &lt;div&gt;我在人民广场吃着炸鸡腿。&lt;/div&gt;
+    那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”
+&lt;/div&gt;
+
+&lt;style&gt;
+.est-ellipsis {
+    width: 50px;
+    .ellipsis();
+    background-color: #fee9cc;
+}
+.est-ellipsis-3 {
+    width: 300px;
+    .ellipsis(3);
+}
+&lt;/style&gt;</pre>
+    <div class="example">
+        <div class="est-ellipsis-3">
+        <div class="est-ellipsis">我在人民广场吃着炸鸡腿。</div>
+        那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”
+        </div>
+    </div>
+
+
+    <h2>Force-wrap</h2>
+    <p class="desc">用于阻止长字符串（例如url或无意义连续英文字符）打破布局</p>
+    <pre class="code">&lt;div class="est-force-wrap"&gt;世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&lt;/div&gt;
+&lt;div&gt;世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&lt;/div&gt;
+
+&lt;style&gt;
+.est-force-wrap {
+    .force-wrap();
+    background-color: #fee9cc;
+}
+&lt;/style&gt;
+    </pre>
+    <div class="example">
+        <div class="est-force-wrap example-force-wrap">世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</div>
+        <div class="example-force-wrap">世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</div>
+    </div>
+
+    <h2>hide-text与invisible</h2>
+    <p class="desc">`ide-text`是用于隐藏文字的mixin，一般在文字隐藏之后使用图片或其他方式替代显示。`invisible`则用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p>
+    <pre class="code">&lt;div&gt;隐藏链接地址（inline-block）：&lt;a href="#" class="est-hide-text"&gt;http://www.baidu.com&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;隐藏一段文字（block）：&lt;div class="est-hide-text2"&gt;到南京时，有朋友约去游逛，勾留了一日；第二日上午便须渡江到浦口，下午上车北去。父亲因为事忙，本已说定不送我，叫旅馆里一个熟识的茶房陪我同去。他再三嘱咐茶房，甚是仔细。但他终于不放心，怕茶房不妥帖；”&lt;/div&gt;&lt;/div&gt;
+&lt;div&gt;隐藏整个元素：&lt;a href="#" class="est-invisible"&gt;http://www.baidu.com&lt;/a&gt;&lt;/div&gt;
+&lt;style&gt;
+.est-hide-text {
+    .hide-text();
+    .inline-block();
+    background-color: #fee9cc;
+    width: 100px;               &lt;!-- 如果是inline-block，则必须要加宽度 --&gt;
+}
+.est-hide-text2 {
+    .hide-text();
+    display: block;
+    background-color: #fee9cc;
+}
+.est-hide-text:hover,
+.est-hide-text2:hover {
+    text-indent: 0;
+    overflow: visible;
+}
+.est-invisible {
+    .invisible();
+}
+&lt;/style&gt;</pre>
+    <div class="example">
+        <div>隐藏链接地址（inline-block）：<a href="#" class="est-hide-text">http://www.baidu.com</a></div>
+        <div>隐藏一段文字（block）：<div class="est-hide-text2">到南京时，有朋友约去游逛，勾留了一日；第二日上午便须渡江到浦口，下午上车北去。父亲因为事忙，本已说定不送我，叫旅馆里一个熟识的茶房陪我同去。他再三嘱咐茶房，甚是仔细。但他终于不放心，怕茶房不妥帖；</div></div>
+        <div>隐藏整个元素：<a href="#" class="est-invisible">http://www.baidu.com</a></div>
+    </div>
+
+    <h2>img-replace</h2>
+    <p class="desc">用图片替换文字，通常用作icon的样式</p>
+    <pre class="code">&lt;div class="est-img-replace"&gt;http://www.baidu.com&lt;/div&gt;
+&lt;style&gt;
+.est-img-replace {
+    .inline-block();
+    .img-replace('http://www.baidu.com/img/bdlogo.gif', -106px, -30px);
+    width: 55px;
+    height: 60px;
+}
+&lt;/style&gt;
+    </pre>
+    <div class="example"><div class="est-img-replace">http://www.baidu.com</div>
+    </div>
+
+    <h2>font-size-rem & font-size-em & font-face</h2>
+    <p class="desc">`font-size-rem`与`font-size-em`用于辅助计算字体的em和rem值。他们都依赖于配置项`@default-font-size`，请确保`HTML`标签的字体大小与`@default-font-size`一致。他们输入的参数都是以像素为单位（可以不加任何单位）。<br/>`.font-face`提供了一种更方便的书写font-face样式。</p>
+    <pre class="code">&lt;div class="est-font-size-em"&gt;
+    http://www.baidu.com
+    &lt;div class="est-font-size-rem"&gt;http://www.baidu.com&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.est-font-size-em {
+    .font-size-em(32px);
+    &lt;!-- .font-size-em(32, 14); 参数2表示上下文的字体大小(px)，可以不加，默认为@default-font-size --&gt;
+}
+.est-font-size-rem {
+    .font-size-rem(32);   &lt;!-- 参数可以不加单位 --&gt;
+}
+.font-face('http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd');
+&lt;/style&gt;</pre>
+    <div class="example">
+        <div class="est-font-size-em">
+            http://www.baidu.com
+            <div class="est-font-size-rem">http://www.baidu.com</div>
+        </div>
+    </div>
+
+    <h2>hover-link & unstyled-link</h2>
+    <p class="desc">`hover-link`用于实现链接默认无下划线，hover后有下划线的样式。`unstyled-link`用于将链接变成默认的文字样式。</p>
+    <pre class="code">&lt;a href="#" class="est-hover-link"&gt;http://www.baidu.com&lt;/a&gt;
+&lt;br/&gt;
+&lt;a href="#" class="est-unstyled-link"&gt;http://www.baidu.com&lt;/a&gt;
+
+&lt;style&gt;
+.est-hover-link {
+    .hover-link();
+}
+.est-unstyled-link {
+    .unstyled-link();
+}
+&lt;/style&gt;</pre>
+    <div class="example">
+        <a href="#" class="est-hover-link">http://www.baidu.com</a>
+        <br/>
+        <a href="#" class="est-unstyled-link">http://www.baidu.com</a>
+    </div>
+
+    <h2>Rhythmn</h2>
+    <div class="desc">`.rhythmn`相关的mixin，用于按照“<a href="http://blog.justfont.com/2012/08/%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%EF%BC%9A%E6%B9%AF%E5%93%81%EF%BC%8D%EF%BC%8D%E5%9E%82%E7%9B%B4%E7%9A%84%E9%9F%BB%E5%BE%8B/" target="_blank">垂直的旋律</a>”来排版文字，适合中文阅读。一般用于多段文字（文章）的显示。本样例使用了此排版，具体的样例可以参考<a href="./example.less" target="_blank">example.less</a>和文档：
+    </div>
+    <pre class="code">
+.body {
+    // 基础高度(px) = 行高 / 2 = 16px * 2 / 2 = 16px;
+    .rhythm(16px, 2);      // 1*2 = 2
+
+    .foo {
+        // 辅助的mixin:
+        // 设置行高为 n*2*基础高度
+        .rhythm-line-height();      // 1*2 = 2
+        .rhythm-line-height(1);     // 1*2 = 2
+        .rhythm-line-height(2);     // 2*2 = 4
+        // 设置margin为 n*基础高度
+        .rhythm-margin();           // 上下margin都为 1*基础高度
+        .rhythm-margin(1);          // 上下margin都为 1*基础高度
+        .rhythm-margin-top();       // 上margin都为 1*基础高度
+        .rhythm-margin-top(2);      // 上margin都为 2*基础高度
+        .rhythm-margin-bottom();    // 下margin都为 1*基础高度
+        .rhythm-margin-bottom(2);   // 下margin都为 2*基础高度
+        // 设置padding为 n*基础高度
+        .rhythm-padding();          // 上下padding都为 1*基础高度
+        .rhythm-padding(2);         // 上下padding都为 2*基础高度
+        .rhythm-padding-top();      // 上padding都为 1*基础高度
+        .rhythm-padding-top(2);     // 上padding都为 2*基础高度
+        .rhythm-padding-bottom();   // 下padding都为 1*基础高度
+        .rhythm-padding-bottom(2);  // 下padding都为 2*基础高度
+        // 设置padding同时设置border
+        .rhythm-padding(2, 1px solid #CCC);         // 上下padding都为 2*基础高度-1 , 上下border宽度为 1
+        .rhythm-padding-top(2, 4px solid #CCC);     // 上padding都为 2*基础高度-4 , 上border宽度为 4
+        .rhythm-padding-bottom(2, 4px solid #CCC);  // 下padding都为 2*基础高度-4 , 下border宽度为 4
+        .rhythm-padding(2, 1px);                    // 第二个值只写一部分，但是一定要先写宽度
+    }
+}
+    </pre>
+    <div class="example">
+        <h1>标题一</h1>
+        <h2>标题二</h2>
+        <h3>标题三</h3>
+        <h4>标题四</h4>
+        <h5>标题五</h5>
+        <h6>标题六</h6>
+        <div>「字型排版學中的空間就像是音樂中的時間。空間可以被切成無限多塊，但在設計上，只要一些合於比例的間隙，卻比一大堆任意而無理的切割還有用許多。」這句話完整詮釋了「垂直的韻律」(Vertical Rhythm)在字型排版上的用處：在音樂中，好的節奏遠比隨意加之的額外裝飾還要來得重要；</div>
+        <p>而在排版中，若每個區塊間的距離符合固定比例，那麼這段文章看起來就會很有韻律感，版面整齊、好看以外，更增加了可閱讀性，讓讀者更願意花長時間閱讀。祕訣就在以「基本行距」為單位決定版面上各區塊的距離。</p>
+    </div>
+    <script type="text/javascript" src="../less-1.3.3.min.js"></script>
+</body>
+</html>
