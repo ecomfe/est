@@ -419,6 +419,35 @@
 * 只有一个参数时，元素为正方形，边长为`@side-length`；
 * 有两个参数时，`@width`和`@height`分别为宽高。
 
+### `.no-bullet()`
+用于去掉列表样式的“弹头”。
+```less
+.no-bullet();
+.no-bullets();
+```
+
+#### 示例
+```html
+<ul>
+  <li class="est-no-bullet">
+    <a href="#">Some list</a>
+  </li>
+</ul>
+<ul class="est-no-bullets">
+  <li>
+    <a href="#">Some list</a>
+  </li>
+</ul>
+```
+```less
+.est-no-bullet {
+  .no-bullet();
+}
+.est-no-bullets {
+  .no-bullets();
+}
+```
+
 ***
 
 ## layout
@@ -617,6 +646,18 @@ body {
   .est-layout-popup(center, 80);
 }
 ```
+
+
+### `.est-layout-horizontal-list()`
+
+用于把列表变成水平，在做菜单样式或是卡片样式时有用。
+```less
+.est-layout-horizontal-list(@gap, @direction: left)
+```
+* `@gap`参数表示水平方向上列表项之间的间隔长度（任意单位），必填；
+* `@direction`参数表示水平浮动的方向，可选。默认为left。可选指为`right`/`left`；
+
+***
 
 ## Typography
 
