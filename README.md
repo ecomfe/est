@@ -11,12 +11,12 @@ est是一个基于LESS的样式工具库，帮助您更轻松地书写LESS代码
 ## 快速开始
 
 下载：
-```
+```bash
 $ git clone https://github.com/ecomfe/est.git
 ```
 
 在LESS文件中引用：
-```
+```less
 // 快速引用所有模块
 @import 'est/src/all.less';
 
@@ -24,5 +24,10 @@ $ git clone https://github.com/ecomfe/est.git
 @support-old-ie: false;
 @default-font-size: 14px;
 
-// ...其他样式代码...
+// ...从这里开始书写其他样式代码...
 ```
+
+## 文档
+
+* [API说明](https://github.com/ecomfe/est/blob/master/doc/api.md)
+* [Typography相关示例](http://ecomfe.github.io/est/example/typography.html)
