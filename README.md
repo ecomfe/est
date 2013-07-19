@@ -11,12 +11,12 @@ est是一个基于LESS的样式工具库，帮助您更轻松地书写LESS代码
 ## 快速开始
 
 下载：
-```shell
+```
 $ git clone https://github.com/ecomfe/est.git
 ```
 
 在LESS文件中引用：
-```less
+```
 // 快速引用所有模块
 @import 'est/src/all.less';
 
