@@ -10,5 +10,19 @@ est是一个基于LESS的样式工具库，帮助您更轻松地书写LESS代码
 
 ## 快速开始
 
+下载：
+```shell
+$ git clone https://github.com/ecomfe/est.git
 ```
-npm install est
+
+在LESS文件中引用：
+```less
+// 快速引用所有模块
+@import 'est/src/all.less';
+
+// 覆盖全局变量
+@support-old-ie: false;
+@default-font-size: 14px;
+
+// ...其他样式代码...
+```
