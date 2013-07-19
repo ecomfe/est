@@ -1,23 +1,18 @@
 {
     "name": "est",
     "version": "1.0.0",
-    "maintainers": [
-        {
-            "name": "Justineo",
-            "email": "justice360@gmail.com"
-        },
-        {
-            "name": "zmmbreeze",
-            "email": "zmmbreeze0825@gmail.com"
-        },
-        {
-            "name": "firede",
-            "email": "firede@firede.us"
-        }
+    "contributors": [
+        "justineo <justice360@gmail.com>",
+        "zmmbreeze <zmmbreeze0825@gmail.com>",
+        "firede <firede@firede.us>"
     ],
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/ecomfe/est.git"
+    },
     "description": "ECOM Styling Toolkit",
     "homepage": "https://github.com/ecomfe/est",
-    "dependencies": {
+    "devDependencies": {
         "lessc": ">=1.4.0"
     }
 }
