@@ -88,19 +88,25 @@
     width: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
-    *clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+}
+.invisible() when (@support-old-ie) {
+    *clip: rect(1px 1px 1px 1px);
 }
 
 
 
 //
 // .img-replace
+// .ir
 //
 // 用图片替换文字，通常用作icon的样式
 
 .img-replace(@img-url, @img-x: 0, @img-y: 0) {
     .hide-text();
     background: url(@img-url) no-repeat @img-x @img-y;
+}
+.ir (@img-url, @img-x: 0, @img-y: 0) {
+    .img-replace(@img-url, @img-x, @img-y);
 }
 
 
@@ -371,6 +377,7 @@
 
 .initials(@line-height, @lines: 2, @margin-right: (1em / @lines)) {
     overflow: hidden;       // 不能使用after和before伪元素清除浮动
+    line-height: @line-height;
     &:first-letter {
         .initials-inline(@line-height, @lines, @margin-right);
     }

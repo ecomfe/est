@@ -18,7 +18,7 @@
     <h2>Ellipsis</h2>
     <p class="desc">省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。提供单行省略号和多行省略号（只支持webkit内核）两种mixin。</p>
     <pre class="code prettyprint">&lt;div class="est-ellipsis-3"&gt;
-    &lt;div&gt;我在人民广场吃着炸鸡腿。&lt;/div&gt;
+    &lt;div class="est-ellipsis"&gt;我在人民广场吃着炸鸡腿。&lt;/div&gt;
     那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”
 &lt;/div&gt;
 
@@ -91,7 +91,7 @@
     </div>
 
     <h2>img-replace</h2>
-    <p class="desc">用图片替换文字，通常用作icon的样式</p>
+    <p class="desc">用图片替换文字，通常用作icon的样式。同时提供了一个简写`.ir`</p>
     <pre class="code prettyprint">&lt;div class="est-img-replace"&gt;http://www.baidu.com&lt;/div&gt;
 &lt;style&gt;
 .est-img-replace {
@@ -120,7 +120,7 @@
 .est-font-size-rem {
     .font-size-rem(32);   &lt;!-- 参数可以不加单位 --&gt;
 }
-.font-face('http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd');
+.font-face('family-name', 'http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd');
 &lt;/style&gt;</pre>
     <div class="example">
         <div class="est-font-size-em">
@@ -149,7 +149,7 @@
         <a href="#" class="est-unstyled-link">http://www.baidu.com</a>
     </div>
 
-    <h2>Rhythmn</h2>
+    <h2>rhythmn</h2>
     <div class="desc">`.rhythmn`相关的mixin，用于按照“<a href="http://blog.justfont.com/2012/08/%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%EF%BC%9A%E6%B9%AF%E5%93%81%EF%BC%8D%EF%BC%8D%E5%9E%82%E7%9B%B4%E7%9A%84%E9%9F%BB%E5%BE%8B/" target="_blank">垂直的旋律</a>”来排版文字，适合中文阅读。一般用于多段文字（文章）的显示。本样例使用了此排版，具体的样例可以参考<a href="./example.less" target="_blank">example.less</a>和文档：
     </div>
     <pre class="code prettyprint">
@@ -196,7 +196,7 @@
         <p>而在排版中，若每個區塊間的距離符合固定比例，那麼這段文章看起來就會很有韻律感，版面整齊、好看以外，更增加了可閱讀性，讓讀者更願意花長時間閱讀。祕訣就在以「基本行距」為單位決定版面上各區塊的距離。</p>
     </div>
 
-    <h2>文字下沉</h2>
+    <h2>initials</h2>
     <div class="desc">文字下沉样式</div>
     <pre class="code prettyprint">&lt;div class="est-initials-context"&gt;
     &lt;div class="est-initials"&gt;
@@ -216,7 +216,7 @@
     line-height: 24px;
 }
 .est-initials {
-    .initials(24px);            // 上下文行高为24px，首字下沉2行，右外边距为1em（想对于上下文）
+    .initials(24px);            // 上下文行高为24px，首字下沉2行，右外边距为1em（相对于普通文字大小）
 }
 .est-initials-2 {
     .initials(24px, 3, 10px);   // 首字下沉3行，右外边距为10px
