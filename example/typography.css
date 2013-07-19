@@ -1,0 +1,130 @@
+.est-ellipsis {
+  width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #fee9cc;
+}
+.est-ellipsis-3 {
+  width: 30em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.est-force-wrap {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+}
+.example-force-wrap {
+  margin-top: 10px !important;
+  width: 20em;
+  line-height: 1.5;
+  background-color: #fee9cc;
+}
+.est-hide-text {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background-color: #fee9cc;
+  width: 100px;
+}
+.est-hide-text2 {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+  display: block;
+  background-color: #fee9cc;
+}
+.est-hide-text:hover,
+.est-hide-text2:hover {
+  text-indent: 0;
+  overflow: visible;
+}
+.est-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  *clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+
+}
+.est-img-replace {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+  background: url('http://www.baidu.com/img/bdlogo.gif') no-repeat -106px -30px;
+  width: 55px;
+  height: 60px;
+}
+.est-font-size-em {
+  font-size: 2.2857142857142856em;
+}
+.est-font-size-rem {
+  font-size: @{@px-size-no-unit}px;
+  font-size: 2.2857142857142856rem;
+}
+.est-hover-link {
+  text-decoration: none;
+}
+.est-hover-link:hover {
+  text-decoration: underline;
+}
+.est-unstyled-link {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+.est-unstyled-link:active,
+.est-unstyled-link:focus {
+  outline: none;
+}
+.est-initials-context {
+  font-size: 1em;
+  line-height: 2;
+}
+.est-initials {
+  overflow: hidden;
+  _zoom: 1;
+}
+.est-initials:first-letter {
+  _display: inline;
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 2;
+}
+.est-initials-2 {
+  overflow: hidden;
+}
+.est-initials-2:first-letter {
+  _display: inline;
+  float: left;
+  margin-right: 10px;
+  font-size: 3em;
+  line-height: 24px;
+  line-height: 72px;
+}
+.est-initials-inline {
+  _display: inline;
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 24px;
+  line-height: 48px;
+}

@@ -1,0 +1,92 @@
+body {
+  font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "wenquanyi micro hei", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+  color: #666;
+  width: 40em;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body div,
+body p,
+body section,
+body header,
+body footer,
+body article,
+body ul,
+body ol,
+body pre,
+body table,
+body figure {
+  line-height: 28px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  padding: 0;
+}
+body h1 {
+  line-height: 56px;
+}
+body h1 {
+  font-size: 28px;
+}
+body h2 {
+  font-size: 21px;
+}
+body h3 {
+  font-size: 16.8px;
+}
+body h4,
+body h5,
+body h6 {
+  font-size: 14px;
+}
+body pre.code {
+  line-height: 14px;
+  padding-top: 13px;
+  border-top: 1px solid #dddddd;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #dddddd;
+  padding-left: 1em;
+  padding-right: 1em;
+  word-wrap: break-word;
+  border: 1px solid #DDD;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+body div.example {
+  position: relative;
+  margin: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: 14px;
+  padding-top: 27px;
+  border-top: 1px;
+  padding-bottom: 13px;
+  border-bottom: 1px;
+  margin-bottom: 56px;
+  border: 1px solid #DDD;
+  background-color: white;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+body div.example:after {
+  content: "Example";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: whiteSmoke;
+  border: 1px solid #DDD;
+  color: #9DA0A4;
+  -webkit-border-radius: 4px 0 4px 0;
+  -moz-border-radius: 4px 0 4px 0;
+  border-radius: 4px 0 4px 0;
+}

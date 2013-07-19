@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Typography - EST</title>
+    <link href="prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="prettify/run_prettify.js"></script>
     <link rel="stylesheet/less" href="example.less" />
     <link rel="stylesheet/less" href="typography.less" />
+    <!--
+    <link rel="stylesheet" href="example.css" />
+    <link rel="stylesheet" href="typography.css" />
+    -->
 </head>
 <body>
     <h1>Typography</h1>
 
     <h2>Ellipsis</h2>
     <p class="desc">省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。提供单行省略号和多行省略号（只支持webkit内核）两种mixin。</p>
-    <pre class="code">&lt;div class="est-ellipsis-3"&gt;
+    <pre class="code prettyprint">&lt;div class="est-ellipsis-3"&gt;
     &lt;div&gt;我在人民广场吃着炸鸡腿。&lt;/div&gt;
     那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”
 &lt;/div&gt;
@@ -37,7 +43,7 @@
 
     <h2>Force-wrap</h2>
     <p class="desc">用于阻止长字符串（例如url或无意义连续英文字符）打破布局</p>
-    <pre class="code">&lt;div class="est-force-wrap"&gt;世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&lt;/div&gt;
+    <pre class="code prettyprint">&lt;div class="est-force-wrap"&gt;世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&lt;/div&gt;
 &lt;div&gt;世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch&lt;/div&gt;
 
 &lt;style&gt;
@@ -54,7 +60,7 @@
 
     <h2>hide-text与invisible</h2>
     <p class="desc">`ide-text`是用于隐藏文字的mixin，一般在文字隐藏之后使用图片或其他方式替代显示。`invisible`则用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p>
-    <pre class="code">&lt;div&gt;隐藏链接地址（inline-block）：&lt;a href="#" class="est-hide-text"&gt;http://www.baidu.com&lt;/a&gt;&lt;/div&gt;
+    <pre class="code prettyprint">&lt;div&gt;隐藏链接地址（inline-block）：&lt;a href="#" class="est-hide-text"&gt;http://www.baidu.com&lt;/a&gt;&lt;/div&gt;
 &lt;div&gt;隐藏一段文字（block）：&lt;div class="est-hide-text2"&gt;到南京时，有朋友约去游逛，勾留了一日；第二日上午便须渡江到浦口，下午上车北去。父亲因为事忙，本已说定不送我，叫旅馆里一个熟识的茶房陪我同去。他再三嘱咐茶房，甚是仔细。但他终于不放心，怕茶房不妥帖；”&lt;/div&gt;&lt;/div&gt;
 &lt;div&gt;隐藏整个元素：&lt;a href="#" class="est-invisible"&gt;http://www.baidu.com&lt;/a&gt;&lt;/div&gt;
 &lt;style&gt;
@@ -86,7 +92,7 @@
 
     <h2>img-replace</h2>
     <p class="desc">用图片替换文字，通常用作icon的样式</p>
-    <pre class="code">&lt;div class="est-img-replace"&gt;http://www.baidu.com&lt;/div&gt;
+    <pre class="code prettyprint">&lt;div class="est-img-replace"&gt;http://www.baidu.com&lt;/div&gt;
 &lt;style&gt;
 .est-img-replace {
     .inline-block();
@@ -101,7 +107,7 @@
 
     <h2>font-size-rem & font-size-em & font-face</h2>
     <p class="desc">`font-size-rem`与`font-size-em`用于辅助计算字体的em和rem值。他们都依赖于配置项`@default-font-size`，请确保`HTML`标签的字体大小与`@default-font-size`一致。他们输入的参数都是以像素为单位（可以不加任何单位）。<br/>`.font-face`提供了一种更方便的书写font-face样式。</p>
-    <pre class="code">&lt;div class="est-font-size-em"&gt;
+    <pre class="code prettyprint">&lt;div class="est-font-size-em"&gt;
     http://www.baidu.com
     &lt;div class="est-font-size-rem"&gt;http://www.baidu.com&lt;/div&gt;
 &lt;/div&gt;
@@ -125,7 +131,7 @@
 
     <h2>hover-link & unstyled-link</h2>
     <p class="desc">`hover-link`用于实现链接默认无下划线，hover后有下划线的样式。`unstyled-link`用于将链接变成默认的文字样式。</p>
-    <pre class="code">&lt;a href="#" class="est-hover-link"&gt;http://www.baidu.com&lt;/a&gt;
+    <pre class="code prettyprint">&lt;a href="#" class="est-hover-link"&gt;http://www.baidu.com&lt;/a&gt;
 &lt;br/&gt;
 &lt;a href="#" class="est-unstyled-link"&gt;http://www.baidu.com&lt;/a&gt;
 
@@ -146,7 +152,7 @@
     <h2>Rhythmn</h2>
     <div class="desc">`.rhythmn`相关的mixin，用于按照“<a href="http://blog.justfont.com/2012/08/%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%EF%BC%9A%E6%B9%AF%E5%93%81%EF%BC%8D%EF%BC%8D%E5%9E%82%E7%9B%B4%E7%9A%84%E9%9F%BB%E5%BE%8B/" target="_blank">垂直的旋律</a>”来排版文字，适合中文阅读。一般用于多段文字（文章）的显示。本样例使用了此排版，具体的样例可以参考<a href="./example.less" target="_blank">example.less</a>和文档：
     </div>
-    <pre class="code">
+    <pre class="code prettyprint">
 .body {
     // 基础高度(px) = 行高 / 2 = 16px * 2 / 2 = 16px;
     .rhythm(16px, 2);      // 1*2 = 2
@@ -188,6 +194,49 @@
         <h6>标题六</h6>
         <div>「字型排版學中的空間就像是音樂中的時間。空間可以被切成無限多塊，但在設計上，只要一些合於比例的間隙，卻比一大堆任意而無理的切割還有用許多。」這句話完整詮釋了「垂直的韻律」(Vertical Rhythm)在字型排版上的用處：在音樂中，好的節奏遠比隨意加之的額外裝飾還要來得重要；</div>
         <p>而在排版中，若每個區塊間的距離符合固定比例，那麼這段文章看起來就會很有韻律感，版面整齊、好看以外，更增加了可閱讀性，讓讀者更願意花長時間閱讀。祕訣就在以「基本行距」為單位決定版面上各區塊的距離。</p>
+    </div>
+
+    <h2>文字下沉</h2>
+    <div class="desc">文字下沉样式</div>
+    <pre class="code prettyprint">&lt;div class="est-initials-context"&gt;
+    &lt;div class="est-initials"&gt;
+        &lt;a href="#"&gt;百度&lt;/a&gt;（Nasdaq简称：BIDU）是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，致力于向人们提供“简单，可依赖”的信息获取方式。“百度”二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句“众里寻他千百度”，象征着百度对中文信息检索技术的执著追求。
+    &lt;/div&gt;
+    &lt;div class="est-initials-2"&gt;
+        1999年底，身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于2000年1月1日在中关村创建了百度公司。从最初的不足10人发展至今，员工人数超过18000人。如今的百度，已成为中国最受欢迎、影响力最大的中文网站。
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;span class="est-initials-inline"&gt;百度拥有数千名研发工程师&lt;/span&gt;，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.est-initials-context {
+    font-size: 1em;
+    line-height: 24px;
+}
+.est-initials {
+    .initials(24px);            // 上下文行高为24px，首字下沉2行，右外边距为1em（想对于上下文）
+}
+.est-initials-2 {
+    .initials(24px, 3, 10px);   // 首字下沉3行，右外边距为10px
+}
+.est-initials-inline {
+    .initials-inline(24px, 2);
+}
+&lt;/style&gt;</pre>
+    <div class="example">
+        <div class="est-initials-context">
+            <div class="est-initials">
+                <a href="#">百度</a>（Nasdaq简称：BIDU）是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，致力于向人们提供“简单，可依赖”的信息获取方式。“百度”二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句“众里寻他千百度”，象征着百度对中文信息检索技术的执著追求。
+            </div>
+            <div class="est-initials-2">
+                1999年底，身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于2000年1月1日在中关村创建了百度公司。从最初的不足10人发展至今，员工人数超过18000人。如今的百度，已成为中国最受欢迎、影响力最大的中文网站。
+            </div>
+            <div>
+                <span class="est-initials-inline">百度拥有</span>数千名研发工程师，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="less-1.4.1.min.js"></script>
 </body>
