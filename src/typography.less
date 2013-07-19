@@ -235,6 +235,7 @@
     font-size: @font-size;
     line-height: @line-height;
 
+    // TODO isnumber 函数也可以通过 `1px` 这样的输入
     .rhythm-line() when (isnumber(@line-height)) {
         @line: @font-size * @line-height / 2;
     }
@@ -325,4 +326,55 @@
     h4, h5, h6 {
         font-size: @font-size;
     }
+}
+
+
+
+
+
+//
+// .initials(2)
+// .initials(32px)
+// .initials(2em)
+// .initials(200%)
+// .initials(2, 3)
+// .initials(2, 3, 10px)
+//
+// .initials-inline(2)
+// .initials-inline(32px)
+// .initials-inline(2em)
+// .initials-inline(200%)
+// .initials-inline(32px, 3)
+// .initials-inline(2, 3, 10px)
+//
+// 文字下沉
+// .initials用于段落元素首字下沉，.initials-inline用于行内元素整个下沉
+
+.initials-inline(...) when (@support-old-ie) {
+    _display: inline;
+}
+.initials-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) {
+    float: left;
+    margin-right: @margin-right;
+    font-size: unit(@lines) * 1em;
+}
+// TODO isnumber 函数也可以通过 `1px` 这样的输入
+.initials-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) when (isnumber(@context-line-height)) {
+    line-height: @context-line-height;
+}
+.initials-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) when (ispercentage(@context-line-height)), (isem(@context-line-height)) {
+    line-height: @context-line-height;
+}
+.initials-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) when (ispixel(@context-line-height)) {
+    line-height: @context-line-height * @lines;
+}
+
+.initials(@line-height, @lines: 2, @margin-right: (1em / @lines)) {
+    overflow: hidden;       // 不能使用after和before伪元素清除浮动
+    &:first-letter {
+        .initials-inline(@line-height, @lines, @margin-right);
+    }
+}
+.initials(@context-line-height, @lines: 2) when (@support-old-ie) {
+    _zoom: 1;
 }
