@@ -1,0 +1,328 @@
+//
+// Typography
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 提供文本相关的mixin样式。
+
+@import "util.less";
+
+
+
+//
+// .ellipsis
+// 
+// Known issue:
+// 指定参数（行数）的功能只支持WebKit。
+
+.ellipsis(...) {
+    overflow: hidden;
+}
+.ellipsis() {
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ellipsis(@line-number) {
+    display: -webkit-box;
+    -webkit-line-clamp: @line-number;
+    -webkit-box-orient: vertical;  
+}
+
+
+
+
+//
+// force-wrap
+//
+// 阻止长字符串（例如url或无意义连续英文字符）打破布局
+
+.force-wrap() {
+    white-space: pre;           // CSS 2.0
+    white-space: pre-wrap;      // CSS 2.1
+    white-space: pre-line;      // CSS 3.0
+    white-space: -pre-wrap;     // Opera 4-6
+    white-space: -o-pre-wrap;   // Opera 7
+    white-space: -moz-pre-wrap; // Mozilla
+    white-space: -hp-pre-wrap;  // HP Printers
+    word-wrap: break-word;      // IE 5+ 
+}
+
+
+
+//
+// .hide-text
+//
+// 隐藏文字
+// http://jsfiddle.net/necolas/drHaR/2/
+// https://github.com/twitter/bootstrap/issues/2362
+// https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7#commitcomment-1052728
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+
+.hide-text() when not (@support-old-ie) {
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
+}
+.hide-text() when (@support-old-ie) {
+    .ie-hide-text();
+}
+
+// ie6, ie7
+.ie-hide-text() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-align: left;
+}
+
+
+
+//
+// .invisible
+//
+// 用于隐藏那些增加可访问性的文字，注意与hide-text的区别是，他隐藏整个元素
+
+.invisible() {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    *clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+}
+
+
+
+//
+// .img-replace
+//
+// 用图片替换文字，通常用作icon的样式
+
+.img-replace(@img-url, @img-x: 0, @img-y: 0) {
+    .hide-text();
+    background: url(@img-url) no-repeat @img-x @img-y;
+}
+
+
+
+
+//
+// .font-size-rem(14)
+// .font-size-em(14)
+// .font-size-em(14, 18)
+// .font-size-rem(14px)
+// .font-size-em(14px)
+// .font-size-em(14px, 18px)
+//
+// 用于辅助计算字体的em和rem值
+// https://github.com/clearleft/clearless/blob/master/mixins/typography.less
+
+.font-size-rem(@px-size) {
+    @rem-size: unit(@px-size / @default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    font-size: ~"@{@px-size-no-unit}px"; 
+    font-size: ~"@{rem-size}rem";
+}
+
+.font-size-em(@target-px-size, @context-px-size: @default-font-size) {
+    font-size: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+
+
+
+//
+// .font-face
+//
+// @font-face的快捷书写方式
+// https://github.com/clearleft/clearless/blob/master/mixins/typography.less
+
+.font-face(@family-name, @font-path, @font-weight: normal, @font-style: normal, @include-svg: false) when not (@include-svg) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+             url('@{font-path}.woff') format('woff'),
+             url('@{font-path}.ttf') format('truetype');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+.font-face(@family-name, @font-path, @font-weight: normal, @font-style: normal, @include-svg: false) when (@include-svg) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+             url('@{font-path}.woff') format('woff'),
+             url('@{font-path}.ttf') format('truetype'),
+             url('@{font-path}.svg#@{family-name}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+
+
+//
+// .hover-link
+//
+// 实现链接默认无下划线，hover后有下划线的样式
+
+.hover-link() {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+
+//
+// .unstyled-link
+//
+// 将链接变成默认的文字样式
+
+.unstyled-link() {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+    &:active, &:focus {
+        outline: none;
+    }
+}
+
+
+
+//
+// .rhythm()
+// .rhythm(14px, 2);        // font-size 必须是px单位
+// .rhythm(14px, 180%);
+// .rhythm(14px, 1.8em);
+// .rhythm(14px, 28px);
+//
+// 按照“垂直的旋律”来排版文字，适合中文阅读
+// 一般用于多段文字（文章）的显示
+// 基础高度(px) = 行高 / 2;
+//
+// 辅助的mixin:
+//      设置行高为 n*2*基础高度
+//      .rhythm-line-height();      // 1*2 = 2
+//      .rhythm-line-height(1);     // 1*2 = 2
+//      .rhythm-line-height(2);     // 2*2 = 4
+//      设置margin为 n*基础高度
+//      .rhythm-margin();           // 上下margin都为 1*基础高度
+//      .rhythm-margin(1);          // 上下margin都为 1*基础高度
+//      .rhythm-margin-top();       // 上margin都为 1*基础高度
+//      .rhythm-margin-top(2);      // 上margin都为 2*基础高度
+//      .rhythm-margin-bottom();    // 下margin都为 1*基础高度
+//      .rhythm-margin-bottom(2);   // 下margin都为 2*基础高度
+//      设置padding为 n*基础高度
+//      .rhythm-padding();          // 上下padding都为 1*基础高度
+//      .rhythm-padding(2);         // 上下padding都为 2*基础高度
+//      .rhythm-padding-top();      // 上padding都为 1*基础高度
+//      .rhythm-padding-top(2);     // 上padding都为 2*基础高度
+//      .rhythm-padding-bottom();   // 下padding都为 1*基础高度
+//      .rhythm-padding-bottom(2);  // 下padding都为 2*基础高度
+//      设置padding同时设置border
+//      .rhythm-padding(2, 1px solid #CCC);         // 上下padding都为 2*基础高度-1 , 上下border宽度为 1
+//      .rhythm-padding-top(2, 4px solid #CCC);     // 上padding都为 2*基础高度-4 , 上border宽度为 4
+//      .rhythm-padding-bottom(2, 4px solid #CCC);  // 下padding都为 2*基础高度-4 , 下border宽度为 4
+//      .rhythm-padding(2, 1px);                    // 第二个值只写一部分，但是一定要先写宽度
+
+.rhythm(@font-size: 14px, @line-height: 1.8) {
+    font-size: @font-size;
+    line-height: @line-height;
+
+    .rhythm-line() when (isnumber(@line-height)) {
+        @line: @font-size * @line-height / 2;
+    }
+    .rhythm-line() when (ispixel(@line-height)) {
+        @line: @line-height / 2;
+    }
+    .rhythm-line() when (ispercentage(@line-height)) {
+        @line: ((unit(@line-height) / 100) * @font-size) / 2;
+    }
+    .rhythm-line() when (isem(@line-height)) {
+        @line: (unit(@line-height) * @font-size) / 2;
+    }
+
+    .rhythm-line-height(@lines: 1) {
+        .rhythm-line();
+        line-height: @line * 2 * @lines;
+    }
+
+    .rhythm-margin(@lines: 1) {
+        .rhythm-line();
+        margin-top: (@line * @lines);
+        margin-bottom: (@line * @lines);
+    }
+    .rhythm-margin-top(@lines: 1) {
+        .rhythm-line();
+        margin-top: (@line * @lines);
+    }
+    .rhythm-margin-bottom(@lines: 1) {
+        .rhythm-line();
+        margin-bottom: (@line * @lines);
+    }
+
+    .rhythm-padding(@lines: 1, @border: false) when not (@border = false) {
+        @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
+        .rhythm-line();
+        padding-top: (@line * @lines - unit(@border-width));
+        padding-bottom: (@line * @lines - unit(@border-width));
+        border-top: @border;
+        border-bottom: @border;
+    }
+    .rhythm-padding(@lines: 1, @border: false) when (@border = false) {
+        .rhythm-line();
+        padding-top: (@line * @lines);
+        padding-bottom: (@line * @lines);
+    }
+    .rhythm-padding-top(@lines: 1, @border: false) when not (@border = false) {
+        @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
+        .rhythm-line();
+        padding-top: (@line * @lines - unit(@border-width));
+        border-top: @border;
+    }
+    .rhythm-padding-top(@lines: 1, @border: false) when (@border = false) {
+        .rhythm-line();
+        padding-top: (@line * @lines);
+    }
+    .rhythm-padding-bottom(@lines: 1, @border: false) when not (@border = false) {
+        @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
+        .rhythm-line();
+        padding-bottom: (@line * @lines - unit(@border-width));
+        border-bottom: @border;
+    }
+    .rhythm-padding-bottom(@lines: 1, @border: false) when (@border = false) {
+        .rhythm-line();
+        padding-bottom: (@line * @lines);
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    div, p, section, header, footer, article,
+    ul, ol, pre, table, figure {
+        .rhythm-line-height();
+        .rhythm-margin();
+        padding: 0;
+    }
+
+
+    h1 {
+        .rhythm-line-height(2);
+    }
+    h1 {
+        font-size: @font-size * 2;
+    }
+    h2 {
+        font-size: @font-size * 1.5;
+    }
+    h3 {
+        font-size: @font-size * 1.2;
+    }
+    h4, h5, h6 {
+        font-size: @font-size;
+    }
+}

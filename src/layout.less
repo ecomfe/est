@@ -1,0 +1,330 @@
+//
+// Layout
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 提供基础的布局设置。
+//
+
+@import 'variables';
+@import 'compatibility';
+@import 'util';
+
+//
+// ## 定高、相对视口固定的页头
+//
+// ### Example:
+//
+// #page {
+//     .est-layout-fixed-header(90px);
+// }
+
+.est-layout-fixed-header(@height) {
+    > .est-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: @header-z-index;
+        height: @height;
+    }
+
+    > .est-body {
+        margin-top: @height;
+        .clearfix;
+    }
+}
+
+//
+// ## 定高、相对视口固定的页脚
+//
+// ### Example:
+//
+// #page {
+//     .est-layout-fixed-footer(90px);
+// }
+
+.est-layout-fixed-footer(@height) {
+    > .est-body {
+        margin-bottom: @height;
+        .clearfix;
+    }
+
+    > .est-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: @footer-z-index;
+        height: @height;
+    }
+}
+
+//
+// 当内容高度小于容器时也有显示在底部的页脚
+//
+// Note: 一般配合`html, body { height: 100%; }`使用，不能和.est-layout-fixed-header/footer混用。
+
+.est-layout-sticky-footer(@height) {
+    > .est-body {
+        min-height: 100%;
+        margin-bottom: -@height;
+        .clearfix;
+
+        .set-placeholder() when not (@support-old-ie) {
+            &:after {
+                content: '';
+                display: block;
+                height: @height;
+            }
+        }
+        .set-placeholder() when (@support-old-ie) {
+            .est-footer-placeholder {
+                display: block;
+                height: @height;
+            }
+        }
+        .set-placeholder;
+    }
+
+    > .est-footer {
+        height: @height;
+    }
+}
+
+
+//
+// ## 居中的固定宽度布局
+// 
+// ### Example:
+//
+// #page {
+//     .est-layout-page();
+// }
+//
+// ### Known issue:
+// IE的quirks mode下，需要在上层元素设置`text-align: center;`并且该元素自身重设
+// 为`text-align: left;`。
+
+.est-layout-page(@page-width) {
+    width: @page-width;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+//
+// ## 固定边栏布局
+// 支持左右两侧各最多一个定宽（可以是px/em/%）侧边栏，主内容区域填充剩余宽度。
+//
+// ### Example:
+//
+// // 左侧单侧边栏
+// #page1 {
+//     .est-layout-sidebar(left, 220px);
+// }
+//
+// // 右侧单侧边栏
+// #page2 {
+//     .est-layout-sidebar(right, 220px);
+// }
+//
+// // 双侧边栏，左侧220px宽，右侧180px宽
+// #page3 {
+//     .est-layout-sidebar(220px, 180px);
+// }
+
+.est-layout-sidebar(left, @sidebar-width) {
+    position: relative;
+
+    > .est-main {
+        overflow: hidden;
+        margin-left: @sidebar-width;
+    }
+
+    > .est-sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: @sidebar-width;
+    }
+}
+.est-layout-sidebar(right, @sidebar-width) {
+    position: relative;
+
+    > .est-main {
+        overflow: hidden;
+        margin-right: @sidebar-width;
+    }
+
+    > .est-sidebar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: @sidebar-width;
+    }
+}
+.est-layout-sidebar(@sidebar-primary-width, @sidebar-secondary-width)
+    when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
+    position: relative;
+
+    > .est-main {
+        overflow: hidden;
+        margin-right: @sidebar-secondary-width;
+        margin-left: @sidebar-primary-width;
+    }
+
+    > .est-sidebar-primary {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: @sidebar-primary-width;
+    }
+
+    > .est-sidebar-secondary {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: @sidebar-secondary-width;
+    }
+}
+
+//
+// ## 弹出层布局
+// 支持不定宽度的弹出容器在某定位元素内靠上/下/左/右/居中定位显示。
+//
+// ### Example:
+// // 水平居左、垂直居中，遮罩层透明度50%
+// .overlay1 {
+//   .est-layout-popup(left, 50);
+// }
+//
+// // 水平/垂直居中，遮罩层全透明
+// .overlay2 {
+//   .est-layout-popup(center);
+// }
+
+.est-layout-popup(@position, ...) {
+    position: fixed;
+    z-index: @modal-z-index;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    letter-spacing: -0.5em;
+}
+.est-layout-popup(@position, ...)
+    when (@position = left), (@position = center), (@position = right) {
+    text-align: @position;
+
+    .set-valign-ghost() when (@support-old-ie = true) {
+        .est-valign-ghost {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    .set-valign-ghost() when (@support-old-ie = false) {
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    .set-valign-ghost;
+
+    > .est-popup {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+.est-layout-popup(@position, ...) when (@position = top), (@position = bottom) {
+    text-align: center;
+
+    .set-valign-ghost() when (@support-old-ie = true) {
+        .est-valign-ghost {
+            display: inline-block;
+            height: 100%;
+            vertical-align: @position;
+        }
+    }
+    .set-valign-ghost() when (@support-old-ie = false) {
+        &:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: @position;
+        }
+    }
+    .set-valign-ghost;
+
+    > .est-popup {
+        display: inline-block;
+        vertical-align: @position;
+    }
+}
+.est-layout-popup(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
+    pointer-events: none;
+
+    > .est-popup {
+        pointer-events: all;
+    }
+}
+.est-layout-popup(@position, @overlay-opacity) when (@overlay-opacity > 0) {
+    // 透明图片解决IE 8下点击穿透问题
+    background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
+    background: rgba(0, 0, 0, @overlay-opacity / 100);
+    @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
+    filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
+    zoom: 1\0;
+    // IE9下的hack，避免同时识别rgba和filter
+    @media screen and (~"min-width:0\0") {
+        & {
+            filter: none;
+        }
+    }
+}
+
+//
+// # 水平列表布局
+//
+// 把列表变成水平，在做菜单样式或是卡片样式时有用
+// html结构为：`.horizontal-list > ul > li` 或 `.horizontal-list > ol > li`
+
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = left) {
+    .clearfix();
+    overflow: hidden;
+    ul {
+        .no-bullets();
+        float: left;
+        margin-left: -@padding;
+    }
+    li {
+        float: left;
+        margin-left: @padding;
+    }
+}
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = left) and (@support-old-ie) {
+    ul, li {
+        _display: inline;
+    }
+}
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = right) {
+    .clearfix();
+    overflow: hidden;
+    ul {
+        .no-bullets();
+        float: right;
+        margin-right: -@padding;
+    }
+    li {
+        float: left;
+        margin-right: @padding;
+    }
+}
+.est-layout-horizontal-list(@padding, @direction: left) when (@direction = right) and (@support-old-ie) {
+    ul, li {
+        _display: inline;
+    }
+}
+

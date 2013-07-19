@@ -1,0 +1,359 @@
+//
+// Compatibility
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 解决常见兼容性问题，如浏览器私有前缀等。
+
+@import 'variables';
+
+.inline-block() {
+    display: inline-block;
+}
+.ie-inline-block() {
+    *display: inline;
+    *zoom: 1;
+}
+.inline-block() when (@support-old-ie = true) {
+    .ie-inline-block;
+}
+
+//
+// Known issue:
+// 不支持IE 6/7
+
+.box-sizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+       -moz-box-sizing: @boxmodel;
+            box-sizing: @boxmodel;
+}
+
+//
+// Reference:
+// * http://css-tricks.com/snippets/css/style-placeholder-text/
+// * https://bugzilla.mozilla.org/show_bug.cgi?id=737786
+//
+// Known issue:
+// 不支持IE 9及以下
+
+.placeholder(@color: @default-input-placeholder-color) {
+    :-moz-placeholder {
+        color: @color;
+    }
+    ::-moz-placeholder {
+        color: @color;
+    }
+    ::-webkit-input-placeholder {
+        color: @color;
+    }
+    :-ms-input-placeholder {
+        color: @color;
+    }
+}
+
+
+//
+// Known issue:
+// 不支持Opera 14及以前版本，Opera 15起支持-webkit-user-select。
+
+.user-select(@type) {
+    -webkit-user-select: @type;
+       -moz-user-select: @type;
+        -ms-user-select: @type;
+            user-select: @type;
+}
+
+.opacity(@opacity: 100) {
+    opacity: @opacity / 100;
+    filter: ~`"alpha(opacity=@{opacity})"`;
+}
+
+// Border Radius
+.border-radius(@radius: @default-border-radius) {
+    -webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+            border-radius: @radius;
+}
+.border-radius(@radius-x, @radius-y) when (@radius-x = @radius-y) {
+    .border-radius(@radius-x);
+}
+.border-radius(@radius-x, @radius-y) when not (@radius-x = @radius-y) {
+    -webkit-border-radius: @radius-x ~`"/"` @radius-y;
+       -moz-border-radius: @radius-x ~`"/"` @radius-y;
+            border-radius: @radius-x ~`"/"` @radius-y;
+}
+
+.border-top-left-radius(...) {
+    -webkit-border-top-left-radius: @arguments;
+        -moz-border-radius-topleft: @arguments;
+            border-top-left-radius: @arguments;
+}
+
+.border-top-right-radius(...) {
+    -webkit-border-top-right-radius: @arguments;
+        -moz-border-radius-topright: @arguments;
+            border-top-right-radius: @arguments;
+}
+
+.border-bottom-right-radius(...) {
+    -webkit-border-bottom-right-radius: @arguments;
+        -moz-border-radius-bottomright: @arguments;
+            border-bottom-right-radius: @arguments;
+}
+
+.border-bottom-left-radius(...) {
+    -webkit-border-bottom-left-radius: @arguments;
+        -moz-border-radius-bottomleft: @arguments;
+            border-bottom-left-radius: @arguments;
+}
+
+// Drop shadows
+// see `../test/box-shadow.less`
+.box-shadow(@shadow: @default-box-shadow, ...) {
+    @shadows: ~`(function() { var args = "@{arguments}".replace(/[\[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,\s+/g, ' '); } return args;})()`;
+    -webkit-box-shadow: @shadows;
+       -moz-box-shadow: @shadows;
+            box-shadow: @shadows;
+}
+
+// Transitions
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+
+.transition(@transition, ...) {
+    @transitions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-webkit-$1")`;
+    @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-moz-$1")`;
+    @ms-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-ms-$1")`;
+    @o-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-o-$1")`;
+    -webkit-transition: @webkit-transitions;
+       -moz-transition: @moz-transitions;
+        -ms-transition: @ms-transitions;
+         -o-transition: @o-transitions;
+            transition: @transitions;
+}
+.transition-property(@property: all, ...) {
+    @properties: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow/g, "-webkit-$1")`;
+    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-moz-$1")`;
+    @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-ms-$1")`;
+    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-o-$1")`;
+    -webkit-transition-property: @webkit-properties;
+       -moz-transition-property: @moz-properties;
+        -ms-transition-property: @ms-properties;
+         -o-transition-property: @o-properties;
+            transition-property: @properties;
+}
+.transition-duration(@duration: 0s, ...) {
+    @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-transition-duration: @durations;
+       -moz-transition-duration: @durations;
+        -ms-transition-duration: @durations;
+         -o-transition-duration: @durations;
+            transition-duration: @durations;
+}
+.transition-timing-function(@timing-function: ease, ...) {
+    @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-transition-timing-function: @timing-functions;
+       -moz-transition-timing-function: @timing-functions;
+        -ms-transition-timing-function: @timing-functions;
+         -o-transition-timing-function: @timing-functions;
+            transition-timing-function: @timing-functions;
+}
+.transition-delay(@delay: 0s, ...) {
+    @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-transition-delay: @delays;
+       -moz-transition-delay: @delays;
+        -ms-transition-delay: @delays;
+         -o-transition-delay: @delays;
+            transition-delay: @delays;
+}
+
+//
+// Transformations
+//
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+// * http://dev.w3.org/csswg/css-transforms/#transform
+
+.transform(...) {
+    -webkit-transform: @arguments;
+       -moz-transform: @arguments;
+        -ms-transform: @arguments;
+         -o-transform: @arguments;
+            transform: @arguments;
+}
+
+// Known issue:
+// IE不支持，Opera 15起以`-webkit`前缀方式支持
+
+.transform-style(@style) {
+    -webkit-transform-style: @style;
+       -moz-transform-style: @style;
+            transform-style: @style;
+}
+
+//
+// Known issue:
+// Opera 15起以`-webkit`前缀方式支持三值语法，之前以`-o`前缀方式支持
+
+.transform-origin(@origin) {
+    -webkit-transform-origin: @origin;
+       -moz-transform-origin: @origin;
+        -ms-transform-origin: @origin;
+         -o-transform-origin: @origin;
+            transform-origin: @origin;
+}
+
+//
+// Known issue:
+// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
+
+.backface-visibility(@visibility) {
+    -webkit-backface-visibility: @visibility;
+       -moz-backface-visibility: @visibility;
+            backface-visibility: @visibility;
+}
+
+//
+// Known issue:
+// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
+
+.perspective(@d) {
+    -webkit-transform-style: @d;
+       -moz-transform-style: @d;
+            transform-style: @d;
+}
+
+//
+// 单个变换函数的快捷方法
+
+.transform-single(@transform-function, @rest...) {
+    @args: ~`"@{rest}".replace(/[\[\]]/g, "")`;
+    -webkit-transform: ~`"@{transform-function}(@{args})"`;
+       -moz-transform: ~`"@{transform-function}(@{args})"`;
+        -ms-transform: ~`"@{transform-function}(@{args})"`;
+         -o-transform: ~`"@{transform-function}(@{args})"`;
+            transform: ~`"@{transform-function}(@{args})"`;
+}
+
+//2D transform  functions
+
+.matrix(@a, @b, @c, @d, @tx, @ty) {
+    .transform-single(matrix, @arguments);
+}
+
+.translate(@tx) {
+    .transform-single(translate, @arguments);
+}
+.translate(@tx, @ty) {
+    .transform-single(translate, @arguments);
+}
+
+.translateX(@tx) {
+    .transform-single(translateX, @arguments);
+}
+
+.translateY(@ty) {
+    .transform-single(translateY, @arguments);
+}
+
+.scale(@sx) {
+    .transform-single(scale, @arguments);
+}
+.scale(@sx, @sy) {
+    .transform-single(scale, @arguments);
+}
+
+.scaleX(@sx) {
+    .transform-single(scaleX, @arguments);
+}
+
+.scaleY(@sy) {
+    .transform-single(scaleY, @arguments);
+}
+
+.rotate(@angle) {
+    .transform-single(rotate, @arguments);
+}
+
+// TODO: see https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L300
+.skew(@ax) {
+    .transform-single(skew, @arguments);
+}
+.skew(@ax, @ay) {
+    .transform-single(skew, @arguments);
+}
+
+.skewX(@ax) {
+    .transform-single(skewX, @arguments);
+}
+
+.skewY(@ay) {
+    .transform-single(skewY, @arguments);
+}
+
+//3D transform  functions
+
+.maxtrix3d(@m11, @m12, @m13, @m14, @m21, @m22, @m23, @m24,
+           @m31, @m32, @m33, @m34, @m41, @m42, @m43, @m44) {
+    .transform-single(matrix3d, @arguments);
+}
+
+.translate3d(@tx, @ty, @tz) {
+    .transform-single(translate3d, @arguments);
+}
+
+.translateZ(@tz) {
+    .transform-single(translateZ, @arguments);
+}
+
+.scale3d(@sx, @sy, @sz) {
+    .transform-single(scale3d, @arguments);
+}
+
+.scaleZ(@sz) {
+    .transform-single(scaleZ, @arguments);
+}
+
+.rotate3d(@x, @y, @z, @angle) {
+    .transform-single(rotate3d, @arguments);
+}
+
+.rotateX(@angle) {
+    .transform-single(rotateX, @arguments);
+}
+
+.rotateY(@angle) {
+    .transform-single(rotateY, @arguments);
+}
+
+.rotateZ(@angle) {
+    .transform-single(rotateZ, @arguments);
+}
+
+// TODO: transform: perspective() needs a better name
+// (which will not conflict with the original perspective property mixin)
+// .perspective(@d) {
+//     .transform-single(perspective, @d);
+// }
+
+//
+// CSS3 Background
+
+// FF 3.6 and under need "padding" instead of "padding-box"
+.background-clip(@clip, ...) {
+    @clips: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-background-clip: @clips;
+       -moz-background-clip: ~`"@{clips}".replace(/-box/g, "")`;
+            background-clip: @clips;
+}
+
+// Background sizing
+.background-size(@size, ...) {
+    @sizes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-background-size: @sizes;
+       -moz-background-size: @sizes;
+         -o-background-size: @sizes;
+            background-size: @sizes;
+}

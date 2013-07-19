@@ -1,0 +1,80 @@
+//
+// Util
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 提供简便的mixin工具。
+//
+// ### Example:
+// .some-floats-inside {
+//     .clearfix();
+// };
+
+@import 'variables';
+
+// clearfix via http://h5bp.com/q
+.clearfix() {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+.clearfix() when (@support-old-ie) {
+    *zoom: 1;
+}
+
+// size settings
+.size(@size) {
+    width: @size;
+    height: @size;
+}
+.size(@wdith, @height) {
+    width: @wdith;
+    height: @height;
+}
+
+
+
+//
+// .unstyled-list
+//
+// 把列表变成普通的一行文字
+
+.unstyled-list() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    li {
+        margin: 0;
+        padding: 0;
+        display: inline;
+    }
+}
+
+
+
+
+//
+// .no-bullet
+// .no-bullets
+//
+// 去掉列表的样式，no-bullet针对li标签，no-bullets针对ul和ol标签
+
+.no-bullet() {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.no-bullets() {
+    list-style: none;
+    li {
+        .no-bullet();
+    }
+}
+
