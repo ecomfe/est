@@ -872,12 +872,12 @@ body {
 }
 ```
 
-### `.initials()`
+### `.drop-cap()`
 
 用于实现文字下沉样式，提供了两种mixin分别实现“首字下沉”和“多字下沉”。
 ```less
-.initials(@line-height, @lines, @margin-right);
-.initials-inline(@context-line-height, @lines, @margin-right);
+.drop-cap(@line-height, @lines, @margin-right);
+.drop-cap-inline(@context-line-height, @lines, @margin-right);
 ```
 * `@line-height`参数表示行高，必填。单位可选`%`/`px`/`em`，或者直接使用缩放因子，例如：`2`；
 * `@lines`参数表示下沉的行数，可选。默认为两行。输入格式为数字；
@@ -886,31 +886,31 @@ body {
 
 #### 示例
 ```html
-<div class="est-initials-context">
-    <div class="est-initials">
+<div class="est-drop-cap-context">
+    <div class="est-drop-cap">
         <a href="#">百度</a>（Nasdaq简称：BIDU）是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，致力于向人们提供“简单，可依赖”的信息获取方式。“百度”二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句“众里寻他千百度”，象征着百度对中文信息检索技术的执著追求。
     </div>
-    <div class="est-initials-2">
+    <div class="est-drop-cap-2">
         1999年底，身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于2000年1月1日在中关村创建了百度公司。从最初的不足10人发展至今，员工人数超过18000人。如今的百度，已成为中国最受欢迎、影响力最大的中文网站。
     </div>
     <div>
-        <span class="est-initials-inline">百度拥有数千名研发工程师</span>，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
+        <span class="est-drop-cap-inline">百度拥有数千名研发工程师</span>，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
     </div>
 </div>
 ```
 ```less
-.est-initials-context {
+.est-drop-cap-context {
     font-size: 1em;
     line-height: 24px;
 }
-.est-initials {
-    .initials(24px);
+.est-drop-cap {
+    .drop-cap(24px);
 }
-.est-initials-2 {
-    .initials(24px, 3, 10px);
+.est-drop-cap-2 {
+    .drop-cap(24px, 3, 10px);
 }
-.est-initials-inline {
-    .initials-inline(24px, 2);
+.est-drop-cap-inline {
+    .drop-cap-inline(24px, 2);
 }
 ```
 
