@@ -196,45 +196,45 @@
         <p>而在排版中，若每個區塊間的距離符合固定比例，那麼這段文章看起來就會很有韻律感，版面整齊、好看以外，更增加了可閱讀性，讓讀者更願意花長時間閱讀。祕訣就在以「基本行距」為單位決定版面上各區塊的距離。</p>
     </div>
 
-    <h2>initials</h2>
+    <h2>drop-cap</h2>
     <div class="desc">文字下沉样式</div>
-    <pre class="code prettyprint">&lt;div class="est-initials-context"&gt;
-    &lt;div class="est-initials"&gt;
+    <pre class="code prettyprint">&lt;div class="est-drop-cap-context"&gt;
+    &lt;div class="est-drop-cap"&gt;
         &lt;a href="#"&gt;百度&lt;/a&gt;（Nasdaq简称：BIDU）是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，致力于向人们提供“简单，可依赖”的信息获取方式。“百度”二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句“众里寻他千百度”，象征着百度对中文信息检索技术的执著追求。
     &lt;/div&gt;
-    &lt;div class="est-initials-2"&gt;
+    &lt;div class="est-drop-cap-2"&gt;
         1999年底，身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于2000年1月1日在中关村创建了百度公司。从最初的不足10人发展至今，员工人数超过18000人。如今的百度，已成为中国最受欢迎、影响力最大的中文网站。
     &lt;/div&gt;
     &lt;div&gt;
-        &lt;span class="est-initials-inline"&gt;百度拥有数千名研发工程师&lt;/span&gt;，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
+        &lt;span class="est-drop-cap-inline"&gt;百度拥有数千名研发工程师&lt;/span&gt;，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
     &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;style&gt;
-.est-initials-context {
+.est-drop-cap-context {
     font-size: 1em;
     line-height: 24px;
 }
-.est-initials {
-    .initials(24px);            // 上下文行高为24px，首字下沉2行，右外边距为1em（相对于普通文字大小）
+.est-drop-cap {
+    .drop-cap(24px);            // 上下文行高为24px，首字下沉2行，右外边距为1em（相对于普通文字大小）
 }
-.est-initials-2 {
-    .initials(24px, 3, 10px);   // 首字下沉3行，右外边距为10px
+.est-drop-cap-2 {
+    .drop-cap(24px, 3, 10px);   // 首字下沉3行，右外边距为10px
 }
-.est-initials-inline {
-    .initials-inline(24px, 2);
+.est-drop-cap-inline {
+    .drop-cap-inline(24px, 2);
 }
 &lt;/style&gt;</pre>
     <div class="example">
-        <div class="est-initials-context">
-            <div class="est-initials">
+        <div class="est-drop-cap-context">
+            <div class="est-drop-cap">
                 <a href="#">百度</a>（Nasdaq简称：BIDU）是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，致力于向人们提供“简单，可依赖”的信息获取方式。“百度”二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句“众里寻他千百度”，象征着百度对中文信息检索技术的执著追求。
             </div>
-            <div class="est-initials-2">
+            <div class="est-drop-cap-2">
                 1999年底，身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于2000年1月1日在中关村创建了百度公司。从最初的不足10人发展至今，员工人数超过18000人。如今的百度，已成为中国最受欢迎、影响力最大的中文网站。
             </div>
             <div>
-                <span class="est-initials-inline">百度拥有</span>数千名研发工程师，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
+                <span class="est-drop-cap-inline">百度拥有</span>数千名研发工程师，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
             </div>
         </div>
     </div>
