@@ -2,9 +2,18 @@
     "name": "est",
     "version": "1.0.0",
     "contributors": [
-        "justineo <justice360@gmail.com>",
-        "zmmbreeze <zmmbreeze0825@gmail.com>",
-        "firede <firede@firede.us>"
+        {
+            "name": "justineo",
+            "email": "justice360@gmail.com"
+        },
+        {
+            "name": "zmmbreeze",
+            "email": "zmmbreeze0825@gmail.com"
+        },
+        {
+            "name": "firede",
+            "email": "firede@firede.us"
+        }
     ],
     "repository": {
         "type" : "git",
