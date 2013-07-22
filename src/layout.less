@@ -328,3 +328,29 @@
     }
 }
 
+
+//
+// 自适应宽度视频、flash或iframe
+//
+// 固定尺寸比例，固定控制栏高度（默认为0）
+// .fluid-video > embed
+// .fluid-video > object
+// .fluid-video > iframe
+// .fluid-video > div
+//
+// http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+
+.est-layout-fluid-video(@videoWidth, @videoHeight, @barHeight: 0) {
+    position: relative;
+    padding-bottom: ((unit(@videoHeight) / unit(@videoWidth)) * 100%); /* 16:9 */
+    padding-top: @barHeight;
+    height: 0;
+
+    object, embed, iframe, div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
