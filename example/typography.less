@@ -45,7 +45,7 @@
 
 .est-img-replace {
     .inline-block();
-    .img-replace('http://www.baidu.com/img/bdlogo.gif', -106px, -30px);
+    .ir('http://www.baidu.com/img/bdlogo.gif', -106px, -30px);
     width: 55px;
     height: 60px;
 }
@@ -66,16 +66,24 @@
 }
 
 
-.est-initials-context {
+.est-drop-cap-context {
     font-size: 1em;
     line-height: 2;
 }
-.est-initials {
-    .initials(2);
+.est-drop-cap {
+    .drop-cap(2);
 }
-.est-initials-2 {
-    .initials(24px, 3, 10px);
+.est-drop-cap-2 {
+    .drop-cap(24px, 3, 10px);
 }
-.est-initials-inline {
-    .initials-inline(24px, 2);
+.est-drop-cap-inline {
+    .drop-cap-inline(24px, 2);
 }
+
+// .est-menu {
+//     .est-layout-horizontal-list(10px);
+// }
+
+// .est-unstyled-list {
+//     .unstyled-list();
+// }

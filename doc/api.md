@@ -18,6 +18,12 @@
 默认值：`true`。
 
 
+### `@default-font-size`
+
+默认的字体大小（以像素为单位），请确保其和`html`元素的字体大小一致（单位可以不一致，例如`100% = 16px`）。
+
+默认值：`16`。
+
 ### `@default-text-color`
 
 默认的文字颜色。
@@ -419,6 +425,35 @@
 * 只有一个参数时，元素为正方形，边长为`@side-length`；
 * 有两个参数时，`@width`和`@height`分别为宽高。
 
+### `.no-bullet()`
+用于去掉列表样式的“弹头”。
+```less
+.no-bullet();
+.no-bullets();
+```
+
+#### 示例
+```html
+<ul>
+  <li class="est-no-bullet">
+    <a href="#">Some list</a>
+  </li>
+</ul>
+<ul class="est-no-bullets">
+  <li>
+    <a href="#">Some list</a>
+  </li>
+</ul>
+```
+```less
+.est-no-bullet {
+  .no-bullet();
+}
+.est-no-bullets {
+  .no-bullets();
+}
+```
+
 ***
 
 ## layout
@@ -615,5 +650,317 @@ body {
 ```less
 .overlay {
   .est-layout-popup(center, 80);
+}
+```
+
+
+### `.est-layout-horizontal-list()`
+
+用于把列表变成水平，在做菜单样式或是卡片样式时有用。
+```less
+.est-layout-horizontal-list(@gap, @direction: left)
+```
+* `@gap`参数表示水平方向上列表项之间的间隔长度（任意单位），必填；
+* `@direction`参数表示水平浮动的方向，可选。默认为left。可选指为`right`/`left`；
+
+***
+
+## Typography
+
+### 依赖于
+
+* `util`
+
+### `.ellipsis()`
+
+省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。提供单行省略号和多行省略号（只支持webkit内核）两种mixin。
+```less
+.ellipsis()             // 单行省略号
+.ellipsis(@line-number) // 多行省略号
+```
+* `@line-number`参数输入为数字字，表示最多可显示的行数。
+
+##### 示例
+```html
+<div class="est-ellipsis-3">
+    <div class="est-ellipsis">我在人民广场吃着炸鸡腿。</div>
+    那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”
+</div>
+```
+```less
+.est-ellipsis {
+    width: 50px;
+    .ellipsis();
+    background-color: #fee9cc;
+}
+.est-ellipsis-3 {
+    width: 300px;
+    .ellipsis(3);
+}
+```
+
+### `.force-wrap()`
+
+用于阻止长字符串（例如url或无意义连续英文字符）打破布局。
+```less
+.force-wrap();
+```
+
+##### 示例
+```html
+<div class="est-force-wrap">世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</div>
+<div>世界上最长的人名：Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</div>
+```
+```less
+.est-force-wrap {
+    .force-wrap();
+    background-color: #fee9cc;
+}
+```
+
+### `.hide-text()`
+
+用于隐藏元素内文字的mixin，一般在文字隐藏之后使用背景图片替代显示。如果使用此mixin的元素是inline-block元素，请确保其设置了宽度。
+```less
+.hide-text();
+```
+
+#### 示例
+```html
+<div>隐藏链接地址（inline-block）：<a href="#" class="est-hide-text">http://www.baidu.com</a></div>
+```
+```less
+.est-hide-text {
+    .hide-text();
+    .inline-block();
+    background-color: #fee9cc;
+    width: 100px;
+}
+```
+
+
+### `.invisible()`
+
+用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。
+```less
+.invisible();
+```
+
+
+#### 示例
+```html
+<a href="#" class="est-invisible">http://www.baidu.com</a>
+```
+```less
+.est-invisible {
+    .invisible();
+}
+```
+
+
+### `.img-replace`
+
+用图片替换文字，通常用作类似icon的样式。同时提供了一个简写`.ir`。
+```less
+.img-replace(@img-url, @img-x, @img-y);
+.ir(@img-url, @img-x, @img-y);
+```
+* `@img-url`参数是字符串格式的背景图片路径;
+* `@img-x`参数是`background-position`中的水平方向位置，可选值为`top`/`center`/`bottom`/`n%``npx`。默认为0;
+@ `@img-y`参数是`background-position`中的垂直方向位置，可选值为`left`/`center`/`right`/`n%``npx`。默认为0;
+
+
+#### 示例
+```html
+<div class="est-img-replace">http://www.baidu.com</div>
+```
+```less
+.est-img-replace {
+    .inline-block();
+    .img-replace('http://www.baidu.com/img/bdlogo.gif', -106px, -30px);
+    width: 55px;
+    height: 60px;
+}
+```
+
+
+### `.font-size-rem()`/`.font-size-em()`
+
+`font-size-rem`与`font-size-em`用于辅助计算字体的[em和rem](https://developer.mozilla.org/en-US/docs/Web/CSS/length)值。他们都依赖于配置项`@default-font-size`，请确保`HTML`标签的字体大小与`@default-font-size`一致。
+```less
+.font-size-rem(@px-size);
+.font-size-rem(@px-size, @context-font-size);
+```
+* `@px-size`参数是字体大小，单位是像素。可以是纯数字`14`，也可是`14px`，它们的效果一致；
+* `@context-font-size`参数是上下文的字体大小，单位为像素。输入格式与`@px-size`一致。默认值为`@default-font-size`；
+
+#### 示例
+```html
+<div class="est-font-size-em">
+    http://www.baidu.com
+    <div class="est-font-size-rem">http://www.baidu.com</div>
+</div>
+```
+```less
+.est-font-size-em {
+    .font-size-em(32px);
+}
+.est-font-size-rem {
+    .font-size-rem(32px);
+}
+```
+
+#### `.font-face()`
+
+`.font-face`提供了一种更方便地书写font-face样式的mixin。
+```less
+.font-face(@family-name, @font-path, @font-weight, @font-style, @include-svg);
+```
+* `@family-name`参数是`font-family`样式的值，必填；
+* `@font-path`参数是字体的路径，必填；
+* `@font-weight`参数表示字体的组系，默认值为`normal`；
+* `@font-style`参数表示字体的风格，默认值为`normal`；
+* `@include-svg`参数表示是否使用svg格式的字体，默认值为`false`；
+
+#### 示例
+```less
+.font-face('FamilyName', '/some/font/url');
+// 输出为
+/* Example output: */
+@font-face {
+    font-family: 'FamilyName';
+    src: url('/some/font/url.eot');
+    src: url('/some/font/url.eot?#iefix') format('embedded-opentype'),
+         url('/some/font/url.woff') format('woff'),
+         url('/some/font/url.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+### `.hover-link()`
+
+用于实现链接默认无下划线，hover后有下划线的样式。
+```less
+.hover-link();
+```
+
+#### 示例
+```html
+<a href="#" class="est-hover-link">http://www.baidu.com</a>
+```
+```less
+.est-hover-link {
+    .hover-link();
+}
+```
+
+### `.unstyled-link()`
+
+用于将链接变成默认的文字样式。
+```less
+.unstyled-link();
+```
+
+#### 示例
+```html
+<a href="#" class="est-unstyled-link">http://www.baidu.com</a>
+```
+```less
+.est-unstyled-link {
+    .unstyled-link();
+}
+```
+
+### `.drop-cap()`
+
+用于实现文字下沉样式，提供了两种mixin分别实现“首字下沉”和“多字下沉”。
+```less
+.drop-cap(@line-height, @lines, @margin-right);
+.drop-cap-inline(@context-line-height, @lines, @margin-right);
+```
+* `@line-height`参数表示行高，必填。单位可选`%`/`px`/`em`，或者直接使用缩放因子，例如：`2`；
+* `@lines`参数表示下沉的行数，可选。默认为两行。输入格式为数字；
+* `@margin-right`参数表示“下沉文字”与普通文字的间隔，可选。默认为`1em`（相对于普通字体的大小）；
+* `@context-line-height`参数表示上下文的行高，必填；
+
+#### 示例
+```html
+<div class="est-drop-cap-context">
+    <div class="est-drop-cap">
+        <a href="#">百度</a>（Nasdaq简称：BIDU）是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，致力于向人们提供“简单，可依赖”的信息获取方式。“百度”二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句“众里寻他千百度”，象征着百度对中文信息检索技术的执著追求。
+    </div>
+    <div class="est-drop-cap-2">
+        1999年底，身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于2000年1月1日在中关村创建了百度公司。从最初的不足10人发展至今，员工人数超过18000人。如今的百度，已成为中国最受欢迎、影响力最大的中文网站。
+    </div>
+    <div>
+        <span class="est-drop-cap-inline">百度拥有数千名研发工程师</span>，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。
+    </div>
+</div>
+```
+```less
+.est-drop-cap-context {
+    font-size: 1em;
+    line-height: 24px;
+}
+.est-drop-cap {
+    .drop-cap(24px);
+}
+.est-drop-cap-2 {
+    .drop-cap(24px, 3, 10px);
+}
+.est-drop-cap-inline {
+    .drop-cap-inline(24px, 2);
+}
+```
+
+### `.rhythm()`
+用于按照“[垂直的旋律](http://blog.justfont.com/2012/08/%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%EF%BC%9A%E6%B9%AF%E5%93%81%EF%BC%8D%EF%BC%8D%E5%9E%82%E7%9B%B4%E7%9A%84%E9%9F%BB%E5%BE%8B/)”来排版文字，适合中文阅读。一般用于多段文字（文章）的显示。
+```less
+.rhythm(@font-size, @line-height);          // 规范化作用域内所有块级元素的上下边框、行高、字体大小，使其符合“垂直的旋律”
+
+// 以下mixin是附属功能，只能在使用`.rhythm`之后使用（必须处于同一个域）
+// 基础高度(px) = 行高 / 2;
+
+.rhythm-line-height(@lines);                // 设置行高为 (n * 基础高度 * 2)
+.rhythm-margin(@lines);                     // 设置上下外边距为 (n * 基础高度)
+.rhythm-margin-top(@lines);                 // 设置上外边距为 (n * 基础高度)
+.rhythm-margin-bottom(@lines);              // 设置下外边距为 (n * 基础高度)
+.rhythm-padding(@lines, @border);           // 设置上下内边距为 (n * 基础高度) - 边框宽度，同时设置上边框
+.rhythm-padding-top(@lines, @border);       // 设置上内边距为 (n * 基础高度) - 边框宽度，同时设置上边框
+.rhythm-padding-bottom(@lines, @border);    // 设置下内边距为 (n * 基础高度) - 边框宽度，同时设置上边框
+```
+* `@font-size`参数表示文字的大小，可选。默认为14px。此参数必须以像素为单位；
+* `@line-height`参数表示行高的大小，可选。默认为1.8。单位可选`%`/`px`/`em`，或者直接使用缩放因子，例如：`2`；
+* `@lines`参数表示行数，可选。默认值为1。输入格式为纯数字。
+* `@border`参数表示边框的样式，可选。默认值为false（表示不加边框）。输入格式为：`npx solid #CCC`，边框宽度必须以像素为单位；
+
+#### 示例
+```html
+<div class="entry">
+    <h1>标题一</h1>
+    <h2>标题二</h2>
+    <h3>标题三</h3>
+    <h4>标题四</h4>
+    <h5>标题五</h5>
+    <h6>标题六</h6>
+    <blockquote>字型排版學中的空間就像是音樂中的時間。空間可以被切成無限多塊，但在設計上，只要一些合於比例的間隙，卻比一大堆任意而無理的切割還有用許多。</blockquote>
+    <div>這句話完整詮釋了「垂直的韻律」(Vertical Rhythm)在字型排版上的用處：在音樂中，好的節奏遠比隨意加之的額外裝飾還要來得重要；</div>
+    <p>而在排版中，若每個區塊間的距離符合固定比例，那麼這段文章看起來就會很有韻律感，版面整齊、好看以外，更增加了可閱讀性，讓讀者更願意花長時間閱讀。祕訣就在以「基本行距」為單位決定版面上各區塊的距離。</p>
+</div>
+```
+```less
+.entry {
+    .rhythm(14px, 2);
+    blockquote {
+        .rhythm-margin(1);
+        .rhythm-padding(1, 1px solid #CCC);
+    }
+    p {
+        .rhythm-line-height(2);
+        .rhythm-margin(2);
+        .rhythm-padding(2);
+        background: #fee9cc;
+    }
 }
 ```
