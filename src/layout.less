@@ -330,9 +330,9 @@
 
 
 //
-// 自适应宽度视频、flash或iframe
+// 自适应布局：长宽比固定的视频、flash、图片、iframe或class为`est-fixed-ratio`的元素
 //
-// 固定尺寸比例，固定控制栏高度（默认为0）
+// 固定尺寸比例，固定额外高度（默认为0，可以用作视频播放器的控制栏高度）
 // .fluid-video > embed
 // .fluid-video > object
 // .fluid-video > iframe
@@ -340,13 +340,13 @@
 //
 // http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 
-.est-layout-fluid-video(@videoWidth, @videoHeight, @barHeight: 0) {
+.est-layout-fluid-fixed-ratio(@videoWidth, @videoHeight, @barHeight: 0) {
     position: relative;
     padding-bottom: ((unit(@videoHeight) / unit(@videoWidth)) * 100%); /* 16:9 */
     padding-top: @barHeight;
     height: 0;
 
-    object, embed, iframe, div {
+    object, embed, iframe, img, .est-fixed-ratio {
         position: absolute;
         top: 0;
         left: 0;
