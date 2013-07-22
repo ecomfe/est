@@ -37,16 +37,16 @@
 // 不支持IE 9及以下
 
 .placeholder(@color: @default-input-placeholder-color) {
-    :-moz-placeholder {
+    &:-moz-placeholder {
         color: @color;
     }
-    ::-moz-placeholder {
+    &::-moz-placeholder {
         color: @color;
     }
-    ::-webkit-input-placeholder {
+    &::-webkit-input-placeholder {
         color: @color;
     }
-    :-ms-input-placeholder {
+    &:-ms-input-placeholder {
         color: @color;
     }
 }
