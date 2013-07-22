@@ -11,6 +11,11 @@ est是一个基于LESS的样式工具库，帮助您更轻松地书写LESS代码
 ## 快速开始
 
 下载：
+
+[直接下载文件](https://github.com/ecomfe/est/releases/tag/1.0.0)
+
+或
+
 ```bash
 $ git clone https://github.com/ecomfe/est.git
 ```
