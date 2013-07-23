@@ -340,10 +340,10 @@
 //
 // http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 
-.est-layout-fluid-fixed-ratio(@videoWidth, @videoHeight, @barHeight: 0) {
+.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight: 0) {
     position: relative;
-    padding-bottom: ((unit(@videoHeight) / unit(@videoWidth)) * 100%); /* 16:9 */
-    padding-top: @barHeight;
+    padding-bottom: ((unit(@height) / unit(@width)) * 100%); /* 16:9 */
+    padding-top: @extraHeight;
     height: 0;
 
     object, embed, iframe, img, .est-fixed-ratio {
