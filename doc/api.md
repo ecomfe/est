@@ -657,11 +657,33 @@ body {
 ### `.est-layout-horizontal-list()`
 
 用于把列表变成水平，在做菜单样式或是卡片样式时有用。
+
 ```less
 .est-layout-horizontal-list(@gap, @direction: left)
 ```
+
 * `@gap`参数表示水平方向上列表项之间的间隔长度（任意单位），必填；
 * `@direction`参数表示水平浮动的方向，可选。默认为left。可选指为`right`/`left`；
+
+
+### `.est-layout-fluid-fixed-ratio()`
+
+在自适应宽度情况下，确保视频、flash、图片、iframe或`class`为`.est-fixed-ratio`的元素高宽比固定。如下图所示：
+
+![image](./fluid-fixed-ratio.png)
+
+width和height是固定比例的高宽比，随着容器的变化而变化，extraHeight是额外的固定高度，不会随容器宽度变化而变化。
+
+```less
+.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight);
+```
+
+* `@width`参数表示宽度，必填
+* `@height`参数表示高度，必填
+* `@extraHeight`参数表示除宽度比外，额外的固定高度，这部分高度不会随宽度的变化而变化
+
+##### 示例
+[DEMO地址](http://cdpn.io/khIqH)
 
 ***
 
