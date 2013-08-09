@@ -255,56 +255,47 @@
         @line: (unit(@line-height) * @font-size) / 2;
     }
 
+    .rhythm-line();
     .rhythm-line-height(@lines: 1) {
-        .rhythm-line();
         line-height: @line * 2 * @lines;
     }
 
     .rhythm-margin(@lines: 1) {
-        .rhythm-line();
         margin-top: (@line * @lines);
         margin-bottom: (@line * @lines);
     }
     .rhythm-margin-top(@lines: 1) {
-        .rhythm-line();
         margin-top: (@line * @lines);
     }
     .rhythm-margin-bottom(@lines: 1) {
-        .rhythm-line();
         margin-bottom: (@line * @lines);
     }
 
     .rhythm-padding(@lines: 1, @border: false) when not (@border = false) {
         @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
-        .rhythm-line();
         padding-top: (@line * @lines - unit(@border-width));
         padding-bottom: (@line * @lines - unit(@border-width));
         border-top: @border;
         border-bottom: @border;
     }
     .rhythm-padding(@lines: 1, @border: false) when (@border = false) {
-        .rhythm-line();
         padding-top: (@line * @lines);
         padding-bottom: (@line * @lines);
     }
     .rhythm-padding-top(@lines: 1, @border: false) when not (@border = false) {
         @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
-        .rhythm-line();
         padding-top: (@line * @lines - unit(@border-width));
         border-top: @border;
     }
     .rhythm-padding-top(@lines: 1, @border: false) when (@border = false) {
-        .rhythm-line();
         padding-top: (@line * @lines);
     }
     .rhythm-padding-bottom(@lines: 1, @border: false) when not (@border = false) {
         @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
-        .rhythm-line();
         padding-bottom: (@line * @lines - unit(@border-width));
         border-bottom: @border;
     }
     .rhythm-padding-bottom(@lines: 1, @border: false) when (@border = false) {
-        .rhythm-line();
         padding-bottom: (@line * @lines);
     }
 
