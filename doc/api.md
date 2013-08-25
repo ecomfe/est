@@ -336,7 +336,7 @@ IE7以下的默认的标题字体族。IE7以下在匹配到第一个字体后�
 ```less
 .animation(@animation, ...)
 ```
-每个`@transition`的写法请参考：
+每个`@animation`的写法请参考：
 * [CSS Animations](http://dev.w3.org/csswg/css-animations/#animation-shorthand-property)
 * [animation - CSS|MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
 
