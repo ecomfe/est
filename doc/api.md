@@ -24,11 +24,18 @@
 
 默认值：`16`。
 
+
 ### `@default-text-color`
 
 默认的文字颜色。
 
 默认值：`#666666`。
+
+### `@default-text-color`
+
+默认的文字颜色。
+
+默认值： `#666666`。
 
 
 ### `@default-input-placeholder-color`
@@ -36,6 +43,34 @@
 文本输入框占位文字的默认颜色。
 
 默认值：`#999999`。
+
+
+### `@default-base-font-family`
+
+默认的普通字体族。
+
+默认值： `'Helvetica Neue', Arial, sans-serif`。
+
+
+### `@default-heading-font-family`
+
+默认的标题字体族。
+
+默认值： `'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif`。
+
+
+### `@default-old-ie-heading-font-family`
+
+IE7以下的默认的标题字体族。IE7以下在匹配到第一个字体后，不会根据字符再在font-family列表中进行fallback。
+
+默认值： `'Microsoft Yahei', Arial, sans-serif`。
+
+
+### `@default-code-font-family`
+
+默认的代码字体。
+
+默认值：`Monaco, Consolas, monospace`。
 
 
 ### `@default-border-radius`
@@ -208,7 +243,7 @@
 .transition(@transition, ...)
 ```
 每个`@transition`的写法请参考：
-* [CSS Transitions](http://dev.w3.org/csswg/css-transitions/#the-transition-shorthand-property-)
+* [CSS Transitions](http://dev.w3.org/csswg/css-transitions/#the-transition-shorthand-property)
 * [transition - CSS|MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
 
 ##### 示例
@@ -291,6 +326,172 @@
 
 .box-2 {
   .transition-delay(0, 0.5s);
+}
+```
+
+
+### `.animation()`
+
+动画（animation）设定。
+```less
+.animation(@animation, ...)
+```
+每个`@transition`的写法请参考：
+* [CSS Animations](http://dev.w3.org/csswg/css-animations/#animation-shorthand-property)
+* [animation - CSS|MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+
+##### 示例
+```less
+.box-1 {
+  .animation(rotate 2s linear);
+}
+
+.box-2 {
+  .animation(fly-in 0.5s ease-out, fade-in 0.5s ease-out);
+}
+```
+
+### `.animation-name()`
+
+设定动画（animation）对应的`@keyframes`规则名称。
+```less
+.animation-name(@name, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-name(rotate);
+}
+
+.box-2 {
+  .animation-name(fly-in, fade-in);
+}
+```
+
+### `.animation-duration()`
+
+设定动画（animation）的持续时间。
+```less
+.animation-duration(@duration, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-duration(3s);
+}
+
+.box-2 {
+  .animation-duration(0.5s, 3s);
+}
+```
+
+### `.animation-timing-function()`
+
+设定动画（animation）的时间函数。
+```less
+.animation-timing-function(@timing-function, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-timing-function(linear);
+}
+
+.box-2 {
+  .animation-timing-function(ease, linear);
+}
+```
+
+### `.animation-iteration-count()`
+
+设定动画（animation）的循环次数。
+```less
+.animation-iteration-count(@count, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-iteration-count(5);
+}
+
+.box-2 {
+  .animation-iteration-count(3, infinite);
+}
+```
+
+### `.animation-direction()`
+
+设定动画（animation）播放的正反方向。
+```less
+.animation-direction(@direction, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-direction(reverse);
+}
+
+.box-2 {
+  .animation-direction(normal, alternate);
+}
+```
+
+### `.animation-play-state()`
+
+设定动画（animation）的播放状态。
+```less
+.animation-play-state(@state, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-play-state(paused);
+}
+
+.box-2 {
+  .animation-play-state(paused, running);
+}
+```
+
+### `.animation-delay()`
+
+设定动画（animation）的播放延迟时间。
+```less
+.animation-delay(@delay, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-delay(2s);
+}
+
+.box-2 {
+  .animation-delay(0s, 1s);
+}
+```
+
+### `.animation-fill-mode()`
+
+设定动画（animation）的属性填充方式。
+```less
+.animation-fill-mode(@mode, ...)
+```
+
+##### 示例
+```less
+.box-1 {
+  .animation-fill-mode(backwards);
+}
+
+.box-2 {
+  .animation-fill-mode(forwards, both);
 }
 ```
 
@@ -657,11 +858,33 @@ body {
 ### `.est-layout-horizontal-list()`
 
 用于把列表变成水平，在做菜单样式或是卡片样式时有用。
+
 ```less
 .est-layout-horizontal-list(@gap, @direction: left)
 ```
+
 * `@gap`参数表示水平方向上列表项之间的间隔长度（任意单位），必填；
 * `@direction`参数表示水平浮动的方向，可选。默认为left。可选指为`right`/`left`；
+
+
+### `.est-layout-fluid-fixed-ratio()`
+
+在自适应宽度情况下，确保视频、flash、图片、iframe或`class`为`.est-fixed-ratio`的元素高宽比固定。如下图所示：
+
+![image](./fluid-fixed-ratio.png)
+
+width和height是固定比例的高宽比，随着容器的变化而变化，extraHeight是额外的固定高度，不会随容器宽度变化而变化。
+
+```less
+.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight);
+```
+
+* `@width`参数表示宽度，必填
+* `@height`参数表示高度，必填
+* `@extraHeight`参数表示除宽度比外，额外的固定高度，这部分高度不会随宽度的变化而变化
+
+##### 示例
+[DEMO地址](http://cdpn.io/khIqH)
 
 ***
 
@@ -670,6 +893,22 @@ body {
 ### 依赖于
 
 * `util`
+
+### `.font-family()`
+
+按全局设定输出字体族设定。
+```less
+.font-family(@type)
+```
+* `@type`为字体类型，目前提供`base`/`heading`/`code`三类，分别对应普通文本、标题、代码。
+
+#### 示例
+```less
+.est-text {
+    .font-family(heading);
+}
+```
+
 
 ### `.ellipsis()`
 

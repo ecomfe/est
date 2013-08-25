@@ -8,6 +8,23 @@
 @import "util.less";
 
 
+//
+// .base-font-family
+
+.font-family(base) {
+    font-family: @default-base-font-family;
+}
+.font-family(heading) {
+    font-family: @default-heading-font-family;
+}
+.font-family(heading) when (@support-old-ie) {
+    // IE7-下，匹配到第一个字体后不会根据字符继续在family列表中进行fallback
+    *font-family: @default-old-ie-heading-font-family;
+}
+.font-family(code) {
+    font-family: @default-code-font-family;
+}
+
 
 //
 // .ellipsis
@@ -255,56 +272,47 @@
         @line: (unit(@line-height) * @font-size) / 2;
     }
 
+    .rhythm-line();
     .rhythm-line-height(@lines: 1) {
-        .rhythm-line();
         line-height: @line * 2 * @lines;
     }
 
     .rhythm-margin(@lines: 1) {
-        .rhythm-line();
         margin-top: (@line * @lines);
         margin-bottom: (@line * @lines);
     }
     .rhythm-margin-top(@lines: 1) {
-        .rhythm-line();
         margin-top: (@line * @lines);
     }
     .rhythm-margin-bottom(@lines: 1) {
-        .rhythm-line();
         margin-bottom: (@line * @lines);
     }
 
     .rhythm-padding(@lines: 1, @border: false) when not (@border = false) {
         @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
-        .rhythm-line();
         padding-top: (@line * @lines - unit(@border-width));
         padding-bottom: (@line * @lines - unit(@border-width));
         border-top: @border;
         border-bottom: @border;
     }
     .rhythm-padding(@lines: 1, @border: false) when (@border = false) {
-        .rhythm-line();
         padding-top: (@line * @lines);
         padding-bottom: (@line * @lines);
     }
     .rhythm-padding-top(@lines: 1, @border: false) when not (@border = false) {
         @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
-        .rhythm-line();
         padding-top: (@line * @lines - unit(@border-width));
         border-top: @border;
     }
     .rhythm-padding-top(@lines: 1, @border: false) when (@border = false) {
-        .rhythm-line();
         padding-top: (@line * @lines);
     }
     .rhythm-padding-bottom(@lines: 1, @border: false) when not (@border = false) {
         @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
-        .rhythm-line();
         padding-bottom: (@line * @lines - unit(@border-width));
         border-bottom: @border;
     }
     .rhythm-padding-bottom(@lines: 1, @border: false) when (@border = false) {
-        .rhythm-line();
         padding-bottom: (@line * @lines);
     }
 
@@ -359,29 +367,47 @@
 .drop-cap-inline(...) when (@support-old-ie) {
     _display: inline;
 }
-.drop-cap-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) {
+.drop-cap-inline(@context-line-height) {
+    @lines: 2;
+    @margin-right: (1em / 2);
+    .drop-cap-inline(@context-line-height, @lines, @margin-right);
+}
+.drop-cap-inline(@context-line-height, @lines) {
+    @margin-right: (1em / @lines);
+    .drop-cap-inline(@context-line-height, @lines, @margin-right);
+}
+.drop-cap-inline(@context-line-height, @lines, @margin-right) {
     float: left;
     margin-right: @margin-right;
     font-size: unit(@lines) * 1em;
 }
 // TODO isnumber 函数也可以通过 `1px` 这样的输入
-.drop-cap-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) when (isnumber(@context-line-height)) {
+.drop-cap-inline(@context-line-height, @lines, @margin-right) when (isnumber(@context-line-height)) {
     line-height: @context-line-height;
 }
-.drop-cap-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) when (ispercentage(@context-line-height)), (isem(@context-line-height)) {
+.drop-cap-inline(@context-line-height, @lines, @margin-right) when (ispercentage(@context-line-height)), (isem(@context-line-height)) {
     line-height: @context-line-height;
 }
-.drop-cap-inline(@context-line-height, @lines: 2, @margin-right: (1em / @lines)) when (ispixel(@context-line-height)) {
+.drop-cap-inline(@context-line-height, @lines, @margin-right) when (ispixel(@context-line-height)) {
     line-height: @context-line-height * @lines;
 }
 
-.drop-cap(@line-height, @lines: 2, @margin-right: (1em / @lines)) {
+.drop-cap(@line-height) {
+    @lines: 2;
+    @margin-right: (1em / 2);
+    .drop-cap(@line-height, @lines, @margin-right);
+}
+.drop-cap(@line-height, @lines) {
+    @margin-right: (1em / @lines);
+    .drop-cap(@line-height, @lines, @margin-right);
+}
+.drop-cap(@line-height, @lines, @margin-right) {
     overflow: hidden;       // 不能使用after和before伪元素清除浮动
     line-height: @line-height;
     &:first-letter {
         .drop-cap-inline(@line-height, @lines, @margin-right);
     }
 }
-.drop-cap(@context-line-height, @lines: 2) when (@support-old-ie) {
+.drop-cap(@line-height, @lines, @margin-right) when (@support-old-ie) {
     _zoom: 1;
 }
