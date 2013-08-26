@@ -10,7 +10,7 @@ est是一个基于LESS的样式工具库，帮助您更轻松地书写LESS代码
 
 ## 快速开始
 
-下载：
+下载Release版本：
 
 [直接下载文件](https://github.com/ecomfe/est/releases/tag/1.0.0)
 
@@ -36,3 +36,4 @@ $ git clone https://github.com/ecomfe/est.git
 
 * [API说明](https://github.com/ecomfe/est/blob/master/doc/api.md)
 * [Typography相关示例](http://ecomfe.github.io/est/example/typography.html)
+* [Effects相关示例](http://ecomfe.github.io/est/example/effects.html)
