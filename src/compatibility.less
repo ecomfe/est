@@ -169,6 +169,88 @@
             transition-delay: @delays;
 }
 
+
+//
+// Animations
+//
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+
+
+.animation(@animation, ...) {
+    @animations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-transition: @animations;
+       -moz-transition: @animations;
+        -ms-transition: @animations;
+         -o-transition: @animations;
+            transition: @animations;
+}
+.animation-name(@name: none, ...) {
+    @names: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-name: @names;
+       -moz-animation-name: @names;
+        -ms-animation-name: @names;
+         -o-animation-name: @names;
+            animation-name: @names;
+}
+.animation-duration(@duration: 0s, ...) {
+    @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-duration: @durations;
+       -moz-animation-duration: @durations;
+        -ms-animation-duration: @durations;
+         -o-animation-duration: @durations;
+            animation-duration: @durations;
+}
+.animation-timing-function(@timing-function: ease, ...) {
+    @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-timing-function: @timing-functions;
+       -moz-animation-timing-function: @timing-functions;
+        -ms-animation-timing-function: @timing-functions;
+         -o-animation-timing-function: @timing-functions;
+            animation-timing-function: @timing-functions;
+}
+.animation-iteration-count(@count: 1, ...) {
+    @counts: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-iteration-count: @counts;
+       -moz-animation-iteration-count: @counts;
+        -ms-animation-iteration-count: @counts;
+         -o-animation-iteration-count: @counts;
+            animation-iteration-count: @counts;
+}
+.animation-direction(@direction: normal, ...) {
+    @directions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-direction: @directions;
+       -moz-animation-direction: @directions;
+        -ms-animation-direction: @directions;
+         -o-animation-direction: @directions;
+            animation-direction: @directions;
+}
+.animation-play-state(@state: normal, ...) {
+    @states: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-play-state: @states;
+       -moz-animation-play-state: @states;
+        -ms-animation-play-state: @states;
+         -o-animation-play-state: @states;
+            animation-play-state: @states;
+}
+.animation-delay(@delay: 0s, ...) {
+    @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-delay: @delays;
+       -moz-animation-delay: @delays;
+        -ms-animation-delay: @delays;
+         -o-animation-delay: @delays;
+            animation-delay: @delays;
+}
+.animation-fill-mode(@mode: none, ...) {
+    @modes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-fill-mode: @modes;
+       -moz-animation-fill-mode: @modes;
+        -ms-animation-fill-mode: @modes;
+         -o-animation-fill-mode: @modes;
+            animation-fill-mode: @modes;
+}
+
+
 //
 // Transformations
 //

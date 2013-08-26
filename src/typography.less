@@ -8,6 +8,23 @@
 @import "util.less";
 
 
+//
+// .base-font-family
+
+.font-family(base) {
+    font-family: @default-base-font-family;
+}
+.font-family(heading) {
+    font-family: @default-heading-font-family;
+}
+.font-family(heading) when (@support-old-ie) {
+    // IE7-下，匹配到第一个字体后不会根据字符继续在family列表中进行fallback
+    *font-family: @default-old-ie-heading-font-family;
+}
+.font-family(code) {
+    font-family: @default-code-font-family;
+}
+
 
 //
 // .ellipsis

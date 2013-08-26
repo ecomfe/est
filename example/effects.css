@@ -1,0 +1,77 @@
+.example-text-effects {
+  font-size: 48px;
+  line-height: 1;
+  background-color: #add8e6 !important;
+  font-weight: bold;
+}
+.example-text-effects h1,
+.example-text-effects h2,
+.example-text-effects h3,
+.example-text-effects h4,
+.example-text-effects h5,
+.example-text-effects h6,
+.example-text-effects div,
+.example-text-effects p,
+.example-text-effects section,
+.example-text-effects header,
+.example-text-effects footer,
+.example-text-effects article,
+.example-text-effects ul,
+.example-text-effects ol,
+.example-text-effects pre,
+.example-text-effects table,
+.example-text-effects figure {
+  line-height: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 0;
+}
+.example-text-effects h1 {
+  line-height: 96px;
+}
+.example-text-effects h1 {
+  font-size: 96px;
+}
+.example-text-effects h2 {
+  font-size: 72px;
+}
+.example-text-effects h3 {
+  font-size: 57.599999999999994px;
+}
+.example-text-effects h4,
+.example-text-effects h5,
+.example-text-effects h6 {
+  font-size: 48px;
+}
+.est-embossed {
+  color: #6699cc;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+.est-blind-embossed {
+  color: #b9deea;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+.est-debossed {
+  color: rgba(91, 145, 200, 0.8);
+  text-shadow: 0 1px 1px #add8e6, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.est-blind-debossed {
+  color: rgba(161, 210, 226, 0.8);
+  text-shadow: 0 1px 1px #add8e6, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.est-3d {
+  color: #ffffff;
+  text-shadow: 0 1px 0 #d8d8d8, 0 2px 0 #cfcfcf, 0 3px 0 #c6c6c6, 0 4px 0 #bdbdbd, 0 5px 0 #a4a4a4, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 1px 1px 3px rgba(0, 0, 0, 0.3), 3px 3px 5px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+.est-glow-1 {
+  color: #FFF;
+  text-shadow: 0 0 10px;
+}
+.est-glow-2 {
+  color: #FFF;
+  text-shadow: 0 0 20px #ffd700;
+}
+.est-blurry {
+  color: transparent;
+  text-shadow: 0 0 0.15em #ffffff;
+}
