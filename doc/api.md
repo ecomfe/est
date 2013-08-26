@@ -180,7 +180,7 @@ IE7以下的默认的标题字体族。IE7以下在匹配到第一个字体后�
 ```less
 .opacity(@opacity)
 ```
-* `@opacity`可取0-100，默认为100。
+* `@opacity`可取0-100，默认为`100`。
 
 ### `.border-radius()`
 
@@ -864,7 +864,7 @@ body {
 ```
 
 * `@gap`参数表示水平方向上列表项之间的间隔长度（任意单位），必填；
-* `@direction`参数表示水平浮动的方向，可选。默认为left。可选指为`right`/`left`；
+* `@direction`参数表示水平浮动的方向，可选。默认为`left`。可选指为`right`/`left`；
 
 
 ### `.est-layout-fluid-fixed-ratio()`
@@ -1201,5 +1201,114 @@ width和height是固定比例的高宽比，随着容器的变化而变化，ext
         .rhythm-padding(2);
         background: #fee9cc;
     }
+}
+```
+
+
+## Effects
+
+预设视觉效果。
+
+### 依赖于
+
+* `variables`
+* `compatibility`
+* `util`
+
+### `.embossed-text()`
+
+文字浮凸效果。
+```less
+.embossed-text(@bg-color)
+.embossed-text(@bg-color, @fg-color)
+```
+* `@bg-color`为文字所在区域的背景色；
+* `@fg-color`为文字前景色，不填则根据背景生成。
+
+#### 示例
+```less
+.est-blind-embossed {
+    .embossed-text(lightblue);
+}
+
+.est-embossed {
+    .embossed-text(lightblue, #6699CC);
+}
+```
+
+### `.debossed-text()`
+
+文字凹陷效果。
+
+```less
+.debossed-text(@bg-color)
+.debossed-text(@bg-color, @fg-color)
+```
+* `@bg-color`为文字所在区域的背景色；
+* `@fg-color`为文字前景色，不填则根据背景生成。
+
+#### 示例
+```less
+.est-blind-debossed {
+    .debossed-text(lightblue);
+}
+
+.est-debossed {
+    .debossed-text(lightblue, #6699CC);
+}
+```
+
+### `.3d-text()`
+
+3D文字效果。
+
+```less
+.3d-text(@color)
+```
+* `@color`为文字颜色。
+
+#### 示例
+```less
+.est-3d {
+    .3d-text(#FFFFFF);
+}
+```
+
+### `.glow-text()`
+
+文字发光效果。
+
+```less
+.glow-text(@radius)
+.glow-text(@color, @radius)
+```
+* `@color`为文字颜色，不填则发光颜色为文字颜色；
+* `@radius`为发光半径，默认值为`5px`。
+
+#### 示例
+```less
+.est-glow-1 {
+    .glow-text(10px);
+}
+
+.est-glow-2 {
+    .glow-text(gold, 20px);
+}
+```
+
+### `.blurry-text()`
+
+文字模糊效果。
+
+```less
+.blurry-text(@color, @radius)
+```
+* `@color`为文字颜色；
+* `@radius`为模糊半径，默认值为`0.15em`。
+
+#### 示例
+```less
+.est-blurry {
+    .blurry-text(#FFFFFF);
 }
 ```
