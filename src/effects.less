@@ -8,6 +8,7 @@
 
 @import 'variables';
 @import 'compatibility';
+@import 'util';
 
 // ## 文字效果
 
@@ -74,4 +75,6 @@
 .blurry-text(@color, @radius: 0.15em) {
     color: transparent;
     text-shadow: 0 0 @radius @color;
+    // 0.1px of spread distance made the shadow visible under IE10
+    text-shadow: 0 0 @radius 0.1px @color;
 }
