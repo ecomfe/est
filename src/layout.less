@@ -328,3 +328,29 @@
     }
 }
 
+
+//
+// 在自适应宽度情况下，确保视频、flash、图片、iframe或`class`为`.est-fixed-ratio`的元素高宽比固定
+//
+// 固定尺寸比例，固定额外高度（默认为0，可以用作视频播放器的控制栏高度）
+// .fluid-video > embed
+// .fluid-video > object
+// .fluid-video > iframe
+// .fluid-video > div
+//
+// http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+
+.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight: 0) {
+    position: relative;
+    padding-bottom: ((unit(@height) / unit(@width)) * 100%); /* 16:9 */
+    padding-top: @extraHeight;
+    height: 0;
+
+    object, embed, iframe, img, .est-fixed-ratio {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
