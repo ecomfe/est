@@ -1,0 +1,45 @@
+@import "../src/all.less";
+@default-font-size: 14;
+// @support-old-ie: true;
+// @support-html5: true;
+
+@bg-color: lightblue;
+.example-text-effects {
+    .rhythm(48px, 1);
+    background-color: @bg-color !important;
+    font-weight: bold;
+}
+
+.est-embossed {
+    .embossed-text(@bg-color, #6699CC);
+}
+
+.est-blind-embossed {
+    .embossed-text(@bg-color);
+}
+
+.est-debossed {
+    .debossed-text(@bg-color, #6699CC);
+}
+
+.est-blind-debossed {
+    .debossed-text(@bg-color);
+}
+
+.est-3d {
+    .3d-text(#FFF);
+}
+
+.est-glow-1 {
+    color: #FFF;
+    .glow-text(10px);
+}
+
+.est-glow-2 {
+    color: #FFF;
+    .glow-text(gold, 20px);
+}
+
+.est-blurry {
+    .blurry-text(#FFF);
+}

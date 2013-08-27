@@ -5,15 +5,32 @@
     <title>Typography - EST</title>
     <link href="prettify/prettify.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="prettify/run_prettify.js"></script>
-    <link rel="stylesheet/less" href="example.less" />
+<!--     <link rel="stylesheet/less" href="example.less" />
     <link rel="stylesheet/less" href="typography.less" />
-    <!--
+ -->    
     <link rel="stylesheet" href="example.css" />
     <link rel="stylesheet" href="typography.css" />
-    -->
+    
 </head>
 <body>
     <h1>Typography</h1>
+
+    <h2>Font-family</h2>
+    <p class="desc">按全局设定输出字体族设定。</p>
+    <pre class="code prettyprint">&lt;h3 class="est-heading"&gt;The Game of Thrones&lt;/h3&gt;
+&lt;div class="est-text"&gt;When you play the game of thrones, you win or you die. There is no middle ground.&lt;/div&gt;
+&lt;h3 class="est-heading"&gt;权力的游戏&lt;/h3&gt;
+&lt;div class="est-text"&gt;你玩权利的游戏，结局要么赢、要么死。没有其他选择。&lt;/div&gt;
+&lt;div class="est-code"&gt;alert('Hello world.');&lt;/div&gt;
+</pre>
+    <div class="example">
+        <h3 class="est-heading">The Game of Thrones</h3>
+        <div class="est-text">When you play the game of thrones, you win or you die. There is no middle ground.</div>
+        <h3 class="est-heading">权力的游戏</h3>
+        <div class="est-text">你玩权利的游戏，结局要么赢、要么死。没有其他选择。</div>
+        <div class="est-code">alert('Hello world.');</div>
+    </div>
+
 
     <h2>Ellipsis</h2>
     <p class="desc">省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。提供单行省略号和多行省略号（只支持webkit内核）两种mixin。</p>

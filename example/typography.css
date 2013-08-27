@@ -1,3 +1,13 @@
+.est-heading {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+  *font-family: 'Microsoft Yahei', Arial, sans-serif;
+}
+.est-text {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.est-code {
+  font-family: Monaco, Consolas, monospace;
+}
 .est-ellipsis {
   width: 10em;
   overflow: hidden;
@@ -58,8 +68,6 @@
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   *clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-
 }
 .est-img-replace {
   display: inline-block;
@@ -94,25 +102,28 @@
 .est-unstyled-link:focus {
   outline: none;
 }
-.est-initials-context {
+.est-drop-cap-context {
   font-size: 1em;
   line-height: 2;
 }
-.est-initials {
+.est-drop-cap {
   overflow: hidden;
+  line-height: 2;
   _zoom: 1;
 }
-.est-initials:first-letter {
+.est-drop-cap:first-letter {
   _display: inline;
   float: left;
   margin-right: 0.5em;
   font-size: 2em;
   line-height: 2;
 }
-.est-initials-2 {
+.est-drop-cap-2 {
   overflow: hidden;
+  line-height: 24px;
+  _zoom: 1;
 }
-.est-initials-2:first-letter {
+.est-drop-cap-2:first-letter {
   _display: inline;
   float: left;
   margin-right: 10px;
@@ -120,7 +131,7 @@
   line-height: 24px;
   line-height: 72px;
 }
-.est-initials-inline {
+.est-drop-cap-inline {
   _display: inline;
   float: left;
   margin-right: 0.5em;

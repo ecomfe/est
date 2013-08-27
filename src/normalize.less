@@ -13,6 +13,7 @@
 
 @import 'variables';
 @import 'compatibility';
+@import 'typography';
 
 .global-normalize() {
     /*! normalize.css v1.1.2 | MIT License | git.io/normalize */
@@ -44,7 +45,7 @@
     input,
     select,
     textarea {
-        font-family: sans-serif;
+        .font-family(base);
     }
 
     /**
@@ -172,8 +173,7 @@
     kbd,
     pre,
     samp {
-        font-family: monospace, serif;
-        _font-family: 'courier new', monospace;
+        .font-family(code);
         font-size: 1em;
     }
 
