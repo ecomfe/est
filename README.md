@@ -12,7 +12,7 @@ est是一个基于LESS的样式工具库，帮助您更轻松地书写LESS代码
 
 下载Release版本：
 
-[直接下载文件](https://github.com/ecomfe/est/releases/tag/1.0.0)
+[直接下载文件](https://github.com/ecomfe/est/releases/)
 
 或
 
