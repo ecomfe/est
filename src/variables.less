@@ -7,6 +7,8 @@
 @default-text-color: #666666;
 @default-input-placeholder-color: #999999;
 @default-base-font-family: 'Helvetica Neue', Arial, sans-serif;
+// * Windows下的Chrome不认识Hiragino Sans GB，必须加W3
+// * IE6/7下如果已经找到字体，不会再按字符进行fallback，故必须将雅黑置首位，写上Arial是为了在雅黑的情况下显示更好的英文字体
 @default-heading-font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
 @default-old-ie-heading-font-family: 'Microsoft Yahei', Arial, sans-serif;
 @default-code-font-family: Monaco, Consolas, monospace;
