@@ -65,7 +65,7 @@
 
 .opacity(@opacity: 100) {
     opacity: @opacity / 100;
-    filter: ~`"alpha(opacity=@{opacity})"`;
+    filter: ~"alpha(opacity=@{opacity})";
 }
 
 // Border Radius
@@ -114,7 +114,40 @@
     .border-bottom-left-radius(@radius-x ~"/" @radius-y);
 }
 
+.border-top-radius(@radius) {
+    .border-top-left-radius(@radius);
+    .border-top-right-radius(@radius);
+}
+.border-top-radius(@radius-x, @radius-y) {
+    .border-top-radius(@radius-x ~"/" @radius-y);
+}
+
+.border-right-radius(@radius) {
+    .border-top-right-radius(@radius);
+    .border-bottom-right-radius(@radius);
+}
+.border-right-radius(@radius-x, @radius-y) {
+    .border-right-radius(@radius-x ~"/" @radius-y);
+}
+
+.border-bottom-radius(@radius) {
+    .border-bottom-right-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+.border-bottom-radius(@radius-x, @radius-y) {
+    .border-bottom-radius(@radius-x ~"/" @radius-y);
+}
+
+.border-left-radius(@radius) {
+    .border-top-left-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+.border-left-radius(@radius-x, @radius-y) {
+    .border-left-radius(@radius-x ~"/" @radius-y);
+}
+
 // Drop shadows
+
 // see `../test/box-shadow.less`
 .box-shadow(@shadow: @default-box-shadow, ...) {
     @shadows: ~`(function() { var args = "@{arguments}".replace(/[\[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,\s+/g, ' '); } return args;})()`;
