@@ -5,7 +5,7 @@
 // ### Usage:
 // 解决常见兼容性问题，如浏览器私有前缀等。
 
-@import 'variables';
+@import "variables.less";
 
 .inline-block() {
     display: inline-block;
@@ -14,7 +14,7 @@
     *display: inline;
     *zoom: 1;
 }
-.inline-block() when (@support-old-ie = true) {
+.inline-block() when (@support-old-ie) {
     .ie-inline-block;
 }
 
@@ -74,37 +74,44 @@
        -moz-border-radius: @radius;
             border-radius: @radius;
 }
-.border-radius(@radius-x, @radius-y) when (@radius-x = @radius-y) {
-    .border-radius(@radius-x);
-}
-.border-radius(@radius-x, @radius-y) when not (@radius-x = @radius-y) {
-    -webkit-border-radius: @radius-x ~`"/"` @radius-y;
-       -moz-border-radius: @radius-x ~`"/"` @radius-y;
-            border-radius: @radius-x ~`"/"` @radius-y;
+.border-radius(@radius-x, @radius-y) {
+    .border-radius(@radius-x ~`"/"` @radius-y);
 }
 
-.border-top-left-radius(...) {
-    -webkit-border-top-left-radius: @arguments;
-        -moz-border-radius-topleft: @arguments;
-            border-top-left-radius: @arguments;
+.border-top-left-radius(@radius) {
+    -webkit-border-top-left-radius: @radius;
+        -moz-border-radius-topleft: @radius;
+            border-top-left-radius: @radius;
+}
+.border-top-left-radius(@radius-x, @radius-y) {
+    .border-top-left-radius(@radius-x ~"/" @radius-y);
 }
 
-.border-top-right-radius(...) {
-    -webkit-border-top-right-radius: @arguments;
-        -moz-border-radius-topright: @arguments;
-            border-top-right-radius: @arguments;
+.border-top-right-radius(@radius) {
+    -webkit-border-top-right-radius: @radius;
+        -moz-border-radius-topright: @radius;
+            border-top-right-radius: @radius;
+}
+.border-top-right-radius(@radius-x, @radius-y) {
+    .border-top-right-radius(@radius-x ~"/" @radius-y)
 }
 
-.border-bottom-right-radius(...) {
-    -webkit-border-bottom-right-radius: @arguments;
-        -moz-border-radius-bottomright: @arguments;
-            border-bottom-right-radius: @arguments;
+.border-bottom-right-radius(@radius) {
+    -webkit-border-bottom-right-radius: @radius;
+        -moz-border-radius-bottomright: @radius;
+            border-bottom-right-radius: @radius;
+}
+.border-bottom-right-radius(@radius-x, @radius-y) {
+    .border-bottom-right-radius(@radius-x ~"/" @radius-y)
 }
 
-.border-bottom-left-radius(...) {
-    -webkit-border-bottom-left-radius: @arguments;
-        -moz-border-radius-bottomleft: @arguments;
-            border-bottom-left-radius: @arguments;
+.border-bottom-left-radius(@radius) {
+    -webkit-border-bottom-left-radius: @radius;
+        -moz-border-radius-bottomleft: @radius;
+            border-bottom-left-radius: @radius;
+}
+.border-bottom-left-radius(@radius-x, @radius-y) {
+    .border-bottom-left-radius(@radius-x ~"/" @radius-y);
 }
 
 // Drop shadows
