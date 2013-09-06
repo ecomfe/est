@@ -11,6 +11,9 @@
         <nav>
             <ul>
                 <li>
+                    <a href="#top">overview</a>
+                </li>
+                <li>
                     <a href="#variables">variables</a>
                 </li>
                 <li>
@@ -35,1488 +38,1503 @@
         </nav>
     </header>
     <main class="est-body">
-        <section class="overview">
-            <blockquote>
-                est: Grace; favour.<br><small>From Middle English este, from Old English ēst (“will, consent, favour, grace, liberality, munificence, bounty, kindness, love, good pleasure, harmony, liberal gifts, luxuries”).</small></blockquote>
-            <div class="desc">
-                <p>est 是一个基于 LESS 的样式工具库，帮助您更轻松地书写 LESS 代码。</p>
-                <p>est 提供了一系列方便快捷的 mixin，只在调用时才输出代码。est 不希望提供直接给 HTML 调用的类名，用「样式类」污染 HTML 代码的语义。当然您也可以根据自己的项目需求基于 est 搭建样式类库，提供类名接口来进行快速开发。</p>
-            </div>
-        </section>
-        <section class="module">
-            <h1><a name="variables"></a>variables</h1>
-            <p class="desc">全局变量设置。</p>
-            <ul class="variables">
-                <li>
-                    <h2><a name="support-old-ie"></a><code>@support-old-ie</code></h2>
-                    <p class="desc">是否添加支持 IE 6/7 相关的代码。</p>
-                    <p>默认值：<code class="default-value">true</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="support-html5"></a><code>@support-html5</code></h2>
-                    <p class="desc">是否添加支持 HTML5 新元素相关的代码。</p>
-                    <p>默认值：<code class="default-value">true</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-font-size"></a><code>@default-font-size</code></h2>
-                    <p class="desc">默认的字体大小（以像素为单位），请确保其和 <code>&lt;html&gt;</code> 元素的字体大小一致（单位可以不一致，例如 100% = 16px）。</p>
-                    <p>默认值：<code class="default-value">16</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-text-color"></a><code>@default-text-color</code></h2>
-                    <p class="desc">默认的文字颜色。</p>
-                    <p>默认值：<code class="default-value">#666</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-input-placeholder-color"></a><code>@default-input-placeholder-color</code></h2>
-                    <p class="desc">文本输入框占位文字的默认颜色。</p>
-                    <p>默认值：<code class="default-value">#999</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-base-font-family"></a><code>@default-base-font-family</code></h2>
-                    <p class="desc">默认的普通字体族。</p>
-                    <p>默认值：<code class="default-value">'Helvetica Neue', Arial, sans-serif</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-heading-font-family"></a><code>@default-heading-font-family</code></h2>
-                    <p class="desc">默认的标题字体族。</p>
-                    <p>默认值：<code class="default-value">'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-old-ie-heading-font-family"></a><code>@default-old-ie-heading-font-family</code></h2>
-                    <p class="desc">IE6/7 以下的默认的标题字体族。IE7 以下在匹配到第一个字体后，不会根据字符再在 <code>font-family</code> 列表中进行 fallback。Arial 写在微软雅黑之后是为了考虑没有微软雅黑字体的客户端。</p>
-                    <p>默认值：<code class="default-value">'Microsoft Yahei', Arial, sans-serif</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-code-font-family"></a><code>@default-code-font-family</code></h2>
-                    <p class="desc">默认的代码字体。</p>
-                    <p>默认值：<code class="default-value">'Microsoft Yahei', Arial, sans-serif</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-border-radius"></a><code>@default-border-radius</code></h2>
-                    <p class="desc">默认的圆角半径。</p>
-                    <p>默认值：<code class="default-value">5px</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="default-box-shadow"></a><code>@default-box-shadow</code></h2>
-                    <p class="desc">默认的元素阴影。</p>
-                    <p>默认值：<code class="default-value">0 1px 3px rgba(0, 0, 0, 0.25)</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="header-z-index"></a><code>@header-z-index</code></h2>
-                    <p class="desc">页头的默认 <code>z-index</code>。</p>
-                    <p>默认值：<code class="default-value">1000</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="footer-z-index"></a><code>@footer-z-index</code></h2>
-                    <p class="desc">页脚的默认 <code>z-index</code>。</p>
-                    <p>默认值：<code class="default-value">1000</code>。</p>
-                </li>
-                <li>
-                    <h2><a name="modal-z-index"></a><code>@modal-z-index</code></h2>
-                    <p class="desc">浮层遮罩层的默认 <code>z-index</code>。</p>
-                    <p>默认值：<code class="default-value">1050</code>。</p>
-                </li>
-            </ul>
-        </section>
-        <section class="module">
-            <h1><a name="normalize"></a>normalize</h1>
-            <p class="desc">基于 <a href="http://necolas.github.io/normalize.css/">normalize.css</a>，用来归一化不同浏览器下的页面样式。</p>
-            <ul class="dependencies">
-                <li><code><a href="#variables">variables</a></code></li>
-                <li><code><a href="#compatibility">compatibility</a></code></li>
-                <li><code><a href="#typography">typography</a></code></li>
-            </ul>
-            <ul class="mixins">
-                <li>
-                    <h2><a name="global-normalize"></a><code>.global-normalize()</code></h2>
-                    <p class="desc">全局归一化页面样式。</p>
-                    <pre class="usage"><code>// global scope
-.global-reset();</code></pre>
-                </li>
-            </ul>
-        </section>
-        <section class="module">
-            <h1><a name="reset"></a>reset</h1>
-            <p class="desc">基于 <a href="http://meyerweb.com/eric/tools/css/reset/index.html">Eric Meyer's reset 2.0</a>。在整站中推荐使用 <code>normalize</code> 来初始化样式， <code>reset</code> 仅建议在第三方页面局部使用。</p>
-            <ul class="dependencies">
-                <li><code><a href="#variables">variables</a></code></li>
-                <li><code><a href="#compatibility">compatibility</a></code></li>
-            </ul>
-            <ul class="mixins">
-                <li>
-                    <h2><a name="global-reset"></a><code>.global-reset()</code></h2>
-                    <p class="desc">进行全局样式重置。</p>
-                    <pre class="usage"><code>// global scope
-.global-reset();</code></pre>
-                </li>
-                <li>
-                    <h2><a name="nested-reset"></a><code>.nested-reset()</code></h2>
-                    <p class="desc">对选择器指定的元素内部进行样式重置。</p>
-                    <pre class="usage"><code>.preview {
-    .nested-reset();
-}
-</code></pre>
-                </li>
-                <li>
-                    <h2><a name="reset-box-model"></a><code>.reset-box-model()</code></h2>
-                    <p class="desc">重置盒模型。</p>
-                    <pre class="usage"><code>.module {
-    .reset-box-model();
-}
-</code></pre>
-                </li>
-                <li>
-                    <h2><a name="reset-focus"></a><code>.reset-focus()</code></h2>
-                    <p class="desc">重置元素外框线。</p>
-                    <pre class="usage"><code>.module {
-    .reset-focus();
-}
-</code></pre>
-                    <p class="note">IE 下需使用 <code>hidefocus</code> 属性。慎用此功能，可能带来可访问性的损失。</p>
-                </li>
-                <li>
-                    <h2><a name="reset-font"></a><code>.reset-font()</code></h2>
-                    <p class="desc">重置字体相关属性。</p>
-                    <pre class="usage"><code>span {
-    .reset-font();
-}
-</code></pre>
-                </li>
-                </li>
-                <li>
-                    <h2><a name="reset-body"></a><code>.reset-body()</code></h2>
-                    <p class="desc">重置 <code>body</code> 元素。</p>
-                    <pre class="usage"><code>body {
-    .reset-body();
-}
-</code></pre>
-                </li>
-                <li>
-                    <h2><a name="reset-table"></a><code>.reset-table()</code></h2>
-                    <p class="desc">重置表格样式。</p>
-                    <pre class="usage"><code>table {
-    .reset-table();
-}
-</code></pre>
-                </li>
-                <li>
-                    <h2><a name="reset-table-cell"></a><code>.reset-table-cell()</code></h2>
-                    <p class="desc">重置表格单元格样式（<code>td</code>、<code>th</code>）。</p>
-                    <pre class="usage"><code>td, th {
-    .reset-table-cell();
-}
-</code></pre>
-                </li>
-                <li>
-                    <h2><a name="reset-list-style"></a><code>.reset-list-style()</code></h2>
-                    <p class="desc">重置列表项目符号样式。</p>
-                    <pre class="usage"><code>ul, ol {
-    .reset-list-style();
-}
-</code></pre>
-                </li>
-                <li>
-                    <h2><a name="reset-html5"></a><code>.reset-html5()</code></h2>
-                    <p class="desc">重置 HTML5 元素的样式。</p>
-                    <pre class="usage"><code>// global scope
-.reset-html5();
-</code></pre>
-                </li>
-            </ul>
-        </section>
-        <section class="module">
-            <h1><a name="compatibility"></a>compatibility</h1>
-            <p class="desc">提供基础的兼容性封装。</p>
-            <ul class="dependencies">
-                <li><code><a href="#variables">variables</a></code></li>
-            </ul>
-            <ul class="mixins">
-                <li>
-                    <h2><a name="inline-block"></a><code>.inline-block()</code></h2>
-                    <p class="desc">让元素表现为 <code>display: inline-block</code> 的状态，IE 6/7 下通过 <code>zoom: 1</code> 模拟。</p>
-                </li>
-                <li>
-                    <h2><a name="box-sizing"></a><code>.box-sizing()</code></h2>
-                    <p class="desc">设定盒模型的计算方式。</p>
-                    <ul class="signatures">
-                        <li><a name="box-sizing-1"></a>
-                            <h3><code>.box-sizing(@sizing)</code></h3>
-                            <dl>
-                                <dt><code>@sizing</code></dt>
-                                <dd>模型计算方式，可以为 <code>border-box</code> / <code>padding-box</code> / <code>content-box</code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .box-sizing(border-box);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="placeholder"></a><code>.placeholder()</code></h2>
-                    <p class="desc">设定文本输入框占位符的颜色。</p>
-                    <ul class="signatures">
-                        <li><a name="placeholder-1"></a>
-                            <h3><code>.placeholder(@color)</code></h3>
-                            <dl>
-                                <dt><code>@color</code></dt>
-                                <dd>文字颜色。可选，默认值：<code class="default-value"><a href="#default-input-placeholder-color">@default-input-placeholder-color</a></code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>textarea {
-    .placeholder(lightblue);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="user-select"></a><code>.user-select()</code></h2>
-                    <p class="desc">设定处理选区的方式。</p>
-                    <ul class="signatures">
-                        <li><a name="user-select-1"></a>
-                            <h3><code>.user-select(@type)</code></h3>
-                            <dl>
-                                <dt><code>@type</code></dt>
-                                <dd>处理选区的方式。可用取值有 <code>text</code> / <code>none</code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.menu-item {
-    .user-select(none);
-}</code></pre>
-                            <p class="note"><code>user-select</code> 目前没有出现在任何 W3C 官方的规范中，浏览器厂商的实现可能会有细节上的差异，目前不建议使用除 <code>text</code> 和 <code>none</code> 以外的任何值。</p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="opacity"></a><code>.opacity()</code></h2>
-                    <p class="desc">设定不透明度。</p>
-                    <ul class="signatures">
-                        <li><a name="opacity-1"></a>
-                            <h3><code>.opacity(@opacity)</code></h3>
-                            <dl>
-                                <dt><code>@opacity</code></dt>
-                                <dd>不透明度值。可取 <code>0</code> – <code>100</code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.overlay {
-    .opacity(70);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="border-radius"></a><code>.border-radius()</code></h2>
-                    <p class="desc">设定圆角。</p>
-                    <ul class="signatures">
-                        <li><a name="border-radius-1"></a>
-                            <h3><code>.border-radius(@radius)</code></h3>
-                            <dl>
-                                <dt><code>@radius</code></dt>
-                                <dd>圆角半径。可含 1 – 4 个空格分隔的半径值同时指定多个角的圆角半径。可选，默认值 <code class="default-value"><a href="#default-border-radius">@default-border-radius</a></code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .border-radius(3px);
-}
-
-.box-2 {
-    .border-radius(3px 2px);
-}
-</code></pre>
-                        </li>
-                        <li><a name="border-radius-2"></a>
-                            <h3><code>.border-radius(@radius-x, @radius-y)</code></h3>
-                            <dl>
-                                <dt><code>@radius-x</code></dt>
-                                <dd>水平方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
-                                <dt><code>@radius-y</code></dt>
-                                <dd>垂直方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .border-radius(3px, 5px);
-}
-
-.box-2 {
-    .border-radius(3px 6px, 5px 5px 3px 3px);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="border-top-left-radius"></a><code>.border-top-left-radius()</code></h2>
-                    <p class="desc">设定左上角圆角半径。</p>
-                    <ul class="signatures">
-                        <li><a name="border-top-left-radius-1"></a>
-                            <h3><code>.border-top-left-radius(@radius)</code></h3>
-                            <dl>
-                                <dt><code>@radius</code></dt>
-                                <dd>圆角半径。可选，默认值 <code class="default-value"><a href="#default-border-radius">@default-border-radius</a></code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .border-top-left-radius(3px);
-}
-</code></pre>
-                        </li>
-                        <li><a name="border-top-left-radius-2"></a>
-                            <h3><code>.border-top-leftradius(@radius-x, @radius-y)</code></h3>
-                            <dl>
-                                <dt><code>@radius-x</code></dt>
-                                <dd>水平方向的圆角半径。</dd>
-                                <dt><code>@radius-y</code></dt>
-                                <dd>垂直方向的圆角半径。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .border-top-left-radius(3px);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="border-top-right-radius"></a><code>.border-top-right-radius()</code></h2>
-                    <p class="desc">设定右上角圆角半径。</p>
-                    <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
-                </li>
-                <li>
-                    <h2><a name="border-bottom-right-radius"></a><code>.border-bottom-right-radius()</code></h2>
-                    <p class="desc">设定右下角圆角半径。</p>
-                    <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
-                </li>
-                <li>
-                    <h2><a name="border-bottom-left-radius"></a><code>.border-bottom-left-radius()</code></h2>
-                    <p class="desc">设定左下角圆角半径。</p>
-                    <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
-                </li>
-                <li>
-                    <h2><a name="border-top-radius"></a><code>.border-top-radius()</code></h2>
-                    <p class="desc">设定左上角和右上角圆角半径。</p>
-                    <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
-                </li>
-                <li>
-                    <h2><a name="border-right-radius"></a><code>.border-right-radius()</code></h2>
-                    <p class="desc">设定右上角和右下角圆角半径。</p>
-                    <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
-                </li>
-                <li>
-                    <h2><a name="border-bottom-radius"></a><code>.border-bottom-radius()</code></h2>
-                    <p class="desc">设定左下角和右下角圆角半径。</p>
-                    <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
-                </li>
-                <li>
-                    <h2><a name="border-left-radius"></a><code>.border-left-radius()</code></h2>
-                    <p class="desc">设定左上角和左下角圆角半径。</p>
-                    <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
-                </li>
-                <li>
-                    <h2><a name="box-shadow"></a><code>.box-shadow()</code></h2>
-                    <p class="desc">设定元素的阴影，支持多个阴影。</p>
-                    <ul class="signatures">
-                        <li><a name="box-shadow-1"></a>
-                            <h3><code>.box-shadow(@shadow, ...)</code></h3>
-                            <dl>
-                                <dt><code>@shadow</code></dt>
-                                <dd>单个阴影参数。可选，默认值：<code class="default-value"><a href="#default-box-shadow">@default-box-shadow</a></code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-}
-
-.box-2 {
-    .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="transition"></a><code>.transition()</code></h2>
-                    <p class="desc">过渡（transition）设定。</p>
-                    <ul class="signatures">
-                        <li><a name="transition-1"></a>
-                            <h3><code>.transition(@transition, ...)</code></h3>
-                            <dl>
-                                <dt><code>@transition</code></dt>
-                                <dd>单个过渡设定。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .transition(background-color 1s linear);
-}
-
-.box-2 {
-    .transition(height 0.5s ease, opacity 2s linear 0.5s);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                    <div class="note">
-                        过渡属性值写法请参考：
-                        <ul class="references">
-                            <li><a href="http://dev.w3.org/csswg/css-transitions/#the-transition-shorthand-property">CSS Transitions</a></li>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">transition - CSS|MDN</a></li>
+        <a name="top"></a>
+        <article class="overview">
+            <section>
+                <h1>什么是 est？</h1>
+                <div class="github">
+                    <iframe width="85" scrolling="0" height="20" frameborder="0" allowtransparency="true" src="http://ghbtns.com/github-btn.html?user=ecomfe&repo=est&type=watch&count=true"></iframe>
+                    <iframe width="85" scrolling="0" height="20" frameborder="0" allowtransparency="true" src="http://ghbtns.com/github-btn.html?user=ecomfe&repo=est&type=fork&count=true"></iframe>
+                    <a href="https://github.com/you"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+                </div>
+                <blockquote>
+                    est: Grace; favour.<hr><small>From Middle English este, from Old English ēst (“will, consent, favour, grace, liberality, munificence, bounty, kindness, love, good pleasure, harmony, liberal gifts, luxuries”).</small></blockquote>
+                <div class="desc">
+                    <p><strong>est 是一个基于 LESS 的样式工具库，帮助您更轻松地书写 LESS 代码。</strong></p>
+                    <p>est 提供了一系列方便快捷的 mixin，只在调用时才输出代码。est 不希望提供直接给 HTML 调用的类名，用「样式类」污染 HTML 代码的语义。当然您也可以根据自己的项目需求基于 est 搭建样式类库，提供类名接口来进行快速开发。</p>
+                </div>
+            </section>
+            <section>
+                <h1>Get started</h1>
+            </section>
+        </article>
+        <article>
+            <h1>API Documentation</h1>
+            <section class="module">
+                <h1><a name="variables"></a>variables</h1>
+                <p class="desc">全局变量设置。</p>
+                <ul class="variables">
+                    <li>
+                        <h2><a name="support-old-ie"></a><code>@support-old-ie</code></h2>
+                        <p class="desc">是否添加支持 IE 6/7 相关的代码。</p>
+                        <p>默认值：<code class="default-value">true</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="support-html5"></a><code>@support-html5</code></h2>
+                        <p class="desc">是否添加支持 HTML5 新元素相关的代码。</p>
+                        <p>默认值：<code class="default-value">true</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-font-size"></a><code>@default-font-size</code></h2>
+                        <p class="desc">默认的字体大小（以像素为单位），请确保其和 <code>&lt;html&gt;</code> 元素的字体大小一致（单位可以不一致，例如 100% = 16px）。</p>
+                        <p>默认值：<code class="default-value">16</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-text-color"></a><code>@default-text-color</code></h2>
+                        <p class="desc">默认的文字颜色。</p>
+                        <p>默认值：<code class="default-value">#666</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-input-placeholder-color"></a><code>@default-input-placeholder-color</code></h2>
+                        <p class="desc">文本输入框占位文字的默认颜色。</p>
+                        <p>默认值：<code class="default-value">#999</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-base-font-family"></a><code>@default-base-font-family</code></h2>
+                        <p class="desc">默认的普通字体族。</p>
+                        <p>默认值：<code class="default-value">'Helvetica Neue', Arial, sans-serif</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-heading-font-family"></a><code>@default-heading-font-family</code></h2>
+                        <p class="desc">默认的标题字体族。</p>
+                        <p>默认值：<code class="default-value">'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-old-ie-heading-font-family"></a><code>@default-old-ie-heading-font-family</code></h2>
+                        <p class="desc">IE6/7 以下的默认的标题字体族。IE7 以下在匹配到第一个字体后，不会根据字符再在 <code>font-family</code> 列表中进行 fallback。Arial 写在微软雅黑之后是为了考虑没有微软雅黑字体的客户端。</p>
+                        <p>默认值：<code class="default-value">'Microsoft Yahei', Arial, sans-serif</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-code-font-family"></a><code>@default-code-font-family</code></h2>
+                        <p class="desc">默认的代码字体。</p>
+                        <p>默认值：<code class="default-value">'Microsoft Yahei', Arial, sans-serif</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-border-radius"></a><code>@default-border-radius</code></h2>
+                        <p class="desc">默认的圆角半径。</p>
+                        <p>默认值：<code class="default-value">5px</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="default-box-shadow"></a><code>@default-box-shadow</code></h2>
+                        <p class="desc">默认的元素阴影。</p>
+                        <p>默认值：<code class="default-value">0 1px 3px rgba(0, 0, 0, 0.25)</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="header-z-index"></a><code>@header-z-index</code></h2>
+                        <p class="desc">页头的默认 <code>z-index</code>。</p>
+                        <p>默认值：<code class="default-value">1000</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="footer-z-index"></a><code>@footer-z-index</code></h2>
+                        <p class="desc">页脚的默认 <code>z-index</code>。</p>
+                        <p>默认值：<code class="default-value">1000</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="modal-z-index"></a><code>@modal-z-index</code></h2>
+                        <p class="desc">浮层遮罩层的默认 <code>z-index</code>。</p>
+                        <p>默认值：<code class="default-value">1050</code>。</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="module">
+                <h1><a name="normalize"></a>normalize</h1>
+                <p class="desc">基于 <a href="http://necolas.github.io/normalize.css/">normalize.css</a>，用来归一化不同浏览器下的页面样式。</p>
+                <ul class="dependencies">
+                    <li><code><a href="#variables">variables</a></code></li>
+                    <li><code><a href="#compatibility">compatibility</a></code></li>
+                    <li><code><a href="#typography">typography</a></code></li>
+                </ul>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="global-normalize"></a><code>.global-normalize()</code></h2>
+                        <p class="desc">全局归一化页面样式。</p>
+                        <pre class="usage"><code>// global scope
+    .global-reset();</code></pre>
+                    </li>
+                </ul>
+            </section>
+            <section class="module">
+                <h1><a name="reset"></a>reset</h1>
+                <p class="desc">基于 <a href="http://meyerweb.com/eric/tools/css/reset/index.html">Eric Meyer's reset 2.0</a>。在整站中推荐使用 <code>normalize</code> 来初始化样式， <code>reset</code> 仅建议在第三方页面局部使用。</p>
+                <ul class="dependencies">
+                    <li><code><a href="#variables">variables</a></code></li>
+                    <li><code><a href="#compatibility">compatibility</a></code></li>
+                </ul>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="global-reset"></a><code>.global-reset()</code></h2>
+                        <p class="desc">进行全局样式重置。</p>
+                        <pre class="usage"><code>// global scope
+    .global-reset();</code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="nested-reset"></a><code>.nested-reset()</code></h2>
+                        <p class="desc">对选择器指定的元素内部进行样式重置。</p>
+                        <pre class="usage"><code>.preview {
+        .nested-reset();
+    }
+    </code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="reset-box-model"></a><code>.reset-box-model()</code></h2>
+                        <p class="desc">重置盒模型。</p>
+                        <pre class="usage"><code>.module {
+        .reset-box-model();
+    }
+    </code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="reset-focus"></a><code>.reset-focus()</code></h2>
+                        <p class="desc">重置元素外框线。</p>
+                        <pre class="usage"><code>.module {
+        .reset-focus();
+    }
+    </code></pre>
+                        <p class="note">IE 下需使用 <code>hidefocus</code> 属性。慎用此功能，可能带来可访问性的损失。</p>
+                    </li>
+                    <li>
+                        <h2><a name="reset-font"></a><code>.reset-font()</code></h2>
+                        <p class="desc">重置字体相关属性。</p>
+                        <pre class="usage"><code>span {
+        .reset-font();
+    }
+    </code></pre>
+                    </li>
+                    </li>
+                    <li>
+                        <h2><a name="reset-body"></a><code>.reset-body()</code></h2>
+                        <p class="desc">重置 <code>body</code> 元素。</p>
+                        <pre class="usage"><code>body {
+        .reset-body();
+    }
+    </code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="reset-table"></a><code>.reset-table()</code></h2>
+                        <p class="desc">重置表格样式。</p>
+                        <pre class="usage"><code>table {
+        .reset-table();
+    }
+    </code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="reset-table-cell"></a><code>.reset-table-cell()</code></h2>
+                        <p class="desc">重置表格单元格样式（<code>td</code>、<code>th</code>）。</p>
+                        <pre class="usage"><code>td, th {
+        .reset-table-cell();
+    }
+    </code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="reset-list-style"></a><code>.reset-list-style()</code></h2>
+                        <p class="desc">重置列表项目符号样式。</p>
+                        <pre class="usage"><code>ul, ol {
+        .reset-list-style();
+    }
+    </code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="reset-html5"></a><code>.reset-html5()</code></h2>
+                        <p class="desc">重置 HTML5 元素的样式。</p>
+                        <pre class="usage"><code>// global scope
+    .reset-html5();
+    </code></pre>
+                    </li>
+                </ul>
+            </section>
+            <section class="module">
+                <h1><a name="compatibility"></a>compatibility</h1>
+                <p class="desc">提供基础的兼容性封装。</p>
+                <ul class="dependencies">
+                    <li><code><a href="#variables">variables</a></code></li>
+                </ul>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="inline-block"></a><code>.inline-block()</code></h2>
+                        <p class="desc">让元素表现为 <code>display: inline-block</code> 的状态，IE 6/7 下通过 <code>zoom: 1</code> 模拟。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-sizing"></a><code>.box-sizing()</code></h2>
+                        <p class="desc">设定盒模型的计算方式。</p>
+                        <ul class="signatures">
+                            <li><a name="box-sizing-1"></a>
+                                <h3><code>.box-sizing(@sizing)</code></h3>
+                                <dl>
+                                    <dt><code>@sizing</code></dt>
+                                    <dd>模型计算方式，可以为 <code>border-box</code> / <code>padding-box</code> / <code>content-box</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .box-sizing(border-box);
+    }</code></pre>
+                            </li>
                         </ul>
-                    </div>
-                </li>
-                <li>
-                    <h2><a name="transition-property"></a><code>.transition-property()</code></h2>
-                    <p class="desc">设定过渡（transition）影响的属性。</p>
-                    <ul class="signatures">
-                        <li><a name="transition-property-1"></a>
-                            <h3><code>.transition-property(@property, ...)</code></h3>
-                            <dl>
-                                <dt><code>@property</code></dt>
-                                <dd>参与单个过渡的属性名称。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .transition-property(background-color);
-}
-
-.box-2 {
-    .transition-property(height, opacity);
-}
-</code></pre>
-                            <p class="note">可以参与过渡的属性列表参见 <a href="http://dev.w3.org/csswg/css-transitions/#animatable-css">Animatable properties from CSS</a>。</p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="transition-duration"></a><code>.transition-duration()</code></h2>
-                    <p class="desc">设定过渡（transition）的持续时间。</p>
-                    <ul class="signatures">
-                        <li><a name="transition-duration-1"></a>
-                            <h3><code>.transition-duration(@duration, ...)</code></h3>
-                            <dl>
-                                <dt><code>@duration</code></dt>
-                                <dd>单个过渡的持续时间。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .transition-duration(1s);
-}
-
-.box-2 {
-    .transition-duration(0.5s, 2s);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="transition-timing-function"></a><code>.transition-timing-function()</code></h2>
-                    <p class="desc">设定过渡（transition）的时间函数。</p>
-                    <ul class="signatures">
-                        <li><a name="transition-timing-function-1"></a>
-                            <h3><code>.transition-timing-function(@timing-function, ...)</code></h3>
-                            <dl>
-                                <dt><code>@timing-function</code></dt>
-                                <dd>单个过渡的时间函数。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .transition-timing-function(linear);
-}
-
-.box-2 {
-    .transition-timing-function(ease, linear);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="transition-delay"></a><code>.transition-delay()</code></h2>
-                    <p class="desc">设定过渡（transition）的延迟时间。</p>
-                    <ul class="signatures">
-                        <li><a name="transition-delay-1"></a>
-                            <h3><code>.transition-delay(@delay, ...)</code></h3>
-                            <dl>
-                                <dt><code>@delay</code></dt>
-                                <dd>单个过渡的延迟时间。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .transition-delay(0s);
-}
-
-.box-2 {
-    .transition-delay(0s, 0.5s);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation"></a><code>.animation()</code></h2>
-                    <p class="desc">动画（animation）设定。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-1"></a>
-                            <h3><code>.animation(@animation, ...)</code></h3>
-                            <dl>
-                                <dt><code>@animation</code></dt>
-                                <dd>单个动画设定。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation(rotate 2s linear);
-}
-
-.box-2 {
-    .animation(fly-in 0.5s ease-out, fade-in 0.5s ease-out);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                    <div class="note">
-                        动画属性值写法请参考：
-                        <ul class="references">
-                            <li><a href="http://dev.w3.org/csswg/css-animations/#animation-shorthand-property">CSS Animations</a></li>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">animation - CSS|MDN</a></li>
+                    </li>
+                    <li>
+                        <h2><a name="placeholder"></a><code>.placeholder()</code></h2>
+                        <p class="desc">设定文本输入框占位符的颜色。</p>
+                        <ul class="signatures">
+                            <li><a name="placeholder-1"></a>
+                                <h3><code>.placeholder(@color)</code></h3>
+                                <dl>
+                                    <dt><code>@color</code></dt>
+                                    <dd>文字颜色。可选，默认值：<code class="default-value"><a href="#default-input-placeholder-color">@default-input-placeholder-color</a></code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>textarea {
+        .placeholder(lightblue);
+    }</code></pre>
+                            </li>
                         </ul>
-                    </div>
-                </li>
-                <li>
-                    <h2><a name="animation-name"></a><code>.animation-name()</code></h2>
-                    <p class="desc">设定动画（animation）对应的 <code>@keyframes</code> 规则名称。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-name-1"></a>
-                            <h3><code>.animation-name(@name, ...)</code></h3>
-                            <dl>
-                                <dt><code>@name</code></dt>
-                                <dd>单个动画对应的 <code>@keyframes</code> 规则名称。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-name(rotate);
-}
-
-.box-2 {
-    .animation-name(fly-in, fade-in);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation-duration"></a><code>.animation-duration()</code></h2>
-                    <p class="desc">设定动画（animation）的持续时间。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-duration-1"></a>
-                            <h3><code>.animation-duration(@duration, ...)</code></h3>
-                            <dl>
-                                <dt><code>@duration</code></dt>
-                                <dd>单个动画的持续时间。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-duration(3s);
-}
-
-.box-2 {
-    .animation-duration(0.5s, 3s);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation-timing-function"></a><code>.animation-timing-function()</code></h2>
-                    <p class="desc">设定动画（animation）的时间函数。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-timing-function-1"></a>
-                            <h3><code>.animation-timing-function(@timing-function, ...)</code></h3>
-                            <dl>
-                                <dt><code>@timing-function</code></dt>
-                                <dd>单个动画的时间函数。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-timing-function(linear);
-}
-
-.box-2 {
-    .animation-timing-function(ease, linear);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation-iteration-count"></a><code>.animation-iteration-count()</code></h2>
-                    <p class="desc">设定动画（animation）的循环次数。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-iteration-count-1"></a>
-                            <h3><code>.animation-iteration-count(@count, ...)</code></h3>
-                            <dl>
-                                <dt><code>@count</code></dt>
-                                <dd>单个动画的循环次数。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-iteration-count(5);
-}
-
-.box-2 {
-    .animation-iteration-count(3, infinite);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation-direction"></a><code>.animation-direction()</code></h2>
-                    <p class="desc">设定动画（animation）播放的正反方向。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-direction-1"></a>
-                            <h3><code>.animation-direction(@direction, ...)</code></h3>
-                            <dl>
-                                <dt><code>@direction</code></dt>
-                                <dd>单个动画播放的正反方向。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-direction(reverse);
-}
-
-.box-2 {
-    .animation-direction(normal, alternate);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation-play-state"></a><code>.animation-play-state()</code></h2>
-                    <p class="desc">设定动画（animation）的播放状态。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-play-state-1"></a>
-                            <h3><code>.animation-play-state(@state, ...)</code></h3>
-                            <dl>
-                                <dt><code>@state</code></dt>
-                                <dd>单个动画的播放状态。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-play-state(paused);
-}
-
-.box-2 {
-    .animation-play-state(paused, running);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation-delay"></a><code>.animation-delay()</code></h2>
-                    <p class="desc">设定动画（animation）的播放延迟时间。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-delay-1"></a>
-                            <h3><code>.animation-delay(@delay, ...)</code></h3>
-                            <dl>
-                                <dt><code>@delay</code></dt>
-                                <dd>单个动画的播放延迟时间。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-delay(2s);
-}
-
-.box-2 {
-    .animation-delay(0s, 1s);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="animation-fill-mode"></a><code>.animation-fill-mode()</code></h2>
-                    <p class="desc">设定动画（animation）的属性填充方式。</p>
-                    <ul class="signatures">
-                        <li><a name="animation-fill-mode-1"></a>
-                            <h3><code>.animation-fill-mode(@mode, ...)</code></h3>
-                            <dl>
-                                <dt><code>@mode</code></dt>
-                                <dd>单个动画的属性填充方式。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .animation-fill-mode(backwards);
-}
-
-.box-2 {
-    .animation-fill-mode(forwards, both);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="transform"></a><code>.transform()</code></h2>
-                    <p class="desc">变换（transform）操作。</p>
-                    <ul class="signatures">
-                        <li><a name="transform-1"></a>
-                            <h3><code>.transform(@transform-function, ...)</code></h3>
-                            <dl>
-                                <dt><code>@transform-function</code></dt>
-                                <dd>变换函数。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .transform(matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
-}
-
-.box-2 {
-    .transform(translateX(10px), rotate(10deg), translateY(5px));
-}
-</code></pre>
-                        </li>
-                    </ul>
-                    <div class="note">
-                        变换函数写法请参考：
-                        <ul class="references">
-                            <li><a href="http://dev.w3.org/csswg/css-transforms/#transform-property">CSS Transforms</a></li>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">transform - CSS|MDN</a></li>
+                    </li>
+                    <li>
+                        <h2><a name="user-select"></a><code>.user-select()</code></h2>
+                        <p class="desc">设定处理选区的方式。</p>
+                        <ul class="signatures">
+                            <li><a name="user-select-1"></a>
+                                <h3><code>.user-select(@type)</code></h3>
+                                <dl>
+                                    <dt><code>@type</code></dt>
+                                    <dd>处理选区的方式。可用取值有 <code>text</code> / <code>none</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.menu-item {
+        .user-select(none);
+    }</code></pre>
+                                <p class="note"><code>user-select</code> 目前没有出现在任何 W3C 官方的规范中，浏览器厂商的实现可能会有细节上的差异，目前不建议使用除 <code>text</code> 和 <code>none</code> 以外的任何值。</p>
+                            </li>
                         </ul>
-                    </div>
-                </li>
-                <li>
-                    <h2><a name="transform-style"></a><code>.transform-style()</code></h2>
-                    <p class="desc">设定变换是否支持 3D。</p>
-                    <ul class="signatures">
-                        <li><a name="transform-style-1"></a>
-                            <h3><code>.transform-style(@style)</code></h3>
-                            <dl>
-                                <dt><code>@style</code></dt>
-                                <dd>对 3D 变换的支持方式。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .transform-style(preserve-3d);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="transform-origin"></a><code>.transform-origin()</code></h2>
-                    <p class="desc">设定变换的坐标原点。</p>
-                    <ul class="signatures">
-                        <li><a name="transform-origin-1"></a>
-                            <h3><code>.transform-origin(@origin)</code></h3>
-                            <dl>
-                                <dt><code>@origin</code></dt>
-                                <dd>坐标原点位置。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .transform-origin(2px left);
-}
+                    </li>
+                    <li>
+                        <h2><a name="opacity"></a><code>.opacity()</code></h2>
+                        <p class="desc">设定不透明度。</p>
+                        <ul class="signatures">
+                            <li><a name="opacity-1"></a>
+                                <h3><code>.opacity(@opacity)</code></h3>
+                                <dl>
+                                    <dt><code>@opacity</code></dt>
+                                    <dd>不透明度值。可取 <code>0</code> – <code>100</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.overlay {
+        .opacity(70);
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="border-radius"></a><code>.border-radius()</code></h2>
+                        <p class="desc">设定圆角。</p>
+                        <ul class="signatures">
+                            <li><a name="border-radius-1"></a>
+                                <h3><code>.border-radius(@radius)</code></h3>
+                                <dl>
+                                    <dt><code>@radius</code></dt>
+                                    <dd>圆角半径。可含 1 – 4 个空格分隔的半径值同时指定多个角的圆角半径。可选，默认值 <code class="default-value"><a href="#default-border-radius">@default-border-radius</a></code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .border-radius(3px);
+    }
 
-.box-2 {
-    .transform-origin(2px 30% 10px);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="backface-visibility"></a><code>.backface-visibility()</code></h2>
-                    <p class="desc">设定3D变换后元素背面是否可见。</p>
-                    <ul class="signatures">
-                        <li><a name="backface-visibility-1"></a>
-                            <h3><code>.backface-visibility(@visibility)</code></h3>
-                            <dl>
-                                <dt><code>@visibility</code></dt>
-                                <dd>背面是否可见。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .backface-visibility(hidden);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="perspective"></a><code>.perspective()</code></h2>
-                    <p class="desc">设定透视距离。</p>
-                    <ul class="signatures">
-                        <li><a name="perspective-1"></a>
-                            <h3><code>.perspective(@d)</code></h3>
-                            <dl>
-                                <dt><code>@d</code></dt>
-                                <dd>透视距离。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .perspective(1500px);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="matrix"></a><code>.matrix()</code></h2>
-                    <p class="desc">根据指定的矩阵进行 2D 变换。</p>
-                    <ul class="signatures">
-                        <li><a name="matrix-1"></a>
-                            <h3><code>.matrix(@a, @b, @c, @d, @tx, @ty)</code></h3>
-                            <pre class="usage"><code>.box {
-    .matrix(1, -0.2, 0, 1, 0, 0);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                    <p class="note">参数含义及写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#matrix()">transform-function - CSS | MDN</a>。</p>
-                </li>
-                <li>
-                    <h2><a name="translate"></a><code>.translate()</code></h2>
-                    <p class="desc">进行 2D 平移变换。</p>
-                    <ul class="signatures">
-                        <li><a name="translate-1"></a>
-                            <h3><code>.translate(@tx)</code></h3>
-                            <dl>
-                                <dt><code>@tx</code></dt>
-                                <dd>X 轴方向上的平移距离。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .translate(80px);
-}
-</code></pre>
-                        <p class="note">Y 轴方向不进行平移。等价于 <code><a href="#translateX-1">.translateX(@tx)</a></code>。</p>
-                        </li>
-                        <li><a name="translate-2"></a>
-                            <h3><code>.translate(@tx, @ty)</code></h3>
-                            <dl>
-                                <dt><code>@tx</code></dt>
-                                <dd>X 轴方向上的平移距离。</dd>
-                                <dt><code>@ty</code></dt>
-                                <dd>Y 轴方向上的平移距离。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .translate(30px, 50px);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="translateX"></a><code>.translateX()</code></h2>
-                    <p class="desc">进行 X 轴方向上的平移变换。</p>
-                    <ul class="signatures">
-                        <li><a name="translateX-1"></a>
-                            <h3><code>.translateX(@tx)</code></h3>
-                            <dl>
-                                <dt><code>@tx</code></dt>
-                                <dd>平移距离。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .translateX(80px);
-}
-</code></pre>
-                        <p class="note">等价于 <code><a href="#translate-1">.translate(@tx)</a></code> 及 <code><a href="#translate-2">.translate(@tx, 0)</a></code>。</p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="translateY"></a><code>.translateY()</code></h2>
-                    <p class="desc">进行 Y 轴方向上的平移变换。</p>
-                    <ul class="signatures">
-                        <li><a name="translateY-1"></a>
-                            <h3><code>.translateY(@ty)</code></h3>
-                            <dl>
-                                <dt><code>@ty</code></dt>
-                                <dd>平移距离。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .translateY(80px);
-}
-</code></pre>
-                        <p class="note">等价于 <code><a href="#translate-2">.translate(0, @ty)</a></code>。</p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="scale"></a><code>.scale()</code></h2>
-                    <p class="desc">进行 2D 缩放变换。</p>
-                    <ul class="signatures">
-                        <li><a name="scale-1"></a>
-                            <h3><code>.scale(@s)</code></h3>
-                            <dl>
-                                <dt><code>@s</code></dt>
-                                <dd>缩放比例。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .scale(2.1);
-}
-</code></pre>
-                        <p class="note">等价于 <code><a href="#scale-2">.scale(@s, @s)</a></code>。</p>
-                        </li>
-                        <li><a name="scale-2"></a>
-                            <h3><code>.scale(@sx, @sy)</code></h3>
-                            <dl>
-                                <dt><code>@sx</code></dt>
-                                <dd>X 轴方向上的缩放比例。</dd>
-                                <dt><code>@sy</code></dt>
-                                <dd>Y 轴方向上的缩放比例。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .scale(2.1, 4);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="scaleX"></a><code>.scaleX()</code></h2>
-                    <p class="desc">进行 X 轴方向上的缩放变换。</p>
-                    <ul class="signatures">
-                        <li><a name="scaleX-1"></a>
-                            <h3><code>.scaleX(@sx)</code></h3>
-                            <dl>
-                                <dt><code>@sx</code></dt>
-                                <dd>缩放比例。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .scaleX(0.5);
-}
-</code></pre>
-                        <p class="note">等价于 <code><a href="#scale-2">.scale(@sx, 1)</a></code>。</p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="scaleY"></a><code>.scaleY()</code></h2>
-                    <p class="desc">进行 Y 轴方向上的缩放变换。</p>
-                    <ul class="signatures">
-                        <li><a name="scaleY-1"></a>
-                            <h3><code>.scaleY(@sy)</code></h3>
-                            <dl>
-                                <dt><code>@sy</code></dt>
-                                <dd>缩放比例。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .scaleY(2.7);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="rotate"></a><code>.rotate()</code></h2>
-                    <p class="desc">进行 2D 旋转变换。</p>
-                    <ul class="signatures">
-                        <li><a name="rotate-1"></a>
-                            <h3><code>.rotate(@angle)</code></h3>
-                            <dl>
-                                <dt><code>@angle</code></dt>
-                                <dd>旋转角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .rotate(30deg);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="skew"></a><code>.skew()</code></h2>
-                    <p class="desc">进行 2D 倾斜拉伸变换。</p>
-                    <ul class="signatures">
-                        <li><a name="skew-1"></a>
-                            <h3><code>.skew(@ax)</code></h3>
-                            <dl>
-                                <dt><code>@ax</code></dt>
-                                <dd>沿 X 轴倾斜拉伸的角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .skew(30deg);
-}
-</code></pre>
-                        <p class="note">沿 Y 轴方向不进行倾斜拉伸。等价于 <code><a href="#skewX-1">.skewX(@ax)</a></code>。</p>
-                        </li>
-                        <li><a name="skew-2"></a>
-                            <h3><code>.skew(@ax, @ay)</code></h3>
-                            <dl>
-                                <dt><code>@ax</code></dt>
-                                <dd>沿 X 轴倾斜拉伸的角度。</dd>
-                                <dt><code>@ay</code></dt>
-                                <dd>沿 Y 轴倾斜拉伸的角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .skew(30deg, 15deg);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                    <p class="note">须注意 <code>skew</code> 的行为与 <code>skewX</code> 叠加上 <code>skewY</code> 并不等价。</p>
-                </li>
-                <li>
-                    <h2><a name="skewX"></a><code>.skewX()</code></h2>
-                    <p class="desc">进行 X 轴方向上的平移变换。</p>
-                    <ul class="signatures">
-                        <li><a name="skewX-1"></a>
-                            <h3><code>.skewX(@ax)</code></h3>
-                            <dl>
-                                <dt><code>@ax</code></dt>
-                                <dd>倾斜拉伸的角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .skewX(30deg);
-}
-</code></pre>
-                        <p class="note">等价于 <code><a href="#skew-1">.skew(@ax)</a></code>。</p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="skewY"></a><code>.skewY()</code></h2>
-                    <p class="desc">沿 Y 轴倾斜拉伸的角度。</p>
-                    <ul class="signatures">
-                        <li><a name="skewY-1"></a>
-                            <h3><code>.skewY(@ay)</code></h3>
-                            <dl>
-                                <dt><code>@ay</code></dt>
-                                <dd>倾斜拉伸的角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .skewY(15deg);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="matrix3d"></a><code>.matrix3d()</code></h2>
-                    <p class="desc">根据指定的矩阵进行 3D 变换。</p>
-                    <ul class="signatures">
-                        <li><a name="matrix3d-1"></a>
-                            <h3><code>.matrix3d(@a1, @b1, @c1, @d1,
-          @a2, @b2, @c2, @d2,
-          @a3, @b3, @c3, @d3,
-          @a4, @b4, @c4, @d4)</code></h3>
-                            <pre class="usage"><code></code></pre>
-                        </li>
-                    </ul>
-                    <p class="note">参数含义及写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#matrix3d()">transform-function - CSS | MDN</a>。</p>
-                </li>
-                <li>
-                    <h2><a name="translate3d"></a><code>.translate3d()</code></h2>
-                    <p class="desc">进行 3D 平移变换。</p>
-                    <ul class="signatures">
-                        <li><a name="translate3d-1"></a>
-                            <h3><code>.translate3d(@tx, @ty, @tz)</code></h3>
-                            <dl>
-                                <dt><code>@tx</code></dt>
-                                <dd>X 轴方向上的平移距离。</dd>
-                                <dt><code>@ty</code></dt>
-                                <dd>Y 轴方向上的平移距离。</dd>
-                                <dt><code>@tz</code></dt>
-                                <dd>Z 轴方向上的平移距离。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .translate3d(12px, 50%, 3em);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="translateZ"></a><code>.translateZ()</code></h2>
-                    <p class="desc">进行 Z 轴方向上的平移变换。</p>
-                    <ul class="signatures">
-                        <li><a name="translateZ-1"></a>
-                            <h3><code>.translateZ(@tz)</code></h3>
-                            <dl>
-                                <dt><code>@tz</code></dt>
-                                <dd>平移距离。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .translateZ(3em);
-}
-</code></pre>
-                        </li>
-                        <p class="note">等价于 <code><a href="#translate3d-1">.translate3d(0, 0, @tz)</a></code>。</p>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="scale3d"></a><code>.scale3d()</code></h2>
-                    <p class="desc">进行 3D 缩放变换。</p>
-                    <ul class="signatures">
-                        <li><a name="scale3d-1"></a>
-                            <h3><code>.scale3d(@sx, @sy, @sz)</code></h3>
-                            <dl>
-                                <dt><code>@sx</code></dt>
-                                <dd>X 轴方向上的缩放比例。</dd>
-                                <dt><code>@sy</code></dt>
-                                <dd>Y 轴方向上的缩放比例。</dd>
-                                <dt><code>@sz</code></dt>
-                                <dd>Z 轴方向上的缩放比例。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .scale3d(2.5, 1.2, 0.3);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="scaleZ"></a><code>.scaleZ()</code></h2>
-                    <p class="desc">进行 Z 轴方向上的缩放变换。</p>
-                    <ul class="signatures">
-                        <li><a name="scaleZ-1"></a>
-                            <h3><code>.scaleZ(@sz)</code></h3>
-                            <dl>
-                                <dt><code>@sz</code></dt>
-                                <dd>缩放比例。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .scaleZ(0.3);
-}
-</code></pre>
-                        </li>
-                        <p class="note">等价于 <code><a href="#scale3d-1">.scale3d(1, 1, @sz)</a></code>。</p>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="rotate3d"></a><code>.rotate3d()</code></h2>
-                    <p class="desc">进行 3D 旋转变换。</p>
-                    <ul class="signatures">
-                        <li><a name="rotate3d-1"></a>
-                            <h3><code>.rotate3d(@x, @y, @z, @angle)</code></h3>
-                            <dl>
-                                <dt><code>@x</code></dt>
-                                <dd>旋转轴方向向量在 X 轴方向上的分量。</dd>
-                                <dt><code>@y</code></dt>
-                                <dd>旋转轴方向向量在 Y 轴方向上的分量。</dd>
-                                <dt><code>@z</code></dt>
-                                <dd>旋转轴方向向量在 Z 轴方向上的分量。</dd>
-                                <dt><code>@angle</code></dt>
-                                <dd>旋转角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .rotate3d(1, 2.0, 3.0, 10deg);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="rotateX"></a><code>.rotateX()</code></h2>
-                    <p class="desc">绕 X 轴方向进行旋转变换。</p>
-                    <ul class="signatures">
-                        <li><a name="rotateX-1"></a>
-                            <h3><code>.rotateX(@angle)</code></h3>
-                            <dl>
-                                <dt><code>@angle</code></dt>
-                                <dd>旋转角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .rotateX(60deg);
-}
-</code></pre>
-                        </li>
-                        <p class="note">等价于 <code><a href="#rotate3d-1">.rotate3d(1, 0, 0, @angle)</a></code>。</p>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="rotateY"></a><code>.rotateY()</code></h2>
-                    <p class="desc">绕 Y 轴方向进行旋转变换。</p>
-                    <ul class="signatures">
-                        <li><a name="rotateY-1"></a>
-                            <h3><code>.rotateY(@angle)</code></h3>
-                            <dl>
-                                <dt><code>@angle</code></dt>
-                                <dd>旋转角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .rotateY(60deg);
-}
-</code></pre>
-                        </li>
-                        <p class="note">等价于 <code><a href="#rotate3d-1">.rotate3d(0, 1, 0, @angle)</a></code>。</p>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="rotateZ"></a><code>.rotateZ()</code></h2>
-                    <p class="desc">绕 Z 轴方向进行旋转变换。</p>
-                    <ul class="signatures">
-                        <li><a name="rotateZ-1"></a>
-                            <h3><code>.rotateZ(@angle)</code></h3>
-                            <dl>
-                                <dt><code>@angle</code></dt>
-                                <dd>旋转角度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box {
-    .rotateZ(60deg);
-}
-</code></pre>
-                        </li>
-                        <p class="note">等价于 <code><a href="#rotate3d-1">.rotate3d(0, 0, 1, @angle)</a></code> 及 <code><a href="#rotate-1">.rotate(@angle)</a></code>。</p>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="background-clip"></a><code>.background-clip()</code></h2>
-                    <p class="desc">设定背景渲染范围。可以分别指定多个背景的渲染范围。</p>
-                    <ul class="signatures">
-                        <li><a name="background-clip-1"></a>
-                            <h3><code>.background-clip(@clip, ...)</code></h3>
-                            <dl>
-                                <dt><code>@clip</code></dt>
-                                <dd>单个背景的渲染范围。</dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-    .background-clip(padding-box);
-}
+    .box-2 {
+        .border-radius(3px 2px);
+    }
+    </code></pre>
+                            </li>
+                            <li><a name="border-radius-2"></a>
+                                <h3><code>.border-radius(@radius-x, @radius-y)</code></h3>
+                                <dl>
+                                    <dt><code>@radius-x</code></dt>
+                                    <dd>水平方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
+                                    <dt><code>@radius-y</code></dt>
+                                    <dd>垂直方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .border-radius(3px, 5px);
+    }
 
-.box-2 {
-    .background-clip(border-box, content-box);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="background-size"></a><code>.background-size()</code></h2>
-                    <p class="desc">设定背景的尺寸。可以分别指定多个背景的尺寸。</p>
-                    <ul class="signatures">
-                        <li><a name="background-size-1"></a>
-                            <h3><code>.background-size(@size, ...)</code></h3>
-                            <dl>
-                                <dt><code>@size</code></dt>
-                                <dd></dd>
-                            </dl>
-                            <pre class="usage"><code>.box-1 {
-  .background-size(cover);
-}
+    .box-2 {
+        .border-radius(3px 6px, 5px 5px 3px 3px);
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="border-top-left-radius"></a><code>.border-top-left-radius()</code></h2>
+                        <p class="desc">设定左上角圆角半径。</p>
+                        <ul class="signatures">
+                            <li><a name="border-top-left-radius-1"></a>
+                                <h3><code>.border-top-left-radius(@radius)</code></h3>
+                                <dl>
+                                    <dt><code>@radius</code></dt>
+                                    <dd>圆角半径。可选，默认值 <code class="default-value"><a href="#default-border-radius">@default-border-radius</a></code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .border-top-left-radius(3px);
+    }
+    </code></pre>
+                            </li>
+                            <li><a name="border-top-left-radius-2"></a>
+                                <h3><code>.border-top-leftradius(@radius-x, @radius-y)</code></h3>
+                                <dl>
+                                    <dt><code>@radius-x</code></dt>
+                                    <dd>水平方向的圆角半径。</dd>
+                                    <dt><code>@radius-y</code></dt>
+                                    <dd>垂直方向的圆角半径。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .border-top-left-radius(3px);
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="border-top-right-radius"></a><code>.border-top-right-radius()</code></h2>
+                        <p class="desc">设定右上角圆角半径。</p>
+                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="border-bottom-right-radius"></a><code>.border-bottom-right-radius()</code></h2>
+                        <p class="desc">设定右下角圆角半径。</p>
+                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="border-bottom-left-radius"></a><code>.border-bottom-left-radius()</code></h2>
+                        <p class="desc">设定左下角圆角半径。</p>
+                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="border-top-radius"></a><code>.border-top-radius()</code></h2>
+                        <p class="desc">设定左上角和右上角圆角半径。</p>
+                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="border-right-radius"></a><code>.border-right-radius()</code></h2>
+                        <p class="desc">设定右上角和右下角圆角半径。</p>
+                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="border-bottom-radius"></a><code>.border-bottom-radius()</code></h2>
+                        <p class="desc">设定左下角和右下角圆角半径。</p>
+                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="border-left-radius"></a><code>.border-left-radius()</code></h2>
+                        <p class="desc">设定左上角和左下角圆角半径。</p>
+                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-shadow"></a><code>.box-shadow()</code></h2>
+                        <p class="desc">设定元素的阴影，支持多个阴影。</p>
+                        <ul class="signatures">
+                            <li><a name="box-shadow-1"></a>
+                                <h3><code>.box-shadow(@shadow, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@shadow</code></dt>
+                                    <dd>单个阴影参数。可选，默认值：<code class="default-value"><a href="#default-box-shadow">@default-box-shadow</a></code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    }
 
-.box-2 {
-  .background-size(50% auto, contain);
-}
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section class="module">
-            <h1><a name="util"></a>util</h1>
-            <p class="desc">常用辅助类工具函数。</p>
-            <ul class="dependencies">
-                <li><code><a href="#variables">variables</a></code></li>
-            </ul>
-            <ul class="mixins">
-                <li>
-                    <h2><a name="clearfix"></a><code>.clearfix()</code></h2>
-                    <p class="desc">建立 <abbr title="block formatting context">BFC</abbr> 清除元素内部的浮动，使元素获得应有的高度。参见 <a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>。</p>
-                    <pre class="usage"><code>.container {
-    .clearfix();
-}</code></pre>
-                </li>
-                <li>
-                    <h2><a name="size"></a><code>.size()</code></h2>
-                    <p class="desc">设定元素的尺寸。</p>
-                    <ul class="signatures">
-                        <li><a name="size-1"></a>
-                            <h3><code>.size(@side-length)</code></h3>
-                            <dl>
-                                <dt><code>@side-length</code></dt>
-                                <dd>正方形边长。</dd>
-                            </dl>
-                            <pre class="usage"><code>.square {
-    .size(16px);
-}</code></pre>
-                        </li>
-                        <li><a name="size-2"></a>
-                            <h3><code>.size(@width, @height)</code></h3>
-                            <dl>
-                                <dt><code>@width</code></dt>
-                                <dd>矩形宽度。</dd>
-                                <dt><code>@height</code></dt>
-                                <dd>矩形高度。</dd>
-                            </dl>
-                            <pre class="usage"><code>.rect {
-    .size(320px, 80px);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
+    .box-2 {
+        .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="transition"></a><code>.transition()</code></h2>
+                        <p class="desc">过渡（transition）设定。</p>
+                        <ul class="signatures">
+                            <li><a name="transition-1"></a>
+                                <h3><code>.transition(@transition, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@transition</code></dt>
+                                    <dd>单个过渡设定。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .transition(background-color 1s linear);
+    }
 
-                <!-- TODO: no-bullet / no-bullets -->
-            </ul>
-        </section>
-        <section class="module">
-            <h1><a name="typography"></a>typography</h1>
-            <p class="desc">文字排版相关功能。</p>
-            <ul class="dependencies">
-                <li><code><a href="#variables">variables</a></code></li>
-                <li><code><a href="#util">util</a></code></li>
-            </ul>
-            <ul class="mixins">
-                <li>
-                    <h2><a name="font-family"></a><code>.font-family()</code></h2>
-                    <p class="desc">调用预设样式设定文字的字体族。</p>
-                    <ul class="signatures">
-                        <li><a name="font-family-1"></a>
-                            <h3><code>.font-family(@type)</code></h3>
-                            <dl>
-                                <dt><code>@type</code></dt>
-                                <dd>预设字体类型，可取值为 <code>base</code> / <code>heading</code> / <code>code</code>，分别对应普通文本、标题、代码。</dd>
-                            </dl>
-                            <pre class="usage"><code>pre code {
-    .font-family(code);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="ellipsis"></a><code>.ellipsis()</code></h2>
-                    <p class="desc">省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。</p>
-                    <ul class="signatures">
-                        <li><a name="ellipsis-1"></a>
-                            <h3><code>.ellipsis()</code></h3>
-                            <pre class="usage"><code>.cell {
-    width: 120px;
-    .ellipsis();
-}</code></pre>
-                        </li>
-                        <li><a name="ellipsis-2"></a>
-                            <h3><code>.ellipsis(@line-number)</code></h3>
-                            <dl>
-                                <dt><code>@line-number</code></dt>
-                                <dd>最多显示的行数。</dd>
-                            </dl>
-                            <pre class="usage"><code>.news {
-    width: 300px;
-    .ellipsis(3);
-}</code></pre>
-                            <p class="note">只在 WebKit 内核浏览器下有效。</p>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="force-wrap"></a><code>.force-wrap()</code></h2>
-                    <p class="desc">强制换行，阻止长字符串（例如 URL 或很长的连续英文字符）打破布局。</p>
-                    <pre class="usage"><code>.comment {
-    .force-wrap();
-}</code></pre>
-                </li>
-                <li>
-                    <h2><a name="hide-text"></a><code>.hide-text()</code></h2>
-                    <p class="desc">用于隐藏元素内文字，一般在文字隐藏之后使用背景图片替代显示。如果使用此 mixin 的元素是 <code>inline-block</code> 元素，请确保为其设置宽度。</p>
-                    <pre class="usage"><code>.logo {
-    .hide-text();
-}</code></pre>
-                </li>
-                <li>
-                    <h2><a name="invisible"></a><code>.invisible()</code></h2>
-                    <p class="desc">用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p>
-                    <pre class="usage"><code>.screen-reader-notes {
-    .invisible();
-}</code></pre>
-                    <p class="note">了解更多相关内容可以参考 <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content">Using CSS clip as an Accessible Method of Hiding Content</a>。</p>
-                </li>
-                <li>
-                    <h2><a name="img-replace"></a><code>.img-replace()</code></h2>
-                    <p class="desc">用图片替换文字，通常用作图标的样式。</p>
-                    <ul class="signatures">
-                        <li><a name="img-replace-1"></a>
-                            <h3><code>.img-replace(@img-url, @img-x, @img-y)</code></h3>
-                            <dl>
-                                <dt><code>@img-url</code></dt>
-                                <dd>字符串格式的背景图片路径。</dd>
-                                <dt><code>@img-x</code></dt>
-                                <dd>背景图 <code>background-position</code> 的水平方向位置。可选，默认值为 <code>0</code>。</dd>
-                                <dt><code>@img-y</code></dt>
-                                <dd>背景图 <code>background-position</code> 的垂直方向位置。可选，默认值为 <code>0</code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.logo {
-    .inline-block();
-    .img-replace('http://www.baidu.com/img/bdlogo.gif');
-    width: 270px;
-    height: 129px;
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="font-size-rem"></a><code>.font-size-rem()</code></h2>
-                    <p class="desc">用于将 <code>px</code> 单位的字体大小转换为 <code>rem</code> 单位。依赖于 <code><a href="#default-font-size">@default-font-size</a></code>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <code><a href="#default-font-size">@default-font-size</a></code> 一致。</p>
-                    <ul class="signatures">
-                        <li><a name="font-size-rem-1"></a>
-                            <h3><code>.font-size-rem(@px-size)</code></h3>
-                            <dl>
-                                <dt><code>@px-size</code></dt>
-                                <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
-                            </dl>
-                            <pre class="usage"><code>.text {
-    .font-size-rem(32px);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="font-size-em"></a><code>.font-size-em()</code></h2>
-                    <p class="desc">用于将 <code>px</code> 单位的字体大小转换为 <code>em</code> 单位。依赖于 <code><a href="#default-font-size">@default-font-size</a></code>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <code><a href="#default-font-size">@default-font-size</a></code> 一致。</p>
-                    <ul class="signatures">
-                        <li><a name="font-size-em-1"></a>
-                            <h3><code>.font-size-em(@px-size, @context-font-size)</code></h3>
-                            <dl>
-                                <dt><code>@px-size</code></dt>
-                                <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
-                                <dt><code>@context-font-size</code></dt>
-                                <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值为 <code><a href="#default-font-size">@default-font-size</a></code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.text {
-    .font-size-em(24px);
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <h2><a name="font-face"></a><code>.font-face()</code></h2>
-                    <p class="desc">用来方便地使用 <code>@font-face</code> 定义 web 字体。</p>
-                    <ul class="signatures">
-                        <li><a name="font-face-1"></a>
-                            <h3><code>.font-face(@family-name, @font-path, @font-weight, @font-style, @include-svg)</code></h3>
-                            <dl>
-                                <dt><code>@family-name</code></dt>
-                                <dd>字体族的名称。</dd>
-                                <dt><code>@font-path</code></dt>
-                                <dd>字体的路径。</dd>
-                                <dt><code>@font-weight</code></dt>
-                                <dd>字重。可选，默认值为 <code>normal</code> 。</dd>
-                                <dt><code>@font-style</code></dt>
-                                <dd>字体的风格。可选，默认值为 <code>normal</code> 。</dd>
-                                <dt><code>@include-svg</code></dt>
-                                <dd>是否使用svg格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值为 <code>false</code>。</dd>
-                            </dl>
-                            <pre class="usage"><code>.font-face('FamilyName', '/some/font/url');
+    .box-2 {
+        .transition(height 0.5s ease, opacity 2s linear 0.5s);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                        <div class="note">
+                            过渡属性值写法请参考：
+                            <ul class="references">
+                                <li><a href="http://dev.w3.org/csswg/css-transitions/#the-transition-shorthand-property">CSS Transitions</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">transition - CSS|MDN</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h2><a name="transition-property"></a><code>.transition-property()</code></h2>
+                        <p class="desc">设定过渡（transition）影响的属性。</p>
+                        <ul class="signatures">
+                            <li><a name="transition-property-1"></a>
+                                <h3><code>.transition-property(@property, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@property</code></dt>
+                                    <dd>参与单个过渡的属性名称。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .transition-property(background-color);
+    }
 
-/* Output: */
-@font-face {
-    font-family: 'FamilyName';
-    src: url('/some/font/url.eot');
-    src: url('/some/font/url.eot?#iefix') format('embedded-opentype'),
-         url('/some/font/url.woff') format('woff'),
-         url('/some/font/url.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}</code></pre>
-                        </li>
-                    </ul>
-                </li>
+    .box-2 {
+        .transition-property(height, opacity);
+    }
+    </code></pre>
+                                <p class="note">可以参与过渡的属性列表参见 <a href="http://dev.w3.org/csswg/css-transitions/#animatable-css">Animatable properties from CSS</a>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="transition-duration"></a><code>.transition-duration()</code></h2>
+                        <p class="desc">设定过渡（transition）的持续时间。</p>
+                        <ul class="signatures">
+                            <li><a name="transition-duration-1"></a>
+                                <h3><code>.transition-duration(@duration, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@duration</code></dt>
+                                    <dd>单个过渡的持续时间。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .transition-duration(1s);
+    }
 
-                <!-- TODO: hover-link / unstyle-link / rhythm / drop-cap -->
-            </ul>
-        </section>
-        <section class="module">
-            <h1><a name="layout"></a>layout</h1>
-            <p class="desc">提供常见的基础布局。</p>
-            <ul class="dependencies">
-                <li><code><a href="#variables">variables</a></code></li>
-                <li><code><a href="#compatibility">compatibility</a></code></li>
-                <li><code><a href="#util">util</a></code></li>
-            </ul>
-            <ul class="mixins">
-                <li>
-                    <h2><a name="est-layout-fixed-header"></a><code>.est-layout-fixed-header()</code></h2>
-                    <p class="desc">定高、相对视口固定页头布局。须与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。</p>
-                    <ul class="signatures">
-                        <li><a name="est-layout-fixed-header-1"></a>
-                            <h3><code>.est-layout-fixed-header(@height)</code></h3>
-                            <dl>
-                                <dt><code>@height</code></dt>
-                                <dd>页头高度。</dd>
-                            </dl>
-                            <pre class="usage"><code>&lt;body&gt;
-  &lt;div class=&quot;est-header&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre>
-                        </li>
-                    </ul>
-                </li>
-                li#>((h2>code>{.()})+p.desc+ul.signatures>li#>(h3>code)+(dl>(dt>code)+dd)+pre.usage>code)
-                li#>((h2>code>{.()})+p.desc+ul.signatures>li#>(h3>code)+(dl>(dt>code)+dd)+pre.usage>code)
-            </ul>
-        </section>
+    .box-2 {
+        .transition-duration(0.5s, 2s);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="transition-timing-function"></a><code>.transition-timing-function()</code></h2>
+                        <p class="desc">设定过渡（transition）的时间函数。</p>
+                        <ul class="signatures">
+                            <li><a name="transition-timing-function-1"></a>
+                                <h3><code>.transition-timing-function(@timing-function, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@timing-function</code></dt>
+                                    <dd>单个过渡的时间函数。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .transition-timing-function(linear);
+    }
+
+    .box-2 {
+        .transition-timing-function(ease, linear);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="transition-delay"></a><code>.transition-delay()</code></h2>
+                        <p class="desc">设定过渡（transition）的延迟时间。</p>
+                        <ul class="signatures">
+                            <li><a name="transition-delay-1"></a>
+                                <h3><code>.transition-delay(@delay, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@delay</code></dt>
+                                    <dd>单个过渡的延迟时间。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .transition-delay(0s);
+    }
+
+    .box-2 {
+        .transition-delay(0s, 0.5s);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation"></a><code>.animation()</code></h2>
+                        <p class="desc">动画（animation）设定。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-1"></a>
+                                <h3><code>.animation(@animation, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@animation</code></dt>
+                                    <dd>单个动画设定。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation(rotate 2s linear);
+    }
+
+    .box-2 {
+        .animation(fly-in 0.5s ease-out, fade-in 0.5s ease-out);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                        <div class="note">
+                            动画属性值写法请参考：
+                            <ul class="references">
+                                <li><a href="http://dev.w3.org/csswg/css-animations/#animation-shorthand-property">CSS Animations</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">animation - CSS|MDN</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h2><a name="animation-name"></a><code>.animation-name()</code></h2>
+                        <p class="desc">设定动画（animation）对应的 <code>@keyframes</code> 规则名称。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-name-1"></a>
+                                <h3><code>.animation-name(@name, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@name</code></dt>
+                                    <dd>单个动画对应的 <code>@keyframes</code> 规则名称。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-name(rotate);
+    }
+
+    .box-2 {
+        .animation-name(fly-in, fade-in);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation-duration"></a><code>.animation-duration()</code></h2>
+                        <p class="desc">设定动画（animation）的持续时间。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-duration-1"></a>
+                                <h3><code>.animation-duration(@duration, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@duration</code></dt>
+                                    <dd>单个动画的持续时间。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-duration(3s);
+    }
+
+    .box-2 {
+        .animation-duration(0.5s, 3s);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation-timing-function"></a><code>.animation-timing-function()</code></h2>
+                        <p class="desc">设定动画（animation）的时间函数。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-timing-function-1"></a>
+                                <h3><code>.animation-timing-function(@timing-function, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@timing-function</code></dt>
+                                    <dd>单个动画的时间函数。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-timing-function(linear);
+    }
+
+    .box-2 {
+        .animation-timing-function(ease, linear);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation-iteration-count"></a><code>.animation-iteration-count()</code></h2>
+                        <p class="desc">设定动画（animation）的循环次数。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-iteration-count-1"></a>
+                                <h3><code>.animation-iteration-count(@count, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@count</code></dt>
+                                    <dd>单个动画的循环次数。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-iteration-count(5);
+    }
+
+    .box-2 {
+        .animation-iteration-count(3, infinite);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation-direction"></a><code>.animation-direction()</code></h2>
+                        <p class="desc">设定动画（animation）播放的正反方向。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-direction-1"></a>
+                                <h3><code>.animation-direction(@direction, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@direction</code></dt>
+                                    <dd>单个动画播放的正反方向。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-direction(reverse);
+    }
+
+    .box-2 {
+        .animation-direction(normal, alternate);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation-play-state"></a><code>.animation-play-state()</code></h2>
+                        <p class="desc">设定动画（animation）的播放状态。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-play-state-1"></a>
+                                <h3><code>.animation-play-state(@state, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@state</code></dt>
+                                    <dd>单个动画的播放状态。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-play-state(paused);
+    }
+
+    .box-2 {
+        .animation-play-state(paused, running);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation-delay"></a><code>.animation-delay()</code></h2>
+                        <p class="desc">设定动画（animation）的播放延迟时间。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-delay-1"></a>
+                                <h3><code>.animation-delay(@delay, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@delay</code></dt>
+                                    <dd>单个动画的播放延迟时间。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-delay(2s);
+    }
+
+    .box-2 {
+        .animation-delay(0s, 1s);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="animation-fill-mode"></a><code>.animation-fill-mode()</code></h2>
+                        <p class="desc">设定动画（animation）的属性填充方式。</p>
+                        <ul class="signatures">
+                            <li><a name="animation-fill-mode-1"></a>
+                                <h3><code>.animation-fill-mode(@mode, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@mode</code></dt>
+                                    <dd>单个动画的属性填充方式。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .animation-fill-mode(backwards);
+    }
+
+    .box-2 {
+        .animation-fill-mode(forwards, both);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="transform"></a><code>.transform()</code></h2>
+                        <p class="desc">变换（transform）操作。</p>
+                        <ul class="signatures">
+                            <li><a name="transform-1"></a>
+                                <h3><code>.transform(@transform-function, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@transform-function</code></dt>
+                                    <dd>变换函数。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .transform(matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
+    }
+
+    .box-2 {
+        .transform(translateX(10px), rotate(10deg), translateY(5px));
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                        <div class="note">
+                            变换函数写法请参考：
+                            <ul class="references">
+                                <li><a href="http://dev.w3.org/csswg/css-transforms/#transform-property">CSS Transforms</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">transform - CSS|MDN</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h2><a name="transform-style"></a><code>.transform-style()</code></h2>
+                        <p class="desc">设定变换是否支持 3D。</p>
+                        <ul class="signatures">
+                            <li><a name="transform-style-1"></a>
+                                <h3><code>.transform-style(@style)</code></h3>
+                                <dl>
+                                    <dt><code>@style</code></dt>
+                                    <dd>对 3D 变换的支持方式。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .transform-style(preserve-3d);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="transform-origin"></a><code>.transform-origin()</code></h2>
+                        <p class="desc">设定变换的坐标原点。</p>
+                        <ul class="signatures">
+                            <li><a name="transform-origin-1"></a>
+                                <h3><code>.transform-origin(@origin)</code></h3>
+                                <dl>
+                                    <dt><code>@origin</code></dt>
+                                    <dd>坐标原点位置。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .transform-origin(2px left);
+    }
+
+    .box-2 {
+        .transform-origin(2px 30% 10px);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="backface-visibility"></a><code>.backface-visibility()</code></h2>
+                        <p class="desc">设定3D变换后元素背面是否可见。</p>
+                        <ul class="signatures">
+                            <li><a name="backface-visibility-1"></a>
+                                <h3><code>.backface-visibility(@visibility)</code></h3>
+                                <dl>
+                                    <dt><code>@visibility</code></dt>
+                                    <dd>背面是否可见。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .backface-visibility(hidden);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="perspective"></a><code>.perspective()</code></h2>
+                        <p class="desc">设定透视距离。</p>
+                        <ul class="signatures">
+                            <li><a name="perspective-1"></a>
+                                <h3><code>.perspective(@d)</code></h3>
+                                <dl>
+                                    <dt><code>@d</code></dt>
+                                    <dd>透视距离。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .perspective(1500px);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="matrix"></a><code>.matrix()</code></h2>
+                        <p class="desc">根据指定的矩阵进行 2D 变换。</p>
+                        <ul class="signatures">
+                            <li><a name="matrix-1"></a>
+                                <h3><code>.matrix(@a, @b, @c, @d, @tx, @ty)</code></h3>
+                                <pre class="usage"><code>.box {
+        .matrix(1, -0.2, 0, 1, 0, 0);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                        <p class="note">参数含义及写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#matrix()">transform-function - CSS | MDN</a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="translate"></a><code>.translate()</code></h2>
+                        <p class="desc">进行 2D 平移变换。</p>
+                        <ul class="signatures">
+                            <li><a name="translate-1"></a>
+                                <h3><code>.translate(@tx)</code></h3>
+                                <dl>
+                                    <dt><code>@tx</code></dt>
+                                    <dd>X 轴方向上的平移距离。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .translate(80px);
+    }
+    </code></pre>
+                            <p class="note">Y 轴方向不进行平移。等价于 <code><a href="#translateX-1">.translateX(@tx)</a></code>。</p>
+                            </li>
+                            <li><a name="translate-2"></a>
+                                <h3><code>.translate(@tx, @ty)</code></h3>
+                                <dl>
+                                    <dt><code>@tx</code></dt>
+                                    <dd>X 轴方向上的平移距离。</dd>
+                                    <dt><code>@ty</code></dt>
+                                    <dd>Y 轴方向上的平移距离。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .translate(30px, 50px);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="translateX"></a><code>.translateX()</code></h2>
+                        <p class="desc">进行 X 轴方向上的平移变换。</p>
+                        <ul class="signatures">
+                            <li><a name="translateX-1"></a>
+                                <h3><code>.translateX(@tx)</code></h3>
+                                <dl>
+                                    <dt><code>@tx</code></dt>
+                                    <dd>平移距离。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .translateX(80px);
+    }
+    </code></pre>
+                            <p class="note">等价于 <code><a href="#translate-1">.translate(@tx)</a></code> 及 <code><a href="#translate-2">.translate(@tx, 0)</a></code>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="translateY"></a><code>.translateY()</code></h2>
+                        <p class="desc">进行 Y 轴方向上的平移变换。</p>
+                        <ul class="signatures">
+                            <li><a name="translateY-1"></a>
+                                <h3><code>.translateY(@ty)</code></h3>
+                                <dl>
+                                    <dt><code>@ty</code></dt>
+                                    <dd>平移距离。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .translateY(80px);
+    }
+    </code></pre>
+                            <p class="note">等价于 <code><a href="#translate-2">.translate(0, @ty)</a></code>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="scale"></a><code>.scale()</code></h2>
+                        <p class="desc">进行 2D 缩放变换。</p>
+                        <ul class="signatures">
+                            <li><a name="scale-1"></a>
+                                <h3><code>.scale(@s)</code></h3>
+                                <dl>
+                                    <dt><code>@s</code></dt>
+                                    <dd>缩放比例。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .scale(2.1);
+    }
+    </code></pre>
+                            <p class="note">等价于 <code><a href="#scale-2">.scale(@s, @s)</a></code>。</p>
+                            </li>
+                            <li><a name="scale-2"></a>
+                                <h3><code>.scale(@sx, @sy)</code></h3>
+                                <dl>
+                                    <dt><code>@sx</code></dt>
+                                    <dd>X 轴方向上的缩放比例。</dd>
+                                    <dt><code>@sy</code></dt>
+                                    <dd>Y 轴方向上的缩放比例。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .scale(2.1, 4);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="scaleX"></a><code>.scaleX()</code></h2>
+                        <p class="desc">进行 X 轴方向上的缩放变换。</p>
+                        <ul class="signatures">
+                            <li><a name="scaleX-1"></a>
+                                <h3><code>.scaleX(@sx)</code></h3>
+                                <dl>
+                                    <dt><code>@sx</code></dt>
+                                    <dd>缩放比例。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .scaleX(0.5);
+    }
+    </code></pre>
+                            <p class="note">等价于 <code><a href="#scale-2">.scale(@sx, 1)</a></code>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="scaleY"></a><code>.scaleY()</code></h2>
+                        <p class="desc">进行 Y 轴方向上的缩放变换。</p>
+                        <ul class="signatures">
+                            <li><a name="scaleY-1"></a>
+                                <h3><code>.scaleY(@sy)</code></h3>
+                                <dl>
+                                    <dt><code>@sy</code></dt>
+                                    <dd>缩放比例。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .scaleY(2.7);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="rotate"></a><code>.rotate()</code></h2>
+                        <p class="desc">进行 2D 旋转变换。</p>
+                        <ul class="signatures">
+                            <li><a name="rotate-1"></a>
+                                <h3><code>.rotate(@angle)</code></h3>
+                                <dl>
+                                    <dt><code>@angle</code></dt>
+                                    <dd>旋转角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .rotate(30deg);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="skew"></a><code>.skew()</code></h2>
+                        <p class="desc">进行 2D 倾斜拉伸变换。</p>
+                        <ul class="signatures">
+                            <li><a name="skew-1"></a>
+                                <h3><code>.skew(@ax)</code></h3>
+                                <dl>
+                                    <dt><code>@ax</code></dt>
+                                    <dd>沿 X 轴倾斜拉伸的角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .skew(30deg);
+    }
+    </code></pre>
+                            <p class="note">沿 Y 轴方向不进行倾斜拉伸。等价于 <code><a href="#skewX-1">.skewX(@ax)</a></code>。</p>
+                            </li>
+                            <li><a name="skew-2"></a>
+                                <h3><code>.skew(@ax, @ay)</code></h3>
+                                <dl>
+                                    <dt><code>@ax</code></dt>
+                                    <dd>沿 X 轴倾斜拉伸的角度。</dd>
+                                    <dt><code>@ay</code></dt>
+                                    <dd>沿 Y 轴倾斜拉伸的角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .skew(30deg, 15deg);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                        <p class="note">须注意 <code>skew</code> 的行为与 <code>skewX</code> 叠加上 <code>skewY</code> 并不等价。</p>
+                    </li>
+                    <li>
+                        <h2><a name="skewX"></a><code>.skewX()</code></h2>
+                        <p class="desc">进行 X 轴方向上的平移变换。</p>
+                        <ul class="signatures">
+                            <li><a name="skewX-1"></a>
+                                <h3><code>.skewX(@ax)</code></h3>
+                                <dl>
+                                    <dt><code>@ax</code></dt>
+                                    <dd>倾斜拉伸的角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .skewX(30deg);
+    }
+    </code></pre>
+                            <p class="note">等价于 <code><a href="#skew-1">.skew(@ax)</a></code>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="skewY"></a><code>.skewY()</code></h2>
+                        <p class="desc">沿 Y 轴倾斜拉伸的角度。</p>
+                        <ul class="signatures">
+                            <li><a name="skewY-1"></a>
+                                <h3><code>.skewY(@ay)</code></h3>
+                                <dl>
+                                    <dt><code>@ay</code></dt>
+                                    <dd>倾斜拉伸的角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .skewY(15deg);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="matrix3d"></a><code>.matrix3d()</code></h2>
+                        <p class="desc">根据指定的矩阵进行 3D 变换。</p>
+                        <ul class="signatures">
+                            <li><a name="matrix3d-1"></a>
+                                <h3><code>.matrix3d(@a1, @b1, @c1, @d1,
+              @a2, @b2, @c2, @d2,
+              @a3, @b3, @c3, @d3,
+              @a4, @b4, @c4, @d4)</code></h3>
+                                <pre class="usage"><code></code></pre>
+                            </li>
+                        </ul>
+                        <p class="note">参数含义及写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#matrix3d()">transform-function - CSS | MDN</a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="translate3d"></a><code>.translate3d()</code></h2>
+                        <p class="desc">进行 3D 平移变换。</p>
+                        <ul class="signatures">
+                            <li><a name="translate3d-1"></a>
+                                <h3><code>.translate3d(@tx, @ty, @tz)</code></h3>
+                                <dl>
+                                    <dt><code>@tx</code></dt>
+                                    <dd>X 轴方向上的平移距离。</dd>
+                                    <dt><code>@ty</code></dt>
+                                    <dd>Y 轴方向上的平移距离。</dd>
+                                    <dt><code>@tz</code></dt>
+                                    <dd>Z 轴方向上的平移距离。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .translate3d(12px, 50%, 3em);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="translateZ"></a><code>.translateZ()</code></h2>
+                        <p class="desc">进行 Z 轴方向上的平移变换。</p>
+                        <ul class="signatures">
+                            <li><a name="translateZ-1"></a>
+                                <h3><code>.translateZ(@tz)</code></h3>
+                                <dl>
+                                    <dt><code>@tz</code></dt>
+                                    <dd>平移距离。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .translateZ(3em);
+    }
+    </code></pre>
+                            </li>
+                            <p class="note">等价于 <code><a href="#translate3d-1">.translate3d(0, 0, @tz)</a></code>。</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="scale3d"></a><code>.scale3d()</code></h2>
+                        <p class="desc">进行 3D 缩放变换。</p>
+                        <ul class="signatures">
+                            <li><a name="scale3d-1"></a>
+                                <h3><code>.scale3d(@sx, @sy, @sz)</code></h3>
+                                <dl>
+                                    <dt><code>@sx</code></dt>
+                                    <dd>X 轴方向上的缩放比例。</dd>
+                                    <dt><code>@sy</code></dt>
+                                    <dd>Y 轴方向上的缩放比例。</dd>
+                                    <dt><code>@sz</code></dt>
+                                    <dd>Z 轴方向上的缩放比例。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .scale3d(2.5, 1.2, 0.3);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="scaleZ"></a><code>.scaleZ()</code></h2>
+                        <p class="desc">进行 Z 轴方向上的缩放变换。</p>
+                        <ul class="signatures">
+                            <li><a name="scaleZ-1"></a>
+                                <h3><code>.scaleZ(@sz)</code></h3>
+                                <dl>
+                                    <dt><code>@sz</code></dt>
+                                    <dd>缩放比例。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .scaleZ(0.3);
+    }
+    </code></pre>
+                            </li>
+                            <p class="note">等价于 <code><a href="#scale3d-1">.scale3d(1, 1, @sz)</a></code>。</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="rotate3d"></a><code>.rotate3d()</code></h2>
+                        <p class="desc">进行 3D 旋转变换。</p>
+                        <ul class="signatures">
+                            <li><a name="rotate3d-1"></a>
+                                <h3><code>.rotate3d(@x, @y, @z, @angle)</code></h3>
+                                <dl>
+                                    <dt><code>@x</code></dt>
+                                    <dd>旋转轴方向向量在 X 轴方向上的分量。</dd>
+                                    <dt><code>@y</code></dt>
+                                    <dd>旋转轴方向向量在 Y 轴方向上的分量。</dd>
+                                    <dt><code>@z</code></dt>
+                                    <dd>旋转轴方向向量在 Z 轴方向上的分量。</dd>
+                                    <dt><code>@angle</code></dt>
+                                    <dd>旋转角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .rotate3d(1, 2.0, 3.0, 10deg);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="rotateX"></a><code>.rotateX()</code></h2>
+                        <p class="desc">绕 X 轴方向进行旋转变换。</p>
+                        <ul class="signatures">
+                            <li><a name="rotateX-1"></a>
+                                <h3><code>.rotateX(@angle)</code></h3>
+                                <dl>
+                                    <dt><code>@angle</code></dt>
+                                    <dd>旋转角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .rotateX(60deg);
+    }
+    </code></pre>
+                            </li>
+                            <p class="note">等价于 <code><a href="#rotate3d-1">.rotate3d(1, 0, 0, @angle)</a></code>。</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="rotateY"></a><code>.rotateY()</code></h2>
+                        <p class="desc">绕 Y 轴方向进行旋转变换。</p>
+                        <ul class="signatures">
+                            <li><a name="rotateY-1"></a>
+                                <h3><code>.rotateY(@angle)</code></h3>
+                                <dl>
+                                    <dt><code>@angle</code></dt>
+                                    <dd>旋转角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .rotateY(60deg);
+    }
+    </code></pre>
+                            </li>
+                            <p class="note">等价于 <code><a href="#rotate3d-1">.rotate3d(0, 1, 0, @angle)</a></code>。</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="rotateZ"></a><code>.rotateZ()</code></h2>
+                        <p class="desc">绕 Z 轴方向进行旋转变换。</p>
+                        <ul class="signatures">
+                            <li><a name="rotateZ-1"></a>
+                                <h3><code>.rotateZ(@angle)</code></h3>
+                                <dl>
+                                    <dt><code>@angle</code></dt>
+                                    <dd>旋转角度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+        .rotateZ(60deg);
+    }
+    </code></pre>
+                            </li>
+                            <p class="note">等价于 <code><a href="#rotate3d-1">.rotate3d(0, 0, 1, @angle)</a></code> 及 <code><a href="#rotate-1">.rotate(@angle)</a></code>。</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="background-clip"></a><code>.background-clip()</code></h2>
+                        <p class="desc">设定背景渲染范围。可以分别指定多个背景的渲染范围。</p>
+                        <ul class="signatures">
+                            <li><a name="background-clip-1"></a>
+                                <h3><code>.background-clip(@clip, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@clip</code></dt>
+                                    <dd>单个背景的渲染范围。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+        .background-clip(padding-box);
+    }
+
+    .box-2 {
+        .background-clip(border-box, content-box);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="background-size"></a><code>.background-size()</code></h2>
+                        <p class="desc">设定背景的尺寸。可以分别指定多个背景的尺寸。</p>
+                        <ul class="signatures">
+                            <li><a name="background-size-1"></a>
+                                <h3><code>.background-size(@size, ...)</code></h3>
+                                <dl>
+                                    <dt><code>@size</code></dt>
+                                    <dd></dd>
+                                </dl>
+                                <pre class="usage"><code>.box-1 {
+      .background-size(cover);
+    }
+
+    .box-2 {
+      .background-size(50% auto, contain);
+    }
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section class="module">
+                <h1><a name="util"></a>util</h1>
+                <p class="desc">常用辅助类工具函数。</p>
+                <ul class="dependencies">
+                    <li><code><a href="#variables">variables</a></code></li>
+                </ul>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="clearfix"></a><code>.clearfix()</code></h2>
+                        <p class="desc">建立 <abbr title="block formatting context">BFC</abbr> 清除元素内部的浮动，使元素获得应有的高度。参见 <a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>。</p>
+                        <pre class="usage"><code>.container {
+        .clearfix();
+    }</code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="size"></a><code>.size()</code></h2>
+                        <p class="desc">设定元素的尺寸。</p>
+                        <ul class="signatures">
+                            <li><a name="size-1"></a>
+                                <h3><code>.size(@side-length)</code></h3>
+                                <dl>
+                                    <dt><code>@side-length</code></dt>
+                                    <dd>正方形边长。</dd>
+                                </dl>
+                                <pre class="usage"><code>.square {
+        .size(16px);
+    }</code></pre>
+                            </li>
+                            <li><a name="size-2"></a>
+                                <h3><code>.size(@width, @height)</code></h3>
+                                <dl>
+                                    <dt><code>@width</code></dt>
+                                    <dd>矩形宽度。</dd>
+                                    <dt><code>@height</code></dt>
+                                    <dd>矩形高度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.rect {
+        .size(320px, 80px);
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- TODO: no-bullet / no-bullets -->
+                </ul>
+            </section>
+            <section class="module">
+                <h1><a name="typography"></a>typography</h1>
+                <p class="desc">文字排版相关功能。</p>
+                <ul class="dependencies">
+                    <li><code><a href="#variables">variables</a></code></li>
+                    <li><code><a href="#util">util</a></code></li>
+                </ul>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="font-family"></a><code>.font-family()</code></h2>
+                        <p class="desc">调用预设样式设定文字的字体族。</p>
+                        <ul class="signatures">
+                            <li><a name="font-family-1"></a>
+                                <h3><code>.font-family(@type)</code></h3>
+                                <dl>
+                                    <dt><code>@type</code></dt>
+                                    <dd>预设字体类型，可取值为 <code>base</code> / <code>heading</code> / <code>code</code>，分别对应普通文本、标题、代码。</dd>
+                                </dl>
+                                <pre class="usage"><code>pre code {
+        .font-family(code);
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="ellipsis"></a><code>.ellipsis()</code></h2>
+                        <p class="desc">省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。</p>
+                        <ul class="signatures">
+                            <li><a name="ellipsis-1"></a>
+                                <h3><code>.ellipsis()</code></h3>
+                                <pre class="usage"><code>.cell {
+        width: 120px;
+        .ellipsis();
+    }</code></pre>
+                            </li>
+                            <li><a name="ellipsis-2"></a>
+                                <h3><code>.ellipsis(@line-number)</code></h3>
+                                <dl>
+                                    <dt><code>@line-number</code></dt>
+                                    <dd>最多显示的行数。</dd>
+                                </dl>
+                                <pre class="usage"><code>.news {
+        width: 300px;
+        .ellipsis(3);
+    }</code></pre>
+                                <p class="note">只在 WebKit 内核浏览器下有效。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="force-wrap"></a><code>.force-wrap()</code></h2>
+                        <p class="desc">强制换行，阻止长字符串（例如 URL 或很长的连续英文字符）打破布局。</p>
+                        <pre class="usage"><code>.comment {
+        .force-wrap();
+    }</code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="hide-text"></a><code>.hide-text()</code></h2>
+                        <p class="desc">用于隐藏元素内文字，一般在文字隐藏之后使用背景图片替代显示。如果使用此 mixin 的元素是 <code>inline-block</code> 元素，请确保为其设置宽度。</p>
+                        <pre class="usage"><code>.logo {
+        .hide-text();
+    }</code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="invisible"></a><code>.invisible()</code></h2>
+                        <p class="desc">用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p>
+                        <pre class="usage"><code>.screen-reader-notes {
+        .invisible();
+    }</code></pre>
+                        <p class="note">了解更多相关内容可以参考 <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content">Using CSS clip as an Accessible Method of Hiding Content</a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="img-replace"></a><code>.img-replace()</code></h2>
+                        <p class="desc">用图片替换文字，通常用作图标的样式。</p>
+                        <ul class="signatures">
+                            <li><a name="img-replace-1"></a>
+                                <h3><code>.img-replace(@img-url, @img-x, @img-y)</code></h3>
+                                <dl>
+                                    <dt><code>@img-url</code></dt>
+                                    <dd>字符串格式的背景图片路径。</dd>
+                                    <dt><code>@img-x</code></dt>
+                                    <dd>背景图 <code>background-position</code> 的水平方向位置。可选，默认值为 <code>0</code>。</dd>
+                                    <dt><code>@img-y</code></dt>
+                                    <dd>背景图 <code>background-position</code> 的垂直方向位置。可选，默认值为 <code>0</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.logo {
+        .inline-block();
+        .img-replace('http://www.baidu.com/img/bdlogo.gif');
+        width: 270px;
+        height: 129px;
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="font-size-rem"></a><code>.font-size-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的字体大小转换为 <code>rem</code> 单位。依赖于 <code><a href="#default-font-size">@default-font-size</a></code>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <code><a href="#default-font-size">@default-font-size</a></code> 一致。</p>
+                        <ul class="signatures">
+                            <li><a name="font-size-rem-1"></a>
+                                <h3><code>.font-size-rem(@px-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
+                                </dl>
+                                <pre class="usage"><code>.text {
+        .font-size-rem(32px);
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="font-size-em"></a><code>.font-size-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的字体大小转换为 <code>em</code> 单位。依赖于 <code><a href="#default-font-size">@default-font-size</a></code>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <code><a href="#default-font-size">@default-font-size</a></code> 一致。</p>
+                        <ul class="signatures">
+                            <li><a name="font-size-em-1"></a>
+                                <h3><code>.font-size-em(@px-size, @context-font-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
+                                    <dt><code>@context-font-size</code></dt>
+                                    <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值为 <code><a href="#default-font-size">@default-font-size</a></code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.text {
+        .font-size-em(24px);
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="font-face"></a><code>.font-face()</code></h2>
+                        <p class="desc">用来方便地使用 <code>@font-face</code> 定义 web 字体。</p>
+                        <ul class="signatures">
+                            <li><a name="font-face-1"></a>
+                                <h3><code>.font-face(@family-name, @font-path, @font-weight, @font-style, @include-svg)</code></h3>
+                                <dl>
+                                    <dt><code>@family-name</code></dt>
+                                    <dd>字体族的名称。</dd>
+                                    <dt><code>@font-path</code></dt>
+                                    <dd>字体的路径。</dd>
+                                    <dt><code>@font-weight</code></dt>
+                                    <dd>字重。可选，默认值为 <code>normal</code> 。</dd>
+                                    <dt><code>@font-style</code></dt>
+                                    <dd>字体的风格。可选，默认值为 <code>normal</code> 。</dd>
+                                    <dt><code>@include-svg</code></dt>
+                                    <dd>是否使用svg格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值为 <code>false</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.font-face('FamilyName', '/some/font/url');
+
+    /* Output: */
+    @font-face {
+        font-family: 'FamilyName';
+        src: url('/some/font/url.eot');
+        src: url('/some/font/url.eot?#iefix') format('embedded-opentype'),
+             url('/some/font/url.woff') format('woff'),
+             url('/some/font/url.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- TODO: hover-link / unstyle-link / rhythm / drop-cap -->
+                </ul>
+            </section>
+            <section class="module">
+                <h1><a name="layout"></a>layout</h1>
+                <p class="desc">提供常见的基础布局。</p>
+                <ul class="dependencies">
+                    <li><code><a href="#variables">variables</a></code></li>
+                    <li><code><a href="#compatibility">compatibility</a></code></li>
+                    <li><code><a href="#util">util</a></code></li>
+                </ul>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="est-layout-fixed-header"></a><code>.est-layout-fixed-header()</code></h2>
+                        <p class="desc">定高、相对视口固定页头布局。须与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。</p>
+                        <ul class="signatures">
+                            <li><a name="est-layout-fixed-header-1"></a>
+                                <h3><code>.est-layout-fixed-header(@height)</code></h3>
+                                <dl>
+                                    <dt><code>@height</code></dt>
+                                    <dd>页头高度。</dd>
+                                </dl>
+                                <pre class="usage"><code>&lt;body&gt;
+      &lt;div class=&quot;est-header&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+    </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    li#>((h2>code>{.()})+p.desc+ul.signatures>li#>(h3>code)+(dl>(dt>code)+dd)+pre.usage>code)
+                    li#>((h2>code>{.()})+p.desc+ul.signatures>li#>(h3>code)+(dl>(dt>code)+dd)+pre.usage>code)
+                </ul>
+            </section>
+        </article>
     </main>
     <footer>&hearts; This page is built with est, Google Fonts &amp; jQuery Waypoints on a PC.</footer>
     <script src="hiless.js"></script>
@@ -1551,13 +1569,15 @@
 
 
             // highlight nav while scrolling
-            $('.module').waypoint(function(direction) {
-                var $links = $('header nav a[href="#' + $(this).find('h1>a[name]').attr('name') + '"]');
+            $('.module, .overview').waypoint(function(direction) {
+                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').attr('name');
+                var $links = $('header nav a[href="#' + name + '"]');
                 $links.toggleClass('active', direction === 'down');
             }, {
                 offset: '100%'
             }).waypoint(function(direction) {
-                var $links = $('header nav a[href="#' + $(this).find('h1>a[name]').attr('name') + '"]');
+                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').attr('name');
+                var $links = $('header nav a[href="#' + name + '"]');
                 $links.toggleClass('active', direction === 'up');
             }, {
                 offset: function() {

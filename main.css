@@ -670,21 +670,42 @@ header nav a {
 }
 .overview {
   margin: 40px 0;
-  padding: 40px;
-  color: rgba(43, 43, 43, 0.8);
-  text-shadow: 0 1px 1px #ffffff, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+  padding: 20px 40px;
+}
+.overview h1 {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.4em;
+  color: #666666;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+.overview .github {
+  float: right;
+  margin-top: 5px;
 }
 .overview blockquote {
-  padding: 1em 40px;
+  overflow: hidden;
+  margin: 20px 10px 30px;
+  padding: 20px 40px;
   border-left: 5px solid rgba(173, 216, 230, 0.4);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.4);
-  -webkit-box-shadow: 0 1px 1px rgba(102, 102, 102, 0.19999999999999996);
-  -moz-box-shadow: 0 1px 1px rgba(102, 102, 102, 0.19999999999999996);
-  box-shadow: 0 1px 1px rgba(102, 102, 102, 0.19999999999999996);
+  -webkit-box-shadow: 0 1px 1px rgba(102 102 102 0.19999999999999996);
+  -moz-box-shadow: 0 1px 1px rgba(102 102 102 0.19999999999999996);
+  box-shadow: 0 1px 1px rgba(102 102 102 0.19999999999999996);
   color: rgba(145, 145, 145, 0.8);
+  text-shadow: 0 1px 1px #ffffff, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.overview blockquote hr {
+  border-width: 1px;
+  border-style: solid none;
+  border-bottom-color: rgba(255, 255, 255, 0.7);
+  border-top-color: rgba(0, 0, 0, 0.05);
+}
+.overview .desc {
+  color: rgba(43, 43, 43, 0.8);
   text-shadow: 0 1px 1px #ffffff, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 p code,

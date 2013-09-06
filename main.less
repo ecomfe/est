@@ -204,16 +204,40 @@ header {
 
 .overview:extend(.module) {
     margin: 40px 0;
-    padding: 40px;
-    .debossed-text(#fff, #333);
+    padding: 20px 40px;
+
+    h1 {
+        display: inline-block;
+        margin: 0;
+        font-size: 1.4em;
+        .embossed-text(rgba(255, 255, 255, 0.7), #666);
+    }
+
+    .github {
+        float: right;
+        margin-top: 5px;
+    }
 
     blockquote {
-        padding: 1em 40px;
+        overflow: hidden;
+        margin: 20px 10px 30px;
+        padding: 20px 40px;
         border-left: 5px solid fadeout(lightblue, 60%);
         .border-radius(4px);
         background-color: fadeout(#fff, 60%);
         .box-shadow(0 1px 1px fadeout(#666, 80%));
         .debossed-text(#fff, #999);
+
+        hr {
+            border-width: 1px;
+            border-style: solid none;
+            border-bottom-color: rgba(255, 255, 255, 0.7);
+            border-top-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    .desc {
+        .debossed-text(#fff, #333);
     }
 }
 
