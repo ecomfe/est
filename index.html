@@ -1085,9 +1085,9 @@
                         <ul class="signatures">
                             <li><a name="matrix3d-1"></a>
                                 <h3><code>.matrix3d(@a1, @b1, @c1, @d1,
-              @a2, @b2, @c2, @d2,
-              @a3, @b3, @c3, @d3,
-              @a4, @b4, @c4, @d4)</code></h3>
+          @a2, @b2, @c2, @d2,
+          @a3, @b3, @c3, @d3,
+          @a4, @b4, @c4, @d4)</code></h3>
                                 <pre class="usage"><code></code></pre>
                             </li>
                         </ul>
@@ -1570,13 +1570,13 @@
 
             // highlight nav while scrolling
             $('.module, .overview').waypoint(function(direction) {
-                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').attr('name');
+                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
                 var $links = $('header nav a[href="#' + name + '"]');
                 $links.toggleClass('active', direction === 'down');
             }, {
                 offset: '100%'
             }).waypoint(function(direction) {
-                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').attr('name');
+                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
                 var $links = $('header nav a[href="#' + name + '"]');
                 $links.toggleClass('active', direction === 'up');
             }, {
@@ -1585,11 +1585,6 @@
                 }
             });
 
-            // internal anchor jumping
-            $('a[href^=#]').on('click', function() {
-                var name = this.href.replace('#', '');
-                $('a[name=' + name + ']').parent().addClass('target');
-            });
         });
     </script>
 </body>

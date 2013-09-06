@@ -692,9 +692,9 @@ header nav a {
   -moz-border-radius: 4px;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.4);
-  -webkit-box-shadow: 0 1px 1px rgba(102 102 102 0.19999999999999996);
-  -moz-box-shadow: 0 1px 1px rgba(102 102 102 0.19999999999999996);
-  box-shadow: 0 1px 1px rgba(102 102 102 0.19999999999999996);
+  -webkit-box-shadow: 0 1px 1px rgba(102, 102, 102, 0.19999999999999996);
+  -moz-box-shadow: 0 1px 1px rgba(102, 102, 102, 0.19999999999999996);
+  box-shadow: 0 1px 1px rgba(102, 102, 102, 0.19999999999999996);
   color: rgba(145, 145, 145, 0.8);
   text-shadow: 0 1px 1px #ffffff, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
 }
