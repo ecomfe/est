@@ -5,6 +5,7 @@
 // ### Usage:
 // 提供文本相关的mixin样式。
 
+@import "variables.less";
 @import "util.less";
 
 
@@ -122,7 +123,7 @@
     .hide-text();
     background: url(@img-url) no-repeat @img-x @img-y;
 }
-.ir (@img-url, @img-x: 0, @img-y: 0) {
+.ir(@img-url, @img-x: 0, @img-y: 0) {
     .img-replace(@img-url, @img-x, @img-y);
 }
 
