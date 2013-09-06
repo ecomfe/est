@@ -5,7 +5,7 @@
 // ### Usage:
 // 解决常见兼容性问题，如浏览器私有前缀等。
 
-@import 'variables';
+@import "variables.less";
 
 .inline-block() {
     display: inline-block;
@@ -14,7 +14,7 @@
     *display: inline;
     *zoom: 1;
 }
-.inline-block() when (@support-old-ie = true) {
+.inline-block() when (@support-old-ie) {
     .ie-inline-block;
 }
 
@@ -65,52 +65,101 @@
 
 .opacity(@opacity: 100) {
     opacity: @opacity / 100;
-    filter: ~`"alpha(opacity=@{opacity})"`;
+    filter: ~"alpha(opacity=@{opacity})";
 }
 
 // Border Radius
+// all
 .border-radius(@radius: @default-border-radius) {
     -webkit-border-radius: @radius;
        -moz-border-radius: @radius;
             border-radius: @radius;
 }
-.border-radius(@radius-x, @radius-y) when (@radius-x = @radius-y) {
-    .border-radius(@radius-x);
-}
-.border-radius(@radius-x, @radius-y) when not (@radius-x = @radius-y) {
-    -webkit-border-radius: @radius-x ~`"/"` @radius-y;
-       -moz-border-radius: @radius-x ~`"/"` @radius-y;
-            border-radius: @radius-x ~`"/"` @radius-y;
+.border-radius(@radius-x, @radius-y) {
+    .border-radius(@radius-x ~`"/"` @radius-y);
 }
 
-.border-top-left-radius(...) {
-    -webkit-border-top-left-radius: @arguments;
-        -moz-border-radius-topleft: @arguments;
-            border-top-left-radius: @arguments;
+// top left
+.border-top-left-radius(@radius) {
+    -webkit-border-top-left-radius: @radius;
+        -moz-border-radius-topleft: @radius;
+            border-top-left-radius: @radius;
+}
+.border-top-left-radius(@radius-x, @radius-y) {
+    .border-top-left-radius(@radius-x ~"/" @radius-y);
 }
 
-.border-top-right-radius(...) {
-    -webkit-border-top-right-radius: @arguments;
-        -moz-border-radius-topright: @arguments;
-            border-top-right-radius: @arguments;
+// top right
+.border-top-right-radius(@radius) {
+    -webkit-border-top-right-radius: @radius;
+        -moz-border-radius-topright: @radius;
+            border-top-right-radius: @radius;
+}
+.border-top-right-radius(@radius-x, @radius-y) {
+    .border-top-right-radius(@radius-x ~"/" @radius-y)
 }
 
-.border-bottom-right-radius(...) {
-    -webkit-border-bottom-right-radius: @arguments;
-        -moz-border-radius-bottomright: @arguments;
-            border-bottom-right-radius: @arguments;
+// bottom right
+.border-bottom-right-radius(@radius) {
+    -webkit-border-bottom-right-radius: @radius;
+        -moz-border-radius-bottomright: @radius;
+            border-bottom-right-radius: @radius;
+}
+.border-bottom-right-radius(@radius-x, @radius-y) {
+    .border-bottom-right-radius(@radius-x ~"/" @radius-y)
 }
 
-.border-bottom-left-radius(...) {
-    -webkit-border-bottom-left-radius: @arguments;
-        -moz-border-radius-bottomleft: @arguments;
-            border-bottom-left-radius: @arguments;
+// bottom left
+.border-bottom-left-radius(@radius) {
+    -webkit-border-bottom-left-radius: @radius;
+        -moz-border-radius-bottomleft: @radius;
+            border-bottom-left-radius: @radius;
+}
+.border-bottom-left-radius(@radius-x, @radius-y) {
+    .border-bottom-left-radius(@radius-x ~"/" @radius-y);
+}
+
+// top
+.border-top-radius(@radius) {
+    .border-top-left-radius(@radius);
+    .border-top-right-radius(@radius);
+}
+.border-top-radius(@radius-x, @radius-y) {
+    .border-top-radius(@radius-x ~"/" @radius-y);
+}
+
+// right
+.border-right-radius(@radius) {
+    .border-top-right-radius(@radius);
+    .border-bottom-right-radius(@radius);
+}
+.border-right-radius(@radius-x, @radius-y) {
+    .border-right-radius(@radius-x ~"/" @radius-y);
+}
+
+// bottom
+.border-bottom-radius(@radius) {
+    .border-bottom-right-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+.border-bottom-radius(@radius-x, @radius-y) {
+    .border-bottom-radius(@radius-x ~"/" @radius-y);
+}
+
+// left
+.border-left-radius(@radius) {
+    .border-top-left-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+.border-left-radius(@radius-x, @radius-y) {
+    .border-left-radius(@radius-x ~"/" @radius-y);
 }
 
 // Drop shadows
-// see `../test/box-shadow.less`
 .box-shadow(@shadow: @default-box-shadow, ...) {
-    @shadows: ~`(function() { var args = "@{arguments}".replace(/[\[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,\s+/g, ' '); } return args;})()`;
+    // @shadows:  ~`"@{arguments}"`;
+    // @shadows: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @shadows: ~`(function() { var args = "@{arguments}".replace(/[\[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
     -webkit-box-shadow: @shadows;
        -moz-box-shadow: @shadows;
             box-shadow: @shadows;
@@ -377,8 +426,8 @@
 
 //3D transform  functions
 
-.maxtrix3d(@m11, @m12, @m13, @m14, @m21, @m22, @m23, @m24,
-           @m31, @m32, @m33, @m34, @m41, @m42, @m43, @m44) {
+.maxtrix3d(@a1, @b1, @c1, @d1, @a2, @b2, @c2, @d2,
+           @a3, @b3, @c3, @d3, @a4, @b4, @c4, @d4) {
     .transform-single(matrix3d, @arguments);
 }
 

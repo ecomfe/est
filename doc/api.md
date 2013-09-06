@@ -29,20 +29,14 @@
 
 默认的文字颜色。
 
-默认值：`#666666`。
-
-### `@default-text-color`
-
-默认的文字颜色。
-
-默认值： `#666666`。
+默认值：`#666`。
 
 
 ### `@default-input-placeholder-color`
 
 文本输入框占位文字的默认颜色。
 
-默认值：`#999999`。
+默认值：`#999`。
 
 
 ### `@default-base-font-family`
@@ -221,7 +215,7 @@ IE7以下的默认的标题字体族。IE7以下在匹配到第一个字体后�
 
 设定元素的阴影，支持多个阴影。
 ```less
-.box-shaodw(@shadow, ...)
+.box-shadow(@shadow, ...)
 ```
 * `@shadow`默认值为`@default-box-shadow`。
 
