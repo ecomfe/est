@@ -1,0 +1,250 @@
+@import "src/all.less";
+@import url(http://fonts.googleapis.com/css?family=Paprika|Inconsolata|Imprima);
+
+/**
+ * global settings
+ */
+@support-old-ie: false;
+@support-html5: true;
+
+@default-font-size: 16px;
+@default-heading-font-family: 'Paprika', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+@default-base-font-family: 'Imprima', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+@default-code-font-family: 'Inconsolata', sans-serif;
+
+/**
+ * custom settings
+ */
+@page-width: 980px;
+@header-height: 60px;
+@header-height-mini: 40px;
+
+/**
+ * default normalize
+ */
+.global-normalize();
+
+/**
+ * custom normalize
+ */
+abbr {
+    cursor: help;
+}
+
+ul {
+    list-style: none;
+}
+
+/**
+ * specific styles
+ */
+body {
+    .est-layout-page(@page-width);
+    .est-layout-fixed-header(@header-height);
+
+    background: linear-gradient(263deg, fadeout(red, 70%),
+                                        fadeout(orange, 70%) 20%,
+                                        fadeout(yellow, 70%) 40%,
+                                        fadeout(green, 70%) 60%,
+                                        fadeout(skyblue, 70%) 80%) repeat 0 0,
+                url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
+    color: #4c4c4c;
+}
+
+h1 {
+    font-size: 2.4em;
+    .font-family(heading);
+}
+
+section {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.17em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+}
+
+header {
+    @header-bg: fadeout(#333, 20%);
+
+    background-color: @header-bg;
+    .box-shadow(0 0 5px fadein(@header-bg, 30%));
+    .transition(0.5s);
+
+    h1 {
+        margin: 0;
+        line-height: @header-height;
+        .est-layout-page(@page-width);
+        .embossed-text(@header-bg, #fff);
+        .transition(0.5s);
+
+        small {
+            display: inline-block;
+            margin-left: 15px;
+            padding: 3px 6px;
+            background-color: fadeout(#fff, 50%);
+            font-size: 35%;
+            vertical-align: middle;
+            .font-family(base);
+            color: #666;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+    }
+
+    &:hover {
+        background-color: fadein(@header-bg, 10%);
+
+        h1 {
+            .glow-text(#fff);
+        }
+    }
+
+    abbr[title] {
+        border-bottom: none;
+    }
+
+    nav {
+        .est-layout-page(@page-width);
+        .clearfix();
+
+        ul {
+            float: right;
+            margin: -@header-height 40px 0 0;
+            padding: 0;
+        }
+
+        li {
+            float: left;
+            margin-left: 1px;
+        }
+
+        a {
+            display: block;
+            float: left;
+            border-bottom: 3px solid transparent;
+            padding: 0 15px;
+            height: @header-height - 3px;
+            color: #fff;
+            line-height: @header-height;
+            text-decoration: none;
+
+            &.active {
+                border-bottom-color: #fff;
+            }
+
+            &:hover {
+                background-color: fadeout(#fff, 80%);
+            }
+        }
+
+        ul,
+        nav,
+        a {
+            .transition(0.5s);
+        }
+    }
+
+    // toggled to mini mode
+    .mini-header & {
+        height: @header-height-mini;
+
+        h1 {
+            font-size: 1.2em;
+            line-height: @header-height-mini;
+        }
+
+        ul {
+            margin-top: -@header-height-mini;
+        }
+
+        a {
+            height: @header-height-mini - 3px;
+            line-height: @header-height-mini;
+        }
+    }
+}
+
+.module {
+    position: relative;
+    margin: 160px 0 80px;
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    .border-radius(5px);
+    .box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1),
+                -1px 1px 0 rgba(0, 0, 0, 0.1),
+                0 0 0 4px transparent,
+                0 2px 0 rgba(0, 0, 0, 0.1));
+
+    & > h1 {
+        height: 30px;
+        margin-top: -110px;
+        padding: 0 20px;
+        .embossed-text(#999, #333);
+        line-height: 30px;
+
+        & + .desc {
+            height: 30px;
+            padding: 0 20px;
+            margin-bottom: 40px;
+            line-height: 30px;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 40px;
+    }
+}
+
+.overview:extend(.module) {
+    margin: 40px 0;
+    padding: 40px;
+    .debossed-text(#fff, #333);
+
+    blockquote {
+        padding: 1em 40px;
+        border-left: 5px solid fadeout(lightblue, 60%);
+        .border-radius(4px);
+        background-color: fadeout(#fff, 60%);
+        .box-shadow(0 1px 1px fadeout(#666, 80%));
+        .debossed-text(#fff, #999);
+    }
+}
+
+p,
+dd {
+    code {
+        background: #eee;
+        padding: 1px 4px;
+        border: 1px solid #ddd;
+        .border-radius(3px);
+    }
+}
+
+h3 {
+    code {
+        white-space: pre;
+    }
+}
+
+a[name] {
+    position: relative;
+    top: -@header-height - 10px;
+
+    .mini-header & {
+        top: -@header-height-mini - 10px;
+    }
+}
+
+footer {
+    margin: 20px 0 50px;
+    text-align: center;
+    font-size: 1em;
+    .debossed-text(fadeout(lightblue, 50%));
+}
