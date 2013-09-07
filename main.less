@@ -1,5 +1,5 @@
 @import "src/all.less";
-@import url(http://fonts.googleapis.com/css?family=Paprika|Inconsolata|Imprima);
+@import url(http://fonts.googleapis.com/css?family=Paprika|Imprima|Oxygen+Mono);
 
 /**
  * global settings
@@ -8,9 +8,9 @@
 @support-html5: true;
 
 @default-font-size: 16px;
-@default-heading-font-family: 'Paprika', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
-@default-base-font-family: 'Imprima', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
-@default-code-font-family: 'Inconsolata', sans-serif;
+@default-heading-font-family: Paprika, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+@default-base-font-family: Imprima, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+@default-code-font-family: 'Oxygen Mono', Monaco, Consolas,  sans-serif;
 
 /**
  * custom settings
@@ -18,6 +18,7 @@
 @page-width: 980px;
 @header-height: 60px;
 @header-height-mini: 40px;
+@est-blue: darken(lightblue, 40%);
 
 /**
  * default normalize
@@ -38,6 +39,25 @@ ul {
 /**
  * specific styles
  */
+
+a {
+    border-bottom: 1px dotted fadeout(@est-blue, 60%);
+    color: @est-blue;
+    text-decoration: none;
+
+    &:hover {
+        border-bottom-style: solid;
+    }
+}
+
+code a {
+    border: none;
+
+    &:hover {
+        border-bottom: none;
+    }
+}
+
 body {
     .est-layout-page(@page-width);
     .est-layout-fixed-header(@header-height);
@@ -171,46 +191,30 @@ header {
     }
 }
 
-.module {
-    position: relative;
-    margin: 160px 0 80px;
-    padding: 15px 0;
+.content-block() {
     background-color: rgba(255, 255, 255, 0.7);
     .border-radius(5px);
     .box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1),
                 -1px 1px 0 rgba(0, 0, 0, 0.1),
                 0 0 0 4px transparent,
                 0 2px 0 rgba(0, 0, 0, 0.1));
-
-    & > h1 {
-        height: 30px;
-        margin-top: -110px;
-        padding: 0 20px;
-        .embossed-text(#999, #333);
-        line-height: 30px;
-
-        & + .desc {
-            height: 30px;
-            padding: 0 20px;
-            margin-bottom: 40px;
-            line-height: 30px;
-        }
-    }
-
-    &:last-child {
-        margin-bottom: 40px;
-    }
+    line-height: 1.6;
 }
 
-.overview:extend(.module) {
+.overview {
     margin: 40px 0;
     padding: 20px 40px;
+    .content-block();
+
+    section {
+        margin: 10px 0 30px;
+    }
 
     h1 {
         display: inline-block;
         margin: 0;
         font-size: 1.4em;
-        .embossed-text(rgba(255, 255, 255, 0.7), #666);
+        .embossed-text(rgba(255, 255, 255, 0.8), #666);
     }
 
     .github {
@@ -241,13 +245,83 @@ header {
     }
 }
 
-p,
-dd {
+.module {
+    position: relative;
+    margin: 50px 0;
+
+    & > h1 {
+        height: 30px;
+        .embossed-text(#999, #333);
+        line-height: 30px;
+
+        & + .desc {
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+
+    .dependencies {
+        display: inline-block;
+        margin-top: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+        }
+    }
+
+    .variables,
+    .mixins {
+        .content-block();
+        padding: 20px 40px;
+        h2 {
+            padding: 5px 0;
+            font-size: 18px;
+            font-weight: 400;
+            color: @est-blue;
+        }
+
+        & > li {
+            overflow: hidden;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 40px;
+    }
+}
+
+.desc,
+.note,
+dd,
+.dependencies {
     code {
-        background: #eee;
-        padding: 1px 4px;
-        border: 1px solid #ddd;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 0 4px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         .border-radius(3px);
+        .debossed-text(#fff, @est-blue);
+        font-size: 0.9em;
+    }
+
+    a {
+        border: none;
+
+        &:hover {
+            border: none;
+        }
+
+        code {
+            background-color: @est-blue;
+            .embossed-text(@est-blue, #fff);
+            .opacity(70);
+            .transition(0.3s);
+
+            &:hover {
+                .opacity(100);
+                .box-shadow(0 0 3px #fff);
+            }
+        }
     }
 }
 
@@ -259,16 +333,68 @@ h3 {
 
 a[name] {
     position: relative;
-    top: -@header-height - 10px;
+    .invisible();
+    top: -@header-height - 20px;
 
     .mini-header & {
-        top: -@header-height-mini - 10px;
+        top: -@header-height-mini - 15px;
     }
 }
 
 footer {
     margin: 20px 0 50px;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
     .debossed-text(fadeout(lightblue, 50%));
+}
+
+/**
+ * LESS code highlight
+ */
+pre {
+    .border-radius(3px);
+    background-color: #272822;
+    color: #fff;
+    .opacity(80);
+    .transition(0.5s);
+    line-height: 1.2;
+
+    .overview &,
+    .module & {
+        padding: 1em 2em;
+    }
+
+    &:hover {
+        .opacity(100);
+    }
+}
+
+pre:not([lang="html"]) {
+    .attribute,
+    .keyword {
+        color: #66d9ef;
+    }
+    .variable,
+    .element {
+        color: #f92672;
+    }
+    .string,
+    .regexp {
+        color: #e6db74;
+    }
+    .class,
+    .id,
+    .mixin,
+    .special {
+        color: #a6e22a;
+        font-weight: normal;
+    }
+    .comment {
+        color: #75715e;
+        font-style: italic;
+    }
+    .number,
+    .color {
+        color: #AE81FF;
+    }
 }

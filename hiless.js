@@ -6,7 +6,7 @@
 //
 
 // All elements which match this will be syntax highlighted.
-var selector = 'pre>code, h3>code';
+var selector = 'pre:not([lang="html"])>code, .signatures>li>h3>code';
 
 if (!Object.keys || ![].forEach) { return }
 

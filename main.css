@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Paprika|Inconsolata|Imprima);
+@import url(http://fonts.googleapis.com/css?family=Paprika|Imprima|Oxygen+Mono);
 /**
  * global settings
  */
@@ -38,7 +38,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Imprima', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+  font-family: Imprima, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
 }
 /**
      * Address margins handled incorrectly in IE 6/7.
@@ -140,7 +140,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Inconsolata', sans-serif;
+  font-family: 'Oxygen Mono', Monaco, Consolas, sans-serif;
   font-size: 1em;
 }
 /**
@@ -492,6 +492,20 @@ ul {
 /**
  * specific styles
  */
+a {
+  border-bottom: 1px dotted rgba(46, 126, 153, 0.4);
+  color: #2e7e99;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom-style: solid;
+}
+code a {
+  border: none;
+}
+code a:hover {
+  border-bottom: none;
+}
 body {
   width: 980px;
   margin-right: auto;
@@ -520,7 +534,7 @@ body > .est-body:after {
 }
 h1 {
   font-size: 2.4em;
-  font-family: 'Paprika', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+  font-family: Paprika, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
 }
 section h1 {
   font-size: 1.5em;
@@ -563,7 +577,7 @@ header h1 small {
   background-color: rgba(255, 255, 255, 0.5);
   font-size: 35%;
   vertical-align: middle;
-  font-family: 'Imprima', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+  font-family: Imprima, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
   color: #666;
   font-weight: 400;
   line-height: 1.2;
@@ -638,11 +652,9 @@ header nav a {
   height: 37px;
   line-height: 40px;
 }
-.module,
 .overview {
-  position: relative;
-  margin: 160px 0 80px;
-  padding: 15px 0;
+  margin: 40px 0;
+  padding: 20px 40px;
   background-color: rgba(255, 255, 255, 0.7);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -650,27 +662,10 @@ header nav a {
   -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px transparent, 0 2px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px transparent, 0 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px transparent, 0 2px 0 rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
 }
-.module > h1 {
-  height: 30px;
-  margin-top: -110px;
-  padding: 0 20px;
-  color: #333333;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
-  line-height: 30px;
-}
-.module > h1 + .desc {
-  height: 30px;
-  padding: 0 20px;
-  margin-bottom: 40px;
-  line-height: 30px;
-}
-.module:last-child {
-  margin-bottom: 40px;
-}
-.overview {
-  margin: 40px 0;
-  padding: 20px 40px;
+.overview section {
+  margin: 10px 0 30px;
 }
 .overview h1 {
   display: inline-block;
@@ -708,29 +703,177 @@ header nav a {
   color: rgba(43, 43, 43, 0.8);
   text-shadow: 0 1px 1px #ffffff, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
 }
-p code,
-dd code {
-  background: #eee;
-  padding: 1px 4px;
-  border: 1px solid #ddd;
+.module {
+  position: relative;
+  margin: 50px 0;
+}
+.module > h1 {
+  height: 30px;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+  line-height: 30px;
+}
+.module > h1 + .desc {
+  height: 30px;
+  line-height: 30px;
+}
+.module .dependencies {
+  display: inline-block;
+  margin-top: 0;
+  padding: 0;
+}
+.module .dependencies li {
+  display: inline-block;
+}
+.module .variables,
+.module .mixins {
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px transparent, 0 2px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px transparent, 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px 1px 0 rgba(0, 0, 0, 0.1), 0 0 0 4px transparent, 0 2px 0 rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  padding: 20px 40px;
+}
+.module .variables h2,
+.module .mixins h2 {
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #2e7e99;
+}
+.module .variables > li,
+.module .mixins > li {
+  overflow: hidden;
+}
+.module:last-child {
+  margin-bottom: 40px;
+}
+.desc code,
+.note code,
+dd code,
+.dependencies code {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  color: rgba(43, 117, 141, 0.8);
+  text-shadow: 0 1px 1px #ffffff, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-size: 0.9em;
+}
+.desc a,
+.note a,
+dd a,
+.dependencies a {
+  border: none;
+}
+.desc a:hover,
+.note a:hover,
+dd a:hover,
+.dependencies a:hover {
+  border: none;
+}
+.desc a code,
+.note a code,
+dd a code,
+.dependencies a code {
+  background-color: #2e7e99;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.desc a code:hover,
+.note a code:hover,
+dd a code:hover,
+.dependencies a code:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-box-shadow: 0 0 3px #ffffff;
+  -moz-box-shadow: 0 0 3px #ffffff;
+  box-shadow: 0 0 3px #ffffff;
 }
 h3 code {
   white-space: pre;
 }
 a[name] {
   position: relative;
-  top: -70px;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  top: -80px;
 }
 .mini-header a[name] {
-  top: -50px;
+  top: -55px;
 }
 footer {
   margin: 20px 0 50px;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.2em;
   color: rgba(161, 210, 226, 0.8);
   text-shadow: 0 1px 1px rgba(173, 216, 230, 0.5), 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+/**
+ * LESS code highlight
+ */
+pre {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #272822;
+  color: #fff;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  line-height: 1.2;
+}
+.overview pre,
+.module pre {
+  padding: 1em 2em;
+}
+pre:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+pre:not([lang="html"]) .attribute,
+pre:not([lang="html"]) .keyword {
+  color: #66d9ef;
+}
+pre:not([lang="html"]) .variable,
+pre:not([lang="html"]) .element {
+  color: #f92672;
+}
+pre:not([lang="html"]) .string,
+pre:not([lang="html"]) .regexp {
+  color: #e6db74;
+}
+pre:not([lang="html"]) .class,
+pre:not([lang="html"]) .id,
+pre:not([lang="html"]) .mixin,
+pre:not([lang="html"]) .special {
+  color: #a6e22a;
+  font-weight: normal;
+}
+pre:not([lang="html"]) .comment {
+  color: #75715e;
+  font-style: italic;
+}
+pre:not([lang="html"]) .number,
+pre:not([lang="html"]) .color {
+  color: #AE81FF;
 }
