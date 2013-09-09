@@ -748,6 +748,11 @@ header nav a {
 .module .mixins > li {
   overflow: hidden;
 }
+.module h1,
+.module h2,
+.module h3 {
+  position: relative;
+}
 .module:last-child {
   margin-bottom: 40px;
 }
@@ -781,6 +786,7 @@ dd a:hover,
 .note a code,
 dd a code,
 .dependencies a code {
+  display: inline-block;
   background-color: #2e7e99;
   color: #ffffff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
@@ -806,7 +812,6 @@ h3 code {
   white-space: pre;
 }
 a[name] {
-  position: relative;
   position: absolute !important;
   height: 1px;
   width: 1px;

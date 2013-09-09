@@ -286,6 +286,12 @@ header {
         }
     }
 
+    h1,
+    h2,
+    h3 {
+        position: relative;
+    }
+
     &:last-child {
         margin-bottom: 40px;
     }
@@ -312,6 +318,7 @@ dd,
         }
 
         code {
+            display: inline-block;
             background-color: @est-blue;
             .embossed-text(@est-blue, #fff);
             .opacity(70);
@@ -332,7 +339,6 @@ h3 {
 }
 
 a[name] {
-    position: relative;
     .invisible();
     top: -@header-height - 20px;
 
