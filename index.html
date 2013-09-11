@@ -347,7 +347,7 @@
                                 <h3><a name="border-radius-1"></a><code>.border-radius(@radius)</code></h3>
                                 <dl>
                                     <dt><code>@radius</code></dt>
-                                    <dd>圆角半径。可包含 1 – 4 个空格分隔的半径值同时指定多个角的圆角半径。可选，默认值 <a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
+                                    <dd>圆角半径。可包含 1 – 4 个空格分隔的半径值同时指定多个角的圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
                                 </dl>
                                 <pre class="usage"><code>.box-one {
     .border-radius(3px);
@@ -383,7 +383,7 @@
                                 <h3><a name="border-top-left-radius-1"></a><code>.border-top-left-radius(@radius)</code></h3>
                                 <dl>
                                     <dt><code>@radius</code></dt>
-                                    <dd>圆角半径。可选，默认值 <a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
+                                    <dd>圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
                                 </dl>
                                 <pre class="usage"><code>.box {
     .border-top-left-radius(3px);
@@ -1403,9 +1403,9 @@
                                     <dt><code>@img-url</code></dt>
                                     <dd>字符串格式的背景图片路径。</dd>
                                     <dt><code>@img-x</code></dt>
-                                    <dd>背景图 <code>background-position</code> 的水平方向位置。可选，默认值为 <code>0</code>。</dd>
+                                    <dd>背景图 <code>background-position</code> 的水平方向位置。可选，默认值：<code>0</code>。</dd>
                                     <dt><code>@img-y</code></dt>
-                                    <dd>背景图 <code>background-position</code> 的垂直方向位置。可选，默认值为 <code>0</code>。</dd>
+                                    <dd>背景图 <code>background-position</code> 的垂直方向位置。可选，默认值：<code>0</code>。</dd>
                                 </dl>
                                 <pre class="usage"><code>.logo {
     .inline-block();
@@ -1442,7 +1442,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                                     <dt><code>@context-font-size</code></dt>
-                                    <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值为 <a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
+                                    <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
                                 </dl>
                                 <pre class="usage"><code>.text {
     .font-size-em(24px);
@@ -1462,11 +1462,11 @@
                                     <dt><code>@font-path</code></dt>
                                     <dd>字体的路径。</dd>
                                     <dt><code>@font-weight</code></dt>
-                                    <dd>字重。可选，默认值为 <code>normal</code> 。</dd>
+                                    <dd>字重。可选，默认值：<code>normal</code> 。</dd>
                                     <dt><code>@font-style</code></dt>
-                                    <dd>字体的风格。可选，默认值为 <code>normal</code> 。</dd>
+                                    <dd>字体的风格。可选，默认值：<code>normal</code> 。</dd>
                                     <dt><code>@include-svg</code></dt>
-                                    <dd>是否使用svg格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值为 <code>false</code>。</dd>
+                                    <dd>是否使用 svg 格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值：<code>false</code>。</dd>
                                 </dl>
                                 <pre class="usage"><code>.font-face('FamilyName', '/some/font/url');
 
@@ -1483,8 +1483,163 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <h2><a name="hover-link"></a><code>.hover-link()</code></h2>
+                        <p class="desc">用于实现链接默认无下划线，hover后有下划线的样式。</p>
+                        <pre class="usage"><code>a {
+    .hover-link();
+}</code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="unstyled-link"></a><code>.unstyled-link()</code></h2>
+                        <p class="desc">用于将链接变成默认的文字样式。</p>
+                        <pre class="usage"><code>.plain-link {
+    .unstyled-link();
+}</code></pre>
+                    </li>
+                    <li>
+                        <h2><a name="drop-cap"></a><code>.drop-cap()</code></h2>
+                        <p class="desc">用于实现首文字下沉样式。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="drop-cap-1"></a><code>.drop-cap(@line-height, @lines, @margin-right)</code></h3>
+                                <dl>
+                                    <dt><code>@line-height</code></dt>
+                                    <dd>行高。单位可选<code>%</code> / <code>px</code> / <code>em</code>，或者直接使用缩放因子如 <code>2</code>。</dd>
+                                    <dt><code>@line-number</code></dt>
+                                    <dd>下沉的行数。可选，默认值：<code>2</code>。</dd>
+                                    <dt><code>@margin-right</code></dt>
+                                    <dd>下沉文字与普通文字的间隔。可选，默认值：<code>1em</code>（相对普通文字大小计算）。</dd>
+                                </dl>
+                                <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
+                                <pre class="usage"><code>article p {
+    line-height: 24px;
+    .drop-cap(24px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="drop-cap-inline"></a><code>.drop-cap-inline()</code></h2>
+                        <p class="desc">用于实现多字下沉样式。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="drop-cap-inline-1"></a><code>.drop-cap-inline(@line-height, @lines, @margin-right)</code></h3>
+                                <dl>
+                                    <dt><code>@context-line-height</code></dt>
+                                    <dd>所处环境的行高。单位可选<code>%</code> / <code>px</code> / <code>em</code>，或者直接使用缩放因子如 <code>2</code>。</dd>
+                                    <dt><code>@line-number</code></dt>
+                                    <dd>下沉的行数。可选，默认值：<code>2</code>。</dd>
+                                    <dt><code>@margin-right</code></dt>
+                                    <dd>下沉文字与普通文字的间隔。可选，默认值为相对普通文字大小的 <code>1em</code>。</dd>
+                                </dl>
+                                <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
+                                <pre class="usage" lang="html"><code>&lt;p&gt;
+    &lt;span class="drop"&gt;Lorem ipsum&lt;/span&gt; dolor sit amet, consectetur adipisicing elit. Nesciunt, eos, beatae error quaerat blanditiis repudiandae laudantium debitis officiis veritatis quasi dicta deserunt quo ipsum. Excepturi numquam nesciunt voluptates veniam eligendi.
+&lt;/p&gt;
+</code></pre>
+                                <pre class="usage"><code>p {
+    line-height: 24px;
 
-                    <!-- TODO: hover-link / unstyle-link / rhythm / drop-cap -->
+    .drop {
+        .drop-cap-inline(24px, 2);
+    }
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="rhythm"></a><code>.rhythm()</code></h2>
+                        <p class="desc">用于按照“<a href="http://blog.justfont.com/2012/08/%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%EF%BC%9A%E6%B9%AF%E5%93%81%EF%BC%8D%EF%BC%8D%E5%9E%82%E7%9B%B4%E7%9A%84%E9%9F%BB%E5%BE%8B/">垂直的旋律</a>”来排版文字，适合中文阅读。规范化作用域内所有块级元素的上下边框、行高、字体大小，一般用于多段文字（文章）的显示。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="rhythm-1"></a><code>.rhythm(@font-size, @line-height)</code></h3>
+                                <dl>
+                                    <dt><code>@font-size</code></dt>
+                                    <dd>字体大小。</dd>
+                                    <dt><code>@line-height</code></dt>
+                                    <dd>行高。</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <p class="note"><code>.rhythm()</code> 可结合下面的 mixin 更灵活地使用（这些 mixin 必须在已经使用了 <code>.rhythm()</code> 的作用域下使用）。下面所述的基础高度为 <code>line-height</code> 的一半。</p>
+                        <ul class="sub-mixins">
+                            <li>
+                                <h3><a name="rhythm-line-height"></a><code>.rhythm-line-height(@lines)</code></h3>
+                                <p class="desc">设置行高倍数。</p>
+                                <dl>
+                                    <dt><code>@lines</code></dt>
+                                    <dd>行高相对于基础行高的倍数。</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3><a name="rhythm-margin"></a><code>.rhythm-margin(@lines)</code></h3>
+                                <p class="desc">设置上下外边距高度。</p>
+                                <dl>
+                                    <dt><code>@lines</code></dt>
+                                    <dd>外边距相对基础高度的倍数。</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3><a name="rhythm-margin-top"></a><code>.rhythm-margin-top(@lines)</code></h3>
+                                <p class="desc">设置上外边距高度。</p>
+                                <dl>
+                                    <dt><code>@lines</code></dt>
+                                    <dd>上外边距相对基础高度的倍数。</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3><a name="rhythm-margin-bottom"></a><code>.rhythm-margin-bottom(@lines)</code></h3>
+                                <p class="desc">设置下外边距高度。</p>
+                                <dl>
+                                    <dt><code>@lines</code></dt>
+                                    <dd>下外边距相对基础高度的倍数。</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3><a name="rhythm-padding"></a><code>.rhythm-padding(@lines, @border)</code></h3>
+                                <p class="desc">设置上下内边距高度。</p>
+                                <dl>
+                                    <dt><code>@lines</code></dt>
+                                    <dd>内边距相对基础高度的倍数。</dd>
+                                    <dt><code>@border</code></dt>
+                                    <dd>上下边框样式，格式与 CSS <code>border</code> 属性相同。可选，默认值：<code>false</code>，此时没有边框。</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3><a name="rhythm-padding-top"></a><code>.rhythm-padding-top(@lines, @border)</code></h3>
+                                <p class="desc">设置上内边距高度。</p>
+                                <dl>
+                                    <dt><code>@lines</code></dt>
+                                    <dd>上内边距相对基础高度的倍数。</dd>
+                                    <dt><code>@border</code></dt>
+                                    <dd>上边框样式，格式与 CSS <code>border</code> 属性相同。可选，默认值：<code>false</code>，此时没有边框。</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3><a name="rhythm-padding-bottom"></a><code>.rhythm-padding-bottom(@lines, @border)</code></h3>
+                                <p class="desc">设置下内边距高度。</p>
+                                <dl>
+                                    <dt><code>@lines</code></dt>
+                                    <dd>下内边距相对基础高度的倍数。</dd>
+                                    <dt><code>@border</code></dt>
+                                    <dd>下边框样式，格式与 CSS <code>border</code> 属性相同。可选，默认值：<code>false</code>，此时没有边框。</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <pre class="usage"><code>.entry {
+    .rhythm(14px, 2);
+    blockquote {
+        .rhythm-margin(1);
+        .rhythm-padding(1, 1px solid #CCC);
+    }
+    p {
+        .rhythm-line-height(2);
+        .rhythm-margin(2);
+        .rhythm-padding(2);
+    }
+}</code></pre>
+                    </li>
                 </ul>
             </section>
             <section class="module">
@@ -1501,7 +1656,7 @@
                 <ul class="mixins">
                     <li>
                         <h2><a name="est-layout-fixed-header"></a><code>.est-layout-fixed-header()</code></h2>
-                        <p class="desc">定高、相对视口固定页头布局。须与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。</p>
+                        <p class="desc">定高、相对视口固定页头布局。</p>
                         <ul class="signatures">
                             <li>
                                 <h3><a name="est-layout-fixed-header-1"></a><code>.est-layout-fixed-header(@height)</code></h3>
@@ -1513,11 +1668,327 @@
     &lt;div class=&quot;est-header&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
+                                <pre class="usage"><code>body {
+    .est-layout-fixed-header(80px);
+}</code></pre>
+                                <p class="note">必须与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。页头的默认 <code>z-index</code> 为 <a href="#header-z-index"><code class="default-value">@header-z-index</code></a>。</p>
                             </li>
                         </ul>
                     </li>
-                    li#>((h2>code>{.()})+p.desc+ul.signatures>li#>(h3>code)+(dl>(dt>code)+dd)+pre.usage>code)
-                    li#>((h2>code>{.()})+p.desc+ul.signatures>li#>(h3>code)+(dl>(dt>code)+dd)+pre.usage>code)
+                    <li>
+                        <h2><a name="est-layout-fixed-footer"></a><code>.est-layout-fixed-footer()</code></h2>
+                        <p class="desc">定高、相对视口固定页脚布局。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="est-layout-fixed-footer-1"></a><code>.est-layout-fixed-footer(@height)</code></h3>
+                                <dl>
+                                    <dt><code>@height</code></dt>
+                                    <dd>页脚高度。</dd>
+                                </dl>
+                                <pre class="usage" lang="html"><code>&lt;body&gt;
+    &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;est-footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+                                <pre class="usage"><code>body {
+    .est-layout-fixed-footer(80px);
+}</code></pre>
+                                <p class="note">必须与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用。页脚的默认 <code>z-index</code> 为 <a href="#header-z-index"><code class="default-value">@header-z-index</code></a>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="est-layout-sticky-footer"></a><code>.est-layout-sticky-footer()</code></h2>
+                        <p class="desc">当内容高度小于容器时也有显示在底部的固定高度页脚，内容高于容器后页脚会被挤压到视口外。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="est-layout-sticky-footer-1"></a><code>.est-layout-sticky-footer(@height)</code></h3>
+                                <dl>
+                                    <dt><code>@height</code></dt>
+                                    <dd>页脚高度。</dd>
+                                </dl>
+                                <pre class="usage" lang="html"><code>&lt;body&gt;
+    &lt;div class="est-body"&gt;
+        &lt;div&gt;Content&lt;/div&gt;
+
+        &lt;!-- need when @support-old-ie = true --&gt;
+        &lt;div class="est-footer-placeholder"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="est-footer"&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+                                <pre class="usage"><code>html,
+body {
+  height: 100%;
+}
+
+body {
+  .est-layout-sticky-footer(100px);
+}</code></pre>
+                                <p class="note">必须与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用，且须要保证外层所有 DOM 元素的高度为 `100%`。不支持与其他布局混用。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="est-layout-page"></a><code>.est-layout-page()</code></h2>
+                        <p class="desc">定宽居中页面布局。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="est-layout-page-1"></a><code>.est-layout-page(@width)</code></h3>
+                                <dl>
+                                    <dt><code>@width</code></dt>
+                                    <dd>页面内容区域宽度。</dd>
+                                </dl>
+                                <pre class="usage"><code>.page {
+  .est-layout-page(980px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="est-layout-sidebar"></a><code>.est-layout-sidebar()</code></h2>
+                        <p class="desc">支持左右两侧各最多一个定宽（单位可以是 <code>px</code> / <code>em</code> / <code>%</code>）侧边栏，主内容区域填充剩余宽度。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="est-layout-sidebar-1"></a><code>.est-layout-sidebar(@position, @width)</code></h3>
+                                <p class="desc">单侧边栏布局。</p>
+                                <dl>
+                                    <dt><code>@position</code></dt>
+                                    <dd>边栏位置，可用值为 <code>left</code> / <code>right</code>。</dd>
+                                    <dt><code>@width</code></dt>
+                                    <dd>边栏宽度。</dd>
+                                </dl>
+                                <pre class="usage" lang="html"><code>&lt;body&gt;
+    &lt;div class="est-main"&gt;&lt;/div&gt;
+    &lt;div class="est-sidebar"&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+                                <pre class="usage"><code>body {
+    .est-layout-sidebar(left, 200px);
+}</code></pre>
+                                <p class="note">必须与 <code>est-main</code>、<code>est-sidebar</code> 两个类名配合使用。</p>
+                            </li>
+                            <li>
+                                <h3><a name="est-layout-sidebar-2"></a><code>.est-layout-sidebar(@primary-width, @secondary-width)</code></h3>
+                                <p class="desc">单侧边栏布局。</p>
+                                <dl>
+                                    <dt><code>@primary-width</code></dt>
+                                    <dd>主侧边栏（左侧）宽度。</dd>
+                                    <dt><code>@secondary-width</code></dt>
+                                    <dd>次侧边栏（右侧）宽度。</dd>
+                                </dl>
+                                <pre class="usage" lang="html"><code>&lt;body&gt;
+    &lt;div class="est-main"&gt;&lt;/div&gt;
+    &lt;div class="est-sidebar-primary"&gt;&lt;/div&gt;
+    &lt;div class="est-sidebar-secondary"&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+                                <pre class="usage"><code>body {
+    .est-layout-sidebar(200px, 160px);
+}</code></pre>
+                                <p class="note">必须与 <code>est-main</code>、<code>est-sidebar-primary</code> 及 <code>est-sidebar-secondary</code> 三个类名配合使用。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="est-layout-popup"></a><code>.est-layout-popup()</code></h2>
+                        <p class="desc">弹出层布局。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="est-layout-popup-1"></a><code>est-layout-popup(@position, @overlay-opacity)</code></h3>
+                                <dl>
+                                    <dt><code>@position</code></dt>
+                                    <dd>弹出层的位置。可取值为 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> / <code>center</code>，分别对应在视口顶部居中 / 右侧居中 / 底部居中 / 左侧居中 / 绝对居中。</dd>
+                                    <dt><code>@overlay-opacity</code></dt>
+                                    <dd>遮罩层的不透明度。可取 <code>0</code> – <code>100</code>。如果为 <code>0</code> 则遮罩不显示，可以与弹出层周围的页面内容进行交互，否则则无法交互。可选，默认值：<code>0</code>。</dd>
+                                </dl>
+                                <pre class="usage" lang="html"><code>&lt;body&gt;
+    &lt;div&gt;Content&lt;/div&gt;
+    &lt;div class="overlay"&gt;
+
+        &lt;!-- need when @support-old-ie = true --&gt;
+        &lt;div class="est-valign-ghost"&gt;&lt;/div&gt;
+
+        &lt;div class="est-popup"&gt;Popup Content&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+                                <pre class="usage"><code>.overlay {
+  .est-layout-popup(center, 80);
+}</code></pre>
+                                <p class="note">必须与类名 <code>est-popup</code> 配合使用。弹出层的默认 <code>z-index</code> 为 <a href="#modal-z-index"><code class="default-value">@modal-z-index</code></a>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="est-layout-horizontal-list"></a><code>.est-layout-horizontal-list()</code></h2>
+                        <p class="desc">用于把列表变成水平，在做菜单样式或是卡片样式时有用。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="est-layout-horizontal-list-1"></a><code>est-layout-horizontal-list(@gap, @direction: left)</code></h3>
+                                <dl>
+                                    <dt><code>@gap</code></dt>
+                                    <dd>平方向上列表项之间的间隔长度（任意单位）。</dd>
+                                    <dt><code>@direction</code></dt>
+                                    <dd>水平浮动的方向。可用值为 <code>right</code> / <code>left</code>。可选，默认值：<code>left</code>。</dd>
+                                </dl>
+                                <pre class="usage" lang="html"><code>&lt;div class="users"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Tony Stark&lt;/li&gt;
+        &lt;li&gt;Steve Rogers&lt;/li&gt;
+        &lt;li&gt;Hulk&lt;/li&gt;
+        &lt;li&gt;Thor&lt;/li&gt;
+        &lt;li&gt;Loki&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                                <pre class="usage"><code>.users {
+  .est-layout-horizontal-list(10px, left);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="est-layout-fluid-fixed-ratio"></a><code>.est-layout-fluid-fixed-ratio()</code></h2>
+                        <p class="desc">在自适应宽度情况下，确保视频、Flash、图片、iframe 等内容的元素高宽比固定。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="est-layout-fluid-fixed-ratio-1"></a><code>est-layout-fluid-fixed-ratio(@width, @height, @extra-height)</code></h3>
+                                <dl>
+                                    <dt><code>@width</code></dt>
+                                    <dd>内容宽度。</dd>
+                                    <dt><code>@height</code></dt>
+                                    <dd>内容高度。</dd>
+                                    <dt><code>@extra-height</code></dt>
+                                    <dd>除宽度比外，额外的固定高度，这部分高度不会随宽度的变化而变化。可选，默认值：<code>0</code>。</dd>
+                                </dl>
+                                <pre class="usage" lang="html"><code>&lt;div class="fluid-wrap"&gt;
+    &lt;img src="http://placehold.it/800x600" alt="" /&gt;
+&lt;/div&gt;</code></pre>
+                                <pre class="usage"><code>.fluid-wrap {
+  .est-layout-fluid-fixed-ratio(800, 600);
+}</code></pre>
+                                <p class="note">会生效的元素类型包括 <code>&lt;object&gt;</code> / <code>&lt;embed&gt;</code> / <code>&lt;iframe&gt;</code> / <code>&lt;img&gt;</code> 以及类名含 <code>est-fixed-ratio</code> 的元素。<code>@width</code> 和 <code>@height</code> 参数的单位需要统一。Demo <a href="http://codepen.io/zmmbreeze/full/khIqH">见此</a>。可参考 <a href="http://css-tricks.com/rundown-of-handling-flexible-media/">Rundown of Handling Flexible Media</a>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    li>((h2>a[name]+code>{.()})+p.desc+ul.signatures>li>(h3>a[name]+code)+(dl>(dt>code)+dd)+pre.usage>code)
+                </ul>
+            </section>
+            </section>
+            <section class="module">
+                <h1><a name="effects"></a>effects</h1>
+                <p class="desc">提供预设视觉效果。</p>
+                <div>
+                    依赖于：
+                    <ul class="dependencies">
+                        <li><a href="#variables"><code>variables</code></a></li>
+                        <li><a href="#compatibility"><code>compatibility</code></a></li>
+                        <li><a href="#util"><code>util</code></a></li>
+                    </ul>
+                </div>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="embossed-text"></a><code>.embossed-text()</code></h2>
+                        <p class="desc">文字浮凸效果。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="embossed-text-1"></a><code>.embossed-text(@bg-color, @fg-color)</code></h3>
+                                <dl>
+                                    <dt><code>@bg-color</code></dt>
+                                    <dd>文字所在区域的背景色。</dd>
+                                    <dt><code>@fg-color</code></dt>
+                                    <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind emboss”）。</dd>
+                                </dl>
+                                <pre class="usage"><code>.blind-embossed {
+    .embossed-text(lightblue);
+}
+
+.embossed {
+    .embossed-text(lightblue, #6699CC);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="debossed-text"></a><code>.debossed-text()</code></h2>
+                        <p class="desc">文字凹陷效果。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="debossed-text-1"></a><code>.debossed-text(@bg-color, @fg-color)</code></h3>
+                                <dl>
+                                    <dt><code>@bg-color</code></dt>
+                                    <dd>文字所在区域的背景色。</dd>
+                                    <dt><code>@fg-color</code></dt>
+                                    <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind emboss”）。</dd>
+                                </dl>
+                                <pre class="usage"><code>.blind-debossed {
+    .debossed-text(lightblue);
+}
+
+.debossed {
+    .debossed-text(lightblue, #6699CC);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="3d-text"></a><code>.3d-text()</code></h2>
+                        <p class="desc">3D文字效果。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="3d-text-1"></a><code>.3d-text(@color)</code></h3>
+                                <dl>
+                                    <dt><code>@color</code></dt>
+                                    <dd>文字颜色。</dd>
+                                </dl>
+                                <pre class="usage"><code>.three-d {
+    .3d-text(lightblue, #6699CC);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="glow-text"></a><code>.glow-text()</code></h2>
+                        <p class="desc">文字发光效果。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="glow-text-1"></a><code>.glow-text(@radius)</code></h3>
+                                <dl>
+                                    <dt><code>@radius</code></dt>
+                                    <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.glow-text {
+    .glow-text(10px);
+}</code></pre>
+                                <p class="note">此时发光颜色为当前文字颜色。</p>
+                            </li>
+                            <li>
+                                <h3><a name="glow-text-2"></a><code>.glow-text(@color, @radius)</code></h3>
+                                <dl>
+                                    <dt><code>@color</code></dt>
+                                    <dd>发光颜色。</dd>
+                                    <dt><code>@radius</code></dt>
+                                    <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.three-d {
+    .glow-text(gold, 20px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="blurry-text"></a><code>.blurry-text()</code></h2>
+                        <p class="desc">文字模糊效果。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="blurry-text-1"></a><code>.blurry-text(@color, @radius)</code></h3>
+                                <dl>
+                                    <dt><code>@color</code></dt>
+                                    <dd>文字颜色。</dd>
+                                    <dt><code>@radius</code></dt>
+                                    <dd>模糊半径。可选，默认值：<code>0.15em</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.blurry {
+    .blurry-text(##FFFFFF);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </article>
