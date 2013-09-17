@@ -144,7 +144,7 @@
 .font-size-rem(@px-size) {
     @rem-size: unit(@px-size / @default-font-size);
     @px-size-no-unit: unit(@px-size);
-    font-size: ~"@{@px-size-no-unit}px"; 
+    font-size: ~"@{px-size-no-unit}px";
     font-size: ~"@{rem-size}rem";
 }
 
@@ -290,7 +290,7 @@
     }
 
     .rhythm-padding(@lines: 1, @border: false) when not (@border = false) {
-        @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
+        @border-width: ~`'@{border}'.match(/(\d+)(?:px)?/)[1]`;
         padding-top: (@line * @lines - unit(@border-width));
         padding-bottom: (@line * @lines - unit(@border-width));
         border-top: @border;
@@ -301,7 +301,7 @@
         padding-bottom: (@line * @lines);
     }
     .rhythm-padding-top(@lines: 1, @border: false) when not (@border = false) {
-        @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
+        @border-width: ~`'@{border}'.match(/(\d+)(?:px)?/)[1]`;
         padding-top: (@line * @lines - unit(@border-width));
         border-top: @border;
     }
@@ -309,7 +309,7 @@
         padding-top: (@line * @lines);
     }
     .rhythm-padding-bottom(@lines: 1, @border: false) when not (@border = false) {
-        @border-width: ~`'"@{border}"'.match(/(\d+)(?:px)?/)[1]`;
+        @border-width: ~`'@{border}'.match(/(\d+)(?:px)?/)[1]`;
         padding-bottom: (@line * @lines - unit(@border-width));
         border-bottom: @border;
     }
