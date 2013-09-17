@@ -21,10 +21,13 @@
 html {
   font-size: 100%;
   /* 1 */
+
   -ms-text-size-adjust: 100%;
   /* 2 */
+
   -webkit-text-size-adjust: 100%;
   /* 2 */
+
 }
 /**
      * Address `font-family` inconsistency between `textarea` and other form
@@ -225,8 +228,10 @@ nav ol {
 img {
   border: 0;
   /* 1 */
+
   -ms-interpolation-mode: bicubic;
   /* 2 */
+
 }
 /**
      * Correct overflow displayed oddly in IE 9.
@@ -259,11 +264,14 @@ fieldset {
 legend {
   border: 0;
   /* 1 */
+
   padding: 0;
   white-space: normal;
   /* 2 */
+
   *margin-left: -7px;
   /* 3 */
+
 }
 /**
      * 1. Correct font size not being inherited in all browsers.
@@ -277,12 +285,16 @@ select,
 textarea {
   font-size: 100%;
   /* 1 */
+
   margin: 0;
   /* 2 */
+
   vertical-align: baseline;
   /* 3 */
+
   *vertical-align: middle;
   /* 3 */
+
 }
 /**
      * Address Firefox 3+ setting `line-height` on `input` using `!important` in
@@ -317,10 +329,13 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
+
   cursor: pointer;
   /* 3 */
+
   *overflow: visible;
   /* 4 */
+
 }
 /**
      * Re-set default cursor for disabled elements.
@@ -339,12 +354,16 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
+
   padding: 0;
   /* 2 */
+
   *height: 13px;
   /* 3 */
+
   *width: 13px;
   /* 3 */
+
 }
 /**
      * Remove inner padding and border in Firefox 3+.
@@ -361,8 +380,10 @@ input::-moz-focus-inner {
 textarea {
   overflow: auto;
   /* 1 */
+
   vertical-align: top;
   /* 2 */
+
 }
 /* ==========================================================================
        Tables
@@ -444,10 +465,12 @@ figure {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   /* 2 */
+
 }
 /**
      * Remove inner padding and search cancel button in Safari 5 and Chrome
@@ -483,11 +506,20 @@ code a {
 code a:hover {
   border-bottom: none;
 }
+html {
+  background: url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat;
+}
 body {
   width: 980px;
   margin-right: auto;
   margin-left: auto;
-  background: linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004) 20%, rgba(255, 255, 0, 0.30000000000000004) 40%, rgba(0, 128, 0, 0.30000000000000004) 60%, rgba(135, 206, 235, 0.30000000000000004) 80%) repeat 0 0, url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
+  background-image: -webkit-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
+  background-image: -moz-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
+  background-image: linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
+  background-image: -webkit-repeating-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
+  background-image: -moz-repeating-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
+  background-image: repeating-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
+  background-repeat: repeat;
   color: #4c4c4c;
 }
 body > .est-header {
@@ -859,4 +891,3 @@ pre:not([lang="html"]) .number,
 pre:not([lang="html"]) .color {
   color: #AE81FF;
 }
-/*# sourceMappingURL=main.css.map */

@@ -58,16 +58,19 @@ code a {
     }
 }
 
+html {
+    background: url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat;
+}
+
 body {
     .est-layout-page(@page-width);
     .est-layout-fixed-header(@header-height);
 
-    background: linear-gradient(263deg, fadeout(red, 70%),
-                                        fadeout(orange, 70%) 20%,
-                                        fadeout(yellow, 70%) 40%,
-                                        fadeout(green, 70%) 60%,
-                                        fadeout(skyblue, 70%) 80%) repeat 0 0,
-                url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
+    .linear-gradient(263deg, fadeout(red, 70%),
+                            fadeout(orange, 70%),
+                            fadeout(yellow, 70%),
+                            fadeout(green, 70%),
+                            fadeout(skyblue, 70%));
     color: #4c4c4c;
 }
 
