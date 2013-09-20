@@ -497,6 +497,9 @@ ul {
   list-style: none;
 }
 /**
+ * custom mixins
+ */
+/**
  * specific styles
  */
 a {
@@ -542,6 +545,10 @@ body > .est-body:after {
 h1 {
   font-size: 2.4em;
   font-family: Paprika, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+}
+article > h1 {
+  text-align: center;
+  text-decoration: underline;
 }
 section h1 {
   font-size: 1.5em;
@@ -773,6 +780,29 @@ header nav a {
 }
 .module:last-child {
   margin-bottom: 40px;
+}
+.download {
+  display: inline-block;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  padding: 2px 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #3a9fc0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5fb3ce), to(#2e7e99));
+  background-image: -webkit-linear-gradient(top, #5fb3ce, #2e7e99);
+  background-image: -moz-linear-gradient(top, #5fb3ce, #2e7e99);
+  background-image: linear-gradient(to bottom, #5fb3ce, #2e7e99);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#ff5fb3ce', endColorstr='#ff2e7e99', GradientType=0);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
+  font-size: 0.7em;
 }
 .note,
 .warning {
