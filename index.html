@@ -406,37 +406,37 @@
                     <li>
                         <h2><a name="border-top-right-radius"></a><code>.border-top-right-radius()</code></h2>
                         <p class="desc">设定右上角圆角半径。</p>
-                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                        <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-bottom-right-radius"></a><code>.border-bottom-right-radius()</code></h2>
                         <p class="desc">设定右下角圆角半径。</p>
-                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                        <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-bottom-left-radius"></a><code>.border-bottom-left-radius()</code></h2>
                         <p class="desc">设定左下角圆角半径。</p>
-                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                        <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-top-radius"></a><code>.border-top-radius()</code></h2>
                         <p class="desc">设定左上角和右上角圆角半径。</p>
-                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                        <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-right-radius"></a><code>.border-right-radius()</code></h2>
                         <p class="desc">设定右上角和右下角圆角半径。</p>
-                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                        <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-bottom-radius"></a><code>.border-bottom-radius()</code></h2>
                         <p class="desc">设定左下角和右下角圆角半径。</p>
-                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                        <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-left-radius"></a><code>.border-left-radius()</code></h2>
                         <p class="desc">设定左上角和左下角圆角半径。</p>
-                        <p class="note">参数说明请参考 <code class="mixin"><a href="#border-top-left-radius">.border-top-left-radius()</a></code>。</p>
+                        <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="box-shadow"></a><code>.box-shadow()</code></h2>
@@ -1268,6 +1268,145 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <h2><a name="linear-gradient"></a><code>.linear-gradient()</code></h2>
+                        <p class="desc">设定线性渐变的背景。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="linear-gradient-1"></a><code>.linear-gradient(@direction, @color-stops...)</code></h3>
+                                <dl>
+                                    <dt><code>@direction</code></dt>
+                                    <dd>渐变线的方向。取值可以是角度值，也可以使用关键字，如 <code>to top</code> / <code>to right</code> / <code>to bottom left</code>等。可参考 <a href="http://dev.w3.org/csswg/css-images-3/#linear-gradient-syntax"> linear-gradient() Syntax</a>。</dd>
+                                    <dt><code>@color-stops</code></dt>
+                                    <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-one {
+    .linear-gradient(to right, white, black);
+}
+
+.box-two {
+    .linear-gradient(to top right, white, black);
+}
+
+.box-three {
+    .linear-gradient(273deg, red, yellow 30%, green 70%, purple);
+}</code></pre>
+                                <p class="note">由于支持方向设定，不支持采用老 WebKit 的语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器（Chrome 10-），且不使用 filter 语法在 IE 10 以下浏览器中进行模拟。</p>
+                                <p class="warning note">需要特别注意的是，当使用 <code>to &lt;corner&gt;</code> 这样的写法（例如 <code>to top right</code>）来指定渐变线角度时，已经支持此语法的浏览器渲染效果将与采用 <code>&lt;corner&gt;</code> 语法的浏览器有差异。效果差异见此邮件：<a href="http://lists.w3.org/Archives/Public/www-style/2011Jul/0265.html">[css3-images] Gradient Magic</a> 中的配图（新标准效果对应图中的“magic”效果）。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="horizontal-gradient"></a><code>.horizontal-gradient()</code></h2>
+                        <p class="desc">设定水平方向（从左到右）双色线性渐变的背景。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="horizontal-gradient-1"></a><code>.horizontal-gradient(@start-color, @end-color)</code></h3>
+                                <dl>
+                                    <dt><code>@start-color</code></dt>
+                                    <dd>起始颜色。</dd>
+                                    <dt><code>@end-color</code></dt>
+                                    <dd>结束颜色。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+    .horizontal-gradient(black, white);
+}</code></pre>
+                                <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="vertical-gradient"></a><code>.vertical-gradient()</code></h2>
+                        <p class="desc">设定垂直方向（从上到下）双色线性渐变的背景。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="vertical-gradient-1"></a><code>.vertical-gradient(@start-color, @end-color)</code></h3>
+                                <dl>
+                                    <dt><code>@start-color</code></dt>
+                                    <dd>起始颜色。</dd>
+                                    <dt><code>@end-color</code></dt>
+                                    <dd>结束颜色。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box {
+    .vertical-gradient(black, white);
+}</code></pre>
+                                <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="repeating-linear-gradient"></a><code>.repeating-linear-gradient()</code></h2>
+                        <p class="desc">设定循环线性渐变的背景。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="repeating-linear-gradient-1"></a><code>.repeating-linear-gradient(@direction, @color-stops...)</code></h3>
+                                <dl>
+                                    <dt><code>@direction</code></dt>
+                                    <dd>渐变线的方向。</dd>
+                                    <dt><code>@color-stops</code></dt>
+                                    <dd>色标，至少有两个参数值。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-one {
+    .repeating-linear-gradient(to top right, white, black 20px);
+}
+
+.box-two {
+    .repeating-linear-gradient(273deg, red, yellow 30%, green 70%);
+}</code></pre>
+                                <p class="note">参数写法及注意事项请参考 <a href="#linear-gradient"><code>.linear-gradient()</code></a>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="radial-gradient"></a><code>.radial-gradient()</code></h2>
+                        <p class="desc">设定径向渐变的背景。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="radial-gradient-1"></a><code>.radial-gradient(@shape, @color-stops...)</code></h3>
+                                <dl>
+                                    <dt><code>@shape</code></dt>
+                                    <dd>渐变的形状、范围、位置。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#radial-gradient-syntax">radial-gradient() Syntax</a>。书写方式按草案的标准写法书写，格式为 <code>[&lt;shape&gt;] ? [&lt;extent&gt;] ? [at &lt;position&gt;] ?</code>，其中每一部分都为可选。整个 <code>@shape</code> 参数省略不写时，默认输出圆形径向渐变。</dd>
+                                    <dt><code>@color-stops</code></dt>
+                                    <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-one {
+    .radial-gradient(black, white);
+}
+
+.box-two {
+    .radial-gradient(closest-corner at 30% 30%, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
+}
+
+.box-three {
+    .radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
+}</code></pre>
+                                <p class="note">不支持采用老 WebKit 语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器。另外，不支持按具体尺寸（<code>px</code> / <code>%</code> 等）设置渐变范围，只能使用范围关键字即 <code>closest-side</code> / <code>closest-corner</code> / <code>farthest-side</code> / <code>farthest-corner</code> 之一。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="repeating-radial-gradient"></a><code>.repeating-radial-gradient()</code></h2>
+                        <p class="desc">设定循环线性渐变的背景。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="repeating-radial-gradient-1"></a><code>.repeating-radial-gradient(@shape, @color-stops...)</code></h3>
+                                <dl>
+                                    <dt><code>@shape</code></dt>
+                                    <dd>渐变的形状、范围、位置。</dd>
+                                    <dt><code>@color-stops</code></dt>
+                                    <dd>色标，至少有两个参数值。</dd>
+                                </dl>
+                                <pre class="usage"><code>.box-one {
+    .repeating-radial-gradient(white, black 20px);
+}
+
+.box-two {
+    .repeating-radial-gradient(ellipse farthest-side, white, black 20px);
+}</code></pre>
+                                <p class="note">参数写法及注意事项请参考 <a href="#radial-gradient"><code>.radial-gradient()</code></a>。</p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
             <section class="module">
@@ -1315,8 +1454,198 @@
                             </li>
                         </ul>
                     </li>
-
-                    <!-- TODO: no-bullet / no-bullets -->
+                    <li>
+                        <h2><a name="margin-rem"></a><code>.margin-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的外边距转换为 <code>rem</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="margin-rem-1"></a><code>.margin-rem(@px-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 margin 属性。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .margin-rem(24px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="margin-top-rem"></a><code>.margin-top-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的上外边距转换为 <code>rem</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="margin-top-rem-1"></a><code>.margin-top-rem(@px-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .margin-top-rem(12px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="margin-right-rem"></a><code>.margin-right-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的右外边距转换为 <code>rem</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#margin-top-rem"><code class="mixin">.margin-top-rem()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="margin-bottom-rem"></a><code>.margin-bottom-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的下外边距转换为 <code>rem</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#margin-top-rem"><code class="mixin">.margin-top-rem()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="margin-left-rem"></a><code>.margin-left-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的左外边距转换为 <code>rem</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#margin-top-rem"><code class="mixin">.margin-top-rem()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="margin-em"></a><code>.margin-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的外边距转换为 <code>em</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="margin-em-1"></a><code>.margin-em(@px-size, @context-margin)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 margin 属性。</dd>
+                                    <dt><code>@context-margin</code></dt>
+                                    <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .margin-em(24px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="margin-top-em"></a><code>.margin-top-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的上外边距转换为 <code>em</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="margin-top-em-1"></a><code>.margin-top-em(@px-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .margin-top-em(12px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="margin-right-em"></a><code>.margin-right-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的右外边距转换为 <code>em</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#margin-top-em"><code class="mixin">.margin-top-em()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="margin-bottom-em"></a><code>.margin-bottom-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的下外边距转换为 <code>em</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#margin-top-em"><code class="mixin">.margin-top-em()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="margin-left-em"></a><code>.margin-left-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的左外边距转换为 <code>em</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#margin-top-em"><code class="mixin">.margin-top-em()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="padding-rem"></a><code>.padding-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的内边距转换为 <code>rem</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="padding-rem-1"></a><code>.padding-rem(@px-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 padding 属性。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .padding-rem(24px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="padding-top-rem"></a><code>.padding-top-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的上内边距转换为 <code>rem</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="padding-top-rem-1"></a><code>.padding-top-rem(@px-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .padding-top-rem(12px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="padding-right-rem"></a><code>.padding-right-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的右内边距转换为 <code>rem</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#padding-top-rem"><code class="mixin">.padding-top-rem()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="padding-bottom-rem"></a><code>.padding-bottom-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的下内边距转换为 <code>rem</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#padding-top-rem"><code class="mixin">.padding-top-rem()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="padding-left-rem"></a><code>.padding-left-rem()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的左内边距转换为 <code>rem</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#padding-top-rem"><code class="mixin">.padding-top-rem()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="padding-em"></a><code>.padding-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的内边距转换为 <code>em</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="padding-em-1"></a><code>.padding-em(@px-size, @context-padding)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 padding 属性。</dd>
+                                    <dt><code>@context-padding</code></dt>
+                                    <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .padding-em(24px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="padding-top-em"></a><code>.padding-top-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的上内边距转换为 <code>em</code> 单位。依赖于 <a href="#default-font-size"><code>@default-font-size</code></a>，请确保 <code>&lt;HTML&gt;</code> 标签的字体大小与 <a href="#default-font-size"><code>@default-font-size</code></a> 一致。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="padding-top-em-1"></a><code>.padding-top-em(@px-size)</code></h3>
+                                <dl>
+                                    <dt><code>@px-size</code></dt>
+                                    <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
+                                </dl>
+                                <pre class="usage"><code>.post {
+    .padding-top-em(12px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="padding-right-em"></a><code>.padding-right-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的右内边距转换为 <code>em</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#padding-top-em"><code class="mixin">.padding-top-em()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="padding-bottom-em"></a><code>.padding-bottom-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的下内边距转换为 <code>em</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#padding-top-em"><code class="mixin">.padding-top-em()</code></a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="padding-left-em"></a><code>.padding-left-em()</code></h2>
+                        <p class="desc">用于将 <code>px</code> 单位的左内边距转换为 <code>em</code> 单位。</p>
+                        <p class="note">参数说明请参考 <a href="#padding-top-em"><code class="mixin">.padding-top-em()</code></a>。</p>
+                    </li>
                 </ul>
             </section>
             <section class="module">
@@ -1866,7 +2195,6 @@ body {
                             </li>
                         </ul>
                     </li>
-                    li>((h2>a[name]+code>{.()})+p.desc+ul.signatures>li>(h3>a[name]+code)+(dl>(dt>code)+dd)+pre.usage>code)
                 </ul>
             </section>
             </section>
@@ -1984,7 +2312,7 @@ body {
                                     <dd>模糊半径。可选，默认值：<code>0.15em</code>。</dd>
                                 </dl>
                                 <pre class="usage"><code>.blurry {
-    .blurry-text(##FFFFFF);
+    .blurry-text(#FFFFFF);
 }</code></pre>
                             </li>
                         </ul>
@@ -1993,7 +2321,7 @@ body {
             </section>
         </article>
     </main>
-    <footer>&hearts; This page is built with est, Google Fonts &amp; jQuery Waypoints on a <abbr title="!Mac">PC</abbr>.</footer>
+    <footer>&hearts; est / Google Fonts / jQuery Waypoints / FontAwesome / <abbr title="!Mac">PC</abbr></footer>
     <script src="hiless.js"></script>
     <script src="jquery-2.0.3.min.js"></script>
     <script src="waypoints.min.js"></script>

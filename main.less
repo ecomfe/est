@@ -1,6 +1,68 @@
 @import "src/all.less";
 @import url(http://fonts.googleapis.com/css?family=Paprika|Imprima|Oxygen+Mono);
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.eot?v=3.2.1');
+  src: url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'),
+       url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.woff?v=3.2.1') format('woff'),
+       url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'),
+       url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-awesome(@type: inline) when (@type = inline) {
+    position: relative;
+    padding-left: 36px;
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 12px;
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: inherit;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        *margin-right: .3em;
+    }
+}
+.font-awesome(block) {
+    position: relative;
+    padding: 10px 20px 10px 36px;
+    &:before {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: inherit;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        *margin-right: .3em;
+    }
+}
+.font-awesome-icon(@icon, @color: inherit) {
+    &:before {
+        .icon(tint) {
+            content: "\f043";
+        }
+        .icon(info-sign) {
+            content: "\f05a";
+        }
+        .icon(exclamation-sign) {
+            content: "\f06a";
+        }
+        .icon(leaf) {
+            content: "\f06c";
+        }
+        .icon(@icon);
+        color: @color;
+    }
+}
+
 /**
  * global settings
  */
@@ -58,19 +120,16 @@ code a {
     }
 }
 
-html {
-    background: url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat;
-}
-
 body {
     .est-layout-page(@page-width);
     .est-layout-fixed-header(@header-height);
 
-    .linear-gradient(263deg, fadeout(red, 70%),
-                            fadeout(orange, 70%),
-                            fadeout(yellow, 70%),
-                            fadeout(green, 70%),
-                            fadeout(skyblue, 70%));
+    background: linear-gradient(263deg, fadeout(red, 70%),
+                                       fadeout(orange, 70%),
+                                       fadeout(yellow, 70%),
+                                       fadeout(green, 70%),
+                                       fadeout(skyblue, 70%)) repeat 0 0,
+                url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
     color: #4c4c4c;
 }
 
@@ -116,7 +175,7 @@ header {
             vertical-align: middle;
             .font-family(base);
             color: #666;
-            font-weight: 400;
+            font-weight: normal;
             line-height: 1.2;
         }
     }
@@ -280,12 +339,13 @@ header {
         h2 {
             padding: 5px 0;
             font-size: 18px;
-            font-weight: 400;
+            font-weight: normal;
             color: @est-blue;
         }
 
         & > li {
-            overflow: hidden;
+            .clearfix();
+            margin-bottom: 20px;
         }
     }
 
@@ -298,6 +358,23 @@ header {
     &:last-child {
         margin-bottom: 40px;
     }
+}
+
+.note,
+.warning {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    .border-radius(3px);
+    .font-awesome(block);
+}
+
+.note {
+    background-color: fadeout(lightgreen, 60%);
+    .font-awesome-icon(info-sign, limegreen);
+}
+
+.warning {
+    background-color: fadeout(lightpink, 60%);
+    .font-awesome-icon(exclamation-sign, maroon);
 }
 
 .desc,
@@ -332,6 +409,32 @@ dd,
                 .box-shadow(0 0 3px #fff);
             }
         }
+    }
+}
+
+.signatures,
+.sub-mixins {
+    h3,
+    dt {
+        .font-awesome();
+    }
+
+    h3 {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
+        padding-right: 10px;
+        .border-radius(3px);
+        .debossed-text(#fff, @est-blue);
+        font-size: 0.9em;
+        font-weight: normal;
+        .font-awesome-icon(leaf, lightgreen);
+    }
+
+    dt {
+        color: @est-blue;
+        .font-awesome-icon(tint, lightblue);
     }
 }
 

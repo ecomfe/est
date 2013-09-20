@@ -497,50 +497,28 @@
     @dir: ~`"@{direction}".replace(/[\[\],]/g, "")`;
     @is-old-side-or-corner: ~`/^(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
     @is-standard-side-or-corner: ~`/^to\s+(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
-    @color-stops: ~`(function() { var cs = "@{color-stop}".replace(/[\[\]]/g, ""); var url = /^(url\([^)]+\)(?:[^,]*)),/.exec(cs); if (url) { cs.split(", ").shift(0); return cs.join(", "); }})()`;
-    .output() when (@is-old-side-or-corner) {
-        @standard-direction: ~`"to @{dir}".replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
-        background-image: -webkit-linear-gradient(@dir, @color-stops);
-        background-image: -moz-linear-gradient(@dir, @color-stops);
-        background-image: linear-gradient(@standard-direction, @color-stops);
-    }
-    .output() when (@is-standard-side-or-corner) {
-        @old-direction: ~`"@{dir}".replace(/^to\s+/, "").replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
-        background-image: -webkit-linear-gradient(@old-direction, @color-stops);
-        background-image: -moz-linear-gradient(@old-direction, @color-stops);
-        background-image: linear-gradient(@dir, @color-stops);
-    }
-    .output() when not (@is-old-side-or-corner) and not (@is-standard-side-or-corner) {
-        background-image: -webkit-linear-gradient(@direction, @color-stops);
-        background-image: -moz-linear-gradient(@direction, @color-stops);
-        background-image: linear-gradient(@direction, @color-stops);
-    }
-    .output();
-    background-repeat: repeat;
-}
-
-// General repeating linear-gradient
-.linear-gradient(@direction, @color-stop...) {
-    @dir: ~`"@{direction}".replace(/[\[\],]/g, "")`;
-    @is-old-side-or-corner: ~`/^(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
-    @is-standard-side-or-corner: ~`/^to\s+(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
     @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
     .output() when (@is-old-side-or-corner) {
         @standard-direction: ~`"to @{dir}".replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
-        background-image: -webkit-repeating-linear-gradient(@dir, @color-stops);
-        background-image: -moz-repeating-linear-gradient(@dir, @color-stops);
-        background-image: repeating-linear-gradient(@standard-direction, @color-stops);
+        background-image: -webkit-linear-gradient(@dir, @color-stops); // Chrome 10+
+        background-image: -moz-linear-gradient(@dir, @color-stops); // Firefox 3.6+
+        background-image: -moz-linear-gradient(@standard-direction, @color-stops); // Firefox 10+
+        background-image: -o-linear-gradient(@standard-direction, @color-stops); // Opera 11.10
+        background-image: linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
     }
     .output() when (@is-standard-side-or-corner) {
         @old-direction: ~`"@{dir}".replace(/^to\s+/, "").replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
-        background-image: -webkit-repeating-linear-gradient(@old-direction, @color-stops);
-        background-image: -moz-repeating-linear-gradient(@old-direction, @color-stops);
-        background-image: repeating-linear-gradient(@dir, @color-stops);
+        background-image: -webkit-linear-gradient(@old-direction, @color-stops); // Chrome 10+
+        background-image: -moz-linear-gradient(@old-direction, @color-stops); // Firefox 3.6+
+        background-image: -moz-linear-gradient(@dir, @color-stops); // Firefox 10+
+        background-image: -o-linear-gradient(@dir, @color-stops); // Opera 11.10
+        background-image: linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
     }
     .output() when not (@is-old-side-or-corner) and not (@is-standard-side-or-corner) {
-        background-image: -webkit-repeating-linear-gradient(@direction, @color-stops);
-        background-image: -moz-repeating-linear-gradient(@direction, @color-stops);
-        background-image: repeating-linear-gradient(@direction, @color-stops);
+        background-image: -webkit-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Chrome 10+
+        background-image: -moz-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Firefox 3.6+
+        background-image: -o-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Opera 11.10
+        background-image: linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
     }
     .output();
     background-repeat: repeat;
@@ -566,79 +544,93 @@
     filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@start-color), argb(@end-color))); // IE9 and down
 }
 
-// General radial gradient (without size in specific dimensions)
-.radial-gradient(@shape, @color-stop...) {
-    @shape-string: ~"@{shape}";
-    @position: ~`(function() { var pos = /(?:^|\s)at\s+(\S+)(?:\s+(\S+)\s*$)?/g.exec("@{shape-string}"); return pos? (pos[2]? pos[1] + ' ' + pos[2] : pos[1]) : 'false'; })()`;
-    @contour-and-size: ~`(function() { var cs = /^(circle|ellipse|circle\s+\S+|ellipse\s+\S+\s+\S+|(?:(?:circle|ellipse)\s+)?(?:closest|farthest)-(?:corner|side))(?=$|\s+at)/.exec("@{shape-string}"); return cs? cs[1] : 'false'; })()`;
+// General repeating linear-gradient
+.repeating-linear-gradient(@direction, @color-stop...) {
+    @dir: ~`"@{direction}".replace(/[\[\],]/g, "")`;
+    @is-old-side-or-corner: ~`/^(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
+    @is-standard-side-or-corner: ~`/^to\s+(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
     @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
-  
-    .prefixed() when not (@position = false) and (@contour-and-size = false) {
-            background-image: -webkit-radial-gradient(@position, @color-stops);
-            background-image: -moz-radial-gradient(@position, @color-stops);
+    .output() when (@is-old-side-or-corner) {
+        @standard-direction: ~`"to @{dir}".replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
+        background-image: -webkit-repeating-linear-gradient(@dir, @color-stops); // Chrome 10+
+        background-image: -moz-repeating-linear-gradient(@dir, @color-stops); // Firefox 3.6+
+        background-image: -moz-repeating-linear-gradient(@standard-direction, @color-stops); // Firefox 10+
+        background-image: -o-repeating-linear-gradient(@standard-direction, @color-stops); // Opera 11.10
+        background-image: repeating-linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
     }
-    .prefixed() when not (@contour-and-size = false) and (@position = false) {
-            background-image: -webkit-radial-gradient(@contour-and-size, @color-stops);
-            background-image: -moz-radial-gradient(@contour-and-size, @color-stops);
+    .output() when (@is-standard-side-or-corner) {
+        @old-direction: ~`"@{dir}".replace(/^to\s+/, "").replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
+        background-image: -webkit-repeating-linear-gradient(@old-direction, @color-stops); // Chrome 10+
+        background-image: -moz-repeating-linear-gradient(@old-direction, @color-stops); // Firefox 3.6+
+        background-image: -moz-repeating-linear-gradient(@dir, @color-stops); // Firefox 10+
+        background-image: -o-repeating-linear-gradient(@dir, @color-stops); // Opera 11.10
+        background-image: repeating-linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
     }
-    .prefixed() when not (@position = false) and not (@contour-and-size = false) {
-            background-image: -webkit-radial-gradient(@position, @contour-and-size, @color-stops);
-            background-image: -moz-radial-gradient(@position, @contour-and-size, @color-stops);
+    .output() when not (@is-old-side-or-corner) and not (@is-standard-side-or-corner) {
+        background-image: -webkit-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Chrome 10+
+        background-image: -moz-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Firefox 3.6+
+        background-image: -o-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Opera 11.10
+        background-image: repeating-linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
     }
-    .prefixed();
-    background-image: radial-gradient(@shape, @color-stops);
+    .output();
 }
 
 // General radial gradient (without size in specific dimensions)
 .radial-gradient(@shape, @color-stop...) {
     @shape-string: ~"@{shape}";
     @position: ~`(function() { var pos = /(?:^|\s)at\s+(\S+)(?:\s+(\S+)\s*$)?/g.exec("@{shape-string}"); return pos? (pos[2]? pos[1] + ' ' + pos[2] : pos[1]) : 'false'; })()`;
-    @contour-and-size: ~`(function() { var cs = /^(circle|ellipse|circle\s+\S+|ellipse\s+\S+\s+\S+|(?:(?:circle|ellipse)\s+)?(?:closest|farthest)-(?:corner|side))(?=$|\s+at)/.exec("@{shape-string}"); return cs? cs[1] : 'false'; })()`;
+    @contour-and-size: ~`(function() { var cs = /^(circle|ellipse|(?:(?:circle|ellipse)\s+)?(?:closest|farthest)-(?:corner|side))(?=$|\s+at)/.exec("@{shape-string}"); return cs? cs[1] : 'false'; })()`;
     @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
 
-    .prefixed() when not (@position = false) and (@contour-and-size = false) {
-            background-image: -webkit-radial-gradient(@position, @color-stops);
-            background-image: -moz-radial-gradient(@position, @color-stops);
+    .output() when not (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-radial-gradient(@position, @color-stops);
+        background-image: -moz-radial-gradient(@position, @color-stops);
+        background-image: radial-gradient(@shape, @color-stops);
     }
-    .prefixed() when not (@contour-and-size = false) and (@position = false) {
-            background-image: -webkit-radial-gradient(@contour-and-size, @color-stops);
-            background-image: -moz-radial-gradient(@contour-and-size, @color-stops);
+    .output() when not (@contour-and-size = false) and (@position = false) {
+        background-image: -webkit-radial-gradient(@contour-and-size, @color-stops);
+        background-image: -moz-radial-gradient(@contour-and-size, @color-stops);
+        background-image: radial-gradient(@shape, @color-stops);
     }
-    .prefixed() when not (@position = false) and not (@contour-and-size = false) {
-            background-image: -webkit-radial-gradient(@position, @contour-and-size, @color-stops);
-            background-image: -moz-radial-gradient(@position, @contour-and-size, @color-stops);
+    .output() when not (@position = false) and not (@contour-and-size = false) {
+        background-image: -webkit-radial-gradient(@position, @contour-and-size, @color-stops);
+        background-image: -moz-radial-gradient(@position, @contour-and-size, @color-stops);
+        background-image: radial-gradient(@shape, @color-stops);
     }
-    .prefixed() when (@position = false) and (@contour-and-size = false) {
-            background-image: -webkit-radial-gradient(@shape, @color-stops);
-            background-image: -moz-radial-gradient(@shape, @color-stops);
+    .output() when (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-radial-gradient(@shape, @color-stops);
+        background-image: -moz-radial-gradient(@shape, @color-stops);
+        background-image: radial-gradient(circle, @shape, @color-stops);
     }
-    .prefixed();
-    background-image: radial-gradient(@shape, @color-stops);
+    .output();
 }
 
 // General repeating radial gradient (without size in specific dimensions)
 .repeating-radial-gradient(@shape, @color-stop...) {
     @shape-string: ~"@{shape}";
     @position: ~`(function() { var pos = /(?:^|\s)at\s+(\S+)(?:\s+(\S+)\s*$)?/g.exec("@{shape-string}"); return pos? (pos[2]? pos[1] + ' ' + pos[2] : pos[1]) : 'false'; })()`;
-    @contour-and-size: ~`(function() { var cs = /^(circle|ellipse|circle\s+\S+|ellipse\s+\S+\s+\S+|(?:(?:circle|ellipse)\s+)?(?:closest|farthest)-(?:corner|side))(?=$|\s+at)/.exec("@{shape-string}"); return cs? cs[1] : 'false'; })()`;
+    @contour-and-size: ~`(function() { var cs = /^(circle|ellipse|(?:(?:circle|ellipse)\s+)?(?:closest|farthest)-(?:corner|side))(?=$|\s+at)/.exec("@{shape-string}"); return cs? cs[1] : 'false'; })()`;
     @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
 
-    .prefixed() when not (@position = false) and (@contour-and-size = false) {
-            background-image: -webkit-repeating-radial-gradient(@position, @color-stops);
-            background-image: -moz-repeating-radial-gradient(@position, @color-stops);
+    .output() when not (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-repeating-radial-gradient(@position, @color-stops);
+        background-image: -moz-repeating-radial-gradient(@position, @color-stops);
+        background-image: repeating-radial-gradient(@shape, @color-stops);
     }
-    .prefixed() when not (@contour-and-size = false) and (@position = false) {
-            background-image: -webkit-repeating-radial-gradient(@contour-and-size, @color-stops);
-            background-image: -moz-repeating-radial-gradient(@contour-and-size, @color-stops);
+    .output() when not (@contour-and-size = false) and (@position = false) {
+        background-image: -webkit-repeating-radial-gradient(@contour-and-size, @color-stops);
+        background-image: -moz-repeating-radial-gradient(@contour-and-size, @color-stops);
+        background-image: repeating-radial-gradient(@shape, @color-stops);
     }
-    .prefixed() when not (@position = false) and not (@contour-and-size = false) {
-            background-image: -webkit-repeating-radial-gradient(@position, @contour-and-size, @color-stops);
-            background-image: -moz-repeating-radial-gradient(@position, @contour-and-size, @color-stops);
+    .output() when not (@position = false) and not (@contour-and-size = false) {
+        background-image: -webkit-repeating-radial-gradient(@position, @contour-and-size, @color-stops);
+        background-image: -moz-repeating-radial-gradient(@position, @contour-and-size, @color-stops);
+        background-image: repeating-radial-gradient(@shape, @color-stops);
     }
-    .prefixed() when (@position = false) and (@contour-and-size = false) {
-            background-image: -webkit-repeating-radial-gradient(@shape, @color-stops);
-            background-image: -moz-repeating-radial-gradient(@shape, @color-stops);
+    .output() when (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-repeating-radial-gradient(@shape, @color-stops);
+        background-image: -moz-repeating-radial-gradient(@shape, @color-stops);
+        background-image: repeating-radial-gradient(circle, @shape, @color-stops);
     }
-    .prefixed();
-    background-image: repeating-radial-gradient(@shape, @color-stops);
+    .output();
 }

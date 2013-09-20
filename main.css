@@ -1,4 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Paprika|Imprima|Oxygen+Mono);
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.eot?v=3.2.1');
+  src: url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /**
  * global settings
  */
@@ -506,20 +513,11 @@ code a {
 code a:hover {
   border-bottom: none;
 }
-html {
-  background: url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat;
-}
 body {
   width: 980px;
   margin-right: auto;
   margin-left: auto;
-  background-image: -webkit-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
-  background-image: -moz-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
-  background-image: linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
-  background-image: -webkit-repeating-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
-  background-image: -moz-repeating-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
-  background-image: repeating-linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004));
-  background-repeat: repeat;
+  background: linear-gradient(263deg, rgba(255, 0, 0, 0.30000000000000004), rgba(255, 165, 0, 0.30000000000000004), rgba(255, 255, 0, 0.30000000000000004), rgba(0, 128, 0, 0.30000000000000004), rgba(135, 206, 235, 0.30000000000000004)) repeat 0 0, url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
   color: #4c4c4c;
 }
 body > .est-header {
@@ -588,7 +586,7 @@ header h1 small {
   vertical-align: middle;
   font-family: Imprima, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
   color: #666;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 1.2;
 }
 header:hover {
@@ -750,12 +748,23 @@ header nav a {
 .module .mixins h2 {
   padding: 5px 0;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: normal;
   color: #2e7e99;
 }
 .module .variables > li,
 .module .mixins > li {
-  overflow: hidden;
+  margin-bottom: 20px;
+}
+.module .variables > li:before,
+.module .mixins > li:before,
+.module .variables > li:after,
+.module .mixins > li:after {
+  display: table;
+  content: "";
+}
+.module .variables > li:after,
+.module .mixins > li:after {
+  clear: both;
 }
 .module h1,
 .module h2,
@@ -764,6 +773,42 @@ header nav a {
 }
 .module:last-child {
   margin-bottom: 40px;
+}
+.note,
+.warning {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  padding: 10px 20px 10px 36px;
+}
+.note:before,
+.warning:before {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: .3em;
+}
+.note {
+  background-color: rgba(144, 238, 144, 0.4);
+}
+.note:before {
+  content: "\f05a";
+  color: #32cd32;
+}
+.warning {
+  background-color: rgba(255, 182, 193, 0.4);
+}
+.warning:before {
+  content: "\f06a";
+  color: #800000;
 }
 .desc code,
 .note code,
@@ -816,6 +861,57 @@ dd a code:hover,
   -webkit-box-shadow: 0 0 3px #ffffff;
   -moz-box-shadow: 0 0 3px #ffffff;
   box-shadow: 0 0 3px #ffffff;
+}
+.signatures h3,
+.sub-mixins h3,
+.signatures dt,
+.sub-mixins dt {
+  position: relative;
+  padding-left: 36px;
+}
+.signatures h3:before,
+.sub-mixins h3:before,
+.signatures dt:before,
+.sub-mixins dt:before {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: .3em;
+}
+.signatures h3,
+.sub-mixins h3 {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  padding-right: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: rgba(43, 117, 141, 0.8);
+  text-shadow: 0 1px 1px #ffffff, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-size: 0.9em;
+  font-weight: normal;
+}
+.signatures h3:before,
+.sub-mixins h3:before {
+  content: "\f06c";
+  color: #90ee90;
+}
+.signatures dt,
+.sub-mixins dt {
+  color: #2e7e99;
+}
+.signatures dt:before,
+.sub-mixins dt:before {
+  content: "\f043";
+  color: #add8e6;
 }
 h3 code {
   white-space: pre;
