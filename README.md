@@ -14,7 +14,7 @@ est是一个基于LESS的样式工具库，帮助您更轻松地书写LESS代码
 
 [直接下载文件](https://github.com/ecomfe/est/releases/)
 
-或
+或clone最新稳定版：
 
 ```bash
 $ git clone https://github.com/ecomfe/est.git
@@ -23,7 +23,7 @@ $ git clone https://github.com/ecomfe/est.git
 在LESS文件中引用：
 ```less
 // 快速引用所有模块
-@import 'est/src/all.less';
+@import "est/src/all.less";
 
 // 覆盖全局变量
 @support-old-ie: false;
@@ -38,13 +38,3 @@ $ git clone https://github.com/ecomfe/est.git
 * [Typography相关示例](http://ecomfe.github.io/est/example/typography.html)
 * [Effects相关示例](http://ecomfe.github.io/est/example/effects.html)
 
-## Changelog
-
-* 1.0.1
-  * 增加font-family相关支持
-  * 增加`effects`模块
-  * 增加`compatibility`中`animation`相关的功能
-  * bug修复
-
-* 1.0.0
-  * 最初版本
