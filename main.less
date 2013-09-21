@@ -158,8 +158,17 @@ h1 {
 article > h1 {
     margin-top: 2em;
     text-align: center;
-    text-decoration: underline;
     .font-family(base);
+    .embossed-text(#999, #333);
+
+    &:before {
+        content: "–";
+        margin-right: 10px;
+    }
+    &:after {
+        content: "–";
+        margin-left: 10px;
+    }
 }
 
 section {

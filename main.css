@@ -549,8 +549,17 @@ h1 {
 article > h1 {
   margin-top: 2em;
   text-align: center;
-  text-decoration: underline;
   font-family: Imprima, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+article > h1:before {
+  content: "–";
+  margin-right: 10px;
+}
+article > h1:after {
+  content: "–";
+  margin-left: 10px;
 }
 section h1 {
   font-size: 1.5em;
