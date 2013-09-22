@@ -1,0 +1,38 @@
+/* Pretty printing styles. Used with prettify.js. */
+/*
+Sublime Text 2 Monokai theme for Google Prettify by Raphael DDL Oliveira
+https://github.com/RaphaelDDL/google-prettify-monokai-theme/
+http://raphaelddl.com
+*/
+
+pre .str { color: #e6db5a; } /* string */
+pre .kwd { color: #66d9ef; } /* keyword */
+pre .com { color: #75715e; font-style: italic; } /* comment */
+pre .typ { color: #66d9ef; } /* type */
+pre .lit { color: #ae81ff; } /* literal */
+pre .pun { color: #fff; } /* punctuation */
+pre .pln { color: #fff; } /* plaintext */
+pre .tag { color: #f92672; } /* html/xml tag */
+pre .atn { color: #a6e22a; } /* html/xml attribute name */
+pre .atv { color: #e6db74; } /* html/xml attribute value */
+pre .dec { color: #ae81ff; } /* decimal */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #75715e; } /* IE indents via margin-left */
+/*li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }*/
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+/* print styles from Sunburn theme */
+@media print {
+pre .str { color: #060; }
+pre .kwd { color: #006; font-weight: bold; }
+pre .com { color: #600; font-style: italic; }
+pre .typ { color: #404; font-weight: bold; }
+pre .lit { color: #044; }
+pre .pun { color: #440; }
+pre .pln { color: #000; }
+pre .tag { color: #006; font-weight: bold; }
+pre .atn { color: #404; }
+pre .atv { color: #060; }
+}

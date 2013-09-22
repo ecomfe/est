@@ -29,20 +29,14 @@
 
 默认的文字颜色。
 
-默认值：`#666666`。
-
-### `@default-text-color`
-
-默认的文字颜色。
-
-默认值： `#666666`。
+默认值：`#666`。
 
 
 ### `@default-input-placeholder-color`
 
 文本输入框占位文字的默认颜色。
 
-默认值：`#999999`。
+默认值：`#999`。
 
 
 ### `@default-base-font-family`
@@ -221,7 +215,7 @@ IE7以下的默认的标题字体族。IE7以下在匹配到第一个字体后�
 
 设定元素的阴影，支持多个阴影。
 ```less
-.box-shaodw(@shadow, ...)
+.box-shadow(@shadow, ...)
 ```
 * `@shadow`默认值为`@default-box-shadow`。
 
@@ -627,7 +621,7 @@ IE7以下的默认的标题字体族。IE7以下在匹配到第一个字体后�
 * 有两个参数时，`@width`和`@height`分别为宽高。
 
 ### `.no-bullet()`
-用于去掉列表样式的“弹头”。
+[DEPRECATED]用于去掉列表样式的“弹头”，推荐使用`reset-list-style`替代它。
 ```less
 .no-bullet();
 .no-bullets();
@@ -654,6 +648,59 @@ IE7以下的默认的标题字体族。IE7以下在匹配到第一个字体后�
   .no-bullets();
 }
 ```
+
+### `.margin-em()` & `.padding-em()`
+用于辅助计算margin和padding的em值
+```less
+.margin-em(14px);
+.margin-em(14);
+.margin-top-em(14px);
+.margin-top-em(14);
+.margin-right-em(14px);
+.margin-right-em(14);
+.margin-bottom-em(14px);
+.margin-bottom-em(14);
+.margin-left-em(14px);
+.margin-left-em(14);
+.padding-em(14px 28px);
+.padding-em(14 28);
+.padding-top-em(14px);
+.padding-top-em(14);
+.padding-right-em(14px);
+.padding-right-em(14);
+.padding-bottom-em(14px);
+.padding-bottom-em(14);
+.padding-left-em(14px);
+.padding-left-em(14);
+```
+* 这些方法的参数与其对应的CSS属性的样式类似，但只能是像素大小（单位可选）
+
+
+### `.margin-rem()` & `.padding-rem()`
+用于辅助计算margin和padding的rem值
+```less
+.margin-rem(14px);
+.margin-rem(14);
+.margin-top-rem(14px);
+.margin-top-rem(14);
+.margin-right-rem(14px);
+.margin-right-rem(14);
+.margin-bottom-rem(14px);
+.margin-bottom-rem(14);
+.margin-left-rem(14px);
+.margin-left-rem(14);
+.padding-rem(14px 28px);
+.padding-rem(14 28);
+.padding-top-rem(14px);
+.padding-top-rem(14);
+.padding-right-rem(14px);
+.padding-right-rem(14);
+.padding-bottom-rem(14px);
+.padding-bottom-rem(14);
+.padding-left-rem(14px);
+.padding-left-rem(14);
+```
+* 这些方法的参数与其对应的CSS属性的样式类似，但只能是像素大小（单位可选）
 
 ***
 
