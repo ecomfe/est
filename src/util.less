@@ -10,7 +10,7 @@
 //     .clearfix();
 // };
 
-@import 'variables';
+@import "variables.less";
 
 // clearfix via http://h5bp.com/q
 .clearfix() {
@@ -55,4 +55,197 @@
     li {
         .no-bullet();
     }
+}
+
+
+
+//
+// .margin-em
+// .margin-top-em
+// .margin-bottom-em
+// .margin-left-em
+// .margin-right-em
+// .padding-em
+// .padding-top-em
+// .padding-bottom-em
+// .padding-left-em
+// .padding-right-em
+//
+// 用于辅助计算margin和padding的em值
+
+.margin-em(@target-px-size, @context-px-size: @default-font-size) {
+    @margin-top: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[0]`;
+    @margin-right: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[1] || '@{margin-top}'`;
+    @margin-bottom: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[2] || '@{margin-top}'`;
+    @margin-left: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[3] || '@{margin-right}' || '@{margin-top}'`;
+    margin-top: (unit(@margin-top) / unit(@context-px-size)) * 1em;
+    margin-right: (unit(@margin-right) / unit(@context-px-size)) * 1em;
+    margin-bottom: (unit(@margin-bottom) / unit(@context-px-size)) * 1em;
+    margin-left: (unit(@margin-left) / unit(@context-px-size)) * 1em;
+}
+
+.margin-top-em(@target-px-size, @context-px-size: @default-font-size) {
+    margin-top: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+.margin-bottom-em(@target-px-size, @context-px-size: @default-font-size) {
+    margin-bottom: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+.margin-left-em(@target-px-size, @context-px-size: @default-font-size) {
+    margin-left: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+.margin-right-em(@target-px-size, @context-px-size: @default-font-size) {
+    margin-right: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+.padding-em(@target-px-size, @context-px-size: @default-font-size) {
+    @padding-top: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[0]`;
+    @padding-right: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[1] || '@{padding-top}'`;
+    @padding-bottom: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[2] || '@{padding-top}'`;
+    @padding-left: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[3] || '@{padding-right}' || '@{padding-top}'`;
+    padding-top: (unit(@padding-top) / unit(@context-px-size)) * 1em;
+    padding-right: (unit(@padding-right) / unit(@context-px-size)) * 1em;
+    padding-bottom: (unit(@padding-bottom) / unit(@context-px-size)) * 1em;
+    padding-left: (unit(@padding-left) / unit(@context-px-size)) * 1em;
+}
+
+.padding-top-em(@target-px-size, @context-px-size: @default-font-size) {
+    padding-top: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+.padding-bottom-em(@target-px-size, @context-px-size: @default-font-size) {
+    padding-bottom: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+.padding-left-em(@target-px-size, @context-px-size: @default-font-size) {
+    padding-left: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+.padding-right-em(@target-px-size, @context-px-size: @default-font-size) {
+    padding-right: (unit(@target-px-size) / unit(@context-px-size)) * 1em;
+}
+
+
+//
+// .margin-rem
+// .margin-top-rem
+// .margin-bottom-rem
+// .margin-left-rem
+// .margin-right-rem
+// .padding-rem
+// .padding-top-rem
+// .padding-bottom-rem
+// .padding-left-rem
+// .padding-right-rem
+//
+// 用于辅助计算margin和padding的rem值
+
+.margin-rem(@px-size) {
+    @margin-top: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[0]`;
+    @margin-right: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[1] || '@{margin-top}'`;
+    @margin-bottom: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[2] || '@{margin-top}'`;
+    @margin-left: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[3] || '@{margin-right}' || '@{margin-top}'`;
+    @top-rem-size: unit(@margin-top) / unit(@default-font-size);
+    @top-px-size-no-unit: unit(@margin-top);
+    margin-top: ~"@{top-px-size-no-unit}px";
+    margin-top: ~"@{top-rem-size}rem";
+
+    @right-rem-size: unit(@margin-right) / unit(@default-font-size);
+    @right-px-size-no-unit: unit(@margin-right);
+    margin-right: ~"@{right-px-size-no-unit}px";
+    margin-right: ~"@{right-rem-size}rem";
+
+    @bottom-rem-size: unit(@margin-bottom) / unit(@default-font-size);
+    @bottom-px-size-no-unit: unit(@margin-bottom);
+    margin-bottom: ~"@{bottom-px-size-no-unit}px";
+    margin-bottom: ~"@{bottom-rem-size}rem";
+
+    @left-rem-size: unit(@margin-left) / unit(@default-font-size);
+    @left-px-size-no-unit: unit(@margin-left);
+    margin-left: ~"@{left-px-size-no-unit}px";
+    margin-left: ~"@{left-rem-size}rem";
+}
+
+.margin-top-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    margin-top: ~"@{px-size-no-unit}px";
+    margin-top: ~"@{rem-size}rem";
+}
+
+.margin-bottom-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    margin-bottom: ~"@{px-size-no-unit}px";
+    margin-bottom: ~"@{rem-size}rem";
+}
+
+.margin-left-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    margin-left: ~"@{px-size-no-unit}px";
+    margin-left: ~"@{rem-size}rem";
+}
+
+.margin-right-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    margin-right: ~"@{px-size-no-unit}px";
+    margin-right: ~"@{rem-size}rem";
+}
+
+.padding-rem(@px-size) {
+    @padding-top: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[0]`;
+    @padding-right: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[1] || '@{padding-top}'`;
+    @padding-bottom: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[2] || '@{padding-top}'`;
+    @padding-left: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[3] || '@{padding-right}' || '@{padding-top}'`;
+    @top-rem-size: unit(@padding-top) / unit(@default-font-size);
+    @top-px-size-no-unit: unit(@padding-top);
+    padding-top: ~"@{top-px-size-no-unit}px";
+    padding-top: ~"@{top-rem-size}rem";
+
+    @right-rem-size: unit(@padding-right) / unit(@default-font-size);
+    @right-px-size-no-unit: unit(@padding-right);
+    padding-right: ~"@{right-px-size-no-unit}px";
+    padding-right: ~"@{right-rem-size}rem";
+
+    @bottom-rem-size: unit(@padding-bottom) / unit(@default-font-size);
+    @bottom-px-size-no-unit: unit(@padding-bottom);
+    padding-bottom: ~"@{bottom-px-size-no-unit}px";
+    padding-bottom: ~"@{bottom-rem-size}rem";
+
+    @left-rem-size: unit(@padding-left) / unit(@default-font-size);
+    @left-px-size-no-unit: unit(@padding-left);
+    padding-left: ~"@{left-px-size-no-unit}px";
+    padding-left: ~"@{left-rem-size}rem";
+}
+
+.padding-top-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    padding-top: ~"@{px-size-no-unit}px";
+    padding-top: ~"@{rem-size}rem";
+}
+
+.padding-bottom-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    padding-bottom: ~"@{px-size-no-unit}px";
+    padding-bottom: ~"@{rem-size}rem";
+}
+
+.padding-left-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    padding-left: ~"@{px-size-no-unit}px";
+    padding-left: ~"@{rem-size}rem";
+}
+
+.padding-right-rem(@px-size) {
+    @rem-size: unit(@px-size) / unit(@default-font-size);
+    @px-size-no-unit: unit(@px-size);
+    padding-right: ~"@{px-size-no-unit}px";
+    padding-right: ~"@{rem-size}rem";
 }
