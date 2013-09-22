@@ -6,9 +6,9 @@
 // 提供基础的布局设置。
 //
 
-@import 'variables';
-@import 'compatibility';
-@import 'util';
+@import "variables.less";
+@import "compatibility.less";
+@import "util.less";
 
 //
 // ## 定高、相对视口固定的页头
@@ -216,14 +216,14 @@
     when (@position = left), (@position = center), (@position = right) {
     text-align: @position;
 
-    .set-valign-ghost() when (@support-old-ie = true) {
+    .set-valign-ghost() when (@support-old-ie) {
         .est-valign-ghost {
             display: inline-block;
             height: 100%;
             vertical-align: middle;
         }
     }
-    .set-valign-ghost() when (@support-old-ie = false) {
+    .set-valign-ghost() when not (@support-old-ie) {
         &:before {
             content: '';
             display: inline-block;
