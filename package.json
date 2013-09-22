@@ -20,7 +20,7 @@
         "url" : "https://github.com/ecomfe/est.git"
     },
     "description": "ECOM Styling Toolkit",
-    "homepage": "https://github.com/ecomfe/est",
+    "homepage": "http://ecomfe.github.io/est/",
     "devDependencies": {
         "lessc": ">=1.4.0"
     }
