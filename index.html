@@ -1693,6 +1693,7 @@
                             </li>
                             <li>
                                 <h3><a name="ellipsis-2"></a><code>.ellipsis(@line-number)</code></h3>
+                                <p class="desc">限定最多显示的行数，超出部分隐藏并显示省略号。</p>
                                 <dl>
                                     <dt><code>@line-number</code></dt>
                                     <dd>最多显示的行数。</dd>
@@ -1701,7 +1702,7 @@
     width: 300px;
     .ellipsis(3);
 }</code></pre>
-                                <p class="note">只在 WebKit 内核浏览器下有效。</p>
+                                <p class="note">限制超出指定行数截断的功能只在 WebKit 内核浏览器下有效。</p>
                             </li>
                         </ul>
                     </li>
@@ -2026,7 +2027,7 @@
                                 <pre class="usage"><code>body {
     .est-layout-fixed-footer(80px);
 }</code></pre>
-                                <p class="note">必须与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用。页脚的默认 <code>z-index</code> 为 <a href="#header-z-index"><code class="default-value">@header-z-index</code></a>。</p>
+                                <p class="note">必须与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用。页脚的默认 <code>z-index</code> 为 <a href="#footer-z-index"><code class="default-value">@footer-z-index</code></a>。</p>
                             </li>
                         </ul>
                     </li>
@@ -2247,7 +2248,7 @@ body {
                                     <dt><code>@bg-color</code></dt>
                                     <dd>文字所在区域的背景色。</dd>
                                     <dt><code>@fg-color</code></dt>
-                                    <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind emboss”）。</dd>
+                                    <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind deboss”）。</dd>
                                 </dl>
                                 <pre class="usage"><code>.blind-debossed {
     .debossed-text(lightblue);
