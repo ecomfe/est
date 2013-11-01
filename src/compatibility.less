@@ -228,11 +228,11 @@
 
 .animation(@animation, ...) {
     @animations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    -webkit-transition: @animations;
-       -moz-transition: @animations;
-        -ms-transition: @animations;
-         -o-transition: @animations;
-            transition: @animations;
+    -webkit-animation: @animations;
+       -moz-animation: @animations;
+        -ms-animation: @animations;
+         -o-animation: @animations;
+            animation: @animations;
 }
 .animation-name(@name: none, ...) {
     @names: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
