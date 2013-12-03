@@ -120,8 +120,16 @@
 // 用图片替换文字，通常用作icon的样式
 
 .img-replace(@img-url, @img-x: 0, @img-y: 0) {
+    @url: ~"@{img-url}";
+    @is-url-exp: ~`/^url\([^()]+\)$/i.test("@{url}") ? 'true' : 'false'`;
     .hide-text();
-    background: url(@img-url) no-repeat @img-x @img-y;
+    .background(@is-url-exp) when not (@is-url-exp) {
+        background: url(@url) no-repeat @img-x @img-y;
+    }
+    .background(@is-url-exp) when (@is-url-exp) {
+        background: @url no-repeat @img-x @img-y;
+    }
+    .background(@is-url-exp);
 }
 .ir(@img-url, @img-x: 0, @img-y: 0) {
     .img-replace(@img-url, @img-x, @img-y);
@@ -162,30 +170,48 @@
 // https://github.com/clearleft/clearless/blob/master/mixins/typography.less
 
 .font-face(@family-name, @font-path, @font-weight: normal, @font-style: normal, @include-svg: false) when not (@include-svg) {
+    @url: ~"@{font-path}";
+    @encoded-url: escape(@url);
+    @slashed: ~`decodeURI("@{encoded-url}").replace(/"/g, '\\"')`;
+    @is-url-exp: ~`/^url\([^()]+\)$/i.test("@{slashed}") ? 'true' : 'false'`;
     @font-face {
         font-family: @family-name;
-        src: url('@{font-path}.eot');
-        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
-             url('@{font-path}.woff') format('woff'),
-             url('@{font-path}.ttf') format('truetype');
+        .src(@is-url-exp) when not (@is-url-exp) {
+            src: url(~"@{url}.eot");
+            .more(@include-svg) when not (@include-svg) {
+                src: url(~"@{url}.eot?#iefix") format("embedded-opentype"),
+                     url(~"@{url}.woff") format("woff"),
+                     url(~"@{url}.ttf") format("truetype");                            
+            }
+            .more(@include-svg) when (@include-svg) {
+                src: url(~"@{url}.eot?#iefix") format("embedded-opentype"),
+                     url(~"@{url}.woff") format("woff"),
+                     url(~"@{url}.ttf") format("truetype"),
+                     url(~"@{url}.svg#@{family-name}") format("svg");
+            }
+            .more(@include-svg);
+        }
+        .src(@is-url-exp) when (@is-url-exp) {
+            @path: ~`/^url\(['"]?([^()]+?)['"]?\)$/i.exec("@{slashed}")[1]`;
+            src: ~'url(@{path}.eot)';
+            .more(@include-svg) when not (@include-svg) {
+                src: ~"url(@{path}.eot?#iefix)" format("embedded-opentype"),
+                     ~"url(@{path}.woff)" format("woff"),
+                     ~"url(@{path}.ttf)" format("truetype");
+            }
+            .more(@include-svg) when (@include-svg) {
+                src: ~"url(@{path}.eot?#iefix)" format("embedded-opentype"),
+                     ~"url(@{path}.woff)" format("woff"),
+                     ~"url(@{path}.ttf)" format("truetype"),
+                     ~"url(@{path}.svg#@{family-name})" format("svg");
+            }
+            .more(@include-svg);
+        }
+        .src(@is-url-exp);
         font-weight: @font-weight;
         font-style: @font-style;
     }
 }
-
-.font-face(@family-name, @font-path, @font-weight: normal, @font-style: normal, @include-svg: false) when (@include-svg) {
-    @font-face {
-        font-family: @family-name;
-        src: url('@{font-path}.eot');
-        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
-             url('@{font-path}.woff') format('woff'),
-             url('@{font-path}.ttf') format('truetype'),
-             url('@{font-path}.svg#@{family-name}') format('svg');
-        font-weight: @font-weight;
-        font-style: @font-style;
-    }
-}
-
 
 
 //
