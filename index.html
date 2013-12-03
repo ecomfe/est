@@ -1736,7 +1736,7 @@
                                 <h3><a name="img-replace-1"></a><code>.img-replace(@img-url, @img-x, @img-y)</code></h3>
                                 <dl>
                                     <dt><code>@img-url</code></dt>
-                                    <dd>字符串格式的背景图片路径。</dd>
+                                    <dd>字符串格式的背景图片路径。可以是路径字符串，也可以是 <code>url()</code> 表达式。</dd>
                                     <dt><code>@img-x</code></dt>
                                     <dd>背景图 <code>background-position</code> 的水平方向位置。可选，默认值：<code>0</code>。</dd>
                                     <dt><code>@img-y</code></dt>
@@ -1747,7 +1747,15 @@
     .img-replace('http://www.baidu.com/img/bdlogo.gif');
     width: 270px;
     height: 129px;
+}
+
+.logo-2 {
+    .inline-block();
+    .img-replace(url('../logo.gif'));
+    width: 270px;
+    height: 129px;
 }</code></pre>
+                                <p class="warning note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>
@@ -1814,7 +1822,11 @@
          url('/some/font/url.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}</code></pre>
+}
+
+/* Compiling with --relative-urls */
+.font-face('FamilyName', url(/some/font/url));</code></pre>
+                                <p class="warning note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>
