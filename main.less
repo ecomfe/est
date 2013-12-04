@@ -193,24 +193,11 @@ header {
     .transition(0.5s);
 
     h1 {
+        float: left;
         margin: 0;
         line-height: @header-height;
-        .est-layout-page(@page-width);
         .embossed-text(@header-bg, #fff);
         .transition(0.5s);
-
-        small {
-            display: inline-block;
-            margin-left: 15px;
-            padding: 3px 6px;
-            background-color: fadeout(#fff, 50%);
-            font-size: 35%;
-            vertical-align: middle;
-            .font-family(base);
-            color: #666;
-            font-weight: normal;
-            line-height: 1.2;
-        }
     }
 
     &:hover {
@@ -227,12 +214,12 @@ header {
 
     nav {
         .est-layout-page(@page-width);
-        .clearfix();
 
         ul {
             float: right;
-            margin: -@header-height 40px 0 0;
+            margin: 0 40px 0 0;
             padding: 0;
+            .clearfix();
         }
 
         li {
@@ -273,10 +260,6 @@ header {
         h1 {
             font-size: 1.2em;
             line-height: @header-height-mini;
-        }
-
-        ul {
-            margin-top: -@header-height-mini;
         }
 
         a {

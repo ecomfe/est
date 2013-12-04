@@ -582,11 +582,9 @@ header {
   transition: 0.5s;
 }
 header h1 {
+  float: left;
   margin: 0;
   line-height: 60px;
-  width: 980px;
-  margin-right: auto;
-  margin-left: auto;
   color: #ffffff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
   -webkit-transition: 0.5s;
@@ -594,18 +592,6 @@ header h1 {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-}
-header h1 small {
-  display: inline-block;
-  margin-left: 15px;
-  padding: 3px 6px;
-  background-color: rgba(255, 255, 255, 0.5);
-  font-size: 35%;
-  vertical-align: middle;
-  font-family: Imprima, 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Jhenghei', sans-serif;
-  color: #666;
-  font-weight: normal;
-  line-height: 1.2;
 }
 header:hover {
   background-color: rgba(51, 51, 51, 0.9);
@@ -621,18 +607,18 @@ header nav {
   margin-right: auto;
   margin-left: auto;
 }
-header nav:before,
-header nav:after {
+header nav ul {
+  float: right;
+  margin: 0 40px 0 0;
+  padding: 0;
+}
+header nav ul:before,
+header nav ul:after {
   display: table;
   content: "";
 }
-header nav:after {
+header nav ul:after {
   clear: both;
-}
-header nav ul {
-  float: right;
-  margin: -60px 40px 0 0;
-  padding: 0;
 }
 header nav li {
   float: left;
@@ -669,9 +655,6 @@ header nav a {
 .mini-header header h1 {
   font-size: 1.2em;
   line-height: 40px;
-}
-.mini-header header ul {
-  margin-top: -40px;
 }
 .mini-header header a {
   height: 37px;
