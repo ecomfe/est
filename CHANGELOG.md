@@ -1,6 +1,11 @@
 # Changelog
+* 1.1.0 **最新**
+  * 修正了 `.animation()` 的错误实现
+  * 切换到 [semver](http://semver.org/)
+  * 在所有输出 `url()` 的地方提供直接输入 url 表达式作为参数的功能，以在开启 `--relative-urls`（`-ru`）参数时能正常工作。见此 [issue](https://github.com/ecomfe/est/issues/15)
+  * 修复了文档页面 Chrome 下抖动的问题
 
-* 1.0.2 **最新**
+* 1.0.2
   * 增加了 `margin-rem` / `margin-em` / `padding-rem` / `padding-em` 等相关功能
   * 增加了对渐变的支持
   * 增加了对同一边两个角设定 `border-radius` 的功能
