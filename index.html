@@ -2337,61 +2337,19 @@ body {
                     </li>
                 </ul>
             </section>
+            <aside class="spotlight collapsed">
+                <p><input id="search-key" type="text" placeholder="Search..."></p>
+                <nav>
+                    <ul id="search-result"></ul>
+                </nav>
+            </aside>
         </article>
     </main>
     <footer title="Built with est, Google Fonts, jQuery Waypoints and FontAwesome.">&hearts; Made on a <abbr title="!Mac">PC</abbr>.</footer>
     <script src="hiless.js"></script>
     <script src="jquery-2.0.3.min.js"></script>
     <script src="waypoints.min.js"></script>
-    <script>
-        $(function() {
-
-            var $body = $(document.body);
-            var $header = $('body > header');
-
-            var isMouseOn = false;
-
-            function isMiniHeader() {
-                return $body.hasClass('mini-header');
-            }
-
-            // header switch
-            $header.on('mouseenter', function() {
-                $body.removeClass('mini-header');
-                isMouseOn = true;
-            }).on('mouseleave', function() {
-                if (window.scrollY > 0) {
-                    $body.addClass('mini-header');
-                }
-                isMouseOn = false;
-            });
-
-            $(window).on('scroll', function() {
-                $body.toggleClass('mini-header', !isMouseOn && window.scrollY > 0);
-            });
-
-
-            // highlight nav while scrolling
-            $('.module, .overview').waypoint(function(direction) {
-                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
-                var $links = $('header nav a[href="#' + name + '"]');
-                $links.toggleClass('active', direction === 'down');
-            }, {
-                offset: '100%'
-            }).waypoint(function(direction) {
-                var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
-                var $links = $('header nav a[href="#' + name + '"]');
-                $links.toggleClass('active', direction === 'up');
-            }, {
-                offset: function() {
-                    return -$(this).height() + 80;
-                }
-            });
-
-            // highlight code
-            $('pre[lang]').addClass('prettyprint');
-            prettyPrint();
-        });
-    </script>
+    <script src="spotlight.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -398,10 +398,7 @@ header {
     .font-awesome-icon(exclamation-sign, maroon);
 }
 
-.desc,
-.note,
-dd,
-.dependencies {
+.has-inline-code() {
     code {
         background: rgba(255, 255, 255, 0.5);
         padding: 0 4px;
@@ -410,6 +407,10 @@ dd,
         .debossed-text(#fff, @est-blue);
         font-size: 0.9em;
     }
+}
+
+.has-inline-code-link() {
+    .has-inline-code();
 
     a {
         border: none;
@@ -431,6 +432,13 @@ dd,
             }
         }
     }
+}
+
+.desc,
+.note,
+dd,
+.dependencies {
+    .has-inline-code-link();
 }
 
 .signatures,
@@ -529,5 +537,90 @@ pre:not([lang="html"]) {
     .number,
     .color {
         color: #AE81FF;
+    }
+}
+
+/**
+ * Spotlight styles
+ */
+.spotlight {
+    &.collapsed {
+        display: none;
+    }
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    background-color: fadeout(#333, 20%);
+    font-size: 0.8em;
+    .transition(0.5s);
+
+    input {
+        width: 200px;
+        margin-bottom: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        padding: 4px 10px;
+        .font-family(code);
+        .opacity(90);
+    }
+
+    ul {
+        padding: 0;
+        .clearfix();
+    }
+
+    li {
+        float: left;
+        margin: 0 10px 10px 0;
+        .opacity(70);
+        .transition(0.3s);
+
+        &:hover {
+            .opacity(100);
+
+            .key {
+                background-color: goldenrod;
+            }
+        }
+
+        .key {
+            display: block;
+            padding: 7px;
+            color: #fff;
+            .border-top-radius(3px);
+            .embossed-text(@est-blue, #fff);
+        }
+
+        .variable {
+            background-color: steelblue;
+        }
+
+        .mixin {
+            background-color: mediumseagreen;
+        }
+
+        p {
+            .has-inline-code();
+            margin: 0;
+            padding: 10px;
+            background-color: fadeout(#fff, 10%);
+            line-height: 1em;
+            color: #666;
+            .border-bottom-radius(3px);
+        }
+
+        .key,
+        p {
+            .ellipsis();
+        }
+
+        a {
+            position: relative;
+            display: block;
+            width: 280px;
+            border: none;
+        }
     }
 }
