@@ -503,22 +503,22 @@
         background-image: -webkit-linear-gradient(@dir, @color-stops); // Chrome 10+
         background-image: -moz-linear-gradient(@dir, @color-stops); // Firefox 3.6+
         background-image: -moz-linear-gradient(@standard-direction, @color-stops); // Firefox 10+
-        background-image: -o-linear-gradient(@standard-direction, @color-stops); // Opera 11.10
-        background-image: linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
+        background-image: -o-linear-gradient(@standard-direction, @color-stops); // Opera 11.10+
+        background-image: linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output() when (@is-standard-side-or-corner) {
         @old-direction: ~`"@{dir}".replace(/^to\s+/, "").replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
         background-image: -webkit-linear-gradient(@old-direction, @color-stops); // Chrome 10+
         background-image: -moz-linear-gradient(@old-direction, @color-stops); // Firefox 3.6+
         background-image: -moz-linear-gradient(@dir, @color-stops); // Firefox 10+
-        background-image: -o-linear-gradient(@dir, @color-stops); // Opera 11.10
-        background-image: linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
+        background-image: -o-linear-gradient(@dir, @color-stops); // Opera 11.10+
+        background-image: linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output() when not (@is-old-side-or-corner) and not (@is-standard-side-or-corner) {
         background-image: -webkit-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Chrome 10+
         background-image: -moz-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Firefox 3.6+
-        background-image: -o-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Opera 11.10
-        background-image: linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
+        background-image: -o-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Opera 11.10+
+        background-image: linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output();
     background-repeat: repeat;
@@ -529,6 +529,7 @@
     background-image: -webkit-gradient(linear, left top, right top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
     background-image: -webkit-linear-gradient(left, @start-color, @end-color); // Safari 5.1+, Chrome 10+
     background-image: -moz-linear-gradient(left, @start-color, @end-color); // FF 3.6+
+    background-image: -o-linear-gradient(left, @start-color, @end-color); // Opera 11.10+
     background-image: linear-gradient(to right, @start-color, @end-color); // Standard, IE10
     background-repeat: repeat-x;
     filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", argb(@start-color), argb(@end-color))); // IE9 and down
@@ -539,6 +540,7 @@
     background-image: -webkit-gradient(linear, left top, left bottom, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
     background-image: -webkit-linear-gradient(top, @start-color, @end-color); // Safari 5.1+, Chrome 10+
     background-image: -moz-linear-gradient(top, @start-color, @end-color); // FF 3.6+
+    background-image: -o-linear-gradient(top, @start-color, @end-color); // Opera 11.10+
     background-image: linear-gradient(to bottom, @start-color, @end-color); // Standard, IE10
     background-repeat: repeat-x;
     filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@start-color), argb(@end-color))); // IE9 and down
@@ -555,22 +557,22 @@
         background-image: -webkit-repeating-linear-gradient(@dir, @color-stops); // Chrome 10+
         background-image: -moz-repeating-linear-gradient(@dir, @color-stops); // Firefox 3.6+
         background-image: -moz-repeating-linear-gradient(@standard-direction, @color-stops); // Firefox 10+
-        background-image: -o-repeating-linear-gradient(@standard-direction, @color-stops); // Opera 11.10
-        background-image: repeating-linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
+        background-image: -o-repeating-linear-gradient(@standard-direction, @color-stops); // Opera 11.10+
+        background-image: repeating-linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output() when (@is-standard-side-or-corner) {
         @old-direction: ~`"@{dir}".replace(/^to\s+/, "").replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
         background-image: -webkit-repeating-linear-gradient(@old-direction, @color-stops); // Chrome 10+
         background-image: -moz-repeating-linear-gradient(@old-direction, @color-stops); // Firefox 3.6+
         background-image: -moz-repeating-linear-gradient(@dir, @color-stops); // Firefox 10+
-        background-image: -o-repeating-linear-gradient(@dir, @color-stops); // Opera 11.10
-        background-image: repeating-linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
+        background-image: -o-repeating-linear-gradient(@dir, @color-stops); // Opera 11.10+
+        background-image: repeating-linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output() when not (@is-old-side-or-corner) and not (@is-standard-side-or-corner) {
         background-image: -webkit-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Chrome 10+
         background-image: -moz-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Firefox 3.6+
-        background-image: -o-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Opera 11.10
-        background-image: repeating-linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+
+        background-image: -o-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Opera 11.10+
+        background-image: repeating-linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output();
 }
@@ -583,24 +585,28 @@
     @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
 
     .output() when not (@position = false) and (@contour-and-size = false) {
-        background-image: -webkit-radial-gradient(@position, @color-stops);
-        background-image: -moz-radial-gradient(@position, @color-stops);
-        background-image: radial-gradient(@shape, @color-stops);
+        background-image: -webkit-radial-gradient(@position, @color-stops); // Chrome 10+
+        background-image: -moz-radial-gradient(@position, @color-stops); // Firefox 3.6+
+        background-image: -o-radial-gradient(@position, @color-stops); // Opera 11.60+
+        background-image: radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output() when not (@contour-and-size = false) and (@position = false) {
-        background-image: -webkit-radial-gradient(@contour-and-size, @color-stops);
-        background-image: -moz-radial-gradient(@contour-and-size, @color-stops);
-        background-image: radial-gradient(@shape, @color-stops);
+        background-image: -webkit-radial-gradient(@contour-and-size, @color-stops); // Chrome 10+
+        background-image: -moz-radial-gradient(@contour-and-size, @color-stops); // Firefox 3.6+
+        background-image: -o-radial-gradient(@contour-and-size, @color-stops); // Opera 11.60+
+        background-image: radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output() when not (@position = false) and not (@contour-and-size = false) {
-        background-image: -webkit-radial-gradient(@position, @contour-and-size, @color-stops);
+        background-image: -webkit-radial-gradient(@position, @contour-and-size, @color-stops); // Chrome 10+
         background-image: -moz-radial-gradient(@position, @contour-and-size, @color-stops);
-        background-image: radial-gradient(@shape, @color-stops);
-    }
+        background-image: -o-radial-gradient(@position, @contour-and-size, @color-stops); // Opera 11.60+
+        background-image: radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    } // Standard, IE10+
     .output() when (@position = false) and (@contour-and-size = false) {
-        background-image: -webkit-radial-gradient(@shape, @color-stops);
-        background-image: -moz-radial-gradient(@shape, @color-stops);
-        background-image: radial-gradient(circle, @shape, @color-stops);
+        background-image: -webkit-radial-gradient(@shape, @color-stops); // Chrome 10+
+        background-image: -moz-radial-gradient(@shape, @color-stops); // Firefox 3.6+
+        background-image: -o-radial-gradient(@shape, @color-stops); // Opera 11.60+
+        background-image: radial-gradient(circle, @shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
     }
     .output();
 }
@@ -613,24 +619,207 @@
     @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
 
     .output() when not (@position = false) and (@contour-and-size = false) {
-        background-image: -webkit-repeating-radial-gradient(@position, @color-stops);
-        background-image: -moz-repeating-radial-gradient(@position, @color-stops);
-        background-image: repeating-radial-gradient(@shape, @color-stops);
+        background-image: -webkit-repeating-radial-gradient(@position, @color-stops); // Chrome 10+
+        background-image: -moz-repeating-radial-gradient(@position, @color-stops); // Firefox 3.6+
+        background-image: -o-repeating-radial-gradient(@position, @color-stops); // Opera 12+
+        background-image: repeating-radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
     }
     .output() when not (@contour-and-size = false) and (@position = false) {
-        background-image: -webkit-repeating-radial-gradient(@contour-and-size, @color-stops);
-        background-image: -moz-repeating-radial-gradient(@contour-and-size, @color-stops);
-        background-image: repeating-radial-gradient(@shape, @color-stops);
+        background-image: -webkit-repeating-radial-gradient(@contour-and-size, @color-stops); // Chrome 10+
+        background-image: -moz-repeating-radial-gradient(@contour-and-size, @color-stops); // Firefox 3.6+
+        background-image: -o-repeating-radial-gradient(@contour-and-size, @color-stops); // Opera 12+
+        background-image: repeating-radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
     }
     .output() when not (@position = false) and not (@contour-and-size = false) {
-        background-image: -webkit-repeating-radial-gradient(@position, @contour-and-size, @color-stops);
-        background-image: -moz-repeating-radial-gradient(@position, @contour-and-size, @color-stops);
-        background-image: repeating-radial-gradient(@shape, @color-stops);
+        background-image: -webkit-repeating-radial-gradient(@position, @contour-and-size, @color-stops); // Chrome 10+
+        background-image: -moz-repeating-radial-gradient(@position, @contour-and-size, @color-stops); // Firefox 3.6+
+        background-image: -o-repeating-radial-gradient(@position, @contour-and-size, @color-stops); // Opera 12+
+        background-image: repeating-radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
     }
     .output() when (@position = false) and (@contour-and-size = false) {
-        background-image: -webkit-repeating-radial-gradient(@shape, @color-stops);
-        background-image: -moz-repeating-radial-gradient(@shape, @color-stops);
-        background-image: repeating-radial-gradient(circle, @shape, @color-stops);
+        background-image: -webkit-repeating-radial-gradient(@shape, @color-stops); // Chrome 10+
+        background-image: -moz-repeating-radial-gradient(@shape, @color-stops); // Firefox 3.6+
+        background-image: -o-repeating-radial-gradient(@shape, @color-stops); // Opera 12+
+        background-image: repeating-radial-gradient(circle, @shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
     }
     .output();
 }
+
+
+//
+// Extended display property values
+
+.display(flex) {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.display(inline-flex) {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+.display(box) {
+    display: -webkit-box;
+    display: -moz-box;
+}
+.display(inline-box) {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+}
+.display(@display) when not (@display = flex)
+                    and not (@display = inline-flex)
+                    and not (@display = box)
+                    and not (@display = inline-box) {
+    display: @display;
+}
+
+
+//
+// Flexible Box Layout
+//
+// IE 10 support: http://msdn.microsoft.com/en-us/library/ie/hh673531%28v=vs.85%29.aspx
+// IE 11 update: http://msdn.microsoft.com/en-us/library/ie/dn265027%28v=vs.85%29.aspx
+
+.flex-direction(@direction) {
+    -webkit-flex-direction: @direction;
+       -moz-flex-direction: @direction;
+        -ms-flex-direction: @direction;
+            flex-direction: @direction; 
+}
+
+.flex-wrap(@wrap) {
+    @ms-wrap: ~`"@{wrap}".replace(/nowrap/ig, "none")`;
+    -webkit-flex-wrap: @wrap;
+       -moz-flex-wrap: @wrap;
+        -ms-flex-wrap: @ms-wrap;
+            flex-wrap: @wrap; 
+}
+
+.flex-flow(@flow) {
+    @direction: ~`(function() { var dir = /\b(row-reverse|row|column-reverse|column)\b/.exec("@{flow}"); return dir? dir[1] : "row"; })()`;
+    @wrap: ~`(function() { var wrap = /\b(nowrap|wrap-reverse|wrap)\b/.exec("@{flow}"); return (wrap? wrap[1] : "nowrap").replace(/nowrap/ig, "none"); })()`;
+    -ms-flex-direction: @direction;
+    -ms-flex-wrap: @wrap;
+    -webkit-flex-flow: @flow;
+       -moz-flex-flow: @flow;
+            flex-flow: @flow;
+}
+
+.order(@order) {
+    -webkit-flex-order: @order;
+       -moz-flex-order: @order;
+        -ms-flex-order: @order;
+    -webkit-order: @order;
+       -moz-order: @order;
+        -ms-order: @order;
+            order: @order;
+}
+
+.flex(@flex) {
+    -webkit-flex: @flex;
+       -moz-flex: @flex;
+        -ms-flex: @flex;
+            flex: @flex;
+}
+
+.flex-grow(@flex) {
+    -webkit-flex-grow: @flex;
+       -moz-flex-grow: @flex;
+            flex-grow: @flex;
+}
+
+.flex-shrink(@flex) {
+    -webkit-flex-shrink: @flex;
+       -moz-flex-shrink: @flex;
+            flex-shrink: @flex;
+}
+
+.flex-basis(@size) {
+    -webkit-flex-basis: @size;
+       -moz-flex-basis: @size;
+            flex-basis: @size;
+}
+
+.justify-content(@align) {
+    @flex-pack: ~`"@{align}".replace(/flex-/ig, "").replace(/space-between/ig, "justify").replace(/space-around/ig, "distribute")`;
+    -webkit-flex-pack: @flex-pack;
+       -moz-flex-pack: @flex-pack;
+        -ms-flex-pack: @flex-pack;
+    -webkit-justify-content: @align;
+       -moz-justify-content: @align;
+        -ms-justify-content: @align;
+            justify-content: @align;
+}
+
+.align-items(@align) {
+    @flex-align: ~`"@{align}".replace(/flex-/ig, "")`;
+    -webkit-flex-align: @flex-align;
+       -moz-flex-align: @flex-align;
+        -ms-flex-align: @flex-align;
+    -webkit-align-items: @align;
+       -moz-align-items: @align;
+        -ms-align-items: @align;
+            align-items: @align;
+}
+
+.align-self(@align) {
+    @flex-align: ~`"@{align}".replace(/flex-/ig, "")`;
+    -webkit-flex-item-align: @flex-align;
+       -moz-flex-item-align: @flex-align;
+        -ms-flex-item-align: @flex-align;
+    -webkit-align-self: @align;
+       -moz-align-self: @align;
+        -ms-align-self: @align;
+            align-self: @align;
+}
+
+.align-content(@align) {
+    @flex-line-pack: ~`"@{align}".replace(/flex-/ig, "").replace(/space-between/ig, "justify").replace(/space-around/ig, "distribute")`;
+    -webkit-flex-line-pack: @flex-line-pack;
+       -moz-flex-line-pack: @flex-line-pack;
+        -ms-flex-line-pack: @flex-line-pack;
+    -webkit-align-content: @align;
+       -moz-align-content: @align;
+        -ms-align-content: @align;
+            align-content: @align;
+}
+
+//
+// Old Flexible Box Layout
+.box-orient(@orient) {
+    -webkit-box-orient: @orient;
+       -moz-box-orient: @orient;
+}
+
+.box-direction(@direction) {
+    -webkit-box-direction: @direction;
+       -moz-box-direction: @direction;
+}
+
+.box-ordinal-group(@group) {
+    -webkit-box-ordinal-group: @group;
+       -moz-box-ordinal-group: @group;
+}
+
+.box-flex-group(@group) {
+    -webkit-box-flex-group: @group;
+       -moz-box-flex-group: @group;
+}
+
+.box-flex(@flex) {
+    -webkit-box-flex: @flex;
+       -moz-box-flex: @flex;
+}
+
+.box-align(@align) {
+    -webkit-box-align: @align;
+       -moz-box-align: @align;
+}
+
+.box-pack(@align) {
+    -webkit-box-pack: @align;
+       -moz-box-pack: @align;
+}
+
+// box-lines are omitted because no browser did implement it
