@@ -382,7 +382,8 @@ header {
 }
 
 .note,
-.warning {
+.warning,
+.alert {
     border: 1px solid rgba(0, 0, 0, 0.05);
     .border-radius(3px);
     .font-awesome(block);
@@ -394,6 +395,11 @@ header {
 }
 
 .warning {
+    background-color: fadeout(khaki, 60%);
+    .font-awesome-icon(info-sign, goldenrod);
+}
+
+.alert {
     background-color: fadeout(lightpink, 60%);
     .font-awesome-icon(exclamation-sign, maroon);
 }

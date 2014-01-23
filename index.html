@@ -1297,7 +1297,7 @@
     .linear-gradient(273deg, red, yellow 30%, green 70%, purple);
 }</code></pre>
                                 <p class="note">由于支持方向设定，不支持采用老 WebKit 的语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器（Chrome 10-），且不使用 filter 语法在 IE 10 以下浏览器中进行模拟。</p>
-                                <p class="warning note">需要特别注意的是，当使用 <code>to &lt;corner&gt;</code> 这样的写法（例如 <code>to top right</code>）来指定渐变线角度时，已经支持此语法的浏览器渲染效果将与采用 <code>&lt;corner&gt;</code> 语法的浏览器有差异。效果差异见此邮件：<a href="http://lists.w3.org/Archives/Public/www-style/2011Jul/0265.html">[css3-images] Gradient Magic</a> 中的配图（新标准效果对应图中的“magic”效果）。</p>
+                                <p class="alert note">需要特别注意的是，当使用 <code>to &lt;corner&gt;</code> 这样的写法（例如 <code>to top right</code>）来指定渐变线角度时，已经支持此语法的浏览器渲染效果将与采用 <code>&lt;corner&gt;</code> 语法的浏览器有差异。效果差异见此邮件：<a href="http://lists.w3.org/Archives/Public/www-style/2011Jul/0265.html">[css3-images] Gradient Magic</a> 中的配图（新标准效果对应图中的“magic”效果）。</p>
                             </li>
                         </ul>
                     </li>
@@ -1411,6 +1411,349 @@
                                 <p class="note">参数写法及注意事项请参考 <a href="#radial-gradient"><code>.radial-gradient()</code></a>。</p>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <h2><a name="display"></a><code>.display()</code></h2>
+                        <p class="desc">设定元素的显示方式，用来为带前缀的属性值提供兼容性支持。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="display-1"></a><code>.display(@display)</code></h3>
+                                <dl>
+                                    <dt><code>@display</code></dt>
+                                    <dd>元素的显示方式，可用值参见 <a href="http://www.w3.org/TR/CSS21/visuren.html#display-prop">Visual formatting model</a>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.card {
+    .display(flex);
+}</code></pre>
+                            </li>
+                        </ul>
+                        <p class="note">目前需要使用此功能的 <code>display</code> 值有 <code>flex</code> / <code>inline-flex</code> / <code>box</code> / <code>inline-box</code> 四种，前两种对应的伸缩盒布局规范为 <a href="http://dev.w3.org/csswg/css-flexbox/">CSS Flexible Box Layout Module Level 1（最新版）</a>及 <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/">CSS Flexible Box Layout Module（2012 年初版）</a>，后两种对应的是 <a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/">Flexible Box Layout Module（2009 版）</a>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="flex-direction"></a><code>.flex-direction()</code></h2>
+                        <p class="desc">设定伸缩盒布局的排列方向。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="flex-direction-1"></a><code>.flex-direction(@flex-direction)</code></h3>
+                                <dl>
+                                    <dt><code>@flex-direction</code></dt>
+                                    <dd>布局方向，可用值为 <code>row</code> / <code>row-reverse</code> / <code>column</code> / <code>column-reverse</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.container {
+    .flex-direction(row-reverse);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="flex-wrap"></a><code>.flex-wrap()</code></h2>
+                        <p class="desc">设定伸缩盒子元素在排列时是否可以折行。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="flex-wrap-1"></a><code>.flex-wrap(@wrap)</code></h3>
+                                <dl>
+                                    <dt><code>@wrap</code></dt>
+                                    <dd>折行方式。<code>wrap</code> 表示可以折行，<code>nowrap</code> 表示必须排列在同一行中。</dd>
+                                </dl>
+                                <pre class="usage"><code>.container {
+    .flex-wrap(wrap);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="flex-flow"></a><code>.flex-flow()</code></h2>
+                        <p class="desc">设定伸缩盒子元素的排列方式，用来快速定义 <a href="#flex-direction"><code>flex-direction</code></a> 和 <a href="#flex-wrap"><code>flex-wrap</code></a> 的值。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="flex-flow-1"></a><code>.flex-flow(@flow)</code></h3>
+                                <dl>
+                                    <dt><code>@flow</code></dt>
+                                    <dd>排列方式，写法参见 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow">flex-flow - CSS | MDN</a>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.container {
+    .flex-flow(column-reverse nowrap);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="order"></a><code>.order()</code></h2>
+                        <p class="desc">设定伸缩盒项目元素的排列次序。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="order-1"></a><code>.order(@order)</code></h3>
+                                <dl>
+                                    <dt><code>@order</code></dt>
+                                    <dd>排列次序。</dd>
+                                </dl>
+                                <pre class="usage"><code>.card-main {
+    .order(1);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="flex"></a><code>.flex()</code></h2>
+                        <p class="desc">设定伸缩盒项目元素的可伸缩程度，用来快速定义 <a href="#flex-grow"><code>flex-grow</code></a>、<a href="#flex-shrink"><code>flex-shrink</code></a> 和 <a href="#flex-basis"><code>flex-basis</code></a> 的值。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="flex-1"></a><code>.flex(@flex)</code></h3>
+                                <dl>
+                                    <dt><code>@flex</code></dt>
+                                    <dd>定义伸缩盒项目元素的伸缩因子和初始尺寸。写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">flex - CSS | MDN</a>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.main {
+    .flex(2 1 600px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="flex-grow"></a><code>.flex-grow()</code></h2>
+                        <p class="desc">设定伸缩盒项目元素的伸展因子。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="flex-grow-1"></a><code>.flex-grow(@flex)</code></h3>
+                                <dl>
+                                    <dt><code>@flex</code></dt>
+                                    <dd>伸展因子。</dd>
+                                </dl>
+                                <pre class="usage"><code>.main {
+    .flex-grow(2);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="flex-shrink"></a><code>.flex-shrink()</code></h2>
+                        <p class="desc">设定伸缩盒项目元素的收缩因子。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="flex-shrink-1"></a><code>.flex-shrink(@flex)</code></h3>
+                                <dl>
+                                    <dt><code>@flex</code></dt>
+                                    <dd>收缩因子。</dd>
+                                </dl>
+                                <pre class="usage"><code>.main {
+    .flex-shrink(1);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="flex-basis"></a><code>.flex-basis()</code></h2>
+                        <p class="desc">设定伸缩盒项目元素的初始主尺寸。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="flex-basis-1"></a><code>.flex-basis(@size)</code></h3>
+                                <dl>
+                                    <dt><code>@size</code></dt>
+                                    <dd>初始尺寸。</dd>
+                                </dl>
+                                <pre class="usage"><code>.main {
+    .flex-basis(600px);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="justify-content"></a><code>.justify-content()</code></h2>
+                        <p class="desc">设定在当前伸缩行中，沿主轴方向排列伸缩盒项目元素时如何分配它们之间和两边的多余空间。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="justify-content-1"></a><code>.justify-content(@align)</code></h3>
+                                <dl>
+                                    <dt><code>@align</code></dt>
+                                    <dd>多余空间分配方式。</dd>
+                                </dl>
+                                <pre class="usage"><code>.gallery {
+    .justify-content(space-around);
+}</code></pre>
+                                <figure class="note">
+                                    <figcaption><code>justify-content</code> 值含义见下图：</figcaption>
+                                    <img src="img/justify-content.svg" alt="justify-content">
+                                </figure>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="align-items"></a><code>.align-items()</code></h2>
+                        <p class="desc">设定在当前伸缩行中，沿交叉轴（与主轴垂直）方向如何分配多余的空间。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="align-items-1"></a><code>.align-items(@align)</code></h3>
+                                <dl>
+                                    <dt><code>@align</code></dt>
+                                    <dd>多余空间分配方式。</dd>
+                                </dl>
+                                <pre class="usage"><code>.gallery {
+    .align-items(center);
+}</code></pre>
+                                <figure class="note">
+                                    <figcaption><code>align-items</code> 值含义见下图：</figcaption>
+                                    <img src="img/align-items.svg" alt="align-items">
+                                </figure>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="align-self"></a><code>.align-self()</code></h2>
+                        <p class="desc">设定在当前伸缩行中，沿交叉轴（与主轴垂直）方向如何分配某个伸缩盒项目两侧的多余空间，可以覆盖伸缩盒容器上设定的 <a href="align-items"><code>align-items</code></a> 属性。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="align-self-1"></a><code>.align-self(@align)</code></h3>
+                                <dl>
+                                    <dt><code>@align</code></dt>
+                                    <dd>多余空间分配方式。</dd>
+                                </dl>
+                                <pre class="usage"><code>.photo {
+    .align-self(flex-start);
+}</code></pre>
+                                <p class="note">取值含义参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="align-content"></a><code>.align-content()</code></h2>
+                        <p class="desc">用来设定伸缩盒容器的各行在交叉轴方向（与主轴垂直）上有多余空间时的对齐方式。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="align-content-1"></a><code>.align-content(@align)</code></h3>
+                                <dl>
+                                    <dt><code>@align</code></dt>
+                                    <dd>多余空间分配方式。</dd>
+                                </dl>
+                                <pre class="usage"><code>.photo {
+    .align-content(flex-start);
+}</code></pre>
+                                <figure class="note">
+                                    <figcaption><code>align-content</code> 值含义见下图：</figcaption>
+                                    <img src="img/align-content.svg" alt="align-content">
+                                </figure>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="box-orient"></a><code>.box-orient()</code></h2>
+                        <p class="desc">用来设定伸缩盒子元素按垂直排列还是水平排列。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="box-orient-1"></a><code>.box-orient(@orient)</code></h3>
+                                <dl>
+                                    <dt><code>@orient</code></dt>
+                                    <dd>排列方向。可用值为 <code>horizontal</code> / <code>vertical</code> / <code>inline-axis</code> / <code>block-axis</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.gallery {
+    .box-orient(horizontal);
+}</code></pre>
+                            </li>
+                        </ul>
+                        <p class="warning"><code>box-orient</code> 是老版本伸缩盒规范的属性，建议仅在必要时使用。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-direction"></a><code>.box-direction()</code></h2>
+                        <p class="desc">用来设定伸缩盒子元素按正向排列还是逆向排列。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="box-direction-1"></a><code>.box-direction(@direction)</code></h3>
+                                <dl>
+                                    <dt><code>@direction</code></dt>
+                                    <dd>排列方向。可用值为 <code>normal</code> / <code>reverse</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.gallery {
+    .box-direction(reverse);
+}</code></pre>
+                            </li>
+                        </ul>
+                        <p class="warning"><code>box-direction</code> 是老版本伸缩盒规范的属性，建议仅在必要时使用。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-ordinal-group"></a><code>.box-ordinal-group()</code></h2>
+                        <p class="desc">为伸缩盒子元素分配一个组序号，将影响 <code>box-direction</code> 排列的次序，参见 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-ordinal-group">box-ordinal-group - CSS | MDN</a>。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="box-ordinal-group-1"></a><code>.box-ordinal-group(@group)</code></h3>
+                                <dl>
+                                    <dt><code>@group</code></dt>
+                                    <dd>分组序号。</dd>
+                                </dl>
+                                <pre class="usage"><code>.current-item {
+    .box-ordinal-group(1);
+}</code></pre>
+                            </li>
+                        </ul>
+                        <p class="warning"><code>box-ordinal-group</code> 是老版本伸缩盒规范的属性，建议仅在必要时使用。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-flex-group"></a><code>.box-flex-group()</code></h2>
+                        <p class="desc">为伸缩盒子元素分配一个伸缩组序号，伸缩组将影响多余空间的分配方式，可参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-flex-group">box-flex-group - CSS | MDN</a>。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="box-flex-group-1"></a><code>.box-flex-group(@group)</code></h3>
+                                <dl>
+                                    <dt><code>@group</code></dt>
+                                    <dd>分组序号。</dd>
+                                </dl>
+                                <pre class="usage"><code>.main-item {
+    .box-flex-group(1);
+}</code></pre>
+                            </li>
+                        </ul>
+                        <p class="warning"><code>box-flex-group</code> 是老版本伸缩盒规范的属性，建议仅在必要时使用。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-flex"></a><code>.box-flex()</code></h2>
+                        <p class="desc">指定伸缩盒子元素在分配多余空间时的伸展因子。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="box-flex-1"></a><code>.box-flex(@flex)</code></h3>
+                                <dl>
+                                    <dt><code>@flex</code></dt>
+                                    <dd>伸展因子。</dd>
+                                </dl>
+                                <pre class="usage"><code>.main-item {
+    .box-flex(2);
+}</code></pre>
+                            </li>
+                        </ul>
+                        <p class="warning"><code>box-flex</code> 是老版本伸缩盒规范的属性，建议仅在必要时使用。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-align"></a><code>.box-align()</code></h2>
+                        <p class="desc">指定伸缩盒元素如何在垂直于排列方向的方向上分配多余空间。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="box-align-1"></a><code>.box-align(@align)</code></h3>
+                                <dl>
+                                    <dt><code>@align</code></dt>
+                                    <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>baseline</code> / <code>stretch</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.container {
+    .box-align(baseline);
+}</code></pre>
+                                <p class="note">参数值可参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
+                            </li>
+                        </ul>
+                        <p class="warning"><code>box-pack</code> 是老版本伸缩盒规范的属性，建议仅在必要时使用。</p>
+                    </li>
+                    <li>
+                        <h2><a name="box-pack"></a><code>.box-pack()</code></h2>
+                        <p class="desc">指定伸缩盒元素如何在排列方向上分配多余空间。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="box-pack-1"></a><code>.box-pack(@align)</code></h3>
+                                <dl>
+                                    <dt><code>@align</code></dt>
+                                    <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code>.container {
+    .box-pack(justify);
+}</code></pre>
+                                <p class="note">参数值可参考 <a href="#justify-content"><code>.justify-content()</code></a>。<code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code> 分别对应 <code>flex-start</code> / <code>center</code> / <code>flex-end</code> / <code>space-between</code>。</p>
+                            </li>
+                        </ul>
+                        <p class="warning"><code>box-pack</code> 是老版本伸缩盒规范的属性，建议仅在必要时使用。</p>
                     </li>
                 </ul>
             </section>
@@ -1755,7 +2098,7 @@
     width: 270px;
     height: 129px;
 }</code></pre>
-                                <p class="warning note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
+                                <p class="alert note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>
@@ -1826,7 +2169,7 @@
 
 /* Compiling with --relative-urls */
 .font-face('FamilyName', url(/some/font/url));</code></pre>
-                                <p class="warning note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
+                                <p class="alert note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>

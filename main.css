@@ -776,7 +776,8 @@ header nav a {
   font-size: 0.7em;
 }
 .note,
-.warning {
+.warning,
+.alert {
   border: 1px solid rgba(0, 0, 0, 0.05);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -785,7 +786,8 @@ header nav a {
   padding: 10px 20px 10px 36px;
 }
 .note:before,
-.warning:before {
+.warning:before,
+.alert:before {
   position: absolute;
   top: 10px;
   left: 12px;
@@ -805,9 +807,16 @@ header nav a {
   color: #32cd32;
 }
 .warning {
-  background-color: rgba(255, 182, 193, 0.4);
+  background-color: rgba(240, 230, 140, 0.4);
 }
 .warning:before {
+  content: "\f05a";
+  color: #daa520;
+}
+.alert {
+  background-color: rgba(255, 182, 193, 0.4);
+}
+.alert:before {
   content: "\f06a";
   color: #800000;
 }
