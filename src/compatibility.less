@@ -170,7 +170,7 @@
 // * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
 
 .transition(@transition, ...) {
-    @transitions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @transitions: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
     @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-webkit-$1")`;
     @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-moz-$1")`;
     @ms-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-ms-$1")`;
