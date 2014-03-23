@@ -316,9 +316,9 @@
     }
 
     .rhythm-padding(@lines: 1, @border: false) when not (@border = false) {
-        @border-width: ~`'@{border}'.match(/(\d+)(?:px)?/)[1]`;
-        padding-top: (@line * @lines - unit(@border-width));
-        padding-bottom: (@line * @lines - unit(@border-width));
+        @border-width: ~`parseInt('@{border}'.match(/(\d+)(?:px)?/)[1], 10)`;
+        padding-top: (@line * @lines - @border-width);
+        padding-bottom: (@line * @lines - @border-width);
         border-top: @border;
         border-bottom: @border;
     }
@@ -327,16 +327,16 @@
         padding-bottom: (@line * @lines);
     }
     .rhythm-padding-top(@lines: 1, @border: false) when not (@border = false) {
-        @border-width: ~`'@{border}'.match(/(\d+)(?:px)?/)[1]`;
-        padding-top: (@line * @lines - unit(@border-width));
+        @border-width: ~`parseInt('@{border}'.match(/(\d+)(?:px)?/)[1], 10)`;
+        padding-top: (@line * @lines - @border-width);
         border-top: @border;
     }
     .rhythm-padding-top(@lines: 1, @border: false) when (@border = false) {
         padding-top: (@line * @lines);
     }
     .rhythm-padding-bottom(@lines: 1, @border: false) when not (@border = false) {
-        @border-width: ~`'@{border}'.match(/(\d+)(?:px)?/)[1]`;
-        padding-bottom: (@line * @lines - unit(@border-width));
+        @border-width: ~`parseInt('@{border}'.match(/(\d+)(?:px)?/)[1], 10)`;
+        padding-bottom: (@line * @lines - @border-width);
         border-bottom: @border;
     }
     .rhythm-padding-bottom(@lines: 1, @border: false) when (@border = false) {

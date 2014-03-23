@@ -1,5 +1,13 @@
 # Changelog
-* 1.1.0 **最新**
+* 1.2.1 **最新**
+  * 修正 `.transition()` 输出多逗号的问题
+  * 依赖的 less 版本提高到 `~1.6.3`
+
+* 1.2.0
+  * 修正了渐变结果中没有输出 `-o-` 前缀代码的问题
+  * 增加了伸缩盒布局相关的兼容性实现（分为 box / flex 两种版本）
+
+* 1.1.0
   * 修正了 `.animation()` 的错误实现
   * 切换到 [semver](http://semver.org/)
   * 在所有输出 `url()` 的地方提供直接输入 url 表达式作为参数的功能，以在开启 `--relative-urls`（`-ru`）参数时能正常工作。见此 [issue](https://github.com/ecomfe/est/issues/15)
