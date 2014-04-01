@@ -31,6 +31,17 @@
             z-index: 2;
         }
 
+        h1 small {
+            font-size: 11px;
+            color: #999;
+        }
+
+        h1 a {
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+        }
+
         section {
             position: absolute;
             top: 60px;
@@ -92,7 +103,7 @@
     </style>
 </head>
 <body>
-    <h1>estFiddle</h1>
+    <h1>estFiddle <small>Powered by <a href="http://lesscss.org/" target="_blank">Less</a> and <a href="http://ecomfe.github.io/est/" target="_blank">est</a>.</small></h1>
     <section id="source">
         <textarea id="est">@support-old-ie: false;
 
