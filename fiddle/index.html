@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>estFiddle</title>
+    <link rel="stylesheet" href="codemirror.css">
+    <link rel="stylesheet" href="monokai.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        h1 {
+            position: relative;
+            margin: 0;
+            padding-left: 20px;
+            height: 60px;
+            box-shadow: 0 0 5px #000;
+            background-color: #eee;
+            font-family: consolas, monospace;
+            line-height: 60px;
+            z-index: 2;
+        }
+
+        section {
+            position: absolute;
+            top: 60px;
+            bottom: 0;
+            width: 50%;
+        }
+
+        #source {
+            left: 0;
+        }
+
+        #compiled {
+            left: 50%;
+        }
+
+        .CodeMirror {
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px 30px 30px;
+            line-height: 1.2;
+
+        }
+
+        #source .CodeMirror {
+            border-right: 1px dashed #666;
+        }
+
+        #source .CodeMirror::after,
+        #compiled .CodeMirror::after {
+            content: "‹ LESS (with est)";
+            position: absolute;
+            top: 0;
+            right: 15px;
+            padding: 5px 10px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+
+        #compiled .CodeMirror::after {
+            content: "‹ CSS";
+        }
+
+        .error span {
+            color: #F92672 !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>estFiddle</h1>
+    <section id="source">
+        <textarea id="est">.est {
+    .size(30px);
+    .clearfix();
+}</textarea>
+    </section>
+    <section id="compiled">
+        <textarea id="css"></textarea>
+    </section>
+    <script src="codemirror.js"></script>
+    <script src="css.js"></script>
+    <script src="matchbrackets.js"></script>
+    <script src="less-1.7.0.min.js"></script>
+    <script>
+        var $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        var est = CodeMirror.fromTextArea($('est'), {
+            mode: 'text/x-less',
+            theme: 'monokai',
+            indentUnit: 4,
+            lineNumbers : true,
+            matchBrackets : true
+        });
+
+        var css = CodeMirror.fromTextArea($('css'), {
+            mode: 'css',
+            theme: 'monokai',
+            indentUnit: 4,
+            lineNumbers : true,
+            matchBrackets : true,
+            readOnly: true
+        });
+
+        var parser = new less.Parser({
+            useFileCache: true
+        });
+
+        var imports = '@import "../src/all.less";\n';
+
+        function parse() {
+            parser.parse(imports + est.getValue(), function (e, tree) {
+                if (!e) {
+                    try {
+                        css.setValue(tree.toCSS());
+                        $('compiled').classList.remove('error');
+                    }
+                    catch (e) {
+                        showError(e);
+                    }
+                }
+                else {
+                    showError(e);
+                }
+            });
+        };
+
+        function showError(e) {
+            css.setValue(
+                e.type + ' error: ' + e.message + '\n'
+                + 'Line ' + (e.line - 1) + ': ' + e.extract[1]
+            );
+            $('compiled').classList.add('error');
+        }
+
+        parse();
+
+        var t;
+        est.on('change', function() {
+            t && clearTimeout(t);
+            t = setTimeout(parse, 200);
+        });
+    </script>
+</body>
+</html>
