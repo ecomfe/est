@@ -12,6 +12,7 @@
             padding: 0;
             height: 100%;
             overflow: hidden;
+            background-color: #272822;
             font-size: 16px;
         }
 
@@ -22,7 +23,7 @@
             height: 60px;
             box-shadow: 0 0 5px #000;
             background-color: #eee;
-            font-family: consolas, monospace;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 60px;
             z-index: 2;
         }
@@ -32,6 +33,11 @@
             top: 60px;
             bottom: 0;
             width: 50%;
+            visibility: hidden;
+        }
+
+        .ready section {
+            visibility: visible;
         }
 
         #source {
