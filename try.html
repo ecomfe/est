@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>estFiddle</title>
+    <script src="https://raw.github.com/less/less.js/master/dist/less-1.7.0.min.js"></script>
+</head>
+<body>
+    <textarea id="est" cols="30" rows="10"></textarea>
+    <textarea id="css" cols="30" rows="10"></textarea>
+    <script>
+        var est = document.getElementById('est');
+        var css = document.getElementById('css');
+        var parser = new(less.Parser);
+
+        est.oninput = function() {
+            setTimeout(function() {
+                parser.parse('@import "src/all.less";' + this.value, function (err, tree) {
+                  if (err) {
+                    css.innerHTML = err;
+                  }
+                  css.innerHTML = tree.toCSS();
+                });
+            }, 0);
+        };
+    </script>
+</body>
+</html>
