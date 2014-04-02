@@ -16,19 +16,24 @@
             font-size: 16px;
         }
 
-        h1 {
+        header {
             position: relative;
             margin: 0;
             padding-left: 20px;
             height: 60px;
             box-shadow: 0 0 5px #000;
             background-color: #eee;
+            z-index: 2;
+        }
+
+        h1 {
+            display: inline-block;
+            margin: 0;
             font-size: 18px;
             font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
             line-height: 60px;
             color: #272822;
             font-weight: 400;
-            z-index: 2;
         }
 
         h1 small {
@@ -40,6 +45,17 @@
             color: #666;
             text-decoration: none;
             border-bottom: 1px dotted #999;
+        }
+
+        #settings {
+            float: right;
+            margin-right: 80px;
+            line-height: 60px;
+            font-size: 12px;
+        }
+
+        #settings input {
+            vertical-align: middle;
         }
 
         section {
@@ -82,7 +98,7 @@
 
         #source .CodeMirror::after,
         #compiled .CodeMirror::after {
-            content: "‹ LESS (with est)";
+            content: "‹ LESS";
             position: absolute;
             top: 0;
             right: 15px;
@@ -91,6 +107,10 @@
             border-bottom-left-radius: 5px;
             background-color: rgba(255, 255, 255, 0.05);
             z-index: 1;
+        }
+
+        #source.est .CodeMirror::after {
+            content: "‹ LESS (with est)"
         }
 
         #compiled .CodeMirror::after {
@@ -103,8 +123,11 @@
     </style>
 </head>
 <body>
-    <h1>estFiddle <small>Powered by <a href="http://lesscss.org/" target="_blank">Less</a> and <a href="http://ecomfe.github.io/est/" target="_blank">est</a>.</small></h1>
-    <section id="source">
+    <header>
+        <h1>estFiddle <small>Powered by <a href="http://lesscss.org/" target="_blank">Less</a> and <a href="http://ecomfe.github.io/est/" target="_blank">est</a>.</small></h1>
+        <div id="settings"><label for="use-est"><input type="checkbox" id="use-est" checked> 使用 est</label></div>
+    </header>
+    <section id="source" class="est">
         <textarea id="est">@support-old-ie: false;
 
 .box {
@@ -125,7 +148,7 @@
     <script src="matchbrackets.js"></script>
     <script src="less-1.7.0.min.js"></script>
     <script>
-        var $ = function (id) {
+        function $(id) {
             return document.getElementById(id);
         };
 
@@ -150,10 +173,27 @@
             useFileCache: true
         });
 
+        var useEstBox = $('use-est');
+        var useEst = useEstBox.checked;
+
+        useEstBox.onchange = function() {
+            useEst = useEstBox.checked;
+            $('source').classList[useEst ? 'add' : 'remove']('est');
+            parse();
+        };
+
         var imports = '@import "../src/all.less";\n';
 
+        function getImports() {
+            return useEst ? imports : '';
+        }
+
+        function getLineNum(line) {
+            return useEst ? line - 1 : line;
+        }
+
         function parse() {
-            parser.parse(imports + est.getValue(), function (e, tree) {
+            parser.parse(getImports() + est.getValue(), function (e, tree) {
                 if (!e) {
                     try {
                         css.setValue(tree.toCSS());
@@ -172,7 +212,7 @@
         function showError(e) {
             css.setValue(
                 e.type + ' error: ' + e.message + '\n'
-                + 'Line ' + (e.line - 1) + ': ' + e.extract[1]
+                + 'Line ' + getLineNum(e.line) + ': ' + e.extract[1]
             );
             $('compiled').classList.add('error');
         }
