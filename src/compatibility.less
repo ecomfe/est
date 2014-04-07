@@ -184,9 +184,9 @@
 .transition-property(@property: all, ...) {
     @properties: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
     @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow/g, "-webkit-$1")`;
-    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-moz-$1")`;
-    @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-ms-$1")`;
-    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-o-$1")`;
+    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow/g, "-moz-$1")`;
+    @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow/g, "-ms-$1")`;
+    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow/g, "-o-$1")`;
     -webkit-transition-property: @webkit-properties;
        -moz-transition-property: @moz-properties;
         -ms-transition-property: @ms-properties;
