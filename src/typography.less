@@ -121,13 +121,15 @@
 
 .img-replace(@img-url, @img-x: 0, @img-y: 0) {
     @url: ~"@{img-url}";
-    @is-url-exp: ~`/^url\([^()]+\)$/i.test("@{url}") ? 'true' : 'false'`;
+    @encoded-url: escape(@url);
+    @decoded: ~`decodeURIComponent("@{encoded-url}").replace(/['"]/g, '')`;
+    @is-url-exp: ~`/^url\([^()]+\)$/i.test("@{decoded}") ? 'true' : 'false'`;
     .hide-text();
     .background(@is-url-exp) when not (@is-url-exp) {
-        background: url(@url) no-repeat @img-x @img-y;
+        background: url(@decoded) no-repeat @img-x @img-y;
     }
     .background(@is-url-exp) when (@is-url-exp) {
-        background: @url no-repeat @img-x @img-y;
+        background: @decoded no-repeat @img-x @img-y;
     }
     .background(@is-url-exp);
 }
@@ -172,8 +174,8 @@
 .font-face(@family-name, @font-path, @font-weight: normal, @font-style: normal, @include-svg: false) when not (@include-svg) {
     @url: ~"@{font-path}";
     @encoded-url: escape(@url);
-    @slashed: ~`decodeURI("@{encoded-url}").replace(/"/g, '\\"')`;
-    @is-url-exp: ~`/^url\([^()]+\)$/i.test("@{slashed}") ? 'true' : 'false'`;
+    @decoded: ~`decodeURIComponent("@{encoded-url}").replace(/['"]/g, '')`;
+    @is-url-exp: ~`/^url\([^()]+\)$/i.test("@{decoded}") ? 'true' : 'false'`;
     @font-face {
         font-family: @family-name;
         .src(@is-url-exp) when not (@is-url-exp) {
@@ -192,7 +194,7 @@
             .more(@include-svg);
         }
         .src(@is-url-exp) when (@is-url-exp) {
-            @path: ~`/^url\(['"]?([^()]+?)['"]?\)$/i.exec("@{slashed}")[1]`;
+            @path: ~`/^url\(([^()]+?)\)$/i.exec("@{decoded}")[1]`;
             src: ~'url(@{path}.eot)';
             .more(@include-svg) when not (@include-svg) {
                 src: ~"url(@{path}.eot?#iefix)" format("embedded-opentype"),
