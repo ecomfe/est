@@ -157,8 +157,6 @@
 
 // Drop shadows
 .box-shadow(@shadow: @default-box-shadow, ...) {
-    // @shadows:  ~`"@{arguments}"`;
-    // @shadows: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
     @shadows: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
     -webkit-box-shadow: @shadows;
        -moz-box-shadow: @shadows;
@@ -171,10 +169,10 @@
 
 .transition(@transition, ...) {
     @transitions: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
-    @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-webkit-$1")`;
-    @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-moz-$1")`;
-    @ms-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-ms-$1")`;
-    @o-transitions: ~`"@{transitions}".replace(/(transform|perspective)/g, "-o-$1")`;
+    @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
+    @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
+    @ms-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-ms-$1")`;
+    @o-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
     -webkit-transition: @webkit-transitions;
        -moz-transition: @moz-transitions;
         -ms-transition: @ms-transitions;
@@ -183,10 +181,10 @@
 }
 .transition-property(@property: all, ...) {
     @properties: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow/g, "-webkit-$1")`;
-    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-moz-$1")`;
-    @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-ms-$1")`;
-    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius)|box-shadow)/g, "-o-$1")`;
+    @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
+    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
+    @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-ms-$1")`;
+    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
     -webkit-transition-property: @webkit-properties;
        -moz-transition-property: @moz-properties;
         -ms-transition-property: @ms-properties;
@@ -227,7 +225,7 @@
 
 
 .animation(@animation, ...) {
-    @animations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @animations: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
     -webkit-animation: @animations;
        -moz-animation: @animations;
         -ms-animation: @animations;
