@@ -1,6 +1,7 @@
 # Changelog
 * 1.2.2 **最新**
   * 修正 [#21 处理参数中 `url()` 表达式时无法同时兼顾 `'` 和 `"`](https://github.com/ecomfe/est/issues/21) 中提到的问题
+  * 修正 `.animation()` 输出多逗号的问题
 
 * 1.2.1
   * 修正 `.transition()` 输出多逗号的问题

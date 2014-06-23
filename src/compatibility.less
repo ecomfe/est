@@ -157,8 +157,6 @@
 
 // Drop shadows
 .box-shadow(@shadow: @default-box-shadow, ...) {
-    // @shadows:  ~`"@{arguments}"`;
-    // @shadows: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
     @shadows: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
     -webkit-box-shadow: @shadows;
        -moz-box-shadow: @shadows;
@@ -227,7 +225,7 @@
 
 
 .animation(@animation, ...) {
-    @animations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @animations: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
     -webkit-animation: @animations;
        -moz-animation: @animations;
         -ms-animation: @animations;
