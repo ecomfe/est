@@ -136,6 +136,9 @@
         padding-top: @size;
         .border-radius(50%);
     }
+    .output() when (@size = 0) {
+        .size(0);
+    }
 
     // minimize affected properties
     .output() when (iscolor(@color)) {
