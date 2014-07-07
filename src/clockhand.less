@@ -1,0 +1,71 @@
+//
+// Clockhand
+// -----------------------------------------------------------------------------
+//
+// ### Usage:
+// 提供顺时针简写的功能。
+
+.clockhand(@values, @prefix: ~"", @suffix: ~"", @sides: top right bottom left) {
+    @val: ~"@{values}";
+    @count: ~`'@{val}'.match(/(\S+)/g).length * 1`;
+    @val-0: ~`'@{val}'.match(/(\S+)/g)[0]`;
+    @val-1: ~`'@{val}'.match(/(\S+)/g)[1] || '@{val-0}'`;
+    @val-2: ~`'@{val}'.match(/(\S+)/g)[2] || '@{val-0}'`;
+    @val-3: ~`'@{val}'.match(/(\S+)/g)[3] || '@{val-1}' || '@{val-0}'`;
+    @pre: ~`'@{prefix}' ? '@{prefix}-' : ''`;
+    @suf: ~`'@{suffix}' ? '-@{suffix}' : ''`;
+    
+    .output() when not (@val-0 = _) {
+        @side: extract(@sides, 1);
+        @{pre}@{side}@{suf}: @val-0;
+    }
+    .output() when not (@val-1 = _) {
+        @side: extract(@sides, 2);
+        @{pre}@{side}@{suf}: @val-1;
+    }
+    .output() when not (@val-2 = _) {
+        @side: extract(@sides, 3);
+        @{pre}@{side}@{suf}: @val-2;
+    }
+    .output() when not (@val-3 = _) {
+        @side: extract(@sides, 4);
+        @{pre}@{side}@{suf}: @val-3;
+    }
+
+    .output();
+}
+
+.absolute(...) {
+    position: absolute;
+    .clockhand(@arguments);
+}
+
+.fixed(...) {
+    position: fixed;
+    .clockhand(@arguments);
+}
+
+.relative(...) {
+    position: relative;
+    .clockhand(@arguments);
+}
+
+.padding(...) {
+    .clockhand(@arguments, padding);
+}
+
+.margin(...) {
+    .clockhand(@arguments, margin);
+}
+
+.border-color(...) {
+    .clockhand(@arguments, border, color);
+}
+
+.border-style(...) {
+    .clockhand(@arguments, border, style);
+}
+
+.border-width(...) {
+    .clockhand(@arguments, border, width);
+}
