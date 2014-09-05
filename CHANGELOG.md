@@ -1,5 +1,15 @@
 # Changelog
-* 1.2.1 **最新**
+* 1.3.0 **最新**
+  * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能
+  * 增加 `clockhand` 模块，提供顺时针简写功能
+  * 增加了 OpenType 相关 normalize 功能（使用了 [Normalize-OpenType.css](https://github.com/kennethormandy/normalize-opentype.css)）
+  * 增加单行文字垂直居中功能
+
+* 1.2.2
+  * 修正 [#21 处理参数中 `url()` 表达式时无法同时兼顾 `'` 和 `"`](https://github.com/ecomfe/est/issues/21) 中提到的问题
+  * 修正 `.animation()` 输出多逗号的问题
+
+* 1.2.1
   * 修正 `.transition()` 输出多逗号的问题
   * 依赖的 less 版本提高到 `~1.6.3`
 
