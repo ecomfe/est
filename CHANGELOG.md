@@ -2,8 +2,9 @@
 * 1.3.0 **最新**
   * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能
   * 增加 `clockhand` 模块，提供顺时针简写功能
+  * 增加了 OpenType 相关 normalize 功能（使用了 [Normalize-OpenType.css](https://github.com/kennethormandy/normalize-opentype.css)）
   * 增加单行文字垂直居中功能
-  * 增加不确定高度内容垂直剧中布局
+  * 增加不确定高度内容垂直居中布局
 
 * 1.2.2
   * 修正 [#21 处理参数中 `url()` 表达式时无法同时兼顾 `'` 和 `"`](https://github.com/ecomfe/est/issues/21) 中提到的问题
