@@ -3,130 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>estFiddle</title>
-    <link rel="stylesheet" href="codemirror.css">
-    <link rel="stylesheet" href="monokai.css">
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background: url(loading.gif) #272822 no-repeat center center;
-            font-size: 16px;
-        }
-
-        header {
-            position: relative;
-            margin: 0;
-            padding-left: 20px;
-            height: 60px;
-            box-shadow: 0 0 5px #000;
-            background-color: #eee;
-            z-index: 2;
-            font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-        }
-
-        h1 {
-            display: inline-block;
-            margin: 0;
-            font-size: 18px;
-            line-height: 60px;
-            color: #272822;
-            font-weight: 400;
-        }
-
-        h1 small {
-            font-size: 11px;
-            color: #999;
-        }
-
-        h1 a {
-            color: #666;
-            text-decoration: none;
-            border-bottom: 1px dotted #999;
-        }
-
-        #settings {
-            float: right;
-            margin-right: 80px;
-            line-height: 60px;
-            font-size: 12px;
-        }
-
-        #settings input {
-            vertical-align: middle;
-        }
-
-        section {
-            position: absolute;
-            top: 60px;
-            bottom: 0;
-            width: 50%;
-            visibility: hidden;
-        }
-
-        .ready section {
-            visibility: visible;
-        }
-
-        #source {
-            left: 0;
-        }
-
-        #compiled {
-            left: 50%;
-        }
-
-        .CodeMirror {
-            -webkit-box-sizing: border-box;
-               -moz-box-sizing: border-box;
-                    box-sizing: border-box;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 10px 30px 30px;
-            line-height: 1.2;
-            font-family: Consolas, monospace;
-
-        }
-
-        #source .CodeMirror {
-            border-right: 1px dashed #666;
-        }
-
-        #source .CodeMirror::after,
-        #compiled .CodeMirror::after {
-            content: "‹ LESS";
-            position: absolute;
-            top: 0;
-            right: 15px;
-            padding: 5px 10px;
-            border-bottom-right-radius: 5px;
-            border-bottom-left-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.05);
-            z-index: 1;
-        }
-
-        #source.est .CodeMirror::after {
-            content: "‹ LESS (with est)"
-        }
-
-        #compiled .CodeMirror::after {
-            content: "‹ CSS";
-        }
-
-        .error span {
-            color: #F92672 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/monokai.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <h1>estFiddle <small>Powered by <a href="http://lesscss.org/" target="_blank">Less</a> and <a href="http://ecomfe.github.io/est/" target="_blank">est</a>.</small></h1>
-        <div id="settings"><label for="use-est"><input type="checkbox" id="use-est" checked> Enable <b>est</b></label></div>
+        <ul id="settings">
+            <li>
+                <i class="fa fa-cog"></i>
+                <span><code>Less</code> version
+                    <select id="less-version" value="1.7.5">
+                        <optgroup label="1.7.x">
+                            <option value="1.7.5">1.7.5</option>
+                            <option value="1.7.4">1.7.4</option>
+                            <option value="1.7.0">1.7.0</option>
+                        </optgroup>
+                        <optgroup label="1.6.x">
+                            <option value="1.6.3">1.6.3</option>
+                        </optgroup>
+                        <optgroup label="1.5.x">
+                            <option value="1.5.1">1.5.1</option>
+                        </optgroup>
+                        <optgroup label="1.4.x">
+                            <option value="1.4.2">1.4.2</option>
+                        </optgroup>
+                    </select>
+                </span>
+            </li>
+            <li>
+                <i class="fa fa-cog"></i>
+                <label><input type="checkbox" id="auto-run" checked> Enable Auto-run</label>
+            </li>
+            <li>
+                <i class="fa fa-cog"></i>
+                <label><input type="checkbox" id="use-est" checked> Enable <b>est</b></label>
+            </li>
+            <li>
+                <button id="run"><i class="fa fa-play"></i> Run</button>
+            </li>
+        </ul>
     </header>
     <section id="source" class="est">
         <textarea id="est">@support-old-ie: false;
@@ -135,7 +53,7 @@
     .clearfix();
     .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));
     .rotate(30deg);
-    
+
     .item {
         .transition(transform 1s, color 1s);
     }
@@ -144,89 +62,9 @@
     <section id="compiled">
         <textarea id="css"></textarea>
     </section>
-    <script src="codemirror.js"></script>
-    <script src="css.js"></script>
-    <script src="matchbrackets.js"></script>
-    <script src="less-1.7.0.min.js"></script>
-    <script>
-        function $(id) {
-            return document.getElementById(id);
-        };
-
-        var est = CodeMirror.fromTextArea($('est'), {
-            mode: 'text/x-less',
-            theme: 'monokai',
-            indentUnit: 4,
-            lineNumbers : true,
-            matchBrackets : true
-        });
-
-        var css = CodeMirror.fromTextArea($('css'), {
-            mode: 'css',
-            theme: 'monokai',
-            indentUnit: 4,
-            lineNumbers : true,
-            matchBrackets : true,
-            readOnly: true
-        });
-
-        var parser = new less.Parser({
-            useFileCache: true
-        });
-
-        var useEstBox = $('use-est');
-        var useEst = useEstBox.checked;
-
-        useEstBox.onchange = function() {
-            useEst = useEstBox.checked;
-            $('source').classList[useEst ? 'add' : 'remove']('est');
-            parse();
-        };
-
-        var imports = '@import "../src/all.less";\n';
-
-        function getImports() {
-            return useEst ? imports : '';
-        }
-
-        function getLineNum(line) {
-            return useEst ? line - 1 : line;
-        }
-
-        function parse() {
-            parser.parse(getImports() + est.getValue(), function (e, tree) {
-                if (!e) {
-                    try {
-                        css.setValue(tree.toCSS());
-                        $('compiled').classList.remove('error');
-                    }
-                    catch (e) {
-                        showError(e);
-                    }
-                }
-                else {
-                    showError(e);
-                }
-            });
-        };
-
-        function showError(e) {
-            css.setValue(
-                e.type + ' error: ' + e.message + '\n'
-                + 'Line ' + getLineNum(e.line) + ': ' + e.extract[1]
-            );
-            $('compiled').classList.add('error');
-        }
-
-        parse();
-
-        var t;
-        est.on('change', function() {
-            t && clearTimeout(t);
-            t = setTimeout(parse, 200);
-        });
-
-        document.body.classList.add('ready');
-    </script>
+    <script src="js/codemirror.js"></script>
+    <script src="js/css.js"></script>
+    <script src="js/matchbrackets.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

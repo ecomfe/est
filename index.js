@@ -89,13 +89,31 @@ $(function() {
     $searchKey.on('input', updateSearch);
 
     var $spotlight = $('.spotlight');
+
+    function toggleSpotlight(isExpand) {
+        var isCollapse;
+        if (typeof isExpand === 'boolean') {
+            isCollapse = !isExpand;
+        }
+        $spotlight.toggleClass('collapsed', isCollapse);
+    }
+
     $(window).on('keydown', function(e) {
         if (e.which === 114 || (e.ctrlKey || e.metaKey) && e.which === 70) {
-            $spotlight.removeClass('collapsed');
             $searchKey.focus();
             e.preventDefault();
         } else if (e.which === 27) {
-            $spotlight.addClass('collapsed');
+            toggleSpotlight(false);
+        }
+    });
+
+    $searchKey.on('focus', function () {
+        toggleSpotlight(true);
+    });
+
+    $(document.body).on('click', function (e) {
+        if (!$.contains($spotlight[0], e.target)) {
+            toggleSpotlight(false);
         }
     });
 });

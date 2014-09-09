@@ -26,7 +26,7 @@
 /**
  * custom settings
  */
-@page-width: 980px;
+@page-width: 1240px;
 @header-height: 60px;
 @header-height-mini: 40px;
 @est-blue: darken(lightblue, 40%);
@@ -142,10 +142,10 @@ body {
     .est-layout-fixed-header(@header-height);
 
     background: linear-gradient(263deg, fadeout(red, 70%),
-                                       fadeout(orange, 70%),
-                                       fadeout(yellow, 70%),
-                                       fadeout(green, 70%),
-                                       fadeout(skyblue, 70%)) repeat 0 0,
+                                        fadeout(orange, 70%),
+                                        fadeout(yellow, 70%),
+                                        fadeout(green, 70%),
+                                        fadeout(skyblue, 70%)) repeat 0 0,
                 url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
     color: #4c4c4c;
 }
@@ -153,6 +153,15 @@ body {
 h1 {
     font-size: 2.4em;
     .font-family(heading);
+
+    a {
+        color: #333;
+
+        &,
+        &:hover {
+            border: none;
+        }
+    }
 }
 
 article > h1 {
@@ -551,34 +560,43 @@ pre:not([lang="html"]) {
  */
 .spotlight {
     &.collapsed {
-        display: none;
+        height: 36px;
+        width: 230px;
     }
 
     position: fixed;
-    right: 0;
     bottom: 0;
     left: 0;
-    padding: 15px;
+    height: 300px;
+    width: 100%;
+    padding: 10px 15px;
     background-color: fadeout(#333, 20%);
     font-size: 0.8em;
     .transition(0.5s);
 
+    p {
+        margin: 5px 0;
+    }
+
     input {
         width: 200px;
         margin-bottom: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.3);
         padding: 4px 10px;
         .font-family(code);
-        .opacity(90);
+        color: #fff;
     }
 
     ul {
+        margin: 0;
         padding: 0;
         .clearfix();
     }
 
     li {
         float: left;
+        height: 65px;
         margin: 0 10px 10px 0;
         .opacity(70);
         .transition(0.3s);
