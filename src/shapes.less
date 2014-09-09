@@ -8,7 +8,7 @@
 @import "variables.less";
 @import "util.less";
 
-.triangle(@direction: top, @size: 10px, @color: red, @origin: corner) {
+.triangle(@direction, @size, @color, @origin: corner) {
     position: absolute;
     .size(0);
     @horizontal: ~`(function() { var match = '@{direction}'.match(/\b(?:right|left)\b/); return match ? match[0] : false; })()`;
@@ -125,7 +125,7 @@
     .output();
 }
 
-.circle(@size, @color: false) {
+.circle(@size, @bg: false) {
     .output() when (ispixel(@size)) {
         .size(@size);
         // for better compatibility
@@ -141,11 +141,11 @@
     }
 
     // minimize affected properties
-    .output() when (iscolor(@color)) {
-        background-color: @color;
+    .output() when (iscolor(@bg)) {
+        background-color: @bg;
     }
-    .output() when not (@color = false) and not (iscolor(@color)) {
-        background: @color;
+    .output() when not (@bg = false) and not (iscolor(@bg)) {
+        background: @bg;
     }
 
     .output();
