@@ -11,25 +11,32 @@
 
 //
 // .base-font-family
+//
+// IE7-下，匹配到第一个字体后不会根据字符继续在family列表中进行fallback
 
 .font-family(base) {
     font-family: @default-base-font-family;
+}
+.font-family(base) when (@support-old-ie) {
+    *font-family: @default-old-ie-base-font-family;
 }
 .font-family(heading) {
     font-family: @default-heading-font-family;
 }
 .font-family(heading) when (@support-old-ie) {
-    // IE7-下，匹配到第一个字体后不会根据字符继续在family列表中进行fallback
     *font-family: @default-old-ie-heading-font-family;
 }
 .font-family(code) {
     font-family: @default-code-font-family;
 }
+.font-family(code) when (@support-old-ie) {
+    *font-family: @default-old-ie-code-font-family;
+}
 
 
 //
 // .ellipsis
-// 
+//
 // Known issue:
 // 指定参数（行数）的功能只支持WebKit。
 
@@ -44,7 +51,7 @@
 .ellipsis(@line-number) {
     display: -webkit-box;
     -webkit-line-clamp: @line-number;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;
 }
 
 
@@ -63,7 +70,7 @@
     white-space: -o-pre-wrap;   // Opera 7
     white-space: -moz-pre-wrap; // Mozilla
     white-space: -hp-pre-wrap;  // HP Printers
-    word-wrap: break-word;      // IE 5+ 
+    word-wrap: break-word;      // IE 5+
 }
 
 
@@ -183,7 +190,7 @@
             .more(@include-svg) when not (@include-svg) {
                 src: url(~"@{url}.eot?#iefix") format("embedded-opentype"),
                      url(~"@{url}.woff") format("woff"),
-                     url(~"@{url}.ttf") format("truetype");                            
+                     url(~"@{url}.ttf") format("truetype");
             }
             .more(@include-svg) when (@include-svg) {
                 src: url(~"@{url}.eot?#iefix") format("embedded-opentype"),
@@ -439,4 +446,24 @@
 }
 .drop-cap(@line-height, @lines, @margin-right) when (@support-old-ie) {
     _zoom: 1;
+}
+
+
+//
+// .centered-line(@height, @is-input)
+//
+// 单行文本的垂直居中
+// .centered-line(30px)
+// .centered-line(30px, true)
+
+.centered-line(@height) {
+    .centered-line(@height, false);
+}
+.centered-line(@height, @is-input) when not (@is-input) {
+    height: @height;
+    line-height: @height;
+}
+.centered-line(@height, true) {
+    height: @height;
+    line-height: ~"@{height}\0"; // IE6-8
 }

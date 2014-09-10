@@ -95,7 +95,7 @@
 
 //
 // ## 居中的固定宽度布局
-// 
+//
 // ### Example:
 //
 // #page {
@@ -188,6 +188,7 @@
     }
 }
 
+
 //
 // ## 弹出层布局
 // 支持不定宽度的弹出容器在某定位元素内靠上/下/左/右/居中定位显示。
@@ -231,7 +232,7 @@
             vertical-align: middle;
         }
     }
-    .set-valign-ghost;
+    .set-valign-ghost();
 
     > .est-popup {
         display: inline-block;
@@ -256,7 +257,7 @@
             vertical-align: @position;
         }
     }
-    .set-valign-ghost;
+    .set-valign-ghost();
 
     > .est-popup {
         display: inline-block;
@@ -346,7 +347,11 @@
     padding-top: @extraHeight;
     height: 0;
 
-    object, embed, iframe, img, .est-fixed-ratio {
+    object,
+    embed,
+    iframe,
+    img,
+    .est-fixed-ratio {
         position: absolute;
         top: 0;
         left: 0;

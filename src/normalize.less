@@ -9,7 +9,8 @@
 // .global-normalize;
 //
 // ### Reference:
-// * http://necolas.github.io/normalize.css/
+// * https://necolas.github.io/normalize.css/
+// * http://kennethormandy.com/journal/normalize-opentype-css
 
 @import "variables.less";
 @import "compatibility.less";
@@ -544,5 +545,133 @@
     input[type="search"]::-webkit-search-cancel-button,
     input[type="search"]::-webkit-search-decoration {
         -webkit-appearance: none;
+    }
+}
+
+.global-normalize-opentype() {
+    /*! normalize-opentype v0.1.2 | MIT License | kennethormandy.com/journal/normalize-opentype-css */
+
+    /**
+     * 1. Turn on kerning, standard ligatures, and proportional, oldstyle numerals
+     *    Turn off all other ligatures, tabular, lining numerals, and alternates
+     */
+
+    html,
+    body {
+      font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0; /* 1. */
+    }
+
+    /* Headings
+    ========================================================================== */
+
+    /**
+     * 1. Turn on discretionary ligatures for larger headings
+     */
+
+    h1,
+    h2,
+    h3 {
+      font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1; /* 1. */
+    }
+
+    /* Text-level semantics
+    ========================================================================== */
+
+    /**
+     * 1. Change all letters to uppercase
+     * 2. Turn on small caps for upper and lowercase letters
+     */
+
+    abbr {
+      text-transform: uppercase; /* 1 */
+      font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1; /* 2 */
+    }
+
+    /*
+     * TODO: Turn on diagonal fractions where appropriate
+     */
+
+    time {
+      font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+    }
+
+    /*
+     * 1. Turn off kerning and ligatures,
+     *    Turn on lining, tabular numerals, slashed zero
+     */
+
+    pre,
+    kbd,
+    samp,
+    code {
+      font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1; /* 1. */
+    }
+
+    mark {
+    }
+
+    small {
+    }
+
+    cite {
+    }
+
+    /**
+     * 1. Turn on proper supercript numerals
+     */
+
+    sup {
+      font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1; /* 1. */
+    }
+
+    /**
+     * 1. Turn on proper subscript numerals
+     */
+
+    sub {
+      font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1; /* 1. */
+    }
+
+
+    /* Tables
+    ========================================================================== */
+
+    /**
+     * 1. Turns on tabular, lining numerals and slashed zero
+     *    Turns off kerning, as it could impact tabular numerals
+     */
+
+    table {
+      font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1; /* 1. */
+    }
+
+    /**
+     * 1. Revert to defaults for table headings
+     */
+
+    table thead,
+    table tfoot {
+      font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0; /* 2. */
+    }
+}
+
+.global-normalize-opentype() when (@support-html5) {
+    /* Forms
+    ========================================================================== */
+
+    /**
+     * 1. Turns on lining, proportional numerals without clarified zeroes
+     * TODO: Additional input modes https://developer.mozilla.org/en/docs/Web/HTML/Element/Input#attr-inputmode
+     */
+
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="number"],
+    input[type="range"],
+    input[type="tel"],
+    input[type="week"], {
+      font-feature-settings: "kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0; /* 1. */
     }
 }
