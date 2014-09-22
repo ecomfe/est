@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Paprika|Imprima|Oxygen+Mono);
 @font-face {
   font-family: 'FontAwesome';
   src: url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/fontawesome-webfont.eot?v=3.2.1');
@@ -972,7 +973,7 @@ footer {
   clear: both;
 }
 .links dt {
-  width: 50px;
+  width: 60px;
   margin-right: 10px;
   float: left;
   clear: left;
