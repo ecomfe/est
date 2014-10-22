@@ -250,11 +250,8 @@
     else if (localStorage) {
         code = localStorage.getItem('lessCode');
     }
-    else {
-        code = defaultCode;
-    }
 
-    est.setValue(code);
+    est.setValue(code || defaultCode);
 
     var t;
     est.on('change', function() {
