@@ -231,16 +231,16 @@
         $('compiled').classList.add('error');
     }
 
-    var defaultCode = '@support-old-ie: false;\
-\
-.box {\
-    .clearfix();\
-    .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));\
-    .rotate(30deg);\
-\
-    .item {\
-        .transition(transform 1s, color 1s);\
-    }\
+    var defaultCode = '@support-old-ie: false;\n
+\n
+.box {\n
+    .clearfix();\n
+    .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));\n
+    .rotate(30deg);\n
+\n
+    .item {\n
+        .transition(transform 1s, color 1s);\n
+    }\n
 }';
 
     var code;
