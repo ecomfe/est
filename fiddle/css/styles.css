@@ -92,6 +92,7 @@ button::-moz-focus-inner {
     background-color: #90ee90;
     font-size: 14px;
     font-weight: 700;
+    line-height: 1.5;
     color: #409e40;
     cursor: pointer;
     box-shadow: 0 3px 0 #409e40;
