@@ -40,7 +40,7 @@
         var kvs = [];
 
         for (var key in query) {
-            kvs.push(key + '=' + query[key]);
+            kvs.push(key + '=' + encodeURIComponent(query[key]));
         }
 
         return kvs.join('&');
@@ -48,13 +48,7 @@
 
     function saveSetting(key, value) {
         var current = parseQuery(location.hash);
-        if (!current.hasOwnProperty(key)) {
-            current[key] = value;
-        }
-        else {
-            current[key] = value;
-        }
-
+        current[key] = value;
         location.hash = stringifyQuery(current);
     }
 
@@ -140,35 +134,41 @@
     /* Settings */
 
     // getting settings via query string
-    var query = parseQuery(location.hash);
-    var version = query.version || '2.0.0-b1';
-    var useEst = query.est !== 'false';
-    var isAutoRun = query.autorun !== 'false';
+    var settings = parseQuery(location.hash);
+
+    settings.version = settings.version || '2.0.0-b1';
+    settings.est = settings.est !== 'false';
+    settings.autorun = settings.autorun !== 'false';
 
     var lessVersion = $('less-version');
-    lessVersion.value = version; // init
+    lessVersion.value = settings.version; // init
+
+    var useEstBox = $('use-est');
+    useEstBox.checked = settings.est;
+
+    var autoRunBox = $('auto-run');
+    autoRunBox.checked = settings.autorun;
+
+    function updateUseEst(value) {
+        $('source').classList[value ? 'add' : 'remove']('est');
+        parse();
+    }
 
     lessVersion.onchange = function () {
         saveSetting('version', this.value);
+        settings.version = this.value;
         updateVersion(this.value);
     };
 
-    var useEstBox = $('use-est');
-    useEstBox.checked = useEst;
-
     useEstBox.onchange = function () {
         saveSetting('est', this.checked);
-        useEst = this.checked;
-        $('source').classList[useEst ? 'add' : 'remove']('est');
-        parse();
+        settings.est = this.checked;
+        updateUseEst(this.checked);
     };
-
-    var autoRunBox = $('auto-run');
-    autoRunBox.checked = isAutoRun;
 
     autoRunBox.onchange = function () {
         saveSetting('autorun', this.checked);
-        isAutoRun = this.checked;
+        settings.autorun = this.checked;
         parse();
     };
 
@@ -180,15 +180,15 @@
     var imports = '@import "../src/all.less";\n';
 
     function getImports() {
-        return useEst ? imports : '';
+        return settings.est ? imports : '';
     }
 
     function getLineNum(line) {
-        return useEst ? line - 1 : line;
+        return settings.est ? line - 1 : line;
     }
 
     function parse(isForce) {
-        if (!isAutoRun && !isForce) {
+        if (!settings.autorun && !isForce) {
             return;
         }
 
@@ -231,16 +231,36 @@
         $('compiled').classList.add('error');
     }
 
-    if (localStorage) {
-        var lessCode = localStorage.getItem('lessCode');
-        lessCode && est.setValue(lessCode);
+    var defaultCode = '@support-old-ie: false;\
+\
+.box {\
+    .clearfix();\
+    .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));\
+    .rotate(30deg);\
+\
+    .item {\
+        .transition(transform 1s, color 1s);\
+    }\
+}';
+
+    var code;
+    if (settings.code) {
+        code = settings.code;
     }
+    else if (localStorage) {
+        code = localStorage.getItem('lessCode');
+    }
+    else {
+        code = defaultCode;
+    }
+
+    est.setValue(code);
 
     var t;
     est.on('change', function() {
         t && clearTimeout(t);
 
-        if (localStorage) {
+        if (!settings.code && localStorage) {
             localStorage.setItem('lessCode', est.getValue());
         }
 
