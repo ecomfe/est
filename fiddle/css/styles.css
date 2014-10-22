@@ -5,7 +5,7 @@ body {
     height: 100%;
     overflow: hidden;
     background: url(../img/loading.gif) #272822 no-repeat center center;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .compiling {
