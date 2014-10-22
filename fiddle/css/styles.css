@@ -177,5 +177,6 @@ section {
 }
 
 .error span {
+    background-color: transparent !important;
     color: #F92672 !important;
 }
