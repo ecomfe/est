@@ -1156,3 +1156,6 @@ pre:not([lang="html"]) .color {
   width: 280px;
   border: none;
 }
+a[href^="http://tongji.baidu.com"] {
+  display: none;
+}
