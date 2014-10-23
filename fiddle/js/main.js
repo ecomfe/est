@@ -11,6 +11,14 @@
         document.body.classList.remove('ready');
     }
 
+    function showComments() {
+        document.body.classList.add('discussing');
+    }
+
+    function hideComments() {
+        document.body.classList.remove('discussing');
+    }
+
     function showCompiled() {
         document.body.classList.remove('compiling');
     }
@@ -261,6 +269,13 @@
 
         t = setTimeout(parse, 200);
     });
+
+    var toggle = $('toggle');
+    var isDiscussing = false;
+    toggle.onclick = function () {
+        isDiscussing = !isDiscussing;
+        isDiscussing ? showComments() : hideComments();
+    };
 
     /**
      * Load for the first time

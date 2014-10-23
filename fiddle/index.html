@@ -20,7 +20,7 @@
                             <option value="2.0.0-b1">2.0.0-beta1</option>
                         </optgroup>
                         <optgroup label="1.7.x">
-                            <option value="1.7.5" selected>1.7.5</option>
+                            <option value="1.7.5">1.7.5</option>
                             <option value="1.7.4">1.7.4</option>
                             <option value="1.7.0">1.7.0</option>
                         </optgroup>
@@ -55,6 +55,22 @@
     <section id="compiled">
         <textarea id="css"></textarea>
     </section>
+    <aside id="comments">
+        <button id="toggle" title="Toggle comments"><i class="fa fa-angle-down"></i> <i class="fa fa-comment"></i></button>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'estfiddle'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </aside>
     <script src="js/codemirror.js"></script>
     <script src="js/css.js"></script>
     <script src="js/matchbrackets.js"></script>

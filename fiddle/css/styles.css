@@ -1,3 +1,9 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
@@ -8,15 +14,20 @@ body {
     font-size: 14px;
 }
 
-.compiling {
-    background-position: 75% center;
-}
 
 body,
 input,
 textarea,
 button {
     font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Arial, 'Lantinghei SC', 'Microsoft Jhenghei', sans-serif;
+}
+
+a {
+    color: #409e40;
+}
+
+.compiling {
+    background-position: 75% center;
 }
 
 header {
@@ -137,9 +148,6 @@ section {
 }
 
 .CodeMirror {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
     position: absolute;
     top: 0;
     left: 0;
@@ -179,4 +187,68 @@ section {
 .error span {
     background-color: transparent !important;
     color: #F92672 !important;
+}
+
+#comments {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    overflow: auto;
+    z-index: 10;
+    padding: 30px 30px 0;
+    box-shadow: 0 0 5px #000;
+    background-color: #eee;
+    transition: height 0.5s;
+}
+
+#toggle {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#toggle .fa {
+    position: relative;
+}
+
+#toggle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-image: linear-gradient(to top, #eee, #eee 25%, #ccc);
+}
+
+#toggle:hover:before {
+    opacity: 1;
+}
+
+.discussing #comments {
+    height: 100%;
+}
+
+.discussing #toggle .fa-comment {
+    display: none;
+}
+
+#toggle .fa-angle-down {
+    display: none;
+}
+
+.discussing #toggle .fa-angle-down {
+    display: inline;
 }
