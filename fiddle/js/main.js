@@ -158,6 +158,7 @@
     autoRunBox.checked = settings.autorun;
 
     function updateUseEst(value) {
+        value = value == null ? useEstBox.checked || value;
         $('source').classList[value ? 'add' : 'remove']('est');
         parse();
     }
@@ -283,4 +284,5 @@
 
     var isReady = false;
     updateVersion();
+    updateUseEst();
 })();
