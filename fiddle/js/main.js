@@ -299,4 +299,5 @@
     var isReady = false;
     updateVersion();
     updateAutoRun();
+    toggleClass('source', 'est', useEstBox.checked);
 })();
