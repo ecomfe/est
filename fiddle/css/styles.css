@@ -96,6 +96,7 @@ button::-moz-focus-inner {
 
 #run {
     position: relative;
+    width: 110px;
     margin: 0;
     padding: 4px 12px;
     border: none;
@@ -110,7 +111,8 @@ button::-moz-focus-inner {
     outline: none;
 }
 
-#run:active {
+#run:active,
+#run.auto {
     top: 3px;
     background-color: #80de80;
     color: #207e20;
@@ -120,6 +122,33 @@ button::-moz-focus-inner {
 #run .fa {
     margin-right: 5px;
     color: #409e40;
+}
+
+#run .fa-refresh {
+    display: none;
+}
+
+#run.auto .fa-play {
+    display: none;
+}
+
+#run.auto .fa-refresh {
+    display: inline-block;
+    -webkit-animation: rotate 2s linear infinite;
+       -moz-animation: rotate 2s linear infinite;
+            animation: rotate 2s linear infinite;
+}
+
+#run span {
+    display: none;
+}
+
+#run::after {
+    content: "Run";
+}
+
+#run.auto::after {
+    content: "Running";
 }
 
 section {
@@ -255,4 +284,34 @@ section {
 
 a[href^="http://tongji.baidu.com"] {
     display: none;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -157,10 +157,23 @@
     var autoRunBox = $('auto-run');
     autoRunBox.checked = settings.autorun;
 
+    function toggleClass(id, className, value) {
+        var elem = $(id);
+        if (elem) {
+            elem.classList[value ? 'add' : 'remove'](className);
+        }
+    }
+
     function updateUseEst(value) {
-        value = value == null ? useEstBox.checked : value;
-        $('source').classList[value ? 'add' : 'remove']('est');
+        value = value == null ? useEstBox.checked : !!value;
+        toggleClass('source', 'est', value);
         parse();
+    }
+
+    function updateAutoRun(value) {
+        value = value == null ? autoRunBox.checked : !!value;
+        toggleClass('run', 'auto', value);
+        $('run').disabled = value;
     }
 
     lessVersion.onchange = function () {
@@ -178,6 +191,7 @@
     autoRunBox.onchange = function () {
         saveSetting('autorun', this.checked);
         settings.autorun = this.checked;
+        updateAutoRun(this.checked);
         parse();
     };
 
@@ -284,5 +298,5 @@
 
     var isReady = false;
     updateVersion();
-    updateUseEst();
+    updateAutoRun();
 })();
