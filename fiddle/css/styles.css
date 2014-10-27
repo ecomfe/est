@@ -16,14 +16,21 @@ body {
 
 
 body,
-input,
-textarea,
 button {
     font-family: 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Arial, 'Lantinghei SC', 'Microsoft Jhenghei', sans-serif;
 }
 
+input,
+textarea {
+    font-family: Monaco, Consolas, monospace;
+}
+
 a {
     color: #409e40;
+}
+
+label {
+    cursor: pointer;
 }
 
 .compiling {
@@ -85,7 +92,8 @@ h1 a {
 }
 
 #settings input,
-#settings select {
+#settings select,
+#settings a {
     vertical-align: middle;
 }
 
@@ -149,6 +157,21 @@ button::-moz-focus-inner {
 
 #run.auto::after {
     content: "Running";
+}
+
+#link {
+    width: 0;
+    padding: 3px 0;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: width 0.3s, padding 0.3s;
+}
+
+#link:focus {
+    padding: 3px 8px;
+    width: 240px;
 }
 
 section {

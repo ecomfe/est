@@ -54,10 +54,15 @@
         return kvs.join('&');
     }
 
-    function saveSetting(key, value) {
-        var current = parseQuery(location.hash);
+    function saveSetting(key, value, isRewrite) {
+        var current = parseQuery(window.location.hash);
         current[key] = value;
-        location.hash = stringifyQuery(current);
+
+        var hash = stringifyQuery(current);
+        if (isRewrite !== false) {
+            window.location.hash = hash;
+        }
+        return hash;
     }
 
     /**
@@ -142,7 +147,7 @@
     /* Settings */
 
     // getting settings via query string
-    var settings = parseQuery(location.hash);
+    var settings = parseQuery(window.location.hash);
 
     settings.version = settings.version || '2.0.0-b2';
     settings.est = settings.est !== 'false';
@@ -198,6 +203,16 @@
     var runButton = $('run');
     runButton.onclick = function () {
         parse(true);
+    };
+
+    var link = $('link');
+    link.onfocus = function () {
+        var code = est.getValue();
+        var hash = saveSetting('code', btoa(code), false);
+        var url = window.location.href.split('#')[0] + '#' + hash;
+        link.value = url;
+        link.select();
+        return false;
     };
 
     var imports = '@import "../src/all.less";\n';
@@ -266,7 +281,7 @@
 
     var code;
     if (settings.code) {
-        code = settings.code;
+        code = atob(settings.code);
     }
     else if (localStorage) {
         code = localStorage.getItem('lessCode');
