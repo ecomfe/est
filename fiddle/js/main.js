@@ -149,7 +149,7 @@
     // getting settings via query string
     var settings = parseQuery(window.location.hash);
 
-    settings.version = settings.version || '2.0.0-b2';
+    settings.version = settings.version || document.querySelector('#less-version option').value;
     settings.est = settings.est !== 'false';
     settings.autorun = settings.autorun !== 'false';
 
