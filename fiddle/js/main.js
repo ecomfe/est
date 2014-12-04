@@ -137,7 +137,7 @@
             less = _LESS_VERSIONS[version];
             updateParser();
         } else {
-            loadScript('js/less-' + version + '.min.js', function () {
+            loadScript('https://rawgit.com/less/less.js/v' + version + '/dist/less.min.js', function () {
                 _LESS_VERSIONS[version] = less;
                 updateParser();
             });
