@@ -145,7 +145,7 @@
             updateParser();
         } else {
             var url = 'https://rawgit.com/less/less.js/v' + version
-                + '/dist/less' + (version.charAt(0) === 1 ? '-' + version : '') + '.min.js';
+                + '/dist/less' + (version.charAt(0) === '1' ? '-' + version : '') + '.min.js';
             loadScript(url, function () {
                 _LESS_VERSIONS[version] = less;
                 updateParser();
