@@ -36,8 +36,7 @@
             });
             if (kv.length === 2) {
                 query[kv[0]] = decodeURIComponent(kv[1]);
-            }
-            else if (kv.length === 1) {
+            } else if (kv.length === 1) {
                 query[kv[0]] = true;
             }
         });
@@ -109,19 +108,27 @@
         document.getElementsByTagName('head')[0].appendChild(elem);
     }
 
+    function doParse() {
+        parse();
+        if (isReady) {
+            showCompiled();
+        } else {
+            showCode();
+        }
+        isReady = true;
+    }
+
     function updateParser() {
         setTimeout(function() {
-            parser = new less.Parser({
-                useFileCache: true
-            });
-            parse();
-
-            if (isReady) {
-                showCompiled();
+            if (!less.render) { // below 2.0.0
+                parser = new less.Parser({
+                    useFileCache: true
+                });
+                doParse();
             } else {
-                showCode();
+                // init plugins
+                loadScript('js/plugin.js', doParse);
             }
-            isReady = true;
         }, 10);
     }
 
@@ -232,18 +239,19 @@
 
         var src = getImports() + est.getValue();
         if (less.render) { // 2.0.0 and above
-            less.render(src, function (e, result) {
-                var s = src;
-                if (!e) {
-                    css.setValue(result.css);
+            var options = {};
+
+            if (useEstBox.checked) {
+                options.plugins = [lessPluginUniqueDirectives];
+            }
+            less.render(src, options)
+                .then(function (output) {
+                    css.setValue(output.css);
                     $('compiled').classList.remove('error');
-                }
-                else {
-                    showError(e);
-                }
-            });
-        }
-        else {
+                }, function (error) {
+                    showError(error);
+                });
+        } else {
             parser.parse(src, function (e, tree) {
                 if (!e) {
                     try {
@@ -253,8 +261,7 @@
                     catch (e) {
                         showError(e);
                     }
-                }
-                else {
+                } else {
                     showError(e);
                 }
             });
@@ -282,8 +289,7 @@
     var code;
     if (settings.code) {
         code = atob(settings.code);
-    }
-    else if (localStorage) {
+    } else if (localStorage) {
         code = localStorage.getItem('lessCode');
     }
 
@@ -312,6 +318,7 @@
      */
 
     var isReady = false;
+
     updateVersion();
     updateAutoRun();
     toggleClass('source', 'est', useEstBox.checked);
