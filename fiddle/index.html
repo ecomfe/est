@@ -3,97 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>estFiddle</title>
-    <link rel="stylesheet" href="css/codemirror.css">
-    <link rel="stylesheet" href="css/monokai.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="dist/app.min.css">
 </head>
-<body>
+<body class="{{bodyClass}}">
     <header>
         <h1>estFiddle <small>Powered by <a href="http://lesscss.org/" target="_blank">Less</a> and <a href="http://ecomfe.github.io/est/" target="_blank">est</a>.</small></h1>
         <ul id="settings">
             <li>
                 <i class="fa fa-cog"></i>
                 <span><code>Less</code> version
-                    <select id="less-version">
-                        <optgroup label="2.1.x">
-                            <option value="2.1.1">2.1.1</option>
-                            <option value="2.1.0">2.1.0</option>
-                        </optgroup>
-                        <optgroup label="2.0.x">
-                            <option value="2.0.0">2.0.0</option>
-                        </optgroup>
-                        <optgroup label="1.7.x">
-                            <option value="1.7.5">1.7.5</option>
-                            <option value="1.7.4">1.7.4</option>
-                            <option value="1.7.3">1.7.3</option>
-                            <option value="1.7.2">1.7.2</option>
-                            <option value="1.7.1">1.7.1</option>
-                            <option value="1.7.0">1.7.0</option>
-                        </optgroup>
-                        <optgroup label="1.6.x">
-                            <option value="1.6.3">1.6.3</option>
-                            <option value="1.6.2">1.6.2</option>
-                            <option value="1.6.1">1.6.1</option>
-                            <option value="1.6.0">1.6.0</option>
-                        </optgroup>
-                        <optgroup label="1.5.x">
-                            <option value="1.5.1">1.5.1</option>
-                            <option value="1.5.0">1.5.0</option>
-                        </optgroup>
-                        <optgroup label="1.4.x">
-                            <option value="1.4.2">1.4.2</option>
-                            <option value="1.4.1">1.4.1</option>
-                            <option value="1.4.0">1.4.0</option>
-                        </optgroup>
-                    </select>
+                    <select id="less-version" v-model="version" options="versions" v-on="change: updateVersion(version)"></select>
                 </span>
             </li>
             <li>
                 <i class="fa fa-cog"></i>
-                <label><input type="checkbox" id="use-est" checked> Enable <b>est</b></label>
+                <label><input type="checkbox" v-on="click: parse(false)" v-model="est"> Enable <b>est</b></label>
             </li>
             <li>
                 <i class="fa fa-cog"></i>
-                <label><input type="checkbox" id="auto-run" checked> Enable Auto-run</label>
+                <label><input type="checkbox" v-on="click: parse(false)" v-model="autorun"> Enable Auto-run</label>
             </li>
             <li>
-                <button id="run"><i class="fa fa-play"></i><i class="fa fa-refresh"></i> <span>Run</span></button>
+                <button v-on="click: parse(true)" id="run"><i class="fa fa-play"></i><i class="fa fa-refresh"></i> <span>Run</span></button>
             </li>
             <li>
-                <label><i class="fa fa-share-alt"></i> Share <input type="text" id="link" readonly></label>
+                <label><i class="fa fa-share-alt"></i> Share <input type="text" id="link" v-on="focus: selectUrl" readonly></label>
             </li>
         </ul>
     </header>
-    <section id="source" class="est">
+    <section id="source" class="{{ est ? 'est' : '' }}">
         <textarea id="est"></textarea>
     </section>
     <section id="compiled">
         <textarea id="css"></textarea>
     </section>
     <aside id="comments">
-        <button id="toggle" title="Toggle comments"><i class="fa fa-angle-down"></i> <i class="fa fa-comment"></i></button>
+        <button id="toggle" title="Toggle comments" v-on="click: isDiscussing = !isDiscussing"><i class="fa fa-angle-down"></i> <i class="fa fa-comment"></i></button>
         <div id="disqus_thread"></div>
         <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'estfiddle'; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
+            var disqus_shortname = 'estfiddle';
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                (document.getElementsByTagName('head')[0] || document.body).appendChild(dsq);
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </aside>
-    <script src="js/codemirror.js"></script>
-    <script src="js/css.js"></script>
-    <script src="js/matchbrackets.js"></script>
-    <script src="js/main.js"></script>
+    <script src="dist/app.min.js"></script>
     <script>
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe54713fce14836e2458aa4415fc09707' type='text/javascript'%3E%3C/script%3E"));
+        // var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        // document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe54713fce14836e2458aa4415fc09707' type='text/javascript'%3E%3C/script%3E"));
     </script>
 </body>
 </html>

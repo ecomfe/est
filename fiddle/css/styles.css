@@ -22,7 +22,7 @@ button {
 
 input,
 textarea {
-    font-family: Monaco, Consolas, monospace;
+    font-family: Consolas, 'Courier New', monospace;
 }
 
 a {
@@ -120,11 +120,12 @@ button::-moz-focus-inner {
 }
 
 #run:active,
-#run.auto {
+.auto #run {
     top: 3px;
     background-color: #80de80;
     color: #207e20;
     box-shadow: none;
+    cursor: default;
 }
 
 #run .fa {
@@ -136,11 +137,11 @@ button::-moz-focus-inner {
     display: none;
 }
 
-#run.auto .fa-play {
+.auto #run .fa-play {
     display: none;
 }
 
-#run.auto .fa-refresh {
+.auto #run .fa-refresh {
     display: inline-block;
     -webkit-animation: rotate 2s linear infinite;
        -moz-animation: rotate 2s linear infinite;
@@ -155,7 +156,7 @@ button::-moz-focus-inner {
     content: "Run";
 }
 
-#run.auto::after {
+.auto #run::after {
     content: "Running";
 }
 
@@ -207,8 +208,7 @@ section {
     height: 100%;
     padding: 10px 30px 30px;
     line-height: 1.2;
-    font-family: Consolas, monospace;
-
+    font-family: Consolas, 'Courier New', monospace;
 }
 
 #source .CodeMirror {
@@ -228,7 +228,7 @@ section {
     z-index: 1;
 }
 
-#source.est .CodeMirror::after {
+.est #source .CodeMirror::after {
     content: "‹ LESS (with est)"
 }
 
@@ -236,7 +236,7 @@ section {
     content: "‹ CSS";
 }
 
-.error span {
+.error #compiled span {
     background-color: transparent !important;
     color: #F92672 !important;
 }
