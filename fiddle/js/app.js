@@ -260,6 +260,14 @@
                 console.log(this.isError);
             }
         },
+        created: function () {
+            var me = this;
+            ['est', 'autorun', 'version'].forEach(function (key) {
+                me.$watch(key, function (newVal, oldVal) {
+                    util.saveSetting(key, newVal, true);
+                });
+            });
+        },
         ready: function () {
             var defaultCode = [
                 '@support-old-ie: false;',
@@ -299,12 +307,5 @@
             });
             this.updateVersion();
         }
-    });
-
-    ['est', 'autorun', 'version'].forEach(function (key) {
-        fiddle.$watch(key, function (newVal, oldVal) {
-            console.log(key + ' = ' + newVal);
-            util.saveSetting(key, newVal, true);
-        });
     });
 })();
