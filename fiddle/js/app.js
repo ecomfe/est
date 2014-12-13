@@ -202,9 +202,13 @@
                         me.doParse();
                     } else {
                         // init plugins
-                        util.loadScript('js/plugin.js', function () {
+                        if (window['lessPluginUniqueDirectives']) {
                             me.doParse();
-                        });
+                        } else {
+                            util.loadScript('dist/plugin.min.js', function () {
+                                me.doParse();
+                            });
+                        }
                     }
                 }, 10);
             },
@@ -257,7 +261,6 @@
                     + 'Line ' + (e.line + this.lineNumOffset) + ': ' + e.extract[1]
                 );
                 this.isError = true;
-                console.log(this.isError);
             }
         },
         created: function () {

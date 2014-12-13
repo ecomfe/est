@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var clean = require('gulp-minify-css');
+var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 
 gulp.task('css', function () {
@@ -10,7 +11,16 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./dist'))
 });
 
-gulp.task('js', function () {
+gulp.task('plugin', function () {
+  return gulp.src([
+      './js/plugin.js'
+    ])
+    .pipe(uglify())
+    .pipe(rename('plugin.min.js'))
+    .pipe(gulp.dest('./dist'))
+});
+
+gulp.task('js', ['plugin'], function () {
   return gulp.src([
       './js/vue.min.js',
       './js/codemirror.js',
