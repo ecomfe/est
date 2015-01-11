@@ -1,3 +1,5 @@
 node_modules
 .npmignore
 npm-debug.log
+edp-webserver-config.js
+.DS_Store
