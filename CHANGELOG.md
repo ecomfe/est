@@ -10,9 +10,9 @@
   * 去除了 `.animation-*()` 中不必要的 `-ms-` 前缀属性
   * 修正 `.skew()` 的错误实现
   * 增加 `.transform-perspective()`
-  * 去除了 flex 新语法相关 mixin 中的 `-moz-` 前缀属性
+  * 清理了 flex 相关 mixin 中不必要的前缀属性
   * 修正了 `.flex-grow()` 和 `.flex-shrink()` 中 `-ms-` 前缀属性的实现
-  * 
+  * 去除了 `.justify-content()` 中 `box` 相关属性的实现
 
 * 1.3.0 **最新**
   * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能
