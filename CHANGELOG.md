@@ -1,4 +1,19 @@
 # Changelog
+* 2.0.0 **最新**
+  * 增加 `@use-autoprefixer` 变量，默认为 `true`，此时兼容性 mixin 不自动添加前缀，交由 Autoprefixer 进行后处理
+  * 根据 Autoprefixer 支持的列表和 `@use-autoprefixer` 变量增加使用 Autoprefixer 时老 mixin 的兼容
+  * `.placeholder()` 现在支持传入 ruleset
+  * 增加 `.background-origin`
+  * 修正 `-ms-flex-wrap` 取值的错误
+  * 去除了对 `-ms-flex-flow` 不必要的特殊处理
+  * 去除了 `.transition-*()` 中不必要的 `-ms-` 前缀属性
+  * 去除了 `.animation-*()` 中不必要的 `-ms-` 前缀属性
+  * 修正 `.skew()` 的错误实现
+  * 增加 `.transform-perspective()`
+  * 去除了 flex 新语法相关 mixin 中的 `-moz-` 前缀属性
+  * 修正了 `.flex-grow()` 和 `.flex-shrink()` 中 `-ms-` 前缀属性的实现
+  * 
+
 * 1.3.0 **最新**
   * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能
   * 增加 `clockhand` 模块，提供顺时针简写功能
