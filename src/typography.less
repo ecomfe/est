@@ -17,19 +17,19 @@
 .font-family(base) {
     font-family: @default-base-font-family;
 }
-.font-family(base) when (@support-old-ie) {
+.font-family(base) when (@support-ie-version < 8) {
     *font-family: @default-old-ie-base-font-family;
 }
 .font-family(heading) {
     font-family: @default-heading-font-family;
 }
-.font-family(heading) when (@support-old-ie) {
+.font-family(heading) when (@support-ie-version < 8) {
     *font-family: @default-old-ie-heading-font-family;
 }
 .font-family(code) {
     font-family: @default-code-font-family;
 }
-.font-family(code) when (@support-old-ie) {
+.font-family(code) when (@support-ie-version < 8) {
     *font-family: @default-old-ie-code-font-family;
 }
 
@@ -83,16 +83,14 @@
 // https://github.com/twitter/bootstrap/issues/2362
 // https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7#commitcomment-1052728
 // http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
-
-.hide-text() when not (@support-old-ie) {
+.hide-text() when not (@support-ie-version < 8) {
     white-space: nowrap;
     text-indent: 100%;
     overflow: hidden;
 }
-.hide-text() when (@support-old-ie) {
+.hide-text() when (@support-ie-version < 8) {
     .ie-hide-text();
 }
-
 // ie6, ie7
 .ie-hide-text() {
     text-indent: -9999px;
@@ -114,7 +112,7 @@
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
 }
-.invisible() when (@support-old-ie) {
+.invisible() when (@support-ie-version < 8) {
     *clip: rect(1px 1px 1px 1px);
 }
 
@@ -400,7 +398,7 @@
 // 文字下沉
 // .drop-cap用于段落元素首字下沉，.drop-cap-inline用于行内元素整个下沉
 
-.drop-cap-inline(...) when (@support-old-ie) {
+.drop-cap-inline(...) when (@support-ie-version < 7) {
     _display: inline;
 }
 .drop-cap-inline(@context-line-height) {
@@ -444,7 +442,7 @@
         .drop-cap-inline(@line-height, @lines, @margin-right);
     }
 }
-.drop-cap(@line-height, @lines, @margin-right) when (@support-old-ie) {
+.drop-cap(@line-height, @lines, @margin-right) when (@support-ie-version < 7) {
     _zoom: 1;
 }
 

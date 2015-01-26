@@ -23,7 +23,7 @@
         clear: both;
     }
 }
-.clearfix() when (@support-old-ie) {
+.clearfix() when (@support-ie-version < 8) {
     *zoom: 1;
 }
 

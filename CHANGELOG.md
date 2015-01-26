@@ -1,6 +1,8 @@
 # Changelog
 * 2.0.0 **最新**
   * 增加 `@use-autoprefixer` 变量，默认为 `true`，此时兼容性 mixin 不自动添加前缀，交由 Autoprefixer 进行后处理
+  * 增加 `@support-ie-version` 变量，默认为 `7`，其他根据 IE 版本给出的 hack 也据此设置
+  * 废弃 `@support-old-ie` 变量，默认情况下仍作为兼容 IE6/7 处理；如原先进行过覆盖，请删除后使用 `@support-ie-version`
   * 根据 Autoprefixer 支持的列表和 `@use-autoprefixer` 变量增加使用 Autoprefixer 时老 mixin 的兼容
   * `.placeholder()` 现在支持传入 ruleset
   * 增加 `.background-origin`
@@ -13,8 +15,11 @@
   * 清理了 flex 相关 mixin 中不必要的前缀属性
   * 修正了 `.flex-grow()` 和 `.flex-shrink()` 中 `-ms-` 前缀属性的实现
   * 去除了 `.justify-content()` 中 `box` 相关属性的实现
+  * 规范了 `layout` 模块下的代码格式，增加了 `@support-ie-version` 的支持
+  * 修正了 `.est-layout-horizontal-list()` 没有处理 `ol` 样式的问题
+  * 为 `shapes` / `typography` / `util` 模块增加了 `@support-ie-version` 的支持
 
-* 1.3.0 **最新**
+* 1.3.0
   * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能
   * 增加 `clockhand` 模块，提供顺时针简写功能
   * 增加了 OpenType 相关 normalize 功能（使用了 [Normalize-OpenType.css](https://github.com/kennethormandy/normalize-opentype.css)）

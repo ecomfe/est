@@ -20,7 +20,7 @@
 // }
 
 .est-layout-fixed-header(@height) {
-    > .est-header {
+    & > .est-header {
         position: fixed;
         top: 0;
         left: 0;
@@ -29,9 +29,9 @@
         height: @height;
     }
 
-    > .est-body {
+    & > .est-body {
         margin-top: @height;
-        .clearfix;
+        .clearfix();
     }
 }
 
@@ -45,12 +45,12 @@
 // }
 
 .est-layout-fixed-footer(@height) {
-    > .est-body {
+    & > .est-body {
         margin-bottom: @height;
-        .clearfix;
+        .clearfix();
     }
 
-    > .est-footer {
+    & > .est-footer {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -66,28 +66,28 @@
 // Note: 一般配合`html, body { height: 100%; }`使用，不能和.est-layout-fixed-header/footer混用。
 
 .est-layout-sticky-footer(@height) {
-    > .est-body {
+    & > .est-body {
         min-height: 100%;
         margin-bottom: -@height;
-        .clearfix;
+        .clearfix();
 
-        .set-placeholder() when not (@support-old-ie) {
+        .set-placeholder() when (@support-ie-level >= 8) {
             &:after {
                 content: '';
                 display: block;
                 height: @height;
             }
         }
-        .set-placeholder() when (@support-old-ie) {
+        .set-placeholder() when (@support-ie-level < 8) {
             .est-footer-placeholder {
                 display: block;
                 height: @height;
             }
         }
-        .set-placeholder;
+        .set-placeholder();
     }
 
-    > .est-footer {
+    & > .est-footer {
         height: @height;
     }
 }
@@ -136,12 +136,12 @@
 .est-layout-sidebar(left, @sidebar-width) {
     position: relative;
 
-    > .est-main {
+    & > .est-main {
         overflow: hidden;
         margin-left: @sidebar-width;
     }
 
-    > .est-sidebar {
+    & > .est-sidebar {
         position: absolute;
         top: 0;
         left: 0;
@@ -151,12 +151,12 @@
 .est-layout-sidebar(right, @sidebar-width) {
     position: relative;
 
-    > .est-main {
+    & > .est-main {
         overflow: hidden;
         margin-right: @sidebar-width;
     }
 
-    > .est-sidebar {
+    & > .est-sidebar {
         position: absolute;
         top: 0;
         right: 0;
@@ -167,20 +167,20 @@
     when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
     position: relative;
 
-    > .est-main {
+    & > .est-main {
         overflow: hidden;
         margin-right: @sidebar-secondary-width;
         margin-left: @sidebar-primary-width;
     }
 
-    > .est-sidebar-primary {
+    & > .est-sidebar-primary {
         position: absolute;
         top: 0;
         left: 0;
         width: @sidebar-primary-width;
     }
 
-    > .est-sidebar-secondary {
+    & > .est-sidebar-secondary {
         position: absolute;
         top: 0;
         right: 0;
@@ -217,14 +217,14 @@
     when (@position = left), (@position = center), (@position = right) {
     text-align: @position;
 
-    .set-valign-ghost() when (@support-old-ie) {
+    .set-valign-ghost() when (@support-ie-version < 8) {
         .est-valign-ghost {
             display: inline-block;
             height: 100%;
             vertical-align: middle;
         }
     }
-    .set-valign-ghost() when not (@support-old-ie) {
+    .set-valign-ghost() when (@support-ie-version >= 8) {
         &:before {
             content: '';
             display: inline-block;
@@ -234,7 +234,7 @@
     }
     .set-valign-ghost();
 
-    > .est-popup {
+    & > .est-popup {
         display: inline-block;
         vertical-align: middle;
     }
@@ -242,14 +242,14 @@
 .est-layout-popup(@position, ...) when (@position = top), (@position = bottom) {
     text-align: center;
 
-    .set-valign-ghost() when (@support-old-ie = true) {
+    .set-valign-ghost() when (@support-ie-version < 8) {
         .est-valign-ghost {
             display: inline-block;
             height: 100%;
             vertical-align: @position;
         }
     }
-    .set-valign-ghost() when (@support-old-ie = false) {
+    .set-valign-ghost() when (@support-ie-version >= 8) {
         &:before {
             content: '';
             display: inline-block;
@@ -259,7 +259,7 @@
     }
     .set-valign-ghost();
 
-    > .est-popup {
+    & > .est-popup {
         display: inline-block;
         vertical-align: @position;
     }
@@ -267,23 +267,27 @@
 .est-layout-popup(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
     pointer-events: none;
 
-    > .est-popup {
+    & > .est-popup {
         pointer-events: all;
     }
 }
 .est-layout-popup(@position, @overlay-opacity) when (@overlay-opacity > 0) {
-    // 透明图片解决IE 8下点击穿透问题
-    background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
-    background: rgba(0, 0, 0, @overlay-opacity / 100);
-    @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
-    filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
-    zoom: 1\0;
-    // IE9下的hack，避免同时识别rgba和filter
-    @media screen and (~"min-width:0\0") {
-        & {
-            filter: none;
+    .output() when (@support-ie-version < 9) {
+        // 透明图片解决IE 8下点击穿透问题
+        background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
+        @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
+        filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
+        zoom: 1\0;
+        // IE9下的hack，避免同时识别rgba和filter
+        @media screen and (~"min-width:0\0") {
+            & {
+                filter: none;
+            }
         }
     }
+    .output() {}
+    .output();
+    background: rgba(0, 0, 0, @overlay-opacity / 100);
 }
 
 //
@@ -295,7 +299,8 @@
 .est-layout-horizontal-list(@gap, @direction: left) when (@direction = left) {
     .clearfix();
     overflow: hidden;
-    ul {
+    ul,
+    ol {
         list-style: none;
         float: left;
         margin-left: -@gap;
@@ -305,15 +310,18 @@
         }
     }
 }
-.est-layout-horizontal-list(@gap, @direction: left) when (@direction = left) and (@support-old-ie) {
-    ul, li {
+.est-layout-horizontal-list(@gap, @direction: left) when (@direction = left) and (@support-ie-version < 7) {
+    ul,
+    ol,
+    li {
         _display: inline;
     }
 }
 .est-layout-horizontal-list(@gap, @direction: left) when (@direction = right) {
     .clearfix();
     overflow: hidden;
-    ul {
+    ul,
+    ol {
         list-style: none;
         float: right;
         margin-right: -@gap;
@@ -323,8 +331,10 @@
         }
     }
 }
-.est-layout-horizontal-list(@gap, @direction: left) when (@direction = right) and (@support-old-ie) {
-    ul, li {
+.est-layout-horizontal-list(@gap, @direction: left) when (@direction = right) and (@support-ie-version < 7) {
+    ul,
+    ol,
+    li {
         _display: inline;
     }
 }

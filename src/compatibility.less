@@ -54,7 +54,7 @@
             color: @style;
         }
     }
-    .output() when not (iscolor(@style)) {
+    .output() when (isruleset(@style)) {
         &::-webkit-input-placeholder {
             @style();
         }
@@ -76,7 +76,7 @@
             color: @color;
         }
     }
-    .output() when not (iscolor(@style)) {
+    .output() when (isruleset(@style)) {
         &::placeholder {
             @style();
         }

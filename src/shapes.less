@@ -30,16 +30,16 @@
         .border(left) {
             border-right-color: transparent;
         }
-        .border(top) when (@support-old-ie) {
+        .border(top) when (@support-ie-version < 7) {
             _border-bottom-style: dashed;
         }
-        .border(bottom) when (@support-old-ie) {
+        .border(bottom) when (@support-ie-version < 7) {
             _border-top-style: dashed;
         }
-        .border(right) when (@support-old-ie) {
+        .border(right) when (@support-ie-version < 7) {
             _border-left-style: dashed;
         }
-        .border(left) when (@support-old-ie) {
+        .border(left) when (@support-ie-version < 7) {
             _border-right-style: dashed;
         }
         .border(@vertical);
@@ -65,7 +65,7 @@
         @border-width: @size / sqrt(2);
         border: @border-width solid transparent;
 
-        .border-style() when (@support-old-ie) {
+        .border-style() when (@support-ie-version < 7) {
             _border-style: dashed;
         }
         .border-style();
@@ -82,16 +82,16 @@
         .border(left) {
             border-right-color: @color;
         }
-        .border(top) when (@support-old-ie) {
+        .border(top) when (@support-ie-version < 7) {
             _border-bottom-style: solid;
         }
-        .border(right) when (@support-old-ie) {
+        .border(right) when (@support-ie-version < 7) {
             _border-left-style: solid;
         }
-        .border(bottom) when (@support-old-ie) {
+        .border(bottom) when (@support-ie-version < 7) {
             _border-top-style: solid;
         }
-        .border(left) when (@support-old-ie) {
+        .border(left) when (@support-ie-version < 7) {
             _border-right-style: solid;
         }
         .border(@direction);
@@ -117,7 +117,7 @@
         .margin(@origin);
     }
 
-    .output() when (@support-old-ie) {
+    .output() when (@support-ie-version < 7) {
         _font-size: 0;
         _line-height: 0;
     }

@@ -1,27 +1,39 @@
 {
-    "name": "est",
-    "version": "1.3.0",
-    "contributors": [
-        {
-            "name": "justineo",
-            "email": "justice360@gmail.com"
-        },
-        {
-            "name": "zmmbreeze",
-            "email": "zmmbreeze0825@gmail.com"
-        },
-        {
-            "name": "firede",
-            "email": "firede@firede.us"
-        }
-    ],
-    "repository": {
-        "type" : "git",
-        "url" : "https://github.com/ecomfe/est.git"
+  "name": "est",
+  "version": "2.0.0",
+  "description": "ECOM Styling Toolkit",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ecomfe/est.git"
+  },
+  "keywords": [
+    "less plugins",
+    "est"
+  ],
+  "contributors": [
+    {
+      "name": "justineo",
+      "email": "justice360@gmail.com"
     },
-    "description": "ECOM Styling Toolkit",
-    "homepage": "http://ecomfe.github.io/est/",
-    "devDependencies": {
-        "less": "~1.6.3"
+    {
+      "name": "zmmbreeze",
+      "email": "zmmbreeze0825@gmail.com"
+    },
+    {
+      "name": "firede",
+      "email": "firede@firede.us"
     }
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ecomfe/est.git"
+  },
+  "optionalDependencies": {
+    "promise": "^6.0.1"
+  },
+  "homepage": "http://ecomfe.github.io/est/"
 }
