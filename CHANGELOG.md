@@ -11,7 +11,9 @@
   * 去除了 `.transition-*()` 中不必要的 `-ms-` 前缀属性
   * 去除了 `.animation-*()` 中不必要的 `-ms-` 前缀属性
   * 修正 `.skew()` 的错误实现
+  * 修正 `.animation-play-state()` 的默认值
   * 增加 `.transform-perspective()`
+  * 修正 `.matrix3d()` 的错误名称
   * 清理了 flex 相关 mixin 中不必要的前缀属性
   * 修正了 `.flex-grow()` 和 `.flex-shrink()` 中 `-ms-` 前缀属性的实现
   * 去除了 `.justify-content()` 中 `box` 相关属性的实现

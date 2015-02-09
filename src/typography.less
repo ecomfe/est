@@ -461,7 +461,10 @@
     height: @height;
     line-height: @height;
 }
-.centered-line(@height, true) {
+.centered-line(@height, true) when not (@support-ie-version < 9) {
+    height: @height;
+}
+.centered-line(@height, true) when (@support-ie-version < 9) {
     height: @height;
     line-height: ~"@{height}\0"; // IE6-8
 }

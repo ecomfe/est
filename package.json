@@ -32,8 +32,5 @@
     "type" : "git",
     "url" : "https://github.com/ecomfe/est.git"
   },
-  "optionalDependencies": {
-    "promise": "^6.0.1"
-  },
   "homepage": "http://ecomfe.github.io/est/"
 }

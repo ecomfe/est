@@ -3,7 +3,9 @@
 // -----------------------------------------------------------------------------
 //
 // ### Usage:
-// 解决常见兼容性问题，如浏览器私有前缀等。
+// Used to resolve common compatibility issues.
+// Use Autoprefixer to handle vendor prefixes.
+// Related mixins are preserved for backward compatibility.
 
 @import "variables.less";
 
@@ -14,14 +16,12 @@
     *display: inline;
     *zoom: 1;
 }
-.inline-block() when (@support-old-ie) {
+.inline-block() when (@support-ie-version < 8) {
     .ie-inline-block();
 }
 
 //
-// Known issue:
-// 不支持IE 6/7
-
+// Box sizing
 .box-sizing(@boxmodel) when not (@use-autoprefixer) {
     -webkit-box-sizing: @boxmodel;
        -moz-box-sizing: @boxmodel;
@@ -37,8 +37,7 @@
 // * https://bugzilla.mozilla.org/show_bug.cgi?id=737786
 //
 // Known issue:
-// 不支持IE 9及以下
-
+// Not supported for IE9-
 .placeholder(@style: @default-input-placeholder-color) when not (@use-autoprefixer) {
     .output() when (iscolor(@style)) {
         &::-webkit-input-placeholder {
@@ -70,10 +69,10 @@
     }
     .output();
 }
-.placeholder(@color: @default-input-placeholder-color) when (@use-autoprefixer) {
+.placeholder(@style: @default-input-placeholder-color) when (@use-autoprefixer) {
     .output() when (iscolor(@style)) {
         &::placeholder {
-            color: @color;
+            color: @style;
         }
     }
     .output() when (isruleset(@style)) {
@@ -81,13 +80,13 @@
             @style();
         }
     }
+    .output();
 }
 
 
 //
 // Known issue:
-// 不支持Opera 14及以前版本，Opera 15起支持-webkit-user-select。
-
+// Not supported for Opera 14-
 .user-select(@type) when not (@use-autoprefixer) {
     -webkit-user-select: @type;
        -moz-user-select: @type;
@@ -100,15 +99,15 @@
 
 // Opacity
 // In IE9, when `opacity` is set, alpha filter will be ignored
-
 .opacity(@opacity: 100) {
     opacity: @opacity / 100;
 }
-.opacity(...) when (@support-ie-version < 9) {
+.opacity(@opacity: 100) when (@support-ie-version < 9) {
     filter: ~"alpha(opacity=@{opacity})";
 }
 
 // Border Radius
+
 // all
 .border-radius(@radius: @default-border-radius) when not (@use-autoprefixer) {
     -webkit-border-radius: @radius;
@@ -210,233 +209,200 @@
     .border-left-radius(@radius-x ~"/" @radius-y);
 }
 
+//
 // Drop shadows
-.box-shadow(@shadow: @default-box-shadow, ...) {
+.box-shadow(@shadow: @default-box-shadow, ...) when not (@use-autoprefixer) {
     @shadows: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
-    .output(false) {
-        -webkit-box-shadow: @shadows;
-           -moz-box-shadow: @shadows;
-                box-shadow: @shadows;
-    }
-    .output(true) {
-        box-shadow: @shadows;
-    }
-    .output(@use-autoprefixer);
+    -webkit-box-shadow: @shadows;
+       -moz-box-shadow: @shadows;
+            box-shadow: @shadows;
+}
+.box-shadow(@shadow: @default-box-shadow, ...) when (@use-autoprefixer) {
+    @shadows: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
+    box-shadow: @shadows;
 }
 
 // Transitions
 // Reference:
 // * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
-
-.transition(@transition, ...) {
+.transition(@transition, ...) when not (@use-autoprefixer) {
     @transitions: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
-    .output(false) {
-        @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
-        @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
-        @o-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
-        -webkit-transition: @webkit-transitions;
-           -moz-transition: @moz-transitions;
-             -o-transition: @o-transitions;
-                transition: @transitions;
-    }
-    .output(true) {
-        transition: @transitions;
-    }
-    .output(@use-autoprefixer);
+    @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
+    @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
+    @o-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
+    -webkit-transition: @webkit-transitions;
+       -moz-transition: @moz-transitions;
+         -o-transition: @o-transitions;
+            transition: @transitions;
+}
+.transition(@transition, ...) when (@use-autoprefixer) {
+    @transitions: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
+    transition: @transitions;
 }
 
-.transition-property(@property: all, ...) {
+.transition-property(@property: all, ...) when not (@use-autoprefixer) {
     @properties: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
-        @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
-        @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
-        -webkit-transition-property: @webkit-properties;
-           -moz-transition-property: @moz-properties;
-             -o-transition-property: @o-properties;
-                transition-property: @properties;
-    }
-    .output(true) {
-        transition-property: @properties;
-    }
-    .output(@use-autoprefixer);
+    @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
+    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
+    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
+    -webkit-transition-property: @webkit-properties;
+       -moz-transition-property: @moz-properties;
+         -o-transition-property: @o-properties;
+            transition-property: @properties;
+}
+.transition-property(@property: all, ...) when (@use-autoprefixer) {
+    @properties: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    transition-property: @properties;
 }
 
-.transition-duration(@duration: 0s, ...) {
+.transition-duration(@duration: 0s, ...) when not (@use-autoprefixer) {
     @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-transition-duration: @durations;
-           -moz-transition-duration: @durations;
-             -o-transition-duration: @durations;
-                transition-duration: @durations;
-    }
-    .output(true) {
-        transition-duration: @durations;
-    }
-    .output(@use-autoprefixer);
+    -webkit-transition-duration: @durations;
+       -moz-transition-duration: @durations;
+         -o-transition-duration: @durations;
+            transition-duration: @durations;
+}
+.transition-duration(@duration: 0s, ...) when (@use-autoprefixer) {
+    @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    transition-duration: @durations;
 }
 
-.transition-timing-function(@timing-function: ease, ...) {
+.transition-timing-function(@timing-function: ease, ...) when not (@use-autoprefixer) {
     @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-transition-timing-function: @timing-functions;
-           -moz-transition-timing-function: @timing-functions;
-             -o-transition-timing-function: @timing-functions;
-                transition-timing-function: @timing-functions;
-    }
-    .output(true) {
-        transition-timing-function: @timing-functions;
-    }
-    .output(@use-autoprefixer);
+    -webkit-transition-timing-function: @timing-functions;
+       -moz-transition-timing-function: @timing-functions;
+         -o-transition-timing-function: @timing-functions;
+            transition-timing-function: @timing-functions;
+}
+.transition-timing-function(@timing-function: ease, ...) when (@use-autoprefixer) {
+    @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    transition-timing-function: @timing-functions;
 }
 
-.transition-delay(@delay: 0s, ...) {
+.transition-delay(@delay: 0s, ...) when not (@use-autoprefixer) {
     @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-transition-delay: @delays;
-           -moz-transition-delay: @delays;
-             -o-transition-delay: @delays;
-                transition-delay: @delays;
-    }
-    .output(true) {
-        transition-delay: @delays;
-    }
+    -webkit-transition-delay: @delays;
+       -moz-transition-delay: @delays;
+         -o-transition-delay: @delays;
+            transition-delay: @delays;
 }
-
+.transition-delay(@delay: 0s, ...) when (@use-autoprefixer) {
+    @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    transition-delay: @delays;
+}
 
 //
 // Animations
 //
 // Reference:
 // * https://developer.mozilla.org/en-US/docs/Web/CSS/animation
-
-
-.animation(@animation, ...) {
+.animation(@animation, ...) when not (@use-autoprefixer) {
     @animations: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
-    .output(false) {
-        -webkit-animation: @animations;
-           -moz-animation: @animations;
-             -o-animation: @animations;
-                animation: @animations;
-    }
-    .output(true) {
-        animation: @animations;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation: @animations;
+       -moz-animation: @animations;
+         -o-animation: @animations;
+            animation: @animations;
+}
+.animation(@animation, ...) when (@use-autoprefixer) {
+    @animations: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
+    animation: @animations;
 }
 
-.animation-name(@name: none, ...) {
+.animation-name(@name: none, ...) when not (@use-autoprefixer) {
     @names: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-name: @names;
-           -moz-animation-name: @names;
-             -o-animation-name: @names;
-                animation-name: @names;
-    }
-    .output(true) {
-        animation-name: @names;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-name: @names;
+       -moz-animation-name: @names;
+         -o-animation-name: @names;
+            animation-name: @names;
+}
+.animation-name(@name: none, ...) when (@use-autoprefixer) {
+    @names: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-name: @names;
 }
 
-.animation-duration(@duration: 0s, ...) {
+.animation-duration(@duration: 0s, ...) when not (@use-autoprefixer) {
     @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-duration: @durations;
-           -moz-animation-duration: @durations;
-             -o-animation-duration: @durations;
-                animation-duration: @durations;
-    }
-    .output(true) {
-        animation-duration: @durations;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-duration: @durations;
+       -moz-animation-duration: @durations;
+         -o-animation-duration: @durations;
+            animation-duration: @durations;
+}
+.animation-duration(@duration: 0s, ...) when (@use-autoprefixer) {
+    @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-duration: @durations;
 }
 
-.animation-timing-function(@timing-function: ease, ...) {
+.animation-timing-function(@timing-function: ease, ...) when not (@use-autoprefixer) {
     @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-timing-function: @timing-functions;
-           -moz-animation-timing-function: @timing-functions;
-             -o-animation-timing-function: @timing-functions;
-                animation-timing-function: @timing-functions;
-    }
-    .output(true) {
-        animation-timing-function: @timing-functions;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-timing-function: @timing-functions;
+       -moz-animation-timing-function: @timing-functions;
+         -o-animation-timing-function: @timing-functions;
+            animation-timing-function: @timing-functions;
+}
+.animation-timing-function(@timing-function: ease, ...) when (@use-autoprefixer) {
+    @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-timing-function: @timing-functions;
 }
 
-.animation-iteration-count(@count: 1, ...) {
+.animation-iteration-count(@count: 1, ...) when not (@use-autoprefixer) {
     @counts: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-iteration-count: @counts;
-           -moz-animation-iteration-count: @counts;
-             -o-animation-iteration-count: @counts;
-                animation-iteration-count: @counts;
-    }
-    .output(true) {
-        animation-iteration-count: @counts;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-iteration-count: @counts;
+       -moz-animation-iteration-count: @counts;
+         -o-animation-iteration-count: @counts;
+            animation-iteration-count: @counts;
+}
+.animation-iteration-count(@count: 1, ...) when (@use-autoprefixer) {
+    @counts: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-iteration-count: @counts;
 }
 
-.animation-direction(@direction: normal, ...) {
+.animation-direction(@direction: normal, ...) when not (@use-autoprefixer) {
     @directions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-direction: @directions;
-           -moz-animation-direction: @directions;
-             -o-animation-direction: @directions;
-                animation-direction: @directions;
-    }
-    .output(true) {
-        animation-direction: @directions;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-direction: @directions;
+       -moz-animation-direction: @directions;
+         -o-animation-direction: @directions;
+            animation-direction: @directions;
+}
+.animation-direction(@direction: normal, ...) when (@use-autoprefixer) {
+    @directions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-direction: @directions;
 }
 
-.animation-play-state(@state: normal, ...) {
+.animation-play-state(@state: running, ...) when not (@use-autoprefixer) {
     @states: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-play-state: @states;
-           -moz-animation-play-state: @states;
-             -o-animation-play-state: @states;
-                animation-play-state: @states;
-    }
-    .output(true) {
-        animation-play-state: @states;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-play-state: @states;
+       -moz-animation-play-state: @states;
+         -o-animation-play-state: @states;
+            animation-play-state: @states;
+}
+.animation-play-state(@state: running, ...) when (@use-autoprefixer) {
+    @states: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-play-state: @states;
 }
 
-.animation-delay(@delay: 0s, ...) {
+.animation-delay(@delay: 0s, ...) when not (@use-autoprefixer) {
     @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-delay: @delays;
-           -moz-animation-delay: @delays;
-             -o-animation-delay: @delays;
-                animation-delay: @delays;
-    }
-    .output(true) {
-        animation-delay: @delays;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-delay: @delays;
+       -moz-animation-delay: @delays;
+         -o-animation-delay: @delays;
+            animation-delay: @delays;
+}
+.animation-delay(@delay: 0s, ...) when (@use-autoprefixer) {
+    @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-delay: @delays;
 }
 
-.animation-fill-mode(@mode: none, ...) {
+.animation-fill-mode(@mode: none, ...) when not (@use-autoprefixer) {
     @modes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-animation-fill-mode: @modes;
-           -moz-animation-fill-mode: @modes;
-             -o-animation-fill-mode: @modes;
-                animation-fill-mode: @modes;
-    }
-    .output(true) {
-        animation-fill-mode: @modes;
-    }
-    .output(@use-autoprefixer);
+    -webkit-animation-fill-mode: @modes;
+       -moz-animation-fill-mode: @modes;
+         -o-animation-fill-mode: @modes;
+            animation-fill-mode: @modes;
 }
-
+.animation-fill-mode(@mode: none, ...) when (@use-autoprefixer) {
+    @modes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    animation-fill-mode: @modes;
+}
 
 //
 // Transformations
@@ -444,7 +410,6 @@
 // Reference:
 // * https://developer.mozilla.org/en-US/docs/Web/CSS/transform
 // * http://dev.w3.org/csswg/css-transforms/#transform
-
 .transform(...) when not (@use-autoprefixer) {
     -webkit-transform: @arguments;
        -moz-transform: @arguments;
@@ -457,8 +422,7 @@
 }
 
 // Known issue:
-// IE不支持，Opera 15起以`-webkit`前缀方式支持
-
+// Not supported for IE, Opera 14-
 .transform-style(@style) when not (@use-autoprefixer) {
     -webkit-transform-style: @style;
        -moz-transform-style: @style;
@@ -470,8 +434,7 @@
 
 //
 // Known issue:
-// Opera 15起以`-webkit`前缀方式支持三值语法，之前以`-o`前缀方式支持
-
+// Triple value grammar not supported for Opera 14-
 .transform-origin(@origin) when not (@use-autoprefixer) {
     -webkit-transform-origin: @origin;
        -moz-transform-origin: @origin;
@@ -485,8 +448,7 @@
 
 //
 // Known issue:
-// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
-
+// Not supported for IE9, Opera 14-
 .backface-visibility(@visibility) when not (@use-autoprefixer) {
     -webkit-backface-visibility: @visibility;
        -moz-backface-visibility: @visibility;
@@ -498,8 +460,7 @@
 
 //
 // Known issue:
-// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
-
+// Not supported for IE9, Opera 14-
 .perspective(@d) when not (@use-autoprefixer) {
     -webkit-perspective: @d;
        -moz-perspective: @d;
@@ -510,8 +471,7 @@
 }
 
 //
-// 单个变换函数的快捷方法
-
+// Single transform function
 .transform-single(@transform-function, @rest...) {
     @args: ~`"@{rest}".replace(/[\[\]]/g, "")`;
     .output(false) {
@@ -527,8 +487,7 @@
     .output(@use-autoprefixer);
 }
 
-//2D transform  functions
-
+// 2D transform functions
 .matrix(@a, @b, @c, @d, @tx, @ty) {
     .transform-single(matrix, @arguments);
 }
@@ -582,9 +541,8 @@
     .transform-single(skewY, @arguments);
 }
 
-//3D transform  functions
-
-.maxtrix3d(@a1, @b1, @c1, @d1, @a2, @b2, @c2, @d2,
+// 3D transform  functions
+.matrix3d(@a1, @b1, @c1, @d1, @a2, @b2, @c2, @d2,
            @a3, @b3, @c3, @d3, @a4, @b4, @c4, @d4) {
     .transform-single(matrix3d, @arguments);
 }
@@ -630,49 +588,43 @@
 
 // Background clip
 // FF 3.6 and under need "padding" instead of "padding-box"
-.background-clip(@clip, ...) {
+.background-clip(@clip, ...) when not (@use-autoprefixer) {
     @clips: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-background-clip: @clips;
-           -moz-background-clip: ~`"@{clips}".replace(/-box/g, "")`;
-             -o-background-clip: @clips;
-                background-clip: @clips;
-    }
-    .output(true) {
-        background-clip: @clips;
-    }
-    .output(@use-autoprefixer);
+    -webkit-background-clip: @clips;
+       -moz-background-clip: ~`"@{clips}".replace(/-box/g, "")`;
+         -o-background-clip: @clips;
+            background-clip: @clips;
+}
+.background-clip(@clip, ...) when (@use-autoprefixer) {
+    @clips: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    background-clip: @clips;
 }
 
 // Background sizing
-.background-size(@size, ...) {
+.background-size(@size, ...) when not (@use-autoprefixer) {
     @sizes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-background-size: @sizes;
-           -moz-background-size: @sizes;
-             -o-background-size: @sizes;
-                background-size: @sizes;
-    }
-    .output(true) {
-        background-size: @sizes;
-    }
-    .output(@use-autoprefixer);
+    -webkit-background-size: @sizes;
+       -moz-background-size: @sizes;
+         -o-background-size: @sizes;
+            background-size: @sizes;
+}
+.background-size(@size, ...) when (@use-autoprefixer) {
+    @sizes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    background-size: @sizes;
 }
 
 // Background origin
 // FF 3.6 and under need "padding" instead of "padding-box"
-.background-origin(@origin, ...) {
+.background-origin(@origin, ...) when not (@use-autoprefixer) {
     @origins: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
-    .output(false) {
-        -webkit-background-origin: @origins;
-           -moz-background-origin: ~`"@{clips}".replace(/-box/g, "")`;;
-             -o-background-origin: @origins;
-                background-origin: @origins;
-    }
-    .output(true) {
-        background-origin: @origins;
-    }
-    .output(@use-autoprefixer);
+    -webkit-background-origin: @origins;
+       -moz-background-origin: ~`"@{origins}".replace(/-box/g, "")`;;
+         -o-background-origin: @origins;
+            background-origin: @origins;
+}
+.background-origin(@origin, ...) when (@use-autoprefixer) {
+    @origins: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    background-origin: @origins;
 }
 
 //
@@ -1065,10 +1017,13 @@
     -webkit-align-content: @align;
             align-content: @align;
 }
+.align-content(@align) when (@use-autoprefixer) {
+    align-content: @align;
+}
 
 //
 // Old Flexible Box Layout
-// not affected by `@use-autoprefixer` because Autoprefixer doesn't deal with box syntax.
+// not affected by `@use-autoprefixer` because Autoprefixer doesn't deal with `box-*` syntax.
 .box-orient(@orient) {
     -webkit-box-orient: @orient;
        -moz-box-orient: @orient;
