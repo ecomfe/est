@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 //
 // ### Usage:
-// 提供基础的布局设置。
+// Basic page layout paradigms.
 //
 
 @import "variables.less";
@@ -11,7 +11,7 @@
 @import "util.less";
 
 //
-// ## 定高、相对视口固定的页头
+// ## fixed header with specified height
 //
 // ### Example:
 //
@@ -19,8 +19,8 @@
 //     .est-layout-fixed-header(90px);
 // }
 
-.est-layout-fixed-header(@height) {
-    & > .est-header {
+.est-layout-fixed-header(@height, @header-selector: ~".est-header", @body-selector: ~".est-body") {
+    & > @{header-selector} {
         position: fixed;
         top: 0;
         left: 0;
@@ -29,14 +29,14 @@
         height: @height;
     }
 
-    & > .est-body {
+    & > @{body-selector} {
         margin-top: @height;
-        .clearfix();
+        .clearfix(); // prevents margin collapse
     }
 }
 
 //
-// ## 定高、相对视口固定的页脚
+// ## fixed footer with specified height
 //
 // ### Example:
 //
@@ -44,13 +44,13 @@
 //     .est-layout-fixed-footer(90px);
 // }
 
-.est-layout-fixed-footer(@height) {
-    & > .est-body {
+.est-layout-fixed-footer(@height, @body-selector: ~".est-body", @footer-selector: ~".est-footer") {
+    & > @body-selector {
         margin-bottom: @height;
         .clearfix();
     }
 
-    & > .est-footer {
+    & > @footer-selector {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -61,12 +61,14 @@
 }
 
 //
-// 当内容高度小于容器时也有显示在底部的页脚
+// Footer sticks to bottom of viewport when content is shorter than viewport height.
+// When content is higher than viewport height, shows below the content.
 //
-// Note: 一般配合`html, body { height: 100%; }`使用，不能和.est-layout-fixed-header/footer混用。
+// Note: Works with `html, body { height: 100%; }`.
+// Doesn't work when `.est-layout-fixed-header()` or `.est-layout-fixed-footer()` is applied.
 
-.est-layout-sticky-footer(@height) {
-    & > .est-body {
+.est-layout-sticky-footer(@height, @body-selector: ~".est-body", @footer-selector: ~".est-footer", @footer-placeholder-selector: ~".est-footer-placeholder") {
+    & > @{body-selector} {
         min-height: 100%;
         margin-bottom: -@height;
         .clearfix();
@@ -79,7 +81,7 @@
             }
         }
         .set-placeholder() when (@support-ie-level < 8) {
-            .est-footer-placeholder {
+            @{footer-placeholder-selector} {
                 display: block;
                 height: @height;
             }
@@ -87,14 +89,14 @@
         .set-placeholder();
     }
 
-    & > .est-footer {
+    & > @{footer-selector} {
         height: @height;
     }
 }
 
 
 //
-// ## 居中的固定宽度布局
+// ## Centered layout with specified width
 //
 // ### Example:
 //
@@ -103,8 +105,7 @@
 // }
 //
 // ### Known issue:
-// IE的quirks mode下，需要在上层元素设置`text-align: center;`并且该元素自身重设
-// 为`text-align: left;`。
+// Under IE's quirks mode, the parent element's `text-align` should be set to `center` and be reset to `left` on current element.
 
 .est-layout-page(@page-width) {
     width: @page-width;
@@ -113,45 +114,45 @@
 }
 
 //
-// ## 固定边栏布局
-// 支持左右两侧各最多一个定宽（可以是px/em/%）侧边栏，主内容区域填充剩余宽度。
+// ## Sidebar with specified width
+// One optional sidebar with given width on each side and the main section take all of the rest width.
 //
 // ### Example:
 //
-// // 左侧单侧边栏
+// // Left sidebar
 // #page1 {
 //     .est-layout-sidebar(left, 220px);
 // }
 //
-// // 右侧单侧边栏
+// // Right sidebar
 // #page2 {
 //     .est-layout-sidebar(right, 220px);
 // }
 //
-// // 双侧边栏，左侧220px宽，右侧180px宽
+// // Left sidebar being 220px wide and right sidebar being 180px wide
 // #page3 {
 //     .est-layout-sidebar(220px, 180px);
 // }
 
-.est-layout-sidebar(left, @sidebar-width) {
+.est-layout-sidebar(left, @sidebar-width, @main-selector: ~".est-main", @sidebar-selector: ~".est-sidebar") {
     position: relative;
 
-    & > .est-main {
+    & > @{main-selector} {
         overflow: hidden;
         margin-left: @sidebar-width;
     }
 
-    & > .est-sidebar {
+    & > @{sidebar-selector} {
         position: absolute;
         top: 0;
         left: 0;
         width: @sidebar-width;
     }
 }
-.est-layout-sidebar(right, @sidebar-width) {
+.est-layout-sidebar(right, @sidebar-width, @main-selector: ~".est-main", @sidebar-selector: ~".est-sidebar") {
     position: relative;
 
-    & > .est-main {
+    & > @{main-selector} {
         overflow: hidden;
         margin-right: @sidebar-width;
     }
@@ -163,24 +164,25 @@
         width: @sidebar-width;
     }
 }
-.est-layout-sidebar(@sidebar-primary-width, @sidebar-secondary-width)
+.est-layout-sidebar(@sidebar-primary-width, @sidebar-secondary-width,
+    @primary-selector: ~".est-sidebar-primary", @secondary-selector: ~".est-sidebar-secondary")
     when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
     position: relative;
 
-    & > .est-main {
+    & > @{main-selector} {
         overflow: hidden;
         margin-right: @sidebar-secondary-width;
         margin-left: @sidebar-primary-width;
     }
 
-    & > .est-sidebar-primary {
+    & > @{primary-selector} {
         position: absolute;
         top: 0;
         left: 0;
         width: @sidebar-primary-width;
     }
 
-    & > .est-sidebar-secondary {
+    & > @{secondary-selector} {
         position: absolute;
         top: 0;
         right: 0;
@@ -190,17 +192,17 @@
 
 
 //
-// ## 弹出层布局
-// 支持不定宽度的弹出容器在某定位元素内靠上/下/左/右/居中定位显示。
+// ## Popup layout
+// Can align a popup element with unknown size to the top/right/bottom/left side or center of an absolutely positioned element.
 //
 // ### Example:
-// // 水平居左、垂直居中，遮罩层透明度50%
-// .overlay1 {
+// // Horizontally left, vertically centered, with a modal layer of 50% opacity
+// .overlay-1 {
 //   .est-layout-popup(left, 50);
 // }
 //
-// // 水平/垂直居中，遮罩层全透明
-// .overlay2 {
+// // Totally centered with fully transparent modal layer
+// .overlay-2 {
 //   .est-layout-popup(center);
 // }
 

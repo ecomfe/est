@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 //
 // ### Usage:
-// 提供顺时针简写的功能。
+// Helpers for writing properties in clockhand manner.
 
 .clockhand(@values, @prefix: ~"", @suffix: ~"", @sides: top right bottom left) {
     @val: ~"@{values}";
@@ -14,7 +14,7 @@
     @val-3: ~`'@{val}'.match(/(\S+)/g)[3] || '@{val-1}' || '@{val-0}'`;
     @pre: ~`'@{prefix}' ? '@{prefix}-' : ''`;
     @suf: ~`'@{suffix}' ? '-@{suffix}' : ''`;
-    
+
     .output() when not (@val-0 = _) {
         @side: extract(@sides, 1);
         @{pre}@{side}@{suf}: @val-0;
