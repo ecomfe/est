@@ -45,12 +45,12 @@
 // }
 
 .est-layout-fixed-footer(@height, @body-selector: ~".est-body", @footer-selector: ~".est-footer") {
-    & > @body-selector {
+    & > @{body-selector} {
         margin-bottom: @height;
         .clearfix();
     }
 
-    & > @footer-selector {
+    & > @{footer-selector} {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -61,11 +61,18 @@
 }
 
 //
+// ## Sticky footer with specified height
 // Footer sticks to bottom of viewport when content is shorter than viewport height.
 // When content is higher than viewport height, shows below the content.
 //
 // Note: Works with `html, body { height: 100%; }`.
 // Doesn't work when `.est-layout-fixed-header()` or `.est-layout-fixed-footer()` is applied.
+//
+// ### Example:
+//
+// #page {
+//     .est-layout-sticky-footer(90px);
+// }
 
 .est-layout-sticky-footer(@height, @body-selector: ~".est-body", @footer-selector: ~".est-footer", @footer-placeholder-selector: ~".est-footer-placeholder") {
     & > @{body-selector} {
@@ -73,14 +80,14 @@
         margin-bottom: -@height;
         .clearfix();
 
-        .set-placeholder() when (@support-ie-level >= 8) {
+        .set-placeholder() when (@support-ie-version >= 8) {
             &:after {
-                content: '';
+                content: "";
                 display: block;
                 height: @height;
             }
         }
-        .set-placeholder() when (@support-ie-level < 8) {
+        .set-placeholder() when (@support-ie-version < 8) {
             @{footer-placeholder-selector} {
                 display: block;
                 height: @height;
@@ -157,14 +164,14 @@
         margin-right: @sidebar-width;
     }
 
-    & > .est-sidebar {
+    & > @{sidebar-selector} {
         position: absolute;
         top: 0;
         right: 0;
         width: @sidebar-width;
     }
 }
-.est-layout-sidebar(@sidebar-primary-width, @sidebar-secondary-width,
+.est-layout-sidebar(@sidebar-primary-width, @sidebar-secondary-width, @main-selector: ~".est-main",
     @primary-selector: ~".est-sidebar-primary", @secondary-selector: ~".est-sidebar-secondary")
     when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
     position: relative;
@@ -206,7 +213,7 @@
 //   .est-layout-popup(center);
 // }
 
-.est-layout-popup(@position, ...) {
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", @valign-ghost-selector: ~".est-valign-ghost") {
     position: fixed;
     z-index: @modal-z-index;
     top: 0;
@@ -215,12 +222,12 @@
     height: 100%;
     letter-spacing: -0.5em;
 }
-.est-layout-popup(@position, ...)
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", @valign-ghost-selector: ~".est-valign-ghost")
     when (@position = left), (@position = center), (@position = right) {
     text-align: @position;
 
     .set-valign-ghost() when (@support-ie-version < 8) {
-        .est-valign-ghost {
+        @{valign-ghost-selector} {
             display: inline-block;
             height: 100%;
             vertical-align: middle;
@@ -228,7 +235,7 @@
     }
     .set-valign-ghost() when (@support-ie-version >= 8) {
         &:before {
-            content: '';
+            content: "";
             display: inline-block;
             height: 100%;
             vertical-align: middle;
@@ -236,16 +243,17 @@
     }
     .set-valign-ghost();
 
-    & > .est-popup {
+    & > @{popup-selector} {
         display: inline-block;
         vertical-align: middle;
     }
 }
-.est-layout-popup(@position, ...) when (@position = top), (@position = bottom) {
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", @valign-ghost-selector: ~".est-valign-ghost")
+    when (@position = top), (@position = bottom) {
     text-align: center;
 
     .set-valign-ghost() when (@support-ie-version < 8) {
-        .est-valign-ghost {
+        @{valign-ghost-selector} {
             display: inline-block;
             height: 100%;
             vertical-align: @position;
@@ -253,7 +261,7 @@
     }
     .set-valign-ghost() when (@support-ie-version >= 8) {
         &:before {
-            content: '';
+            content: "";
             display: inline-block;
             height: 100%;
             vertical-align: @position;
@@ -261,26 +269,26 @@
     }
     .set-valign-ghost();
 
-    & > .est-popup {
+    & > @{popup-selector} {
         display: inline-block;
         vertical-align: @position;
     }
 }
-.est-layout-popup(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", ...) when (@overlay-opacity = 0) {
     pointer-events: none;
 
-    & > .est-popup {
+    & > @{popup-selector} {
         pointer-events: all;
     }
 }
-.est-layout-popup(@position, @overlay-opacity) when (@overlay-opacity > 0) {
+.est-layout-popup(@position, @overlay-opacity, ...) when (@overlay-opacity > 0) {
     .output() when (@support-ie-version < 9) {
-        // 透明图片解决IE 8下点击穿透问题
+        // prevent click through in IE 8 using a transparent background image
         background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
         @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
         filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
         zoom: 1\0;
-        // IE9下的hack，避免同时识别rgba和filter
+        // hack for IE9 to prevent applying rgba and filter at the same time
         @media screen and (~"min-width:0\0") {
             & {
                 filter: none;
@@ -293,10 +301,10 @@
 }
 
 //
-// # 水平列表布局
+// # Horizontal lists
 //
-// 把列表变成水平，在做菜单样式或是卡片样式时有用
-// html结构为：`.horizontal-list > ul > li` 或 `.horizontal-list > ol > li`
+// Turn lists into horizontal layout for menus or so
+// Should apply to the wrapper outside a list
 
 .est-layout-horizontal-list(@gap, @direction: left) when (@direction = left) {
     .clearfix();
@@ -343,19 +351,20 @@
 
 
 //
-// 在自适应宽度情况下，确保视频、flash、图片、iframe或`class`为`.est-fixed-ratio`的元素高宽比固定
+// ## Fixed ratio layout
+// Ensure fixed aspect ratio for videos/flashs/images/iframes with fluid width
 //
-// 固定尺寸比例，固定额外高度（默认为0，可以用作视频播放器的控制栏高度）
-// .fluid-video > embed
-// .fluid-video > object
-// .fluid-video > iframe
-// .fluid-video > div
+// Can have a fixed additional height (for video controls or so)
+// Should apply to the wrapper outside the content (`object`/`embed`/`iframe`/`img` or the given selector)
 //
 // http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+//
+// Known issue:
+// Due to [less.js#1421](https://github.com/less/less.js/issues/1421), `@target-selector` cannot contain `&` or `,`.
 
-.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight: 0) {
+.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight: 0, @target-selector: ~".est-fixed-ratio") {
     position: relative;
-    padding-bottom: ((unit(@height) / unit(@width)) * 100%); /* 16:9 */
+    padding-bottom: ((unit(@height) / unit(@width)) * 100%);
     padding-top: @extraHeight;
     height: 0;
 
@@ -363,7 +372,7 @@
     embed,
     iframe,
     img,
-    .est-fixed-ratio {
+    @{target-selector} {
         position: absolute;
         top: 0;
         left: 0;

@@ -2,9 +2,14 @@
   "name": "est",
   "version": "2.0.0",
   "description": "ECOM Styling Toolkit",
+  "devDependencies": {
+    "less": "~2.4.0",
+    "chalk": "~0.5.1",
+    "diff": "~1.2.2"
+  },
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
   "repository": {
     "type" : "git",

@@ -1,0 +1,96 @@
+.t-1 {
+  transform: translateX(10px);
+}
+.t-2 {
+  transform: translateX(10px) rotate(10deg);
+}
+.t-3 {
+  transform: translateX(10px) rotate(10deg);
+}
+.ts {
+  transform-style: flat;
+}
+.to {
+  transform-origin: 50% 50% 0;
+}
+.bv {
+  backface-visibility: visible;
+}
+.p {
+  perspective: 10px;
+}
+.ts {
+  transform: translateX(10px);
+}
+.m {
+  transform: matrix(1, 2, 3, 4, 5, 6);
+}
+.tr-1 {
+  transform: translate(10px);
+}
+.tr-2 {
+  transform: translate(10px, 5em);
+}
+.tr-x {
+  transform: translateX(10px);
+}
+.tr-y {
+  transform: translateY(5em);
+}
+.s-1 {
+  transform: scale(2);
+}
+.s-2 {
+  transform: scale(2, 0.5);
+}
+.s-x {
+  transform: scaleX(2);
+}
+.s-y {
+  transform: scaleX(0.5);
+}
+.r {
+  transform: rotate(90deg);
+}
+.sk-1 {
+  transform: skew(30deg);
+}
+.sk-2 {
+  transform: skew(30deg, -90deg);
+}
+.sk-x {
+  transform: skewX(30deg);
+}
+.sk-y {
+  transform: skewY(-90deg);
+}
+.m3d {
+  transform: matrix3d(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+}
+.tr3d {
+  transform: translate3d(10px, 5em, 10%);
+}
+.tz {
+  transform: translateZ(10px);
+}
+.s3d {
+  transform: scale3d(1, 2, 3);
+}
+.sz {
+  transform: scaleZ(3);
+}
+.r3d {
+  transform: rotate3d(1, 2, 3, 10deg);
+}
+.r-x {
+  transform: rotateX(30deg);
+}
+.r-y {
+  transform: rotateY(90deg);
+}
+.r-z {
+  transform: rotateZ(-30deg);
+}
+.tp {
+  transform: perspective(10px);
+}
