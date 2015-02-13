@@ -63,9 +63,9 @@ fs.readdirSync(srcDir).forEach(function (moduleFile) {
  */
 var suites = [];
 var noTests = [];
-var caseDir = path.resolve(__dirname, 'cases');
+var specDir = path.resolve(__dirname, 'specs');
 modules.forEach(function (module) {
-    var moduleDir = caseDir + '/' + module;
+    var moduleDir = specDir + '/' + module;
     if (!fs.existsSync(moduleDir)) {
         noTests.push(module)
         return;
@@ -99,7 +99,7 @@ modules.forEach(function (module) {
         });
     }
 });
-logLine('\u2731 No test cases found for the following module' + (noTests.length > 1 ? 's' : '') + ':\n' + noTests.join('\n') + '\n');
+logLine('\u2731 No test specs found for the following module' + (noTests.length > 1 ? 's' : '') + ':\n' + noTests.join('\n') + '\n');
 
 /**
  * Prepare tests
@@ -153,12 +153,12 @@ TestRunner.prototype.next = function () {
     } else {
         logLine('\n--------\n');
         if (!this.failed) {
-            logLine('All ' + this.total + ' case' + (this.total > 1 ? 's' : '') + ' passed.');
+            logLine('All ' + this.total + ' spec' + (this.total > 1 ? 's' : '') + ' passed.');
         } else {
             var passed = this.total - this.failed;
             logLine(
-                passed + ' case' + (passed > 1 ? 's' : '') + ' passed, '
-                + this.failed + ' case' + (this.failed > 1 ? 's' : '') + ' failed.'
+                passed + ' spec' + (passed > 1 ? 's' : '') + ' passed, '
+                + this.failed + ' spec' + (this.failed > 1 ? 's' : '') + ' failed.'
             );
         }
     }
