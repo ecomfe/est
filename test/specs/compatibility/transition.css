@@ -1,5 +1,5 @@
 .t-1 {
-  transition: all 2s;
+  transition: all 1s;
 }
 .t-2 {
   transition: border-radius 1s, font-size 3000ms;
