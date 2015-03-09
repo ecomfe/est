@@ -1,5 +1,5 @@
 # Changelog
-* 2.0.0 **最新**
+* 2.0.0-alpha **最新**
   * 增加 `@use-autoprefixer` 变量，默认为 `true`，此时兼容性 mixin 不自动添加前缀，交由 Autoprefixer 进行后处理
   * 增加 `@support-ie-version` 变量，默认为 `7`，其他根据 IE 版本给出的 hack 也据此设置
   * 废弃 `@support-old-ie` 变量，默认情况下仍作为兼容 IE6/7 处理；如原先进行过覆盖，请删除后使用 `@support-ie-version`
@@ -22,6 +22,7 @@
   * 为 `shapes` / `typography` / `util` 模块增加了 `@support-ie-version` 的支持
   * 将 `layout` 模块下的 mixin 都修改为可以自定义选择器的方式
   * 增加了 `grid` 模块，提供类似 Jeet 的栅格布局方案
+  * 为多个模块补充了单测 case
 
 * 1.3.0
   * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能

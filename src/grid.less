@@ -8,14 +8,14 @@
 //
 
 @import "variables.less";
-@import (reference) "placeholder.less";
 
 .make-row() {
-    &:extend(.est-clearfix all);
+    .clearfix();
 }
 
 .make-column(...) {
-    &:extend(.est-grid-column-base all);
+    display: block;
+    float: left;
 }
 .make-column(@ratio, @gutter: @default-column-gutter, @offset: 0/*, @cycle: 0, @uncycle: 0*/)
     when (ispercentage(@gutter)), (unit(@gutter) = 0) and (isnumber(@offset)) {

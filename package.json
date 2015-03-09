@@ -1,6 +1,6 @@
 {
   "name": "est",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha",
   "description": "ECOM Styling Toolkit",
   "devDependencies": {
     "less": "~2.4.0",
@@ -17,7 +17,8 @@
   },
   "keywords": [
     "less plugins",
-    "est"
+    "est",
+    "ecosystem:less"
   ],
   "contributors": [
     {
