@@ -39,13 +39,13 @@ est 可以以两种方式引入您的项目：
     * 安装插件：
 
         ```bash
-        $ npm install -g est
+        $ npm install -g less-plugin-est
         ```
 
     * 调用插件：
 
         ```bash
-        $ lessc styles.less --plugin=est
+        $ lessc styles.less --est
         ```
 
 

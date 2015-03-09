@@ -1,7 +1,7 @@
 {
-  "name": "est",
-  "version": "2.0.0-alpha",
-  "description": "ECOM Styling Toolkit",
+  "name": "less-plugin-est",
+  "version": "2.0.0-alpha.1",
+  "description": "EFE Styling Toolkit",
   "devDependencies": {
     "less": "~2.4.0",
     "chalk": "~0.5.1",
