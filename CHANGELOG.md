@@ -21,6 +21,7 @@
   * 修正了 `.est-layout-horizontal-list()` 没有处理 `ol` 样式的问题
   * 为 `shapes` / `typography` / `util` 模块增加了 `@support-ie-version` 的支持
   * 将 `layout` 模块下的 mixin 都修改为可以自定义选择器的方式
+  * 增加了 `grid` 模块，提供类似 Jeet 的栅格布局方案
 
 * 1.3.0
   * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能
