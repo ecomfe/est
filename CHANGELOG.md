@@ -1,5 +1,30 @@
 # Changelog
-* 1.3.0 **最新**
+* 2.0.0-alpha **最新**
+  * 增加 `@use-autoprefixer` 变量，默认为 `true`，此时兼容性 mixin 不自动添加前缀，交由 Autoprefixer 进行后处理
+  * 增加 `@support-ie-version` 变量，默认为 `7`，其他根据 IE 版本给出的 hack 也据此设置
+  * 废弃 `@support-old-ie` 变量，默认情况下仍作为兼容 IE6/7 处理；如原先进行过覆盖，请删除后使用 `@support-ie-version`
+  * 根据 Autoprefixer 支持的列表和 `@use-autoprefixer` 变量增加使用 Autoprefixer 时老 mixin 的兼容
+  * `.placeholder()` 现在支持传入 ruleset
+  * 增加 `.background-origin`
+  * 修正 `-ms-flex-wrap` 取值的错误
+  * 去除了对 `-ms-flex-flow` 不必要的特殊处理
+  * 去除了 `.transition-*()` 中不必要的 `-ms-` 前缀属性
+  * 去除了 `.animation-*()` 中不必要的 `-ms-` 前缀属性
+  * 修正 `.skew()` 的错误实现
+  * 修正 `.animation-play-state()` 的默认值
+  * 增加 `.transform-perspective()`
+  * 修正 `.matrix3d()` 的错误名称
+  * 清理了 flex 相关 mixin 中不必要的前缀属性
+  * 修正了 `.flex-grow()` 和 `.flex-shrink()` 中 `-ms-` 前缀属性的实现
+  * 去除了 `.justify-content()` 中 `box` 相关属性的实现
+  * 规范了 `layout` 模块下的代码格式，增加了 `@support-ie-version` 的支持
+  * 修正了 `.est-layout-horizontal-list()` 没有处理 `ol` 样式的问题
+  * 为 `shapes` / `typography` / `util` 模块增加了 `@support-ie-version` 的支持
+  * 将 `layout` 模块下的 mixin 都修改为可以自定义选择器的方式
+  * 增加了 `grid` 模块，提供类似 Jeet 的栅格布局方案
+  * 为多个模块补充了单测 case
+
+* 1.3.0
   * 增加 `shapes` 模块，目前提供绘制直角三角形、圆形的功能
   * 增加 `clockhand` 模块，提供顺时针简写功能
   * 增加了 OpenType 相关 normalize 功能（使用了 [Normalize-OpenType.css](https://github.com/kennethormandy/normalize-opentype.css)）

@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 //
 // ### Usage:
-// 提供简便的mixin工具。
+// Common utilities.
 //
 // ### Example:
 // .some-floats-inside {
@@ -23,7 +23,7 @@
         clear: both;
     }
 }
-.clearfix() when (@support-old-ie) {
+.clearfix() when (@support-ie-version < 8) {
     *zoom: 1;
 }
 
@@ -42,7 +42,8 @@
 // .no-bullet
 // .no-bullets
 //
-// 去掉列表的样式，no-bullet针对li标签，no-bullets针对ul和ol标签
+// "Unstyle" lists, `.no-bullet()` for `<li>`s and `.no-bullets()` for `<ul>` & `<ol>`
+// [deprecated]
 
 .no-bullet() {
     list-style-image: none;
@@ -71,7 +72,7 @@
 // .padding-left-em
 // .padding-right-em
 //
-// 用于辅助计算margin和padding的em值
+// Helps calculating `margin` and `padding` in `em`.
 
 .margin-em(@target-px-size, @context-px-size: @default-font-size) {
     @margin-top: ~`'@{target-px-size}'.match(/(\d+)(?:px)?/g)[0]`;
@@ -140,7 +141,7 @@
 // .padding-left-rem
 // .padding-right-rem
 //
-// 用于辅助计算margin和padding的rem值
+// Helps calculating `margin` and `padding` in `rem`.
 
 .margin-rem(@px-size) {
     @margin-top: ~`'@{px-size}'.match(/(\d+)(?:px)?/g)[0]`;

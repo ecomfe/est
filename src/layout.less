@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 //
 // ### Usage:
-// 提供基础的布局设置。
+// Basic page layout paradigms.
 //
 
 @import "variables.less";
@@ -11,7 +11,7 @@
 @import "util.less";
 
 //
-// ## 定高、相对视口固定的页头
+// ## fixed header with specified height
 //
 // ### Example:
 //
@@ -19,8 +19,8 @@
 //     .est-layout-fixed-header(90px);
 // }
 
-.est-layout-fixed-header(@height) {
-    > .est-header {
+.est-layout-fixed-header(@height, @header-selector: ~".est-header", @body-selector: ~".est-body") {
+    & > @{header-selector} {
         position: fixed;
         top: 0;
         left: 0;
@@ -29,14 +29,14 @@
         height: @height;
     }
 
-    > .est-body {
+    & > @{body-selector} {
         margin-top: @height;
-        .clearfix;
+        .clearfix(); // prevents margin collapse
     }
 }
 
 //
-// ## 定高、相对视口固定的页脚
+// ## fixed footer with specified height
 //
 // ### Example:
 //
@@ -44,13 +44,13 @@
 //     .est-layout-fixed-footer(90px);
 // }
 
-.est-layout-fixed-footer(@height) {
-    > .est-body {
+.est-layout-fixed-footer(@height, @body-selector: ~".est-body", @footer-selector: ~".est-footer") {
+    & > @{body-selector} {
         margin-bottom: @height;
-        .clearfix;
+        .clearfix();
     }
 
-    > .est-footer {
+    & > @{footer-selector} {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -61,40 +61,49 @@
 }
 
 //
-// 当内容高度小于容器时也有显示在底部的页脚
+// ## Sticky footer with specified height
+// Footer sticks to bottom of viewport when content is shorter than viewport height.
+// When content is higher than viewport height, shows below the content.
 //
-// Note: 一般配合`html, body { height: 100%; }`使用，不能和.est-layout-fixed-header/footer混用。
+// Note: Works with `html, body { height: 100%; }`.
+// Doesn't work when `.est-layout-fixed-header()` or `.est-layout-fixed-footer()` is applied.
+//
+// ### Example:
+//
+// #page {
+//     .est-layout-sticky-footer(90px);
+// }
 
-.est-layout-sticky-footer(@height) {
-    > .est-body {
+.est-layout-sticky-footer(@height, @body-selector: ~".est-body", @footer-selector: ~".est-footer", @footer-placeholder-selector: ~".est-footer-placeholder") {
+    & > @{body-selector} {
         min-height: 100%;
         margin-bottom: -@height;
-        .clearfix;
+        .clearfix();
 
-        .set-placeholder() when not (@support-old-ie) {
+        .set-placeholder() when (@support-ie-version >= 8) {
             &:after {
-                content: '';
+                content: "";
                 display: block;
                 height: @height;
             }
         }
-        .set-placeholder() when (@support-old-ie) {
-            .est-footer-placeholder {
+        .set-placeholder() when (@support-ie-version < 8) {
+            @{footer-placeholder-selector} {
                 display: block;
                 height: @height;
             }
         }
-        .set-placeholder;
+        .set-placeholder();
     }
 
-    > .est-footer {
+    & > @{footer-selector} {
         height: @height;
     }
 }
 
 
 //
-// ## 居中的固定宽度布局
+// ## Centered layout with specified width
 //
 // ### Example:
 //
@@ -103,8 +112,7 @@
 // }
 //
 // ### Known issue:
-// IE的quirks mode下，需要在上层元素设置`text-align: center;`并且该元素自身重设
-// 为`text-align: left;`。
+// Under IE's quirks mode, the parent element's `text-align` should be set to `center` and be reset to `left` on current element.
 
 .est-layout-page(@page-width) {
     width: @page-width;
@@ -113,74 +121,75 @@
 }
 
 //
-// ## 固定边栏布局
-// 支持左右两侧各最多一个定宽（可以是px/em/%）侧边栏，主内容区域填充剩余宽度。
+// ## Sidebar with specified width
+// One optional sidebar with given width on each side and the main section take all of the rest width.
 //
 // ### Example:
 //
-// // 左侧单侧边栏
+// // Left sidebar
 // #page1 {
 //     .est-layout-sidebar(left, 220px);
 // }
 //
-// // 右侧单侧边栏
+// // Right sidebar
 // #page2 {
 //     .est-layout-sidebar(right, 220px);
 // }
 //
-// // 双侧边栏，左侧220px宽，右侧180px宽
+// // Left sidebar being 220px wide and right sidebar being 180px wide
 // #page3 {
 //     .est-layout-sidebar(220px, 180px);
 // }
 
-.est-layout-sidebar(left, @sidebar-width) {
+.est-layout-sidebar(left, @sidebar-width, @main-selector: ~".est-main", @sidebar-selector: ~".est-sidebar") {
     position: relative;
 
-    > .est-main {
+    & > @{main-selector} {
         overflow: hidden;
         margin-left: @sidebar-width;
     }
 
-    > .est-sidebar {
+    & > @{sidebar-selector} {
         position: absolute;
         top: 0;
         left: 0;
         width: @sidebar-width;
     }
 }
-.est-layout-sidebar(right, @sidebar-width) {
+.est-layout-sidebar(right, @sidebar-width, @main-selector: ~".est-main", @sidebar-selector: ~".est-sidebar") {
     position: relative;
 
-    > .est-main {
+    & > @{main-selector} {
         overflow: hidden;
         margin-right: @sidebar-width;
     }
 
-    > .est-sidebar {
+    & > @{sidebar-selector} {
         position: absolute;
         top: 0;
         right: 0;
         width: @sidebar-width;
     }
 }
-.est-layout-sidebar(@sidebar-primary-width, @sidebar-secondary-width)
+.est-layout-sidebar(@sidebar-primary-width, @sidebar-secondary-width, @main-selector: ~".est-main",
+    @primary-selector: ~".est-sidebar-primary", @secondary-selector: ~".est-sidebar-secondary")
     when (isnumber(@sidebar-primary-width)) and (isnumber(@sidebar-secondary-width)) {
     position: relative;
 
-    > .est-main {
+    & > @{main-selector} {
         overflow: hidden;
         margin-right: @sidebar-secondary-width;
         margin-left: @sidebar-primary-width;
     }
 
-    > .est-sidebar-primary {
+    & > @{primary-selector} {
         position: absolute;
         top: 0;
         left: 0;
         width: @sidebar-primary-width;
     }
 
-    > .est-sidebar-secondary {
+    & > @{secondary-selector} {
         position: absolute;
         top: 0;
         right: 0;
@@ -190,21 +199,21 @@
 
 
 //
-// ## 弹出层布局
-// 支持不定宽度的弹出容器在某定位元素内靠上/下/左/右/居中定位显示。
+// ## Popup layout
+// Can align a popup element with unknown size to the top/right/bottom/left side or center of an absolutely positioned element.
 //
 // ### Example:
-// // 水平居左、垂直居中，遮罩层透明度50%
-// .overlay1 {
+// // Horizontally left, vertically centered, with a modal layer of 50% opacity
+// .overlay-1 {
 //   .est-layout-popup(left, 50);
 // }
 //
-// // 水平/垂直居中，遮罩层全透明
-// .overlay2 {
+// // Totally centered with fully transparent modal layer
+// .overlay-2 {
 //   .est-layout-popup(center);
 // }
 
-.est-layout-popup(@position, ...) {
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", @valign-ghost-selector: ~".est-valign-ghost") {
     position: fixed;
     z-index: @modal-z-index;
     top: 0;
@@ -213,20 +222,20 @@
     height: 100%;
     letter-spacing: -0.5em;
 }
-.est-layout-popup(@position, ...)
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", @valign-ghost-selector: ~".est-valign-ghost")
     when (@position = left), (@position = center), (@position = right) {
     text-align: @position;
 
-    .set-valign-ghost() when (@support-old-ie) {
-        .est-valign-ghost {
+    .set-valign-ghost() when (@support-ie-version < 8) {
+        @{valign-ghost-selector} {
             display: inline-block;
             height: 100%;
             vertical-align: middle;
         }
     }
-    .set-valign-ghost() when not (@support-old-ie) {
+    .set-valign-ghost() when (@support-ie-version >= 8) {
         &:before {
-            content: '';
+            content: "";
             display: inline-block;
             height: 100%;
             vertical-align: middle;
@@ -234,24 +243,25 @@
     }
     .set-valign-ghost();
 
-    > .est-popup {
+    & > @{popup-selector} {
         display: inline-block;
         vertical-align: middle;
     }
 }
-.est-layout-popup(@position, ...) when (@position = top), (@position = bottom) {
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", @valign-ghost-selector: ~".est-valign-ghost")
+    when (@position = top), (@position = bottom) {
     text-align: center;
 
-    .set-valign-ghost() when (@support-old-ie = true) {
-        .est-valign-ghost {
+    .set-valign-ghost() when (@support-ie-version < 8) {
+        @{valign-ghost-selector} {
             display: inline-block;
             height: 100%;
             vertical-align: @position;
         }
     }
-    .set-valign-ghost() when (@support-old-ie = false) {
+    .set-valign-ghost() when (@support-ie-version >= 8) {
         &:before {
-            content: '';
+            content: "";
             display: inline-block;
             height: 100%;
             vertical-align: @position;
@@ -259,43 +269,48 @@
     }
     .set-valign-ghost();
 
-    > .est-popup {
+    & > @{popup-selector} {
         display: inline-block;
         vertical-align: @position;
     }
 }
-.est-layout-popup(@position, @overlay-opacity: 0) when (@overlay-opacity = 0) {
+.est-layout-popup(@position, @overlay-opacity: 0, @popup-selector: ~".est-popup", ...) when (@overlay-opacity = 0) {
     pointer-events: none;
 
-    > .est-popup {
+    & > @{popup-selector} {
         pointer-events: all;
     }
 }
-.est-layout-popup(@position, @overlay-opacity) when (@overlay-opacity > 0) {
-    // 透明图片解决IE 8下点击穿透问题
-    background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
-    background: rgba(0, 0, 0, @overlay-opacity / 100);
-    @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
-    filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
-    zoom: 1\0;
-    // IE9下的hack，避免同时识别rgba和filter
-    @media screen and (~"min-width:0\0") {
-        & {
-            filter: none;
+.est-layout-popup(@position, @overlay-opacity, ...) when (@overlay-opacity > 0) {
+    .output() when (@support-ie-version < 9) {
+        // prevent click through in IE 8 using a transparent background image
+        background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
+        @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
+        filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
+        zoom: 1\0;
+        // hack for IE9 to prevent applying rgba and filter at the same time
+        @media screen and (~"min-width:0\0") {
+            & {
+                filter: none;
+            }
         }
     }
+    .output() {}
+    .output();
+    background: rgba(0, 0, 0, @overlay-opacity / 100);
 }
 
 //
-// # 水平列表布局
+// # Horizontal lists
 //
-// 把列表变成水平，在做菜单样式或是卡片样式时有用
-// html结构为：`.horizontal-list > ul > li` 或 `.horizontal-list > ol > li`
+// Turn lists into horizontal layout for menus or so
+// Should apply to the wrapper outside a list
 
 .est-layout-horizontal-list(@gap, @direction: left) when (@direction = left) {
     .clearfix();
     overflow: hidden;
-    ul {
+    ul,
+    ol {
         list-style: none;
         float: left;
         margin-left: -@gap;
@@ -305,15 +320,18 @@
         }
     }
 }
-.est-layout-horizontal-list(@gap, @direction: left) when (@direction = left) and (@support-old-ie) {
-    ul, li {
+.est-layout-horizontal-list(@gap, @direction: left) when (@direction = left) and (@support-ie-version < 7) {
+    ul,
+    ol,
+    li {
         _display: inline;
     }
 }
 .est-layout-horizontal-list(@gap, @direction: left) when (@direction = right) {
     .clearfix();
     overflow: hidden;
-    ul {
+    ul,
+    ol {
         list-style: none;
         float: right;
         margin-right: -@gap;
@@ -323,27 +341,30 @@
         }
     }
 }
-.est-layout-horizontal-list(@gap, @direction: left) when (@direction = right) and (@support-old-ie) {
-    ul, li {
+.est-layout-horizontal-list(@gap, @direction: left) when (@direction = right) and (@support-ie-version < 7) {
+    ul,
+    ol,
+    li {
         _display: inline;
     }
 }
 
 
 //
-// 在自适应宽度情况下，确保视频、flash、图片、iframe或`class`为`.est-fixed-ratio`的元素高宽比固定
+// ## Fixed ratio layout
+// Ensure fixed aspect ratio for videos/flashs/images/iframes with fluid width
 //
-// 固定尺寸比例，固定额外高度（默认为0，可以用作视频播放器的控制栏高度）
-// .fluid-video > embed
-// .fluid-video > object
-// .fluid-video > iframe
-// .fluid-video > div
+// Can have a fixed additional height (for video controls or so)
+// Should apply to the wrapper outside the content (`object`/`embed`/`iframe`/`img` or the given selector)
 //
 // http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+//
+// Known issue:
+// Due to [less.js#1421](https://github.com/less/less.js/issues/1421), `@target-selector` cannot contain `&` or `,`.
 
-.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight: 0) {
+.est-layout-fluid-fixed-ratio(@width, @height, @extraHeight: 0, @target-selector: ~".est-fixed-ratio") {
     position: relative;
-    padding-bottom: ((unit(@height) / unit(@width)) * 100%); /* 16:9 */
+    padding-bottom: ((unit(@height) / unit(@width)) * 100%);
     padding-top: @extraHeight;
     height: 0;
 
@@ -351,7 +372,7 @@
     embed,
     iframe,
     img,
-    .est-fixed-ratio {
+    @{target-selector} {
         position: absolute;
         top: 0;
         left: 0;
