@@ -51,9 +51,9 @@ est can be included in two ways:
 
 ## Docs & Demos
 
-* [API Docs](http://ecomfe.github.io/est/)(zh_CN)
-* [Typography demos](http://ecomfe.github.io/est/example/typography.html)(zh_CN)
-* [Effects demos](http://ecomfe.github.io/est/example/effects.html)(zh_CN)
+* [API Docs](http://ecomfe.github.io/est/) (zh_CN)
+* [Typography demos](http://ecomfe.github.io/est/example/typography.html) (zh_CN)
+* [Effects demos](http://ecomfe.github.io/est/example/effects.html) (zh_CN)
 
 
 ## Contribution
