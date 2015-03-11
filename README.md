@@ -15,7 +15,7 @@ est can be included in two ways:
 1. import in your Less code:
 
     Download the latest version:
-    [.zip](https://github.com/ecomfe/est/archive/master.zip) 或 [.tar.gz](https://github.com/ecomfe/est/archive/master.tar.gz)
+    [.zip](https://github.com/ecomfe/est/archive/master.zip) or [.tar.gz](https://github.com/ecomfe/est/archive/master.tar.gz)
 
     or just clone it:
 
@@ -51,9 +51,9 @@ est can be included in two ways:
 
 ## Docs & Demos
 
-* [API Docs](http://ecomfe.github.io/est/)(zh_CN)
-* [Typography demos](http://ecomfe.github.io/est/example/typography.html)(zh_CN)
-* [Effects demos](http://ecomfe.github.io/est/example/effects.html)(zh_CN)
+* [API Docs](http://ecomfe.github.io/est/) (zh_CN)
+* [Typography demos](http://ecomfe.github.io/est/example/typography.html) (zh_CN)
+* [Effects demos](http://ecomfe.github.io/est/example/effects.html) (zh_CN)
 
 
 ## Contribution
