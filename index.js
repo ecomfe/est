@@ -17,6 +17,15 @@ $(function() {
         }
     });
 
+    $.getJSON('https://api.github.com/repos/ecomfe/est/releases').done(function (json) {
+        var release = json[0];
+        var zipURL = release.zipball_url;
+        var tarURL = release.tarball_url;
+        $('.download-zip').attr('href', zipURL);
+        $('.download-tar').attr('href', tarURL);
+        $('.version').text((release.tag_name.charAt(0) === 'v' ? '' : 'v') + release.tag_name);
+    });
+
     // code highlight
     hljs.initHighlightingOnLoad();
 
