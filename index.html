@@ -2439,6 +2439,79 @@ npm test</code></pre>
                 </ul>
             </section>
             <section class="module">
+                <h1><a name="grid"></a><a href="#grid">grid</a></h1>
+                <p class="desc">帮助生成自定义的栅格布局。</p>
+                <div>
+                    依赖于：
+                    <ul class="dependencies">
+                        <li><a href="#variables"><code>variables</code></a></li>
+                        <li><a href="#util"><code>util</code></a></li>
+                    </ul>
+                </div>
+                <ul class="mixins">
+                    <li>
+                        <h2><a name="make-row"></a><code><a href="#make-row">.make-row()</a></code></h2>
+                        <p class="desc">创建栅格外部容器。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="make-row-1"></a><code><a href="#make-row-1">.make-row()</a></code></h3>
+                                <pre class="usage"><code class="less">body {
+    .make-row();
+}</code></pre>
+                                <p class="note">不需要再自行调用 <a href="#clearfix"><code class="mixin">.clearfix()</code></a>。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="make-column"></a><code><a href="#make-column">.make-column()</a></code></h2>
+                        <p class="desc">创建栅格单列容器。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="make-column-1"></a><code><a href="#make-column-1">.make-column(@ratio, @gutter, @offset)</a></code></h3>
+                                <dl>
+                                    <dt><code>@ratio</code></dt>
+                                    <dd>单列的比例，如 <code>1/3</code>。</dd>
+                                    <dt><code>@gutter</code></dt>
+                                    <dd>间隔宽度占全部宽度的百分比。可选，默认值为 <a href="#default-column-gutter"><code class="default-value">@default-column-gutter</code></a>。</dd>
+                                    <dt><code>@offset</code></dt>
+                                    <dd>偏移量。可选，默认为 <code>0</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code class="less">main {
+    .make-column(2/3, 5%);
+}
+
+aside {
+    .make-column(1/3, 5%);
+}</code></pre>
+                                <p class="note">适用于按百分比的流式栅格布局。</p>
+                            </li>
+                            <li>
+                                <h3><a name="make-column-2"></a><code><a href="#make-column-2">.make-column(@ratio, @gutter, @total, @offset)</a></code></h3>
+                                <dl>
+                                    <dt><code>@ratio</code></dt>
+                                    <dd>单列的比例，如 <code>1/3</code>。</dd>
+                                    <dt><code>@gutter</code></dt>
+                                    <dd>间隔宽度值，不能填写百分比。</dd>
+                                    <dt><code>@total</code></dt>
+                                    <dd>总宽度值，不可使用百分比。</dd>
+                                    <dt><code>@offset</code></dt>
+                                    <dd>偏移量。可选，默认为 <code>0</code>。</dd>
+                                </dl>
+                                <pre class="usage"><code class="less">main {
+    .make-column(2/3, 15px, 960px);
+}
+
+aside {
+    .make-column(1/3, 15px, 960px);
+}</code></pre>
+                                <p class="note">适用于按非百分比的栅格布局。</p>
+                            </li>
+                        </ul>
+                        <p class="note">栅格左右两侧是否有间隔取决于 <a href="#column-justify-content"><code class="default-value">@column-justify-content</code></a>。</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="module">
                 <h1><a name="layout"></a><a href="#layout">layout</a></h1>
                 <p class="desc">提供常见的基础布局。</p>
                 <div>
