@@ -15,7 +15,7 @@ est can be included in two ways:
 1. import in your Less code:
 
     Download the latest version:
-    [.zip](https://github.com/ecomfe/est/archive/master.zip) 或 [.tar.gz](https://github.com/ecomfe/est/archive/master.tar.gz)
+    [.zip](https://github.com/ecomfe/est/archive/master.zip) or [.tar.gz](https://github.com/ecomfe/est/archive/master.tar.gz)
 
     or just clone it:
 

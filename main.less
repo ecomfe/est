@@ -106,6 +106,9 @@ ul {
         .icon(leaf) {
             content: "\f06c";
         }
+        .icon(eye) {
+            content: "\f06e";
+        }
         .icon(@icon);
         color: @color;
     }
@@ -567,39 +570,40 @@ pre .less {
     }
 
     input {
+        @bg: rgba(0, 0, 0, 0.3);
         display: block;
         float: left;
         width: @sidebar-width - 20px;
         margin-bottom: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: @bg;
         padding: 4px 10px;
         .font-family(code);
-        .centered-line(30px, true);
         font-weight: 100;
         color: #fff;
         outline: none;
-
-        &:focus {
-            box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
-        }
     }
 
     button {
+        @bg: rgba(255, 255, 255, 0.05);
+        margin-left: 10px;
+        padding: 0 10px;
         border: none;
-        background: none;
-        .centered-line(30px);
+        background-color: @bg;
         color: #ccc;
         outline: none;
-
-        &:hover {
-            color: #fff;
-        }
     }
 
-    #list-all {
-        .font-awesome();
-        .font-awesome-icon(list);
+    input,
+    button {
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        .centered-line(30px, true);
+
+        &:focus,
+        &:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
     }
 
     ul {
