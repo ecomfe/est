@@ -3054,9 +3054,12 @@ body {
         <footer title="Built with est, Google Fonts (mirror hosted on 360 CDN for mainland China), jQuery Waypoints and FontAwesome.">Made with </footer>
     </main>
     <aside class="spotlight collapsed">
-        <input id="search-key" type="text" placeholder="Hit / to search..." tabindex="1">
+        <p>
+            <input id="search-key" type="text" tabindex="1" required>
+            <label for="search-key">Hit <kbd>/</kbd> to search...</label>
+        </p>
+        <button id="list-all" tabindex="2">View All</button>
         <nav>
-            <button id="list-all" tabindex="2">View All</button>
             <ul id="search-result"></ul>
         </nav>
     </aside>

@@ -569,18 +569,53 @@ pre .less {
         margin: 5px 0;
     }
 
+    p {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
     input {
         @bg: rgba(0, 0, 0, 0.3);
         display: block;
         float: left;
         width: @sidebar-width - 20px;
         margin-bottom: 10px;
-        background-color: @bg;
         padding: 4px 10px;
+        background-color: @bg;
         .font-family(code);
         font-weight: 100;
         color: #fff;
         outline: none;
+
+        &:focus + label {
+            opacity: 0.3;
+        }
+
+        &:valid + label {
+            opacity: 0;
+        }
+    }
+
+    label {
+        position: absolute;
+        display: block;
+        .absolute(0, _, _, 0);
+        width: @sidebar-width - 20px;
+        .centered-line(30px);
+        padding: 0 13px;
+        color: #ccc;
+        transition: opacity 0.5s;
+
+        kbd {
+            position: relative;
+            top: -1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 3px;
+            padding: 1px 4px;
+            background-color: rgba(255, 255, 255, 0.3);
+            font-size: 60%;
+        }
     }
 
     button {
