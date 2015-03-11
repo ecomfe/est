@@ -1,36 +1,15 @@
 $(function() {
 
-    // prepare
-    var $body = $(document.body);
-    var $header = $('body > header');
-
-    var isMouseOn = false;
-
-    // header switch
-    $header.on('mouseenter', function() {
-        $body.removeClass('mini-header');
-        isMouseOn = true;
-    }).on('mouseleave', function() {
-        if (window.scrollY > 0) {
-            $body.addClass('mini-header');
-        }
-        isMouseOn = false;
-    });
-
-    $(window).on('scroll', function() {
-        $body.toggleClass('mini-header', !isMouseOn && window.scrollY > 0);
-    });
-
     // highlight nav while scrolling
     $('.module, .overview').waypoint(function(direction) {
         var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
-        var $links = $('header nav a[href="#' + name + '"]');
+        var $links = $('.nav a[href="#' + name + '"]');
         $links.toggleClass('active', direction === 'down');
     }, {
         offset: '100%'
     }).waypoint(function(direction) {
         var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
-        var $links = $('header nav a[href="#' + name + '"]');
+        var $links = $('.nav a[href="#' + name + '"]');
         $links.toggleClass('active', direction === 'up');
     }, {
         offset: function() {
@@ -38,9 +17,26 @@ $(function() {
         }
     });
 
-    // highlight code
-    $('pre[lang]').addClass('prettyprint');
-    prettyPrint();
+    // code highlight
+    hljs.initHighlightingOnLoad();
+
+    // random ribbon
+    var flavors = [
+        'red',
+        'green',
+        'graphite',
+        'orange',
+        'grey',
+        'chocolate',
+        'old-burgundy',
+        'chardonnay',
+        'dusk-blue',
+        'turquoise',
+        'cerulean'
+    ];
+    var flavor = flavors[Math.floor(Math.random() * flavors.length)];
+    var $fork = $('#fork');
+    $fork.attr('src', $fork.attr('data-src').replace('${flavor}', flavor)).show();
 
     // search
     var haystack = [];
@@ -51,32 +47,37 @@ $(function() {
             desc: $(me).parent().next().html().replace(/<a .*?>(.+?)<\/a>/g, '$1') || ''
         }
     }
+    function stripTags(html) {
+        return html.replace(/<[^>]+>/g, '');
+    }
+
     $('.mixins h2 > a[name]').each(function() {
         haystack.push(wrapKey(this, 'mixin'));
     });
-    var variables = [];
     $('.variables h2 > a[name]').each(function() {
         haystack.push(wrapKey(this, 'variable'));
     });
 
     var $searchResult = $('#search-result');
     var $searchKey = $('#search-key');
+    var $listBtn = $('#list-all');
     function formatItem(item) {
         return item.type === 'mixin'
             ? ('.' + item.key + '()')
             : ('@' + item.key);
     }
-    function updateSearch() {
+    function updateSearch(isAll) {
         $searchResult.html(
             '<li>'
             + $.map(spotlight.search($searchKey.val(), haystack, {
-                limit: 12,
+                limit: isAll ? 0 : 12,
                 mapper: function(item) {
                     return item.key;
                 }
-            }), function(item) {
+            }),
+            function (item) {
                 return [
-                    '<a href="#' + item.key + '">',
+                    '<a href="#' + item.key + '" title="' + stripTags(item.desc) + '">',
                         '<code class="key ' + item.type + '">' + formatItem(item) + '</code>',
                         '<p>' + item.desc + '</p>',
                     '</a>'
@@ -86,7 +87,14 @@ $(function() {
         )
     }
     updateSearch();
-    $searchKey.on('input', updateSearch);
+    $searchKey.on('input', function () {
+        updateSearch();
+    });
+    $listBtn.on('click', function () {
+        updateSearch(true);
+        $spotlight.removeClass('collapsed');
+        $spotlight.addClass('fullscreen');
+    });
 
     var $spotlight = $('.spotlight');
 
@@ -95,11 +103,13 @@ $(function() {
         if (typeof isExpand === 'boolean') {
             isCollapse = !isExpand;
         }
+        $spotlight[0].scrollTop = 0;
         $spotlight.toggleClass('collapsed', isCollapse);
+        $spotlight.removeClass('fullscreen');
     }
 
     $(window).on('keydown', function(e) {
-        if (e.which === 114 || (e.ctrlKey || e.metaKey) && e.which === 70) {
+        if (e.which === 191) {
             $searchKey.focus();
             e.preventDefault();
         } else if (e.which === 27) {

@@ -3,101 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <title>est</title>
+    <link href='http://fontstatic.useso.com/css?family=PT+Serif:400,400italic|Source+Code+Pro:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="main.css">
-    <link href="example/prettify/monokai.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="example/prettify/prettify.js"></script>
+    <link rel="stylesheet" href="monokai_sublime.css">
 </head>
 <body>
-    <header class="est-header">
-        <nav>
-            <h1><abbr title="EFE Styling Toolkit" class="acronym">est</abbr></h1>
-            <ul>
-                <li>
-                    <a href="#top">overview</a>
-                </li>
-                <li>
-                    <a href="#variables">variables</a>
-                </li>
-                <li>
-                    <a href="#normalize">normalize</a>
-                </li>
-                <li>
-                    <a href="#reset">reset</a>
-                </li>
-                <li>
-                    <a href="#compatibility">compatibility</a>
-                </li>
-                <li>
-                    <a href="#util">util</a>
-                </li>
-                <li>
-                    <a href="#typography">typography</a>
-                </li>
-                <li>
-                    <a href="#layout">layout</a>
-                </li>
-                <li>
-                    <a href="#effects">effects</a>
-                </li>
-                <li>
-                    <a href="#shapes">shapes</a>
-                </li>
-                <li>
-                    <a href="#clockhand">clockhand</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main class="est-body">
+    <nav class="nav">
+        <ul>
+            <li>
+                <a href="#top">overview</a>
+            </li>
+            <li>
+                <a href="#variables">variables</a>
+            </li>
+            <li>
+                <a href="#normalize">normalize</a>
+            </li>
+            <li>
+                <a href="#reset">reset</a>
+            </li>
+            <li>
+                <a href="#compatibility">compatibility</a>
+            </li>
+            <li>
+                <a href="#util">util</a>
+            </li>
+            <li>
+                <a href="#typography">typography</a>
+            </li>
+            <li>
+                <a href="#grid">grid</a>
+            </li>
+            <li>
+                <a href="#layout">layout</a>
+            </li>
+            <li>
+                <a href="#effects">effects</a>
+            </li>
+            <li>
+                <a href="#shapes">shapes</a>
+            </li>
+            <li>
+                <a href="#clockhand">clockhand</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
         <a name="top"></a>
         <article class="overview">
-            <section>
-                <h1>什么是 est？</h1>
+            <div>
+                <h1>est <small>v2.0.0</small></h1>
                 <div class="github">
                     <iframe width="85" scrolling="0" height="20" frameborder="0" allowtransparency="true" src="http://ghbtns.com/github-btn.html?user=ecomfe&repo=est&type=watch&count=true"></iframe>
                     <iframe width="85" scrolling="0" height="20" frameborder="0" allowtransparency="true" src="http://ghbtns.com/github-btn.html?user=ecomfe&repo=est&type=fork&count=true"></iframe>
-                    <a href="https://github.com/ecomfe/est/"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999;" src="img/forkme.png" alt="Fork me on GitHub"></a>
+                    <a href="https://github.com/ecomfe/est/"><img id="fork" style="position: fixed; top: 0; right: 0; border: 0; width: 149px; height: 149px; z-index: 1024;" data-src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-${flavor}@2x.png" alt="Fork me on GitHub" hidden></a>
                 </div>
+            </div>
+            <section>
                 <blockquote>
                     est: Grace; favour.<hr><small>From Middle English este, from Old English ēst (“will, consent, favour, grace, liberality, munificence, bounty, kindness, love, good pleasure, harmony, liberal gifts, luxuries”).</small></blockquote>
                 <div class="desc">
-                    <p><strong><abbr title="EFE Styling Toolkit" class="acronym">est</abbr> 是一个基于 LESS 的样式工具库，帮助您更轻松地书写 LESS 代码。</strong></p>
+                    <p><strong><abbr title="EFE Styling Toolkit" class="acronym">est</abbr> 是一个基于 Less 的样式工具库，帮助您更轻松地书写 Less 代码。</strong></p>
                     <p>est 提供了一系列方便快捷的 <a href="http://lesscss.org/#-mixins">mixin</a>，只在调用时才输出代码。est 不希望提供直接给 HTML 调用的类名，用「样式类」污染 HTML 代码的语义。当然您也可以根据自己的项目需求基于 est 搭建样式类库，提供类名接口来进行快速开发。</p>
                 </div>
             </section>
             <section>
                 <h1>快速开始</h1>
                 <p>想先试试？在 <a href="fiddle/" target="_blank">estFiddle</a> 抢先体验一下吧！</p>
+                <p>est 可以以两种方式引入您的项目：</p>
                 <ol>
                     <li>
-                        <p>下载最新稳定版本（v1.3.0）：<a class="download" href="https://github.com/ecomfe/est/archive/master.zip"><code>.zip</code></a> 或 <a class="download" href="https://github.com/ecomfe/est/archive/master.tar.gz"><code>.tar.gz</code></a></p>
-                        <p>或使用 git 获取代码：</p>
-                        <pre><code>$ git clone https://github.com/ecomfe/est.git</code></pre>
-                    </li>
-                    <li>
-                        <p>在 LESS 代码中引用、配置。</p>
-                        <pre><code>// quick import
+                        <p>Less 代码中引入：</p>
+                        <p>下载最新稳定版本（v2.0.0 <a class="download" href="https://github.com/ecomfe/est/archive/master.zip"><code>.zip</code></a> / <a class="download" href="https://github.com/ecomfe/est/archive/master.tar.gz"><code>.tar.gz</code></a>）或使用 Git 获取代码：</p>
+                        <pre><code class="bash">git clone https://github.com/ecomfe/est.git</code></pre>
+                        <p>然后在 Less 代码中引入。</p>
+                        <pre><code class="less">// quick import
 @import 'est/src/all.less';
 
 // override global variables
-@support-old-ie: false;
+@support-ie-version: 10;
 @default-font-size: 14px;
 
 // ...your own awesome less code starts here...</code></pre>
                     </li>
+                    <li>
+                        <p>使用 Less 插件在编译时引入：</p>
+                        <ul>
+                            <li>
+                                <p>安装插件</p>
+                                <pre><code class="bash">npm install -g less-plugin-est</code></pre>
+                            </li>
+                            <li>
+                                <p>调用插件</p>
+                                <p>在 Less 代码中无需额外 <code>@import</code>，只需要在编译时加载 est 即可自动注入样式库。</p>
+                                <pre><code class="bash">lessc styles.less --est</code></pre>
+                            </li>
+                        </ul>
+                    </li>
                 </ol>
+            </section>
+            <section>
+                <h1>Autoprefixer</h1>
+                <p>引入 est 后，就可以开始简单快速地书写样式文件了。但需注意的是，est 自 2.0.0 版本起不再推荐使用自带的前缀兼容 mixin（<code>compatibility</code> 模块下的多数 mixin），而建议采用 <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> 进行按需生成厂商前缀。Less 也已提供对应的插件 <a href="https://www.npmjs.com/package/less-plugin-autoprefix">less-plugin-autoprefix</a>，这样安装后在编译时只要额外加载一个插件就能解决厂商前缀带来的困扰了。</p>
+                <pre><code class="bash">lessc styles.less --est --autoprefix</code></pre>
+            </section>
+            <section>
+                <h1>贡献</h1>
+                <p>est 已经提供超过 100 个帮助您进行快速开发的 mixin，也欢迎您提供更多新的功能需求！欢迎提交 <a href="https://github.com/ecomfe/est/issues">issue</a> 发表反馈意见或直接发送 pull request。</p>
+
+                <h2>单元测试</h2>
+                <p>单测用例在 <code>test/specs</code> 目录下，每个模块一个目录，下面可能拆成多个 spec 文件，也可能只含一个。</p>
+                <p>在 est 项目目录下，运行如下命令即可开始测试：</p>
+                <pre><code class="bash">npm install
+npm test</code></pre>
             </section>
         </article>
         <article>
-            <h1>API</h1>
             <section class="module">
                 <h1><a name="variables"></a><a href="#variables">variables</a></h1>
                 <p class="desc">全局变量设置。</p>
                 <ul class="variables">
                     <li>
+                        <h2><a name="support-ie-version"></a><code><a href="#support-ie-version">@support-ie-version</a></code></h2>
+                        <p class="desc">需要支持的最老版本的 IE。</p>
+                        <p class="desc">默认值：<code class="default-value">7</code>。</p>
+                    </li>
+                    <li>
                         <h2><a name="support-old-ie"></a><code><a href="#support-old-ie">@support-old-ie</a></code></h2>
                         <p class="desc">是否添加支持 IE 6/7 相关的代码。</p>
                         <p class="desc">默认值：<code class="default-value">true</code>。</p>
+                        <p class="desc"><small class="note alert">已废弃</small></p>
                     </li>
                     <li>
                         <h2><a name="support-html5"></a><code><a href="#support-html5">@support-html5</a></code></h2>
@@ -127,12 +162,12 @@
                     <li>
                         <h2><a name="default-heading-font-family"></a><code><a href="#default-heading-font-family">@default-heading-font-family</a></code></h2>
                         <p class="desc">默认的标题字体族。</p>
-                        <p class="desc">默认值：<code class="default-value">'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif</code>。</p>
+                        <p class="desc">默认值：<code class="default-value">'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif</code>。</p>
                     </li>
                     <li>
                         <h2><a name="default-old-ie-heading-font-family"></a><code><a href="#default-old-ie-heading-font-family">@default-old-ie-heading-font-family</a></code></h2>
                         <p class="desc">IE6/7 以下的默认的标题字体族。IE7 以下在匹配到第一个字体后，不会根据字符再在 <code>font-family</code> 列表中进行 fallback。Arial 写在微软雅黑之后是为了考虑没有微软雅黑字体的客户端。</p>
-                        <p class="desc">默认值：<code class="default-value">'Microsoft Yahei', Arial, sans-serif</code>。</p>
+                        <p class="desc">默认值：<code class="default-value">'Microsoft YaHei', Arial, sans-serif</code>。</p>
                     </li>
                     <li>
                         <h2><a name="default-code-font-family"></a><code><a href="#default-code-font-family">@default-code-font-family</a></code></h2>
@@ -164,6 +199,16 @@
                         <p class="desc">浮层遮罩层的默认 <code>z-index</code>。</p>
                         <p class="desc">默认值：<code class="default-value">1050</code>。</p>
                     </li>
+                    <li>
+                        <h2><a name="default-column-gutter"></a><code><a href="#default-column-gutter">@default-column-gutter</a></code></h2>
+                        <p class="desc">默认的栅格间隔。</p>
+                        <p class="desc">默认值：<code class="default-value">3%</code>。</p>
+                    </li>
+                    <li>
+                        <h2><a name="column-justify-content"></a><code><a href="#column-justify-content">@column-justify-content</a></code></h2>
+                        <p class="desc">栅格布局左右是否留出间隔。可选值为 <code>space-between</code> 和 <code>space-around</code>。</p>
+                        <p class="desc">默认值：<code class="default-value">space-between</code>。</p>
+                    </li>
                 </ul>
             </section>
             <section class="module">
@@ -181,13 +226,13 @@
                     <li>
                         <h2><a name="global-normalize"></a><code><a href="#global-normalize">.global-normalize()</a></code></h2>
                         <p class="desc">全局归一化页面样式，基于 <a href="http://necolas.github.io/normalize.css/">normalize.css</a>。</p>
-                        <pre class="usage"><code>// global scope
+                        <pre class="usage"><code class="less">// global scope
 .global-normalize();</code></pre>
                     </li>
                     <li>
                         <h2><a name="global-normalize-opentype"></a><code><a href="#global-normalize-opentype">.global-normalize-opentype()</a></code></h2>
                         <p class="desc">全局归一化 OpenType 相关样式，基于 <a href="http://kennethormandy.com/journal/normalize-opentype-css">normalize-opentype.css</a>。</p>
-                        <pre class="usage"><code>// global scope
+                        <pre class="usage"><code class="less">// global scope
 .global-normalize-opentype();</code></pre>
                     </li>
                 </ul>
@@ -206,27 +251,27 @@
                     <li>
                         <h2><a name="global-reset"></a><code><a href="#global-reset">.global-reset()</a></code></h2>
                         <p class="desc">进行全局样式重置。</p>
-                        <pre class="usage"><code>// global scope
+                        <pre class="usage"><code class="less">// global scope
 .global-reset();</code></pre>
                     </li>
                     <li>
                         <h2><a name="nested-reset"></a><code><a href="#nested-reset">.nested-reset()</a></code></h2>
                         <p class="desc">对选择器指定的元素内部进行样式重置。</p>
-                        <pre class="usage"><code>.preview {
+                        <pre class="usage"><code class="less">.preview {
     .nested-reset();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="reset-box-model"></a><code><a href="#reset-box-model">.reset-box-model()</a></code></h2>
                         <p class="desc">重置盒模型。</p>
-                        <pre class="usage"><code>.module {
+                        <pre class="usage"><code class="less">.module {
     .reset-box-model();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="reset-focus"></a><code><a href="#reset-focus">.reset-focus()</a></code></h2>
                         <p class="desc">重置元素外框线。</p>
-                        <pre class="usage"><code>.module {
+                        <pre class="usage"><code class="less">.module {
     .reset-focus();
 }</code></pre>
                         <p class="note">IE 下需使用 <code>hidefocus</code> 属性。慎用此功能，可能带来可访问性的损失。</p>
@@ -234,7 +279,7 @@
                     <li>
                         <h2><a name="reset-font"></a><code><a href="#reset-font">.reset-font()</a></code></h2>
                         <p class="desc">重置字体相关属性。</p>
-                        <pre class="usage"><code>span {
+                        <pre class="usage"><code class="less">span {
     .reset-font();
 }</code></pre>
                     </li>
@@ -242,35 +287,35 @@
                     <li>
                         <h2><a name="reset-body"></a><code><a href="#reset-body">.reset-body()</a></code></h2>
                         <p class="desc">重置 <code>body</code> 元素。</p>
-                        <pre class="usage"><code>body {
+                        <pre class="usage"><code class="less">body {
     .reset-body();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="reset-table"></a><code><a href="#reset-table">.reset-table()</a></code></h2>
                         <p class="desc">重置表格样式。</p>
-                        <pre class="usage"><code>table {
+                        <pre class="usage"><code class="less">table {
     .reset-table();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="reset-table-cell"></a><code><a href="#reset-table-cell">.reset-table-cell()</a></code></h2>
                         <p class="desc">重置表格单元格样式（<code>td</code>、<code>th</code>）。</p>
-                        <pre class="usage"><code>td, th {
+                        <pre class="usage"><code class="less">td, th {
     .reset-table-cell();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="reset-list-style"></a><code><a href="#reset-list-style">.reset-list-style()</a></code></h2>
                         <p class="desc">重置列表项目符号样式。</p>
-                        <pre class="usage"><code>ul, ol {
+                        <pre class="usage"><code class="less">ul, ol {
     .reset-list-style();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="reset-html5"></a><code><a href="#reset-html5">.reset-html5()</a></code></h2>
                         <p class="desc">重置 HTML5 元素的样式。</p>
-                        <pre class="usage"><code>// global scope
+                        <pre class="usage"><code class="less">// global scope
 .reset-html5();
 </code></pre>
                     </li>
@@ -300,7 +345,7 @@
                                     <dt><code>@sizing</code></dt>
                                     <dd>模型计算方式，可以为 <code>border-box</code> / <code>padding-box</code> / <code>content-box</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .box-sizing(border-box);
 }</code></pre>
                             </li>
@@ -316,7 +361,7 @@
                                     <dt><code>@color</code></dt>
                                     <dd>文字颜色。可选，默认值：<a href="#default-input-placeholder-color"><code class="default-value">@default-input-placeholder-color</code></a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>textarea {
+                                <pre class="usage"><code class="less">textarea {
     .placeholder(lightblue);
 }</code></pre>
                             </li>
@@ -332,7 +377,7 @@
                                     <dt><code>@type</code></dt>
                                     <dd>处理选区的方式。可用取值有 <code>text</code> / <code>none</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.menu-item {
+                                <pre class="usage"><code class="less">.menu-item {
     .user-select(none);
 }</code></pre>
                                 <p class="note"><code>user-select</code> 目前没有出现在任何 W3C 官方的规范中，浏览器厂商的实现可能会有细节上的差异，目前不建议使用除 <code>text</code> 和 <code>none</code> 以外的任何值。</p>
@@ -349,7 +394,7 @@
                                     <dt><code>@opacity</code></dt>
                                     <dd>不透明度值。可取 <code>0</code> – <code>100</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.overlay {
+                                <pre class="usage"><code class="less">.overlay {
     .opacity(70);
 }</code></pre>
                             </li>
@@ -365,7 +410,7 @@
                                     <dt><code>@radius</code></dt>
                                     <dd>圆角半径。可包含 1 – 4 个空格分隔的半径值同时指定多个角的圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .border-radius(3px);
 }
 
@@ -381,7 +426,7 @@
                                     <dt><code>@radius-y</code></dt>
                                     <dd>垂直方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .border-radius(3px, 5px);
 }
 
@@ -401,7 +446,7 @@
                                     <dt><code>@radius</code></dt>
                                     <dd>圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .border-top-left-radius(3px);
 }</code></pre>
                             </li>
@@ -413,7 +458,7 @@
                                     <dt><code>@radius-y</code></dt>
                                     <dd>垂直方向的圆角半径。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .border-top-left-radius(3px);
 }</code></pre>
                             </li>
@@ -464,7 +509,7 @@
                                     <dt><code>@shadow</code></dt>
                                     <dd>单个阴影参数。可选，默认值：<a href="#default-box-shadow"><code class="default-value">@default-box-shadow</code></a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
@@ -484,7 +529,7 @@
                                     <dt><code>@transition</code></dt>
                                     <dd>单个过渡设定。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .transition(background-color 1s linear);
 }
 
@@ -511,7 +556,7 @@
                                     <dt><code>@property</code></dt>
                                     <dd>参与单个过渡的属性名称。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .transition-property(background-color);
 }
 
@@ -532,7 +577,7 @@
                                     <dt><code>@duration</code></dt>
                                     <dd>单个过渡的持续时间。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .transition-duration(1s);
 }
 
@@ -552,7 +597,7 @@
                                     <dt><code>@timing-function</code></dt>
                                     <dd>单个过渡的时间函数。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .transition-timing-function(linear);
 }
 
@@ -572,7 +617,7 @@
                                     <dt><code>@delay</code></dt>
                                     <dd>单个过渡的延迟时间。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .transition-delay(0s);
 }
 
@@ -592,7 +637,7 @@
                                     <dt><code>@animation</code></dt>
                                     <dd>单个动画设定。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
         .animation(rotate 2s linear);
 }
 
@@ -619,7 +664,7 @@
                                     <dt><code>@name</code></dt>
                                     <dd>单个动画对应的 <code>@keyframes</code> 规则名称。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-name(rotate);
 }
 
@@ -639,7 +684,7 @@
                                     <dt><code>@duration</code></dt>
                                     <dd>单个动画的持续时间。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-duration(3s);
 }
 
@@ -659,7 +704,7 @@
                                     <dt><code>@timing-function</code></dt>
                                     <dd>单个动画的时间函数。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-timing-function(linear);
 }
 
@@ -680,7 +725,7 @@
                                     <dt><code>@count</code></dt>
                                     <dd>单个动画的循环次数。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-iteration-count(5);
 }
 
@@ -700,7 +745,7 @@
                                     <dt><code>@direction</code></dt>
                                     <dd>单个动画播放的正反方向。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-direction(reverse);
 }
 
@@ -720,7 +765,7 @@
                                     <dt><code>@state</code></dt>
                                     <dd>单个动画的播放状态。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-play-state(paused);
 }
 
@@ -740,7 +785,7 @@
                                     <dt><code>@delay</code></dt>
                                     <dd>单个动画的播放延迟时间。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-delay(2s);
 }
 
@@ -760,7 +805,7 @@
                                     <dt><code>@mode</code></dt>
                                     <dd>单个动画的属性填充方式。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .animation-fill-mode(backwards);
 }
 
@@ -780,7 +825,7 @@
                                     <dt><code>@transform-function</code></dt>
                                     <dd>变换函数。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .transform(matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
 }
 
@@ -807,7 +852,7 @@
                                     <dt><code>@style</code></dt>
                                     <dd>对 3D 变换的支持方式。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .transform-style(preserve-3d);
 }</code></pre>
                             </li>
@@ -823,7 +868,7 @@
                                     <dt><code>@origin</code></dt>
                                     <dd>坐标原点位置。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .transform-origin(2px left);
 }
 
@@ -843,7 +888,7 @@
                                     <dt><code>@visibility</code></dt>
                                     <dd>背面是否可见。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .backface-visibility(hidden);
 }</code></pre>
                             </li>
@@ -859,7 +904,7 @@
                                     <dt><code>@d</code></dt>
                                     <dd>透视距离。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .perspective(1500px);
 }</code></pre>
                             </li>
@@ -871,7 +916,7 @@
                         <ul class="signatures">
                             <li>
                                 <h3><a name="matrix-1"></a><code><a href="#matrix-1">.matrix(@a, @b, @c, @d, @tx, @ty)</a></code></h3>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .matrix(1, -0.2, 0, 1, 0, 0);
 }</code></pre>
                             </li>
@@ -888,7 +933,7 @@
                                     <dt><code>@tx</code></dt>
                                     <dd>X 轴方向上的平移距离。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .translate(80px);
 }</code></pre>
                             <p class="note">Y 轴方向不进行平移。等价于 <a href="#translateX-1"><code>.translateX(@tx)</code></a>。</p>
@@ -901,7 +946,7 @@
                                     <dt><code>@ty</code></dt>
                                     <dd>Y 轴方向上的平移距离。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .translate(30px, 50px);
 }</code></pre>
                             </li>
@@ -917,7 +962,7 @@
                                     <dt><code>@tx</code></dt>
                                     <dd>平移距离。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .translateX(80px);
 }</code></pre>
                             <p class="note">等价于 <a href="#translate-1"><code>.translate(@tx)</code></a> 及 <a href="#translate-2"><code>.translate(@tx, 0)</code></a>。</p>
@@ -934,7 +979,7 @@
                                     <dt><code>@ty</code></dt>
                                     <dd>平移距离。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .translateY(80px);
 }</code></pre>
                             <p class="note">等价于 <a href="#translate-2"><code>.translate(0, @ty)</code></a>。</p>
@@ -951,7 +996,7 @@
                                     <dt><code>@s</code></dt>
                                     <dd>缩放比例。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .scale(2.1);
 }</code></pre>
                             <p class="note">等价于 <a href="#scale-2"><code>.scale(@s, @s)</code></a>。</p>
@@ -964,7 +1009,7 @@
                                     <dt><code>@sy</code></dt>
                                     <dd>Y 轴方向上的缩放比例。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .scale(2.1, 4);
 }</code></pre>
                             </li>
@@ -980,7 +1025,7 @@
                                     <dt><code>@sx</code></dt>
                                     <dd>缩放比例。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .scaleX(0.5);
 }</code></pre>
                             <p class="note">等价于 <a href="#scale-2"><code>.scale(@sx, 1)</code></a>。</p>
@@ -997,7 +1042,7 @@
                                     <dt><code>@sy</code></dt>
                                     <dd>缩放比例。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .scaleY(2.7);
 }</code></pre>
                             </li>
@@ -1013,7 +1058,7 @@
                                     <dt><code>@angle</code></dt>
                                     <dd>旋转角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .rotate(30deg);
 }</code></pre>
                             </li>
@@ -1029,7 +1074,7 @@
                                     <dt><code>@ax</code></dt>
                                     <dd>沿 X 轴倾斜拉伸的角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .skew(30deg);
 }</code></pre>
                             <p class="note">沿 Y 轴方向不进行倾斜拉伸。等价于 <a href="#skewX-1"><code>.skewX(@ax)</code></a>。</p>
@@ -1042,7 +1087,7 @@
                                     <dt><code>@ay</code></dt>
                                     <dd>沿 Y 轴倾斜拉伸的角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .skew(30deg, 15deg);
 }</code></pre>
                             </li>
@@ -1059,7 +1104,7 @@
                                     <dt><code>@ax</code></dt>
                                     <dd>倾斜拉伸的角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .skewX(30deg);
 }</code></pre>
                             <p class="note">等价于 <a href="#skew-1"><code>.skew(@ax)</code></a>。</p>
@@ -1076,7 +1121,7 @@
                                     <dt><code>@ay</code></dt>
                                     <dd>倾斜拉伸的角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .skewY(15deg);
 }</code></pre>
                             </li>
@@ -1091,7 +1136,7 @@
           @a2, @b2, @c2, @d2,
           @a3, @b3, @c3, @d3,
           @a4, @b4, @c4, @d4)</code></h3>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }</code></pre>
                             </li>
@@ -1112,7 +1157,7 @@
                                     <dt><code>@tz</code></dt>
                                     <dd>Z 轴方向上的平移距离。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .translate3d(12px, 50%, 3em);
 }</code></pre>
                             </li>
@@ -1128,7 +1173,7 @@
                                     <dt><code>@tz</code></dt>
                                     <dd>平移距离。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .translateZ(3em);
 }</code></pre>
                             </li>
@@ -1149,7 +1194,7 @@
                                     <dt><code>@sz</code></dt>
                                     <dd>Z 轴方向上的缩放比例。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .scale3d(2.5, 1.2, 0.3);
 }</code></pre>
                             </li>
@@ -1165,7 +1210,7 @@
                                     <dt><code>@sz</code></dt>
                                     <dd>缩放比例。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .scaleZ(0.3);
 }</code></pre>
                             </li>
@@ -1188,7 +1233,7 @@
                                     <dt><code>@angle</code></dt>
                                     <dd>旋转角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .rotate3d(1, 2.0, 3.0, 10deg);
 }</code></pre>
                             </li>
@@ -1204,7 +1249,7 @@
                                     <dt><code>@angle</code></dt>
                                     <dd>旋转角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .rotateX(60deg);
 }</code></pre>
                             </li>
@@ -1221,7 +1266,7 @@
                                     <dt><code>@angle</code></dt>
                                     <dd>旋转角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .rotateY(60deg);
 }</code></pre>
                             </li>
@@ -1238,7 +1283,7 @@
                                     <dt><code>@angle</code></dt>
                                     <dd>旋转角度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .rotateZ(60deg);
 }</code></pre>
                             </li>
@@ -1255,7 +1300,7 @@
                                     <dt><code>@clip</code></dt>
                                     <dd>单个背景的渲染范围。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .background-clip(padding-box);
 }
 
@@ -1275,12 +1320,32 @@
                                     <dt><code>@size</code></dt>
                                     <dd></dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
   .background-size(cover);
 }
 
 .box-two {
   .background-size(50% auto, contain);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="background-origin"></a><code><a href="#background-origin">.background-origin()</a></code></h2>
+                        <p class="desc">设定背景的起止范围，可以分别指定多个背景的范围。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="background-origin-1"></a><code><a href="#background-origin-1">.background-origin(@origin, ...)</a></code></h3>
+                                <dl>
+                                    <dt><code>@origin</code></dt>
+                                    <dd></dd>
+                                </dl>
+                                <pre class="usage"><code class="less">.box-one {
+  .background-origin(border-box);
+}
+
+.box-two {
+  .background-origin(border-box, padding-box);
 }</code></pre>
                             </li>
                         </ul>
@@ -1297,7 +1362,7 @@
                                     <dt><code>@color-stops</code></dt>
                                     <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .linear-gradient(to right, white, black);
 }
 
@@ -1325,7 +1390,7 @@
                                     <dt><code>@end-color</code></dt>
                                     <dd>结束颜色。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .horizontal-gradient(black, white);
 }</code></pre>
                                 <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
@@ -1344,7 +1409,7 @@
                                     <dt><code>@end-color</code></dt>
                                     <dd>结束颜色。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .vertical-gradient(black, white);
 }</code></pre>
                                 <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
@@ -1363,7 +1428,7 @@
                                     <dt><code>@color-stops</code></dt>
                                     <dd>色标，至少有两个参数值。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .repeating-linear-gradient(to top right, white, black 20px);
 }
 
@@ -1386,7 +1451,7 @@
                                     <dt><code>@color-stops</code></dt>
                                     <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .radial-gradient(black, white);
 }
 
@@ -1413,7 +1478,7 @@
                                     <dt><code>@color-stops</code></dt>
                                     <dd>色标，至少有两个参数值。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-one {
+                                <pre class="usage"><code class="less">.box-one {
     .repeating-radial-gradient(white, black 20px);
 }
 
@@ -1434,7 +1499,7 @@
                                     <dt><code>@display</code></dt>
                                     <dd>元素的显示方式，可用值参见 <a href="http://www.w3.org/TR/CSS21/visuren.html#display-prop">Visual formatting model</a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.card {
+                                <pre class="usage"><code class="less">.card {
     .display(flex);
 }</code></pre>
                             </li>
@@ -1451,7 +1516,7 @@
                                     <dt><code>@flex-direction</code></dt>
                                     <dd>布局方向，可用值为 <code>row</code> / <code>row-reverse</code> / <code>column</code> / <code>column-reverse</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.container {
+                                <pre class="usage"><code class="less">.container {
     .flex-direction(row-reverse);
 }</code></pre>
                             </li>
@@ -1467,7 +1532,7 @@
                                     <dt><code>@wrap</code></dt>
                                     <dd>折行方式。<code>wrap</code> 表示可以折行，<code>nowrap</code> 表示必须排列在同一行中。</dd>
                                 </dl>
-                                <pre class="usage"><code>.container {
+                                <pre class="usage"><code class="less">.container {
     .flex-wrap(wrap);
 }</code></pre>
                             </li>
@@ -1483,7 +1548,7 @@
                                     <dt><code>@flow</code></dt>
                                     <dd>排列方式，写法参见 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow">flex-flow - CSS | MDN</a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.container {
+                                <pre class="usage"><code class="less">.container {
     .flex-flow(column-reverse nowrap);
 }</code></pre>
                             </li>
@@ -1499,7 +1564,7 @@
                                     <dt><code>@order</code></dt>
                                     <dd>排列次序。</dd>
                                 </dl>
-                                <pre class="usage"><code>.card-main {
+                                <pre class="usage"><code class="less">.card-main {
     .order(1);
 }</code></pre>
                             </li>
@@ -1515,7 +1580,7 @@
                                     <dt><code>@flex</code></dt>
                                     <dd>定义伸缩盒项目元素的伸缩因子和初始尺寸。写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">flex - CSS | MDN</a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.main {
+                                <pre class="usage"><code class="less">.main {
     .flex(2 1 600px);
 }</code></pre>
                             </li>
@@ -1531,7 +1596,7 @@
                                     <dt><code>@flex</code></dt>
                                     <dd>伸展因子。</dd>
                                 </dl>
-                                <pre class="usage"><code>.main {
+                                <pre class="usage"><code class="less">.main {
     .flex-grow(2);
 }</code></pre>
                             </li>
@@ -1547,7 +1612,7 @@
                                     <dt><code>@flex</code></dt>
                                     <dd>收缩因子。</dd>
                                 </dl>
-                                <pre class="usage"><code>.main {
+                                <pre class="usage"><code class="less">.main {
     .flex-shrink(1);
 }</code></pre>
                             </li>
@@ -1563,7 +1628,7 @@
                                     <dt><code>@size</code></dt>
                                     <dd>初始尺寸。</dd>
                                 </dl>
-                                <pre class="usage"><code>.main {
+                                <pre class="usage"><code class="less">.main {
     .flex-basis(600px);
 }</code></pre>
                             </li>
@@ -1579,7 +1644,7 @@
                                     <dt><code>@align</code></dt>
                                     <dd>多余空间分配方式。</dd>
                                 </dl>
-                                <pre class="usage"><code>.gallery {
+                                <pre class="usage"><code class="less">.gallery {
     .justify-content(space-around);
 }</code></pre>
                                 <figure class="note">
@@ -1599,7 +1664,7 @@
                                     <dt><code>@align</code></dt>
                                     <dd>多余空间分配方式。</dd>
                                 </dl>
-                                <pre class="usage"><code>.gallery {
+                                <pre class="usage"><code class="less">.gallery {
     .align-items(center);
 }</code></pre>
                                 <figure class="note">
@@ -1619,7 +1684,7 @@
                                     <dt><code>@align</code></dt>
                                     <dd>多余空间分配方式。</dd>
                                 </dl>
-                                <pre class="usage"><code>.photo {
+                                <pre class="usage"><code class="less">.photo {
     .align-self(flex-start);
 }</code></pre>
                                 <p class="note">取值含义参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
@@ -1636,7 +1701,7 @@
                                     <dt><code>@align</code></dt>
                                     <dd>多余空间分配方式。</dd>
                                 </dl>
-                                <pre class="usage"><code>.photo {
+                                <pre class="usage"><code class="less">.photo {
     .align-content(flex-start);
 }</code></pre>
                                 <figure class="note">
@@ -1656,7 +1721,7 @@
                                     <dt><code>@orient</code></dt>
                                     <dd>排列方向。可用值为 <code>horizontal</code> / <code>vertical</code> / <code>inline-axis</code> / <code>block-axis</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.gallery {
+                                <pre class="usage"><code class="less">.gallery {
     .box-orient(horizontal);
 }</code></pre>
                             </li>
@@ -1673,7 +1738,7 @@
                                     <dt><code>@direction</code></dt>
                                     <dd>排列方向。可用值为 <code>normal</code> / <code>reverse</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.gallery {
+                                <pre class="usage"><code class="less">.gallery {
     .box-direction(reverse);
 }</code></pre>
                             </li>
@@ -1690,7 +1755,7 @@
                                     <dt><code>@group</code></dt>
                                     <dd>分组序号。</dd>
                                 </dl>
-                                <pre class="usage"><code>.current-item {
+                                <pre class="usage"><code class="less">.current-item {
     .box-ordinal-group(1);
 }</code></pre>
                             </li>
@@ -1707,7 +1772,7 @@
                                     <dt><code>@group</code></dt>
                                     <dd>分组序号。</dd>
                                 </dl>
-                                <pre class="usage"><code>.main-item {
+                                <pre class="usage"><code class="less">.main-item {
     .box-flex-group(1);
 }</code></pre>
                             </li>
@@ -1724,7 +1789,7 @@
                                     <dt><code>@flex</code></dt>
                                     <dd>伸展因子。</dd>
                                 </dl>
-                                <pre class="usage"><code>.main-item {
+                                <pre class="usage"><code class="less">.main-item {
     .box-flex(2);
 }</code></pre>
                             </li>
@@ -1741,7 +1806,7 @@
                                     <dt><code>@align</code></dt>
                                     <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>baseline</code> / <code>stretch</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.container {
+                                <pre class="usage"><code class="less">.container {
     .box-align(baseline);
 }</code></pre>
                                 <p class="note">参数值可参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
@@ -1759,7 +1824,7 @@
                                     <dt><code>@align</code></dt>
                                     <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.container {
+                                <pre class="usage"><code class="less">.container {
     .box-pack(justify);
 }</code></pre>
                                 <p class="note">参数值可参考 <a href="#justify-content"><code>.justify-content()</code></a>。<code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code> 分别对应 <code>flex-start</code> / <code>center</code> / <code>flex-end</code> / <code>space-between</code>。</p>
@@ -1782,7 +1847,7 @@
                     <li>
                         <h2><a name="clearfix"></a><code><a href="#clearfix">.clearfix()</a></code></h2>
                         <p class="desc">建立 <abbr title="block formatting context">BFC</abbr> 清除元素内部的浮动，使元素获得应有的高度。参见 <a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>。</p>
-                        <pre class="usage"><code>.container {
+                        <pre class="usage"><code class="less">.container {
     .clearfix();
 }</code></pre>
                     </li>
@@ -1796,7 +1861,7 @@
                                     <dt><code>@side-length</code></dt>
                                     <dd>正方形边长。</dd>
                                 </dl>
-                                <pre class="usage"><code>.square {
+                                <pre class="usage"><code class="less">.square {
     .size(16px);
 }</code></pre>
                             </li>
@@ -1808,7 +1873,7 @@
                                     <dt><code>@height</code></dt>
                                     <dd>矩形高度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.rect {
+                                <pre class="usage"><code class="less">.rect {
     .size(320px, 80px);
 }</code></pre>
                             </li>
@@ -1824,7 +1889,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 margin 属性。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .margin-rem(24px);
 }</code></pre>
                             </li>
@@ -1840,7 +1905,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .margin-top-rem(12px);
 }</code></pre>
                             </li>
@@ -1873,7 +1938,7 @@
                                     <dt><code>@context-margin</code></dt>
                                     <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .margin-em(24px);
 }</code></pre>
                             </li>
@@ -1889,7 +1954,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .margin-top-em(12px);
 }</code></pre>
                             </li>
@@ -1920,7 +1985,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 padding 属性。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .padding-rem(24px);
 }</code></pre>
                             </li>
@@ -1936,7 +2001,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .padding-top-rem(12px);
 }</code></pre>
                             </li>
@@ -1969,7 +2034,7 @@
                                     <dt><code>@context-padding</code></dt>
                                     <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .padding-em(24px);
 }</code></pre>
                             </li>
@@ -1985,7 +2050,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                                 </dl>
-                                <pre class="usage"><code>.post {
+                                <pre class="usage"><code class="less">.post {
     .padding-top-em(12px);
 }</code></pre>
                             </li>
@@ -2029,7 +2094,7 @@
                                     <dt><code>@type</code></dt>
                                     <dd>预设字体类型，可取值为 <code>base</code> / <code>heading</code> / <code>code</code>，分别对应普通文本、标题、代码。</dd>
                                 </dl>
-                                <pre class="usage"><code>pre code {
+                                <pre class="usage"><code class="less">pre code {
     .font-family(code);
 }</code></pre>
                             </li>
@@ -2041,7 +2106,7 @@
                         <ul class="signatures">
                             <li>
                                 <h3><a name="ellipsis-1"></a><code><a href="#ellipsis-1">.ellipsis()</a></code></h3>
-                                <pre class="usage"><code>.cell {
+                                <pre class="usage"><code class="less">.cell {
     width: 120px;
     .ellipsis();
 }</code></pre>
@@ -2053,7 +2118,7 @@
                                     <dt><code>@line-number</code></dt>
                                     <dd>最多显示的行数。</dd>
                                 </dl>
-                                <pre class="usage"><code>.news {
+                                <pre class="usage"><code class="less">.news {
     width: 300px;
     .ellipsis(3);
 }</code></pre>
@@ -2064,21 +2129,21 @@
                     <li>
                         <h2><a name="force-wrap"></a><code><a href="#force-wrap">.force-wrap()</a></code></h2>
                         <p class="desc">强制换行，阻止长字符串（例如 URL 或很长的连续英文字符）打破布局。</p>
-                        <pre class="usage"><code>.comment {
+                        <pre class="usage"><code class="less">.comment {
     .force-wrap();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="hide-text"></a><code><a href="#hide-text">.hide-text()</a></code></h2>
                         <p class="desc">用于隐藏元素内文字，一般在文字隐藏之后使用背景图片替代显示。如果使用此 mixin 的元素是 <code>inline-block</code> 元素，请确保为其设置宽度。</p>
-                        <pre class="usage"><code>.logo {
+                        <pre class="usage"><code class="less">.logo {
     .hide-text();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="invisible"></a><code><a href="#invisible">.invisible()</a></code></h2>
                         <p class="desc">用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p>
-                        <pre class="usage"><code>.screen-reader-notes {
+                        <pre class="usage"><code class="less">.screen-reader-notes {
     .invisible();
 }</code></pre>
                         <p class="note">了解更多相关内容可以参考 <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content">Using CSS clip as an Accessible Method of Hiding Content</a>。</p>
@@ -2097,7 +2162,7 @@
                                     <dt><code>@img-y</code></dt>
                                     <dd>背景图 <code>background-position</code> 的垂直方向位置。可选，默认值：<code>0</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.logo-one {
+                                <pre class="usage"><code class="less">.logo-one {
     .inline-block();
     .img-replace('http://www.baidu.com/img/bdlogo.gif');
     width: 270px;
@@ -2110,7 +2175,7 @@
     width: 270px;
     height: 129px;
 }</code></pre>
-                                <p class="alert note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
+                                <p class="alert note">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>
@@ -2124,7 +2189,7 @@
                                     <dt><code>@px-size</code></dt>
                                     <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                                 </dl>
-                                <pre class="usage"><code>.text {
+                                <pre class="usage"><code class="less">.text {
     .font-size-rem(32px);
 }</code></pre>
                             </li>
@@ -2142,7 +2207,7 @@
                                     <dt><code>@context-font-size</code></dt>
                                     <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.text {
+                                <pre class="usage"><code class="less">.text {
     .font-size-em(24px);
 }</code></pre>
                             </li>
@@ -2166,7 +2231,7 @@
                                     <dt><code>@include-svg</code></dt>
                                     <dd>是否使用 svg 格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值：<code>false</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.font-face('FamilyName', '/some/font/url');
+                                <pre class="usage"><code class="less">.font-face('FamilyName', '/some/font/url');
 
 /* Output: */
 @font-face {
@@ -2181,21 +2246,21 @@
 
 /* Compiling with --relative-urls */
 .font-face('FamilyName', url(/some/font/url));</code></pre>
-                                <p class="alert note">当 LESS 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
+                                <p class="alert note">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <h2><a name="hover-link"></a><code><a href="#hover-link">.hover-link()</a></code></h2>
                         <p class="desc">用于实现链接默认无下划线，hover后有下划线的样式。</p>
-                        <pre class="usage"><code>a {
+                        <pre class="usage"><code class="less">a {
     .hover-link();
 }</code></pre>
                     </li>
                     <li>
                         <h2><a name="unstyled-link"></a><code><a href="#unstyled-link">.unstyled-link()</a></code></h2>
                         <p class="desc">用于将链接变成默认的文字样式。</p>
-                        <pre class="usage"><code>.plain-link {
+                        <pre class="usage"><code class="less">.plain-link {
     .unstyled-link();
 }</code></pre>
                     </li>
@@ -2214,7 +2279,7 @@
                                     <dd>下沉文字与普通文字的间隔。可选，默认值：<code>1em</code>（相对普通文字大小计算）。</dd>
                                 </dl>
                                 <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
-                                <pre class="usage"><code>article p {
+                                <pre class="usage"><code class="less">article p {
     line-height: 24px;
     .drop-cap(24px);
 }</code></pre>
@@ -2236,11 +2301,11 @@
                                     <dd>下沉文字与普通文字的间隔。可选，默认值为相对普通文字大小的 <code>1em</code>。</dd>
                                 </dl>
                                 <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
-                                <pre class="usage" lang="html"><code>&lt;p&gt;
+                                <pre class="usage"><code class="html">&lt;p&gt;
     &lt;span class="drop"&gt;Lorem ipsum&lt;/span&gt; dolor sit amet, consectetur adipisicing elit. Nesciunt, eos, beatae error quaerat blanditiis repudiandae laudantium debitis officiis veritatis quasi dicta deserunt quo ipsum. Excepturi numquam nesciunt voluptates veniam eligendi.
 &lt;/p&gt;
 </code></pre>
-                                <pre class="usage"><code>p {
+                                <pre class="usage"><code class="less">p {
     line-height: 24px;
 
     .drop {
@@ -2329,7 +2394,7 @@
                                 </dl>
                             </li>
                         </ul>
-                        <pre class="usage"><code>.entry {
+                        <pre class="usage"><code class="less">.entry {
     .rhythm(14px, 2);
     blockquote {
         .rhythm-margin(1);
@@ -2352,7 +2417,7 @@
                                     <dt><code>@height</code></dt>
                                     <dd>行高。</dd>
                                 </dl>
-                                <pre class="usage"><code>pre code {
+                                <pre class="usage"><code class="less">pre code {
     .centered-line(24px);
 }</code></pre>
                             </li>
@@ -2364,7 +2429,7 @@
                                     <dt><code>@is-input</code></dt>
                                     <dd>相关元素是否为输入框。</dd>
                                 </dl>
-                                <pre class="usage"><code>pre code {
+                                <pre class="usage"><code class="less">pre code {
     .centered-line(24px, true);
 }</code></pre>
                                 <p class="note">WebKit 下文本输入框中的文字会自动垂直居中，如果设置了 <code>line-height</code> 反而会使光标、选区的高度显示不正常。</p>
@@ -2390,19 +2455,23 @@
                         <p class="desc">定高、相对视口固定页头布局。</p>
                         <ul class="signatures">
                             <li>
-                                <h3><a name="est-layout-fixed-header-1"></a><code><a href="#est-layout-fixed-header-1">.est-layout-fixed-header(@height)</a></code></h3>
+                                <h3><a name="est-layout-fixed-header-1"></a><code><a href="#est-layout-fixed-header-1">.est-layout-fixed-header(@height, @header-selector, @body-selector)</a></code></h3>
                                 <dl>
                                     <dt><code>@height</code></dt>
                                     <dd>页头高度。</dd>
+                                    <dt><code>@header-selector</code></dt>
+                                    <dd>页头要应用的选择器。可选，默认值为 <code>.est-header</code>。</dd>
+                                    <dt><code>@body-selector</code></dt>
+                                    <dd>页面主体要应用的选择器。可选，默认值为 <code>.est-body</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;body&gt;
-    &lt;div class=&quot;est-header&quot;&gt;&lt;/div&gt;
+                                <pre class="usage"><code class="html">&lt;body&gt;
+    &lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
-                                <pre class="usage"><code>body {
-    .est-layout-fixed-header(80px);
+                                <pre class="usage"><code class="less">body {
+    .est-layout-fixed-header(80px, ~".header");
 }</code></pre>
-                                <p class="note">必须与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。页头的默认 <code>z-index</code> 为 <a href="#header-z-index"><code class="default-value">@header-z-index</code></a>。</p>
+                                <p class="note">如果不自定义选择器，则需要与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。页头的默认 <code>z-index</code> 为 <a href="#header-z-index"><code class="default-value">@header-z-index</code></a>。</p>
                             </li>
                         </ul>
                     </li>
@@ -2411,19 +2480,23 @@
                         <p class="desc">定高、相对视口固定页脚布局。</p>
                         <ul class="signatures">
                             <li>
-                                <h3><a name="est-layout-fixed-footer-1"></a><code><a href="#est-layout-fixed-footer-1">.est-layout-fixed-footer(@height)</a></code></h3>
+                                <h3><a name="est-layout-fixed-footer-1"></a><code><a href="#est-layout-fixed-footer-1">.est-layout-fixed-footer(@height, @body-selector, @footer-selector)</a></code></h3>
                                 <dl>
                                     <dt><code>@height</code></dt>
                                     <dd>页脚高度。</dd>
+                                    <dt><code>@body-selector</code></dt>
+                                    <dd>页面主体要应用的选择器。可选，默认值为 <code>.est-body</code>。</dd>
+                                    <dt><code>@footer-selector</code></dt>
+                                    <dd>页脚要应用的选择器。可选，默认值为 <code>.est-footer</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;body&gt;
-    &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
+                                <pre class="usage"><code class="html">&lt;body&gt;
+    &lt;div class=&quot;body&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;est-footer&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
-                                <pre class="usage"><code>body {
-    .est-layout-fixed-footer(80px);
+                                <pre class="usage"><code class="less">body {
+    .est-layout-fixed-footer(80px, ~".body");
 }</code></pre>
-                                <p class="note">必须与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用。页脚的默认 <code>z-index</code> 为 <a href="#footer-z-index"><code class="default-value">@footer-z-index</code></a>。</p>
+                                <p class="note">如果不自定义选择器，则需要与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用。页脚的默认 <code>z-index</code> 为 <a href="#footer-z-index"><code class="default-value">@footer-z-index</code></a>。</p>
                             </li>
                         </ul>
                     </li>
@@ -2432,29 +2505,35 @@
                         <p class="desc">当内容高度小于容器时也有显示在底部的固定高度页脚，内容高于容器后页脚会被挤压到视口外。</p>
                         <ul class="signatures">
                             <li>
-                                <h3><a name="est-layout-sticky-footer-1"></a><code><a href="#est-layout-sticky-footer-1">.est-layout-sticky-footer(@height)</a></code></h3>
+                                <h3><a name="est-layout-sticky-footer-1"></a><code><a href="#est-layout-sticky-footer-1">.est-layout-sticky-footer(@height, @body-selector, @footer-selector, @footer-placeholder-selector)</a></code></h3>
                                 <dl>
                                     <dt><code>@height</code></dt>
                                     <dd>页脚高度。</dd>
+                                    <dt><code>@body-selector</code></dt>
+                                    <dd>页面主体要应用的选择器。可选，默认值为 <code>.est-body</code>。</dd>
+                                    <dt><code>@footer-selector</code></dt>
+                                    <dd>页脚要应用的选择器。可选，默认值为 <code>.est-footer</code>。</dd>
+                                    <dt><code>@footer-placeholder-selector</code></dt>
+                                    <dd>页脚占位元素要应用的选择器（如不需要支持 IE7- 则无需考虑）。可选，默认值为 <code>.est-footer-placeholder</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;body&gt;
-    &lt;div class="est-body"&gt;
+                                <pre class="usage"><code class="html">&lt;body&gt;
+    &lt;div class="body"&gt;
         &lt;div&gt;Content&lt;/div&gt;
 
-        &lt;!-- need when @support-old-ie = true --&gt;
+        &lt;!-- need when @support-ie-version &lt; 8 --&gt;
         &lt;div class="est-footer-placeholder"&gt;&lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="est-footer"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
-                                <pre class="usage"><code>html,
+                                <pre class="usage"><code class="less">html,
 body {
   height: 100%;
 }
 
 body {
-  .est-layout-sticky-footer(100px);
+  .est-layout-sticky-footer(100px, ~".body");
 }</code></pre>
-                                <p class="note">必须与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用，且须要保证外层所有 DOM 元素的高度为 `100%`。不支持与其他布局混用。</p>
+                                <p class="note">如果不自定义选择器，则需要与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用，且须要保证外层所有 DOM 元素的高度为 <code>100%</code>。不支持与其他布局混用。</p>
                             </li>
                         </ul>
                     </li>
@@ -2468,7 +2547,7 @@ body {
                                     <dt><code>@width</code></dt>
                                     <dd>页面内容区域宽度。</dd>
                                 </dl>
-                                <pre class="usage"><code>.page {
+                                <pre class="usage"><code class="less">.page {
   .est-layout-page(980px);
 }</code></pre>
                             </li>
@@ -2479,41 +2558,51 @@ body {
                         <p class="desc">支持左右两侧各最多一个定宽（单位可以是 <code>px</code> / <code>em</code> / <code>%</code>）侧边栏，主内容区域填充剩余宽度。</p>
                         <ul class="signatures">
                             <li>
-                                <h3><a name="est-layout-sidebar-1"></a><code><a href="#est-layout-sidebar-1">.est-layout-sidebar(@position, @width)</a></code></h3>
+                                <h3><a name="est-layout-sidebar-1"></a><code><a href="#est-layout-sidebar-1">.est-layout-sidebar(@position, @width, @main-selector, @sidebar-selector)</a></code></h3>
                                 <p class="desc">单侧边栏布局。</p>
                                 <dl>
                                     <dt><code>@position</code></dt>
                                     <dd>边栏位置，可用值为 <code>left</code> / <code>right</code>。</dd>
                                     <dt><code>@width</code></dt>
                                     <dd>边栏宽度。</dd>
+                                    <dt><code>@main-selector</code></dt>
+                                    <dd>主区域应用的选择器。可选，默认值为 <code>.est-main</code>。</dd>
+                                    <dt><code>@sidebar-selector</code></dt>
+                                    <dd>侧边栏应用的选择器。可选，默认值为 <code>.est-sidebar</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;body&gt;
-    &lt;div class="est-main"&gt;&lt;/div&gt;
+                                <pre class="usage"><code class="html">&lt;body&gt;
+    &lt;div class="main"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
-                                <pre class="usage"><code>body {
-    .est-layout-sidebar(left, 200px);
+                                <pre class="usage"><code class="less">body {
+    .est-layout-sidebar(left, 200px, ~".main");
 }</code></pre>
-                                <p class="note">必须与 <code>est-main</code>、<code>est-sidebar</code> 两个类名配合使用。</p>
+                                <p class="note">如果不自定义选择器，则需要与 <code>est-main</code>、<code>est-sidebar</code> 两个类名配合使用。</p>
                             </li>
                             <li>
-                                <h3><a name="est-layout-sidebar-2"></a><code><a href="#est-layout-sidebar-2">.est-layout-sidebar(@primary-width, @secondary-width)</a></code></h3>
+                                <h3><a name="est-layout-sidebar-2"></a><code><a href="#est-layout-sidebar-2">.est-layout-sidebar(@primary-width, @secondary-width, @main-selector, @sidebar-primary-selector, @sidebar-secondary-selector)</a></code></h3>
                                 <p class="desc">单侧边栏布局。</p>
                                 <dl>
                                     <dt><code>@primary-width</code></dt>
                                     <dd>主侧边栏（左侧）宽度。</dd>
                                     <dt><code>@secondary-width</code></dt>
                                     <dd>次侧边栏（右侧）宽度。</dd>
+                                    <dt><code>@main-selector</code></dt>
+                                    <dd>主区域应用的选择器。可选，默认值为 <code>.est-main</code>。</dd>
+                                    <dt><code>@sidebar-primary-selector</code></dt>
+                                    <dd>主侧边栏应用的选择器。可选，默认值为 <code>.est-primary</code>。</dd>
+                                    <dt><code>@sidebar-secondary-selector</code></dt>
+                                    <dd>次侧边栏应用的选择器。可选，默认值为 <code>.est-secondary</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;body&gt;
-    &lt;div class="est-main"&gt;&lt;/div&gt;
+                                <pre class="usage"><code class="html">&lt;body&gt;
+    &lt;div class="main"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar-primary"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar-secondary"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
-                                <pre class="usage"><code>body {
-    .est-layout-sidebar(200px, 160px);
+                                <pre class="usage"><code class="less">body {
+    .est-layout-sidebar(200px, 160px, ~".main");
 }</code></pre>
-                                <p class="note">必须与 <code>est-main</code>、<code>est-sidebar-primary</code> 及 <code>est-sidebar-secondary</code> 三个类名配合使用。</p>
+                                <p class="note">如果不自定义选择器，则需要与 <code>est-main</code>、<code>est-sidebar-primary</code> 及 <code>est-sidebar-secondary</code> 三个类名配合使用。</p>
                             </li>
                         </ul>
                     </li>
@@ -2522,25 +2611,29 @@ body {
                         <p class="desc">弹出层布局。</p>
                         <ul class="signatures">
                             <li>
-                                <h3><a name="est-layout-popup-1"></a><code><a href="#est-layout-popup-1">est-layout-popup(@position, @overlay-opacity)</a></code></h3>
+                                <h3><a name="est-layout-popup-1"></a><code><a href="#est-layout-popup-1">est-layout-popup(@position, @overlay-opacity, @popup-selector, @valign-ghost-selector)</a></code></h3>
                                 <dl>
                                     <dt><code>@position</code></dt>
                                     <dd>弹出层的位置。可取值为 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> / <code>center</code>，分别对应在视口顶部居中 / 右侧居中 / 底部居中 / 左侧居中 / 绝对居中。</dd>
                                     <dt><code>@overlay-opacity</code></dt>
                                     <dd>遮罩层的不透明度。可取 <code>0</code> – <code>100</code>。如果为 <code>0</code> 则遮罩不显示，可以与弹出层周围的页面内容进行交互，否则则无法交互。可选，默认值：<code>0</code>。</dd>
+                                    <dt><code>@popup-selector</code></dt>
+                                    <dd>弹出层应用的选择器。可选，默认值为 <code>.est-popup</code>。</dd>
+                                    <dt><code>@valign-ghost-selector</code></dt>
+                                    <dd>用于垂直居中的站伪元素应用的选择器（如不需要支持 IE7- 则无需考虑）。可选，默认值为 <code>.est-valign-ghost</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;body&gt;
+                                <pre class="usage"><code class="html">&lt;body&gt;
     &lt;div&gt;Content&lt;/div&gt;
     &lt;div class="overlay"&gt;
 
-        &lt;!-- need when @support-old-ie = true --&gt;
+        &lt;!-- need when @support-ie-version &lt; 8 --&gt;
         &lt;div class="est-valign-ghost"&gt;&lt;/div&gt;
 
-        &lt;div class="est-popup"&gt;Popup Content&lt;/div&gt;
+        &lt;div class="popup"&gt;Popup Content&lt;/div&gt;
     &lt;/div&gt;
 &lt;/body&gt;</code></pre>
-                                <pre class="usage"><code>.overlay {
-  .est-layout-popup(center, 80);
+                                <pre class="usage"><code class="less">.overlay {
+  .est-layout-popup(center, 80, ~"popup");
 }</code></pre>
                                 <p class="note">必须与类名 <code>est-popup</code> 配合使用。弹出层的默认 <code>z-index</code> 为 <a href="#modal-z-index"><code class="default-value">@modal-z-index</code></a>。</p>
                             </li>
@@ -2551,14 +2644,14 @@ body {
                         <p class="desc">用于把列表变成水平，在做菜单样式或是卡片样式时有用。</p>
                         <ul class="signatures">
                             <li>
-                                <h3><a name="est-layout-horizontal-list-1"></a><code><a href="#est-layout-horizontal-list-1">est-layout-horizontal-list(@gap, @direction: left)</a></code></h3>
+                                <h3><a name="est-layout-horizontal-list-1"></a><code><a href="#est-layout-horizontal-list-1">est-layout-horizontal-list(@gap, @direction)</a></code></h3>
                                 <dl>
                                     <dt><code>@gap</code></dt>
                                     <dd>平方向上列表项之间的间隔长度（任意单位）。</dd>
                                     <dt><code>@direction</code></dt>
                                     <dd>水平浮动的方向。可用值为 <code>right</code> / <code>left</code>。可选，默认值：<code>left</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;div class="users"&gt;
+                                <pre class="usage"><code class="html">&lt;div class="users"&gt;
     &lt;ul&gt;
         &lt;li&gt;Tony Stark&lt;/li&gt;
         &lt;li&gt;Steve Rogers&lt;/li&gt;
@@ -2567,7 +2660,7 @@ body {
         &lt;li&gt;Loki&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
-                                <pre class="usage"><code>.users {
+                                <pre class="usage"><code class="less">.users {
   .est-layout-horizontal-list(10px, left);
 }</code></pre>
                             </li>
@@ -2578,7 +2671,7 @@ body {
                         <p class="desc">在自适应宽度情况下，确保视频、Flash、图片、iframe 等内容的元素高宽比固定。</p>
                         <ul class="signatures">
                             <li>
-                                <h3><a name="est-layout-fluid-fixed-ratio-1"></a><code><a href="#est-layout-fluid-fixed-ratio-1">est-layout-fluid-fixed-ratio(@width, @height, @extra-height)</a></code></h3>
+                                <h3><a name="est-layout-fluid-fixed-ratio-1"></a><code><a href="#est-layout-fluid-fixed-ratio-1">est-layout-fluid-fixed-ratio(@width, @height, @extra-height, @target-selector)</a></code></h3>
                                 <dl>
                                     <dt><code>@width</code></dt>
                                     <dd>内容宽度。</dd>
@@ -2586,14 +2679,16 @@ body {
                                     <dd>内容高度。</dd>
                                     <dt><code>@extra-height</code></dt>
                                     <dd>除宽度比外，额外的固定高度，这部分高度不会随宽度的变化而变化。可选，默认值：<code>0</code>。</dd>
+                                    <dt><code>@target-selector</code></dt>
+                                    <dd>目标元素需要应用的选择器。可选，默认值：<code>.est-fixed-ratio</code>。</dd>
                                 </dl>
-                                <pre class="usage" lang="html"><code>&lt;div class="fluid-wrap"&gt;
+                                <pre class="usage"><code class="html">&lt;div class="fluid-wrap"&gt;
     &lt;img src="http://placehold.it/800x600" alt="" /&gt;
 &lt;/div&gt;</code></pre>
-                                <pre class="usage"><code>.fluid-wrap {
+                                <pre class="usage"><code class="less">.fluid-wrap {
   .est-layout-fluid-fixed-ratio(800, 600);
 }</code></pre>
-                                <p class="note">会生效的元素类型包括 <code>&lt;object&gt;</code> / <code>&lt;embed&gt;</code> / <code>&lt;iframe&gt;</code> / <code>&lt;img&gt;</code> 以及类名含 <code>est-fixed-ratio</code> 的元素。<code>@width</code> 和 <code>@height</code> 参数的单位需要统一。Demo <a href="http://codepen.io/zmmbreeze/full/khIqH">见此</a>。可参考 <a href="http://css-tricks.com/rundown-of-handling-flexible-media/">Rundown of Handling Flexible Media</a>。</p>
+                                <p class="note">会生效的元素类型包括 <code>&lt;object&gt;</code> / <code>&lt;embed&gt;</code> / <code>&lt;iframe&gt;</code> / <code>&lt;img&gt;</code> 以及符合选择器 <code>@target-selector</code> 的元素。<code>@width</code> 和 <code>@height</code> 参数的单位需要统一。Demo <a href="http://codepen.io/zmmbreeze/full/khIqH">见此</a>。可参考 <a href="http://css-tricks.com/rundown-of-handling-flexible-media/">Rundown of Handling Flexible Media</a>。</p>
                             </li>
                         </ul>
                     </li>
@@ -2624,7 +2719,7 @@ body {
                                     <dt><code>@fg-color</code></dt>
                                     <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind emboss”）。</dd>
                                 </dl>
-                                <pre class="usage"><code>.blind-embossed {
+                                <pre class="usage"><code class="less">.blind-embossed {
     .embossed-text(lightblue);
 }
 
@@ -2646,7 +2741,7 @@ body {
                                     <dt><code>@fg-color</code></dt>
                                     <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind deboss”）。</dd>
                                 </dl>
-                                <pre class="usage"><code>.blind-debossed {
+                                <pre class="usage"><code class="less">.blind-debossed {
     .debossed-text(lightblue);
 }
 
@@ -2666,7 +2761,7 @@ body {
                                     <dt><code>@color</code></dt>
                                     <dd>文字颜色。</dd>
                                 </dl>
-                                <pre class="usage"><code>.three-d {
+                                <pre class="usage"><code class="less">.three-d {
     .3d-text(lightblue, #6699CC);
 }</code></pre>
                             </li>
@@ -2682,7 +2777,7 @@ body {
                                     <dt><code>@radius</code></dt>
                                     <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.glow-text {
+                                <pre class="usage"><code class="less">.glow-text {
     .glow-text(10px);
 }</code></pre>
                                 <p class="note">此时发光颜色为当前文字颜色。</p>
@@ -2695,7 +2790,7 @@ body {
                                     <dt><code>@radius</code></dt>
                                     <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.three-d {
+                                <pre class="usage"><code class="less">.three-d {
     .glow-text(gold, 20px);
 }</code></pre>
                             </li>
@@ -2713,7 +2808,7 @@ body {
                                     <dt><code>@radius</code></dt>
                                     <dd>模糊半径。可选，默认值：<code>0.15em</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code>.blurry {
+                                <pre class="usage"><code class="less">.blurry {
     .blurry-text(#FFFFFF);
 }</code></pre>
                             </li>
@@ -2752,7 +2847,7 @@ body {
                                     <figcaption><code>direction</code> 和 <code>origin</code> 的不同组合效果见下图：</figcaption>
                                     <img src="img/triangle.png" alt="direction + origin">
                                 </figure>
-                                <pre class="usage"><code>.comment:after {
+                                <pre class="usage"><code class="less">.comment:after {
     .triangle(top left, #ccc, 10px, corner);
 }</code></pre>
                             </li>
@@ -2769,7 +2864,7 @@ body {
                                     <dt><code>@size</code></dt>
                                     <dd>所绘圆形的直径。支持绝对长度或百分比。</dd>
                                 </dl>
-                                <pre class="usage"><code>.ball {
+                                <pre class="usage"><code class="less">.ball {
     .circle(30%);
 }</code></pre>
                             </li>
@@ -2781,7 +2876,7 @@ body {
                                     <dt><code>@bg</code></dt>
                                     <dd>圆形背景，可以为颜色或其他合法的 <code>background</code> 属性值。</dd>
                                 </dl>
-                                <pre class="usage"><code>.ball {
+                                <pre class="usage"><code class="less">.ball {
     .circle(30%, url(img/texture.png) lightgreen no-repeat center center);
 }</code></pre>
                             </li>
@@ -2803,7 +2898,7 @@ body {
                                     <dt><code>@offset</code></dt>
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的偏移量。写法参考 CSS <code>margin</code> 属性的值。可以使用 <code>_</code> 作为占位符，表明此方向上的值无需覆盖。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box-1 {
+                                <pre class="usage"><code class="less">.box-1 {
     .absolute(0, _, _, 0); // position: absolute; top: 0; left: 0;
 }
 
@@ -2824,7 +2919,7 @@ body {
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的偏移量。</dd>
                                 </dl>
                                 <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .relative(0, _, _, 0); // position: relative; top: 0; left: 0;
 }</code></pre>
                             </li>
@@ -2841,7 +2936,7 @@ body {
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的偏移量。</dd>
                                 </dl>
                                 <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .fixed(0, _, _, 0); // position: fixed; top: 0; left: 0;
 }</code></pre>
                             </li>
@@ -2857,7 +2952,7 @@ body {
                                     <dt><code>@margin</code></dt>
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的外边距。写法参考 CSS <code>margin</code> 属性的值。可以使用 <code>_</code> 作为占位符，表明此方向上的值无需覆盖。</dd>
                                 </dl>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .margin(10px, 5px, _, 0); // margin-top: 10px; margin-right: 5px; margin-left: 0;
 }</code></pre>
                             </li>
@@ -2874,7 +2969,7 @@ body {
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的内边距。</dd>
                                 </dl>
                                 <p class="note">边距参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .padding(10px, _); // padding-top: 10px; padding-bottom: 10px;
 }</code></pre>
                             </li>
@@ -2891,7 +2986,7 @@ body {
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的边框颜色。</dd>
                                 </dl>
                                 <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .border-color(red, _, _, blue); // border-top-color: #ff0000; border-left-color: #0000ff;
 }</code></pre>
                             </li>
@@ -2908,7 +3003,7 @@ body {
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的边框颜色。</dd>
                                 </dl>
                                 <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .border-style(solid, _, _); // border-top-style: solid;
 }</code></pre>
                             </li>
@@ -2925,7 +3020,7 @@ body {
                                     <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的边框宽度。</dd>
                                 </dl>
                                 <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
-                                <pre class="usage"><code>.box {
+                                <pre class="usage"><code class="less">.box {
     .border-width(_, _, 3px, _); // border-bottom-width: 3px;
 }</code></pre>
                             </li>
@@ -2934,37 +3029,38 @@ body {
                 </ul>
             </section>
         </article>
+        <aside class="links">
+            <p>开源的 est 来自百度 <a target="_blank" href="http://efe.baidu.com/">EFE</a> 的 Interface 团队。在 <a target="_blank" href="http://efe.baidu.com/">EFE</a>，我们还有其他开源产品：</p>
+            <dl>
+                <dt><a target="_blank" href="http://echarts.baidu.com/">ECharts</a></dt>
+                <dd>直观，生动，可交互，可高度个性化定制的数据可视化图表。</dd>
+                <dt><a target="_blank" href="https://github.com/ecomfe/esl">ESL</a></dt>
+                <dd>比 Require.js 更精简、更高效、更健壮的 AMD Loader。</dd>
+                <dt><a target="_blank" href="https://github.com/ecomfe/etpl">ETpl</a></dt>
+                <dd>强复用、灵活、高性能的 JavaScript 模板引擎。</dd>
+                <dt><a target="_blank" href="https://github.com/ecomfe/edp">EDP</a></dt>
+                <dd>提供了前端开发时常用工具：项目管理、包管理、调试、构建、代码生成、代码检测等，并允许用户自定义扩展。</dd>
+                <dt><a target="_blank" href="https://github.com/ecomfe/er">ER</a></dt>
+                <dd>富浏览器端 Web 应用的框架，适用于并能很方便地构建一个整站式的 AJAX web 应用。</dd>
+                <dt><a target="_blank" href="https://github.com/ecomfe/esui">ESUI</a></dt>
+                <dd>一套功能完善，并具有强大扩展机制的 UI 组件库。基于模板、声明式地编程方式让视图更具表达能力。</dd>
+                <dt><a target="_blank" href="https://github.com/ecomfe/saber">Saber</a></dt>
+                <dd>提供了 JavaScript 模块、CSS 样式库与开发平台的完整前端解决方案。擅长移动端 SPA 项目、轻应用。</dd>
+                <dt><a target="_blank" href="https://github.com/ecomfe/rider">Rider</a></dt>
+                <dd>专为移动端设计的 Mixin 风格样式工具库。在其基础上创建了 Rider UI，一个灵活的 UI 样式库。</dd>
+            </dl>
+            <p><a target="_blank" href="http://efe.baidu.com/">更多 &raquo;</a></p>
+        </aside>
+        <footer title="Built with est, Google Fonts (mirror hosted on 360 CDN for mainland China), jQuery Waypoints and FontAwesome.">Made with </footer>
     </main>
-    <aside class="links">
-        <p>开源的 est 来自百度 <a target="_blank" href="http://efe.baidu.com/">EFE</a> 的 Interface 团队。在 <a target="_blank" href="http://efe.baidu.com/">EFE</a>，我们还有其他开源产品：</p>
-        <dl>
-            <dt><a target="_blank" href="http://echarts.baidu.com/">ECharts</a></dt>
-            <dd>直观，生动，可交互，可高度个性化定制的数据可视化图表。</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/esl">ESL</a></dt>
-            <dd>比 Require.js 更精简、更高效、更健壮的 AMD Loader。</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/etpl">ETpl</a></dt>
-            <dd>强复用、灵活、高性能的 JavaScript 模板引擎。</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/edp">EDP</a></dt>
-            <dd>提供了前端开发时常用工具：项目管理、包管理、调试、构建、代码生成、代码检测等，并允许用户自定义扩展。</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/er">ER</a></dt>
-            <dd>富浏览器端 Web 应用的框架，适用于并能很方便地构建一个整站式的 AJAX web 应用。</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/esui">ESUI</a></dt>
-            <dd>一套功能完善，并具有强大扩展机制的 UI 组件库。基于模板、声明式地编程方式让视图更具表达能力。</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/saber">Saber</a></dt>
-            <dd>提供了 JavaScript 模块、CSS 样式库与开发平台的完整前端解决方案。擅长移动端 SPA 项目、轻应用。</dd>
-            <dt><a target="_blank" href="https://github.com/ecomfe/rider">Rider</a></dt>
-            <dd>专为移动端设计的 Mixin 风格样式工具库。在其基础上创建了 Rider UI，一个灵活的 UI 样式库。</dd>
-        </dl>
-        <p><a target="_blank" href="http://efe.baidu.com/">更多 &raquo;</a></p>
-    </aside>
-    <footer title="Built with est, Google Fonts, jQuery Waypoints and FontAwesome.">Made with &hearts;</footer>
     <aside class="spotlight collapsed">
-        <p><input id="search-key" type="text" placeholder="Search..." tabindex="1"></p>
+        <input id="search-key" type="text" placeholder="Hit / to search..." tabindex="1">
         <nav>
+            <button id="list-all"></button>
             <ul id="search-result"></ul>
         </nav>
     </aside>
-    <script src="hiless.js"></script>
+    <script src="highlight.js"></script>
     <script src="jquery-2.0.3.min.js"></script>
     <script src="waypoints.min.js"></script>
     <script src="spotlight.js"></script>
