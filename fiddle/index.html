@@ -21,6 +21,10 @@
             </li>
             <li>
                 <i class="fa fa-cog"></i>
+                <label><input type="checkbox" v-on="click: parse(false)" v-model="autoprefix"> Enable <b>Autoprefixer</b></label>
+            </li>
+            <li>
+                <i class="fa fa-cog"></i>
                 <label><input type="checkbox" v-on="click: parse(false)" v-model="autorun"> Enable Auto-run</label>
             </li>
             <li>
@@ -50,10 +54,13 @@
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </aside>
+    <div class="backdrop" v-style="display: message ? 'block' : 'none'">
+        <div class="message" v-html="message"></div>
+    </div>
     <script src="dist/app.min.js"></script>
     <script>
-        // var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        // document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe54713fce14836e2458aa4415fc09707' type='text/javascript'%3E%3C/script%3E"));
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe54713fce14836e2458aa4415fc09707' type='text/javascript'%3E%3C/script%3E"));
     </script>
 </body>
 </html>

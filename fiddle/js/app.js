@@ -90,8 +90,17 @@
     var vm = util.parseQuery(window.location.hash);
 
     var lessVersions = [{
+        label: '2.4.x',
+        options: ['2.4.0']
+    }, {
+        label: '2.3.x',
+        options: ['2.3.1', '2.3.0']
+    }, {
+        label: '2.2.x',
+        options: ['2.2.0']
+    }, {
         label: '2.1.x',
-        options: ['2.1.1', '2.1.0']
+        options: ['2.1.2', '2.1.1', '2.1.0']
     }, {
         label: '2.0.x',
         options: ['2.0.0']
@@ -113,7 +122,9 @@
     vm.est = vm.est !== 'false';
     vm.autorun = vm.autorun !== 'false';
     vm.versions = lessVersions;
+    vm.autoprefix = vm.autoprefix !== 'false';
 
+    vm.message = '';
     vm.isReady = false;
     vm.isCompiling = false;
     vm.isDiscussing = false;
@@ -140,7 +151,8 @@
                         discussing: this.isDiscussing,
                         error: this.isError,
                         auto: this.autorun,
-                        est: this.est
+                        est: this.est,
+                        autoprefix: this.autoprefix
                     };
                     var classes = [];
                     for (var state in states) {
@@ -219,12 +231,30 @@
                 this.isCompiling = false;
             },
 
+            showMessage: function (msg) {
+                this.message = msg;
+            },
+
+            hideMessage: function () {
+                this.message = '';
+            },
+
             parse: function (isForce) {
                 if (!this.autorun && !isForce) {
                     return;
                 }
-                var src = this.imports + est.getValue();
+
                 var me = this;
+                if (!window['autoprefixer'] && this.autoprefix) {
+                    me.showMessage('<i class="fa fa-spinner"></i> Loading Autoprefixer...');
+                    util.loadScript('https://rawgit.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js', function () {
+                        me.hideMessage();
+                        me.parse(isForce);
+                    });
+                    return;
+                }
+
+                var src = this.imports + est.getValue();
                 if (less.render) { // 2.0.0 and above
                     var options = {};
 
@@ -233,7 +263,11 @@
                     }
                     less.render(src, options)
                         .then(function (output) {
-                            css.setValue(output.css);
+                            var compiled = output.css;
+                            if (me.autoprefix && autoprefixer) {
+                                compiled = autoprefixer({ browsers: '> 1%' }).process(compiled, { safe: true }).css;
+                            }
+                            css.setValue(compiled);
                             me.isError = false;
                         }, function (error) {
                             me.showError(error);
@@ -265,7 +299,7 @@
         },
         created: function () {
             var me = this;
-            ['est', 'autorun', 'version'].forEach(function (key) {
+            ['est', 'autoprefix', 'autorun', 'version'].forEach(function (key) {
                 me.$watch(key, function (newVal, oldVal) {
                     util.saveSetting(key, newVal, true);
                 });
@@ -273,7 +307,7 @@
         },
         ready: function () {
             var defaultCode = [
-                '@support-old-ie: false;',
+                '@support-ie-version: 10;',
                 '',
                 '.box {',
                 '    .clearfix();',

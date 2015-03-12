@@ -144,7 +144,6 @@ button::-moz-focus-inner {
 .auto #run .fa-refresh {
     display: inline-block;
     -webkit-animation: rotate 2s linear infinite;
-       -moz-animation: rotate 2s linear infinite;
             animation: rotate 2s linear infinite;
 }
 
@@ -178,7 +177,7 @@ button::-moz-focus-inner {
 section {
     position: absolute;
     top: 60px;
-    bottom: 0;
+    bottom: 30px;
     width: 50%;
     opacity: 0;
     transition: opacity 1000ms;
@@ -241,13 +240,45 @@ section {
     color: #F92672 !important;
 }
 
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.backdrop.show {
+    display: block;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    color: #fff;
+}
+
+.message .fa-spinner {
+    -webkit-animation: rotate 2s linear infinite;
+            animation: rotate 2s linear infinite;
+}
+
 #comments {
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     height: 30px;
-    overflow: auto;
+    overflow: hidden;
     z-index: 10;
     padding: 30px 30px 0;
     box-shadow: 0 0 5px #000;
@@ -291,6 +322,7 @@ section {
 
 .discussing #comments {
     height: 100%;
+    overflow: auto;
 }
 
 .discussing #toggle .fa-comment {
@@ -310,16 +342,6 @@ a[href^="http://tongji.baidu.com"] {
 }
 
 @-webkit-keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@-moz-keyframes rotate {
     from {
         transform: rotate(0deg);
     }
