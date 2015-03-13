@@ -745,7 +745,10 @@ p.warning,
 p.alert,
 div.note,
 div.warning,
-div.alert {
+div.alert,
+figure.note,
+figure.warning,
+figure.alert {
   position: relative;
   padding: 10px 20px 10px 36px;
 }
@@ -754,7 +757,10 @@ p.warning:before,
 p.alert:before,
 div.note:before,
 div.warning:before,
-div.alert:before {
+div.alert:before,
+figure.note:before,
+figure.warning:before,
+figure.alert:before {
   position: absolute;
   top: 10px;
   left: 12px;
