@@ -88,6 +88,9 @@ ul {
 }
 .font-awesome-icon(@icon, @color: inherit) {
     &:before {
+        .icon(heart) {
+            content: "\f004";
+        }
         .icon(book) {
             content: "\f02d";
         }
@@ -192,6 +195,8 @@ section {
     @header-bg: fadeout(#333, 20%);
 
     background-color: @header-bg;
+    padding-bottom: 50px;
+    overflow: auto;
     .transition(0.5s);
 
     &:hover {
@@ -219,16 +224,18 @@ section {
         border-bottom: none;
         border-left: 3px solid transparent;
         padding: 0 15px;
-        color: #fff;
+        color: rgba(255, 255, 255, 0.6);
         text-decoration: none;
+        transition: border-color 0.5s, background-color 0.5s, color 0.5s;
 
         &.active {
             border-left-color: #fff;
+            color: #fff;
         }
 
         &:hover {
-            border-bottom: none;
             background-color: fadeout(#fff, 80%);
+            color: #fff;
         }
     }
 }
@@ -464,7 +471,6 @@ a[name] {
 footer {
     margin: 20px 0 50px;
     text-align: center;
-    font-size: 1.2em;
     .debossed-text(fadeout(lightblue, 50%));
 }
 
@@ -540,6 +546,24 @@ pre .less {
     // .color {
     //     color: #AE81FF;
     // }
+}
+
+.heart {
+    .font-awesome();
+    .font-awesome-icon(heart);
+    padding: 0 3px;
+    animation: beat 1.3s ease infinite;
+    &:before {
+        margin: 0;
+    }
+}
+
+@keyframes beat {
+  0%  { .scale(1);   }
+  14% { .scale(1.3); }
+  28% { .scale(1);   }
+  42% { .scale(1.3); }
+  70% { .scale(1);   }
 }
 
 /**
