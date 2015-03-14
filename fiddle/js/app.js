@@ -197,7 +197,9 @@
                     var url = 'https://rawgit.com/less/less.js/v' + version
                         + '/dist/less' + (version.charAt(0) === '1' ? '-' + version : '') + '.min.js';
                     var me = this;
+                    me.showLoading('Loading Less v' + version + '...');
                     util.loadScript(url, function () {
+                        me.hideMessage();
                         lessInstances[version] = less;
                         me.updateParser();
                     });
@@ -239,6 +241,10 @@
                 this.message = '';
             },
 
+            showLoading: function (msg) {
+                this.showMessage('<i class="fa fa-spinner"></i> ' + msg);
+            },
+
             parse: function (isForce) {
                 if (!this.autorun && !isForce) {
                     return;
@@ -246,7 +252,7 @@
 
                 var me = this;
                 if (!window['autoprefixer'] && this.autoprefix) {
-                    me.showMessage('<i class="fa fa-spinner"></i> Loading Autoprefixer...');
+                    me.showLoading('Loading Autoprefixer...');
                     util.loadScript('https://rawgit.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js', function () {
                         me.hideMessage();
                         me.parse(isForce);

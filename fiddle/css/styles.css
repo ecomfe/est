@@ -10,7 +10,7 @@ body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    background: url(../img/loading.gif) #272822 no-repeat center center;
+    background-color: #272822;
     font-size: 14px;
 }
 
@@ -22,7 +22,7 @@ button {
 
 input,
 textarea {
-    font-family: Consolas, 'Courier New', monospace;
+    font-family: 'Source Code Pro', Consolas, 'Courier New', monospace;
 }
 
 a {
@@ -31,10 +31,6 @@ a {
 
 label {
     cursor: pointer;
-}
-
-.compiling {
-    background-position: 75% center;
 }
 
 header {
@@ -207,7 +203,8 @@ section {
     height: 100%;
     padding: 10px 30px 30px;
     line-height: 1.2;
-    font-family: Consolas, 'Courier New', monospace;
+    font-family: 'Source Code Pro', Consolas, 'Courier New', monospace;
+    font-weight: 200;
 }
 
 #source .CodeMirror {
