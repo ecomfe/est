@@ -342,28 +342,31 @@
             });
         },
         ready: function () {
-            var defaultCode = [
-                '@support-ie-version: 10;',
-                '',
-                '.spin() {',
-                '    animation: rotate 1s linear infinite;',
-                '    @keyframes rotate {',
-                '       0%   { .rotate(0deg);   }',
-                '       100% { .rotate(360deg); }',
-                '    }',
-                '}',
-                '',
-                '.container {',
-                '    .clearfix();',
-                '',
-                '    .item {',
-                '        float: left;',
-                '        .circle(64px);',
-                '        .linear-gradient(30deg, lightgreen 0%, skyblue 100%);',
-                '        .spin();',
-                '    }',
-                '}'
-            ].join('\n');
+            var defaultCode;
+            if (this.est) {
+                defaultCode = [
+                    '@support-ie-version: 10;',
+                    '',
+                    '.spin() {',
+                    '    animation: rotate 1s linear infinite;',
+                    '    @keyframes rotate {',
+                    '       0%   { .rotate(0deg);   }',
+                    '       100% { .rotate(360deg); }',
+                    '    }',
+                    '}',
+                    '',
+                    '.container {',
+                    '    .clearfix();',
+                    '',
+                    '    .item {',
+                    '        float: left;',
+                    '        .circle(64px);',
+                    '        .linear-gradient(30deg, lightgreen 0%, skyblue 100%);',
+                    '        .spin();',
+                    '    }',
+                    '}'
+                ].join('\n');
+            }
 
             var code;
             if (this.code) {

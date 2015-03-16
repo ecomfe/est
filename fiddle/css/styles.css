@@ -114,8 +114,11 @@ button:hover {
     border-color: rgba(0, 0, 0, 0.5);
 }
 
+.auto #run:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
 #run:active,
-#run:hover,
 .auto #run {
     background-color: #90ee90;
     color: #409e40;
