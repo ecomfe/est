@@ -604,15 +604,15 @@ div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:1}
 .cm-s-monokai .CodeMirror-activeline-background{background:#373831!important}
 .cm-s-monokai .CodeMirror-matchingbracket{text-decoration:underline;color:#fff!important}
 #settings,h1{line-height:60px}
-#run,label{cursor:pointer}
-#run,header{position:relative}
+button,label{cursor:pointer}
 .auto #run .fa-refresh,.message .fa-spinner{animation:rotate 2s linear infinite;-webkit-animation:rotate 2s linear infinite}
+#comments,header{box-shadow:0 0 5px #000}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 body,html{margin:0;padding:0;height:100%;overflow:hidden;background-color:#272822;font-size:14px}
 body,button{font-family:'Avenir Next','Helvetica Neue','Segoe UI',Arial,'Lantinghei SC','Microsoft Jhenghei',sans-serif}
 .CodeMirror,input,textarea{font-family:'Source Code Pro',Consolas,'Courier New',monospace}
 a{color:#409e40}
-header{margin:0;padding-right:20px;padding-left:20px;height:60px;box-shadow:0 0 5px #000;background-color:#eee;z-index:2}
+header{position:relative;margin:0;padding-right:20px;padding-left:20px;height:60px;background-color:#eee;z-index:2}
 h1{display:inline-block;margin:0;font-size:18px;color:#272822;font-weight:400}
 h1 small{font-size:11px;color:#999}
 h1 a{color:#666;text-decoration:none;border-bottom:1px dotted #999}
@@ -622,16 +622,18 @@ h1 a{color:#666;text-decoration:none;border-bottom:1px dotted #999}
 #settings .fa{color:#999}
 #settings a,#settings input,#settings select{vertical-align:middle}
 button::-moz-focus-inner{padding:0;border:0}
-#link,#run{border:none}
-#run{width:110px;margin:0;padding:4px 12px;border-radius:4px;background-color:#90ee90;font-size:14px;font-weight:700;line-height:1.5;color:#409e40;box-shadow:0 3px 0 #409e40;outline:0}
-#run:active,.auto #run{top:3px;background-color:#80de80;color:#207e20;box-shadow:none;cursor:default}
-#run .fa{margin-right:5px;color:#409e40}
+button{width:90px;margin:0;border:2px solid rgba(0,0,0,.3);padding:4px 8px;background-color:rgba(255,255,255,.8);line-height:1.5;outline:0}
+button:hover{background-color:#fff;border-color:rgba(0,0,0,.5)}
+#run:active,#run:hover,.auto #run{background-color:#90ee90;color:#409e40;cursor:default}
+#run .fa{margin-right:5px;font-size:12px}
 #run .fa-refresh,.auto #run .fa-play{display:none}
 .auto #run .fa-refresh{display:inline-block}
-#run span,.backdrop{display:none}
+#run:active .fa,.auto #run .fa{color:#409e40}
+#run span{display:none}
+#toggle,.backdrop.show{display:block}
 #run::after{content:"Run"}
 .auto #run::after{content:"Running"}
-#link{width:0;padding:3px 0;border-radius:3px;background:0 0;background:rgba(0,0,0,.1);transition:width .3s,padding .3s}
+#link{width:0;padding:3px 0;border:none;border-radius:3px;background:0 0;background:rgba(0,0,0,.1);transition:width .3s,padding .3s}
 #link:focus{padding:3px 8px;width:240px}
 section{position:absolute;top:60px;bottom:30px;width:50%;opacity:0;transition:opacity 1000ms}
 .ready section{opacity:1}
@@ -646,9 +648,8 @@ section{position:absolute;top:60px;bottom:30px;width:50%;opacity:0;transition:op
 #compiled .CodeMirror::after{content:"‹ CSS"}
 .error #compiled span{background-color:transparent!important;color:#F92672!important}
 .backdrop{position:fixed;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,.3);z-index:9999}
-#toggle,.backdrop.show{display:block}
 .message{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);border:3px solid rgba(255,255,255,.8);background-color:rgba(255,255,255,.1);padding:20px 30px;color:#fff}
-#comments{position:fixed;right:0;bottom:0;overflow:hidden;z-index:10;padding:30px 30px 0;box-shadow:0 0 5px #000;background-color:#eee;transition:height .5s}
+#comments{position:fixed;right:0;bottom:0;overflow:hidden;z-index:10;padding:30px 30px 0;background-color:#eee;transition:height .5s}
 #toggle{position:absolute;top:0;width:100%;background:0 0;border:none;outline:0;font-size:16px;cursor:pointer}
 #toggle .fa{position:relative}
 #toggle:before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .5s;background-image:linear-gradient(to top,#eee,#eee 25%,#ccc)}

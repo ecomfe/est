@@ -34,6 +34,9 @@
             <li>
                 <label><i class="fa fa-share-alt"></i> Share <input type="text" id="link" v-on="focus: selectUrl" readonly></label>
             </li>
+            <li>
+                <button v-on="click: launchJSFiddle()" title="View compiled code in JSFiddle"><i class="fa fa-jsfiddle"></i> JSFiddle</button>
+            </li>
         </ul>
     </header>
     <section id="source" class="{{ est ? 'est' : '' }}">
@@ -55,7 +58,7 @@
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </aside>
-    <div class="backdrop" v-style="display: message ? 'block' : 'none'">
+    <div class="backdrop" hidden v-attr="hidden: !message">
         <div class="message" v-html="message"></div>
     </div>
     <script src="dist/app.min.js"></script>

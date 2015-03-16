@@ -183,6 +183,36 @@
                 link.select();
             },
 
+            launchJSFiddle: function (e) {
+                var api = 'http://jsfiddle.net/api/post/library/pure/';
+                var data = {
+                    html: [
+                        '<div class="container">',
+                        '    <div class="item"></div>',
+                        '    <div class="item"></div>',
+                        '    <div class="item"></div>',
+                        '</div>'
+                    ].join('\n'),
+                    js: '',
+                    css: css.getValue(),
+                    title: 'estFiddle to JSFiddle'
+                };
+                console.log(data.css);
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = api;
+                form.target = '_blank';
+                for (var key in data) {
+                    var field = document.createElement('textarea');
+                    field.name = key;
+                    field.value = data[key];
+                    form.appendChild(field);
+                }
+                document.body.appendChild(form);
+                form.submit();
+                form.parentNode.removeChild(form);
+            },
+
             updateVersion: function (version) {
                 version = version || this.version;
                 if (this.isReady) {
@@ -315,13 +345,22 @@
             var defaultCode = [
                 '@support-ie-version: 10;',
                 '',
-                '.box {',
+                '.spin() {',
+                '    animation: rotate 1s linear infinite;',
+                '    @keyframes rotate {',
+                '       0%   { .rotate(0deg);   }',
+                '       100% { .rotate(360deg); }',
+                '    }',
+                '}',
+                '',
+                '.container {',
                 '    .clearfix();',
-                '    .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));',
-                '    .rotate(30deg);',
                 '',
                 '    .item {',
-                '        .transition(transform 1s, color 1s);',
+                '        float: left;',
+                '        .circle(64px);',
+                '        .linear-gradient(30deg, lightgreen 0%, skyblue 100%);',
+                '        .spin();',
                 '    }',
                 '}'
             ].join('\n');

@@ -98,35 +98,33 @@ button::-moz-focus-inner {
     border: 0
 }
 
-#run {
-    position: relative;
-    width: 110px;
+button {
+    width: 90px;
     margin: 0;
-    padding: 4px 12px;
-    border: none;
-    border-radius: 4px;
-    background-color: #90ee90;
-    font-size: 14px;
-    font-weight: 700;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.8);
     line-height: 1.5;
-    color: #409e40;
     cursor: pointer;
-    box-shadow: 0 3px 0 #409e40;
     outline: none;
 }
 
+button:hover {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
 #run:active,
+#run:hover,
 .auto #run {
-    top: 3px;
-    background-color: #80de80;
-    color: #207e20;
-    box-shadow: none;
+    background-color: #90ee90;
+    color: #409e40;
     cursor: default;
 }
 
 #run .fa {
     margin-right: 5px;
-    color: #409e40;
+    font-size: 12px;
 }
 
 #run .fa-refresh {
@@ -141,6 +139,11 @@ button::-moz-focus-inner {
     display: inline-block;
     -webkit-animation: rotate 2s linear infinite;
             animation: rotate 2s linear infinite;
+}
+
+#run:active .fa,
+.auto #run .fa {
+    color: #409e40;
 }
 
 #run span {
@@ -238,7 +241,6 @@ section {
 }
 
 .backdrop {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
