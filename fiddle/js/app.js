@@ -366,6 +366,8 @@
                     '    }',
                     '}'
                 ].join('\n');
+            } else {
+                defaultCode = '';
             }
 
             var code;
