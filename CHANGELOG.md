@@ -1,5 +1,11 @@
 # Changelog
-* 2.0.0-alpha **最新**
+* 2.0.0 **最新**
+  * 修正了 `.margin-em()` / `.padding-em()` / `.margin-rem()` / `.padding-rem()` 在 Less `1.5.0` 以上版本报错的问题
+  * 优化了 `.font-face()` 的实现
+  * 增加了 `util` 模块的多个测试用例
+  * 增加了 `typography` 模块的测试用例
+
+* 2.0.0-alpha
   * 增加 `@use-autoprefixer` 变量，默认为 `true`，此时兼容性 mixin 不自动添加前缀，交由 Autoprefixer 进行后处理
   * 增加 `@support-ie-version` 变量，默认为 `7`，其他根据 IE 版本给出的 hack 也据此设置
   * 废弃 `@support-old-ie` 变量，默认情况下仍作为兼容 IE6/7 处理；如原先进行过覆盖，请删除后使用 `@support-ie-version`
