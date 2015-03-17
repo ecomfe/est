@@ -1,0 +1,317 @@
+.ff-b {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  *font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.ff-h {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+  *font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+.ff-c {
+  font-family: Monaco, Consolas, monospace;
+  *font-family: Monaco, Consolas, monospace;
+}
+.e {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.e-l {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.fw {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+}
+.ht {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+}
+.iht {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+}
+.i {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  *clip: rect(1px 1px 1px 1px);
+}
+.ir-1 {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+  background: url(http://baidu.com/logo.png) no-repeat 0 0;
+}
+.ir-2 {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+  background: url(http://baidu.com/logo.png) no-repeat -10px -10px;
+}
+.fsr {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.fse-1 {
+  font-size: 0.5em;
+}
+.fse-2 {
+  font-size: 1em;
+}
+@font-face {
+  font-family: test1;
+  src: url(/font/f1.eot);
+  src: url(/font/f1.eot?#iefix) format("embedded-opentype"), url(/font/f1.woff) format("woff"), url(/font/f1.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: test2;
+  src: url(/font/f2.eot);
+  src: url(/font/f2.eot?#iefix) format("embedded-opentype"), url(/font/f2.woff) format("woff"), url(/font/f2.ttf) format("truetype"), url(/font/f2.svg#test2) format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+.hl {
+  text-decoration: none;
+}
+.hl:hover {
+  text-decoration: underline;
+}
+.ul {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+.ul:active,
+.ul:focus {
+  outline: none;
+}
+.r-1 {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.r-1 h1,
+.r-1 h2,
+.r-1 h3,
+.r-1 h4,
+.r-1 h5,
+.r-1 h6,
+.r-1 div,
+.r-1 p,
+.r-1 section,
+.r-1 header,
+.r-1 footer,
+.r-1 article,
+.r-1 ul,
+.r-1 ol,
+.r-1 pre,
+.r-1 table,
+.r-1 figure {
+  line-height: 25.2px;
+  margin-top: 12.6px;
+  margin-bottom: 12.6px;
+  padding: 0;
+}
+.r-1 h1 {
+  line-height: 50.4px;
+}
+.r-1 h1 {
+  font-size: 28px;
+}
+.r-1 h2 {
+  font-size: 21px;
+}
+.r-1 h3 {
+  font-size: 16.8px;
+}
+.r-1 h4,
+.r-1 h5,
+.r-1 h6 {
+  font-size: 14px;
+}
+.r-1 p {
+  line-height: 25.2px;
+}
+.r-1 div {
+  margin-top: 12.6px;
+  margin-bottom: 12.6px;
+}
+.r-1 blockquote {
+  padding-top: 12.6px;
+  padding-bottom: 12.6px;
+}
+.r-1 .r-2-1 {
+  margin-top: 12.6px;
+  margin-bottom: 12.6px;
+}
+.r-1 .r-2-2 {
+  padding-top: 12.6px;
+  padding-bottom: 12.6px;
+}
+.r-2 {
+  font-size: 16px;
+  line-height: 2;
+}
+.r-2 h1,
+.r-2 h2,
+.r-2 h3,
+.r-2 h4,
+.r-2 h5,
+.r-2 h6,
+.r-2 div,
+.r-2 p,
+.r-2 section,
+.r-2 header,
+.r-2 footer,
+.r-2 article,
+.r-2 ul,
+.r-2 ol,
+.r-2 pre,
+.r-2 table,
+.r-2 figure {
+  line-height: 32px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 0;
+}
+.r-2 h1 {
+  line-height: 64px;
+}
+.r-2 h1 {
+  font-size: 32px;
+}
+.r-2 h2 {
+  font-size: 24px;
+}
+.r-2 h3 {
+  font-size: 19.2px;
+}
+.r-2 h4,
+.r-2 h5,
+.r-2 h6 {
+  font-size: 16px;
+}
+.r-2 p {
+  line-height: 64px;
+}
+.r-2 div {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.r-2 blockquote {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.r-2 .r-2-1 {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.r-2 .r-2-2 {
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+.dc-1 {
+  overflow: hidden;
+  line-height: 2;
+}
+.dc-1:first-letter {
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 2;
+}
+.dc-2 {
+  overflow: hidden;
+  line-height: 2;
+}
+.dc-2:first-letter {
+  float: left;
+  margin-right: 0.33333333em;
+  font-size: 3em;
+  line-height: 2;
+}
+.dc-3 {
+  overflow: hidden;
+  line-height: 2;
+}
+.dc-3:first-letter {
+  float: left;
+  margin-right: 30px;
+  font-size: 3em;
+  line-height: 2;
+}
+.dc-4 {
+  overflow: hidden;
+  line-height: 200%;
+}
+.dc-4:first-letter {
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 200%;
+}
+.dc-5 {
+  overflow: hidden;
+  line-height: 32px;
+}
+.dc-5:first-letter {
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 32px;
+  line-height: 64px;
+}
+.dci-1 {
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 2;
+}
+.dci-2 {
+  float: left;
+  margin-right: 0.33333333em;
+  font-size: 3em;
+  line-height: 2;
+}
+.dci-3 {
+  float: left;
+  margin-right: 30px;
+  font-size: 3em;
+  line-height: 2;
+}
+.dci-4 {
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 200%;
+}
+.dci-5 {
+  float: left;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 32px;
+  line-height: 64px;
+}
+.cl-1 {
+  height: 40px;
+  line-height: 40px;
+}
+.cl-2 {
+  height: 40px;
+  line-height: 40px\0;
+}
