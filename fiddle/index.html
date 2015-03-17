@@ -42,7 +42,7 @@
     <div class="backdrop" hidden v-attr="hidden: !message">
         <div class="message" v-html="message"></div>
     </div>
-    <div class="toast" v-style="opacity: toast ? 1 : 0" v-html="toast"></div>
+    <div class="toast" hidden v-attr="hidden: !toast" v-html="toast"></div>
     <script src="dist/app.min.js"></script>
     <script>
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
