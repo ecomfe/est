@@ -1,0 +1,144 @@
+.ff-b {
+    .font-family(base);
+}
+.ff-h {
+    .font-family(heading);
+}
+.ff-c {
+    .font-family(code);
+}
+
+.e {
+    .ellipsis();
+}
+.e-l {
+    .ellipsis(3);
+}
+
+.fw {
+    .force-wrap();
+}
+
+.ht {
+    .hide-text();
+}
+.iht {
+    .ie-hide-text();
+}
+
+.i {
+    .invisible();
+}
+
+.ir-1 {
+    .img-replace('http://baidu.com/logo.png');
+}
+.ir-2 {
+    .img-replace('http://baidu.com/logo.png', @img-x: -10px, @img-y: -10px);
+}
+
+.fsr {
+    .font-size-rem(16px);
+}
+.fse-1 {
+    .font-size-em(16px, 32px);
+}
+.fse-2 {
+    .font-size-em(16px);
+}
+
+.fface-1 {
+    .font-face(test1, '/font/f1');
+}
+.fface-2 {
+    .font-face(test2, '/font/f2', bold, italic, true);
+}
+
+.hl {
+    .hover-link();
+}
+
+.ul {
+    .unstyled-link();
+}
+
+.r-1 {
+    .rhythm();
+
+    p {
+        .rhythm-line-height();
+    }
+    div {
+        .rhythm-margin();
+    }
+    blockquote {
+        .rhythm-padding();
+    }
+    .r-2-1 {
+        .rhythm-margin-top();
+        .rhythm-margin-bottom();
+    }
+    .r-2-2 {
+        .rhythm-padding-top();
+        .rhythm-padding-bottom();
+    }
+}
+.r-2 {
+    .rhythm(16px, 2);
+
+    p {
+        .rhythm-line-height(2);
+    }
+    div {
+        .rhythm-margin(2);
+    }
+    blockquote {
+        .rhythm-padding(3);
+    }
+    .r-2-1 {
+        .rhythm-margin-top(1);
+        .rhythm-margin-bottom(2);
+    }
+    .r-2-2 {
+        .rhythm-padding-top(1);
+        .rhythm-padding-bottom(2);
+    }
+}
+
+.dc-1 {
+    .drop-cap(2);
+}
+.dc-2 {
+    .drop-cap(2, 3);
+}
+.dc-3 {
+    .drop-cap(2, 3, 30px);
+}
+.dc-4 {
+    .drop-cap(200%);
+}
+.dc-5 {
+    .drop-cap(32px);
+}
+.dci-1 {
+    .drop-cap-inline(2);
+}
+.dci-2 {
+    .drop-cap-inline(2, 3);
+}
+.dci-3 {
+    .drop-cap-inline(2, 3, 30px);
+}
+.dci-4 {
+    .drop-cap-inline(200%);
+}
+.dci-5 {
+    .drop-cap-inline(32px);
+}
+
+.cl-1 {
+    .centered-line(40px);
+}
+.cl-2 {
+    .centered-line(40px, true);
+}
