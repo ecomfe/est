@@ -26,6 +26,7 @@ gulp.task('js', ['plugin'], function () {
       './js/codemirror.js',
       './js/css.js',
       './js/matchbrackets.js',
+      './js/ZeroClipboard.min.js',
       './js/app.js'
     ])
     .pipe(uglify())

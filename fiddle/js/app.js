@@ -62,6 +62,23 @@
         document.getElementsByTagName('head')[0].appendChild(elem);
     };
 
+    util.formPost = function (url, data) {
+        var form = document.createElement('form');
+        form.method = 'POST';
+        form.action = url;
+        form.target = '_blank';
+        for (var key in data) {
+            var field = document.createElement('textarea');
+            field.name = key;
+            field.value = data[key];
+            form.appendChild(field);
+        }
+        document.body.appendChild(form);
+        form.submit();
+        form.parentNode.removeChild(form);
+    };
+
+    var timers = {};
 
     /**
      * Initialize code editors
@@ -82,7 +99,6 @@
         matchBrackets : true,
         readOnly: true
     });
-
 
     /**
      * Initialize settings
@@ -125,6 +141,7 @@
     vm.autoprefix = vm.autoprefix !== 'false';
 
     vm.message = '';
+    vm.toast = '';
     vm.isReady = false;
     vm.isCompiling = false;
     vm.isDiscussing = false;
@@ -175,7 +192,7 @@
             }
         },
         methods: {
-            selectUrl: function (e) {
+            updateUrl: function (e) {
                 var code = est.getValue();
                 var hash = util.saveSetting('code', btoa(code), false);
                 var url = window.location.href.split('#')[0] + '#' + hash;
@@ -183,34 +200,26 @@
                 link.select();
             },
 
-            launchJSFiddle: function (e) {
+            launchJSFiddle: function () {
                 var api = 'http://jsfiddle.net/api/post/library/pure/';
                 var data = {
-                    html: [
-                        '<div class="container">',
-                        '    <div class="item"></div>',
-                        '    <div class="item"></div>',
-                        '    <div class="item"></div>',
-                        '</div>'
-                    ].join('\n'),
-                    js: '',
                     css: css.getValue(),
                     title: 'estFiddle to JSFiddle'
                 };
-                console.log(data.css);
-                var form = document.createElement('form');
-                form.method = 'POST';
-                form.action = api;
-                form.target = '_blank';
-                for (var key in data) {
-                    var field = document.createElement('textarea');
-                    field.name = key;
-                    field.value = data[key];
-                    form.appendChild(field);
-                }
-                document.body.appendChild(form);
-                form.submit();
-                form.parentNode.removeChild(form);
+
+                util.formPost(api, data);
+            },
+
+            launchCodePen: function () {
+                var api = 'http://codepen.io/pen/define';
+                var data = {
+                    css: css.getValue(),
+                    title: 'estFiddle to JSFiddle'
+                };
+
+                util.formPost(api, {
+                    data: JSON.stringify(data)
+                });
             },
 
             updateVersion: function (version) {
@@ -393,6 +402,24 @@
                 }, 200);
             });
             this.updateVersion();
+
+            ZeroClipboard.config({ swfPath: 'js/ZeroClipboard.swf' });
+            var client = new ZeroClipboard($('share'));
+            client.on('ready', function () {
+                client.on('copy', function (e) {
+                    me.updateUrl();
+                    e.clipboardData.setData('text/plain', $('link').value);
+                });
+                client.on('aftercopy', function (e) {
+                    me.toast = '<i class="fa fa-check"></i> Copied!';
+                    if (timers.toast) {
+                        clearTimeout(timers.toast);
+                    }
+                    timers.toast = setTimeout(function () {
+                        me.toast = '';
+                    }, 2000);
+                });
+            });
         }
     });
 })();

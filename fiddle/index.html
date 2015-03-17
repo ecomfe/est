@@ -10,33 +10,14 @@
     <header>
         <h1>estFiddle <small>Powered by <a href="http://lesscss.org/" target="_blank">Less</a> and <a href="http://ecomfe.github.io/est/" target="_blank">est</a>.</small></h1>
         <ul id="settings">
-            <li>
-                <i class="fa fa-cog"></i>
-                <span><code>Less</code> version
-                    <select id="less-version" v-model="version" options="versions" v-on="change: updateVersion(version)"></select>
-                </span>
-            </li>
-            <li>
-                <i class="fa fa-cog"></i>
-                <label><input type="checkbox" v-on="click: parse(false)" v-model="est"> Enable <b>est</b></label>
-            </li>
-            <li>
-                <i class="fa fa-cog"></i>
-                <label><input type="checkbox" v-on="click: parse(false)" v-model="autoprefix"> Enable <b>Autoprefixer</b></label>
-            </li>
-            <li>
-                <i class="fa fa-cog"></i>
-                <label><input type="checkbox" v-on="click: parse(false)" v-model="autorun"> Enable Auto-run</label>
-            </li>
-            <li>
-                <button v-on="click: parse(true)" id="run"><i class="fa fa-play"></i><i class="fa fa-refresh"></i> <span>Run</span></button>
-            </li>
-            <li>
-                <label><i class="fa fa-share-alt"></i> Share <input type="text" id="link" v-on="focus: selectUrl" readonly></label>
-            </li>
-            <li>
-                <button v-on="click: launchJSFiddle()" title="View compiled code in JSFiddle"><i class="fa fa-jsfiddle"></i> JSFiddle</button>
-            </li>
+            <li><i class="fa fa-cog"></i> <b>Less</b> <select id="less-version" v-model="version" options="versions" v-on="change: updateVersion(version)"></select></li>
+            <li><i class="fa fa-cog"></i> <label title="Enable est"><input type="checkbox" v-on="click: parse(false)" v-model="est"> <b>est</b></label></li>
+            <li><i class="fa fa-cog"></i> <label title="Enable Autoprefixer"><input type="checkbox" v-on="click: parse(false)" v-model="autoprefix"> <b>Autoprefixer</b></label></li>
+            <li><i class="fa fa-cog"></i> <label title="Enable auto-run"><input type="checkbox" v-on="click: parse(false)" v-model="autorun"> Auto-run</label></li>
+            <li><label id="share" title="Copy share link"><i class="fa fa-share-alt"></i> <input type="text" id="link" readonly></label></li>
+            <li><button v-on="click: parse(true)" id="run" title="{{autorun ? 'Running' : 'Run'}}"><i class="fa fa-play"></i><i class="fa fa-refresh"></i></button></li>
+            <li><button v-on="click: launchJSFiddle()" title="View compiled code in JSFiddle"><i class="fa fa-jsfiddle"></i></button></li>
+            <li><button v-on="click: launchCodePen()" title="View compiled code in CodePen"><i class="fa fa-codepen"></i></button></li>
         </ul>
     </header>
     <section id="source" class="{{ est ? 'est' : '' }}">
@@ -61,6 +42,7 @@
     <div class="backdrop" hidden v-attr="hidden: !message">
         <div class="message" v-html="message"></div>
     </div>
+    <div class="toast" v-style="opacity: toast ? 1 : 0" v-html="toast"></div>
     <script src="dist/app.min.js"></script>
     <script>
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");

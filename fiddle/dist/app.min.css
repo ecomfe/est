@@ -622,18 +622,15 @@ h1 a{color:#666;text-decoration:none;border-bottom:1px dotted #999}
 #settings .fa{color:#999}
 #settings a,#settings input,#settings select{vertical-align:middle}
 button::-moz-focus-inner{padding:0;border:0}
-button{width:90px;margin:0;border:2px solid rgba(0,0,0,.3);padding:4px 8px;background-color:rgba(255,255,255,.8);line-height:1.5;outline:0}
-button:hover{background-color:#fff;border-color:rgba(0,0,0,.5)}
-.auto #run:hover{border-color:rgba(0,0,0,.3)}
+button{width:32px;margin:0;border:2px solid rgba(0,0,0,.2);border-radius:2px;padding:4px 8px;background-color:rgba(255,255,255,.8);line-height:1.5;outline:0}
+button:hover{background-color:#fff;border-color:rgba(0,0,0,.3)}
+.auto #run:hover{border-color:rgba(0,0,0,.2)}
 #run:active,.auto #run{background-color:#90ee90;color:#409e40;cursor:default}
-#run .fa{margin-right:5px;font-size:12px}
 #run .fa-refresh,.auto #run .fa-play{display:none}
 .auto #run .fa-refresh{display:inline-block}
 #run:active .fa,.auto #run .fa{color:#409e40}
 #run span{display:none}
 #toggle,.backdrop.show{display:block}
-#run::after{content:"Run"}
-.auto #run::after{content:"Running"}
 #link{width:0;padding:3px 0;border:none;border-radius:3px;background:0 0;background:rgba(0,0,0,.1);transition:width .3s,padding .3s}
 #link:focus{padding:3px 8px;width:240px}
 section{position:absolute;top:60px;bottom:30px;width:50%;opacity:0;transition:opacity 1000ms}
@@ -645,12 +642,16 @@ section{position:absolute;top:60px;bottom:30px;width:50%;opacity:0;transition:op
 #comments,#toggle{left:0;height:30px}
 #source .CodeMirror{border-right:1px dashed #666}
 #compiled .CodeMirror::after,#source .CodeMirror::after{content:"‹ LESS";position:absolute;top:0;right:15px;padding:5px 10px;border-bottom-right-radius:5px;border-bottom-left-radius:5px;background-color:rgba(255,255,255,.05);z-index:1}
+.message,.toast{border-radius:2px}
+#comments,.backdrop,.message,.toast{position:fixed}
 .est #source .CodeMirror::after{content:"‹ LESS (with est)"}
 #compiled .CodeMirror::after{content:"‹ CSS"}
 .error #compiled span{background-color:transparent!important;color:#F92672!important}
-.backdrop{position:fixed;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,.3);z-index:9999}
-.message{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);border:3px solid rgba(255,255,255,.8);background-color:rgba(255,255,255,.1);padding:20px 30px;color:#fff}
-#comments{position:fixed;right:0;bottom:0;overflow:hidden;z-index:10;padding:30px 30px 0;background-color:#eee;transition:height .5s}
+.backdrop{top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,.3);z-index:9999}
+.message,.toast{left:50%;z-index:3}
+.message{top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);border:3px solid rgba(255,255,255,.8);background-color:rgba(255,255,255,.1);padding:20px 30px;color:#fff}
+.toast{top:75px;-webkit-transform:translateX(-50%);transform:translateX(-50%);padding:4px 8px;background-color:#90ee90;border:2px solid rgba(0,0,0,.1);font-size:12px;pointer-events:none}
+#comments{right:0;bottom:0;overflow:hidden;z-index:10;padding:30px 30px 0;background-color:#eee;transition:height .5s}
 #toggle{position:absolute;top:0;width:100%;background:0 0;border:none;outline:0;font-size:16px;cursor:pointer}
 #toggle .fa{position:relative}
 #toggle:before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .5s;background-image:linear-gradient(to top,#eee,#eee 25%,#ccc)}
