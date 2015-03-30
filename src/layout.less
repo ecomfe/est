@@ -282,20 +282,7 @@
     }
 }
 .est-layout-popup(@position, @overlay-opacity, ...) when (@overlay-opacity > 0) {
-    .output() when (@support-ie-version < 9) {
-        // prevent click through in IE 8 using a transparent background image
-        background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
-        @argb: argb(rgba(0, 0, 0, @overlay-opacity / 100));
-        filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
-        zoom: 1\0;
-        // hack for IE9 to prevent applying rgba and filter at the same time
-        :root & {
-            filter: none\9;
-        }
-    }
-    .output() {}
-    .output();
-    background: rgba(0, 0, 0, @overlay-opacity / 100);
+    .rgba-background(#000, @overlay-opacity);
 }
 
 //

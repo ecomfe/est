@@ -109,17 +109,19 @@
 
 // Single background with RGBA color
 .rgba-background(@rgba) when (@support-ie-version < 9) {
+    // prevent click through in IE 8 using a transparent background image
+    background: ~"url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0";
     @argb: argb(@rgba);
     filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0";
     zoom: ~"1\0";
-    background-color: @rgba;
+    background: @rgba;
     // hack for IE9 to prevent applying rgba and filter at the same time
     :root & {
         filter: none\9;
     }
 }
 .rgba-background(@rgba) when not (@support-ie-version < 9) {
-    background-color: @rgba;
+    background: @rgba;
 }
 .rgba-background(@color, @opacity) {
     @op: unit(@opacity);
