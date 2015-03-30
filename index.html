@@ -392,10 +392,38 @@ npm test</code></pre>
                                 <h3><a name="opacity-1"></a><code><a href="#opacity-1">.opacity(@opacity)</a></code></h3>
                                 <dl>
                                     <dt><code>@opacity</code></dt>
-                                    <dd>不透明度值。可取 <code>0</code> – <code>100</code>。</dd>
+                                    <dd>不透明度值。可取 <code>0</code> – <code>100</code>（可以带 <code>%</code>）。</dd>
                                 </dl>
                                 <pre class="usage"><code class="less">.overlay {
-    .opacity(70);
+    .opacity(70%);
+}</code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2><a name="background-rgba"></a><code><a href="#background-rgba">.background-rgba()</a></code></h2>
+                        <p class="desc">设定半透明背景色。</p>
+                        <ul class="signatures">
+                            <li>
+                                <h3><a name="background-rgba-1"></a><code><a href="#background-rgba-1">.background-rgba(@rgba)</a></code></h3>
+                                <dl>
+                                    <dt><code>@rgba</code></dt>
+                                    <dd>RGBA 格式色值。</dd>
+                                </dl>
+                                <pre class="usage"><code class="less">.overlay {
+    .background-rgba(rgba(0, 0, 0, 0.7));
+}</code></pre>
+                            </li>
+                            <li>
+                                <h3><a name="background-rgba-2"></a><code><a href="#background-rgba-2">.background-rgba(@color, @opacity)</a></code></h3>
+                                <dl>
+                                    <dt><code>@color</code></dt>
+                                    <dd>不带 alpha 通道的色值。</dd>
+                                    <dt><code>@opacity</code></dt>
+                                    <dd>不透明度。可取 <code>0</code> – <code>100</code>（可以带 <code>%</code>）。</dd>
+                                </dl>
+                                <pre class="usage"><code class="less">.overlay {
+    .background-rgba(#000, 70%);
 }</code></pre>
                             </li>
                         </ul>
