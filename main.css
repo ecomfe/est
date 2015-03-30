@@ -933,6 +933,7 @@ footer {
  * LESS code highlight
  */
 pre {
+  position: relative;
   border-radius: 3px;
   background-color: #272822;
   color: #fff;
@@ -947,6 +948,24 @@ pre {
 .overview pre,
 .module pre {
   padding: 1em 2em;
+}
+pre:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.4em 0.8em;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom-left-radius: 3px;
+  font-size: 90%;
+}
+pre.setup:before {
+  content: "HTML";
+}
+pre.usage:before {
+  content: "Less";
+}
+pre.output:before {
+  content: "CSS";
 }
 pre:hover {
   opacity: 1;

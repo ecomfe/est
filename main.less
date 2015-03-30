@@ -289,7 +289,7 @@ section {
         margin: 0 10px 30px;
         padding: 20px 40px;
         border-left: 5px solid fadeout(lightblue, 60%);
-        .border-radius(4px);
+        border-radius: 4px;
         background-color: fadeout(#fff, 60%);
         .box-shadow(0 1px 1px fadeout(#666, 80%));
         .debossed-text(#fff, #999);
@@ -364,7 +364,7 @@ section {
 .warning,
 .alert {
     border: 1px solid rgba(0, 0, 0, 0.05);
-    .border-radius(3px);
+    border-radius: 3px;
 
     span&,
     small& {
@@ -401,7 +401,7 @@ section {
         background: rgba(255, 255, 255, 0.5);
         padding: 0 4px;
         border: 1px solid rgba(0, 0, 0, 0.1);
-        .border-radius(3px);
+        border-radius: 3px;
         color: @est-blue;
         font-size: 0.9em;
         font-weight: 100;
@@ -451,7 +451,7 @@ dd,
         background: rgba(255, 255, 255, 0.5);
         border: 1px solid rgba(0, 0, 0, 0.1);
         margin-bottom: 0;
-        .border-radius(3px);
+        border-radius: 3px;
         .debossed-text(#fff, @est-blue);
         font-size: 0.9em;
         font-weight: 100;
@@ -501,7 +501,8 @@ footer {
  * LESS code highlight
  */
 pre {
-    .border-radius(3px);
+    position: relative;
+    border-radius: 3px;
     background-color: #272822;
     color: #fff;
     .opacity(80);
@@ -514,6 +515,26 @@ pre {
     .overview &,
     .module & {
         padding: 1em 2em;
+    }
+
+    &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.4em 0.8em;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-bottom-left-radius: 3px;
+        font-size: 90%;
+    }
+
+    &.setup:before {
+        content: "HTML";
+    }
+    &.usage:before {
+        content: "Less";
+    }
+    &.output:before {
+        content: "CSS";
     }
 
     &:hover {

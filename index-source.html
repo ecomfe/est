@@ -111,6 +111,12 @@
                 <pre><code class="bash">npm install
 npm test</code></pre>
             </section>
+            <section>
+                <h1>API 详述</h1>
+                <p>本文档剩余部分详细描述了每个预定义变量和 mixin 的使用方法。需要注意的是，给出的编译后代码非基于全局预定义变量默认值，而是基于如下设置：</p>
+                <pre><code class="less">@support-ie-version: 7;
+@use-autoprefixer: false;</code></pre>
+            </section>
         </article>
         <article>
             <section class="module">
@@ -2253,21 +2259,7 @@ npm test</code></pre>
                                     <dt><code>@include-svg</code></dt>
                                     <dd>是否使用 svg 格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值：<code>false</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="less">.font-face("FamilyName", "/some/font/url");
-
-/* Output: */
-@font-face {
-    font-family: "FamilyName";
-    src: url(/some/font/url.eot);
-    src: url(/some/font/url.eot?#iefix) format("embedded-opentype"),
-         url(/some/font/url.woff) format("woff"),
-         url(/some/font/url.ttf) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Compiling with --relative-urls */
-.font-face("FamilyName", url(/some/font/url));</code></pre>
+                                <pre class="usage"><code class="less">.font-face("FamilyName", "/some/font/url");</code></pre>
                                 <p class="alert note">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
@@ -2323,7 +2315,7 @@ npm test</code></pre>
                                     <dd>下沉文字与普通文字的间隔。可选，默认值为相对普通文字大小的 <code>1em</code>。</dd>
                                 </dl>
                                 <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
-                                <pre class="usage"><code class="html">&lt;p&gt;
+                                <pre class="setup"><code class="html">&lt;p&gt;
     &lt;span class="drop"&gt;Lorem ipsum&lt;/span&gt; dolor sit amet, consectetur adipisicing elit. Nesciunt, eos, beatae error quaerat blanditiis repudiandae laudantium debitis officiis veritatis quasi dicta deserunt quo ipsum. Excepturi numquam nesciunt voluptates veniam eligendi.
 &lt;/p&gt;
 </code></pre>
@@ -2559,7 +2551,7 @@ aside {
                                     <dt><code>@body-selector</code></dt>
                                     <dd>页面主体要应用的选择器。可选，默认值为 <code>.est-body</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
@@ -2584,7 +2576,7 @@ aside {
                                     <dt><code>@footer-selector</code></dt>
                                     <dd>页脚要应用的选择器。可选，默认值为 <code>.est-footer</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class=&quot;body&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;est-footer&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
@@ -2611,7 +2603,7 @@ aside {
                                     <dt><code>@footer-placeholder-selector</code></dt>
                                     <dd>页脚占位元素要应用的选择器（如不需要支持 IE7- 则无需考虑）。可选，默认值为 <code>.est-footer-placeholder</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class="body"&gt;
         &lt;div&gt;Content&lt;/div&gt;
 
@@ -2665,7 +2657,7 @@ body {
                                     <dt><code>@sidebar-selector</code></dt>
                                     <dd>侧边栏应用的选择器。可选，默认值为 <code>.est-sidebar</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class="main"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
@@ -2689,7 +2681,7 @@ body {
                                     <dt><code>@sidebar-secondary-selector</code></dt>
                                     <dd>次侧边栏应用的选择器。可选，默认值为 <code>.est-secondary</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class="main"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar-primary"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar-secondary"&gt;&lt;/div&gt;
@@ -2717,7 +2709,7 @@ body {
                                     <dt><code>@valign-ghost-selector</code></dt>
                                     <dd>用于垂直居中的站伪元素应用的选择器（如不需要支持 IE7- 则无需考虑）。可选，默认值为 <code>.est-valign-ghost</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div&gt;Content&lt;/div&gt;
     &lt;div class="overlay"&gt;
 
@@ -2746,7 +2738,7 @@ body {
                                     <dt><code>@direction</code></dt>
                                     <dd>水平浮动的方向。可用值为 <code>right</code> / <code>left</code>。可选，默认值：<code>left</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;div class="users"&gt;
+                                <pre class="setup"><code class="html">&lt;div class="users"&gt;
     &lt;ul&gt;
         &lt;li&gt;Tony Stark&lt;/li&gt;
         &lt;li&gt;Steve Rogers&lt;/li&gt;
@@ -2777,7 +2769,7 @@ body {
                                     <dt><code>@target-selector</code></dt>
                                     <dd>目标元素需要应用的选择器。可选，默认值：<code>.est-fixed-ratio</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;div class="fluid-wrap"&gt;
+                                <pre class="setup"><code class="html">&lt;div class="fluid-wrap"&gt;
     &lt;img src="http://placehold.it/800x600" alt="" /&gt;
 &lt;/div&gt;</code></pre>
                                 <pre class="usage"><code class="less">.fluid-wrap {

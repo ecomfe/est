@@ -46,7 +46,8 @@ function done() {
 
     if (remaining === 0) {
         var newIndex = index.replace(pattern, function (match, indent, start, code, end) {
-            return indent + start + code + end + '\n' + indent + '<pre class="usage"><code class="css">' + out[code] + end;
+            var compiled = out[code] ? '\n' + indent + '<pre class="output"><code class="css">' + out[code] + end : '';
+            return indent + start + code + end + compiled;
         });
 
         fs.writeFileSync(__dirname + '/index.html', newIndex, {

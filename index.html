@@ -111,6 +111,12 @@
                 <pre><code class="bash">npm install
 npm test</code></pre>
             </section>
+            <section>
+                <h1>API 详述</h1>
+                <p>本文档剩余部分详细描述了每个预定义变量和 mixin 的使用方法。需要注意的是，给出的编译后代码非基于全局预定义变量默认值，而是基于如下设置：</p>
+                <pre><code class="less">@support-ie-version: 7;
+@use-autoprefixer: false;</code></pre>
+            </section>
         </article>
         <article>
             <section class="module">
@@ -223,7 +229,7 @@ npm test</code></pre>
                         <pre class="usage"><code class="less">// global scope
 .global-normalize();</code></pre>
 
-                        <pre class="usage"><code class="css">/*! normalize.css v1.1.2 | MIT License | git.io/normalize */
+                        <pre class="output"><code class="css">/*! normalize.css v1.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
        Base
        ========================================================================== */
@@ -684,7 +690,7 @@ input[type="search"]::-webkit-search-decoration {
                         <pre class="usage"><code class="less">// global scope
 .global-normalize-opentype();</code></pre>
 
-                        <pre class="usage"><code class="css">/*! normalize-opentype v0.1.2 | MIT License | kennethormandy.com/journal/normalize-opentype-css */
+                        <pre class="output"><code class="css">/*! normalize-opentype v0.1.2 | MIT License | kennethormandy.com/journal/normalize-opentype-css */
 /**
      * 1. Turn on kerning, standard ligatures, and proportional, oldstyle numerals
      *    Turn off all other ligatures, tabular, lining numerals, and alternates
@@ -804,7 +810,7 @@ input[type="week"] {
                         <pre class="usage"><code class="less">// global scope
 .global-reset();</code></pre>
 
-                        <pre class="usage"><code class="css">html,
+                        <pre class="output"><code class="css">html,
 body,
 div,
 span,
@@ -937,7 +943,7 @@ audio:not([controls]),
     .nested-reset();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.preview div,
+                        <pre class="output"><code class="css">.preview div,
 .preview span,
 .preview object,
 .preview iframe,
@@ -1007,7 +1013,7 @@ audio:not([controls]),
     .reset-box-model();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.module {
+                        <pre class="output"><code class="css">.module {
   padding: 0;
   margin: 0;
   border: 0;
@@ -1021,7 +1027,7 @@ audio:not([controls]),
     .reset-focus();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.module {
+                        <pre class="output"><code class="css">.module {
   outline: 0;
 }
 </code></pre>
@@ -1034,7 +1040,7 @@ audio:not([controls]),
     .reset-font();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">span {
+                        <pre class="output"><code class="css">span {
   font-weight: inherit;
   font-style: inherit;
   font-family: inherit;
@@ -1051,7 +1057,7 @@ audio:not([controls]),
     .reset-body();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">body {
+                        <pre class="output"><code class="css">body {
   line-height: 1;
 }
 </code></pre>
@@ -1063,7 +1069,7 @@ audio:not([controls]),
     .reset-table();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">table {
+                        <pre class="output"><code class="css">table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
@@ -1077,7 +1083,7 @@ audio:not([controls]),
     .reset-table-cell();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">td,
+                        <pre class="output"><code class="css">td,
 th {
   text-align: left;
   font-weight: normal;
@@ -1092,7 +1098,7 @@ th {
     .reset-list-style();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">ul,
+                        <pre class="output"><code class="css">ul,
 ol {
   list-style: none;
 }
@@ -1105,7 +1111,7 @@ ol {
 .reset-html5();
 </code></pre>
 
-                        <pre class="usage"><code class="css">article,
+                        <pre class="output"><code class="css">article,
 aside,
 details,
 figcaption,
@@ -1172,7 +1178,7 @@ audio:not([controls]),
     .box-sizing(border-box);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1195,7 +1201,7 @@ audio:not([controls]),
     .placeholder(lightblue);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">textarea::-webkit-input-placeholder {
+                                <pre class="output"><code class="css">textarea::-webkit-input-placeholder {
   color: lightblue;
 }
 textarea:-moz-placeholder {
@@ -1225,7 +1231,7 @@ textarea:-ms-input-placeholder {
     .user-select(none);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.menu-item {
+                                <pre class="output"><code class="css">.menu-item {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1250,7 +1256,7 @@ textarea:-ms-input-placeholder {
     .opacity(70%);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.overlay {
+                                <pre class="output"><code class="css">.overlay {
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
@@ -1272,7 +1278,7 @@ textarea:-ms-input-placeholder {
     .rgba-background(rgba(0, 0, 0, 0.7));
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.overlay {
+                                <pre class="output"><code class="css">.overlay {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
   zoom: 1\0;
   background-color: rgba(0, 0, 0, 0.7);
@@ -1294,7 +1300,7 @@ textarea:-ms-input-placeholder {
     .rgba-background(#000, 70%);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.overlay {
+                                <pre class="output"><code class="css">.overlay {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
   zoom: 1\0;
   background-color: rgba(0, 0, 0, 0.7);
@@ -1324,7 +1330,7 @@ textarea:-ms-input-placeholder {
     .border-radius(3px 2px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -1352,7 +1358,7 @@ textarea:-ms-input-placeholder {
     .border-radius(3px 6px, 5px 5px 3px 3px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-border-radius: 3px / 5px;
   -moz-border-radius: 3px / 5px;
   border-radius: 3px / 5px;
@@ -1380,7 +1386,7 @@ textarea:-ms-input-placeholder {
     .border-top-left-radius(3px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-border-top-left-radius: 3px;
   -moz-border-radius-topleft: 3px;
   border-top-left-radius: 3px;
@@ -1399,7 +1405,7 @@ textarea:-ms-input-placeholder {
     .border-top-left-radius(3px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-border-top-left-radius: 3px;
   -moz-border-radius-topleft: 3px;
   border-top-left-radius: 3px;
@@ -1461,7 +1467,7 @@ textarea:-ms-input-placeholder {
     .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -1493,7 +1499,7 @@ textarea:-ms-input-placeholder {
     .transition(height 0.5s ease, opacity 2s linear 0.5s);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-transition: background-color 1s linear;
   -moz-transition: background-color 1s linear;
   -o-transition: background-color 1s linear;
@@ -1534,7 +1540,7 @@ textarea:-ms-input-placeholder {
     .transition-property(height, opacity);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-transition-property: background-color;
   -moz-transition-property: background-color;
   -o-transition-property: background-color;
@@ -1569,7 +1575,7 @@ textarea:-ms-input-placeholder {
     .transition-duration(0.5s, 2s);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-transition-duration: 1s;
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
@@ -1603,7 +1609,7 @@ textarea:-ms-input-placeholder {
     .transition-timing-function(ease, linear);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-transition-timing-function: linear;
   -moz-transition-timing-function: linear;
   -o-transition-timing-function: linear;
@@ -1637,7 +1643,7 @@ textarea:-ms-input-placeholder {
     .transition-delay(0s, 0.5s);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-transition-delay: 0s;
   -moz-transition-delay: 0s;
   -o-transition-delay: 0s;
@@ -1671,7 +1677,7 @@ textarea:-ms-input-placeholder {
     .animation(fly-in 0.5s ease-out, fade-in 0.5s ease-out);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation: rotate 2s linear;
   -moz-animation: rotate 2s linear;
   -o-animation: rotate 2s linear;
@@ -1712,7 +1718,7 @@ textarea:-ms-input-placeholder {
     .animation-name(fly-in, fade-in);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-name: rotate;
   -moz-animation-name: rotate;
   -o-animation-name: rotate;
@@ -1746,7 +1752,7 @@ textarea:-ms-input-placeholder {
     .animation-duration(0.5s, 3s);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-duration: 3s;
   -moz-animation-duration: 3s;
   -o-animation-duration: 3s;
@@ -1781,7 +1787,7 @@ textarea:-ms-input-placeholder {
 }
 </code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
   -o-animation-timing-function: linear;
@@ -1815,7 +1821,7 @@ textarea:-ms-input-placeholder {
     .animation-iteration-count(3, infinite);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-iteration-count: 5;
   -moz-animation-iteration-count: 5;
   -o-animation-iteration-count: 5;
@@ -1849,7 +1855,7 @@ textarea:-ms-input-placeholder {
     .animation-direction(normal, alternate);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-direction: reverse;
   -moz-animation-direction: reverse;
   -o-animation-direction: reverse;
@@ -1883,7 +1889,7 @@ textarea:-ms-input-placeholder {
     .animation-play-state(paused, running);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
   -o-animation-play-state: paused;
@@ -1917,7 +1923,7 @@ textarea:-ms-input-placeholder {
     .animation-delay(0s, 1s);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s;
   -o-animation-delay: 2s;
@@ -1951,7 +1957,7 @@ textarea:-ms-input-placeholder {
     .animation-fill-mode(forwards, both);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   -o-animation-fill-mode: backwards;
@@ -1985,7 +1991,7 @@ textarea:-ms-input-placeholder {
     .transform(translateX(10px), rotate(10deg), translateY(5px));
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-transform: matrix(1, 2, 3, 4, 5, 6);
   -moz-transform: matrix(1, 2, 3, 4, 5, 6);
   -ms-transform: matrix(1, 2, 3, 4, 5, 6);
@@ -2024,7 +2030,7 @@ textarea:-ms-input-placeholder {
     .transform-style(preserve-3d);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -2051,7 +2057,7 @@ textarea:-ms-input-placeholder {
     .transform-origin(2px 30% 10px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-transform-origin: 2px left;
   -moz-transform-origin: 2px left;
   -ms-transform-origin: 2px left;
@@ -2083,7 +2089,7 @@ textarea:-ms-input-placeholder {
     .backface-visibility(hidden);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -2106,7 +2112,7 @@ textarea:-ms-input-placeholder {
     .perspective(1500px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-perspective: 1500px;
   -moz-perspective: 1500px;
   perspective: 1500px;
@@ -2125,7 +2131,7 @@ textarea:-ms-input-placeholder {
     .matrix(1, -0.2, 0, 1, 0, 0);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: matrix(1, -0.2, 0, 1, 0, 0);
   -moz-transform: matrix(1, -0.2, 0, 1, 0, 0);
   -ms-transform: matrix(1, -0.2, 0, 1, 0, 0);
@@ -2151,7 +2157,7 @@ textarea:-ms-input-placeholder {
     .translate(80px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: translate(80px);
   -moz-transform: translate(80px);
   -ms-transform: translate(80px);
@@ -2173,7 +2179,7 @@ textarea:-ms-input-placeholder {
     .translate(30px, 50px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: translate(30px, 50px);
   -moz-transform: translate(30px, 50px);
   -ms-transform: translate(30px, 50px);
@@ -2198,7 +2204,7 @@ textarea:-ms-input-placeholder {
     .translateX(80px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: translateX(80px);
   -moz-transform: translateX(80px);
   -ms-transform: translateX(80px);
@@ -2224,7 +2230,7 @@ textarea:-ms-input-placeholder {
     .translateY(80px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: translateY(80px);
   -moz-transform: translateY(80px);
   -ms-transform: translateY(80px);
@@ -2250,7 +2256,7 @@ textarea:-ms-input-placeholder {
     .scale(2.1);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: scale(2.1);
   -moz-transform: scale(2.1);
   -ms-transform: scale(2.1);
@@ -2272,7 +2278,7 @@ textarea:-ms-input-placeholder {
     .scale(2.1, 4);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: scale(2.1, 4);
   -moz-transform: scale(2.1, 4);
   -ms-transform: scale(2.1, 4);
@@ -2297,7 +2303,7 @@ textarea:-ms-input-placeholder {
     .scaleX(0.5);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: scaleX(0.5);
   -moz-transform: scaleX(0.5);
   -ms-transform: scaleX(0.5);
@@ -2323,7 +2329,7 @@ textarea:-ms-input-placeholder {
     .scaleY(2.7);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: scaleY(2.7);
   -moz-transform: scaleY(2.7);
   -ms-transform: scaleY(2.7);
@@ -2348,7 +2354,7 @@ textarea:-ms-input-placeholder {
     .rotate(30deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: rotate(30deg);
   -moz-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
@@ -2373,7 +2379,7 @@ textarea:-ms-input-placeholder {
     .skew(30deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: skew(30deg);
   -moz-transform: skew(30deg);
   -ms-transform: skew(30deg);
@@ -2395,7 +2401,7 @@ textarea:-ms-input-placeholder {
     .skew(30deg, 15deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: skew(30deg, 15deg);
   -moz-transform: skew(30deg, 15deg);
   -ms-transform: skew(30deg, 15deg);
@@ -2421,7 +2427,7 @@ textarea:-ms-input-placeholder {
     .skewX(30deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: skewX(30deg);
   -moz-transform: skewX(30deg);
   -ms-transform: skewX(30deg);
@@ -2447,7 +2453,7 @@ textarea:-ms-input-placeholder {
     .skewY(15deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: skewY(15deg);
   -moz-transform: skewY(15deg);
   -ms-transform: skewY(15deg);
@@ -2471,7 +2477,7 @@ textarea:-ms-input-placeholder {
     .matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -2501,7 +2507,7 @@ textarea:-ms-input-placeholder {
     .translate3d(12px, 50%, 3em);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: translate3d(12px, 50%, 3em);
   -moz-transform: translate3d(12px, 50%, 3em);
   -ms-transform: translate3d(12px, 50%, 3em);
@@ -2526,7 +2532,7 @@ textarea:-ms-input-placeholder {
     .translateZ(3em);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: translateZ(3em);
   -moz-transform: translateZ(3em);
   -ms-transform: translateZ(3em);
@@ -2556,7 +2562,7 @@ textarea:-ms-input-placeholder {
     .scale3d(2.5, 1.2, 0.3);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: scale3d(2.5, 1.2, 0.3);
   -moz-transform: scale3d(2.5, 1.2, 0.3);
   -ms-transform: scale3d(2.5, 1.2, 0.3);
@@ -2581,7 +2587,7 @@ textarea:-ms-input-placeholder {
     .scaleZ(0.3);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: scaleZ(0.3);
   -moz-transform: scaleZ(0.3);
   -ms-transform: scaleZ(0.3);
@@ -2613,7 +2619,7 @@ textarea:-ms-input-placeholder {
     .rotate3d(1, 2.0, 3.0, 10deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: rotate3d(1, 2, 3, 10deg);
   -moz-transform: rotate3d(1, 2, 3, 10deg);
   -ms-transform: rotate3d(1, 2, 3, 10deg);
@@ -2638,7 +2644,7 @@ textarea:-ms-input-placeholder {
     .rotateX(60deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: rotateX(60deg);
   -moz-transform: rotateX(60deg);
   -ms-transform: rotateX(60deg);
@@ -2664,7 +2670,7 @@ textarea:-ms-input-placeholder {
     .rotateY(60deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: rotateY(60deg);
   -moz-transform: rotateY(60deg);
   -ms-transform: rotateY(60deg);
@@ -2690,7 +2696,7 @@ textarea:-ms-input-placeholder {
     .rotateZ(60deg);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   -webkit-transform: rotateZ(60deg);
   -moz-transform: rotateZ(60deg);
   -ms-transform: rotateZ(60deg);
@@ -2720,7 +2726,7 @@ textarea:-ms-input-placeholder {
     .background-clip(border-box, content-box);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   -o-background-clip: padding-box;
@@ -2754,7 +2760,7 @@ textarea:-ms-input-placeholder {
   .background-size(50% auto, contain);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2788,7 +2794,7 @@ textarea:-ms-input-placeholder {
   .background-origin(border-box, padding-box);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   -webkit-background-origin: border-box;
   -moz-background-origin: border;
   -o-background-origin: border-box;
@@ -2828,7 +2834,7 @@ textarea:-ms-input-placeholder {
     .linear-gradient(273deg, red, yellow 30%, green 70%, purple);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   background-image: -webkit-linear-gradient(left, white, black);
   background-image: -moz-linear-gradient(left, white, black);
   background-image: -moz-linear-gradient(to right, white, black);
@@ -2873,7 +2879,7 @@ textarea:-ms-input-placeholder {
     .horizontal-gradient(black, white);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   background-image: -webkit-gradient(linear, left top, right top, from(black), to(white));
   background-image: -webkit-linear-gradient(left, black, white);
   background-image: -moz-linear-gradient(left, black, white);
@@ -2903,7 +2909,7 @@ textarea:-ms-input-placeholder {
     .vertical-gradient(black, white);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
   background-image: -webkit-linear-gradient(top, black, white);
   background-image: -moz-linear-gradient(top, black, white);
@@ -2937,7 +2943,7 @@ textarea:-ms-input-placeholder {
     .repeating-linear-gradient(273deg, red, yellow 30%, green 70%);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   background-image: -webkit-repeating-linear-gradient(bottom left, white, black 20px);
   background-image: -moz-repeating-linear-gradient(bottom left, white, black 20px);
   background-image: -moz-repeating-linear-gradient(to top right, white, black 20px);
@@ -2979,7 +2985,7 @@ textarea:-ms-input-placeholder {
     .radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   background-image: -webkit-radial-gradient(black, white);
   background-image: -moz-radial-gradient(black, white);
   background-image: -o-radial-gradient(black, white);
@@ -3022,7 +3028,7 @@ textarea:-ms-input-placeholder {
     .repeating-radial-gradient(ellipse farthest-side, white, black 20px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-one {
+                                <pre class="output"><code class="css">.box-one {
   background-image: -webkit-repeating-radial-gradient(white, black, 20px);
   background-image: -moz-repeating-radial-gradient(white, black, 20px);
   background-image: -o-repeating-radial-gradient(white, black, 20px);
@@ -3053,7 +3059,7 @@ textarea:-ms-input-placeholder {
     .display(flex);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.card {
+                                <pre class="output"><code class="css">.card {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -3077,7 +3083,7 @@ textarea:-ms-input-placeholder {
     .flex-direction(row-reverse);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.container {
+                                <pre class="output"><code class="css">.container {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
@@ -3100,7 +3106,7 @@ textarea:-ms-input-placeholder {
     .flex-wrap(wrap);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.container {
+                                <pre class="output"><code class="css">.container {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -3123,7 +3129,7 @@ textarea:-ms-input-placeholder {
     .flex-flow(column-reverse nowrap);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.container {
+                                <pre class="output"><code class="css">.container {
   -webkit-flex-flow: column-reverse nowrap;
   -ms-flex-flow: column-reverse nowrap;
   flex-flow: column-reverse nowrap;
@@ -3146,7 +3152,7 @@ textarea:-ms-input-placeholder {
     .order(1);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.card-main {
+                                <pre class="output"><code class="css">.card-main {
   -ms-flex-order: 1;
   -webkit-order: 1;
   order: 1;
@@ -3169,7 +3175,7 @@ textarea:-ms-input-placeholder {
     .flex(2 1 600px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.main {
+                                <pre class="output"><code class="css">.main {
   -webkit-flex: 2 1 600px;
   -ms-flex: 2 1 600px;
   flex: 2 1 600px;
@@ -3192,7 +3198,7 @@ textarea:-ms-input-placeholder {
     .flex-grow(2);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.main {
+                                <pre class="output"><code class="css">.main {
   -webkit-flex-grow: 2;
   -ms-flex-positive: 2;
   flex-grow: 2;
@@ -3215,7 +3221,7 @@ textarea:-ms-input-placeholder {
     .flex-shrink(1);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.main {
+                                <pre class="output"><code class="css">.main {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -3238,7 +3244,7 @@ textarea:-ms-input-placeholder {
     .flex-basis(600px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.main {
+                                <pre class="output"><code class="css">.main {
   -ms-flex-preferred-size: 600px;
   -webkit-flex-basis: 600px;
   flex-basis: 600px;
@@ -3261,7 +3267,7 @@ textarea:-ms-input-placeholder {
     .justify-content(space-around);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.gallery {
+                                <pre class="output"><code class="css">.gallery {
   -ms-flex-pack: distribute;
   -webkit-justify-content: space-around;
   justify-content: space-around;
@@ -3288,7 +3294,7 @@ textarea:-ms-input-placeholder {
     .align-items(center);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.gallery {
+                                <pre class="output"><code class="css">.gallery {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
@@ -3315,7 +3321,7 @@ textarea:-ms-input-placeholder {
     .align-self(flex-start);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.photo {
+                                <pre class="output"><code class="css">.photo {
   -ms-flex-item-align: start;
   -webkit-align-self: flex-start;
   align-self: flex-start;
@@ -3339,7 +3345,7 @@ textarea:-ms-input-placeholder {
     .align-content(flex-start);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.photo {
+                                <pre class="output"><code class="css">.photo {
   -ms-flex-line-pack: start;
   -webkit-align-content: flex-start;
   align-content: flex-start;
@@ -3366,7 +3372,7 @@ textarea:-ms-input-placeholder {
     .box-orient(horizontal);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.gallery {
+                                <pre class="output"><code class="css">.gallery {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
 }
@@ -3389,7 +3395,7 @@ textarea:-ms-input-placeholder {
     .box-direction(reverse);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.gallery {
+                                <pre class="output"><code class="css">.gallery {
   -webkit-box-direction: reverse;
   -moz-box-direction: reverse;
 }
@@ -3412,7 +3418,7 @@ textarea:-ms-input-placeholder {
     .box-ordinal-group(1);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.current-item {
+                                <pre class="output"><code class="css">.current-item {
   -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
 }
@@ -3435,7 +3441,7 @@ textarea:-ms-input-placeholder {
     .box-flex-group(1);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.main-item {
+                                <pre class="output"><code class="css">.main-item {
   -webkit-box-flex-group: 1;
   -moz-box-flex-group: 1;
 }
@@ -3458,7 +3464,7 @@ textarea:-ms-input-placeholder {
     .box-flex(2);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.main-item {
+                                <pre class="output"><code class="css">.main-item {
   -webkit-box-flex: 2;
   -moz-box-flex: 2;
 }
@@ -3481,7 +3487,7 @@ textarea:-ms-input-placeholder {
     .box-align(baseline);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.container {
+                                <pre class="output"><code class="css">.container {
   -webkit-box-align: baseline;
   -moz-box-align: baseline;
 }
@@ -3505,7 +3511,7 @@ textarea:-ms-input-placeholder {
     .box-pack(justify);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.container {
+                                <pre class="output"><code class="css">.container {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
 }
@@ -3534,7 +3540,7 @@ textarea:-ms-input-placeholder {
     .clearfix();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.container {
+                        <pre class="output"><code class="css">.container {
   *zoom: 1;
 }
 .container:before,
@@ -3561,7 +3567,7 @@ textarea:-ms-input-placeholder {
     .size(16px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.square {
+                                <pre class="output"><code class="css">.square {
   width: 16px;
   height: 16px;
 }
@@ -3579,7 +3585,7 @@ textarea:-ms-input-placeholder {
     .size(320px, 80px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.rect {
+                                <pre class="output"><code class="css">.rect {
   width: 320px;
   height: 80px;
 }
@@ -3601,7 +3607,7 @@ textarea:-ms-input-placeholder {
     .margin-rem(24px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   margin-top: 24px;
   margin-top: 1.5rem;
   margin-right: 24px;
@@ -3629,7 +3635,7 @@ textarea:-ms-input-placeholder {
     .margin-top-rem(12px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   margin-top: 12px;
   margin-top: 0.75rem;
 }
@@ -3668,7 +3674,7 @@ textarea:-ms-input-placeholder {
     .margin-em(24px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   margin-top: 1.5em;
   margin-right: 1.5em;
   margin-bottom: 1.5em;
@@ -3692,7 +3698,7 @@ textarea:-ms-input-placeholder {
     .margin-top-em(12px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   margin-top: 0.75em;
 }
 </code></pre>
@@ -3728,7 +3734,7 @@ textarea:-ms-input-placeholder {
     .padding-rem(24px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   padding-top: 24px;
   padding-top: 1.5rem;
   padding-right: 24px;
@@ -3756,7 +3762,7 @@ textarea:-ms-input-placeholder {
     .padding-top-rem(12px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   padding-top: 12px;
   padding-top: 0.75rem;
 }
@@ -3795,7 +3801,7 @@ textarea:-ms-input-placeholder {
     .padding-em(24px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   padding-top: 1.5em;
   padding-right: 1.5em;
   padding-bottom: 1.5em;
@@ -3819,7 +3825,7 @@ textarea:-ms-input-placeholder {
     .padding-top-em(12px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.post {
+                                <pre class="output"><code class="css">.post {
   padding-top: 0.75em;
 }
 </code></pre>
@@ -3868,7 +3874,7 @@ textarea:-ms-input-placeholder {
     .font-family(code);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">pre code {
+                                <pre class="output"><code class="css">pre code {
   font-family: Monaco, Consolas, monospace;
   *font-family: Monaco, Consolas, monospace;
 }
@@ -3887,7 +3893,7 @@ textarea:-ms-input-placeholder {
     .ellipsis();
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.cell {
+                                <pre class="output"><code class="css">.cell {
   width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3908,7 +3914,7 @@ textarea:-ms-input-placeholder {
     .ellipsis(3);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.news {
+                                <pre class="output"><code class="css">.news {
   width: 300px;
   overflow: hidden;
   display: -webkit-box;
@@ -3927,7 +3933,7 @@ textarea:-ms-input-placeholder {
     .force-wrap();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.comment {
+                        <pre class="output"><code class="css">.comment {
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -3946,7 +3952,7 @@ textarea:-ms-input-placeholder {
     .hide-text();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.logo {
+                        <pre class="output"><code class="css">.logo {
   text-indent: -9999px;
   overflow: hidden;
   text-align: left;
@@ -3960,7 +3966,7 @@ textarea:-ms-input-placeholder {
     .invisible();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.screen-reader-notes {
+                        <pre class="output"><code class="css">.screen-reader-notes {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -3999,7 +4005,7 @@ textarea:-ms-input-placeholder {
     height: 129px;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.logo-one {
+                                <pre class="output"><code class="css">.logo-one {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -4040,7 +4046,7 @@ textarea:-ms-input-placeholder {
     .font-size-rem(32px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.text {
+                                <pre class="output"><code class="css">.text {
   font-size: 32px;
   font-size: 2rem;
 }
@@ -4064,7 +4070,7 @@ textarea:-ms-input-placeholder {
     .font-size-em(24px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.text {
+                                <pre class="output"><code class="css">.text {
   font-size: 1.5em;
 }
 </code></pre>
@@ -4089,39 +4095,9 @@ textarea:-ms-input-placeholder {
                                     <dt><code>@include-svg</code></dt>
                                     <dd>是否使用 svg 格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值：<code>false</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="less">.font-face("FamilyName", "/some/font/url");
+                                <pre class="usage"><code class="less">.font-face("FamilyName", "/some/font/url");</code></pre>
 
-/* Output: */
-@font-face {
-    font-family: "FamilyName";
-    src: url(/some/font/url.eot);
-    src: url(/some/font/url.eot?#iefix) format("embedded-opentype"),
-         url(/some/font/url.woff) format("woff"),
-         url(/some/font/url.ttf) format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Compiling with --relative-urls */
-.font-face("FamilyName", url(/some/font/url));</code></pre>
-
-                                <pre class="usage"><code class="css">@font-face {
-  font-family: "FamilyName";
-  src: url(/some/font/url.eot);
-  src: url(/some/font/url.eot?#iefix) format("embedded-opentype"), url(/some/font/url.woff) format("woff"), url(/some/font/url.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-/* Output: */
-@font-face {
-  font-family: "FamilyName";
-  src: url(/some/font/url.eot);
-  src: url(/some/font/url.eot?#iefix) format("embedded-opentype"), url(/some/font/url.woff) format("woff"), url(/some/font/url.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-/* Compiling with --relative-urls */
-@font-face {
+                                <pre class="output"><code class="css">@font-face {
   font-family: "FamilyName";
   src: url(/some/font/url.eot);
   src: url(/some/font/url.eot?#iefix) format("embedded-opentype"), url(/some/font/url.woff) format("woff"), url(/some/font/url.ttf) format("truetype");
@@ -4140,7 +4116,7 @@ textarea:-ms-input-placeholder {
     .hover-link();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">a {
+                        <pre class="output"><code class="css">a {
   text-decoration: none;
 }
 a:hover {
@@ -4155,7 +4131,7 @@ a:hover {
     .unstyled-link();
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.plain-link {
+                        <pre class="output"><code class="css">.plain-link {
   color: inherit;
   text-decoration: inherit;
   cursor: inherit;
@@ -4186,7 +4162,7 @@ a:hover {
     .drop-cap(24px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">article p {
+                                <pre class="output"><code class="css">article p {
   overflow: hidden;
   line-height: 24px;
 }
@@ -4216,7 +4192,7 @@ article p:first-letter {
                                     <dd>下沉文字与普通文字的间隔。可选，默认值为相对普通文字大小的 <code>1em</code>。</dd>
                                 </dl>
                                 <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
-                                <pre class="usage"><code class="html">&lt;p&gt;
+                                <pre class="setup"><code class="html">&lt;p&gt;
     &lt;span class="drop"&gt;Lorem ipsum&lt;/span&gt; dolor sit amet, consectetur adipisicing elit. Nesciunt, eos, beatae error quaerat blanditiis repudiandae laudantium debitis officiis veritatis quasi dicta deserunt quo ipsum. Excepturi numquam nesciunt voluptates veniam eligendi.
 &lt;/p&gt;
 </code></pre>
@@ -4228,7 +4204,7 @@ article p:first-letter {
     }
 }</code></pre>
 
-                                <pre class="usage"><code class="css">p {
+                                <pre class="output"><code class="css">p {
   line-height: 24px;
 }
 p .drop {
@@ -4334,7 +4310,7 @@ p .drop {
     }
 }</code></pre>
 
-                        <pre class="usage"><code class="css">.entry {
+                        <pre class="output"><code class="css">.entry {
   font-size: 14px;
   line-height: 2;
 }
@@ -4408,7 +4384,7 @@ p .drop {
     .centered-line(24px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">pre code {
+                                <pre class="output"><code class="css">pre code {
   height: 24px;
   line-height: 24px;
 }
@@ -4426,7 +4402,7 @@ p .drop {
     .centered-line(24px, true);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">pre code {
+                                <pre class="output"><code class="css">pre code {
   height: 24px;
   line-height: 24px\0;
 }
@@ -4458,7 +4434,7 @@ p .drop {
     .make-row();
 }</code></pre>
 
-                                <pre class="usage"><code class="css">body {
+                                <pre class="output"><code class="css">body {
   *zoom: 1;
 }
 body:before,
@@ -4496,7 +4472,7 @@ aside {
     .make-column(1/3, 5%);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">main {
+                                <pre class="output"><code class="css">main {
   display: block;
   float: left;
   width: 65%;
@@ -4537,7 +4513,7 @@ aside {
     .make-column(1/3, 15px, 960px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">main {
+                                <pre class="output"><code class="css">main {
   display: block;
   float: left;
   width: 635px;
@@ -4589,7 +4565,7 @@ aside:first-child {
                                     <dt><code>@body-selector</code></dt>
                                     <dd>页面主体要应用的选择器。可选，默认值为 <code>.est-body</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
@@ -4597,7 +4573,7 @@ aside:first-child {
     .est-layout-fixed-header(80px, ~".header");
 }</code></pre>
 
-                                <pre class="usage"><code class="css">body > .header {
+                                <pre class="output"><code class="css">body > .header {
   position: fixed;
   top: 0;
   left: 0;
@@ -4636,7 +4612,7 @@ body > .est-body:after {
                                     <dt><code>@footer-selector</code></dt>
                                     <dd>页脚要应用的选择器。可选，默认值为 <code>.est-footer</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class=&quot;body&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;est-footer&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
@@ -4644,7 +4620,7 @@ body > .est-body:after {
     .est-layout-fixed-footer(80px, ~".body");
 }</code></pre>
 
-                                <pre class="usage"><code class="css">body > .body {
+                                <pre class="output"><code class="css">body > .body {
   margin-bottom: 80px;
   *zoom: 1;
 }
@@ -4685,7 +4661,7 @@ body > .est-footer {
                                     <dt><code>@footer-placeholder-selector</code></dt>
                                     <dd>页脚占位元素要应用的选择器（如不需要支持 IE7- 则无需考虑）。可选，默认值为 <code>.est-footer-placeholder</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class="body"&gt;
         &lt;div&gt;Content&lt;/div&gt;
 
@@ -4703,7 +4679,7 @@ body {
   .est-layout-sticky-footer(100px, ~".body");
 }</code></pre>
 
-                                <pre class="usage"><code class="css">html,
+                                <pre class="output"><code class="css">html,
 body {
   height: 100%;
 }
@@ -4746,7 +4722,7 @@ body > .est-footer {
   .est-layout-page(980px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.page {
+                                <pre class="output"><code class="css">.page {
   width: 980px;
   margin-right: auto;
   margin-left: auto;
@@ -4772,7 +4748,7 @@ body > .est-footer {
                                     <dt><code>@sidebar-selector</code></dt>
                                     <dd>侧边栏应用的选择器。可选，默认值为 <code>.est-sidebar</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class="main"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
@@ -4780,7 +4756,7 @@ body > .est-footer {
     .est-layout-sidebar(left, 200px, ~".main");
 }</code></pre>
 
-                                <pre class="usage"><code class="css">body {
+                                <pre class="output"><code class="css">body {
   position: relative;
 }
 body > .main {
@@ -4811,7 +4787,7 @@ body > .est-sidebar {
                                     <dt><code>@sidebar-secondary-selector</code></dt>
                                     <dd>次侧边栏应用的选择器。可选，默认值为 <code>.est-secondary</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div class="main"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar-primary"&gt;&lt;/div&gt;
     &lt;div class="est-sidebar-secondary"&gt;&lt;/div&gt;
@@ -4820,7 +4796,7 @@ body > .est-sidebar {
     .est-layout-sidebar(200px, 160px, ~".main");
 }</code></pre>
 
-                                <pre class="usage"><code class="css">body {
+                                <pre class="output"><code class="css">body {
   position: relative;
 }
 body > .main {
@@ -4861,7 +4837,7 @@ body > .est-sidebar-secondary {
                                     <dt><code>@valign-ghost-selector</code></dt>
                                     <dd>用于垂直居中的站伪元素应用的选择器（如不需要支持 IE7- 则无需考虑）。可选，默认值为 <code>.est-valign-ghost</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;body&gt;
+                                <pre class="setup"><code class="html">&lt;body&gt;
     &lt;div&gt;Content&lt;/div&gt;
     &lt;div class="overlay"&gt;
 
@@ -4875,7 +4851,7 @@ body > .est-sidebar-secondary {
   .est-layout-popup(center, 80, ~"popup");
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.overlay {
+                                <pre class="output"><code class="css">.overlay {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -4918,7 +4894,7 @@ body > .est-sidebar-secondary {
                                     <dt><code>@direction</code></dt>
                                     <dd>水平浮动的方向。可用值为 <code>right</code> / <code>left</code>。可选，默认值：<code>left</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;div class="users"&gt;
+                                <pre class="setup"><code class="html">&lt;div class="users"&gt;
     &lt;ul&gt;
         &lt;li&gt;Tony Stark&lt;/li&gt;
         &lt;li&gt;Steve Rogers&lt;/li&gt;
@@ -4931,7 +4907,7 @@ body > .est-sidebar-secondary {
   .est-layout-horizontal-list(10px, left);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.users {
+                                <pre class="output"><code class="css">.users {
   *zoom: 1;
   overflow: hidden;
 }
@@ -4974,14 +4950,14 @@ body > .est-sidebar-secondary {
                                     <dt><code>@target-selector</code></dt>
                                     <dd>目标元素需要应用的选择器。可选，默认值：<code>.est-fixed-ratio</code>。</dd>
                                 </dl>
-                                <pre class="usage"><code class="html">&lt;div class="fluid-wrap"&gt;
+                                <pre class="setup"><code class="html">&lt;div class="fluid-wrap"&gt;
     &lt;img src="http://placehold.it/800x600" alt="" /&gt;
 &lt;/div&gt;</code></pre>
                                 <pre class="usage"><code class="less">.fluid-wrap {
   .est-layout-fluid-fixed-ratio(800, 600);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.fluid-wrap {
+                                <pre class="output"><code class="css">.fluid-wrap {
   position: relative;
   padding-bottom: 75%;
   padding-top: 0;
@@ -5038,7 +5014,7 @@ body > .est-sidebar-secondary {
     .embossed-text(lightblue, #6699CC);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.blind-embossed {
+                                <pre class="output"><code class="css">.blind-embossed {
   color: #b9deea;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
@@ -5070,7 +5046,7 @@ body > .est-sidebar-secondary {
     .debossed-text(lightblue, #6699CC);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.blind-debossed {
+                                <pre class="output"><code class="css">.blind-debossed {
   color: rgba(161, 210, 226, 0.8);
   text-shadow: 0 1px 1px lightblue, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
 }
@@ -5093,10 +5069,14 @@ body > .est-sidebar-secondary {
                                     <dd>文字颜色。</dd>
                                 </dl>
                                 <pre class="usage"><code class="less">.three-d {
-    .3d-text(lightblue, #6699CC);
+    .3d-text(lightblue);
 }</code></pre>
 
-                                <pre class="usage"><code class="css"></code></pre>
+                                <pre class="output"><code class="css">.three-d {
+  color: lightblue;
+  text-shadow: 0 1px 0 #86b1bf, 0 2px 0 #7da8b6, 0 3px 0 #749fad, 0 4px 0 #6b96a4, 0 5px 0 #527d8b, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 1px 1px 3px rgba(0, 0, 0, 0.3), 3px 3px 5px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+</code></pre>
                             </li>
                         </ul>
                     </li>
@@ -5114,7 +5094,7 @@ body > .est-sidebar-secondary {
     .glow-text(10px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.glow-text {
+                                <pre class="output"><code class="css">.glow-text {
   text-shadow: 0 0 10px;
 }
 </code></pre>
@@ -5132,7 +5112,7 @@ body > .est-sidebar-secondary {
     .glow-text(gold, 20px);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.three-d {
+                                <pre class="output"><code class="css">.three-d {
   text-shadow: 0 0 20px gold;
 }
 </code></pre>
@@ -5155,7 +5135,7 @@ body > .est-sidebar-secondary {
     .blurry-text(#FFFFFF);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.blurry {
+                                <pre class="output"><code class="css">.blurry {
   color: transparent;
   text-shadow: 0 0 0.15em #ffffff;
   text-shadow: 0 0 0.15em 0.1px #ffffff;
@@ -5201,7 +5181,7 @@ body > .est-sidebar-secondary {
     .triangle(top left, #ccc, 10px, corner);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.comment:after {
+                                <pre class="output"><code class="css">.comment:after {
   position: absolute;
   width: 0;
   height: 0;
@@ -5228,7 +5208,7 @@ body > .est-sidebar-secondary {
     .circle(30%);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.ball {
+                                <pre class="output"><code class="css">.ball {
   width: 30%;
   padding-top: 30%;
   -webkit-border-radius: 50%;
@@ -5249,7 +5229,7 @@ body > .est-sidebar-secondary {
     .circle(30%, url(img/texture.png) lightgreen no-repeat center center);
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.ball {
+                                <pre class="output"><code class="css">.ball {
   width: 30%;
   padding-top: 30%;
   -webkit-border-radius: 50%;
@@ -5285,7 +5265,7 @@ body > .est-sidebar-secondary {
     .absolute(0, 10px, 5px); // position: absolute; top: 0; right: 10px; bottom: 5px; left: 10px;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box-1 {
+                                <pre class="output"><code class="css">.box-1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -5316,7 +5296,7 @@ body > .est-sidebar-secondary {
     .relative(0, _, _, 0); // position: relative; top: 0; left: 0;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   position: relative;
   top: 0;
   left: 0;
@@ -5340,7 +5320,7 @@ body > .est-sidebar-secondary {
     .fixed(0, _, _, 0); // position: fixed; top: 0; left: 0;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   position: fixed;
   top: 0;
   left: 0;
@@ -5363,7 +5343,7 @@ body > .est-sidebar-secondary {
     .margin(10px, 5px, _, 0); // margin-top: 10px; margin-right: 5px; margin-left: 0;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   margin-top: 10px;
   margin-right: 5px;
   margin-left: 0;
@@ -5387,7 +5367,7 @@ body > .est-sidebar-secondary {
     .padding(10px, _); // padding-top: 10px; padding-bottom: 10px;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -5410,7 +5390,7 @@ body > .est-sidebar-secondary {
     .border-color(red, _, _, blue); // border-top-color: #ff0000; border-left-color: #0000ff;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   border-top-color: red;
   border-left-color: blue;
 }
@@ -5433,7 +5413,7 @@ body > .est-sidebar-secondary {
     .border-style(solid, _, _); // border-top-style: solid;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   border-top-style: solid;
 }
 </code></pre>
@@ -5455,7 +5435,7 @@ body > .est-sidebar-secondary {
     .border-width(_, _, 3px, _); // border-bottom-width: 3px;
 }</code></pre>
 
-                                <pre class="usage"><code class="css">.box {
+                                <pre class="output"><code class="css">.box {
   border-bottom-width: 3px;
 }
 </code></pre>
