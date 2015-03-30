@@ -20,6 +20,22 @@
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
+.overlay-1 {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)\0;
+  zoom: 1\0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+:root .overlay-1 {
+  filter: none\9;
+}
+.overlay-2 {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)\0;
+  zoom: 1\0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+:root .overlay-2 {
+  filter: none\9;
+}
 .ball {
   border-radius: 50%;
 }
