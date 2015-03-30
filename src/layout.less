@@ -289,10 +289,8 @@
         filter: ~`"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})\0"`;
         zoom: 1\0;
         // hack for IE9 to prevent applying rgba and filter at the same time
-        @media screen and (~"min-width:0\0") {
-            & {
-                filter: none;
-            }
+        :root & {
+            filter: none\9;
         }
     }
     .output() {}
