@@ -45,7 +45,8 @@ header {
 }
 
 h1 {
-    display: inline-block;
+    float: left;
+    height: 60px;
     margin: 0;
     font-size: 18px;
     line-height: 60px;

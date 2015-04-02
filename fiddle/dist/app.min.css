@@ -603,6 +603,7 @@ div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:1}
 .cm-s-monokai span.cm-error{background:#f92672;color:#f8f8f0}
 .cm-s-monokai .CodeMirror-activeline-background{background:#373831!important}
 .cm-s-monokai .CodeMirror-matchingbracket{text-decoration:underline;color:#fff!important}
+h1,header{height:60px}
 #settings,h1{line-height:60px}
 button,label{cursor:pointer}
 .auto #run .fa-refresh,.message .fa-spinner{animation:rotate 2s linear infinite;-webkit-animation:rotate 2s linear infinite}
@@ -612,8 +613,8 @@ body,html{margin:0;padding:0;height:100%;overflow:hidden;background-color:#27282
 body,button{font-family:'Avenir Next','Helvetica Neue','Segoe UI',Arial,'Lantinghei SC','Microsoft Jhenghei',sans-serif}
 .CodeMirror,input,textarea{font-family:'Source Code Pro',Consolas,'Courier New',monospace}
 a{color:#409e40}
-header{position:relative;margin:0;padding-right:20px;padding-left:20px;height:60px;background-color:#eee;z-index:2}
-h1{display:inline-block;margin:0;font-size:18px;color:#272822;font-weight:400}
+header{position:relative;margin:0;padding-right:20px;padding-left:20px;background-color:#eee;z-index:2}
+h1{float:left;margin:0;font-size:18px;color:#272822;font-weight:400}
 h1 small{font-size:11px;color:#999}
 h1 a{color:#666;text-decoration:none;border-bottom:1px dotted #999}
 #settings{float:right;margin:0;list-style:none;font-size:12px}
