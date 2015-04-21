@@ -72,14 +72,14 @@ $ lessc style.less --est="autoImport=false&uniqueDirectives=false"
 
 Less supports auto import by plugins only after version `2.4.0`. So if you are using older versions, you have to import est using `@import` directive in your Less code.
 
-Est provides `isruleset` function (which est used) which is not supported by Less before `2.3.0`.
+When used as a plugin, est provides `isruleset` function (which est used) which is not supported by Less before `2.3.0`.
 
 
 ## Docs & Demos
 
-* [API Docs](http://ecomfe.github.io/est/) (zh_CN)
-* [Typography demos](http://ecomfe.github.io/est/example/typography.html) (zh_CN)
-* [Effects demos](http://ecomfe.github.io/est/example/effects.html) (zh_CN)
+* [API Docs](http://ecomfe.github.io/est/) (zh_Hans)
+* [Typography demos](http://ecomfe.github.io/est/example/typography.html) (zh_Hans)
+* [Effects demos](http://ecomfe.github.io/est/example/effects.html) (zh_Hans)
 
 
 ## Contribution
