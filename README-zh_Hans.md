@@ -60,7 +60,7 @@ est 的 Less 插件目前接受两个可选项：
 
 * `uniqueDirectives`
 
-    为所有具名 At 规则去重（Less 中称为*指令(directives)*）。这将让您可以在 mixin 内部定义 `@keyframes`，又不必担心在多次调用后重复输出的问题。默认值为 `true`。
+    为所有具名 At 规则去重（Less 中称为*指令*）。这将让您可以在 mixin 内部定义 `@keyframes`，又不必担心在多次调用后重复输出的问题。默认值为 `true`。
 
 如果需要关闭不需要的功能，您可以按如下方式指定参数：
 
