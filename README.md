@@ -49,11 +49,37 @@ est can be included in two ways:
         ```
 
 
+## Plugin Features & Options
+
+Est Less plugin can take two arguments for now:
+
+* `autoImport`
+
+    Automatically import est code before everything. `true` by default. **Only works from Less `2.4.0`.**
+     
+
+* `uniqueDirectives`
+
+    Eliminate duplicate named at-rules (Less calls them *directives*). This enables you to define `@keyframes` inside mixins and don't have to worry about duplicate output if you call those mixins for several times. `true` by default.
+
+You can specify arguments like this to turn off unwanted features:
+
+```bash
+$ lessc style.less --est="autoImport=false&uniqueDirectives=false"
+```
+
+### Headsup
+
+Less supports auto import by plugins only after version `2.4.0`. So if you are using older versions, you have to import est using `@import` directive in your Less code.
+
+When used as a plugin, est provides `isruleset` function (which est used) which is not supported by Less before `2.3.0`.
+
+
 ## Docs & Demos
 
-* [API Docs](http://ecomfe.github.io/est/) (zh_CN)
-* [Typography demos](http://ecomfe.github.io/est/example/typography.html) (zh_CN)
-* [Effects demos](http://ecomfe.github.io/est/example/effects.html) (zh_CN)
+* [API Docs](http://ecomfe.github.io/est/) (zh_Hans)
+* [Typography demos](http://ecomfe.github.io/est/example/typography.html) (zh_Hans)
+* [Effects demos](http://ecomfe.github.io/est/example/effects.html) (zh_Hans)
 
 
 ## Contribution
