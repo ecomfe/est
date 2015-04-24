@@ -661,7 +661,7 @@ section{position:absolute;top:60px;bottom:30px;width:50%;opacity:0;transition:op
 #toggle .fa-angle-down,.discussing #toggle .fa-comment{display:none}
 .discussing #toggle .fa-angle-down{display:inline}
 a[href^="http://tongji.baidu.com"]{display:none}
-@-webkit-keyframes rotate{from{transform:rotate(0)}
-to{transform:rotate(360deg)}}
+@-webkit-keyframes rotate{from{-webkit-transform:rotate(0);transform:rotate(0)}
+to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
 @keyframes rotate{from{transform:rotate(0)}
 to{transform:rotate(360deg)}}
