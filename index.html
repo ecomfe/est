@@ -124,15 +124,20 @@ npm test</code></pre>
                 <p class="desc">全局变量设置。</p>
                 <ul class="variables">
                     <li>
+                        <h2><a name="use-autoprefixer"></a><code><a href="#use-autoprefixer">@use-autoprefixer</a></code></h2>
+                        <p class="desc">是否使用 Autoprefixer 来处理浏览器前缀相关的兼容性问题。</p>
+                        <p class="desc">默认值：<code class="default-value">true</code>。</p>
+                    </li>
+                    <li>
                         <h2><a name="support-ie-version"></a><code><a href="#support-ie-version">@support-ie-version</a></code></h2>
                         <p class="desc">需要支持的最老版本的 IE。</p>
                         <p class="desc">默认值：<code class="default-value">7</code>。</p>
                     </li>
                     <li>
                         <h2><a name="support-old-ie"></a><code><a href="#support-old-ie">@support-old-ie</a></code></h2>
+                        <small class="alert">已废弃</small>
                         <p class="desc">是否添加支持 IE 6/7 相关的代码。</p>
                         <p class="desc">默认值：<code class="default-value">true</code>。</p>
-                        <p class="desc"><small class="note alert">已废弃</small></p>
                     </li>
                     <li>
                         <h2><a name="support-html5"></a><code><a href="#support-html5">@support-html5</a></code></h2>
@@ -1166,6 +1171,7 @@ audio:not([controls]),
                     </li>
                     <li>
                         <h2><a name="box-sizing"></a><code><a href="#box-sizing">.box-sizing()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定盒模型的计算方式。</p>
                         <ul class="signatures">
                             <li>
@@ -1189,6 +1195,7 @@ audio:not([controls]),
                     </li>
                     <li>
                         <h2><a name="placeholder"></a><code><a href="#placeholder">.placeholder()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定文本输入框占位符的颜色。</p>
                         <ul class="signatures">
                             <li>
@@ -1219,6 +1226,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="user-select"></a><code><a href="#user-select">.user-select()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定处理选区的方式。</p>
                         <ul class="signatures">
                             <li>
@@ -1279,9 +1287,10 @@ textarea:-ms-input-placeholder {
 }</code></pre>
 
                                 <pre class="output"><code class="css">.overlay {
+  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
   zoom: 1\0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 :root .overlay {
   filter: none\9;
@@ -1301,9 +1310,10 @@ textarea:-ms-input-placeholder {
 }</code></pre>
 
                                 <pre class="output"><code class="css">.overlay {
+  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
   zoom: 1\0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 :root .overlay {
   filter: none\9;
@@ -1314,6 +1324,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="border-radius"></a><code><a href="#border-radius">.border-radius()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定圆角。</p>
                         <ul class="signatures">
                             <li>
@@ -1374,6 +1385,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="border-top-left-radius"></a><code><a href="#border-top-left-radius">.border-top-left-radius()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定左上角圆角半径。</p>
                         <ul class="signatures">
                             <li>
@@ -1416,16 +1428,19 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="border-top-right-radius"></a><code><a href="#border-top-right-radius">.border-top-right-radius()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定右上角圆角半径。</p>
                         <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-bottom-right-radius"></a><code><a href="#border-bottom-right-radius">.border-bottom-right-radius()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定右下角圆角半径。</p>
                         <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
                     <li>
                         <h2><a name="border-bottom-left-radius"></a><code><a href="#border-bottom-left-radius">.border-bottom-left-radius()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定左下角圆角半径。</p>
                         <p class="note">参数说明请参考 <a href="#border-top-left-radius"><code class="mixin">.border-top-left-radius()</code></a>。</p>
                     </li>
@@ -1451,6 +1466,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-shadow"></a><code><a href="#box-shadow">.box-shadow()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定元素的阴影，支持多个阴影。</p>
                         <ul class="signatures">
                             <li>
@@ -1483,6 +1499,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transition"></a><code><a href="#transition">.transition()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">过渡（transition）设定。</p>
                         <ul class="signatures">
                             <li>
@@ -1524,6 +1541,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transition-property"></a><code><a href="#transition-property">.transition-property()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定过渡（transition）影响的属性。</p>
                         <ul class="signatures">
                             <li>
@@ -1559,6 +1577,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transition-duration"></a><code><a href="#transition-duration">.transition-duration()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定过渡（transition）的持续时间。</p>
                         <ul class="signatures">
                             <li>
@@ -1593,6 +1612,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transition-timing-function"></a><code><a href="#transition-timing-function">.transition-timing-function()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定过渡（transition）的时间函数。</p>
                         <ul class="signatures">
                             <li>
@@ -1627,6 +1647,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transition-delay"></a><code><a href="#transition-delay">.transition-delay()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定过渡（transition）的延迟时间。</p>
                         <ul class="signatures">
                             <li>
@@ -1661,6 +1682,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation"></a><code><a href="#animation">.animation()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">动画（animation）设定。</p>
                         <ul class="signatures">
                             <li>
@@ -1702,6 +1724,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation-name"></a><code><a href="#animation-name">.animation-name()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定动画（animation）对应的 <code>@keyframes</code> 规则名称。</p>
                         <ul class="signatures">
                             <li>
@@ -1736,6 +1759,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation-duration"></a><code><a href="#animation-duration">.animation-duration()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定动画（animation）的持续时间。</p>
                         <ul class="signatures">
                             <li>
@@ -1770,6 +1794,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation-timing-function"></a><code><a href="#animation-timing-function">.animation-timing-function()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定动画（animation）的时间函数。</p>
                         <ul class="signatures">
                             <li>
@@ -1805,6 +1830,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation-iteration-count"></a><code><a href="#animation-iteration-count">.animation-iteration-count()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定动画（animation）的循环次数。</p>
                         <ul class="signatures">
                             <li>
@@ -1839,6 +1865,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation-direction"></a><code><a href="#animation-direction">.animation-direction()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定动画（animation）播放的正反方向。</p>
                         <ul class="signatures">
                             <li>
@@ -1873,6 +1900,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation-play-state"></a><code><a href="#animation-play-state">.animation-play-state()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定动画（animation）的播放状态。</p>
                         <ul class="signatures">
                             <li>
@@ -1908,6 +1936,7 @@ textarea:-ms-input-placeholder {
                     <li>
                         <h2><a name="animation-delay"></a><code><a href="#animation-delay">.animation-delay()</a></code></h2>
                         <p class="desc">设定动画（animation）的播放延迟时间。</p>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <ul class="signatures">
                             <li>
                                 <h3><a name="animation-delay-1"></a><code><a href="#animation-delay-1">.animation-delay(@delay, ...)</a></code></h3>
@@ -1941,6 +1970,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="animation-fill-mode"></a><code><a href="#animation-fill-mode">.animation-fill-mode()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定动画（animation）的属性填充方式。</p>
                         <ul class="signatures">
                             <li>
@@ -1975,6 +2005,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transform"></a><code><a href="#transform">.transform()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">变换（transform）操作。</p>
                         <ul class="signatures">
                             <li>
@@ -2018,6 +2049,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transform-style"></a><code><a href="#transform-style">.transform-style()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定变换是否支持 3D。</p>
                         <ul class="signatures">
                             <li>
@@ -2041,6 +2073,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="transform-origin"></a><code><a href="#transform-origin">.transform-origin()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定变换的坐标原点。</p>
                         <ul class="signatures">
                             <li>
@@ -2077,6 +2110,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="backface-visibility"></a><code><a href="#backface-visibility">.backface-visibility()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定3D变换后元素背面是否可见。</p>
                         <ul class="signatures">
                             <li>
@@ -2100,6 +2134,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="perspective"></a><code><a href="#perspective">.perspective()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定透视距离。</p>
                         <ul class="signatures">
                             <li>
@@ -2710,6 +2745,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="background-clip"></a><code><a href="#background-clip">.background-clip()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定背景渲染范围。可以分别指定多个背景的渲染范围。</p>
                         <ul class="signatures">
                             <li>
@@ -2744,6 +2780,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="background-size"></a><code><a href="#background-size">.background-size()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定背景的尺寸。可以分别指定多个背景的尺寸。</p>
                         <ul class="signatures">
                             <li>
@@ -2778,6 +2815,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="background-origin"></a><code><a href="#background-origin">.background-origin()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定背景的起止范围，可以分别指定多个背景的范围。</p>
                         <ul class="signatures">
                             <li>
@@ -2812,6 +2850,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="linear-gradient"></a><code><a href="#linear-gradient">.linear-gradient()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定线性渐变的背景。</p>
                         <ul class="signatures">
                             <li>
@@ -2859,7 +2898,7 @@ textarea:-ms-input-placeholder {
 }
 </code></pre>
                                 <p class="note">由于支持方向设定，不支持采用老 WebKit 的语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器（Chrome 10-），且不使用 filter 语法在 IE 10 以下浏览器中进行模拟。</p>
-                                <p class="alert note">需要特别注意的是，当使用 <code>to &lt;corner&gt;</code> 这样的写法（例如 <code>to top right</code>）来指定渐变线角度时，已经支持此语法的浏览器渲染效果将与采用 <code>&lt;corner&gt;</code> 语法的浏览器有差异。效果差异见此邮件：<a href="http://lists.w3.org/Archives/Public/www-style/2011Jul/0265.html">[css3-images] Gradient Magic</a> 中的配图（新标准效果对应图中的“magic”效果）。</p>
+                                <p class="alert">需要特别注意的是，当使用 <code>to &lt;corner&gt;</code> 这样的写法（例如 <code>to top right</code>）来指定渐变线角度时，已经支持此语法的浏览器渲染效果将与采用 <code>&lt;corner&gt;</code> 语法的浏览器有差异。效果差异见此邮件：<a href="http://lists.w3.org/Archives/Public/www-style/2011Jul/0265.html">[css3-images] Gradient Magic</a> 中的配图（新标准效果对应图中的“magic”效果）。</p>
                             </li>
                         </ul>
                     </li>
@@ -2925,6 +2964,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="repeating-linear-gradient"></a><code><a href="#repeating-linear-gradient">.repeating-linear-gradient()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定循环线性渐变的背景。</p>
                         <ul class="signatures">
                             <li>
@@ -2963,6 +3003,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="radial-gradient"></a><code><a href="#radial-gradient">.radial-gradient()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定径向渐变的背景。</p>
                         <ul class="signatures">
                             <li>
@@ -3010,6 +3051,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="repeating-radial-gradient"></a><code><a href="#repeating-radial-gradient">.repeating-radial-gradient()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定循环线性渐变的背景。</p>
                         <ul class="signatures">
                             <li>
@@ -3047,6 +3089,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="display"></a><code><a href="#display">.display()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定元素的显示方式，用来为带前缀的属性值提供兼容性支持。</p>
                         <ul class="signatures">
                             <li>
@@ -3071,6 +3114,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="flex-direction"></a><code><a href="#flex-direction">.flex-direction()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒布局的排列方向。</p>
                         <ul class="signatures">
                             <li>
@@ -3094,6 +3138,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="flex-wrap"></a><code><a href="#flex-wrap">.flex-wrap()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒子元素在排列时是否可以折行。</p>
                         <ul class="signatures">
                             <li>
@@ -3117,6 +3162,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="flex-flow"></a><code><a href="#flex-flow">.flex-flow()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒子元素的排列方式，用来快速定义 <a href="#flex-direction"><code>flex-direction</code></a> 和 <a href="#flex-wrap"><code>flex-wrap</code></a> 的值。</p>
                         <ul class="signatures">
                             <li>
@@ -3140,6 +3186,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="order"></a><code><a href="#order">.order()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒项目元素的排列次序。</p>
                         <ul class="signatures">
                             <li>
@@ -3163,6 +3210,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="flex"></a><code><a href="#flex">.flex()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒项目元素的可伸缩程度，用来快速定义 <a href="#flex-grow"><code>flex-grow</code></a>、<a href="#flex-shrink"><code>flex-shrink</code></a> 和 <a href="#flex-basis"><code>flex-basis</code></a> 的值。</p>
                         <ul class="signatures">
                             <li>
@@ -3186,6 +3234,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="flex-grow"></a><code><a href="#flex-grow">.flex-grow()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒项目元素的伸展因子。</p>
                         <ul class="signatures">
                             <li>
@@ -3209,6 +3258,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="flex-shrink"></a><code><a href="#flex-shrink">.flex-shrink()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒项目元素的收缩因子。</p>
                         <ul class="signatures">
                             <li>
@@ -3232,6 +3282,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="flex-basis"></a><code><a href="#flex-basis">.flex-basis()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定伸缩盒项目元素的初始主尺寸。</p>
                         <ul class="signatures">
                             <li>
@@ -3255,6 +3306,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="justify-content"></a><code><a href="#justify-content">.justify-content()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定在当前伸缩行中，沿主轴方向排列伸缩盒项目元素时如何分配它们之间和两边的多余空间。</p>
                         <ul class="signatures">
                             <li>
@@ -3282,6 +3334,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="align-items"></a><code><a href="#align-items">.align-items()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定在当前伸缩行中，沿交叉轴（与主轴垂直）方向如何分配多余的空间。</p>
                         <ul class="signatures">
                             <li>
@@ -3309,6 +3362,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="align-self"></a><code><a href="#align-self">.align-self()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">设定在当前伸缩行中，沿交叉轴（与主轴垂直）方向如何分配某个伸缩盒项目两侧的多余空间，可以覆盖伸缩盒容器上设定的 <a href="align-items"><code>align-items</code></a> 属性。</p>
                         <ul class="signatures">
                             <li>
@@ -3333,6 +3387,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="align-content"></a><code><a href="#align-content">.align-content()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">用来设定伸缩盒容器的各行在交叉轴方向（与主轴垂直）上有多余空间时的对齐方式。</p>
                         <ul class="signatures">
                             <li>
@@ -3360,6 +3415,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-orient"></a><code><a href="#box-orient">.box-orient()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">用来设定伸缩盒子元素按垂直排列还是水平排列。</p>
                         <ul class="signatures">
                             <li>
@@ -3383,6 +3439,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-direction"></a><code><a href="#box-direction">.box-direction()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">用来设定伸缩盒子元素按正向排列还是逆向排列。</p>
                         <ul class="signatures">
                             <li>
@@ -3406,6 +3463,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-ordinal-group"></a><code><a href="#box-ordinal-group">.box-ordinal-group()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">为伸缩盒子元素分配一个组序号，将影响 <code>box-direction</code> 排列的次序，参见 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-ordinal-group">box-ordinal-group - CSS | MDN</a>。</p>
                         <ul class="signatures">
                             <li>
@@ -3429,6 +3487,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-flex-group"></a><code><a href="#box-flex-group">.box-flex-group()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">为伸缩盒子元素分配一个伸缩组序号，伸缩组将影响多余空间的分配方式，可参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-flex-group">box-flex-group - CSS | MDN</a>。</p>
                         <ul class="signatures">
                             <li>
@@ -3452,6 +3511,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-flex"></a><code><a href="#box-flex">.box-flex()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">指定伸缩盒子元素在分配多余空间时的伸展因子。</p>
                         <ul class="signatures">
                             <li>
@@ -3475,6 +3535,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-align"></a><code><a href="#box-align">.box-align()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">指定伸缩盒元素如何在垂直于排列方向的方向上分配多余空间。</p>
                         <ul class="signatures">
                             <li>
@@ -3499,6 +3560,7 @@ textarea:-ms-input-placeholder {
                     </li>
                     <li>
                         <h2><a name="box-pack"></a><code><a href="#box-pack">.box-pack()</a></code></h2>
+                        <small class="warning" title="这是一个浏览器前缀相关的兼容性 mixin，建议改用 Autoprefixer 处理此类问题。">-prefix</small>
                         <p class="desc">指定伸缩盒元素如何在排列方向上分配多余空间。</p>
                         <ul class="signatures">
                             <li>
@@ -4028,7 +4090,7 @@ textarea:-ms-input-placeholder {
   height: 129px;
 }
 </code></pre>
-                                <p class="alert note">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
+                                <p class="warning">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>
@@ -4105,7 +4167,7 @@ textarea:-ms-input-placeholder {
   font-style: normal;
 }
 </code></pre>
-                                <p class="alert note">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
+                                <p class="warning">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                             </li>
                         </ul>
                     </li>
@@ -4861,7 +4923,7 @@ body > .est-sidebar-secondary {
   letter-spacing: -0.5em;
   text-align: center;
   background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000) ;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000)\0;
   zoom: 1\0;
   background: rgba(0, 0, 0, 0.8);
 }
