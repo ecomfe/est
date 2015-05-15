@@ -500,8 +500,6 @@ code a:hover {
 }
 body {
   position: relative;
-  background: -webkit-linear-gradient(187deg, rgba(255, 0, 0, 0.3), rgba(255, 165, 0, 0.3), rgba(255, 255, 0, 0.3), rgba(0, 128, 0, 0.3), rgba(135, 206, 235, 0.3)) repeat 0 0, url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
-  background: linear-gradient(263deg, rgba(255, 0, 0, 0.3), rgba(255, 165, 0, 0.3), rgba(255, 255, 0, 0.3), rgba(0, 128, 0, 0.3), rgba(135, 206, 235, 0.3)) repeat 0 0, url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png") repeat 0 0 transparent;
   color: #4c4c4c;
   font-weight: 100;
 }

@@ -1,5 +1,10 @@
 $(function() {
 
+    // background color
+    var bgc = kolor.random();
+    var bgi = 'http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png';
+    document.body.style.background = 'url(' + bgi + ') repeat 0 0 ' + bgc.fadeOut(0.7).css();
+
     // highlight nav while scrolling
     $('.module, .overview').waypoint(function(direction) {
         var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
