@@ -1,9 +1,9 @@
 $(function() {
 
     // background color
-    var bgc = kolor.random();
+    var bgc = kolor.random({space:'rgba', h: [60, 300], s: 1, l: [0.4, 0.6]}).fadeOut(0.8).css();
     var bgi = 'http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png';
-    document.body.style.background = 'url(' + bgi + ') repeat 0 0 ' + bgc.fadeOut(0.7).css();
+    document.body.style.background = 'url(' + bgi + ') repeat 0 0 ' + bgc;
 
     // highlight nav while scrolling
     $('.module, .overview').waypoint(function(direction) {
