@@ -14,7 +14,8 @@ if (styles) {
         modifyVars: {
             'support-ie-version': '11',
             'use-autoprefixer': 'false'
-        }
+        },
+        compress: true
     }).then(function (output) {
         var compiled = output.css;
         fs.writeFileSync('main.css', compiled);
