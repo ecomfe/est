@@ -141,7 +141,7 @@
     vm.est = vm.est !== 'false';
     vm.autorun = vm.autorun !== 'false';
     vm.versions = lessVersions;
-    vm.autoprefix = vm.autoprefix !== 'false';
+    vm.autoprefix = vm.autoprefix === 'true';
 
     vm.message = '';
     vm.toast = '';
