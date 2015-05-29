@@ -1,26 +1,26 @@
 .me-1 {
-  margin-top: 2em;
-  margin-right: 2em;
-  margin-bottom: 2em;
-  margin-left: 2em;
+  margin: 2em;
 }
 .me-2 {
-  margin-top: 0.5em;
-  margin-right: 1em;
-  margin-bottom: 0.5em;
-  margin-left: 1em;
+  margin: 0.5em 1em;
 }
 .me-3 {
-  margin-top: 0.75em;
-  margin-right: 1em;
-  margin-bottom: 1.25em;
-  margin-left: 1em;
+  margin: 0.75em 1em 1.25em;
 }
 .me-4 {
-  margin-top: 0.75em;
-  margin-right: 1em;
-  margin-bottom: 1.25em;
-  margin-left: 1.5em;
+  margin: 0.75em 1em 1.25em 1.5em;
+}
+.me-5 {
+  margin: 1em;
+}
+.me-6 {
+  margin: 1em 0.5em;
+}
+.me-7 {
+  margin: 1em 0em;
+}
+.me-8 {
+  margin: 1em 0.75em 0.5em;
 }
 .mte {
   margin-top: 0.75em;
@@ -35,28 +35,28 @@
   margin-left: 0.75em;
 }
 .pe-1 {
-  padding-top: 2em;
-  padding-right: 2em;
-  padding-bottom: 2em;
-  padding-left: 2em;
+  padding: 2em;
 }
 .pe-2 {
-  padding-top: 0.5em;
-  padding-right: 1em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
+  padding: 0.5em 1em;
 }
 .pe-3 {
-  padding-top: 0.75em;
-  padding-right: 1em;
-  padding-bottom: 1.25em;
-  padding-left: 1em;
+  padding: 0.75em 1em 1.25em;
 }
 .pe-4 {
-  padding-top: 0.75em;
-  padding-right: 1em;
-  padding-bottom: 1.25em;
-  padding-left: 1.5em;
+  padding: 0.75em 1em 1.25em 1.5em;
+}
+.pe-5 {
+  padding: 1em;
+}
+.pe-6 {
+  padding: 1em 0.5em;
+}
+.pe-7 {
+  padding: 1em 0em;
+}
+.pe-8 {
+  padding: 1em 0.75em 0.5em;
 }
 .pte {
   padding-top: 0.75em;
