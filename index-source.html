@@ -241,13 +241,13 @@ npm test</code></pre>
                     <h2><a name="global-normalize"></a><code><a href="#global-normalize">.global-normalize()</a></code></h2>
                     <p class="desc">全局归一化页面样式，基于 <a href="http://necolas.github.io/normalize.css/">normalize.css</a>。</p>
                     <pre class="usage"><code class="less">// global scope
-.global-normalize();</code></pre>
+    .global-normalize();</code></pre>
                 </li>
                 <li>
                     <h2><a name="global-normalize-opentype"></a><code><a href="#global-normalize-opentype">.global-normalize-opentype()</a></code></h2>
                     <p class="desc">全局归一化 OpenType 相关样式，基于 <a href="http://kennethormandy.com/journal/normalize-opentype-css">normalize-opentype.css</a>。</p>
                     <pre class="usage"><code class="less">// global scope
-.global-normalize-opentype();</code></pre>
+    .global-normalize-opentype();</code></pre>
                 </li>
             </ul>
         </section>
@@ -266,27 +266,27 @@ npm test</code></pre>
                     <h2><a name="global-reset"></a><code><a href="#global-reset">.global-reset()</a></code></h2>
                     <p class="desc">进行全局样式重置。</p>
                     <pre class="usage"><code class="less">// global scope
-.global-reset();</code></pre>
+    .global-reset();</code></pre>
                 </li>
                 <li>
                     <h2><a name="nested-reset"></a><code><a href="#nested-reset">.nested-reset()</a></code></h2>
                     <p class="desc">对选择器指定的元素内部进行样式重置。</p>
                     <pre class="usage"><code class="less">.preview {
-.nested-reset();
+    .nested-reset();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="reset-box-model"></a><code><a href="#reset-box-model">.reset-box-model()</a></code></h2>
                     <p class="desc">重置盒模型。</p>
                     <pre class="usage"><code class="less">.module {
-.reset-box-model();
+    .reset-box-model();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="reset-focus"></a><code><a href="#reset-focus">.reset-focus()</a></code></h2>
                     <p class="desc">重置元素外框线。</p>
                     <pre class="usage"><code class="less">.module {
-.reset-focus();
+    .reset-focus();
 }</code></pre>
                     <p class="note">IE 下需使用 <code>hidefocus</code> 属性。慎用此功能，可能带来可访问性的损失。</p>
                 </li>
@@ -294,7 +294,7 @@ npm test</code></pre>
                     <h2><a name="reset-font"></a><code><a href="#reset-font">.reset-font()</a></code></h2>
                     <p class="desc">重置字体相关属性。</p>
                     <pre class="usage"><code class="less">span {
-.reset-font();
+    .reset-font();
 }</code></pre>
                 </li>
                 </li>
@@ -302,35 +302,35 @@ npm test</code></pre>
                     <h2><a name="reset-body"></a><code><a href="#reset-body">.reset-body()</a></code></h2>
                     <p class="desc">重置 <code>body</code> 元素。</p>
                     <pre class="usage"><code class="less">body {
-.reset-body();
+    .reset-body();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="reset-table"></a><code><a href="#reset-table">.reset-table()</a></code></h2>
                     <p class="desc">重置表格样式。</p>
                     <pre class="usage"><code class="less">table {
-.reset-table();
+    .reset-table();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="reset-table-cell"></a><code><a href="#reset-table-cell">.reset-table-cell()</a></code></h2>
                     <p class="desc">重置表格单元格样式（<code>td</code>、<code>th</code>）。</p>
                     <pre class="usage"><code class="less">td, th {
-.reset-table-cell();
+    .reset-table-cell();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="reset-list-style"></a><code><a href="#reset-list-style">.reset-list-style()</a></code></h2>
                     <p class="desc">重置列表项目符号样式。</p>
                     <pre class="usage"><code class="less">ul, ol {
-.reset-list-style();
+    .reset-list-style();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="reset-html5"></a><code><a href="#reset-html5">.reset-html5()</a></code></h2>
                     <p class="desc">重置 HTML5 元素的样式。</p>
                     <pre class="usage"><code class="less">// global scope
-.reset-html5();
+    .reset-html5();
 </code></pre>
                 </li>
             </ul>
@@ -361,7 +361,7 @@ npm test</code></pre>
                                 <dd>模型计算方式，可以为 <code>border-box</code> / <code>padding-box</code> / <code>content-box</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.box-sizing(border-box);
+    .box-sizing(border-box);
 }</code></pre>
                         </li>
                     </ul>
@@ -378,7 +378,7 @@ npm test</code></pre>
                                 <dd>文字颜色。可选，默认值：<a href="#default-input-placeholder-color"><code class="default-value">@default-input-placeholder-color</code></a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">textarea {
-.placeholder(lightblue);
+    .placeholder(lightblue);
 }</code></pre>
                         </li>
                     </ul>
@@ -395,7 +395,7 @@ npm test</code></pre>
                                 <dd>处理选区的方式。可用取值有 <code>text</code> / <code>none</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.menu-item {
-.user-select(none);
+    .user-select(none);
 }</code></pre>
                             <p class="note"><code>user-select</code> 目前没有出现在任何 W3C 官方的规范中，浏览器厂商的实现可能会有细节上的差异，目前不建议使用除 <code>text</code> 和 <code>none</code> 以外的任何值。</p>
                         </li>
@@ -412,7 +412,7 @@ npm test</code></pre>
                                 <dd>不透明度值。可取 <code>0</code> – <code>100</code>（可以带 <code>%</code>）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.overlay {
-.opacity(70%);
+    .opacity(70%);
 }</code></pre>
                         </li>
                     </ul>
@@ -428,7 +428,7 @@ npm test</code></pre>
                                 <dd>RGBA 格式色值。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.overlay {
-.rgba-background(rgba(0, 0, 0, 0.7));
+    .rgba-background(rgba(0, 0, 0, 0.7));
 }</code></pre>
                         </li>
                         <li>
@@ -440,7 +440,7 @@ npm test</code></pre>
                                 <dd>不透明度。可取 <code>0</code> – <code>100</code>（可以带 <code>%</code>）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.overlay {
-.rgba-background(#000, 70%);
+    .rgba-background(#000, 70%);
 }</code></pre>
                         </li>
                     </ul>
@@ -457,11 +457,11 @@ npm test</code></pre>
                                 <dd>圆角半径。可包含 1 – 4 个空格分隔的半径值同时指定多个角的圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.border-radius(3px);
+    .border-radius(3px);
 }
 
 .box-two {
-.border-radius(3px 2px);
+    .border-radius(3px 2px);
 }</code></pre>
                         </li>
                         <li>
@@ -473,11 +473,11 @@ npm test</code></pre>
                                 <dd>垂直方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.border-radius(3px, 5px);
+    .border-radius(3px, 5px);
 }
 
 .box-two {
-.border-radius(3px 6px, 5px 5px 3px 3px);
+    .border-radius(3px 6px, 5px 5px 3px 3px);
 }</code></pre>
                         </li>
                     </ul>
@@ -494,7 +494,7 @@ npm test</code></pre>
                                 <dd>圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.border-top-left-radius(3px);
+    .border-top-left-radius(3px);
 }</code></pre>
                         </li>
                         <li>
@@ -506,7 +506,7 @@ npm test</code></pre>
                                 <dd>垂直方向的圆角半径。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.border-top-left-radius(3px);
+    .border-top-left-radius(3px);
 }</code></pre>
                         </li>
                     </ul>
@@ -561,11 +561,11 @@ npm test</code></pre>
                                 <dd>单个阴影参数。可选，默认值：<a href="#default-box-shadow"><code class="default-value">@default-box-shadow</code></a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    .box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
 
 .box-two {
-.box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));
+    .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));
 }</code></pre>
                         </li>
                     </ul>
@@ -582,11 +582,11 @@ npm test</code></pre>
                                 <dd>单个过渡设定。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.transition(background-color 1s linear);
+    .transition(background-color 1s linear);
 }
 
 .box-two {
-.transition(height 0.5s ease, opacity 2s linear 0.5s);
+    .transition(height 0.5s ease, opacity 2s linear 0.5s);
 }</code></pre>
                         </li>
                     </ul>
@@ -610,11 +610,11 @@ npm test</code></pre>
                                 <dd>参与单个过渡的属性名称。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.transition-property(background-color);
+    .transition-property(background-color);
 }
 
 .box-two {
-.transition-property(height, opacity);
+    .transition-property(height, opacity);
 }</code></pre>
                             <p class="note">可以参与过渡的属性列表参见 <a href="http://dev.w3.org/csswg/css-transitions/#animatable-css">Animatable properties from CSS</a>。</p>
                         </li>
@@ -632,11 +632,11 @@ npm test</code></pre>
                                 <dd>单个过渡的持续时间。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.transition-duration(1s);
+    .transition-duration(1s);
 }
 
 .box-two {
-.transition-duration(0.5s, 2s);
+    .transition-duration(0.5s, 2s);
 }</code></pre>
                         </li>
                     </ul>
@@ -653,11 +653,11 @@ npm test</code></pre>
                                 <dd>单个过渡的时间函数。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.transition-timing-function(linear);
+    .transition-timing-function(linear);
 }
 
 .box-two {
-.transition-timing-function(ease, linear);
+    .transition-timing-function(ease, linear);
 }</code></pre>
                         </li>
                     </ul>
@@ -674,11 +674,11 @@ npm test</code></pre>
                                 <dd>单个过渡的延迟时间。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.transition-delay(0s);
+    .transition-delay(0s);
 }
 
 .box-two {
-.transition-delay(0s, 0.5s);
+    .transition-delay(0s, 0.5s);
 }</code></pre>
                         </li>
                     </ul>
@@ -695,11 +695,11 @@ npm test</code></pre>
                                 <dd>单个动画设定。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation(rotate 2s linear);
+    .animation(rotate 2s linear);
 }
 
 .box-two {
-.animation(fly-in 0.5s ease-out, fade-in 0.5s ease-out);
+    .animation(fly-in 0.5s ease-out, fade-in 0.5s ease-out);
 }</code></pre>
                         </li>
                     </ul>
@@ -723,11 +723,11 @@ npm test</code></pre>
                                 <dd>单个动画对应的 <code>@keyframes</code> 规则名称。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-name(rotate);
+    .animation-name(rotate);
 }
 
 .box-two {
-.animation-name(fly-in, fade-in);
+    .animation-name(fly-in, fade-in);
 }</code></pre>
                         </li>
                     </ul>
@@ -744,11 +744,11 @@ npm test</code></pre>
                                 <dd>单个动画的持续时间。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-duration(3s);
+    .animation-duration(3s);
 }
 
 .box-two {
-.animation-duration(0.5s, 3s);
+    .animation-duration(0.5s, 3s);
 }</code></pre>
                         </li>
                     </ul>
@@ -765,11 +765,11 @@ npm test</code></pre>
                                 <dd>单个动画的时间函数。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-timing-function(linear);
+    .animation-timing-function(linear);
 }
 
 .box-two {
-.animation-timing-function(ease, linear);
+    .animation-timing-function(ease, linear);
 }
 </code></pre>
                         </li>
@@ -787,11 +787,11 @@ npm test</code></pre>
                                 <dd>单个动画的循环次数。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-iteration-count(5);
+    .animation-iteration-count(5);
 }
 
 .box-two {
-.animation-iteration-count(3, infinite);
+    .animation-iteration-count(3, infinite);
 }</code></pre>
                         </li>
                     </ul>
@@ -808,11 +808,11 @@ npm test</code></pre>
                                 <dd>单个动画播放的正反方向。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-direction(reverse);
+    .animation-direction(reverse);
 }
 
 .box-two {
-.animation-direction(normal, alternate);
+    .animation-direction(normal, alternate);
 }</code></pre>
                         </li>
                     </ul>
@@ -829,11 +829,11 @@ npm test</code></pre>
                                 <dd>单个动画的播放状态。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-play-state(paused);
+    .animation-play-state(paused);
 }
 
 .box-two {
-.animation-play-state(paused, running);
+    .animation-play-state(paused, running);
 }</code></pre>
                         </li>
                     </ul>
@@ -850,11 +850,11 @@ npm test</code></pre>
                                 <dd>单个动画的播放延迟时间。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-delay(2s);
+    .animation-delay(2s);
 }
 
 .box-two {
-.animation-delay(0s, 1s);
+    .animation-delay(0s, 1s);
 }</code></pre>
                         </li>
                     </ul>
@@ -871,11 +871,11 @@ npm test</code></pre>
                                 <dd>单个动画的属性填充方式。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.animation-fill-mode(backwards);
+    .animation-fill-mode(backwards);
 }
 
 .box-two {
-.animation-fill-mode(forwards, both);
+    .animation-fill-mode(forwards, both);
 }</code></pre>
                         </li>
                     </ul>
@@ -892,11 +892,11 @@ npm test</code></pre>
                                 <dd>变换函数。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.transform(matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
+    .transform(matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
 }
 
 .box-two {
-.transform(translateX(10px), rotate(10deg), translateY(5px));
+    .transform(translateX(10px), rotate(10deg), translateY(5px));
 }</code></pre>
                         </li>
                     </ul>
@@ -920,7 +920,7 @@ npm test</code></pre>
                                 <dd>对 3D 变换的支持方式。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.transform-style(preserve-3d);
+    .transform-style(preserve-3d);
 }</code></pre>
                         </li>
                     </ul>
@@ -937,11 +937,11 @@ npm test</code></pre>
                                 <dd>坐标原点位置。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.transform-origin(2px left);
+    .transform-origin(2px left);
 }
 
 .box-two {
-.transform-origin(2px 30% 10px);
+    .transform-origin(2px 30% 10px);
 }</code></pre>
                         </li>
                     </ul>
@@ -958,7 +958,7 @@ npm test</code></pre>
                                 <dd>背面是否可见。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.backface-visibility(hidden);
+    .backface-visibility(hidden);
 }</code></pre>
                         </li>
                     </ul>
@@ -975,7 +975,7 @@ npm test</code></pre>
                                 <dd>透视距离。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.perspective(1500px);
+    .perspective(1500px);
 }</code></pre>
                         </li>
                     </ul>
@@ -987,7 +987,7 @@ npm test</code></pre>
                         <li>
                             <h3><a name="matrix-1"></a><code><a href="#matrix-1">.matrix(@a, @b, @c, @d, @tx, @ty)</a></code></h3>
                             <pre class="usage"><code class="less">.box {
-.matrix(1, -0.2, 0, 1, 0, 0);
+    .matrix(1, -0.2, 0, 1, 0, 0);
 }</code></pre>
                         </li>
                     </ul>
@@ -1004,7 +1004,7 @@ npm test</code></pre>
                                 <dd>X 轴方向上的平移距离。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.translate(80px);
+    .translate(80px);
 }</code></pre>
                         <p class="note">Y 轴方向不进行平移。等价于 <a href="#translateX-1"><code>.translateX(@tx)</code></a>。</p>
                         </li>
@@ -1017,7 +1017,7 @@ npm test</code></pre>
                                 <dd>Y 轴方向上的平移距离。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.translate(30px, 50px);
+    .translate(30px, 50px);
 }</code></pre>
                         </li>
                     </ul>
@@ -1033,7 +1033,7 @@ npm test</code></pre>
                                 <dd>平移距离。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.translateX(80px);
+    .translateX(80px);
 }</code></pre>
                         <p class="note">等价于 <a href="#translate-1"><code>.translate(@tx)</code></a> 及 <a href="#translate-2"><code>.translate(@tx, 0)</code></a>。</p>
                         </li>
@@ -1050,7 +1050,7 @@ npm test</code></pre>
                                 <dd>平移距离。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.translateY(80px);
+    .translateY(80px);
 }</code></pre>
                         <p class="note">等价于 <a href="#translate-2"><code>.translate(0, @ty)</code></a>。</p>
                         </li>
@@ -1067,7 +1067,7 @@ npm test</code></pre>
                                 <dd>缩放比例。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.scale(2.1);
+    .scale(2.1);
 }</code></pre>
                         <p class="note">等价于 <a href="#scale-2"><code>.scale(@s, @s)</code></a>。</p>
                         </li>
@@ -1080,7 +1080,7 @@ npm test</code></pre>
                                 <dd>Y 轴方向上的缩放比例。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.scale(2.1, 4);
+    .scale(2.1, 4);
 }</code></pre>
                         </li>
                     </ul>
@@ -1096,7 +1096,7 @@ npm test</code></pre>
                                 <dd>缩放比例。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.scaleX(0.5);
+    .scaleX(0.5);
 }</code></pre>
                         <p class="note">等价于 <a href="#scale-2"><code>.scale(@sx, 1)</code></a>。</p>
                         </li>
@@ -1113,7 +1113,7 @@ npm test</code></pre>
                                 <dd>缩放比例。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.scaleY(2.7);
+    .scaleY(2.7);
 }</code></pre>
                         </li>
                     </ul>
@@ -1129,7 +1129,7 @@ npm test</code></pre>
                                 <dd>旋转角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.rotate(30deg);
+    .rotate(30deg);
 }</code></pre>
                         </li>
                     </ul>
@@ -1145,7 +1145,7 @@ npm test</code></pre>
                                 <dd>沿 X 轴倾斜拉伸的角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.skew(30deg);
+    .skew(30deg);
 }</code></pre>
                         <p class="note">沿 Y 轴方向不进行倾斜拉伸。等价于 <a href="#skewX-1"><code>.skewX(@ax)</code></a>。</p>
                         </li>
@@ -1158,7 +1158,7 @@ npm test</code></pre>
                                 <dd>沿 Y 轴倾斜拉伸的角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.skew(30deg, 15deg);
+    .skew(30deg, 15deg);
 }</code></pre>
                         </li>
                     </ul>
@@ -1175,7 +1175,7 @@ npm test</code></pre>
                                 <dd>倾斜拉伸的角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.skewX(30deg);
+    .skewX(30deg);
 }</code></pre>
                         <p class="note">等价于 <a href="#skew-1"><code>.skew(@ax)</code></a>。</p>
                         </li>
@@ -1192,7 +1192,7 @@ npm test</code></pre>
                                 <dd>倾斜拉伸的角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.skewY(15deg);
+    .skewY(15deg);
 }</code></pre>
                         </li>
                     </ul>
@@ -1207,7 +1207,7 @@ npm test</code></pre>
       @a3, @b3, @c3, @d3,
       @a4, @b4, @c4, @d4)</code></h3>
                             <pre class="usage"><code class="less">.box {
-.matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    .matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }</code></pre>
                         </li>
                     </ul>
@@ -1228,7 +1228,7 @@ npm test</code></pre>
                                 <dd>Z 轴方向上的平移距离。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.translate3d(12px, 50%, 3em);
+    .translate3d(12px, 50%, 3em);
 }</code></pre>
                         </li>
                     </ul>
@@ -1244,7 +1244,7 @@ npm test</code></pre>
                                 <dd>平移距离。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.translateZ(3em);
+    .translateZ(3em);
 }</code></pre>
                         </li>
                         <p class="note">等价于 <a href="#translate3d-1"><code>.translate3d(0, 0, @tz)</code></a>。</p>
@@ -1265,7 +1265,7 @@ npm test</code></pre>
                                 <dd>Z 轴方向上的缩放比例。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.scale3d(2.5, 1.2, 0.3);
+    .scale3d(2.5, 1.2, 0.3);
 }</code></pre>
                         </li>
                     </ul>
@@ -1281,7 +1281,7 @@ npm test</code></pre>
                                 <dd>缩放比例。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.scaleZ(0.3);
+    .scaleZ(0.3);
 }</code></pre>
                         </li>
                         <p class="note">等价于 <a href="#scale3d-1"><code>.scale3d(1, 1, @sz)</code></a>。</p>
@@ -1304,7 +1304,7 @@ npm test</code></pre>
                                 <dd>旋转角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.rotate3d(1, 2.0, 3.0, 10deg);
+    .rotate3d(1, 2.0, 3.0, 10deg);
 }</code></pre>
                         </li>
                     </ul>
@@ -1320,7 +1320,7 @@ npm test</code></pre>
                                 <dd>旋转角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.rotateX(60deg);
+    .rotateX(60deg);
 }</code></pre>
                         </li>
                         <p class="note">等价于 <a href="#rotate3d-1"><code>.rotate3d(1, 0, 0, @angle)</code></a>。</p>
@@ -1337,7 +1337,7 @@ npm test</code></pre>
                                 <dd>旋转角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.rotateY(60deg);
+    .rotateY(60deg);
 }</code></pre>
                         </li>
                         <p class="note">等价于 <a href="#rotate3d-1"><code>.rotate3d(0, 1, 0, @angle)</code></a>。</p>
@@ -1354,7 +1354,7 @@ npm test</code></pre>
                                 <dd>旋转角度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.rotateZ(60deg);
+    .rotateZ(60deg);
 }</code></pre>
                         </li>
                         <p class="note">等价于 <a href="#rotate3d-1"><code>.rotate3d(0, 0, 1, @angle)</code></a> 及 <a href="#rotate-1"><code>.rotate(@angle)</code></a>。</p>
@@ -1372,11 +1372,11 @@ npm test</code></pre>
                                 <dd>单个背景的渲染范围。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.background-clip(padding-box);
+    .background-clip(padding-box);
 }
 
 .box-two {
-.background-clip(border-box, content-box);
+    .background-clip(border-box, content-box);
 }</code></pre>
                         </li>
                     </ul>
@@ -1393,11 +1393,11 @@ npm test</code></pre>
                                 <dd></dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.background-size(cover);
+    .background-size(cover);
 }
 
 .box-two {
-.background-size(50% auto, contain);
+    .background-size(50% auto, contain);
 }</code></pre>
                         </li>
                     </ul>
@@ -1414,11 +1414,11 @@ npm test</code></pre>
                                 <dd></dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.background-origin(border-box);
+    .background-origin(border-box);
 }
 
 .box-two {
-.background-origin(border-box, padding-box);
+    .background-origin(border-box, padding-box);
 }</code></pre>
                         </li>
                     </ul>
@@ -1437,15 +1437,15 @@ npm test</code></pre>
                                 <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.linear-gradient(to right, white, black);
+    .linear-gradient(to right, white, black);
 }
 
 .box-two {
-.linear-gradient(to top right, white, black);
+    .linear-gradient(to top right, white, black);
 }
 
 .box-three {
-.linear-gradient(273deg, red, yellow 30%, green 70%, purple);
+    .linear-gradient(273deg, red, yellow 30%, green 70%, purple);
 }</code></pre>
                             <p class="note">由于支持方向设定，不支持采用老 WebKit 的语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器（Chrome 10-），且不使用 filter 语法在 IE 10 以下浏览器中进行模拟。</p>
                             <p class="alert">需要特别注意的是，当使用 <code>to &lt;corner&gt;</code> 这样的写法（例如 <code>to top right</code>）来指定渐变线角度时，已经支持此语法的浏览器渲染效果将与采用 <code>&lt;corner&gt;</code> 语法的浏览器有差异。效果差异见此邮件：<a href="http://lists.w3.org/Archives/Public/www-style/2011Jul/0265.html">[css3-images] Gradient Magic</a> 中的配图（新标准效果对应图中的“magic”效果）。</p>
@@ -1465,7 +1465,7 @@ npm test</code></pre>
                                 <dd>结束颜色。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.horizontal-gradient(black, white);
+    .horizontal-gradient(black, white);
 }</code></pre>
                             <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
                         </li>
@@ -1484,7 +1484,7 @@ npm test</code></pre>
                                 <dd>结束颜色。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.vertical-gradient(black, white);
+    .vertical-gradient(black, white);
 }</code></pre>
                             <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
                         </li>
@@ -1504,11 +1504,11 @@ npm test</code></pre>
                                 <dd>色标，至少有两个参数值。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.repeating-linear-gradient(to top right, white, black 20px);
+    .repeating-linear-gradient(to top right, white, black 20px);
 }
 
 .box-two {
-.repeating-linear-gradient(273deg, red, yellow 30%, green 70%);
+    .repeating-linear-gradient(273deg, red, yellow 30%, green 70%);
 }</code></pre>
                             <p class="note">参数写法及注意事项请参考 <a href="#linear-gradient"><code>.linear-gradient()</code></a>。</p>
                         </li>
@@ -1528,15 +1528,15 @@ npm test</code></pre>
                                 <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.radial-gradient(black, white);
+    .radial-gradient(black, white);
 }
 
 .box-two {
-.radial-gradient(closest-corner at 30% 30%, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
+    .radial-gradient(closest-corner at 30% 30%, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
 }
 
 .box-three {
-.radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
+    .radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
 }</code></pre>
                             <p class="note">不支持采用老 WebKit 语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器。另外，不支持按具体尺寸（<code>px</code> / <code>%</code> 等）设置渐变范围，只能使用范围关键字即 <code>closest-side</code> / <code>closest-corner</code> / <code>farthest-side</code> / <code>farthest-corner</code> 之一。</p>
                         </li>
@@ -1556,11 +1556,11 @@ npm test</code></pre>
                                 <dd>色标，至少有两个参数值。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-one {
-.repeating-radial-gradient(white, black 20px);
+    .repeating-radial-gradient(white, black 20px);
 }
 
 .box-two {
-.repeating-radial-gradient(ellipse farthest-side, white, black 20px);
+    .repeating-radial-gradient(ellipse farthest-side, white, black 20px);
 }</code></pre>
                             <p class="note">参数写法及注意事项请参考 <a href="#radial-gradient"><code>.radial-gradient()</code></a>。</p>
                         </li>
@@ -1578,7 +1578,7 @@ npm test</code></pre>
                                 <dd>元素的显示方式，可用值参见 <a href="http://www.w3.org/TR/CSS21/visuren.html#display-prop">Visual formatting model</a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.card {
-.display(flex);
+    .display(flex);
 }</code></pre>
                         </li>
                     </ul>
@@ -1596,7 +1596,7 @@ npm test</code></pre>
                                 <dd>布局方向，可用值为 <code>row</code> / <code>row-reverse</code> / <code>column</code> / <code>column-reverse</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.container {
-.flex-direction(row-reverse);
+    .flex-direction(row-reverse);
 }</code></pre>
                         </li>
                     </ul>
@@ -1613,7 +1613,7 @@ npm test</code></pre>
                                 <dd>折行方式。<code>wrap</code> 表示可以折行，<code>nowrap</code> 表示必须排列在同一行中。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.container {
-.flex-wrap(wrap);
+    .flex-wrap(wrap);
 }</code></pre>
                         </li>
                     </ul>
@@ -1630,7 +1630,7 @@ npm test</code></pre>
                                 <dd>排列方式，写法参见 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow">flex-flow - CSS | MDN</a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.container {
-.flex-flow(column-reverse nowrap);
+    .flex-flow(column-reverse nowrap);
 }</code></pre>
                         </li>
                     </ul>
@@ -1647,7 +1647,7 @@ npm test</code></pre>
                                 <dd>排列次序。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.card-main {
-.order(1);
+    .order(1);
 }</code></pre>
                         </li>
                     </ul>
@@ -1664,7 +1664,7 @@ npm test</code></pre>
                                 <dd>定义伸缩盒项目元素的伸缩因子和初始尺寸。写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">flex - CSS | MDN</a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.main {
-.flex(2 1 600px);
+    .flex(2 1 600px);
 }</code></pre>
                         </li>
                     </ul>
@@ -1681,7 +1681,7 @@ npm test</code></pre>
                                 <dd>伸展因子。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.main {
-.flex-grow(2);
+    .flex-grow(2);
 }</code></pre>
                         </li>
                     </ul>
@@ -1698,7 +1698,7 @@ npm test</code></pre>
                                 <dd>收缩因子。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.main {
-.flex-shrink(1);
+    .flex-shrink(1);
 }</code></pre>
                         </li>
                     </ul>
@@ -1715,7 +1715,7 @@ npm test</code></pre>
                                 <dd>初始尺寸。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.main {
-.flex-basis(600px);
+    .flex-basis(600px);
 }</code></pre>
                         </li>
                     </ul>
@@ -1732,7 +1732,7 @@ npm test</code></pre>
                                 <dd>多余空间分配方式。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.gallery {
-.justify-content(space-around);
+    .justify-content(space-around);
 }</code></pre>
                             <figure class="note">
                                 <figcaption><code>justify-content</code> 值含义见下图：</figcaption>
@@ -1753,7 +1753,7 @@ npm test</code></pre>
                                 <dd>多余空间分配方式。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.gallery {
-.align-items(center);
+    .align-items(center);
 }</code></pre>
                             <figure class="note">
                                 <figcaption><code>align-items</code> 值含义见下图：</figcaption>
@@ -1774,7 +1774,7 @@ npm test</code></pre>
                                 <dd>多余空间分配方式。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.photo {
-.align-self(flex-start);
+    .align-self(flex-start);
 }</code></pre>
                             <p class="note">取值含义参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
                         </li>
@@ -1792,7 +1792,7 @@ npm test</code></pre>
                                 <dd>多余空间分配方式。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.photo {
-.align-content(flex-start);
+    .align-content(flex-start);
 }</code></pre>
                             <figure class="note">
                                 <figcaption><code>align-content</code> 值含义见下图：</figcaption>
@@ -1813,7 +1813,7 @@ npm test</code></pre>
                                 <dd>排列方向。可用值为 <code>horizontal</code> / <code>vertical</code> / <code>inline-axis</code> / <code>block-axis</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.gallery {
-.box-orient(horizontal);
+    .box-orient(horizontal);
 }</code></pre>
                         </li>
                     </ul>
@@ -1831,7 +1831,7 @@ npm test</code></pre>
                                 <dd>排列方向。可用值为 <code>normal</code> / <code>reverse</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.gallery {
-.box-direction(reverse);
+    .box-direction(reverse);
 }</code></pre>
                         </li>
                     </ul>
@@ -1849,7 +1849,7 @@ npm test</code></pre>
                                 <dd>分组序号。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.current-item {
-.box-ordinal-group(1);
+    .box-ordinal-group(1);
 }</code></pre>
                         </li>
                     </ul>
@@ -1867,7 +1867,7 @@ npm test</code></pre>
                                 <dd>分组序号。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.main-item {
-.box-flex-group(1);
+    .box-flex-group(1);
 }</code></pre>
                         </li>
                     </ul>
@@ -1885,7 +1885,7 @@ npm test</code></pre>
                                 <dd>伸展因子。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.main-item {
-.box-flex(2);
+    .box-flex(2);
 }</code></pre>
                         </li>
                     </ul>
@@ -1903,7 +1903,7 @@ npm test</code></pre>
                                 <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>baseline</code> / <code>stretch</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.container {
-.box-align(baseline);
+    .box-align(baseline);
 }</code></pre>
                             <p class="note">参数值可参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
                         </li>
@@ -1922,7 +1922,7 @@ npm test</code></pre>
                                 <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.container {
-.box-pack(justify);
+    .box-pack(justify);
 }</code></pre>
                             <p class="note">参数值可参考 <a href="#justify-content"><code>.justify-content()</code></a>。<code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code> 分别对应 <code>flex-start</code> / <code>center</code> / <code>flex-end</code> / <code>space-between</code>。</p>
                         </li>
@@ -1945,7 +1945,7 @@ npm test</code></pre>
                     <h2><a name="clearfix"></a><code><a href="#clearfix">.clearfix()</a></code></h2>
                     <p class="desc">建立 <abbr title="block formatting context">BFC</abbr> 清除元素内部的浮动，使元素获得应有的高度。参见 <a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>。</p>
                     <pre class="usage"><code class="less">.container {
-.clearfix();
+    .clearfix();
 }</code></pre>
                 </li>
                 <li>
@@ -1959,7 +1959,7 @@ npm test</code></pre>
                                 <dd>正方形边长。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.square {
-.size(16px);
+    .size(16px);
 }</code></pre>
                         </li>
                         <li>
@@ -1971,7 +1971,7 @@ npm test</code></pre>
                                 <dd>矩形高度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.rect {
-.size(320px, 80px);
+    .size(320px, 80px);
 }</code></pre>
                         </li>
                     </ul>
@@ -1987,7 +1987,7 @@ npm test</code></pre>
                                 <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 margin 属性。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.margin-rem(24px);
+    .margin-rem(24px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2003,7 +2003,7 @@ npm test</code></pre>
                                 <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.margin-top-rem(12px);
+    .margin-top-rem(12px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2036,7 +2036,7 @@ npm test</code></pre>
                                 <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.margin-em(24px);
+    .margin-em(24px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2052,7 +2052,7 @@ npm test</code></pre>
                                 <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.margin-top-em(12px);
+    .margin-top-em(12px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2083,7 +2083,7 @@ npm test</code></pre>
                                 <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 padding 属性。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.padding-rem(24px);
+    .padding-rem(24px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2099,7 +2099,7 @@ npm test</code></pre>
                                 <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.padding-top-rem(12px);
+    .padding-top-rem(12px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2132,7 +2132,7 @@ npm test</code></pre>
                                 <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.padding-em(24px);
+    .padding-em(24px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2148,7 +2148,7 @@ npm test</code></pre>
                                 <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.post {
-.padding-top-em(12px);
+    .padding-top-em(12px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2192,7 +2192,7 @@ npm test</code></pre>
                                 <dd>预设字体类型，可取值为 <code>base</code> / <code>heading</code> / <code>code</code>，分别对应普通文本、标题、代码。</dd>
                             </dl>
                             <pre class="usage"><code class="less">pre code {
-.font-family(code);
+    .font-family(code);
 }</code></pre>
                         </li>
                     </ul>
@@ -2205,7 +2205,7 @@ npm test</code></pre>
                             <h3><a name="ellipsis-1"></a><code><a href="#ellipsis-1">.ellipsis()</a></code></h3>
                             <pre class="usage"><code class="less">.cell {
 width: 120px;
-.ellipsis();
+    .ellipsis();
 }</code></pre>
                         </li>
                         <li>
@@ -2216,8 +2216,8 @@ width: 120px;
                                 <dd>最多显示的行数。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.news {
-width: 300px;
-.ellipsis(3);
+    width: 300px;
+    .ellipsis(3);
 }</code></pre>
                             <p class="note">限制超出指定行数截断的功能只在 WebKit 内核浏览器下有效。</p>
                         </li>
@@ -2227,21 +2227,21 @@ width: 300px;
                     <h2><a name="force-wrap"></a><code><a href="#force-wrap">.force-wrap()</a></code></h2>
                     <p class="desc">强制换行，阻止长字符串（例如 URL 或很长的连续英文字符）打破布局。</p>
                     <pre class="usage"><code class="less">.comment {
-.force-wrap();
+    .force-wrap();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="hide-text"></a><code><a href="#hide-text">.hide-text()</a></code></h2>
                     <p class="desc">用于隐藏元素内文字，一般在文字隐藏之后使用背景图片替代显示。如果使用此 mixin 的元素是 <code>inline-block</code> 元素，请确保为其设置宽度。</p>
                     <pre class="usage"><code class="less">.logo {
-.hide-text();
+    .hide-text();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="invisible"></a><code><a href="#invisible">.invisible()</a></code></h2>
                     <p class="desc">用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p>
                     <pre class="usage"><code class="less">.screen-reader-notes {
-.invisible();
+    .invisible();
 }</code></pre>
                     <p class="note">了解更多相关内容可以参考 <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content">Using CSS clip as an Accessible Method of Hiding Content</a>。</p>
                 </li>
@@ -2260,17 +2260,17 @@ width: 300px;
                                 <dd>背景图 <code>background-position</code> 的垂直方向位置。可选，默认值：<code>0</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.logo-one {
-.inline-block();
-.img-replace("http://www.baidu.com/img/bdlogo.gif");
-width: 270px;
-height: 129px;
+    .inline-block();
+    .img-replace("http://www.baidu.com/img/bdlogo.gif");
+    width: 270px;
+    height: 129px;
 }
 
 .logo-two {
-.inline-block();
-.img-replace(url("../logo.gif"));
-width: 270px;
-height: 129px;
+    .inline-block();
+    .img-replace(url("../logo.gif"));
+    width: 270px;
+    height: 129px;
 }</code></pre>
                             <p class="warning">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
                         </li>
@@ -2287,7 +2287,7 @@ height: 129px;
                                 <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.text {
-.font-size-rem(32px);
+    .font-size-rem(32px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2305,7 +2305,7 @@ height: 129px;
                                 <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.text {
-.font-size-em(24px);
+    .font-size-em(24px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2337,14 +2337,14 @@ height: 129px;
                     <h2><a name="hover-link"></a><code><a href="#hover-link">.hover-link()</a></code></h2>
                     <p class="desc">用于实现链接默认无下划线，hover后有下划线的样式。</p>
                     <pre class="usage"><code class="less">a {
-.hover-link();
+    .hover-link();
 }</code></pre>
                 </li>
                 <li>
                     <h2><a name="unstyled-link"></a><code><a href="#unstyled-link">.unstyled-link()</a></code></h2>
                     <p class="desc">用于将链接变成默认的文字样式。</p>
                     <pre class="usage"><code class="less">.plain-link {
-.unstyled-link();
+    .unstyled-link();
 }</code></pre>
                 </li>
                 <li>
@@ -2363,8 +2363,8 @@ height: 129px;
                             </dl>
                             <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
                             <pre class="usage"><code class="less">article p {
-line-height: 24px;
-.drop-cap(24px);
+    line-height: 24px;
+    .drop-cap(24px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2389,11 +2389,11 @@ line-height: 24px;
 &lt;/p&gt;
 </code></pre>
                             <pre class="usage"><code class="less">p {
-line-height: 24px;
+    line-height: 24px;
 
-.drop {
-    .drop-cap-inline(24px, 2);
-}
+    .drop {
+        .drop-cap-inline(24px, 2);
+    }
 }</code></pre>
                         </li>
                     </ul>
@@ -2478,16 +2478,16 @@ line-height: 24px;
                         </li>
                     </ul>
                     <pre class="usage"><code class="less">.entry {
-.rhythm(14px, 2);
-blockquote {
-    .rhythm-margin(1);
-    .rhythm-padding(1, 1px solid #CCC);
-}
-p {
-    .rhythm-line-height(2);
-    .rhythm-margin(2);
-    .rhythm-padding(2);
-}
+    .rhythm(14px, 2);
+    blockquote {
+        .rhythm-margin(1);
+        .rhythm-padding(1, 1px solid #CCC);
+    }
+    p {
+        .rhythm-line-height(2);
+        .rhythm-margin(2);
+        .rhythm-padding(2);
+    }
 }</code></pre>
                 </li>
                 <li>
@@ -2501,7 +2501,7 @@ p {
                                 <dd>行高。</dd>
                             </dl>
                             <pre class="usage"><code class="less">pre code {
-.centered-line(24px);
+    .centered-line(24px);
 }</code></pre>
                         </li>
                         <li>
@@ -2513,7 +2513,7 @@ p {
                                 <dd>相关元素是否为输入框。</dd>
                             </dl>
                             <pre class="usage"><code class="less">pre code {
-.centered-line(24px, true);
+    .centered-line(24px, true);
 }</code></pre>
                             <p class="note">WebKit 下文本输入框中的文字会自动垂直居中，如果设置了 <code>line-height</code> 反而会使光标、选区的高度显示不正常。</p>
                         </li>
@@ -2539,7 +2539,7 @@ p {
                         <li>
                             <h3><a name="make-row-1"></a><code><a href="#make-row-1">.make-row()</a></code></h3>
                             <pre class="usage"><code class="less">body {
-.make-row();
+    .make-row();
 }</code></pre>
                             <p class="note">不需要再自行调用 <a href="#clearfix"><code class="mixin">.clearfix()</code></a>。</p>
                         </li>
@@ -2560,11 +2560,11 @@ p {
                                 <dd>偏移量。可选，默认为 <code>0</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">main {
-.make-column(2/3, 5%);
+    .make-column(2/3, 5%);
 }
 
 aside {
-.make-column(1/3, 5%);
+    .make-column(1/3, 5%);
 }</code></pre>
                             <p class="note">适用于按百分比的流式栅格布局。</p>
                         </li>
@@ -2581,11 +2581,11 @@ aside {
                                 <dd>偏移量。可选，默认为 <code>0</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">main {
-.make-column(2/3, 15px, 960px);
+    .make-column(2/3, 15px, 960px);
 }
 
 aside {
-.make-column(1/3, 15px, 960px);
+    .make-column(1/3, 15px, 960px);
 }</code></pre>
                             <p class="note">适用于按非百分比的栅格布局。</p>
                         </li>
@@ -2625,7 +2625,7 @@ aside {
 &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
                             <pre class="usage"><code class="less">body {
-.est-layout-fixed-header(80px, ~".header");
+    .est-layout-fixed-header(80px, ~".header");
 }</code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。页头的默认 <code>z-index</code> 为 <a href="#header-z-index"><code class="default-value">@header-z-index</code></a>。</p>
                         </li>
@@ -2650,7 +2650,7 @@ aside {
 &lt;div class=&quot;est-footer&quot;&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
                             <pre class="usage"><code class="less">body {
-.est-layout-fixed-footer(80px, ~".body");
+    .est-layout-fixed-footer(80px, ~".body");
 }</code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用。页脚的默认 <code>z-index</code> 为 <a href="#footer-z-index"><code class="default-value">@footer-z-index</code></a>。</p>
                         </li>
@@ -2687,7 +2687,7 @@ height: 100%;
 }
 
 body {
-.est-layout-sticky-footer(100px, ~".body");
+    .est-layout-sticky-footer(100px, ~".body");
 }</code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用，且须要保证外层所有 DOM 元素的高度为 <code>100%</code>。不支持与其他布局混用。</p>
                         </li>
@@ -2704,7 +2704,7 @@ body {
                                 <dd>页面内容区域宽度。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.page {
-.est-layout-page(980px);
+    .est-layout-page(980px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2731,7 +2731,7 @@ body {
 &lt;div class="est-sidebar"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
                             <pre class="usage"><code class="less">body {
-.est-layout-sidebar(left, 200px, ~".main");
+    .est-layout-sidebar(left, 200px, ~".main");
 }</code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-main</code>、<code>est-sidebar</code> 两个类名配合使用。</p>
                         </li>
@@ -2756,7 +2756,7 @@ body {
 &lt;div class="est-sidebar-secondary"&gt;&lt;/div&gt;
 &lt;/body&gt;</code></pre>
                             <pre class="usage"><code class="less">body {
-.est-layout-sidebar(200px, 160px, ~".main");
+    .est-layout-sidebar(200px, 160px, ~".main");
 }</code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-main</code>、<code>est-sidebar-primary</code> 及 <code>est-sidebar-secondary</code> 三个类名配合使用。</p>
                         </li>
@@ -2789,7 +2789,7 @@ body {
 &lt;/div&gt;
 &lt;/body&gt;</code></pre>
                             <pre class="usage"><code class="less">.overlay {
-.est-layout-popup(center, 80, ~"popup");
+    .est-layout-popup(center, 80, ~"popup");
 }</code></pre>
                             <p class="note">必须与类名 <code>est-popup</code> 配合使用。弹出层的默认 <code>z-index</code> 为 <a href="#modal-z-index"><code class="default-value">@modal-z-index</code></a>。</p>
                         </li>
@@ -2817,7 +2817,7 @@ body {
 &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
                             <pre class="usage"><code class="less">.users {
-.est-layout-horizontal-list(10px, left);
+    .est-layout-horizontal-list(10px, left);
 }</code></pre>
                         </li>
                     </ul>
@@ -2842,7 +2842,7 @@ body {
 &lt;img src="http://placehold.it/800x600" alt="" /&gt;
 &lt;/div&gt;</code></pre>
                             <pre class="usage"><code class="less">.fluid-wrap {
-.est-layout-fluid-fixed-ratio(800, 600);
+    .est-layout-fluid-fixed-ratio(800, 600);
 }</code></pre>
                             <p class="note">会生效的元素类型包括 <code>&lt;object&gt;</code> / <code>&lt;embed&gt;</code> / <code>&lt;iframe&gt;</code> / <code>&lt;img&gt;</code> 以及符合选择器 <code>@target-selector</code> 的元素。<code>@width</code> 和 <code>@height</code> 参数的单位需要统一。Demo <a href="http://codepen.io/zmmbreeze/full/khIqH">见此</a>。可参考 <a href="http://css-tricks.com/rundown-of-handling-flexible-media/">Rundown of Handling Flexible Media</a>。</p>
                         </li>
@@ -2876,11 +2876,11 @@ body {
                                 <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind emboss”）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.blind-embossed {
-.embossed-text(lightblue);
+    .embossed-text(lightblue);
 }
 
 .embossed {
-.embossed-text(lightblue, #6699CC);
+    .embossed-text(lightblue, #6699CC);
 }</code></pre>
                         </li>
                     </ul>
@@ -2898,11 +2898,11 @@ body {
                                 <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind deboss”）。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.blind-debossed {
-.debossed-text(lightblue);
+    .debossed-text(lightblue);
 }
 
 .debossed {
-.debossed-text(lightblue, #6699CC);
+    .debossed-text(lightblue, #6699CC);
 }</code></pre>
                         </li>
                     </ul>
@@ -2918,7 +2918,7 @@ body {
                                 <dd>文字颜色。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.three-d {
-.3d-text(lightblue);
+    .3d-text(lightblue);
 }</code></pre>
                         </li>
                     </ul>
@@ -2934,7 +2934,7 @@ body {
                                 <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.glow-text {
-.glow-text(10px);
+    .glow-text(10px);
 }</code></pre>
                             <p class="note">此时发光颜色为当前文字颜色。</p>
                         </li>
@@ -2947,7 +2947,7 @@ body {
                                 <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.three-d {
-.glow-text(gold, 20px);
+    .glow-text(gold, 20px);
 }</code></pre>
                         </li>
                     </ul>
@@ -2965,7 +2965,7 @@ body {
                                 <dd>模糊半径。可选，默认值：<code>0.15em</code>。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.blurry {
-.blurry-text(#FFFFFF);
+    .blurry-text(#FFFFFF);
 }</code></pre>
                         </li>
                     </ul>
@@ -3004,7 +3004,7 @@ body {
                                 <img src="img/triangle.png" alt="direction + origin">
                             </figure>
                             <pre class="usage"><code class="less">.comment:after {
-.triangle(top left, #ccc, 10px, corner);
+    .triangle(top left, #ccc, 10px, corner);
 }</code></pre>
                         </li>
                     </ul>
@@ -3021,7 +3021,7 @@ body {
                                 <dd>所绘圆形的直径。支持绝对长度或百分比。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.ball {
-.circle(30%);
+    .circle(30%);
 }</code></pre>
                         </li>
                         <li>
@@ -3033,7 +3033,7 @@ body {
                                 <dd>圆形背景，可以为颜色或其他合法的 <code>background</code> 属性值。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.ball {
-.circle(30%, url(img/texture.png) lightgreen no-repeat center center);
+    .circle(30%, url(img/texture.png) lightgreen no-repeat center center);
 }</code></pre>
                         </li>
                     </ul>
@@ -3055,11 +3055,11 @@ body {
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的偏移量。写法参考 CSS <code>margin</code> 属性的值。可以使用 <code>_</code> 作为占位符，表明此方向上的值无需覆盖。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box-1 {
-.absolute(0, _, _, 0); // position: absolute; top: 0; left: 0;
+    .absolute(0, _, _, 0); // position: absolute; top: 0; left: 0;
 }
 
 .box-2 {
-.absolute(0, 10px, 5px); // position: absolute; top: 0; right: 10px; bottom: 5px; left: 10px;
+    .absolute(0, 10px, 5px); // position: absolute; top: 0; right: 10px; bottom: 5px; left: 10px;
 }</code></pre>
                         </li>
                     </ul>
@@ -3076,7 +3076,7 @@ body {
                             </dl>
                             <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p>
                             <pre class="usage"><code class="less">.box {
-.relative(0, _, _, 0); // position: relative; top: 0; left: 0;
+    .relative(0, _, _, 0); // position: relative; top: 0; left: 0;
 }</code></pre>
                         </li>
                     </ul>
@@ -3093,7 +3093,7 @@ body {
                             </dl>
                             <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p>
                             <pre class="usage"><code class="less">.box {
-.fixed(0, _, _, 0); // position: fixed; top: 0; left: 0;
+    .fixed(0, _, _, 0); // position: fixed; top: 0; left: 0;
 }</code></pre>
                         </li>
                     </ul>
@@ -3109,7 +3109,7 @@ body {
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的外边距。写法参考 CSS <code>margin</code> 属性的值。可以使用 <code>_</code> 作为占位符，表明此方向上的值无需覆盖。</dd>
                             </dl>
                             <pre class="usage"><code class="less">.box {
-.margin(10px, 5px, _, 0); // margin-top: 10px; margin-right: 5px; margin-left: 0;
+    .margin(10px, 5px, _, 0); // margin-top: 10px; margin-right: 5px; margin-left: 0;
 }</code></pre>
                         </li>
                     </ul>
@@ -3126,7 +3126,7 @@ body {
                             </dl>
                             <p class="note">边距参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
                             <pre class="usage"><code class="less">.box {
-.padding(10px, _); // padding-top: 10px; padding-bottom: 10px;
+    .padding(10px, _); // padding-top: 10px; padding-bottom: 10px;
 }</code></pre>
                         </li>
                     </ul>
@@ -3143,7 +3143,7 @@ body {
                             </dl>
                             <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
                             <pre class="usage"><code class="less">.box {
-.border-color(red, _, _, blue); // border-top-color: #ff0000; border-left-color: #0000ff;
+    .border-color(red, _, _, blue); // border-top-color: #ff0000; border-left-color: #0000ff;
 }</code></pre>
                         </li>
                     </ul>
@@ -3160,7 +3160,7 @@ body {
                             </dl>
                             <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
                             <pre class="usage"><code class="less">.box {
-.border-style(solid, _, _); // border-top-style: solid;
+    .border-style(solid, _, _); // border-top-style: solid;
 }</code></pre>
                         </li>
                     </ul>
@@ -3177,7 +3177,7 @@ body {
                             </dl>
                             <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
                             <pre class="usage"><code class="less">.box {
-.border-width(_, _, 3px, _); // border-bottom-width: 3px;
+    .border-width(_, _, 3px, _); // border-bottom-width: 3px;
 }</code></pre>
                         </li>
                     </ul>
