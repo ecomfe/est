@@ -1,6 +1,6 @@
 # Changelog
 * 2.0.2 **最新**
-  * 修正了 `margin-rem()` 和 `padding-rem()` 处理 0 值时的问题，并且优化了输出
+  * 修正了 `margin-em()`、`padding-em()`、`margin-rem()` 和 `padding-rem()` 处理 0 值时的问题，并且优化了输出
   * 优化了所有 `margin-*-rem()` 和 `padding-*-rem()` 的实现
 
 * 2.0.1
