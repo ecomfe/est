@@ -1,5 +1,8 @@
 # Changelog
-* 2.0.0 **最新**
+* 2.0.1 **最新**
+  * 修正了 `all.less` 没有默认引入 `grid.less` 的问题
+
+* 2.0.0
   * 修正了 `.margin-em()` / `.padding-em()` / `.margin-rem()` / `.padding-rem()` 在 Less `1.5.0` 以上版本报错的问题
   * 增加了 `.rgba-background()`，实现兼容至 IE6 的半透明背景色
   * 优化了 `.font-face()` 的实现
