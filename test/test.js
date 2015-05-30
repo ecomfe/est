@@ -151,21 +151,29 @@ TestRunner.prototype.next = function () {
             me.next();
         });
     } else {
-        logLine('\n--------\n');
-        if (!this.failed) {
-            logLine('All ' + this.total + ' spec' + (this.total > 1 ? 's' : '') + ' passed.');
-        } else {
-            var passed = this.total - this.failed;
-            logLine(
-                passed + ' spec' + (passed > 1 ? 's' : '') + ' passed, '
-                + this.failed + ' spec' + (this.failed > 1 ? 's' : '') + ' failed.'
-            );
-        }
+        this.end();
+    }
+};
+TestRunner.prototype.end = function () {
+    logLine('\n--------\n');
+    if (!this.failed) {
+        logLine('All ' + this.total + ' spec' + (this.total > 1 ? 's' : '') + ' passed.');
+    } else {
+        var passed = this.total - this.failed;
+        logLine(
+            passed + ' spec' + (passed > 1 ? 's' : '') + ' passed, '
+            + this.failed + ' spec' + (this.failed > 1 ? 's' : '') + ' failed.'
+        );
+
+        // exit with code 1
+        process.on('exit', function () {
+            process.reallyExit(1);
+        });
     }
 };
 TestRunner.prototype.start = function () {
     this.next();
-}
+};
 
 var runner = new TestRunner(tests);
 runner.start();
