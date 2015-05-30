@@ -1,4 +1,4 @@
-est (EFE Styling Toolkit) [![NPM package](https://img.shields.io/npm/v/less-plugin-est.svg)](https://www.npmjs.com/package/less-plugin-est) [![Build Statis](https://api.travis-ci.org/ecomfe/est.svg)](https://travis-ci.org/ecomfe/est)
+est (EFE Styling Toolkit) [![NPM package](https://img.shields.io/npm/v/less-plugin-est.svg)](https://www.npmjs.com/package/less-plugin-est) [![Build Status](https://api.travis-ci.org/ecomfe/est.svg)](https://travis-ci.org/ecomfe/est)
 ===
 
 > From Middle English este, from Old English ēst (“will, consent, favour, grace, liberality, munificence, bounty, kindness, love, good pleasure, harmony, liberal gifts, luxuries”)
