@@ -1,5 +1,9 @@
 # Changelog
-* 2.0.2 **最新**
+* 2.0.3 **最新**
+  * 增加了插件 @ 规则去重功能的单测
+  * 增加了插件代码的 JSDoc
+
+* 2.0.2
   * 修正了 `margin-em()`、`padding-em()`、`margin-rem()` 和 `padding-rem()` 处理 0 值时的问题，并且优化了输出
   * 优化了所有 `margin-*-rem()` 和 `padding-*-rem()` 的实现
 
