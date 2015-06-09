@@ -48,7 +48,7 @@ est can be included in three ways:
         $ lessc styles.less --est
         ```
 
-3. use it programatically on Node.js:
+3. use it programatically in Node.js apps:
 
     ```js
     var less = require('less');
