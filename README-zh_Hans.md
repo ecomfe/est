@@ -10,7 +10,7 @@ est 提供了一系列方便快捷的 [mixin](http://lesscss.org/features/#mixin
 
 ## 快速开始
 
-est 可以以两种方式引入您的项目：
+est 可以以三种方式引入您的项目：
 
 1. Less 代码中引入：
 
@@ -47,6 +47,23 @@ est 可以以两种方式引入您的项目：
         ```bash
         $ lessc styles.less --est
         ```
+
+3. 在 Node.js 中以编程方式调用:
+
+    ```js
+    var less = require('less');
+    var Est = require('less-plugin-est');
+
+    var src = '.box { .clearfix(); }';
+
+    less.render(src, {
+        plugins: [
+            new Est()
+        ]
+    }).then(function (result) {
+        // handle compiling result
+    });
+    ```
 
 
 ## 插件功能及选项

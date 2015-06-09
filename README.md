@@ -10,7 +10,7 @@ Est provides over 100 handy [mixins](http://lesscss.org/features/#mixins-feature
 
 ## Quick Start
 
-est can be included in two ways:
+est can be included in three ways:
 
 1. import in your Less code:
 
@@ -48,6 +48,22 @@ est can be included in two ways:
         $ lessc styles.less --est
         ```
 
+3. use it programatically on Node.js:
+
+    ```js
+    var less = require('less');
+    var Est = require('less-plugin-est');
+
+    var src = '.box { .clearfix(); }';
+
+    less.render(src, {
+        plugins: [
+            new Est()
+        ]
+    }).then(function (result) {
+        // handle compiling result
+    });
+    ```
 
 ## Plugin Features & Options
 
