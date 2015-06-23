@@ -55,11 +55,12 @@ $(function () {
     // search
     var haystack = [];
     function wrapKey(me, type) {
+        var $me = $(me);
         return {
-            key: $(me).attr('name'),
+            key: $me.attr('name'),
             type: type,
-            desc: $(me).parent().next().html().replace(/<a .*?>(.+?)<\/a>/g, '$1') || ''
-        }
+            desc: $me.parent().nextAll('.desc').eq(0).html().replace(/<a .*?>(.+?)<\/a>/g, '$1') || ''
+        };
     }
     function stripTags(html) {
         return html.replace(/<[^>]+>/g, '');
