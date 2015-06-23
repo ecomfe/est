@@ -44,7 +44,7 @@ abbr {
 
 b,
 strong {
-    font-weight: 400;
+    font-weight: 700;
 }
 
 ul {
@@ -154,7 +154,7 @@ body {
     }
 
     color: #4c4c4c;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 h1 {
@@ -195,7 +195,7 @@ section {
     background-color: @header-bg;
     padding-bottom: 50px;
     overflow: auto;
-    .transition(0.5s);
+    transition: all 0.5s;
 
     &:hover {
         background-color: fadein(@header-bg, 10%);
@@ -261,11 +261,6 @@ section {
         margin: 0 20px 0 0;
         font-size: 2.8em;
         display: inline-block;
-
-        small {
-            font-size: 40%;
-            font-weight: 100;
-        }
     }
 
     .badges {
@@ -347,7 +342,7 @@ section {
             display: inline-block;
             padding: 5px 0;
             font-size: 18px;
-            font-weight: 100;
+            font-weight: 300;
             color: @est-blue;
         }
 
@@ -412,7 +407,7 @@ section {
         border-radius: 3px;
         color: @est-blue;
         font-size: 0.9em;
-        font-weight: 100;
+        font-weight: 300;
     }
 }
 
@@ -430,7 +425,6 @@ section {
             display: inline-block;
             background-color: @est-blue;
             .opacity(70);
-            .transition(0.3s);
             color: #fff;
 
             &:hover {
@@ -462,7 +456,7 @@ dd,
         border-radius: 3px;
         .debossed-text(#fff, @est-blue);
         font-size: 0.9em;
-        font-weight: 100;
+        font-weight: 300;
         .font-awesome-icon(leaf, lightgreen);
     }
 
@@ -514,9 +508,8 @@ pre {
     background-color: #272822;
     color: #fff;
     .opacity(80);
-    .transition(0.5s);
     line-height: 1.2;
-    font-weight: 100;
+    font-weight: 300;
     white-space: pre;
     word-wrap: normal;
 
@@ -591,7 +584,7 @@ pre .less {
     padding: 10px 10px;
     background-color: fadeout(#333, 20%);
     font-size: 0.8em;
-    .transition(0.5s);
+    transition: all 0.5s;
     z-index: 2048;
 
     &.fullscreen {
@@ -623,7 +616,7 @@ pre .less {
         padding: 4px 10px;
         background-color: @bg;
         .font-family(code);
-        font-weight: 100;
+        font-weight: 300;
         color: #fff;
         outline: none;
 
@@ -692,7 +685,6 @@ pre .less {
         height: 65px;
         margin: 0 10px 10px 0;
         .opacity(70);
-        .transition(0.3s);
 
         &:hover {
             .opacity(100);
