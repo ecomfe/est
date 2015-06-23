@@ -1,18 +1,23 @@
-$(function() {
+$(function () {
+
+    // load projects content
+    $.get('http://ecomfe.github.io/efe-meta/html/full-intro.html').then(function (html) {
+        $('.links').eq(0).append(html);
+    });
 
     // highlight nav while scrolling
-    $('.module, .overview').waypoint(function(direction) {
+    $('.module, .overview').waypoint(function (direction) {
         var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
         var $links = $('.nav a[href="#' + name + '"]');
         $links.toggleClass('active', direction === 'down');
     }, {
         offset: '100%'
-    }).waypoint(function(direction) {
+    }).waypoint(function (direction) {
         var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
         var $links = $('.nav a[href="#' + name + '"]');
         $links.toggleClass('active', direction === 'up');
     }, {
-        offset: function() {
+        offset: function () {
             return -$(this).height() + 80;
         }
     });
@@ -60,10 +65,10 @@ $(function() {
         return html.replace(/<[^>]+>/g, '');
     }
 
-    $('.mixins h2 > a[name]').each(function() {
+    $('.mixins h2 > a[name]').each(function () {
         haystack.push(wrapKey(this, 'mixin'));
     });
-    $('.variables h2 > a[name]').each(function() {
+    $('.variables h2 > a[name]').each(function () {
         haystack.push(wrapKey(this, 'variable'));
     });
 
@@ -80,7 +85,7 @@ $(function() {
             '<li>'
             + $.map(spotlight.search($searchKey.val(), haystack, {
                 limit: isAll ? 0 : 12,
-                mapper: function(item) {
+                mapper: function (item) {
                     return item.key;
                 }
             }),
@@ -117,7 +122,7 @@ $(function() {
         $spotlight.removeClass('fullscreen');
     }
 
-    $(window).on('keydown', function(e) {
+    $(window).on('keydown', function (e) {
         if (e.which === 191) {
             $searchKey.focus();
             e.preventDefault();
@@ -138,7 +143,7 @@ $(function() {
         }
         return true;
     });
-    // .on('click', 'a[href*=#]:not([href=#])', function() {
+    // .on('click', 'a[href*=#]:not([href=#])', function () {
     //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
     //         var target = $(this.hash);
     //         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
