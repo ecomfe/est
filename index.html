@@ -255,380 +255,202 @@ npm test</code></pre>
                     <pre class="usage"><code class="less">// global scope
 .global-normalize();</code></pre>
 
-                    <pre class="output"><code class="css">/*! normalize.css v1.1.2 | MIT License | git.io/normalize */
-/* ==========================================================================
-       Base
-       ========================================================================== */
-/**
-     * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
-     *    `em` units.
-     * 2. Prevent iOS text size adjust after orientation change, without disabling
-     *    user zoom.
-     */
-html {
-  font-size: 100%;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+                    <pre class="output"><code class="css">html{
+  font-size:100%;
+  -ms-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;
 }
-/**
-     * Address `font-family` inconsistency between `textarea` and other form
-     * elements.
-     */
 html,
 button,
 input,
 select,
-textarea {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  *font-family: 'Helvetica Neue', Arial, sans-serif;
+textarea{
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  *font-family:'Helvetica Neue', Arial, sans-serif;
 }
-/**
-     * Address margins handled incorrectly in IE 6/7.
-     */
-body {
-  margin: 0;
+body{
+  margin:0;
 }
-/* ==========================================================================
-       Links
-       ========================================================================== */
-/**
-     * Address `outline` inconsistency between Chrome and other browsers.
-     */
-a:focus {
-  outline: thin dotted;
+a:focus{
+  outline:thin dotted;
 }
-/**
-     * Improve readability when focused and also mouse hovered in all browsers.
-     */
 a:active,
-a:hover {
-  outline: 0;
+a:hover{
+  outline:0;
 }
-/* ==========================================================================
-       Typography
-       ========================================================================== */
-/**
-     * Address font sizes and margins set differently in IE 6/7.
-     * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
-     * and Chrome.
-     */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+h1{
+  font-size:2em;
+  margin:0.67em 0;
 }
-h2 {
-  font-size: 1.5em;
-  margin: 0.83em 0;
+h2{
+  font-size:1.5em;
+  margin:0.83em 0;
 }
-h3 {
-  font-size: 1.17em;
-  margin: 1em 0;
+h3{
+  font-size:1.17em;
+  margin:1em 0;
 }
-h4 {
-  font-size: 1em;
-  margin: 1.33em 0;
+h4{
+  font-size:1em;
+  margin:1.33em 0;
 }
-h5 {
-  font-size: 0.83em;
-  margin: 1.67em 0;
+h5{
+  font-size:0.83em;
+  margin:1.67em 0;
 }
-h6 {
-  font-size: 0.67em;
-  margin: 2.33em 0;
+h6{
+  font-size:0.67em;
+  margin:2.33em 0;
 }
-/**
-     * Address styling not present in IE 7/8/9, Safari 5, and Chrome.
-     */
-abbr[title] {
-  border-bottom: 1px dotted;
+abbr[title]{
+  border-bottom:1px dotted;
 }
-/**
-     * Address style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
-     */
 b,
-strong {
-  font-weight: bold;
+strong{
+  font-weight:bold;
 }
-blockquote {
-  margin: 1em 40px;
+blockquote{
+  margin:1em 40px;
 }
-/**
-     * Address styling not present in Safari 5 and Chrome.
-     */
-dfn {
-  font-style: italic;
+dfn{
+  font-style:italic;
 }
-/**
-     * Address differences between Firefox and other browsers.
-     * Known issue: no IE 6/7 normalization.
-     */
-hr {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
+hr{
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  box-sizing:content-box;
+  height:0;
 }
-/**
-     * Address margins set differently in IE 6/7.
-     */
 p,
-pre {
-  margin: 1em 0;
+pre{
+  margin:1em 0;
 }
-/**
-     * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
-     */
 code,
 kbd,
 pre,
-samp {
-  font-family: Monaco, Consolas, monospace;
-  *font-family: Monaco, Consolas, monospace;
-  font-size: 1em;
+samp{
+  font-family:Monaco, Consolas, monospace;
+  *font-family:Monaco, Consolas, monospace;
+  font-size:1em;
 }
-/**
-     * Improve readability of pre-formatted text in all browsers.
-     */
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+pre{
+  white-space:pre;
+  white-space:pre-wrap;
+  word-wrap:break-word;
 }
-/**
-     * Address CSS quotes not supported in IE 6/7.
-     */
-q {
-  quotes: none;
+q{
+  quotes:none;
 }
-/**
-     * Address `quotes` property not supported in Safari 4.
-     */
 q:before,
-q:after {
-  content: '';
-  content: none;
+q:after{
+  content:'';
+  content:none;
 }
-/**
-     * Address inconsistent and variable font size in all browsers.
-     */
-small {
-  font-size: 80%;
+small{
+  font-size:80%;
 }
-/**
-     * Prevent `sub` and `sup` affecting `line-height` in all browsers.
-     */
 sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+sup{
+  font-size:75%;
+  line-height:0;
+  position:relative;
+  vertical-align:baseline;
 }
-sup {
-  top: -0.5em;
+sup{
+  top:-0.5em;
 }
-sub {
-  bottom: -0.25em;
+sub{
+  bottom:-0.25em;
 }
-/* ==========================================================================
-       Lists
-       ========================================================================== */
-/**
-     * Address margins set differently in IE 6/7.
-     */
 dl,
 menu,
 ol,
-ul {
-  margin: 1em 0;
+ul{
+  margin:1em 0;
 }
-dd {
-  margin: 0 0 0 40px;
+dd{
+  margin:0 0 0 40px;
 }
-/**
-     * Address paddings set differently in IE 6/7.
-     */
 menu,
 ol,
-ul {
-  padding: 0 0 0 40px;
+ul{
+  padding:0 0 0 40px;
 }
-/**
-     * Correct list images handled incorrectly in IE 7.
-     */
 nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none;
+nav ol{
+  list-style:none;
+  list-style-image:none;
 }
-/* ==========================================================================
-       Embedded content
-       ========================================================================== */
-/**
-     * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
-     * 2. Improve image quality when scaled in IE 7.
-     */
-img {
-  border: 0;
-  /* 1 */
-  -ms-interpolation-mode: bicubic;
-  /* 2 */
+img{
+  border:0;
+  -ms-interpolation-mode:bicubic;
 }
-/**
-     * Correct overflow displayed oddly in IE 9.
-     */
-svg:not(:root) {
-  overflow: hidden;
+svg:not(:root){
+  overflow:hidden;
 }
-/* ==========================================================================
-       Forms
-       ========================================================================== */
-/**
-     * Correct margin displayed oddly in IE 6/7.
-     */
-form {
-  margin: 0;
+form{
+  margin:0;
 }
-/**
-     * Define consistent border, margin, and padding.
-     */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+fieldset{
+  border:1px solid #c0c0c0;
+  margin:0 2px;
+  padding:0.35em 0.625em 0.75em;
 }
-/**
-     * 1. Correct color not being inherited in IE 6/7/8/9.
-     * 2. Correct text not wrapping in Firefox 3.
-     * 3. Correct alignment displayed oddly in IE 6/7.
-     */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  white-space: normal;
-  /* 2 */
-  *margin-left: -7px;
-  /* 3 */
+legend{
+  border:0;
+  padding:0;
+  white-space:normal;
+  *margin-left:-7px;
 }
-/**
-     * 1. Correct font size not being inherited in all browsers.
-     * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
-     *    and Chrome.
-     * 3. Improve appearance and consistency in all browsers.
-     */
 button,
 input,
 select,
-textarea {
-  font-size: 100%;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  vertical-align: baseline;
-  /* 3 */
-  *vertical-align: middle;
-  /* 3 */
+textarea{
+  font-size:100%;
+  margin:0;
+  vertical-align:baseline;
+  *vertical-align:middle;
 }
-/**
-     * Address Firefox 3+ setting `line-height` on `input` using `!important` in
-     * the UA stylesheet.
-     */
 button,
-input {
-  line-height: normal;
+input{
+  line-height:normal;
 }
-/**
-     * Address inconsistent `text-transform` inheritance for `button` and `select`.
-     * All other form control elements do not inherit `text-transform` values.
-     * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
-     * Correct `select` style inheritance in Firefox 4+ and Opera.
-     */
 button,
-select {
-  text-transform: none;
+select{
+  text-transform:none;
 }
-/**
-     * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
-     *    and `video` controls.
-     * 2. Correct inability to style clickable `input` types in iOS.
-     * 3. Improve usability and consistency of cursor style between image-type
-     *    `input` and others.
-     * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
-     *    Known issue: inner spacing remains in IE 6.
-     */
 button,
 html input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-  *overflow: visible;
-  /* 4 */
+input[type="submit"]{
+  -webkit-appearance:button;
+  cursor:pointer;
+  *overflow:visible;
 }
-/**
-     * Re-set default cursor for disabled elements.
-     */
 button[disabled],
-html input[disabled] {
-  cursor: default;
+html input[disabled]{
+  cursor:default;
 }
-/**
-     * 1. Address box sizing set to content-box in IE 8/9.
-     * 2. Remove excess padding in IE 8/9.
-     * 3. Remove excess padding in IE 7.
-     *    Known issue: excess padding remains in IE 6.
-     */
 input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-  *height: 13px;
-  /* 3 */
-  *width: 13px;
-  /* 3 */
+input[type="radio"]{
+  box-sizing:border-box;
+  padding:0;
+  *height:13px;
+  *width:13px;
 }
-/**
-     * Remove inner padding and border in Firefox 3+.
-     */
 button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+input::-moz-focus-inner{
+  border:0;
+  padding:0;
 }
-/**
-     * 1. Remove default vertical scrollbar in IE 6/7/8/9.
-     * 2. Improve readability and alignment in all browsers.
-     */
-textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */
+textarea{
+  overflow:auto;
+  vertical-align:top;
 }
-/* ==========================================================================
-       Tables
-       ========================================================================== */
-/**
-     * Remove most spacing between table cells.
-     */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+table{
+  border-collapse:collapse;
+  border-spacing:0;
 }
-/* ==========================================================================
-       HTML5 display definitions
-       ========================================================================== */
-/**
-     * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
-     */
 article,
 aside,
 details,
@@ -640,73 +462,39 @@ hgroup,
 main,
 nav,
 section,
-summary {
-  display: block;
+summary{
+  display:block;
 }
-/**
-     * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
-     */
 audio,
 canvas,
-video {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+video{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
 }
-/**
-     * Prevent modern browsers from displaying `audio` without controls.
-     * Remove excess height in iOS 5 devices.
-     */
-audio:not([controls]) {
-  display: none;
-  height: 0;
+audio:not([controls]){
+  display:none;
+  height:0;
 }
-/**
-     * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
-     * Known issue: no IE 6 support.
-     */
-[hidden] {
-  display: none;
+[hidden]{
+  display:none;
 }
-/* ==========================================================================
-       Typography
-       ========================================================================== */
-/**
-     * Address styling not present in IE 6/7/8/9.
-     */
-mark {
-  background: #ff0;
-  color: #666666;
+mark{
+  background:#ff0;
+  color:#666666;
 }
-/* ==========================================================================
-       Figures
-       ========================================================================== */
-/**
-     * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
-     */
-figure {
-  margin: 0;
+figure{
+  margin:0;
 }
-/**
-     * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
-     * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
-     *    (include `-moz` to future-proof).
-     */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  /* 2 */
+input[type="search"]{
+  -webkit-appearance:textfield;
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  box-sizing:content-box;
 }
-/**
-     * Remove inner padding and search cancel button in Safari 5 and Chrome
-     * on OS X.
-     */
 input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+input[type="search"]::-webkit-search-decoration{
+  -webkit-appearance:none;
 }
 </code></pre>
                 </li>
@@ -716,94 +504,41 @@ input[type="search"]::-webkit-search-decoration {
                     <pre class="usage"><code class="less">// global scope
 .global-normalize-opentype();</code></pre>
 
-                    <pre class="output"><code class="css">/*! normalize-opentype v0.1.2 | MIT License | kennethormandy.com/journal/normalize-opentype-css */
-/**
-     * 1. Turn on kerning, standard ligatures, and proportional, oldstyle numerals
-     *    Turn off all other ligatures, tabular, lining numerals, and alternates
-     */
-html,
-body {
-  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-  /* 1. */
+                    <pre class="output"><code class="css">html,
+body{
+  font-feature-settings:"kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
 }
-/* Headings
-    ========================================================================== */
-/**
-     * 1. Turn on discretionary ligatures for larger headings
-     */
 h1,
 h2,
-h3 {
-  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
-  /* 1. */
+h3{
+  font-feature-settings:"kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
 }
-/* Text-level semantics
-    ========================================================================== */
-/**
-     * 1. Change all letters to uppercase
-     * 2. Turn on small caps for upper and lowercase letters
-     */
-abbr {
-  text-transform: uppercase;
-  /* 1 */
-  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
-  /* 2 */
+abbr{
+  text-transform:uppercase;
+  font-feature-settings:"kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
 }
-/*
-     * TODO: Turn on diagonal fractions where appropriate
-     */
-time {
-  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+time{
+  font-feature-settings:"kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
 }
-/*
-     * 1. Turn off kerning and ligatures,
-     *    Turn on lining, tabular numerals, slashed zero
-     */
 pre,
 kbd,
 samp,
-code {
-  font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
-  /* 1. */
+code{
+  font-feature-settings:"kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
 }
-/**
-     * 1. Turn on proper supercript numerals
-     */
-sup {
-  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
-  /* 1. */
+sup{
+  font-feature-settings:"kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
 }
-/**
-     * 1. Turn on proper subscript numerals
-     */
-sub {
-  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
-  /* 1. */
+sub{
+  font-feature-settings:"kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
 }
-/* Tables
-    ========================================================================== */
-/**
-     * 1. Turns on tabular, lining numerals and slashed zero
-     *    Turns off kerning, as it could impact tabular numerals
-     */
-table {
-  font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
-  /* 1. */
+table{
+  font-feature-settings:"kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
 }
-/**
-     * 1. Revert to defaults for table headings
-     */
 table thead,
-table tfoot {
-  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-  /* 2. */
+table tfoot{
+  font-feature-settings:"kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
 }
-/* Forms
-    ========================================================================== */
-/**
-     * 1. Turns on lining, proportional numerals without clarified zeroes
-     * TODO: Additional input modes https://developer.mozilla.org/en/docs/Web/HTML/Element/Input#attr-inputmode
-     */
 input[type="color"],
 input[type="date"],
 input[type="datetime"],
@@ -811,9 +546,8 @@ input[type="datetime-local"],
 input[type="number"],
 input[type="range"],
 input[type="tel"],
-input[type="week"] {
-  font-feature-settings: "kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
-  /* 1. */
+input[type="week"]{
+  font-feature-settings:"kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
 }
 </code></pre>
                 </li>
@@ -892,38 +626,38 @@ tfoot,
 thead,
 tr,
 th,
-td {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+td{
+  padding:0;
+  margin:0;
+  border:0;
+  outline:0;
+  font-weight:inherit;
+  font-style:inherit;
+  font-family:inherit;
+  font-size:100%;
+  vertical-align:baseline;
 }
-body {
-  line-height: 1;
+body{
+  line-height:1;
 }
 ol,
-ul {
-  list-style: none;
+ul{
+  list-style:none;
 }
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
+table{
+  border-collapse:separate;
+  border-spacing:0;
+  vertical-align:middle;
 }
 caption,
 th,
-td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
+td{
+  text-align:left;
+  font-weight:normal;
+  vertical-align:middle;
 }
-a img {
-  border: none;
+a img{
+  border:none;
 }
 article,
 aside,
@@ -937,28 +671,28 @@ menu,
 nav,
 section,
 summary,
-main {
-  display: block;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+main{
+  display:block;
+  padding:0;
+  margin:0;
+  border:0;
+  outline:0;
+  font-weight:inherit;
+  font-style:inherit;
+  font-family:inherit;
+  font-size:100%;
+  vertical-align:baseline;
 }
 audio,
 canvas,
-video {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+video{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
 }
 audio:not([controls]),
-[hidden] {
-  display: none;
+[hidden]{
+  display:none;
 }
 </code></pre>
                 </li>
@@ -1004,31 +738,31 @@ audio:not([controls]),
 .preview tbody,
 .preview tfoot,
 .preview thead,
-.preview tr {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+.preview tr{
+  padding:0;
+  margin:0;
+  border:0;
+  outline:0;
+  font-weight:inherit;
+  font-style:inherit;
+  font-family:inherit;
+  font-size:100%;
+  vertical-align:baseline;
 }
-.preview table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
+.preview table{
+  border-collapse:separate;
+  border-spacing:0;
+  vertical-align:middle;
 }
 .preview caption,
 .preview th,
-.preview td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
+.preview td{
+  text-align:left;
+  font-weight:normal;
+  vertical-align:middle;
 }
-.preview a img {
-  border: none;
+.preview a img{
+  border:none;
 }
 </code></pre>
                 </li>
@@ -1039,10 +773,10 @@ audio:not([controls]),
     .reset-box-model();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.module {
-  padding: 0;
-  margin: 0;
-  border: 0;
+                    <pre class="output"><code class="css">.module{
+  padding:0;
+  margin:0;
+  border:0;
 }
 </code></pre>
                 </li>
@@ -1053,8 +787,8 @@ audio:not([controls]),
     .reset-focus();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.module {
-  outline: 0;
+                    <pre class="output"><code class="css">.module{
+  outline:0;
 }
 </code></pre>
                     <p class="note">IE 下需使用 <code>hidefocus</code> 属性。慎用此功能，可能带来可访问性的损失。</p>
@@ -1066,12 +800,12 @@ audio:not([controls]),
     .reset-font();
 }</code></pre>
 
-                    <pre class="output"><code class="css">span {
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+                    <pre class="output"><code class="css">span{
+  font-weight:inherit;
+  font-style:inherit;
+  font-family:inherit;
+  font-size:100%;
+  vertical-align:baseline;
 }
 </code></pre>
                 </li>
@@ -1083,8 +817,8 @@ audio:not([controls]),
     .reset-body();
 }</code></pre>
 
-                    <pre class="output"><code class="css">body {
-  line-height: 1;
+                    <pre class="output"><code class="css">body{
+  line-height:1;
 }
 </code></pre>
                 </li>
@@ -1095,10 +829,10 @@ audio:not([controls]),
     .reset-table();
 }</code></pre>
 
-                    <pre class="output"><code class="css">table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
+                    <pre class="output"><code class="css">table{
+  border-collapse:separate;
+  border-spacing:0;
+  vertical-align:middle;
 }
 </code></pre>
                 </li>
@@ -1110,10 +844,10 @@ audio:not([controls]),
 }</code></pre>
 
                     <pre class="output"><code class="css">td,
-th {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
+th{
+  text-align:left;
+  font-weight:normal;
+  vertical-align:middle;
 }
 </code></pre>
                 </li>
@@ -1125,8 +859,8 @@ th {
 }</code></pre>
 
                     <pre class="output"><code class="css">ul,
-ol {
-  list-style: none;
+ol{
+  list-style:none;
 }
 </code></pre>
                 </li>
@@ -1149,28 +883,28 @@ menu,
 nav,
 section,
 summary,
-main {
-  display: block;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-family: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+main{
+  display:block;
+  padding:0;
+  margin:0;
+  border:0;
+  outline:0;
+  font-weight:inherit;
+  font-style:inherit;
+  font-family:inherit;
+  font-size:100%;
+  vertical-align:baseline;
 }
 audio,
 canvas,
-video {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+video{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
 }
 audio:not([controls]),
-[hidden] {
-  display: none;
+[hidden]{
+  display:none;
 }
 </code></pre>
                 </li>
@@ -1205,10 +939,10 @@ audio:not([controls]),
     .box-sizing(border-box);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+                            <pre class="output"><code class="css">.box{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
 }
 </code></pre>
                         </li>
@@ -1229,17 +963,17 @@ audio:not([controls]),
     .placeholder(lightblue);
 }</code></pre>
 
-                            <pre class="output"><code class="css">textarea::-webkit-input-placeholder {
-  color: lightblue;
+                            <pre class="output"><code class="css">textarea::-webkit-input-placeholder{
+  color:lightblue;
 }
-textarea:-moz-placeholder {
-  color: lightblue;
+textarea:-moz-placeholder{
+  color:lightblue;
 }
-textarea::-moz-placeholder {
-  color: lightblue;
+textarea::-moz-placeholder{
+  color:lightblue;
 }
-textarea:-ms-input-placeholder {
-  color: lightblue;
+textarea:-ms-input-placeholder{
+  color:lightblue;
 }
 </code></pre>
                         </li>
@@ -1260,11 +994,11 @@ textarea:-ms-input-placeholder {
     .user-select(none);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.menu-item {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+                            <pre class="output"><code class="css">.menu-item{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 }
 </code></pre>
                             <p class="note"><code>user-select</code> 目前没有出现在任何 W3C 官方的规范中，浏览器厂商的实现可能会有细节上的差异，目前不建议使用除 <code>text</code> 和 <code>none</code> 以外的任何值。</p>
@@ -1285,9 +1019,9 @@ textarea:-ms-input-placeholder {
     .opacity(70%);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.overlay {
-  opacity: 0.7;
-  filter: alpha(opacity=70);
+                            <pre class="output"><code class="css">.overlay{
+  opacity:0.7;
+  filter:alpha(opacity=70);
 }
 </code></pre>
                         </li>
@@ -1307,14 +1041,14 @@ textarea:-ms-input-placeholder {
     .rgba-background(rgba(0, 0, 0, 0.7));
 }</code></pre>
 
-                            <pre class="output"><code class="css">.overlay {
-  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
-  zoom: 1\0;
-  background: rgba(0, 0, 0, 0.7);
+                            <pre class="output"><code class="css">.overlay{
+  background:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
+  zoom:1\0;
+  background:rgba(0, 0, 0, 0.7);
 }
-:root .overlay {
-  filter: none\9;
+:root .overlay{
+  filter:none\9;
 }
 </code></pre>
                         </li>
@@ -1330,14 +1064,14 @@ textarea:-ms-input-placeholder {
     .rgba-background(#000, 70%);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.overlay {
-  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
-  zoom: 1\0;
-  background: rgba(0, 0, 0, 0.7);
+                            <pre class="output"><code class="css">.overlay{
+  background:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3000000,endColorstr=#b3000000)\0;
+  zoom:1\0;
+  background:rgba(0, 0, 0, 0.7);
 }
-:root .overlay {
-  filter: none\9;
+:root .overlay{
+  filter:none\9;
 }
 </code></pre>
                         </li>
@@ -1362,15 +1096,15 @@ textarea:-ms-input-placeholder {
     .border-radius(3px 2px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
 }
-.box-two {
-  -webkit-border-radius: 3px 2px;
-  -moz-border-radius: 3px 2px;
-  border-radius: 3px 2px;
+.box-two{
+  -webkit-border-radius:3px 2px;
+  -moz-border-radius:3px 2px;
+  border-radius:3px 2px;
 }
 </code></pre>
                         </li>
@@ -1390,15 +1124,15 @@ textarea:-ms-input-placeholder {
     .border-radius(3px 6px, 5px 5px 3px 3px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-border-radius: 3px / 5px;
-  -moz-border-radius: 3px / 5px;
-  border-radius: 3px / 5px;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-border-radius:3px / 5px;
+  -moz-border-radius:3px / 5px;
+  border-radius:3px / 5px;
 }
-.box-two {
-  -webkit-border-radius: 3px 6px / 5px 5px 3px 3px;
-  -moz-border-radius: 3px 6px / 5px 5px 3px 3px;
-  border-radius: 3px 6px / 5px 5px 3px 3px;
+.box-two{
+  -webkit-border-radius:3px 6px / 5px 5px 3px 3px;
+  -moz-border-radius:3px 6px / 5px 5px 3px 3px;
+  border-radius:3px 6px / 5px 5px 3px 3px;
 }
 </code></pre>
                         </li>
@@ -1419,10 +1153,10 @@ textarea:-ms-input-placeholder {
     .border-top-left-radius(3px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-border-top-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  border-top-left-radius: 3px;
+                            <pre class="output"><code class="css">.box{
+  -webkit-border-top-left-radius:3px;
+  -moz-border-radius-topleft:3px;
+  border-top-left-radius:3px;
 }
 </code></pre>
                         </li>
@@ -1438,10 +1172,10 @@ textarea:-ms-input-placeholder {
     .border-top-left-radius(3px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-border-top-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  border-top-left-radius: 3px;
+                            <pre class="output"><code class="css">.box{
+  -webkit-border-top-left-radius:3px;
+  -moz-border-radius-topleft:3px;
+  border-top-left-radius:3px;
 }
 </code></pre>
                         </li>
@@ -1504,15 +1238,15 @@ textarea:-ms-input-placeholder {
     .box-shadow(0 -1px 0 #000, inset 0 1px 1px rgb(255, 0, 0));
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
 }
-.box-two {
-  -webkit-box-shadow: 0 -1px 0 #000000, inset 0 1px 1px #ff0000;
-  -moz-box-shadow: 0 -1px 0 #000000, inset 0 1px 1px #ff0000;
-  box-shadow: 0 -1px 0 #000000, inset 0 1px 1px #ff0000;
+.box-two{
+  -webkit-box-shadow:0 -1px 0 #000000, inset 0 1px 1px #ff0000;
+  -moz-box-shadow:0 -1px 0 #000000, inset 0 1px 1px #ff0000;
+  box-shadow:0 -1px 0 #000000, inset 0 1px 1px #ff0000;
 }
 </code></pre>
                         </li>
@@ -1537,17 +1271,17 @@ textarea:-ms-input-placeholder {
     .transition(height 0.5s ease, opacity 2s linear 0.5s);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-transition: background-color 1s linear;
-  -moz-transition: background-color 1s linear;
-  -o-transition: background-color 1s linear;
-  transition: background-color 1s linear;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-transition:background-color 1s linear;
+  -moz-transition:background-color 1s linear;
+  -o-transition:background-color 1s linear;
+  transition:background-color 1s linear;
 }
-.box-two {
-  -webkit-transition: height 0.5s ease, opacity 2s linear 0.5s;
-  -moz-transition: height 0.5s ease, opacity 2s linear 0.5s;
-  -o-transition: height 0.5s ease, opacity 2s linear 0.5s;
-  transition: height 0.5s ease, opacity 2s linear 0.5s;
+.box-two{
+  -webkit-transition:height 0.5s ease, opacity 2s linear 0.5s;
+  -moz-transition:height 0.5s ease, opacity 2s linear 0.5s;
+  -o-transition:height 0.5s ease, opacity 2s linear 0.5s;
+  transition:height 0.5s ease, opacity 2s linear 0.5s;
 }
 </code></pre>
                         </li>
@@ -1579,17 +1313,17 @@ textarea:-ms-input-placeholder {
     .transition-property(height, opacity);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-transition-property:background-color;
+  -moz-transition-property:background-color;
+  -o-transition-property:background-color;
+  transition-property:background-color;
 }
-.box-two {
-  -webkit-transition-property: height, opacity;
-  -moz-transition-property: height, opacity;
-  -o-transition-property: height, opacity;
-  transition-property: height, opacity;
+.box-two{
+  -webkit-transition-property:height, opacity;
+  -moz-transition-property:height, opacity;
+  -o-transition-property:height, opacity;
+  transition-property:height, opacity;
 }
 </code></pre>
                             <p class="note">可以参与过渡的属性列表参见 <a href="http://dev.w3.org/csswg/css-transitions/#animatable-css">Animatable properties from CSS</a>。</p>
@@ -1615,17 +1349,17 @@ textarea:-ms-input-placeholder {
     .transition-duration(0.5s, 2s);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-transition-duration: 1s;
-  -moz-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-transition-duration:1s;
+  -moz-transition-duration:1s;
+  -o-transition-duration:1s;
+  transition-duration:1s;
 }
-.box-two {
-  -webkit-transition-duration: 0.5s, 2s;
-  -moz-transition-duration: 0.5s, 2s;
-  -o-transition-duration: 0.5s, 2s;
-  transition-duration: 0.5s, 2s;
+.box-two{
+  -webkit-transition-duration:0.5s, 2s;
+  -moz-transition-duration:0.5s, 2s;
+  -o-transition-duration:0.5s, 2s;
+  transition-duration:0.5s, 2s;
 }
 </code></pre>
                         </li>
@@ -1650,17 +1384,17 @@ textarea:-ms-input-placeholder {
     .transition-timing-function(ease, linear);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-transition-timing-function: linear;
-  -moz-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-transition-timing-function:linear;
+  -moz-transition-timing-function:linear;
+  -o-transition-timing-function:linear;
+  transition-timing-function:linear;
 }
-.box-two {
-  -webkit-transition-timing-function: ease, linear;
-  -moz-transition-timing-function: ease, linear;
-  -o-transition-timing-function: ease, linear;
-  transition-timing-function: ease, linear;
+.box-two{
+  -webkit-transition-timing-function:ease, linear;
+  -moz-transition-timing-function:ease, linear;
+  -o-transition-timing-function:ease, linear;
+  transition-timing-function:ease, linear;
 }
 </code></pre>
                         </li>
@@ -1685,17 +1419,17 @@ textarea:-ms-input-placeholder {
     .transition-delay(0s, 0.5s);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-transition-delay: 0s;
-  -moz-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-transition-delay:0s;
+  -moz-transition-delay:0s;
+  -o-transition-delay:0s;
+  transition-delay:0s;
 }
-.box-two {
-  -webkit-transition-delay: 0s, 0.5s;
-  -moz-transition-delay: 0s, 0.5s;
-  -o-transition-delay: 0s, 0.5s;
-  transition-delay: 0s, 0.5s;
+.box-two{
+  -webkit-transition-delay:0s, 0.5s;
+  -moz-transition-delay:0s, 0.5s;
+  -o-transition-delay:0s, 0.5s;
+  transition-delay:0s, 0.5s;
 }
 </code></pre>
                         </li>
@@ -1720,17 +1454,17 @@ textarea:-ms-input-placeholder {
     .animation(fly-in 0.5s ease-out, fade-in 0.5s ease-out);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation: rotate 2s linear;
-  -moz-animation: rotate 2s linear;
-  -o-animation: rotate 2s linear;
-  animation: rotate 2s linear;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation:rotate 2s linear;
+  -moz-animation:rotate 2s linear;
+  -o-animation:rotate 2s linear;
+  animation:rotate 2s linear;
 }
-.box-two {
-  -webkit-animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
-  -moz-animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
-  -o-animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
-  animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
+.box-two{
+  -webkit-animation:fly-in 0.5s ease-out, fade-in 0.5s ease-out;
+  -moz-animation:fly-in 0.5s ease-out, fade-in 0.5s ease-out;
+  -o-animation:fly-in 0.5s ease-out, fade-in 0.5s ease-out;
+  animation:fly-in 0.5s ease-out, fade-in 0.5s ease-out;
 }
 </code></pre>
                         </li>
@@ -1762,17 +1496,17 @@ textarea:-ms-input-placeholder {
     .animation-name(fly-in, fade-in);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-name: rotate;
-  -moz-animation-name: rotate;
-  -o-animation-name: rotate;
-  animation-name: rotate;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-name:rotate;
+  -moz-animation-name:rotate;
+  -o-animation-name:rotate;
+  animation-name:rotate;
 }
-.box-two {
-  -webkit-animation-name: fly-in, fade-in;
-  -moz-animation-name: fly-in, fade-in;
-  -o-animation-name: fly-in, fade-in;
-  animation-name: fly-in, fade-in;
+.box-two{
+  -webkit-animation-name:fly-in, fade-in;
+  -moz-animation-name:fly-in, fade-in;
+  -o-animation-name:fly-in, fade-in;
+  animation-name:fly-in, fade-in;
 }
 </code></pre>
                         </li>
@@ -1797,17 +1531,17 @@ textarea:-ms-input-placeholder {
     .animation-duration(0.5s, 3s);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  -o-animation-duration: 3s;
-  animation-duration: 3s;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-duration:3s;
+  -moz-animation-duration:3s;
+  -o-animation-duration:3s;
+  animation-duration:3s;
 }
-.box-two {
-  -webkit-animation-duration: 0.5s, 3s;
-  -moz-animation-duration: 0.5s, 3s;
-  -o-animation-duration: 0.5s, 3s;
-  animation-duration: 0.5s, 3s;
+.box-two{
+  -webkit-animation-duration:0.5s, 3s;
+  -moz-animation-duration:0.5s, 3s;
+  -o-animation-duration:0.5s, 3s;
+  animation-duration:0.5s, 3s;
 }
 </code></pre>
                         </li>
@@ -1833,17 +1567,17 @@ textarea:-ms-input-placeholder {
 }
 </code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-timing-function:linear;
+  -moz-animation-timing-function:linear;
+  -o-animation-timing-function:linear;
+  animation-timing-function:linear;
 }
-.box-two {
-  -webkit-animation-timing-function: ease, linear;
-  -moz-animation-timing-function: ease, linear;
-  -o-animation-timing-function: ease, linear;
-  animation-timing-function: ease, linear;
+.box-two{
+  -webkit-animation-timing-function:ease, linear;
+  -moz-animation-timing-function:ease, linear;
+  -o-animation-timing-function:ease, linear;
+  animation-timing-function:ease, linear;
 }
 </code></pre>
                         </li>
@@ -1868,17 +1602,17 @@ textarea:-ms-input-placeholder {
     .animation-iteration-count(3, infinite);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-iteration-count: 5;
-  -moz-animation-iteration-count: 5;
-  -o-animation-iteration-count: 5;
-  animation-iteration-count: 5;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-iteration-count:5;
+  -moz-animation-iteration-count:5;
+  -o-animation-iteration-count:5;
+  animation-iteration-count:5;
 }
-.box-two {
-  -webkit-animation-iteration-count: 3, infinite;
-  -moz-animation-iteration-count: 3, infinite;
-  -o-animation-iteration-count: 3, infinite;
-  animation-iteration-count: 3, infinite;
+.box-two{
+  -webkit-animation-iteration-count:3, infinite;
+  -moz-animation-iteration-count:3, infinite;
+  -o-animation-iteration-count:3, infinite;
+  animation-iteration-count:3, infinite;
 }
 </code></pre>
                         </li>
@@ -1903,17 +1637,17 @@ textarea:-ms-input-placeholder {
     .animation-direction(normal, alternate);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-direction: reverse;
-  -moz-animation-direction: reverse;
-  -o-animation-direction: reverse;
-  animation-direction: reverse;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-direction:reverse;
+  -moz-animation-direction:reverse;
+  -o-animation-direction:reverse;
+  animation-direction:reverse;
 }
-.box-two {
-  -webkit-animation-direction: normal, alternate;
-  -moz-animation-direction: normal, alternate;
-  -o-animation-direction: normal, alternate;
-  animation-direction: normal, alternate;
+.box-two{
+  -webkit-animation-direction:normal, alternate;
+  -moz-animation-direction:normal, alternate;
+  -o-animation-direction:normal, alternate;
+  animation-direction:normal, alternate;
 }
 </code></pre>
                         </li>
@@ -1938,17 +1672,17 @@ textarea:-ms-input-placeholder {
     .animation-play-state(paused, running);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-play-state: paused;
-  -moz-animation-play-state: paused;
-  -o-animation-play-state: paused;
-  animation-play-state: paused;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused;
+  animation-play-state:paused;
 }
-.box-two {
-  -webkit-animation-play-state: paused, running;
-  -moz-animation-play-state: paused, running;
-  -o-animation-play-state: paused, running;
-  animation-play-state: paused, running;
+.box-two{
+  -webkit-animation-play-state:paused, running;
+  -moz-animation-play-state:paused, running;
+  -o-animation-play-state:paused, running;
+  animation-play-state:paused, running;
 }
 </code></pre>
                         </li>
@@ -1973,17 +1707,17 @@ textarea:-ms-input-placeholder {
     .animation-delay(0s, 1s);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  -o-animation-delay: 2s;
-  animation-delay: 2s;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-delay:2s;
+  -moz-animation-delay:2s;
+  -o-animation-delay:2s;
+  animation-delay:2s;
 }
-.box-two {
-  -webkit-animation-delay: 0s, 1s;
-  -moz-animation-delay: 0s, 1s;
-  -o-animation-delay: 0s, 1s;
-  animation-delay: 0s, 1s;
+.box-two{
+  -webkit-animation-delay:0s, 1s;
+  -moz-animation-delay:0s, 1s;
+  -o-animation-delay:0s, 1s;
+  animation-delay:0s, 1s;
 }
 </code></pre>
                         </li>
@@ -2008,17 +1742,17 @@ textarea:-ms-input-placeholder {
     .animation-fill-mode(forwards, both);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-animation-fill-mode: backwards;
-  -moz-animation-fill-mode: backwards;
-  -o-animation-fill-mode: backwards;
-  animation-fill-mode: backwards;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-animation-fill-mode:backwards;
+  -moz-animation-fill-mode:backwards;
+  -o-animation-fill-mode:backwards;
+  animation-fill-mode:backwards;
 }
-.box-two {
-  -webkit-animation-fill-mode: forwards, both;
-  -moz-animation-fill-mode: forwards, both;
-  -o-animation-fill-mode: forwards, both;
-  animation-fill-mode: forwards, both;
+.box-two{
+  -webkit-animation-fill-mode:forwards, both;
+  -moz-animation-fill-mode:forwards, both;
+  -o-animation-fill-mode:forwards, both;
+  animation-fill-mode:forwards, both;
 }
 </code></pre>
                         </li>
@@ -2043,19 +1777,19 @@ textarea:-ms-input-placeholder {
     .transform(translateX(10px), rotate(10deg), translateY(5px));
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-transform: matrix(1, 2, 3, 4, 5, 6);
-  -moz-transform: matrix(1, 2, 3, 4, 5, 6);
-  -ms-transform: matrix(1, 2, 3, 4, 5, 6);
-  -o-transform: matrix(1, 2, 3, 4, 5, 6);
-  transform: matrix(1, 2, 3, 4, 5, 6);
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-transform:matrix(1, 2, 3, 4, 5, 6);
+  -moz-transform:matrix(1, 2, 3, 4, 5, 6);
+  -ms-transform:matrix(1, 2, 3, 4, 5, 6);
+  -o-transform:matrix(1, 2, 3, 4, 5, 6);
+  transform:matrix(1, 2, 3, 4, 5, 6);
 }
-.box-two {
-  -webkit-transform: translateX(10px) rotate(10deg) translateY(5px);
-  -moz-transform: translateX(10px) rotate(10deg) translateY(5px);
-  -ms-transform: translateX(10px) rotate(10deg) translateY(5px);
-  -o-transform: translateX(10px) rotate(10deg) translateY(5px);
-  transform: translateX(10px) rotate(10deg) translateY(5px);
+.box-two{
+  -webkit-transform:translateX(10px) rotate(10deg) translateY(5px);
+  -moz-transform:translateX(10px) rotate(10deg) translateY(5px);
+  -ms-transform:translateX(10px) rotate(10deg) translateY(5px);
+  -o-transform:translateX(10px) rotate(10deg) translateY(5px);
+  transform:translateX(10px) rotate(10deg) translateY(5px);
 }
 </code></pre>
                         </li>
@@ -2083,10 +1817,10 @@ textarea:-ms-input-placeholder {
     .transform-style(preserve-3d);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform-style:preserve-3d;
+  -moz-transform-style:preserve-3d;
+  transform-style:preserve-3d;
 }
 </code></pre>
                         </li>
@@ -2111,19 +1845,19 @@ textarea:-ms-input-placeholder {
     .transform-origin(2px 30% 10px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-transform-origin: 2px left;
-  -moz-transform-origin: 2px left;
-  -ms-transform-origin: 2px left;
-  -o-transform-origin: 2px left;
-  transform-origin: 2px left;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-transform-origin:2px left;
+  -moz-transform-origin:2px left;
+  -ms-transform-origin:2px left;
+  -o-transform-origin:2px left;
+  transform-origin:2px left;
 }
-.box-two {
-  -webkit-transform-origin: 2px 30% 10px;
-  -moz-transform-origin: 2px 30% 10px;
-  -ms-transform-origin: 2px 30% 10px;
-  -o-transform-origin: 2px 30% 10px;
-  transform-origin: 2px 30% 10px;
+.box-two{
+  -webkit-transform-origin:2px 30% 10px;
+  -moz-transform-origin:2px 30% 10px;
+  -ms-transform-origin:2px 30% 10px;
+  -o-transform-origin:2px 30% 10px;
+  transform-origin:2px 30% 10px;
 }
 </code></pre>
                         </li>
@@ -2144,10 +1878,10 @@ textarea:-ms-input-placeholder {
     .backface-visibility(hidden);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
+                            <pre class="output"><code class="css">.box{
+  -webkit-backface-visibility:hidden;
+  -moz-backface-visibility:hidden;
+  backface-visibility:hidden;
 }
 </code></pre>
                         </li>
@@ -2168,10 +1902,10 @@ textarea:-ms-input-placeholder {
     .perspective(1500px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-perspective: 1500px;
-  -moz-perspective: 1500px;
-  perspective: 1500px;
+                            <pre class="output"><code class="css">.box{
+  -webkit-perspective:1500px;
+  -moz-perspective:1500px;
+  perspective:1500px;
 }
 </code></pre>
                         </li>
@@ -2187,12 +1921,12 @@ textarea:-ms-input-placeholder {
     .matrix(1, -0.2, 0, 1, 0, 0);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: matrix(1, -0.2, 0, 1, 0, 0);
-  -moz-transform: matrix(1, -0.2, 0, 1, 0, 0);
-  -ms-transform: matrix(1, -0.2, 0, 1, 0, 0);
-  -o-transform: matrix(1, -0.2, 0, 1, 0, 0);
-  transform: matrix(1, -0.2, 0, 1, 0, 0);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:matrix(1, -0.2, 0, 1, 0, 0);
+  -moz-transform:matrix(1, -0.2, 0, 1, 0, 0);
+  -ms-transform:matrix(1, -0.2, 0, 1, 0, 0);
+  -o-transform:matrix(1, -0.2, 0, 1, 0, 0);
+  transform:matrix(1, -0.2, 0, 1, 0, 0);
 }
 </code></pre>
                         </li>
@@ -2213,12 +1947,12 @@ textarea:-ms-input-placeholder {
     .translate(80px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: translate(80px);
-  -moz-transform: translate(80px);
-  -ms-transform: translate(80px);
-  -o-transform: translate(80px);
-  transform: translate(80px);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:translate(80px);
+  -moz-transform:translate(80px);
+  -ms-transform:translate(80px);
+  -o-transform:translate(80px);
+  transform:translate(80px);
 }
 </code></pre>
                         <p class="note">Y 轴方向不进行平移。等价于 <a href="#translateX-1"><code>.translateX(@tx)</code></a>。</p>
@@ -2235,12 +1969,12 @@ textarea:-ms-input-placeholder {
     .translate(30px, 50px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: translate(30px, 50px);
-  -moz-transform: translate(30px, 50px);
-  -ms-transform: translate(30px, 50px);
-  -o-transform: translate(30px, 50px);
-  transform: translate(30px, 50px);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:translate(30px, 50px);
+  -moz-transform:translate(30px, 50px);
+  -ms-transform:translate(30px, 50px);
+  -o-transform:translate(30px, 50px);
+  transform:translate(30px, 50px);
 }
 </code></pre>
                         </li>
@@ -2260,12 +1994,12 @@ textarea:-ms-input-placeholder {
     .translateX(80px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: translateX(80px);
-  -moz-transform: translateX(80px);
-  -ms-transform: translateX(80px);
-  -o-transform: translateX(80px);
-  transform: translateX(80px);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:translateX(80px);
+  -moz-transform:translateX(80px);
+  -ms-transform:translateX(80px);
+  -o-transform:translateX(80px);
+  transform:translateX(80px);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#translate-1"><code>.translate(@tx)</code></a> 及 <a href="#translate-2"><code>.translate(@tx, 0)</code></a>。</p>
@@ -2286,12 +2020,12 @@ textarea:-ms-input-placeholder {
     .translateY(80px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: translateY(80px);
-  -moz-transform: translateY(80px);
-  -ms-transform: translateY(80px);
-  -o-transform: translateY(80px);
-  transform: translateY(80px);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:translateY(80px);
+  -moz-transform:translateY(80px);
+  -ms-transform:translateY(80px);
+  -o-transform:translateY(80px);
+  transform:translateY(80px);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#translate-2"><code>.translate(0, @ty)</code></a>。</p>
@@ -2312,12 +2046,12 @@ textarea:-ms-input-placeholder {
     .scale(2.1);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: scale(2.1);
-  -moz-transform: scale(2.1);
-  -ms-transform: scale(2.1);
-  -o-transform: scale(2.1);
-  transform: scale(2.1);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:scale(2.1);
+  -moz-transform:scale(2.1);
+  -ms-transform:scale(2.1);
+  -o-transform:scale(2.1);
+  transform:scale(2.1);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#scale-2"><code>.scale(@s, @s)</code></a>。</p>
@@ -2334,12 +2068,12 @@ textarea:-ms-input-placeholder {
     .scale(2.1, 4);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: scale(2.1, 4);
-  -moz-transform: scale(2.1, 4);
-  -ms-transform: scale(2.1, 4);
-  -o-transform: scale(2.1, 4);
-  transform: scale(2.1, 4);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:scale(2.1, 4);
+  -moz-transform:scale(2.1, 4);
+  -ms-transform:scale(2.1, 4);
+  -o-transform:scale(2.1, 4);
+  transform:scale(2.1, 4);
 }
 </code></pre>
                         </li>
@@ -2359,12 +2093,12 @@ textarea:-ms-input-placeholder {
     .scaleX(0.5);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: scaleX(0.5);
-  -moz-transform: scaleX(0.5);
-  -ms-transform: scaleX(0.5);
-  -o-transform: scaleX(0.5);
-  transform: scaleX(0.5);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:scaleX(0.5);
+  -moz-transform:scaleX(0.5);
+  -ms-transform:scaleX(0.5);
+  -o-transform:scaleX(0.5);
+  transform:scaleX(0.5);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#scale-2"><code>.scale(@sx, 1)</code></a>。</p>
@@ -2385,12 +2119,12 @@ textarea:-ms-input-placeholder {
     .scaleY(2.7);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: scaleY(2.7);
-  -moz-transform: scaleY(2.7);
-  -ms-transform: scaleY(2.7);
-  -o-transform: scaleY(2.7);
-  transform: scaleY(2.7);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:scaleY(2.7);
+  -moz-transform:scaleY(2.7);
+  -ms-transform:scaleY(2.7);
+  -o-transform:scaleY(2.7);
+  transform:scaleY(2.7);
 }
 </code></pre>
                         </li>
@@ -2410,12 +2144,12 @@ textarea:-ms-input-placeholder {
     .rotate(30deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: rotate(30deg);
-  -moz-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-  transform: rotate(30deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:rotate(30deg);
+  -moz-transform:rotate(30deg);
+  -ms-transform:rotate(30deg);
+  -o-transform:rotate(30deg);
+  transform:rotate(30deg);
 }
 </code></pre>
                         </li>
@@ -2435,12 +2169,12 @@ textarea:-ms-input-placeholder {
     .skew(30deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: skew(30deg);
-  -moz-transform: skew(30deg);
-  -ms-transform: skew(30deg);
-  -o-transform: skew(30deg);
-  transform: skew(30deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:skew(30deg);
+  -moz-transform:skew(30deg);
+  -ms-transform:skew(30deg);
+  -o-transform:skew(30deg);
+  transform:skew(30deg);
 }
 </code></pre>
                         <p class="note">沿 Y 轴方向不进行倾斜拉伸。等价于 <a href="#skewX-1"><code>.skewX(@ax)</code></a>。</p>
@@ -2457,12 +2191,12 @@ textarea:-ms-input-placeholder {
     .skew(30deg, 15deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: skew(30deg, 15deg);
-  -moz-transform: skew(30deg, 15deg);
-  -ms-transform: skew(30deg, 15deg);
-  -o-transform: skew(30deg, 15deg);
-  transform: skew(30deg, 15deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:skew(30deg, 15deg);
+  -moz-transform:skew(30deg, 15deg);
+  -ms-transform:skew(30deg, 15deg);
+  -o-transform:skew(30deg, 15deg);
+  transform:skew(30deg, 15deg);
 }
 </code></pre>
                         </li>
@@ -2483,12 +2217,12 @@ textarea:-ms-input-placeholder {
     .skewX(30deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: skewX(30deg);
-  -moz-transform: skewX(30deg);
-  -ms-transform: skewX(30deg);
-  -o-transform: skewX(30deg);
-  transform: skewX(30deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:skewX(30deg);
+  -moz-transform:skewX(30deg);
+  -ms-transform:skewX(30deg);
+  -o-transform:skewX(30deg);
+  transform:skewX(30deg);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#skew-1"><code>.skew(@ax)</code></a>。</p>
@@ -2509,12 +2243,12 @@ textarea:-ms-input-placeholder {
     .skewY(15deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: skewY(15deg);
-  -moz-transform: skewY(15deg);
-  -ms-transform: skewY(15deg);
-  -o-transform: skewY(15deg);
-  transform: skewY(15deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:skewY(15deg);
+  -moz-transform:skewY(15deg);
+  -ms-transform:skewY(15deg);
+  -o-transform:skewY(15deg);
+  transform:skewY(15deg);
 }
 </code></pre>
                         </li>
@@ -2533,12 +2267,12 @@ textarea:-ms-input-placeholder {
     .matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  -o-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -moz-transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -ms-transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -o-transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform:matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 </code></pre>
                         </li>
@@ -2563,12 +2297,12 @@ textarea:-ms-input-placeholder {
     .translate3d(12px, 50%, 3em);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: translate3d(12px, 50%, 3em);
-  -moz-transform: translate3d(12px, 50%, 3em);
-  -ms-transform: translate3d(12px, 50%, 3em);
-  -o-transform: translate3d(12px, 50%, 3em);
-  transform: translate3d(12px, 50%, 3em);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:translate3d(12px, 50%, 3em);
+  -moz-transform:translate3d(12px, 50%, 3em);
+  -ms-transform:translate3d(12px, 50%, 3em);
+  -o-transform:translate3d(12px, 50%, 3em);
+  transform:translate3d(12px, 50%, 3em);
 }
 </code></pre>
                         </li>
@@ -2588,12 +2322,12 @@ textarea:-ms-input-placeholder {
     .translateZ(3em);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: translateZ(3em);
-  -moz-transform: translateZ(3em);
-  -ms-transform: translateZ(3em);
-  -o-transform: translateZ(3em);
-  transform: translateZ(3em);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:translateZ(3em);
+  -moz-transform:translateZ(3em);
+  -ms-transform:translateZ(3em);
+  -o-transform:translateZ(3em);
+  transform:translateZ(3em);
 }
 </code></pre>
                         </li>
@@ -2618,12 +2352,12 @@ textarea:-ms-input-placeholder {
     .scale3d(2.5, 1.2, 0.3);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: scale3d(2.5, 1.2, 0.3);
-  -moz-transform: scale3d(2.5, 1.2, 0.3);
-  -ms-transform: scale3d(2.5, 1.2, 0.3);
-  -o-transform: scale3d(2.5, 1.2, 0.3);
-  transform: scale3d(2.5, 1.2, 0.3);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:scale3d(2.5, 1.2, 0.3);
+  -moz-transform:scale3d(2.5, 1.2, 0.3);
+  -ms-transform:scale3d(2.5, 1.2, 0.3);
+  -o-transform:scale3d(2.5, 1.2, 0.3);
+  transform:scale3d(2.5, 1.2, 0.3);
 }
 </code></pre>
                         </li>
@@ -2643,12 +2377,12 @@ textarea:-ms-input-placeholder {
     .scaleZ(0.3);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: scaleZ(0.3);
-  -moz-transform: scaleZ(0.3);
-  -ms-transform: scaleZ(0.3);
-  -o-transform: scaleZ(0.3);
-  transform: scaleZ(0.3);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:scaleZ(0.3);
+  -moz-transform:scaleZ(0.3);
+  -ms-transform:scaleZ(0.3);
+  -o-transform:scaleZ(0.3);
+  transform:scaleZ(0.3);
 }
 </code></pre>
                         </li>
@@ -2675,12 +2409,12 @@ textarea:-ms-input-placeholder {
     .rotate3d(1, 2.0, 3.0, 10deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: rotate3d(1, 2, 3, 10deg);
-  -moz-transform: rotate3d(1, 2, 3, 10deg);
-  -ms-transform: rotate3d(1, 2, 3, 10deg);
-  -o-transform: rotate3d(1, 2, 3, 10deg);
-  transform: rotate3d(1, 2, 3, 10deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:rotate3d(1, 2, 3, 10deg);
+  -moz-transform:rotate3d(1, 2, 3, 10deg);
+  -ms-transform:rotate3d(1, 2, 3, 10deg);
+  -o-transform:rotate3d(1, 2, 3, 10deg);
+  transform:rotate3d(1, 2, 3, 10deg);
 }
 </code></pre>
                         </li>
@@ -2700,12 +2434,12 @@ textarea:-ms-input-placeholder {
     .rotateX(60deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: rotateX(60deg);
-  -moz-transform: rotateX(60deg);
-  -ms-transform: rotateX(60deg);
-  -o-transform: rotateX(60deg);
-  transform: rotateX(60deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:rotateX(60deg);
+  -moz-transform:rotateX(60deg);
+  -ms-transform:rotateX(60deg);
+  -o-transform:rotateX(60deg);
+  transform:rotateX(60deg);
 }
 </code></pre>
                         </li>
@@ -2726,12 +2460,12 @@ textarea:-ms-input-placeholder {
     .rotateY(60deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: rotateY(60deg);
-  -moz-transform: rotateY(60deg);
-  -ms-transform: rotateY(60deg);
-  -o-transform: rotateY(60deg);
-  transform: rotateY(60deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:rotateY(60deg);
+  -moz-transform:rotateY(60deg);
+  -ms-transform:rotateY(60deg);
+  -o-transform:rotateY(60deg);
+  transform:rotateY(60deg);
 }
 </code></pre>
                         </li>
@@ -2752,12 +2486,12 @@ textarea:-ms-input-placeholder {
     .rotateZ(60deg);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  -webkit-transform: rotateZ(60deg);
-  -moz-transform: rotateZ(60deg);
-  -ms-transform: rotateZ(60deg);
-  -o-transform: rotateZ(60deg);
-  transform: rotateZ(60deg);
+                            <pre class="output"><code class="css">.box{
+  -webkit-transform:rotateZ(60deg);
+  -moz-transform:rotateZ(60deg);
+  -ms-transform:rotateZ(60deg);
+  -o-transform:rotateZ(60deg);
+  transform:rotateZ(60deg);
 }
 </code></pre>
                         </li>
@@ -2783,17 +2517,17 @@ textarea:-ms-input-placeholder {
     .background-clip(border-box, content-box);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  -o-background-clip: padding-box;
-  background-clip: padding-box;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-background-clip:padding-box;
+  -moz-background-clip:padding;
+  -o-background-clip:padding-box;
+  background-clip:padding-box;
 }
-.box-two {
-  -webkit-background-clip: border-box, content-box;
-  -moz-background-clip: border, content;
-  -o-background-clip: border-box, content-box;
-  background-clip: border-box, content-box;
+.box-two{
+  -webkit-background-clip:border-box, content-box;
+  -moz-background-clip:border, content;
+  -o-background-clip:border-box, content-box;
+  background-clip:border-box, content-box;
 }
 </code></pre>
                         </li>
@@ -2818,17 +2552,17 @@ textarea:-ms-input-placeholder {
     .background-size(50% auto, contain);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
 }
-.box-two {
-  -webkit-background-size: 50% auto, contain;
-  -moz-background-size: 50% auto, contain;
-  -o-background-size: 50% auto, contain;
-  background-size: 50% auto, contain;
+.box-two{
+  -webkit-background-size:50% auto, contain;
+  -moz-background-size:50% auto, contain;
+  -o-background-size:50% auto, contain;
+  background-size:50% auto, contain;
 }
 </code></pre>
                         </li>
@@ -2853,17 +2587,17 @@ textarea:-ms-input-placeholder {
     .background-origin(border-box, padding-box);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  -webkit-background-origin: border-box;
-  -moz-background-origin: border;
-  -o-background-origin: border-box;
-  background-origin: border-box;
+                            <pre class="output"><code class="css">.box-one{
+  -webkit-background-origin:border-box;
+  -moz-background-origin:border;
+  -o-background-origin:border-box;
+  background-origin:border-box;
 }
-.box-two {
-  -webkit-background-origin: border-box, padding-box;
-  -moz-background-origin: border, padding;
-  -o-background-origin: border-box, padding-box;
-  background-origin: border-box, padding-box;
+.box-two{
+  -webkit-background-origin:border-box, padding-box;
+  -moz-background-origin:border, padding;
+  -o-background-origin:border-box, padding-box;
+  background-origin:border-box, padding-box;
 }
 </code></pre>
                         </li>
@@ -2894,28 +2628,28 @@ textarea:-ms-input-placeholder {
     .linear-gradient(273deg, red, yellow 30%, green 70%, purple);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  background-image: -webkit-linear-gradient(left, white, black);
-  background-image: -moz-linear-gradient(left, white, black);
-  background-image: -moz-linear-gradient(to right, white, black);
-  background-image: -o-linear-gradient(to right, white, black);
-  background-image: linear-gradient(to right, white, black);
-  background-repeat: repeat;
+                            <pre class="output"><code class="css">.box-one{
+  background-image:-webkit-linear-gradient(left, white, black);
+  background-image:-moz-linear-gradient(left, white, black);
+  background-image:-moz-linear-gradient(to right, white, black);
+  background-image:-o-linear-gradient(to right, white, black);
+  background-image:linear-gradient(to right, white, black);
+  background-repeat:repeat;
 }
-.box-two {
-  background-image: -webkit-linear-gradient(bottom left, white, black);
-  background-image: -moz-linear-gradient(bottom left, white, black);
-  background-image: -moz-linear-gradient(to top right, white, black);
-  background-image: -o-linear-gradient(to top right, white, black);
-  background-image: linear-gradient(to top right, white, black);
-  background-repeat: repeat;
+.box-two{
+  background-image:-webkit-linear-gradient(bottom left, white, black);
+  background-image:-moz-linear-gradient(bottom left, white, black);
+  background-image:-moz-linear-gradient(to top right, white, black);
+  background-image:-o-linear-gradient(to top right, white, black);
+  background-image:linear-gradient(to top right, white, black);
+  background-repeat:repeat;
 }
-.box-three {
-  background-image: -webkit-linear-gradient(177deg, red, yellow 30%, green 70%, purple);
-  background-image: -moz-linear-gradient(177deg, red, yellow 30%, green 70%, purple);
-  background-image: -o-linear-gradient(177deg, red, yellow 30%, green 70%, purple);
-  background-image: linear-gradient(273deg, red, yellow 30%, green 70%, purple);
-  background-repeat: repeat;
+.box-three{
+  background-image:-webkit-linear-gradient(177deg, red, yellow 30%, green 70%, purple);
+  background-image:-moz-linear-gradient(177deg, red, yellow 30%, green 70%, purple);
+  background-image:-o-linear-gradient(177deg, red, yellow 30%, green 70%, purple);
+  background-image:linear-gradient(273deg, red, yellow 30%, green 70%, purple);
+  background-repeat:repeat;
 }
 </code></pre>
                             <p class="note">由于支持方向设定，不支持采用老 WebKit 的语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器（Chrome 10-），且不使用 filter 语法在 IE 10 以下浏览器中进行模拟。</p>
@@ -2939,14 +2673,14 @@ textarea:-ms-input-placeholder {
     .horizontal-gradient(black, white);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white));
-  background-image: -webkit-linear-gradient(left, black, white);
-  background-image: -moz-linear-gradient(left, black, white);
-  background-image: -o-linear-gradient(left, black, white);
-  background-image: linear-gradient(to right, black, white);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#ff000000', endColorstr='#ffffffff', GradientType=1);
+                            <pre class="output"><code class="css">.box{
+  background-image:-webkit-gradient(linear, left top, right top, from(black), to(white));
+  background-image:-webkit-linear-gradient(left, black, white);
+  background-image:-moz-linear-gradient(left, black, white);
+  background-image:-o-linear-gradient(left, black, white);
+  background-image:linear-gradient(to right, black, white);
+  background-repeat:repeat-x;
+  filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr='#ff000000', endColorstr='#ffffffff', GradientType=1);
 }
 </code></pre>
                             <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
@@ -2969,14 +2703,14 @@ textarea:-ms-input-placeholder {
     .vertical-gradient(black, white);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
-  background-image: -webkit-linear-gradient(top, black, white);
-  background-image: -moz-linear-gradient(top, black, white);
-  background-image: -o-linear-gradient(top, black, white);
-  background-image: linear-gradient(to bottom, black, white);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#ff000000', endColorstr='#ffffffff', GradientType=0);
+                            <pre class="output"><code class="css">.box{
+  background-image:-webkit-gradient(linear, left top, left bottom, from(black), to(white));
+  background-image:-webkit-linear-gradient(top, black, white);
+  background-image:-moz-linear-gradient(top, black, white);
+  background-image:-o-linear-gradient(top, black, white);
+  background-image:linear-gradient(to bottom, black, white);
+  background-repeat:repeat-x;
+  filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr='#ff000000', endColorstr='#ffffffff', GradientType=0);
 }
 </code></pre>
                             <p class="note">支持采用老 WebKit 语法的浏览器，并在 IE 10 以下浏览器中使用 filter 语法进行了模拟。</p>
@@ -3004,18 +2738,18 @@ textarea:-ms-input-placeholder {
     .repeating-linear-gradient(273deg, red, yellow 30%, green 70%);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  background-image: -webkit-repeating-linear-gradient(bottom left, white, black 20px);
-  background-image: -moz-repeating-linear-gradient(bottom left, white, black 20px);
-  background-image: -moz-repeating-linear-gradient(to top right, white, black 20px);
-  background-image: -o-repeating-linear-gradient(to top right, white, black 20px);
-  background-image: repeating-linear-gradient(to top right, white, black 20px);
+                            <pre class="output"><code class="css">.box-one{
+  background-image:-webkit-repeating-linear-gradient(bottom left, white, black 20px);
+  background-image:-moz-repeating-linear-gradient(bottom left, white, black 20px);
+  background-image:-moz-repeating-linear-gradient(to top right, white, black 20px);
+  background-image:-o-repeating-linear-gradient(to top right, white, black 20px);
+  background-image:repeating-linear-gradient(to top right, white, black 20px);
 }
-.box-two {
-  background-image: -webkit-repeating-linear-gradient(177deg, red, yellow 30%, green 70%);
-  background-image: -moz-repeating-linear-gradient(177deg, red, yellow 30%, green 70%);
-  background-image: -o-repeating-linear-gradient(177deg, red, yellow 30%, green 70%);
-  background-image: repeating-linear-gradient(273deg, red, yellow 30%, green 70%);
+.box-two{
+  background-image:-webkit-repeating-linear-gradient(177deg, red, yellow 30%, green 70%);
+  background-image:-moz-repeating-linear-gradient(177deg, red, yellow 30%, green 70%);
+  background-image:-o-repeating-linear-gradient(177deg, red, yellow 30%, green 70%);
+  background-image:repeating-linear-gradient(273deg, red, yellow 30%, green 70%);
 }
 </code></pre>
                             <p class="note">参数写法及注意事项请参考 <a href="#linear-gradient"><code>.linear-gradient()</code></a>。</p>
@@ -3047,23 +2781,23 @@ textarea:-ms-input-placeholder {
     .radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  background-image: -webkit-radial-gradient(black, white);
-  background-image: -moz-radial-gradient(black, white);
-  background-image: -o-radial-gradient(black, white);
-  background-image: radial-gradient(circle, black, white);
+                            <pre class="output"><code class="css">.box-one{
+  background-image:-webkit-radial-gradient(black, white);
+  background-image:-moz-radial-gradient(black, white);
+  background-image:-o-radial-gradient(black, white);
+  background-image:radial-gradient(circle, black, white);
 }
-.box-two {
-  background-image: -webkit-radial-gradient(30% 30%, closest-corner, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
-  background-image: -moz-radial-gradient(30% 30%, closest-corner, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
-  background-image: -o-radial-gradient(30% 30%, closest-corner, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
-  background-image: radial-gradient(closest-corner at 30% 30%, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
+.box-two{
+  background-image:-webkit-radial-gradient(30% 30%, closest-corner, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
+  background-image:-moz-radial-gradient(30% 30%, closest-corner, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
+  background-image:-o-radial-gradient(30% 30%, closest-corner, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
+  background-image:radial-gradient(closest-corner at 30% 30%, rgba(0, 0, 0, 0.2), rgba(0, 0, 225, 0.8));
 }
-.box-three {
-  background-image: -webkit-radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
-  background-image: -moz-radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
-  background-image: -o-radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
-  background-image: radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
+.box-three{
+  background-image:-webkit-radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
+  background-image:-moz-radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
+  background-image:-o-radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
+  background-image:radial-gradient(ellipse, limegreen, skyblue 30%, crimson 70%);
 }
 </code></pre>
                             <p class="note">不支持采用老 WebKit 语法（<a href="https://www.webkit.org/blog/175/introducing-css-gradients/">Introducing CSS Gradients</a>）的浏览器。另外，不支持按具体尺寸（<code>px</code> / <code>%</code> 等）设置渐变范围，只能使用范围关键字即 <code>closest-side</code> / <code>closest-corner</code> / <code>farthest-side</code> / <code>farthest-corner</code> 之一。</p>
@@ -3091,17 +2825,17 @@ textarea:-ms-input-placeholder {
     .repeating-radial-gradient(ellipse farthest-side, white, black 20px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-one {
-  background-image: -webkit-repeating-radial-gradient(white, black, 20px);
-  background-image: -moz-repeating-radial-gradient(white, black, 20px);
-  background-image: -o-repeating-radial-gradient(white, black, 20px);
-  background-image: repeating-radial-gradient(circle, white, black, 20px);
+                            <pre class="output"><code class="css">.box-one{
+  background-image:-webkit-repeating-radial-gradient(white, black, 20px);
+  background-image:-moz-repeating-radial-gradient(white, black, 20px);
+  background-image:-o-repeating-radial-gradient(white, black, 20px);
+  background-image:repeating-radial-gradient(circle, white, black, 20px);
 }
-.box-two {
-  background-image: -webkit-repeating-radial-gradient(ellipse farthest-side, white, black 20px);
-  background-image: -moz-repeating-radial-gradient(ellipse farthest-side, white, black 20px);
-  background-image: -o-repeating-radial-gradient(ellipse farthest-side, white, black 20px);
-  background-image: repeating-radial-gradient(ellipse farthest-side, white, black 20px);
+.box-two{
+  background-image:-webkit-repeating-radial-gradient(ellipse farthest-side, white, black 20px);
+  background-image:-moz-repeating-radial-gradient(ellipse farthest-side, white, black 20px);
+  background-image:-o-repeating-radial-gradient(ellipse farthest-side, white, black 20px);
+  background-image:repeating-radial-gradient(ellipse farthest-side, white, black 20px);
 }
 </code></pre>
                             <p class="note">参数写法及注意事项请参考 <a href="#radial-gradient"><code>.radial-gradient()</code></a>。</p>
@@ -3123,10 +2857,10 @@ textarea:-ms-input-placeholder {
     .display(flex);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.card {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+                            <pre class="output"><code class="css">.card{
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
 }
 </code></pre>
                         </li>
@@ -3148,10 +2882,10 @@ textarea:-ms-input-placeholder {
     .flex-direction(row-reverse);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.container {
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+                            <pre class="output"><code class="css">.container{
+  -webkit-flex-direction:row-reverse;
+  -ms-flex-direction:row-reverse;
+  flex-direction:row-reverse;
 }
 </code></pre>
                         </li>
@@ -3172,10 +2906,10 @@ textarea:-ms-input-placeholder {
     .flex-wrap(wrap);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.container {
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+                            <pre class="output"><code class="css">.container{
+  -webkit-flex-wrap:wrap;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
 }
 </code></pre>
                         </li>
@@ -3196,10 +2930,10 @@ textarea:-ms-input-placeholder {
     .flex-flow(column-reverse nowrap);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.container {
-  -webkit-flex-flow: column-reverse nowrap;
-  -ms-flex-flow: column-reverse nowrap;
-  flex-flow: column-reverse nowrap;
+                            <pre class="output"><code class="css">.container{
+  -webkit-flex-flow:column-reverse nowrap;
+  -ms-flex-flow:column-reverse nowrap;
+  flex-flow:column-reverse nowrap;
 }
 </code></pre>
                         </li>
@@ -3220,10 +2954,10 @@ textarea:-ms-input-placeholder {
     .order(1);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.card-main {
-  -ms-flex-order: 1;
-  -webkit-order: 1;
-  order: 1;
+                            <pre class="output"><code class="css">.card-main{
+  -ms-flex-order:1;
+  -webkit-order:1;
+  order:1;
 }
 </code></pre>
                         </li>
@@ -3244,10 +2978,10 @@ textarea:-ms-input-placeholder {
     .flex(2 1 600px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.main {
-  -webkit-flex: 2 1 600px;
-  -ms-flex: 2 1 600px;
-  flex: 2 1 600px;
+                            <pre class="output"><code class="css">.main{
+  -webkit-flex:2 1 600px;
+  -ms-flex:2 1 600px;
+  flex:2 1 600px;
 }
 </code></pre>
                         </li>
@@ -3268,10 +3002,10 @@ textarea:-ms-input-placeholder {
     .flex-grow(2);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.main {
-  -webkit-flex-grow: 2;
-  -ms-flex-positive: 2;
-  flex-grow: 2;
+                            <pre class="output"><code class="css">.main{
+  -webkit-flex-grow:2;
+  -ms-flex-positive:2;
+  flex-grow:2;
 }
 </code></pre>
                         </li>
@@ -3292,10 +3026,10 @@ textarea:-ms-input-placeholder {
     .flex-shrink(1);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.main {
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
+                            <pre class="output"><code class="css">.main{
+  -webkit-flex-shrink:1;
+  -ms-flex-negative:1;
+  flex-shrink:1;
 }
 </code></pre>
                         </li>
@@ -3316,10 +3050,10 @@ textarea:-ms-input-placeholder {
     .flex-basis(600px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.main {
-  -ms-flex-preferred-size: 600px;
-  -webkit-flex-basis: 600px;
-  flex-basis: 600px;
+                            <pre class="output"><code class="css">.main{
+  -ms-flex-preferred-size:600px;
+  -webkit-flex-basis:600px;
+  flex-basis:600px;
 }
 </code></pre>
                         </li>
@@ -3340,10 +3074,10 @@ textarea:-ms-input-placeholder {
     .justify-content(space-around);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.gallery {
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+                            <pre class="output"><code class="css">.gallery{
+  -ms-flex-pack:distribute;
+  -webkit-justify-content:space-around;
+  justify-content:space-around;
 }
 </code></pre>
                             <figure class="note">
@@ -3368,10 +3102,10 @@ textarea:-ms-input-placeholder {
     .align-items(center);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.gallery {
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+                            <pre class="output"><code class="css">.gallery{
+  -ms-flex-align:center;
+  -webkit-align-items:center;
+  align-items:center;
 }
 </code></pre>
                             <figure class="note">
@@ -3396,10 +3130,10 @@ textarea:-ms-input-placeholder {
     .align-self(flex-start);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.photo {
-  -ms-flex-item-align: start;
-  -webkit-align-self: flex-start;
-  align-self: flex-start;
+                            <pre class="output"><code class="css">.photo{
+  -ms-flex-item-align:start;
+  -webkit-align-self:flex-start;
+  align-self:flex-start;
 }
 </code></pre>
                             <p class="note">取值含义参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
@@ -3421,10 +3155,10 @@ textarea:-ms-input-placeholder {
     .align-content(flex-start);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.photo {
-  -ms-flex-line-pack: start;
-  -webkit-align-content: flex-start;
-  align-content: flex-start;
+                            <pre class="output"><code class="css">.photo{
+  -ms-flex-line-pack:start;
+  -webkit-align-content:flex-start;
+  align-content:flex-start;
 }
 </code></pre>
                             <figure class="note">
@@ -3449,9 +3183,9 @@ textarea:-ms-input-placeholder {
     .box-orient(horizontal);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.gallery {
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
+                            <pre class="output"><code class="css">.gallery{
+  -webkit-box-orient:horizontal;
+  -moz-box-orient:horizontal;
 }
 </code></pre>
                         </li>
@@ -3473,9 +3207,9 @@ textarea:-ms-input-placeholder {
     .box-direction(reverse);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.gallery {
-  -webkit-box-direction: reverse;
-  -moz-box-direction: reverse;
+                            <pre class="output"><code class="css">.gallery{
+  -webkit-box-direction:reverse;
+  -moz-box-direction:reverse;
 }
 </code></pre>
                         </li>
@@ -3497,9 +3231,9 @@ textarea:-ms-input-placeholder {
     .box-ordinal-group(1);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.current-item {
-  -webkit-box-ordinal-group: 1;
-  -moz-box-ordinal-group: 1;
+                            <pre class="output"><code class="css">.current-item{
+  -webkit-box-ordinal-group:1;
+  -moz-box-ordinal-group:1;
 }
 </code></pre>
                         </li>
@@ -3521,9 +3255,9 @@ textarea:-ms-input-placeholder {
     .box-flex-group(1);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.main-item {
-  -webkit-box-flex-group: 1;
-  -moz-box-flex-group: 1;
+                            <pre class="output"><code class="css">.main-item{
+  -webkit-box-flex-group:1;
+  -moz-box-flex-group:1;
 }
 </code></pre>
                         </li>
@@ -3545,9 +3279,9 @@ textarea:-ms-input-placeholder {
     .box-flex(2);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.main-item {
-  -webkit-box-flex: 2;
-  -moz-box-flex: 2;
+                            <pre class="output"><code class="css">.main-item{
+  -webkit-box-flex:2;
+  -moz-box-flex:2;
 }
 </code></pre>
                         </li>
@@ -3569,9 +3303,9 @@ textarea:-ms-input-placeholder {
     .box-align(baseline);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.container {
-  -webkit-box-align: baseline;
-  -moz-box-align: baseline;
+                            <pre class="output"><code class="css">.container{
+  -webkit-box-align:baseline;
+  -moz-box-align:baseline;
 }
 </code></pre>
                             <p class="note">参数值可参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
@@ -3594,9 +3328,9 @@ textarea:-ms-input-placeholder {
     .box-pack(justify);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.container {
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
+                            <pre class="output"><code class="css">.container{
+  -webkit-box-pack:justify;
+  -moz-box-pack:justify;
 }
 </code></pre>
                             <p class="note">参数值可参考 <a href="#justify-content"><code>.justify-content()</code></a>。<code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code> 分别对应 <code>flex-start</code> / <code>center</code> / <code>flex-end</code> / <code>space-between</code>。</p>
@@ -3623,16 +3357,16 @@ textarea:-ms-input-placeholder {
     .clearfix();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.container {
-  *zoom: 1;
+                    <pre class="output"><code class="css">.container{
+  *zoom:1;
 }
 .container:before,
-.container:after {
-  display: table;
-  content: "";
+.container:after{
+  display:table;
+  content:"";
 }
-.container:after {
-  clear: both;
+.container:after{
+  clear:both;
 }
 </code></pre>
                 </li>
@@ -3650,9 +3384,9 @@ textarea:-ms-input-placeholder {
     .size(16px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.square {
-  width: 16px;
-  height: 16px;
+                            <pre class="output"><code class="css">.square{
+  width:16px;
+  height:16px;
 }
 </code></pre>
                         </li>
@@ -3668,9 +3402,9 @@ textarea:-ms-input-placeholder {
     .size(320px, 80px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.rect {
-  width: 320px;
-  height: 80px;
+                            <pre class="output"><code class="css">.rect{
+  width:320px;
+  height:80px;
 }
 </code></pre>
                         </li>
@@ -3690,9 +3424,9 @@ textarea:-ms-input-placeholder {
     .margin-rem(24px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  margin: 24px;
-  margin: 1.5rem;
+                            <pre class="output"><code class="css">.post{
+  margin:24px;
+  margin:1.5rem;
 }
 </code></pre>
                         </li>
@@ -3712,9 +3446,9 @@ textarea:-ms-input-placeholder {
     .margin-top-rem(12px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  margin-top: 12px;
-  margin-top: 0.75rem;
+                            <pre class="output"><code class="css">.post{
+  margin-top:12px;
+  margin-top:0.75rem;
 }
 </code></pre>
                         </li>
@@ -3751,8 +3485,8 @@ textarea:-ms-input-placeholder {
     .margin-em(24px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  margin: 1.5em;
+                            <pre class="output"><code class="css">.post{
+  margin:1.5em;
 }
 </code></pre>
                         </li>
@@ -3772,8 +3506,8 @@ textarea:-ms-input-placeholder {
     .margin-top-em(12px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  margin-top: 0.75em;
+                            <pre class="output"><code class="css">.post{
+  margin-top:0.75em;
 }
 </code></pre>
                         </li>
@@ -3808,9 +3542,9 @@ textarea:-ms-input-placeholder {
     .padding-rem(24px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  padding: 24px;
-  padding: 1.5rem;
+                            <pre class="output"><code class="css">.post{
+  padding:24px;
+  padding:1.5rem;
 }
 </code></pre>
                         </li>
@@ -3830,9 +3564,9 @@ textarea:-ms-input-placeholder {
     .padding-top-rem(12px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  padding-top: 12px;
-  padding-top: 0.75rem;
+                            <pre class="output"><code class="css">.post{
+  padding-top:12px;
+  padding-top:0.75rem;
 }
 </code></pre>
                         </li>
@@ -3869,8 +3603,8 @@ textarea:-ms-input-placeholder {
     .padding-em(24px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  padding: 1.5em;
+                            <pre class="output"><code class="css">.post{
+  padding:1.5em;
 }
 </code></pre>
                         </li>
@@ -3890,8 +3624,8 @@ textarea:-ms-input-placeholder {
     .padding-top-em(12px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.post {
-  padding-top: 0.75em;
+                            <pre class="output"><code class="css">.post{
+  padding-top:0.75em;
 }
 </code></pre>
                         </li>
@@ -3939,9 +3673,9 @@ textarea:-ms-input-placeholder {
     .font-family(code);
 }</code></pre>
 
-                            <pre class="output"><code class="css">pre code {
-  font-family: Monaco, Consolas, monospace;
-  *font-family: Monaco, Consolas, monospace;
+                            <pre class="output"><code class="css">pre code{
+  font-family:Monaco, Consolas, monospace;
+  *font-family:Monaco, Consolas, monospace;
 }
 </code></pre>
                         </li>
@@ -3958,12 +3692,12 @@ width: 120px;
     .ellipsis();
 }</code></pre>
 
-                            <pre class="output"><code class="css">.cell {
-  width: 120px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  white-space: nowrap;
+                            <pre class="output"><code class="css">.cell{
+  width:120px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  white-space:nowrap;
 }
 </code></pre>
                         </li>
@@ -3979,12 +3713,12 @@ width: 120px;
     .ellipsis(3);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.news {
-  width: 300px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+                            <pre class="output"><code class="css">.news{
+  width:300px;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
 }
 </code></pre>
                             <p class="note">限制超出指定行数截断的功能只在 WebKit 内核浏览器下有效。</p>
@@ -3998,15 +3732,15 @@ width: 120px;
     .force-wrap();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.comment {
-  white-space: pre;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -hp-pre-wrap;
-  word-wrap: break-word;
+                    <pre class="output"><code class="css">.comment{
+  white-space:pre;
+  white-space:pre-wrap;
+  white-space:pre-line;
+  white-space:-pre-wrap;
+  white-space:-o-pre-wrap;
+  white-space:-moz-pre-wrap;
+  white-space:-hp-pre-wrap;
+  word-wrap:break-word;
 }
 </code></pre>
                 </li>
@@ -4017,10 +3751,10 @@ width: 120px;
     .hide-text();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.logo {
-  text-indent: -9999px;
-  overflow: hidden;
-  text-align: left;
+                    <pre class="output"><code class="css">.logo{
+  text-indent:-9999px;
+  overflow:hidden;
+  text-align:left;
 }
 </code></pre>
                 </li>
@@ -4031,13 +3765,13 @@ width: 120px;
     .invisible();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.screen-reader-notes {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  *clip: rect(1px 1px 1px 1px);
+                    <pre class="output"><code class="css">.screen-reader-notes{
+  position:absolute !important;
+  height:1px;
+  width:1px;
+  overflow:hidden;
+  clip:rect(1px, 1px, 1px, 1px);
+  *clip:rect(1px 1px 1px 1px);
 }
 </code></pre>
                     <p class="note">了解更多相关内容可以参考 <a href="http://adaptivethemes.com/using-css-clip-as-an-accessible-method-of-hiding-content">Using CSS clip as an Accessible Method of Hiding Content</a>。</p>
@@ -4070,27 +3804,27 @@ width: 120px;
     height: 129px;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.logo-one {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  text-indent: -9999px;
-  overflow: hidden;
-  text-align: left;
-  background: url(http://www.baidu.com/img/bdlogo.gif) no-repeat 0 0;
-  width: 270px;
-  height: 129px;
+                            <pre class="output"><code class="css">.logo-one{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  text-indent:-9999px;
+  overflow:hidden;
+  text-align:left;
+  background:url(http://www.baidu.com/img/bdlogo.gif) no-repeat 0 0;
+  width:270px;
+  height:129px;
 }
-.logo-two {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  text-indent: -9999px;
-  overflow: hidden;
-  text-align: left;
-  background: url(../logo.gif) no-repeat 0 0;
-  width: 270px;
-  height: 129px;
+.logo-two{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  text-indent:-9999px;
+  overflow:hidden;
+  text-align:left;
+  background:url(../logo.gif) no-repeat 0 0;
+  width:270px;
+  height:129px;
 }
 </code></pre>
                             <p class="warning">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
@@ -4111,9 +3845,9 @@ width: 120px;
     .font-size-rem(32px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.text {
-  font-size: 32px;
-  font-size: 2rem;
+                            <pre class="output"><code class="css">.text{
+  font-size:32px;
+  font-size:2rem;
 }
 </code></pre>
                         </li>
@@ -4135,8 +3869,8 @@ width: 120px;
     .font-size-em(24px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.text {
-  font-size: 1.5em;
+                            <pre class="output"><code class="css">.text{
+  font-size:1.5em;
 }
 </code></pre>
                         </li>
@@ -4162,12 +3896,12 @@ width: 120px;
                             </dl>
                             <pre class="usage"><code class="less">.font-face("FamilyName", "/some/font/url");</code></pre>
 
-                            <pre class="output"><code class="css">@font-face {
-  font-family: "FamilyName";
-  src: url(/some/font/url.eot);
-  src: url(/some/font/url.eot?#iefix) format("embedded-opentype"), url(/some/font/url.woff) format("woff"), url(/some/font/url.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
+                            <pre class="output"><code class="css">@font-face{
+  font-family:"FamilyName";
+  src:url(/some/font/url.eot);
+  src:url(/some/font/url.eot?#iefix) format("embedded-opentype"), url(/some/font/url.woff) format("woff"), url(/some/font/url.ttf) format("truetype");
+  font-weight:normal;
+  font-style:normal;
 }
 </code></pre>
                             <p class="warning">当 Less 编译时开启了 <code>--relative-urls</code>（<code>-ru</code>）时，直接输入字符串路径很可能得到非预期的结果。此时需要使用 <code>url()</code> 表达式来提供参数。</p>
@@ -4181,11 +3915,11 @@ width: 120px;
     .hover-link();
 }</code></pre>
 
-                    <pre class="output"><code class="css">a {
-  text-decoration: none;
+                    <pre class="output"><code class="css">a{
+  text-decoration:none;
 }
-a:hover {
-  text-decoration: underline;
+a:hover{
+  text-decoration:underline;
 }
 </code></pre>
                 </li>
@@ -4196,14 +3930,14 @@ a:hover {
     .unstyled-link();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.plain-link {
-  color: inherit;
-  text-decoration: inherit;
-  cursor: inherit;
+                    <pre class="output"><code class="css">.plain-link{
+  color:inherit;
+  text-decoration:inherit;
+  cursor:inherit;
 }
 .plain-link:active,
-.plain-link:focus {
-  outline: none;
+.plain-link:focus{
+  outline:none;
 }
 </code></pre>
                 </li>
@@ -4227,16 +3961,16 @@ a:hover {
     .drop-cap(24px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">article p {
-  overflow: hidden;
-  line-height: 24px;
+                            <pre class="output"><code class="css">article p{
+  overflow:hidden;
+  line-height:24px;
 }
-article p:first-letter {
-  float: left;
-  margin-right: 0.5em;
-  font-size: 2em;
-  line-height: 24px;
-  line-height: 48px;
+article p:first-letter{
+  float:left;
+  margin-right:0.5em;
+  font-size:2em;
+  line-height:24px;
+  line-height:48px;
 }
 </code></pre>
                         </li>
@@ -4269,15 +4003,15 @@ article p:first-letter {
     }
 }</code></pre>
 
-                            <pre class="output"><code class="css">p {
-  line-height: 24px;
+                            <pre class="output"><code class="css">p{
+  line-height:24px;
 }
-p .drop {
-  float: left;
-  margin-right: 0.5em;
-  font-size: 2em;
-  line-height: 24px;
-  line-height: 48px;
+p .drop{
+  float:left;
+  margin-right:0.5em;
+  font-size:2em;
+  line-height:24px;
+  line-height:48px;
 }
 </code></pre>
                         </li>
@@ -4375,9 +4109,9 @@ p .drop {
     }
 }</code></pre>
 
-                    <pre class="output"><code class="css">.entry {
-  font-size: 14px;
-  line-height: 2;
+                    <pre class="output"><code class="css">.entry{
+  font-size:14px;
+  line-height:2;
 }
 .entry h1,
 .entry h2,
@@ -4395,43 +4129,43 @@ p .drop {
 .entry ol,
 .entry pre,
 .entry table,
-.entry figure {
-  line-height: 28px;
-  margin-top: 14px;
-  margin-bottom: 14px;
-  padding: 0;
+.entry figure{
+  line-height:28px;
+  margin-top:14px;
+  margin-bottom:14px;
+  padding:0;
 }
-.entry h1 {
-  line-height: 56px;
+.entry h1{
+  line-height:56px;
 }
-.entry h1 {
-  font-size: 28px;
+.entry h1{
+  font-size:28px;
 }
-.entry h2 {
-  font-size: 21px;
+.entry h2{
+  font-size:21px;
 }
-.entry h3 {
-  font-size: 16.8px;
+.entry h3{
+  font-size:16.8px;
 }
 .entry h4,
 .entry h5,
-.entry h6 {
-  font-size: 14px;
+.entry h6{
+  font-size:14px;
 }
-.entry blockquote {
-  margin-top: 14px;
-  margin-bottom: 14px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
+.entry blockquote{
+  margin-top:14px;
+  margin-bottom:14px;
+  padding-top:13px;
+  padding-bottom:13px;
+  border-top:1px solid #cccccc;
+  border-bottom:1px solid #cccccc;
 }
-.entry p {
-  line-height: 56px;
-  margin-top: 28px;
-  margin-bottom: 28px;
-  padding-top: 28px;
-  padding-bottom: 28px;
+.entry p{
+  line-height:56px;
+  margin-top:28px;
+  margin-bottom:28px;
+  padding-top:28px;
+  padding-bottom:28px;
 }
 </code></pre>
                 </li>
@@ -4449,9 +4183,9 @@ p .drop {
     .centered-line(24px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">pre code {
-  height: 24px;
-  line-height: 24px;
+                            <pre class="output"><code class="css">pre code{
+  height:24px;
+  line-height:24px;
 }
 </code></pre>
                         </li>
@@ -4467,9 +4201,9 @@ p .drop {
     .centered-line(24px, true);
 }</code></pre>
 
-                            <pre class="output"><code class="css">pre code {
-  height: 24px;
-  line-height: 24px\0;
+                            <pre class="output"><code class="css">pre code{
+  height:24px;
+  line-height:24px\0;
 }
 </code></pre>
                             <p class="note">WebKit 下文本输入框中的文字会自动垂直居中，如果设置了 <code>line-height</code> 反而会使光标、选区的高度显示不正常。</p>
@@ -4499,16 +4233,16 @@ p .drop {
     .make-row();
 }</code></pre>
 
-                            <pre class="output"><code class="css">body {
-  *zoom: 1;
+                            <pre class="output"><code class="css">body{
+  *zoom:1;
 }
 body:before,
-body:after {
-  display: table;
-  content: "";
+body:after{
+  display:table;
+  content:"";
 }
-body:after {
-  clear: both;
+body:after{
+  clear:both;
 }
 </code></pre>
                             <p class="note">不需要再自行调用 <a href="#clearfix"><code class="mixin">.clearfix()</code></a>。</p>
@@ -4537,23 +4271,23 @@ aside {
     .make-column(1/3, 5%);
 }</code></pre>
 
-                            <pre class="output"><code class="css">main {
-  display: block;
-  float: left;
-  width: 65%;
-  margin-left: 5%;
+                            <pre class="output"><code class="css">main{
+  display:block;
+  float:left;
+  width:65%;
+  margin-left:5%;
 }
-main:first-child {
-  margin-left: 0%;
+main:first-child{
+  margin-left:0%;
 }
-aside {
-  display: block;
-  float: left;
-  width: 30%;
-  margin-left: 5%;
+aside{
+  display:block;
+  float:left;
+  width:30%;
+  margin-left:5%;
 }
-aside:first-child {
-  margin-left: 0%;
+aside:first-child{
+  margin-left:0%;
 }
 </code></pre>
                             <p class="note">适用于按百分比的流式栅格布局。</p>
@@ -4578,23 +4312,23 @@ aside {
     .make-column(1/3, 15px, 960px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">main {
-  display: block;
-  float: left;
-  width: 635px;
-  margin-left: 15px;
+                            <pre class="output"><code class="css">main{
+  display:block;
+  float:left;
+  width:635px;
+  margin-left:15px;
 }
-main:first-child {
-  margin-left: 0px;
+main:first-child{
+  margin-left:0px;
 }
-aside {
-  display: block;
-  float: left;
-  width: 310px;
-  margin-left: 15px;
+aside{
+  display:block;
+  float:left;
+  width:310px;
+  margin-left:15px;
 }
-aside:first-child {
-  margin-left: 0px;
+aside:first-child{
+  margin-left:0px;
 }
 </code></pre>
                             <p class="note">适用于按非百分比的栅格布局。</p>
@@ -4638,25 +4372,25 @@ aside:first-child {
     .est-layout-fixed-header(80px, ~".header");
 }</code></pre>
 
-                            <pre class="output"><code class="css">body > .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 80px;
+                            <pre class="output"><code class="css">body > .header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  height:80px;
 }
-body > .est-body {
-  margin-top: 80px;
-  *zoom: 1;
+body > .est-body{
+  margin-top:80px;
+  *zoom:1;
 }
 body > .est-body:before,
-body > .est-body:after {
-  display: table;
-  content: "";
+body > .est-body:after{
+  display:table;
+  content:"";
 }
-body > .est-body:after {
-  clear: both;
+body > .est-body:after{
+  clear:both;
 }
 </code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-header</code>、<code>est-body</code> 两个类名配合使用。页头的默认 <code>z-index</code> 为 <a href="#header-z-index"><code class="default-value">@header-z-index</code></a>。</p>
@@ -4685,25 +4419,25 @@ body > .est-body:after {
     .est-layout-fixed-footer(80px, ~".body");
 }</code></pre>
 
-                            <pre class="output"><code class="css">body > .body {
-  margin-bottom: 80px;
-  *zoom: 1;
+                            <pre class="output"><code class="css">body > .body{
+  margin-bottom:80px;
+  *zoom:1;
 }
 body > .body:before,
-body > .body:after {
-  display: table;
-  content: "";
+body > .body:after{
+  display:table;
+  content:"";
 }
-body > .body:after {
-  clear: both;
+body > .body:after{
+  clear:both;
 }
-body > .est-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  height: 80px;
+body > .est-footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  height:80px;
 }
 </code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用。页脚的默认 <code>z-index</code> 为 <a href="#footer-z-index"><code class="default-value">@footer-z-index</code></a>。</p>
@@ -4745,28 +4479,28 @@ body {
 }</code></pre>
 
                             <pre class="output"><code class="css">html,
-body {
-  height: 100%;
+body{
+  height:100%;
 }
-body > .body {
-  min-height: 100%;
-  margin-bottom: -100px;
-  *zoom: 1;
+body > .body{
+  min-height:100%;
+  margin-bottom:-100px;
+  *zoom:1;
 }
 body > .body:before,
-body > .body:after {
-  display: table;
-  content: "";
+body > .body:after{
+  display:table;
+  content:"";
 }
-body > .body:after {
-  clear: both;
+body > .body:after{
+  clear:both;
 }
-body > .body .est-footer-placeholder {
-  display: block;
-  height: 100px;
+body > .body .est-footer-placeholder{
+  display:block;
+  height:100px;
 }
-body > .est-footer {
-  height: 100px;
+body > .est-footer{
+  height:100px;
 }
 </code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-footer</code>、<code>est-body</code> 两个类名配合使用，且须要保证外层所有 DOM 元素的高度为 <code>100%</code>。不支持与其他布局混用。</p>
@@ -4787,10 +4521,10 @@ body > .est-footer {
     .est-layout-page(980px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.page {
-  width: 980px;
-  margin-right: auto;
-  margin-left: auto;
+                            <pre class="output"><code class="css">.page{
+  width:980px;
+  margin-right:auto;
+  margin-left:auto;
 }
 </code></pre>
                         </li>
@@ -4821,18 +4555,18 @@ body > .est-footer {
     .est-layout-sidebar(left, 200px, ~".main");
 }</code></pre>
 
-                            <pre class="output"><code class="css">body {
-  position: relative;
+                            <pre class="output"><code class="css">body{
+  position:relative;
 }
-body > .main {
-  overflow: hidden;
-  margin-left: 200px;
+body > .main{
+  overflow:hidden;
+  margin-left:200px;
 }
-body > .est-sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200px;
+body > .est-sidebar{
+  position:absolute;
+  top:0;
+  left:0;
+  width:200px;
 }
 </code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-main</code>、<code>est-sidebar</code> 两个类名配合使用。</p>
@@ -4861,25 +4595,25 @@ body > .est-sidebar {
     .est-layout-sidebar(200px, 160px, ~".main");
 }</code></pre>
 
-                            <pre class="output"><code class="css">body {
-  position: relative;
+                            <pre class="output"><code class="css">body{
+  position:relative;
 }
-body > .main {
-  overflow: hidden;
-  margin-right: 160px;
-  margin-left: 200px;
+body > .main{
+  overflow:hidden;
+  margin-right:160px;
+  margin-left:200px;
 }
-body > .est-sidebar-primary {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200px;
+body > .est-sidebar-primary{
+  position:absolute;
+  top:0;
+  left:0;
+  width:200px;
 }
-body > .est-sidebar-secondary {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 160px;
+body > .est-sidebar-secondary{
+  position:absolute;
+  top:0;
+  right:0;
+  width:160px;
 }
 </code></pre>
                             <p class="note">如果不自定义选择器，则需要与 <code>est-main</code>、<code>est-sidebar-primary</code> 及 <code>est-sidebar-secondary</code> 三个类名配合使用。</p>
@@ -4916,31 +4650,31 @@ body > .est-sidebar-secondary {
     .est-layout-popup(center, 80, ~"popup");
 }</code></pre>
 
-                            <pre class="output"><code class="css">.overlay {
-  position: fixed;
-  z-index: 1050;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  letter-spacing: -0.5em;
-  text-align: center;
-  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000)\0;
-  zoom: 1\0;
-  background: rgba(0, 0, 0, 0.8);
+                            <pre class="output"><code class="css">.overlay{
+  position:fixed;
+  z-index:1050;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  letter-spacing:-0.5em;
+  text-align:center;
+  background:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000)\0;
+  zoom:1\0;
+  background:rgba(0, 0, 0, 0.8);
 }
-.overlay .est-valign-ghost {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
+.overlay .est-valign-ghost{
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
 }
-.overlay > popup {
-  display: inline-block;
-  vertical-align: middle;
+.overlay > popup{
+  display:inline-block;
+  vertical-align:middle;
 }
-:root .overlay {
-  filter: none\9;
+:root .overlay{
+  filter:none\9;
 }
 </code></pre>
                             <p class="note">必须与类名 <code>est-popup</code> 配合使用。弹出层的默认 <code>z-index</code> 为 <a href="#modal-z-index"><code class="default-value">@modal-z-index</code></a>。</p>
@@ -4972,28 +4706,28 @@ body > .est-sidebar-secondary {
     .est-layout-horizontal-list(10px, left);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.users {
-  *zoom: 1;
-  overflow: hidden;
+                            <pre class="output"><code class="css">.users{
+  *zoom:1;
+  overflow:hidden;
 }
 .users:before,
-.users:after {
-  display: table;
-  content: "";
+.users:after{
+  display:table;
+  content:"";
 }
-.users:after {
-  clear: both;
+.users:after{
+  clear:both;
 }
 .users ul,
-.users ol {
-  list-style: none;
-  float: left;
-  margin-left: -10px;
+.users ol{
+  list-style:none;
+  float:left;
+  margin-left:-10px;
 }
 .users ul li,
-.users ol li {
-  float: left;
-  margin-left: 10px;
+.users ol li{
+  float:left;
+  margin-left:10px;
 }
 </code></pre>
                         </li>
@@ -5022,22 +4756,22 @@ body > .est-sidebar-secondary {
     .est-layout-fluid-fixed-ratio(800, 600);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.fluid-wrap {
-  position: relative;
-  padding-bottom: 75%;
-  padding-top: 0;
-  height: 0;
+                            <pre class="output"><code class="css">.fluid-wrap{
+  position:relative;
+  padding-bottom:75%;
+  padding-top:0;
+  height:0;
 }
 .fluid-wrap object,
 .fluid-wrap embed,
 .fluid-wrap iframe,
 .fluid-wrap img,
-.fluid-wrap .est-fixed-ratio {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.fluid-wrap .est-fixed-ratio{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
 }
 </code></pre>
                             <p class="note">会生效的元素类型包括 <code>&lt;object&gt;</code> / <code>&lt;embed&gt;</code> / <code>&lt;iframe&gt;</code> / <code>&lt;img&gt;</code> 以及符合选择器 <code>@target-selector</code> 的元素。<code>@width</code> 和 <code>@height</code> 参数的单位需要统一。Demo <a href="http://codepen.io/zmmbreeze/full/khIqH">见此</a>。可参考 <a href="http://css-tricks.com/rundown-of-handling-flexible-media/">Rundown of Handling Flexible Media</a>。</p>
@@ -5079,13 +4813,13 @@ body > .est-sidebar-secondary {
     .embossed-text(lightblue, #6699CC);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.blind-embossed {
-  color: #b9deea;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+                            <pre class="output"><code class="css">.blind-embossed{
+  color:#b9deea;
+  text-shadow:0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
-.embossed {
-  color: #6699cc;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+.embossed{
+  color:#6699cc;
+  text-shadow:0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
 </code></pre>
                         </li>
@@ -5111,13 +4845,13 @@ body > .est-sidebar-secondary {
     .debossed-text(lightblue, #6699CC);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.blind-debossed {
-  color: rgba(161, 210, 226, 0.8);
-  text-shadow: 0 1px 1px lightblue, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+                            <pre class="output"><code class="css">.blind-debossed{
+  color:rgba(161, 210, 226, 0.8);
+  text-shadow:0 1px 1px lightblue, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
 }
-.debossed {
-  color: rgba(91, 145, 200, 0.8);
-  text-shadow: 0 1px 1px lightblue, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+.debossed{
+  color:rgba(91, 145, 200, 0.8);
+  text-shadow:0 1px 1px lightblue, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 </code></pre>
                         </li>
@@ -5137,9 +4871,9 @@ body > .est-sidebar-secondary {
     .3d-text(lightblue);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.three-d {
-  color: lightblue;
-  text-shadow: 0 1px 0 #86b1bf, 0 2px 0 #7da8b6, 0 3px 0 #749fad, 0 4px 0 #6b96a4, 0 5px 0 #527d8b, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 1px 1px 3px rgba(0, 0, 0, 0.3), 3px 3px 5px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+                            <pre class="output"><code class="css">.three-d{
+  color:lightblue;
+  text-shadow:0 1px 0 #86b1bf, 0 2px 0 #7da8b6, 0 3px 0 #749fad, 0 4px 0 #6b96a4, 0 5px 0 #527d8b, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 1px 1px 3px rgba(0, 0, 0, 0.3), 3px 3px 5px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 </code></pre>
                         </li>
@@ -5159,8 +4893,8 @@ body > .est-sidebar-secondary {
     .glow-text(10px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.glow-text {
-  text-shadow: 0 0 10px;
+                            <pre class="output"><code class="css">.glow-text{
+  text-shadow:0 0 10px;
 }
 </code></pre>
                             <p class="note">此时发光颜色为当前文字颜色。</p>
@@ -5177,8 +4911,8 @@ body > .est-sidebar-secondary {
     .glow-text(gold, 20px);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.three-d {
-  text-shadow: 0 0 20px gold;
+                            <pre class="output"><code class="css">.three-d{
+  text-shadow:0 0 20px gold;
 }
 </code></pre>
                         </li>
@@ -5200,10 +4934,10 @@ body > .est-sidebar-secondary {
     .blurry-text(#FFFFFF);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.blurry {
-  color: transparent;
-  text-shadow: 0 0 0.15em #ffffff;
-  text-shadow: 0 0 0.15em 0.1px #ffffff;
+                            <pre class="output"><code class="css">.blurry{
+  color:transparent;
+  text-shadow:0 0 0.15em #ffffff;
+  text-shadow:0 0 0.15em 0.1px #ffffff;
 }
 </code></pre>
                         </li>
@@ -5246,13 +4980,13 @@ body > .est-sidebar-secondary {
     .triangle(top left, #ccc, 10px, corner);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.comment:after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: #666666 solid 10px;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
+                            <pre class="output"><code class="css">.comment:after{
+  position:absolute;
+  width:0;
+  height:0;
+  border:#666666 solid 10px;
+  border-bottom-color:transparent;
+  border-right-color:transparent;
 }
 </code></pre>
                         </li>
@@ -5273,12 +5007,12 @@ body > .est-sidebar-secondary {
     .circle(30%);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.ball {
-  width: 30%;
-  padding-top: 30%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+                            <pre class="output"><code class="css">.ball{
+  width:30%;
+  padding-top:30%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
 }
 </code></pre>
                         </li>
@@ -5294,13 +5028,13 @@ body > .est-sidebar-secondary {
     .circle(30%, url(img/texture.png) lightgreen no-repeat center center);
 }</code></pre>
 
-                            <pre class="output"><code class="css">.ball {
-  width: 30%;
-  padding-top: 30%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background: url(img/texture.png) lightgreen no-repeat center center;
+                            <pre class="output"><code class="css">.ball{
+  width:30%;
+  padding-top:30%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+  background:url(img/texture.png) lightgreen no-repeat center center;
 }
 </code></pre>
                         </li>
@@ -5330,17 +5064,17 @@ body > .est-sidebar-secondary {
     .absolute(0, 10px, 5px); // position: absolute; top: 0; right: 10px; bottom: 5px; left: 10px;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
+                            <pre class="output"><code class="css">.box-1{
+  position:absolute;
+  top:0;
+  left:0;
 }
-.box-2 {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  bottom: 5px;
-  left: 10px;
+.box-2{
+  position:absolute;
+  top:0;
+  right:10px;
+  bottom:5px;
+  left:10px;
 }
 </code></pre>
                         </li>
@@ -5361,10 +5095,10 @@ body > .est-sidebar-secondary {
     .relative(0, _, _, 0); // position: relative; top: 0; left: 0;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  position: relative;
-  top: 0;
-  left: 0;
+                            <pre class="output"><code class="css">.box{
+  position:relative;
+  top:0;
+  left:0;
 }
 </code></pre>
                         </li>
@@ -5385,10 +5119,10 @@ body > .est-sidebar-secondary {
     .fixed(0, _, _, 0); // position: fixed; top: 0; left: 0;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  position: fixed;
-  top: 0;
-  left: 0;
+                            <pre class="output"><code class="css">.box{
+  position:fixed;
+  top:0;
+  left:0;
 }
 </code></pre>
                         </li>
@@ -5408,10 +5142,10 @@ body > .est-sidebar-secondary {
     .margin(10px, 5px, _, 0); // margin-top: 10px; margin-right: 5px; margin-left: 0;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  margin-top: 10px;
-  margin-right: 5px;
-  margin-left: 0;
+                            <pre class="output"><code class="css">.box{
+  margin-top:10px;
+  margin-right:5px;
+  margin-left:0;
 }
 </code></pre>
                         </li>
@@ -5432,9 +5166,9 @@ body > .est-sidebar-secondary {
     .padding(10px, _); // padding-top: 10px; padding-bottom: 10px;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  padding-top: 10px;
-  padding-bottom: 10px;
+                            <pre class="output"><code class="css">.box{
+  padding-top:10px;
+  padding-bottom:10px;
 }
 </code></pre>
                         </li>
@@ -5455,9 +5189,9 @@ body > .est-sidebar-secondary {
     .border-color(red, _, _, blue); // border-top-color: #ff0000; border-left-color: #0000ff;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  border-top-color: red;
-  border-left-color: blue;
+                            <pre class="output"><code class="css">.box{
+  border-top-color:red;
+  border-left-color:blue;
 }
 </code></pre>
                         </li>
@@ -5478,8 +5212,8 @@ body > .est-sidebar-secondary {
     .border-style(solid, _, _); // border-top-style: solid;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  border-top-style: solid;
+                            <pre class="output"><code class="css">.box{
+  border-top-style:solid;
 }
 </code></pre>
                         </li>
@@ -5500,8 +5234,8 @@ body > .est-sidebar-secondary {
     .border-width(_, _, 3px, _); // border-bottom-width: 3px;
 }</code></pre>
 
-                            <pre class="output"><code class="css">.box {
-  border-bottom-width: 3px;
+                            <pre class="output"><code class="css">.box{
+  border-bottom-width:3px;
 }
 </code></pre>
                         </li>

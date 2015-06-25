@@ -42,6 +42,11 @@ function compileDemos() {
     var out = {};
     var remaining = codes.length;
     var bar = new ProgressBar('Compiling demos... :percent :elapseds', { total: remaining });
+
+    var postcss = require('postcss');
+    var fmt = require('postcss-fmt');
+    var comments = require('postcss-discard-comments');
+
     for (var i = 0, j = remaining; i < j; i++) {
         var code = codes[i];
         (function (code) {
@@ -53,6 +58,10 @@ function compileDemos() {
                 }
             }).then(function (output) {
                 var compiled = output.css;
+                compiled = postcss([
+                    comments({removeAll: true})
+                    // fmt
+                ]).process(compiled).css;
                 out[code] = compiled;
                 done();
             }, function (err) {
