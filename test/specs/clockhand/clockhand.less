@@ -3,7 +3,7 @@
 }
 
 .ch-2 {
-    .clockhand(1px 2px 3px, prefix, suffix, top bottom left right);
+    .clockhand(1px 2px 3px, prefix, suffix);
 }
 
 .a {
@@ -11,19 +11,27 @@
 }
 
 .f {
-    .fixed(_, _, 10px, 10px);
+    .fixed(_ _ 10px 10px);
 }
 
 .r {
     .relative(_, _, _, 5px);
 }
 
-.p {
+.p-1 {
     .padding(1em, 2em);
 }
 
-.m {
+.p-2 {
+    .padding(1em 3em 1em 3em);
+}
+
+.m-1 {
     .margin(_, _, 2em);
+}
+
+.m-2 {
+    .margin(3em);
 }
 
 .bc {
@@ -31,7 +39,7 @@
 }
 
 .bs {
-    .border-style(_, solid, dotted, _);
+    .border-style(_ solid dotted _);
 }
 
 .bw {
