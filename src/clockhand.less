@@ -51,7 +51,7 @@
             @shorthand: @top @right @bottom @left;
         }
         .output();
-        @{prefix}: @shorthand;
+        @{prefix}@{suf}: @shorthand;
     }
     .reduce() when (default()) {
         .output() when not (@top = _) {
