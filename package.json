@@ -4,6 +4,7 @@
   "description": "EFE Styling Toolkit",
   "devDependencies": {
     "chalk": "~0.5.1",
+    "cssbeautify": "^0.3.1",
     "diff": "~1.2.2",
     "less": "~2.0.0",
     "postcss": "^4.1.13",
