@@ -8,7 +8,6 @@
     "less": "~2.0.0",
     "postcss": "^4.1.13",
     "postcss-discard-comments": "^1.2.0",
-    "postcss-fmt": "git://github.com/hail2u/postcss-fmt",
     "progress": "~1.1.8"
   },
   "main": "lib/index.js",

@@ -1,5 +1,7 @@
 # Changelog
 * 2.0.3 **最新**
+  * 优化了 `.font-family()` 的实现，当 IE 回退字体配置和默认配置想同时不再输出 hack
+  * 优化了 `clockhand` 模块下 `.padding()` 和 `.margin()` 等 mixin 的输出，在等价情况下自动使用缩写属性值
   * 增加了插件 @ 规则去重功能的单测
   * 增加了插件代码的 JSDoc
 

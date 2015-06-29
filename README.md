@@ -1,4 +1,4 @@
-est (EFE Styling Toolkit) [![NPM package](https://img.shields.io/npm/v/less-plugin-est.svg)](https://www.npmjs.com/package/less-plugin-est) [![Build Status](https://api.travis-ci.org/ecomfe/est.svg)](https://travis-ci.org/ecomfe/est)
+est (EFE Styling Toolkit) [![NPM package](https://img.shields.io/npm/v/less-plugin-est.svg?style=flat-square)](https://www.npmjs.com/package/less-plugin-est) [![Build Status](https://img.shields.io/travis/ecomfe/est/dev.svg?style=flat-square)](https://travis-ci.org/ecomfe/est)
 ===
 
 > From Middle English este, from Old English ēst (“will, consent, favour, grace, liberality, munificence, bounty, kindness, love, good pleasure, harmony, liberal gifts, luxuries”)
@@ -10,7 +10,7 @@ Est provides over 100 handy [mixins](http://lesscss.org/features/#mixins-feature
 
 ## Quick Start
 
-est can be included in two ways:
+est can be included in three ways:
 
 1. import in your Less code:
 
@@ -48,6 +48,22 @@ est can be included in two ways:
         $ lessc styles.less --est
         ```
 
+3. use it programatically in Node.js apps:
+
+    ```js
+    var less = require('less');
+    var Est = require('less-plugin-est');
+
+    var src = '.box { .clearfix(); }';
+
+    less.render(src, {
+        plugins: [
+            new Est()
+        ]
+    }).then(function (result) {
+        // handle compiling result
+    });
+    ```
 
 ## Plugin Features & Options
 
