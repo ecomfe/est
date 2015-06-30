@@ -8,12 +8,6 @@ function extractName(file, ext) {
     return match ? match[1] : null;
 }
 
-function getModule(part) {
-    var pattern = /^([^.])+./;
-    var match = part.match(pattern);
-    return match ? match[1] : null;
-}
-
 function log(msg) {
     process.stdout.write(msg);
 }
@@ -25,7 +19,7 @@ function logLine(msg) {
 var chalk = require('chalk');
 function diff(left, right) {
     require('diff').diffLines(left, right).forEach(function (item) {
-        if(item.added || item.removed) {
+        if (item.added || item.removed) {
             var text = item.value.replace('\n', '\u00b6\n').replace('\ufeff', '[[BOM]]');
             log(chalk[item.added ? 'green' : 'red'](text));
         } else {
@@ -48,7 +42,7 @@ function diff(left, right) {
 /**
  * Get all modules
  */
-var modules = [];
+var modules = ['plugin'];
 var srcDir = path.resolve(__dirname, '../src');
 fs.readdirSync(srcDir).forEach(function (moduleFile) {
     var module = extractName(moduleFile, 'less');
@@ -67,7 +61,7 @@ var specDir = path.resolve(__dirname, 'specs');
 modules.forEach(function (module) {
     var moduleDir = specDir + '/' + module;
     if (!fs.existsSync(moduleDir)) {
-        noTests.push(module)
+        noTests.push(module);
         return;
     }
     if (fs.statSync(moduleDir).isDirectory()) {
@@ -99,7 +93,10 @@ modules.forEach(function (module) {
         });
     }
 });
-logLine('\u2731 No test specs found for the following module' + (noTests.length > 1 ? 's' : '') + ':\n' + noTests.join('\n') + '\n');
+logLine('\u2731 No test specs found for the following module'
+    + (noTests.length > 1 ? 's' : '') + ':\n'
+    + noTests.join('\n') + '\n'
+);
 
 /**
  * Prepare tests
@@ -151,21 +148,29 @@ TestRunner.prototype.next = function () {
             me.next();
         });
     } else {
-        logLine('\n--------\n');
-        if (!this.failed) {
-            logLine('All ' + this.total + ' spec' + (this.total > 1 ? 's' : '') + ' passed.');
-        } else {
-            var passed = this.total - this.failed;
-            logLine(
-                passed + ' spec' + (passed > 1 ? 's' : '') + ' passed, '
-                + this.failed + ' spec' + (this.failed > 1 ? 's' : '') + ' failed.'
-            );
-        }
+        this.end();
+    }
+};
+TestRunner.prototype.end = function () {
+    logLine('\n--------\n');
+    if (!this.failed) {
+        logLine('All ' + this.total + ' spec' + (this.total > 1 ? 's' : '') + ' passed.');
+    } else {
+        var passed = this.total - this.failed;
+        logLine(
+            passed + ' spec' + (passed > 1 ? 's' : '') + ' passed, '
+            + this.failed + ' spec' + (this.failed > 1 ? 's' : '') + ' failed.'
+        );
+
+        // exit with code 1
+        process.on('exit', function () {
+            process.reallyExit(1);
+        });
     }
 };
 TestRunner.prototype.start = function () {
     this.next();
-}
+};
 
 var runner = new TestRunner(tests);
 runner.start();

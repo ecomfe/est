@@ -6,9 +6,9 @@
 }
 .ch-2 {
   prefix-top-suffix: 1px;
-  prefix-bottom-suffix: 2px;
-  prefix-left-suffix: 3px;
   prefix-right-suffix: 2px;
+  prefix-bottom-suffix: 3px;
+  prefix-left-suffix: 2px;
 }
 .a {
   position: absolute;
@@ -26,14 +26,17 @@
   position: relative;
   left: 5px;
 }
-.p {
-  padding-top: 1em;
-  padding-right: 2em;
-  padding-bottom: 1em;
-  padding-left: 2em;
+.p-1 {
+  padding: 1em 2em;
 }
-.m {
+.p-2 {
+  padding: 1em 3em;
+}
+.m-1 {
   margin-bottom: 2em;
+}
+.m-2 {
+  margin: 3em;
 }
 .bc {
   border-top-color: red;

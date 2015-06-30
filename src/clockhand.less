@@ -5,34 +5,71 @@
 // ### Usage:
 // Helpers for writing properties in clockhand manner.
 
-.clockhand(@values, @prefix: ~"", @suffix: ~"", @sides: top right bottom left) {
-    @val: ~"@{values}";
-    @count: ~`'@{val}'.match(/(\S+)/g).length * 1`;
-    @val-0: ~`'@{val}'.match(/(\S+)/g)[0]`;
-    @val-1: ~`'@{val}'.match(/(\S+)/g)[1] || '@{val-0}'`;
-    @val-2: ~`'@{val}'.match(/(\S+)/g)[2] || '@{val-0}'`;
-    @val-3: ~`'@{val}'.match(/(\S+)/g)[3] || '@{val-1}' || '@{val-0}'`;
+.clockhand(@values, @prefix: ~"", @suffix: ~"", @collapse: false) {
+    @l: length(@values);
     @pre: ~`'@{prefix}' ? '@{prefix}-' : ''`;
     @suf: ~`'@{suffix}' ? '-@{suffix}' : ''`;
 
-    .output() when not (@val-0 = _) {
-        @side: extract(@sides, 1);
-        @{pre}@{side}@{suf}: @val-0;
+    .map(1) {
+        @top: extract(@values, 1);
+        @right: @top;
+        @bottom: @top;
+        @left: @top;
     }
-    .output() when not (@val-1 = _) {
-        @side: extract(@sides, 2);
-        @{pre}@{side}@{suf}: @val-1;
+    .map(2) {
+        @top: extract(@values, 1);
+        @right: extract(@values, 2);
+        @bottom: @top;
+        @left: @right;
     }
-    .output() when not (@val-2 = _) {
-        @side: extract(@sides, 3);
-        @{pre}@{side}@{suf}: @val-2;
+    .map(3) {
+        @top: extract(@values, 1);
+        @right: extract(@values, 2);
+        @bottom: extract(@values, 3);
+        @left: @right;
     }
-    .output() when not (@val-3 = _) {
-        @side: extract(@sides, 4);
-        @{pre}@{side}@{suf}: @val-3;
+    .map(4) {
+        @top: extract(@values, 1);
+        @right: extract(@values, 2);
+        @bottom: extract(@values, 3);
+        @left: extract(@values, 4);
+    }
+    .map(@l);
+
+    .reduce() when (@collapse) and not (@top = _) and not (@right = _)
+        and not (@bottom = _) and not (@left = _) {
+        .output() {
+            @shorthand: @top;
+        }
+        .output() when not (@right = @top) {
+            @shorthand: @top @right;
+        }
+        .output() when not (@bottom = @top) {
+            @shorthand: @top @right @bottom;
+        }
+        .output() when not (@left = @right) {
+            @shorthand: @top @right @bottom @left;
+        }
+        .output();
+        @{prefix}@{suf}: @shorthand;
+    }
+    .reduce() when (default()) {
+        .output() when not (@top = _) {
+            @{pre}top@{suf}: @top;
+        }
+        .output() when not (@right = _) {
+            @{pre}right@{suf}: @right;
+        }
+        .output() when not (@bottom = _) {
+            @{pre}bottom@{suf}: @bottom;
+        }
+        .output() when not (@left = _) {
+            @{pre}left@{suf}: @left;
+        }
+        .output();
     }
 
-    .output();
+    .reduce();
 }
 
 .absolute(...) {
@@ -51,21 +88,21 @@
 }
 
 .padding(...) {
-    .clockhand(@arguments, padding);
+    .clockhand(@arguments, padding, ~"", true);
 }
 
 .margin(...) {
-    .clockhand(@arguments, margin);
+    .clockhand(@arguments, margin, ~"", true);
 }
 
 .border-color(...) {
-    .clockhand(@arguments, border, color);
+    .clockhand(@arguments, border, color, true);
 }
 
 .border-style(...) {
-    .clockhand(@arguments, border, style);
+    .clockhand(@arguments, border, style, true);
 }
 
 .border-width(...) {
-    .clockhand(@arguments, border, width);
+    .clockhand(@arguments, border, width, true);
 }

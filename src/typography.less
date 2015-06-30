@@ -17,19 +17,22 @@
 .font-family(base) {
     font-family: @default-base-font-family;
 }
-.font-family(base) when (@support-ie-version < 8) {
+.font-family(base) when (@support-ie-version < 8)
+    and not (@default-base-font-family = @default-old-ie-base-font-family) {
     *font-family: @default-old-ie-base-font-family;
 }
 .font-family(heading) {
     font-family: @default-heading-font-family;
 }
-.font-family(heading) when (@support-ie-version < 8) {
+.font-family(heading) when (@support-ie-version < 8)
+    and not (@default-heading-font-family = @default-old-ie-heading-font-family) {
     *font-family: @default-old-ie-heading-font-family;
 }
 .font-family(code) {
     font-family: @default-code-font-family;
 }
-.font-family(code) when (@support-ie-version < 8) {
+.font-family(code) when (@support-ie-version < 8)
+    and not (@default-code-font-family = @default-old-ie-code-font-family) {
     *font-family: @default-old-ie-code-font-family;
 }
 

@@ -1,4 +1,4 @@
-est (EFE Styling Toolkit)
+est (EFE Styling Toolkit) [![NPM package](https://img.shields.io/npm/v/less-plugin-est.svg?style=flat-square)](https://www.npmjs.com/package/less-plugin-est) [![Build Status](https://img.shields.io/travis/ecomfe/est/dev.svg?style=flat-square)](https://travis-ci.org/ecomfe/est)
 ===
 
 > From Middle English este, from Old English ēst (“will, consent, favour, grace, liberality, munificence, bounty, kindness, love, good pleasure, harmony, liberal gifts, luxuries”)
@@ -10,7 +10,7 @@ est 提供了一系列方便快捷的 [mixin](http://lesscss.org/features/#mixin
 
 ## 快速开始
 
-est 可以以两种方式引入您的项目：
+est 可以以三种方式引入您的项目：
 
 1. Less 代码中引入：
 
@@ -47,6 +47,23 @@ est 可以以两种方式引入您的项目：
         ```bash
         $ lessc styles.less --est
         ```
+
+3. 在 Node.js 中以编程方式调用:
+
+    ```js
+    var less = require('less');
+    var Est = require('less-plugin-est');
+
+    var src = '.box { .clearfix(); }';
+
+    less.render(src, {
+        plugins: [
+            new Est()
+        ]
+    }).then(function (result) {
+        // handle compiling result
+    });
+    ```
 
 
 ## 插件功能及选项
