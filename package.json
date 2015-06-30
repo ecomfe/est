@@ -1,6 +1,6 @@
 {
   "name": "less-plugin-est",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "EFE Styling Toolkit",
   "devDependencies": {
     "chalk": "^1.0.0",
