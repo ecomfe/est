@@ -266,7 +266,7 @@ button,
 input,
 select,
 textarea {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
@@ -361,7 +361,7 @@ q {
 
 q:before,
 q:after {
-    content: '';
+    content: "";
     content: none;
 }
 
@@ -831,6 +831,44 @@ audio:not([controls]),
 
 .preview a img {
     border: none;
+}
+
+.preview article,
+.preview aside,
+.preview details,
+.preview figcaption,
+.preview figure,
+.preview footer,
+.preview header,
+.preview hgroup,
+.preview menu,
+.preview nav,
+.preview section,
+.preview summary,
+.preview main {
+    display: block;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.preview audio,
+.preview canvas,
+.preview video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.preview audio:not([controls]),
+.preview [hidden] {
+    display: none;
 }
 </code></pre>
                 </li>
