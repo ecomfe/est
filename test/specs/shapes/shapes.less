@@ -1,0 +1,63 @@
+@size: 16px;
+@color: fadeout(#666, 70%);
+.t1 {
+    .triangle(top, @size, @color, side);
+}
+.t2 {
+    .triangle(top right, @size, @color, side);
+}
+.t3 {
+    .triangle(right, @size, @color, side);
+}
+.t4 {
+    .triangle(bottom right, @size, @color, side);
+}
+.t5 {
+    .triangle(bottom, @size, @color, side);
+}
+.t6 {
+    .triangle(bottom left, @size, @color, side);
+}
+.t7 {
+    .triangle(left, @size, @color, side);
+}
+.t8 {
+    .triangle(top left, @size, @color, side);
+}
+.t9 {
+    .triangle(top, @size, @color, corner);
+}
+.t10 {
+    .triangle(top right, @size, @color, corner);
+}
+.t11 {
+    .triangle(right, @size, @color, corner);
+}
+.t12 {
+    .triangle(bottom right, @size, @color, corner);
+}
+.t13 {
+    .triangle(bottom, @size, @color, corner);
+}
+.t14 {
+    .triangle(bottom left, @size, @color, corner);
+}
+.t15 {
+    .triangle(left, @size, @color, corner);
+}
+.t16 {
+    .triangle(top left, @size, @color, corner);
+}
+.c1 {
+    .circle(32px, rebeccapurple);
+}
+.c2 {
+    .circle(50%, lightgreen)
+}
+.list li::before {
+    content: "";
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+    .circle(8px, #ccc);
+}

@@ -93,10 +93,14 @@ modules.forEach(function (module) {
         });
     }
 });
-logLine('\u2731 No test specs found for the following module'
-    + (noTests.length > 1 ? 's' : '') + ':\n'
-    + noTests.join('\n') + '\n'
-);
+if (noTests.length) {
+    logLine('\u2731 No test specs found for the following module'
+        + (noTests.length > 1 ? 's' : '') + ':\n'
+        + noTests.join('\n') + '\n'
+    );
+} else {
+    logLine('\u2731 Great. Each module has got test specs.\n');
+}
 
 /**
  * Prepare tests

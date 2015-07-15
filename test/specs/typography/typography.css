@@ -1,9 +1,9 @@
 .ff-b {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 .ff-h {
-  font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-  *font-family: 'Microsoft YaHei', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  *font-family: "Microsoft YaHei", Arial, sans-serif;
 }
 .ff-c {
   font-family: Monaco, Consolas, monospace;
