@@ -255,9 +255,11 @@ npm test</code></pre>
                     <pre class="usage"><code class="less">// global scope
 .global-normalize();</code></pre>
 
-                    <pre class="output"><code class="css">html {
+                    <pre class="output"><code class="css">/*! normalize.css v1.1.2 | MIT License | git.io/normalize */
+
+html {
     font-size: 100%;
-    -ms-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -266,7 +268,9 @@ button,
 input,
 select,
 textarea {
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica Neue",
+                 Arial,
+                 sans-serif;
 }
 
 body {
@@ -331,8 +335,8 @@ dfn {
 
 hr {
     -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
     height: 0;
 }
 
@@ -345,7 +349,9 @@ code,
 kbd,
 pre,
 samp {
-    font-family: Monaco, Consolas, monospace;
+    font-family: Monaco,
+                 Consolas,
+                 monospace;
     font-size: 1em;
 }
 
@@ -492,18 +498,8 @@ table {
     border-spacing: 0;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav,
+section, summary {
     display: block;
 }
 
@@ -536,8 +532,8 @@ figure {
 input[type="search"] {
     -webkit-appearance: textfield;
     -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -552,59 +548,119 @@ input[type="search"]::-webkit-search-decoration {
                     <pre class="usage"><code class="less">// global scope
 .global-normalize-opentype();</code></pre>
 
-                    <pre class="output"><code class="css">html,
+                    <pre class="output"><code class="css">/*! normalize-opentype v0.1.2 | MIT License | kennethormandy.com/journal/normalize-opentype-css */
+
+html,
 body {
-    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+    font-feature-settings: "kern" 1,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 1,
+                           "lnum" 0,
+                           "dlig" 0;
 }
 
 h1,
 h2,
 h3 {
-    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+    font-feature-settings: "kern" 1,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 1,
+                           "lnum" 0,
+                           "dlig" 1;
 }
 
 abbr {
     text-transform: uppercase;
-    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+    font-feature-settings: "kern" 1,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 1,
+                           "lnum" 0,
+                           "smcp" 1,
+                           "c2sc" 1;
 }
 
 time {
-    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+    font-feature-settings: "kern" 1,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 1,
+                           "lnum" 0;
 }
 
 pre,
 kbd,
 samp,
 code {
-    font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+    font-feature-settings: "kern" 0,
+                           "liga" 0,
+                           "dlig" 0,
+                           "pnum" 0,
+                           "tnum" 1,
+                           "onum" 0,
+                           "lnum" 1,
+                           "zero" 1;
 }
 
 sup {
-    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
+    font-feature-settings: "kern" 1,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 1,
+                           "lnum" 0,
+                           "dlig" 0,
+                           "sups" 1;
 }
 
 sub {
-    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
+    font-feature-settings: "kern" 1,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 1,
+                           "lnum" 0,
+                           "dlig" 0,
+                           "subs" 1;
 }
 
 table {
-    font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+    font-feature-settings: "kern" 0,
+                           "liga" 1,
+                           "pnum" 0,
+                           "tnum" 1,
+                           "onum" 0,
+                           "lnum" 1,
+                           "zero" 1;
 }
 
 table thead,
 table tfoot {
-    font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+    font-feature-settings: "kern" 1,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 1,
+                           "lnum" 0,
+                           "dlig" 0;
 }
 
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="number"],
-input[type="range"],
-input[type="tel"],
-input[type="week"] {
-    font-feature-settings: "kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
+input[type="color"], input[type="date"], input[type="datetime"],
+input[type="datetime-local"], input[type="number"], input[type="range"],
+input[type="tel"], input[type="week"] {
+    font-feature-settings: "kern" 0,
+                           "liga" 1,
+                           "pnum" 1,
+                           "tnum" 0,
+                           "onum" 0,
+                           "lnum" 1,
+                           "zero" 0;
 }
 </code></pre>
                 </li>
@@ -627,63 +683,11 @@ input[type="week"] {
                     <pre class="usage"><code class="less">// global scope
 .global-reset();</code></pre>
 
-                    <pre class="output"><code class="css">html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+                    <pre class="output"><code class="css">html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol,
+ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+th, td {
     padding: 0;
     margin: 0;
     border: 0;
@@ -722,19 +726,8 @@ a img {
     border: none;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-main {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+section, summary, main {
     display: block;
     padding: 0;
     margin: 0;
@@ -768,42 +761,13 @@ audio:not([controls]),
     .nested-reset();
 }</code></pre>
 
-                    <pre class="output"><code class="css">.preview div,
-.preview span,
-.preview object,
-.preview iframe,
-.preview h1,
-.preview h2,
-.preview h3,
-.preview h4,
-.preview h5,
-.preview h6,
-.preview p,
-.preview pre,
-.preview a,
-.preview abbr,
-.preview acronym,
-.preview address,
-.preview code,
-.preview del,
-.preview dfn,
-.preview em,
-.preview img,
-.preview dl,
-.preview dt,
-.preview dd,
-.preview ol,
-.preview ul,
-.preview li,
-.preview fieldset,
-.preview form,
-.preview label,
-.preview legend,
-.preview caption,
-.preview tbody,
-.preview tfoot,
-.preview thead,
-.preview tr {
+                    <pre class="output"><code class="css">.preview div, .preview span, .preview object, .preview iframe, .preview h1,
+.preview h2, .preview h3, .preview h4, .preview h5, .preview h6, .preview p,
+.preview pre, .preview a, .preview abbr, .preview acronym, .preview address,
+.preview code, .preview del, .preview dfn, .preview em, .preview img,
+.preview dl, .preview dt, .preview dd, .preview ol, .preview ul, .preview li,
+.preview fieldset, .preview form, .preview label, .preview legend,
+.preview caption, .preview tbody, .preview tfoot, .preview thead, .preview tr {
     padding: 0;
     margin: 0;
     border: 0;
@@ -833,19 +797,9 @@ audio:not([controls]),
     border: none;
 }
 
-.preview article,
-.preview aside,
-.preview details,
-.preview figcaption,
-.preview figure,
-.preview footer,
-.preview header,
-.preview hgroup,
-.preview menu,
-.preview nav,
-.preview section,
-.preview summary,
-.preview main {
+.preview article, .preview aside, .preview details, .preview figcaption,
+.preview figure, .preview footer, .preview header, .preview hgroup,
+.preview menu, .preview nav, .preview section, .preview summary, .preview main {
     display: block;
     padding: 0;
     margin: 0;
@@ -977,19 +931,8 @@ ol {
 .reset-html5();
 </code></pre>
 
-                    <pre class="output"><code class="css">article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-main {
+                    <pre class="output"><code class="css">article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+section, summary, main {
     display: block;
     padding: 0;
     margin: 0;
@@ -1049,8 +992,8 @@ audio:not([controls]),
 
                             <pre class="output"><code class="css">.box {
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 </code></pre>
                         </li>
@@ -1107,9 +1050,9 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.menu-item {
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 </code></pre>
                             <p class="note"><code>user-select</code> 目前没有出现在任何 W3C 官方的规范中，浏览器厂商的实现可能会有细节上的差异，目前不建议使用除 <code>text</code> 和 <code>none</code> 以外的任何值。</p>
@@ -1211,14 +1154,14 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
 }
 
 .box-two {
     -webkit-border-radius: 3px 2px;
-    -moz-border-radius: 3px 2px;
-    border-radius: 3px 2px;
+       -moz-border-radius: 3px 2px;
+            border-radius: 3px 2px;
 }
 </code></pre>
                         </li>
@@ -1240,14 +1183,14 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-border-radius: 3px / 5px;
-    -moz-border-radius: 3px / 5px;
-    border-radius: 3px / 5px;
+       -moz-border-radius: 3px / 5px;
+            border-radius: 3px / 5px;
 }
 
 .box-two {
     -webkit-border-radius: 3px 6px / 5px 5px 3px 3px;
-    -moz-border-radius: 3px 6px / 5px 5px 3px 3px;
-    border-radius: 3px 6px / 5px 5px 3px 3px;
+       -moz-border-radius: 3px 6px / 5px 5px 3px 3px;
+            border-radius: 3px 6px / 5px 5px 3px 3px;
 }
 </code></pre>
                         </li>
@@ -1271,7 +1214,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.box {
     -webkit-border-top-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
-    border-top-left-radius: 3px;
+            border-top-left-radius: 3px;
 }
 </code></pre>
                         </li>
@@ -1290,7 +1233,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.box {
     -webkit-border-top-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
-    border-top-left-radius: 3px;
+            border-top-left-radius: 3px;
 }
 </code></pre>
                         </li>
@@ -1355,14 +1298,17 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+       -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .box-two {
-    -webkit-box-shadow: 0 -1px 0 #000000, inset 0 1px 1px #ff0000;
-    -moz-box-shadow: 0 -1px 0 #000000, inset 0 1px 1px #ff0000;
-    box-shadow: 0 -1px 0 #000000, inset 0 1px 1px #ff0000;
+    -webkit-box-shadow: 0 -1px 0 #000000,
+                        inset 0 1px 1px #ff0000;
+       -moz-box-shadow: 0 -1px 0 #000000,
+                        inset 0 1px 1px #ff0000;
+            box-shadow: 0 -1px 0 #000000,
+                        inset 0 1px 1px #ff0000;
 }
 </code></pre>
                         </li>
@@ -1389,16 +1335,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-transition: background-color 1s linear;
-    -moz-transition: background-color 1s linear;
-    -o-transition: background-color 1s linear;
-    transition: background-color 1s linear;
+       -moz-transition: background-color 1s linear;
+         -o-transition: background-color 1s linear;
+            transition: background-color 1s linear;
 }
 
 .box-two {
-    -webkit-transition: height 0.5s ease, opacity 2s linear 0.5s;
-    -moz-transition: height 0.5s ease, opacity 2s linear 0.5s;
-    -o-transition: height 0.5s ease, opacity 2s linear 0.5s;
-    transition: height 0.5s ease, opacity 2s linear 0.5s;
+    -webkit-transition: height 0.5s ease,
+                        opacity 2s linear 0.5s;
+       -moz-transition: height 0.5s ease,
+                        opacity 2s linear 0.5s;
+         -o-transition: height 0.5s ease,
+                        opacity 2s linear 0.5s;
+            transition: height 0.5s ease,
+                        opacity 2s linear 0.5s;
 }
 </code></pre>
                         </li>
@@ -1432,16 +1382,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-transition-property: background-color;
-    -moz-transition-property: background-color;
-    -o-transition-property: background-color;
-    transition-property: background-color;
+       -moz-transition-property: background-color;
+         -o-transition-property: background-color;
+            transition-property: background-color;
 }
 
 .box-two {
-    -webkit-transition-property: height, opacity;
-    -moz-transition-property: height, opacity;
-    -o-transition-property: height, opacity;
-    transition-property: height, opacity;
+    -webkit-transition-property: height,
+                                 opacity;
+       -moz-transition-property: height,
+                                 opacity;
+         -o-transition-property: height,
+                                 opacity;
+            transition-property: height,
+                                 opacity;
 }
 </code></pre>
                             <p class="note">可以参与过渡的属性列表参见 <a href="http://dev.w3.org/csswg/css-transitions/#animatable-css">Animatable properties from CSS</a>。</p>
@@ -1469,16 +1423,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-transition-duration: 1s;
-    -moz-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
+       -moz-transition-duration: 1s;
+         -o-transition-duration: 1s;
+            transition-duration: 1s;
 }
 
 .box-two {
-    -webkit-transition-duration: 0.5s, 2s;
-    -moz-transition-duration: 0.5s, 2s;
-    -o-transition-duration: 0.5s, 2s;
-    transition-duration: 0.5s, 2s;
+    -webkit-transition-duration: 0.5s,
+                                 2s;
+       -moz-transition-duration: 0.5s,
+                                 2s;
+         -o-transition-duration: 0.5s,
+                                 2s;
+            transition-duration: 0.5s,
+                                 2s;
 }
 </code></pre>
                         </li>
@@ -1505,16 +1463,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+       -moz-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
 }
 
 .box-two {
-    -webkit-transition-timing-function: ease, linear;
-    -moz-transition-timing-function: ease, linear;
-    -o-transition-timing-function: ease, linear;
-    transition-timing-function: ease, linear;
+    -webkit-transition-timing-function: ease,
+                                        linear;
+       -moz-transition-timing-function: ease,
+                                        linear;
+         -o-transition-timing-function: ease,
+                                        linear;
+            transition-timing-function: ease,
+                                        linear;
 }
 </code></pre>
                         </li>
@@ -1541,16 +1503,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-transition-delay: 0s;
-    -moz-transition-delay: 0s;
-    -o-transition-delay: 0s;
-    transition-delay: 0s;
+       -moz-transition-delay: 0s;
+         -o-transition-delay: 0s;
+            transition-delay: 0s;
 }
 
 .box-two {
-    -webkit-transition-delay: 0s, 0.5s;
-    -moz-transition-delay: 0s, 0.5s;
-    -o-transition-delay: 0s, 0.5s;
-    transition-delay: 0s, 0.5s;
+    -webkit-transition-delay: 0s,
+                              0.5s;
+       -moz-transition-delay: 0s,
+                              0.5s;
+         -o-transition-delay: 0s,
+                              0.5s;
+            transition-delay: 0s,
+                              0.5s;
 }
 </code></pre>
                         </li>
@@ -1577,16 +1543,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation: rotate 2s linear;
-    -moz-animation: rotate 2s linear;
-    -o-animation: rotate 2s linear;
-    animation: rotate 2s linear;
+       -moz-animation: rotate 2s linear;
+         -o-animation: rotate 2s linear;
+            animation: rotate 2s linear;
 }
 
 .box-two {
-    -webkit-animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
-    -moz-animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
-    -o-animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
-    animation: fly-in 0.5s ease-out, fade-in 0.5s ease-out;
+    -webkit-animation: fly-in 0.5s ease-out,
+                       fade-in 0.5s ease-out;
+       -moz-animation: fly-in 0.5s ease-out,
+                       fade-in 0.5s ease-out;
+         -o-animation: fly-in 0.5s ease-out,
+                       fade-in 0.5s ease-out;
+            animation: fly-in 0.5s ease-out,
+                       fade-in 0.5s ease-out;
 }
 </code></pre>
                         </li>
@@ -1620,16 +1590,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-name: rotate;
-    -moz-animation-name: rotate;
-    -o-animation-name: rotate;
-    animation-name: rotate;
+       -moz-animation-name: rotate;
+         -o-animation-name: rotate;
+            animation-name: rotate;
 }
 
 .box-two {
-    -webkit-animation-name: fly-in, fade-in;
-    -moz-animation-name: fly-in, fade-in;
-    -o-animation-name: fly-in, fade-in;
-    animation-name: fly-in, fade-in;
+    -webkit-animation-name: fly-in,
+                            fade-in;
+       -moz-animation-name: fly-in,
+                            fade-in;
+         -o-animation-name: fly-in,
+                            fade-in;
+            animation-name: fly-in,
+                            fade-in;
 }
 </code></pre>
                         </li>
@@ -1656,16 +1630,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-duration: 3s;
-    -moz-animation-duration: 3s;
-    -o-animation-duration: 3s;
-    animation-duration: 3s;
+       -moz-animation-duration: 3s;
+         -o-animation-duration: 3s;
+            animation-duration: 3s;
 }
 
 .box-two {
-    -webkit-animation-duration: 0.5s, 3s;
-    -moz-animation-duration: 0.5s, 3s;
-    -o-animation-duration: 0.5s, 3s;
-    animation-duration: 0.5s, 3s;
+    -webkit-animation-duration: 0.5s,
+                                3s;
+       -moz-animation-duration: 0.5s,
+                                3s;
+         -o-animation-duration: 0.5s,
+                                3s;
+            animation-duration: 0.5s,
+                                3s;
 }
 </code></pre>
                         </li>
@@ -1693,16 +1671,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-timing-function: linear;
-    -moz-animation-timing-function: linear;
-    -o-animation-timing-function: linear;
-    animation-timing-function: linear;
+       -moz-animation-timing-function: linear;
+         -o-animation-timing-function: linear;
+            animation-timing-function: linear;
 }
 
 .box-two {
-    -webkit-animation-timing-function: ease, linear;
-    -moz-animation-timing-function: ease, linear;
-    -o-animation-timing-function: ease, linear;
-    animation-timing-function: ease, linear;
+    -webkit-animation-timing-function: ease,
+                                       linear;
+       -moz-animation-timing-function: ease,
+                                       linear;
+         -o-animation-timing-function: ease,
+                                       linear;
+            animation-timing-function: ease,
+                                       linear;
 }
 </code></pre>
                         </li>
@@ -1729,16 +1711,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-iteration-count: 5;
-    -moz-animation-iteration-count: 5;
-    -o-animation-iteration-count: 5;
-    animation-iteration-count: 5;
+       -moz-animation-iteration-count: 5;
+         -o-animation-iteration-count: 5;
+            animation-iteration-count: 5;
 }
 
 .box-two {
-    -webkit-animation-iteration-count: 3, infinite;
-    -moz-animation-iteration-count: 3, infinite;
-    -o-animation-iteration-count: 3, infinite;
-    animation-iteration-count: 3, infinite;
+    -webkit-animation-iteration-count: 3,
+                                       infinite;
+       -moz-animation-iteration-count: 3,
+                                       infinite;
+         -o-animation-iteration-count: 3,
+                                       infinite;
+            animation-iteration-count: 3,
+                                       infinite;
 }
 </code></pre>
                         </li>
@@ -1765,16 +1751,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-direction: reverse;
-    -moz-animation-direction: reverse;
-    -o-animation-direction: reverse;
-    animation-direction: reverse;
+       -moz-animation-direction: reverse;
+         -o-animation-direction: reverse;
+            animation-direction: reverse;
 }
 
 .box-two {
-    -webkit-animation-direction: normal, alternate;
-    -moz-animation-direction: normal, alternate;
-    -o-animation-direction: normal, alternate;
-    animation-direction: normal, alternate;
+    -webkit-animation-direction: normal,
+                                 alternate;
+       -moz-animation-direction: normal,
+                                 alternate;
+         -o-animation-direction: normal,
+                                 alternate;
+            animation-direction: normal,
+                                 alternate;
 }
 </code></pre>
                         </li>
@@ -1801,16 +1791,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-play-state: paused;
-    -moz-animation-play-state: paused;
-    -o-animation-play-state: paused;
-    animation-play-state: paused;
+       -moz-animation-play-state: paused;
+         -o-animation-play-state: paused;
+            animation-play-state: paused;
 }
 
 .box-two {
-    -webkit-animation-play-state: paused, running;
-    -moz-animation-play-state: paused, running;
-    -o-animation-play-state: paused, running;
-    animation-play-state: paused, running;
+    -webkit-animation-play-state: paused,
+                                  running;
+       -moz-animation-play-state: paused,
+                                  running;
+         -o-animation-play-state: paused,
+                                  running;
+            animation-play-state: paused,
+                                  running;
 }
 </code></pre>
                         </li>
@@ -1837,16 +1831,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-delay: 2s;
-    -moz-animation-delay: 2s;
-    -o-animation-delay: 2s;
-    animation-delay: 2s;
+       -moz-animation-delay: 2s;
+         -o-animation-delay: 2s;
+            animation-delay: 2s;
 }
 
 .box-two {
-    -webkit-animation-delay: 0s, 1s;
-    -moz-animation-delay: 0s, 1s;
-    -o-animation-delay: 0s, 1s;
-    animation-delay: 0s, 1s;
+    -webkit-animation-delay: 0s,
+                             1s;
+       -moz-animation-delay: 0s,
+                             1s;
+         -o-animation-delay: 0s,
+                             1s;
+            animation-delay: 0s,
+                             1s;
 }
 </code></pre>
                         </li>
@@ -1873,16 +1871,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-animation-fill-mode: backwards;
-    -moz-animation-fill-mode: backwards;
-    -o-animation-fill-mode: backwards;
-    animation-fill-mode: backwards;
+       -moz-animation-fill-mode: backwards;
+         -o-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
 }
 
 .box-two {
-    -webkit-animation-fill-mode: forwards, both;
-    -moz-animation-fill-mode: forwards, both;
-    -o-animation-fill-mode: forwards, both;
-    animation-fill-mode: forwards, both;
+    -webkit-animation-fill-mode: forwards,
+                                 both;
+       -moz-animation-fill-mode: forwards,
+                                 both;
+         -o-animation-fill-mode: forwards,
+                                 both;
+            animation-fill-mode: forwards,
+                                 both;
 }
 </code></pre>
                         </li>
@@ -1909,18 +1911,18 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-transform: matrix(1, 2, 3, 4, 5, 6);
-    -moz-transform: matrix(1, 2, 3, 4, 5, 6);
-    -ms-transform: matrix(1, 2, 3, 4, 5, 6);
-    -o-transform: matrix(1, 2, 3, 4, 5, 6);
-    transform: matrix(1, 2, 3, 4, 5, 6);
+       -moz-transform: matrix(1, 2, 3, 4, 5, 6);
+        -ms-transform: matrix(1, 2, 3, 4, 5, 6);
+         -o-transform: matrix(1, 2, 3, 4, 5, 6);
+            transform: matrix(1, 2, 3, 4, 5, 6);
 }
 
 .box-two {
     -webkit-transform: translateX(10px) rotate(10deg) translateY(5px);
-    -moz-transform: translateX(10px) rotate(10deg) translateY(5px);
-    -ms-transform: translateX(10px) rotate(10deg) translateY(5px);
-    -o-transform: translateX(10px) rotate(10deg) translateY(5px);
-    transform: translateX(10px) rotate(10deg) translateY(5px);
+       -moz-transform: translateX(10px) rotate(10deg) translateY(5px);
+        -ms-transform: translateX(10px) rotate(10deg) translateY(5px);
+         -o-transform: translateX(10px) rotate(10deg) translateY(5px);
+            transform: translateX(10px) rotate(10deg) translateY(5px);
 }
 </code></pre>
                         </li>
@@ -1950,8 +1952,8 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 </code></pre>
                         </li>
@@ -1978,18 +1980,18 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-transform-origin: 2px left;
-    -moz-transform-origin: 2px left;
-    -ms-transform-origin: 2px left;
-    -o-transform-origin: 2px left;
-    transform-origin: 2px left;
+       -moz-transform-origin: 2px left;
+        -ms-transform-origin: 2px left;
+         -o-transform-origin: 2px left;
+            transform-origin: 2px left;
 }
 
 .box-two {
     -webkit-transform-origin: 2px 30% 10px;
-    -moz-transform-origin: 2px 30% 10px;
-    -ms-transform-origin: 2px 30% 10px;
-    -o-transform-origin: 2px 30% 10px;
-    transform-origin: 2px 30% 10px;
+       -moz-transform-origin: 2px 30% 10px;
+        -ms-transform-origin: 2px 30% 10px;
+         -o-transform-origin: 2px 30% 10px;
+            transform-origin: 2px 30% 10px;
 }
 </code></pre>
                         </li>
@@ -2012,8 +2014,8 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 </code></pre>
                         </li>
@@ -2036,8 +2038,8 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-perspective: 1500px;
-    -moz-perspective: 1500px;
-    perspective: 1500px;
+       -moz-perspective: 1500px;
+            perspective: 1500px;
 }
 </code></pre>
                         </li>
@@ -2055,10 +2057,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: matrix(1, -0.2, 0, 1, 0, 0);
-    -moz-transform: matrix(1, -0.2, 0, 1, 0, 0);
-    -ms-transform: matrix(1, -0.2, 0, 1, 0, 0);
-    -o-transform: matrix(1, -0.2, 0, 1, 0, 0);
-    transform: matrix(1, -0.2, 0, 1, 0, 0);
+       -moz-transform: matrix(1, -0.2, 0, 1, 0, 0);
+        -ms-transform: matrix(1, -0.2, 0, 1, 0, 0);
+         -o-transform: matrix(1, -0.2, 0, 1, 0, 0);
+            transform: matrix(1, -0.2, 0, 1, 0, 0);
 }
 </code></pre>
                         </li>
@@ -2081,10 +2083,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: translate(80px);
-    -moz-transform: translate(80px);
-    -ms-transform: translate(80px);
-    -o-transform: translate(80px);
-    transform: translate(80px);
+       -moz-transform: translate(80px);
+        -ms-transform: translate(80px);
+         -o-transform: translate(80px);
+            transform: translate(80px);
 }
 </code></pre>
                         <p class="note">Y 轴方向不进行平移。等价于 <a href="#translateX-1"><code>.translateX(@tx)</code></a>。</p>
@@ -2103,10 +2105,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: translate(30px, 50px);
-    -moz-transform: translate(30px, 50px);
-    -ms-transform: translate(30px, 50px);
-    -o-transform: translate(30px, 50px);
-    transform: translate(30px, 50px);
+       -moz-transform: translate(30px, 50px);
+        -ms-transform: translate(30px, 50px);
+         -o-transform: translate(30px, 50px);
+            transform: translate(30px, 50px);
 }
 </code></pre>
                         </li>
@@ -2128,10 +2130,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: translateX(80px);
-    -moz-transform: translateX(80px);
-    -ms-transform: translateX(80px);
-    -o-transform: translateX(80px);
-    transform: translateX(80px);
+       -moz-transform: translateX(80px);
+        -ms-transform: translateX(80px);
+         -o-transform: translateX(80px);
+            transform: translateX(80px);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#translate-1"><code>.translate(@tx)</code></a> 及 <a href="#translate-2"><code>.translate(@tx, 0)</code></a>。</p>
@@ -2154,10 +2156,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: translateY(80px);
-    -moz-transform: translateY(80px);
-    -ms-transform: translateY(80px);
-    -o-transform: translateY(80px);
-    transform: translateY(80px);
+       -moz-transform: translateY(80px);
+        -ms-transform: translateY(80px);
+         -o-transform: translateY(80px);
+            transform: translateY(80px);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#translate-2"><code>.translate(0, @ty)</code></a>。</p>
@@ -2180,10 +2182,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: scale(2.1);
-    -moz-transform: scale(2.1);
-    -ms-transform: scale(2.1);
-    -o-transform: scale(2.1);
-    transform: scale(2.1);
+       -moz-transform: scale(2.1);
+        -ms-transform: scale(2.1);
+         -o-transform: scale(2.1);
+            transform: scale(2.1);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#scale-2"><code>.scale(@s, @s)</code></a>。</p>
@@ -2202,10 +2204,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: scale(2.1, 4);
-    -moz-transform: scale(2.1, 4);
-    -ms-transform: scale(2.1, 4);
-    -o-transform: scale(2.1, 4);
-    transform: scale(2.1, 4);
+       -moz-transform: scale(2.1, 4);
+        -ms-transform: scale(2.1, 4);
+         -o-transform: scale(2.1, 4);
+            transform: scale(2.1, 4);
 }
 </code></pre>
                         </li>
@@ -2227,10 +2229,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: scaleX(0.5);
-    -moz-transform: scaleX(0.5);
-    -ms-transform: scaleX(0.5);
-    -o-transform: scaleX(0.5);
-    transform: scaleX(0.5);
+       -moz-transform: scaleX(0.5);
+        -ms-transform: scaleX(0.5);
+         -o-transform: scaleX(0.5);
+            transform: scaleX(0.5);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#scale-2"><code>.scale(@sx, 1)</code></a>。</p>
@@ -2253,10 +2255,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: scaleY(2.7);
-    -moz-transform: scaleY(2.7);
-    -ms-transform: scaleY(2.7);
-    -o-transform: scaleY(2.7);
-    transform: scaleY(2.7);
+       -moz-transform: scaleY(2.7);
+        -ms-transform: scaleY(2.7);
+         -o-transform: scaleY(2.7);
+            transform: scaleY(2.7);
 }
 </code></pre>
                         </li>
@@ -2278,10 +2280,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    -o-transform: rotate(30deg);
-    transform: rotate(30deg);
+       -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+         -o-transform: rotate(30deg);
+            transform: rotate(30deg);
 }
 </code></pre>
                         </li>
@@ -2303,10 +2305,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: skew(30deg);
-    -moz-transform: skew(30deg);
-    -ms-transform: skew(30deg);
-    -o-transform: skew(30deg);
-    transform: skew(30deg);
+       -moz-transform: skew(30deg);
+        -ms-transform: skew(30deg);
+         -o-transform: skew(30deg);
+            transform: skew(30deg);
 }
 </code></pre>
                         <p class="note">沿 Y 轴方向不进行倾斜拉伸。等价于 <a href="#skewX-1"><code>.skewX(@ax)</code></a>。</p>
@@ -2325,10 +2327,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: skew(30deg, 15deg);
-    -moz-transform: skew(30deg, 15deg);
-    -ms-transform: skew(30deg, 15deg);
-    -o-transform: skew(30deg, 15deg);
-    transform: skew(30deg, 15deg);
+       -moz-transform: skew(30deg, 15deg);
+        -ms-transform: skew(30deg, 15deg);
+         -o-transform: skew(30deg, 15deg);
+            transform: skew(30deg, 15deg);
 }
 </code></pre>
                         </li>
@@ -2351,10 +2353,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: skewX(30deg);
-    -moz-transform: skewX(30deg);
-    -ms-transform: skewX(30deg);
-    -o-transform: skewX(30deg);
-    transform: skewX(30deg);
+       -moz-transform: skewX(30deg);
+        -ms-transform: skewX(30deg);
+         -o-transform: skewX(30deg);
+            transform: skewX(30deg);
 }
 </code></pre>
                         <p class="note">等价于 <a href="#skew-1"><code>.skew(@ax)</code></a>。</p>
@@ -2377,10 +2379,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: skewY(15deg);
-    -moz-transform: skewY(15deg);
-    -ms-transform: skewY(15deg);
-    -o-transform: skewY(15deg);
-    transform: skewY(15deg);
+       -moz-transform: skewY(15deg);
+        -ms-transform: skewY(15deg);
+         -o-transform: skewY(15deg);
+            transform: skewY(15deg);
 }
 </code></pre>
                         </li>
@@ -2401,10 +2403,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -o-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+       -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+         -o-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 </code></pre>
                         </li>
@@ -2431,10 +2433,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: translate3d(12px, 50%, 3em);
-    -moz-transform: translate3d(12px, 50%, 3em);
-    -ms-transform: translate3d(12px, 50%, 3em);
-    -o-transform: translate3d(12px, 50%, 3em);
-    transform: translate3d(12px, 50%, 3em);
+       -moz-transform: translate3d(12px, 50%, 3em);
+        -ms-transform: translate3d(12px, 50%, 3em);
+         -o-transform: translate3d(12px, 50%, 3em);
+            transform: translate3d(12px, 50%, 3em);
 }
 </code></pre>
                         </li>
@@ -2456,10 +2458,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: translateZ(3em);
-    -moz-transform: translateZ(3em);
-    -ms-transform: translateZ(3em);
-    -o-transform: translateZ(3em);
-    transform: translateZ(3em);
+       -moz-transform: translateZ(3em);
+        -ms-transform: translateZ(3em);
+         -o-transform: translateZ(3em);
+            transform: translateZ(3em);
 }
 </code></pre>
                         </li>
@@ -2486,10 +2488,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: scale3d(2.5, 1.2, 0.3);
-    -moz-transform: scale3d(2.5, 1.2, 0.3);
-    -ms-transform: scale3d(2.5, 1.2, 0.3);
-    -o-transform: scale3d(2.5, 1.2, 0.3);
-    transform: scale3d(2.5, 1.2, 0.3);
+       -moz-transform: scale3d(2.5, 1.2, 0.3);
+        -ms-transform: scale3d(2.5, 1.2, 0.3);
+         -o-transform: scale3d(2.5, 1.2, 0.3);
+            transform: scale3d(2.5, 1.2, 0.3);
 }
 </code></pre>
                         </li>
@@ -2511,10 +2513,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: scaleZ(0.3);
-    -moz-transform: scaleZ(0.3);
-    -ms-transform: scaleZ(0.3);
-    -o-transform: scaleZ(0.3);
-    transform: scaleZ(0.3);
+       -moz-transform: scaleZ(0.3);
+        -ms-transform: scaleZ(0.3);
+         -o-transform: scaleZ(0.3);
+            transform: scaleZ(0.3);
 }
 </code></pre>
                         </li>
@@ -2543,10 +2545,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: rotate3d(1, 2, 3, 10deg);
-    -moz-transform: rotate3d(1, 2, 3, 10deg);
-    -ms-transform: rotate3d(1, 2, 3, 10deg);
-    -o-transform: rotate3d(1, 2, 3, 10deg);
-    transform: rotate3d(1, 2, 3, 10deg);
+       -moz-transform: rotate3d(1, 2, 3, 10deg);
+        -ms-transform: rotate3d(1, 2, 3, 10deg);
+         -o-transform: rotate3d(1, 2, 3, 10deg);
+            transform: rotate3d(1, 2, 3, 10deg);
 }
 </code></pre>
                         </li>
@@ -2568,10 +2570,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: rotateX(60deg);
-    -moz-transform: rotateX(60deg);
-    -ms-transform: rotateX(60deg);
-    -o-transform: rotateX(60deg);
-    transform: rotateX(60deg);
+       -moz-transform: rotateX(60deg);
+        -ms-transform: rotateX(60deg);
+         -o-transform: rotateX(60deg);
+            transform: rotateX(60deg);
 }
 </code></pre>
                         </li>
@@ -2594,10 +2596,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: rotateY(60deg);
-    -moz-transform: rotateY(60deg);
-    -ms-transform: rotateY(60deg);
-    -o-transform: rotateY(60deg);
-    transform: rotateY(60deg);
+       -moz-transform: rotateY(60deg);
+        -ms-transform: rotateY(60deg);
+         -o-transform: rotateY(60deg);
+            transform: rotateY(60deg);
 }
 </code></pre>
                         </li>
@@ -2620,10 +2622,10 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box {
     -webkit-transform: rotateZ(60deg);
-    -moz-transform: rotateZ(60deg);
-    -ms-transform: rotateZ(60deg);
-    -o-transform: rotateZ(60deg);
-    transform: rotateZ(60deg);
+       -moz-transform: rotateZ(60deg);
+        -ms-transform: rotateZ(60deg);
+         -o-transform: rotateZ(60deg);
+            transform: rotateZ(60deg);
 }
 </code></pre>
                         </li>
@@ -2651,16 +2653,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    -o-background-clip: padding-box;
-    background-clip: padding-box;
+       -moz-background-clip: padding;
+         -o-background-clip: padding-box;
+            background-clip: padding-box;
 }
 
 .box-two {
-    -webkit-background-clip: border-box, content-box;
-    -moz-background-clip: border, content;
-    -o-background-clip: border-box, content-box;
-    background-clip: border-box, content-box;
+    -webkit-background-clip: border-box,
+                             content-box;
+       -moz-background-clip: border,
+                             content;
+         -o-background-clip: border-box,
+                             content-box;
+            background-clip: border-box,
+                             content-box;
 }
 </code></pre>
                         </li>
@@ -2687,16 +2693,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 
 .box-two {
-    -webkit-background-size: 50% auto, contain;
-    -moz-background-size: 50% auto, contain;
-    -o-background-size: 50% auto, contain;
-    background-size: 50% auto, contain;
+    -webkit-background-size: 50% auto,
+                             contain;
+       -moz-background-size: 50% auto,
+                             contain;
+         -o-background-size: 50% auto,
+                             contain;
+            background-size: 50% auto,
+                             contain;
 }
 </code></pre>
                         </li>
@@ -2723,16 +2733,20 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.box-one {
     -webkit-background-origin: border-box;
-    -moz-background-origin: border;
-    -o-background-origin: border-box;
-    background-origin: border-box;
+       -moz-background-origin: border;
+         -o-background-origin: border-box;
+            background-origin: border-box;
 }
 
 .box-two {
-    -webkit-background-origin: border-box, padding-box;
-    -moz-background-origin: border, padding;
-    -o-background-origin: border-box, padding-box;
-    background-origin: border-box, padding-box;
+    -webkit-background-origin: border-box,
+                               padding-box;
+       -moz-background-origin: border,
+                               padding;
+         -o-background-origin: border-box,
+                               padding-box;
+            background-origin: border-box,
+                               padding-box;
 }
 </code></pre>
                         </li>
@@ -3025,8 +3039,8 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.container {
     -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
 }
 </code></pre>
                         </li>
@@ -3049,8 +3063,8 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.container {
     -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
 }
 </code></pre>
                         </li>
@@ -3073,8 +3087,8 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.container {
     -webkit-flex-flow: column-reverse nowrap;
-    -ms-flex-flow: column-reverse nowrap;
-    flex-flow: column-reverse nowrap;
+        -ms-flex-flow: column-reverse nowrap;
+            flex-flow: column-reverse nowrap;
 }
 </code></pre>
                         </li>
@@ -3098,7 +3112,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.card-main {
     -ms-flex-order: 1;
     -webkit-order: 1;
-    order: 1;
+            order: 1;
 }
 </code></pre>
                         </li>
@@ -3121,8 +3135,8 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.main {
     -webkit-flex: 2 1 600px;
-    -ms-flex: 2 1 600px;
-    flex: 2 1 600px;
+        -ms-flex: 2 1 600px;
+            flex: 2 1 600px;
 }
 </code></pre>
                         </li>
@@ -3146,7 +3160,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.main {
     -webkit-flex-grow: 2;
     -ms-flex-positive: 2;
-    flex-grow: 2;
+            flex-grow: 2;
 }
 </code></pre>
                         </li>
@@ -3170,7 +3184,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.main {
     -webkit-flex-shrink: 1;
     -ms-flex-negative: 1;
-    flex-shrink: 1;
+            flex-shrink: 1;
 }
 </code></pre>
                         </li>
@@ -3194,7 +3208,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.main {
     -ms-flex-preferred-size: 600px;
     -webkit-flex-basis: 600px;
-    flex-basis: 600px;
+            flex-basis: 600px;
 }
 </code></pre>
                         </li>
@@ -3218,7 +3232,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.gallery {
     -ms-flex-pack: distribute;
     -webkit-justify-content: space-around;
-    justify-content: space-around;
+            justify-content: space-around;
 }
 </code></pre>
                             <figure class="note">
@@ -3246,7 +3260,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.gallery {
     -ms-flex-align: center;
     -webkit-align-items: center;
-    align-items: center;
+            align-items: center;
 }
 </code></pre>
                             <figure class="note">
@@ -3274,7 +3288,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.photo {
     -ms-flex-item-align: start;
     -webkit-align-self: flex-start;
-    align-self: flex-start;
+            align-self: flex-start;
 }
 </code></pre>
                             <p class="note">取值含义参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
@@ -3299,7 +3313,7 @@ textarea:-ms-input-placeholder {
                             <pre class="output"><code class="css">.photo {
     -ms-flex-line-pack: start;
     -webkit-align-content: flex-start;
-    align-content: flex-start;
+            align-content: flex-start;
 }
 </code></pre>
                             <figure class="note">
@@ -3326,7 +3340,7 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.gallery {
     -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
+       -moz-box-orient: horizontal;
 }
 </code></pre>
                         </li>
@@ -3350,7 +3364,7 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.gallery {
     -webkit-box-direction: reverse;
-    -moz-box-direction: reverse;
+       -moz-box-direction: reverse;
 }
 </code></pre>
                         </li>
@@ -3374,7 +3388,7 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.current-item {
     -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
+       -moz-box-ordinal-group: 1;
 }
 </code></pre>
                         </li>
@@ -3398,7 +3412,7 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.main-item {
     -webkit-box-flex-group: 1;
-    -moz-box-flex-group: 1;
+       -moz-box-flex-group: 1;
 }
 </code></pre>
                         </li>
@@ -3422,7 +3436,7 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.main-item {
     -webkit-box-flex: 2;
-    -moz-box-flex: 2;
+       -moz-box-flex: 2;
 }
 </code></pre>
                         </li>
@@ -3446,7 +3460,7 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.container {
     -webkit-box-align: baseline;
-    -moz-box-align: baseline;
+       -moz-box-align: baseline;
 }
 </code></pre>
                             <p class="note">参数值可参考 <a href="#align-items"><code>.align-items()</code></a>。</p>
@@ -3471,7 +3485,7 @@ textarea:-ms-input-placeholder {
 
                             <pre class="output"><code class="css">.container {
     -webkit-box-pack: justify;
-    -moz-box-pack: justify;
+       -moz-box-pack: justify;
 }
 </code></pre>
                             <p class="note">参数值可参考 <a href="#justify-content"><code>.justify-content()</code></a>。<code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code> 分别对应 <code>flex-start</code> / <code>center</code> / <code>flex-end</code> / <code>space-between</code>。</p>
@@ -3817,7 +3831,9 @@ textarea:-ms-input-placeholder {
 }</code></pre>
 
                             <pre class="output"><code class="css">pre code {
-    font-family: Monaco, Consolas, monospace;
+    font-family: Monaco,
+                 Consolas,
+                 monospace;
 }
 </code></pre>
                         </li>
@@ -3837,7 +3853,7 @@ width: 120px;
                             <pre class="output"><code class="css">.cell {
     width: 120px;
     overflow: hidden;
-    text-overflow: ellipsis;
+       text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -4042,7 +4058,9 @@ width: 120px;
                             <pre class="output"><code class="css">@font-face {
     font-family: "FamilyName";
     src: url(/some/font/url.eot);
-    src: url(/some/font/url.eot?#iefix) format("embedded-opentype"), url(/some/font/url.woff) format("woff"), url(/some/font/url.ttf) format("truetype");
+    src: url(/some/font/url.eot?#iefix) format("embedded-opentype"),
+         url(/some/font/url.woff) format("woff"),
+         url(/some/font/url.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -4261,23 +4279,9 @@ p .drop {
     line-height: 2;
 }
 
-.entry h1,
-.entry h2,
-.entry h3,
-.entry h4,
-.entry h5,
-.entry h6,
-.entry div,
-.entry p,
-.entry section,
-.entry header,
-.entry footer,
-.entry article,
-.entry ul,
-.entry ol,
-.entry pre,
-.entry table,
-.entry figure {
+.entry h1, .entry h2, .entry h3, .entry h4, .entry h5, .entry h6, .entry div,
+.entry p, .entry section, .entry header, .entry footer, .entry article,
+.entry ul, .entry ol, .entry pre, .entry table, .entry figure {
     line-height: 28px;
     margin-top: 14px;
     margin-bottom: 14px;
@@ -4949,10 +4953,7 @@ body > .est-sidebar-secondary {
     height: 0;
 }
 
-.fluid-wrap object,
-.fluid-wrap embed,
-.fluid-wrap iframe,
-.fluid-wrap img,
+.fluid-wrap object, .fluid-wrap embed, .fluid-wrap iframe, .fluid-wrap img,
 .fluid-wrap .est-fixed-ratio {
     position: absolute;
     top: 0;
@@ -5002,12 +5003,14 @@ body > .est-sidebar-secondary {
 
                             <pre class="output"><code class="css">.blind-embossed {
     color: #b9deea;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5),
+                 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .embossed {
     color: #6699cc;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5),
+                 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
 </code></pre>
                         </li>
@@ -5035,12 +5038,16 @@ body > .est-sidebar-secondary {
 
                             <pre class="output"><code class="css">.blind-debossed {
     color: rgba(161, 210, 226, 0.8);
-    text-shadow: 0 1px 1px lightblue, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 1px lightblue,
+                 0 0 0 #000000,
+                 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .debossed {
     color: rgba(91, 145, 200, 0.8);
-    text-shadow: 0 1px 1px lightblue, 0 0 0 #000000, 0 1px 0 rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 1px lightblue,
+                 0 0 0 #000000,
+                 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 </code></pre>
                         </li>
@@ -5062,7 +5069,18 @@ body > .est-sidebar-secondary {
 
                             <pre class="output"><code class="css">.three-d {
     color: lightblue;
-    text-shadow: 0 1px 0 #86b1bf, 0 2px 0 #7da8b6, 0 3px 0 #749fad, 0 4px 0 #6b96a4, 0 5px 0 #527d8b, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 1px 1px 3px rgba(0, 0, 0, 0.3), 3px 3px 5px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 1px 0 #86b1bf,
+                 0 2px 0 #7da8b6,
+                 0 3px 0 #749fad,
+                 0 4px 0 #6b96a4,
+                 0 5px 0 #527d8b,
+                 0 6px 1px rgba(0, 0, 0, 0.1),
+                 0 0 5px rgba(0, 0, 0, 0.1),
+                 1px 1px 3px rgba(0, 0, 0, 0.3),
+                 3px 3px 5px rgba(0, 0, 0, 0.2),
+                 5px 5px 10px rgba(0, 0, 0, 0.25),
+                 0 10px 10px rgba(0, 0, 0, 0.2),
+                 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 </code></pre>
                         </li>
@@ -5200,8 +5218,8 @@ body > .est-sidebar-secondary {
     width: 30%;
     padding-top: 30%;
     -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
 }
 </code></pre>
                         </li>
@@ -5221,8 +5239,8 @@ body > .est-sidebar-secondary {
     width: 30%;
     padding-top: 30%;
     -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
     background: url(img/texture.png) lightgreen no-repeat center center;
 }
 </code></pre>

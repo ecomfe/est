@@ -44,8 +44,7 @@ function compileDemos() {
     var bar = new ProgressBar('Compiling demos... :percent :elapseds', { total: remaining });
 
     var postcss = require('postcss');
-    var cssbeautify = require('cssbeautify');
-    var comments = require('postcss-discard-comments');
+    var perfectionist = require('perfectionist');
 
     for (var i = 0, j = remaining; i < j; i++) {
         var code = codes[i];
@@ -58,10 +57,14 @@ function compileDemos() {
                 }
             }).then(function (output) {
                 var compiled = output.css;
-                compiled = postcss([
-                    comments({removeAll: true})
-                ]).process(compiled).css;
-                compiled = cssbeautify(compiled);
+                try {
+                    compiled = postcss([
+                        perfectionist()
+                    ]).process(compiled).css;
+                } catch (e) {
+                    console.log(e);
+                    console.log(compiled);
+                }
                 out[code] = compiled;
                 done();
             }, function (err) {
