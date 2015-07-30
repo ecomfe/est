@@ -59,7 +59,9 @@ function compileDemos() {
                 var compiled = output.css;
                 try {
                     compiled = postcss([
-                        perfectionist()
+                        perfectionist({
+                            maxSelectorLength: 1
+                        })
                     ]).process(compiled).css;
                 } catch (e) {
                     console.log(e);
