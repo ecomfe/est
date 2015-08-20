@@ -86,6 +86,8 @@ $ lessc style.less --est="autoImport=false&uniqueDirectives=false"
 
 ### Headsup
 
+**When used as a plugin, est requires Less to be `2.0.0` or above. When included using `@import` in a Less file, the minimal Less version is `2.3.0`.**
+
 Less supports auto import by plugins only after version `2.4.0`. So if you are using older versions, you have to import est using `@import` directive in your Less code.
 
 When used as a plugin, est provides `isruleset` function (which est used) which is not supported by Less before `2.3.0`.
