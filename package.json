@@ -6,9 +6,10 @@
     "chalk": "~0.5.1",
     "cssbeautify": "^0.3.1",
     "diff": "~1.2.2",
-    "less": "~2.0.0",
+    "less": "~2.5.1",
     "perfectionist": "^1.0.1",
-    "postcss": "^4.1.13"
+    "postcss": "^4.1.13",
+    "progress": "^1.1.8"
   },
   "main": "lib/index.js",
   "scripts": {
