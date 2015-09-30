@@ -313,7 +313,7 @@
                         .then(function (output) {
                             var compiled = output.css;
                             if (me.autoprefix && autoprefixer) {
-                                compiled = autoprefixer({ browsers: '> 1%' }).process(compiled, { safe: true }).css;
+                                compiled = autoprefixer.process(compiled, { browsers: '> 1%' }).css;
                             }
                             css.setValue(compiled);
                             me.isError = false;
