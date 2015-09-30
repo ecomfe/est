@@ -8,7 +8,7 @@ gulp.task('css', function () {
   return gulp.src('./css/*.css')
     .pipe(clean({ keepBreaks: true }))
     .pipe(concat('app.min.css'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('plugin', function () {
@@ -17,7 +17,7 @@ gulp.task('plugin', function () {
     ])
     .pipe(uglify())
     .pipe(rename('plugin.min.js'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('js', ['plugin'], function () {
@@ -31,7 +31,7 @@ gulp.task('js', ['plugin'], function () {
     ])
     .pipe(uglify())
     .pipe(concat('app.min.js'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('default', ['css', 'js']);

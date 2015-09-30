@@ -311,6 +311,7 @@
                     }
                     less.render(src, options)
                         .then(function (output) {
+                            var autoprefixer = window['autoprefixer'];
                             var compiled = output.css;
                             if (me.autoprefix && autoprefixer) {
                                 compiled = autoprefixer.process(compiled, { browsers: '> 1%' }).css;
