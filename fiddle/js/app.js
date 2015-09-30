@@ -107,7 +107,7 @@
 
     var lessVersions = [{
         label: '2.5.x',
-        options: ['2.5.1', '2.5.0']
+        options: ['2.5.3', '2.5.2', '2.5.1', '2.5.0']
     }, {
         label: '2.4.x',
         options: ['2.4.0']
