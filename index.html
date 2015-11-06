@@ -22,8 +22,8 @@ var _hmt = _hmt || [];
 (function() {
     // background color
     var bgc = kolor.random({space:'rgba', h: [60, 300], s: 1, l: [0.4, 0.6]}).fadeOut(0.8).css();
-    var bgi = 'http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bright_squares.png';
-    document.body.style.background = 'linear-gradient(to top, ' + bgc + ' 0%, ' + bgc + ' 100%)' + ', url(' + bgi + ') repeat 0 0 transparent';
+    var bgi = 'img/bright_squares.png';
+    document.body.style.background = 'linear-gradient(to top, ' + bgc + ' 0%, ' + bgc + ' 100%)' + ', url(' + bgi + ') repeat 0 0';
 })();
 </script>
 <nav class="nav">
@@ -251,7 +251,7 @@ npm test</code></pre>
             <ul class="mixins">
                 <li>
                     <h2><a name="global-normalize"></a><code><a href="#global-normalize">.global-normalize()</a></code></h2>
-                    <p class="desc">全局归一化页面样式，基于 <a href="http://necolas.github.io/normalize.css/">normalize.css</a>。</p>
+                    <p class="desc">全局归一化页面样式，基于 <a href="http://necolas.github.io/normalize.css/">normalize.css</a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLy8gZ2xvYmFsIHNjb3BlCi5nbG9iYWwtbm9ybWFsaXplKCk7" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">// global scope
 .global-normalize();</code></pre>
 
@@ -550,7 +550,7 @@ input[type="search"]::-webkit-search-decoration {
                 </li>
                 <li>
                     <h2><a name="global-normalize-opentype"></a><code><a href="#global-normalize-opentype">.global-normalize-opentype()</a></code></h2>
-                    <p class="desc">全局归一化 OpenType 相关样式，基于 <a href="http://kennethormandy.com/journal/normalize-opentype-css">normalize-opentype.css</a>。</p>
+                    <p class="desc">全局归一化 OpenType 相关样式，基于 <a href="http://kennethormandy.com/journal/normalize-opentype-css">normalize-opentype.css</a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLy8gZ2xvYmFsIHNjb3BlCi5nbG9iYWwtbm9ybWFsaXplLW9wZW50eXBlKCk7" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">// global scope
 .global-normalize-opentype();</code></pre>
 
@@ -627,7 +627,7 @@ input[type="week"] {
             <ul class="mixins">
                 <li>
                     <h2><a name="global-reset"></a><code><a href="#global-reset">.global-reset()</a></code></h2>
-                    <p class="desc">进行全局样式重置。</p>
+                    <p class="desc">进行全局样式重置。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLy8gZ2xvYmFsIHNjb3BlCi5nbG9iYWwtcmVzZXQoKTs=" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">// global scope
 .global-reset();</code></pre>
 
@@ -767,7 +767,7 @@ audio:not([controls]),
                 </li>
                 <li>
                     <h2><a name="nested-reset"></a><code><a href="#nested-reset">.nested-reset()</a></code></h2>
-                    <p class="desc">对选择器指定的元素内部进行样式重置。</p>
+                    <p class="desc">对选择器指定的元素内部进行样式重置。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnByZXZpZXcgewogICAgLm5lc3RlZC1yZXNldCgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.preview {
     .nested-reset();
 }</code></pre>
@@ -878,7 +878,7 @@ audio:not([controls]),
                 </li>
                 <li>
                     <h2><a name="reset-box-model"></a><code><a href="#reset-box-model">.reset-box-model()</a></code></h2>
-                    <p class="desc">重置盒模型。</p>
+                    <p class="desc">重置盒模型。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1vZHVsZSB7CiAgICAucmVzZXQtYm94LW1vZGVsKCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.module {
     .reset-box-model();
 }</code></pre>
@@ -892,7 +892,7 @@ audio:not([controls]),
                 </li>
                 <li>
                     <h2><a name="reset-focus"></a><code><a href="#reset-focus">.reset-focus()</a></code></h2>
-                    <p class="desc">重置元素外框线。</p>
+                    <p class="desc">重置元素外框线。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1vZHVsZSB7CiAgICAucmVzZXQtZm9jdXMoKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.module {
     .reset-focus();
 }</code></pre>
@@ -905,7 +905,7 @@ audio:not([controls]),
                 </li>
                 <li>
                     <h2><a name="reset-font"></a><code><a href="#reset-font">.reset-font()</a></code></h2>
-                    <p class="desc">重置字体相关属性。</p>
+                    <p class="desc">重置字体相关属性。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKc3BhbiB7CiAgICAucmVzZXQtZm9udCgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">span {
     .reset-font();
 }</code></pre>
@@ -922,7 +922,7 @@ audio:not([controls]),
                 </li>
                 <li>
                     <h2><a name="reset-body"></a><code><a href="#reset-body">.reset-body()</a></code></h2>
-                    <p class="desc">重置 <code>body</code> 元素。</p>
+                    <p class="desc">重置 <code>body</code> 元素。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYm9keSB7CiAgICAucmVzZXQtYm9keSgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">body {
     .reset-body();
 }</code></pre>
@@ -934,7 +934,7 @@ audio:not([controls]),
                 </li>
                 <li>
                     <h2><a name="reset-table"></a><code><a href="#reset-table">.reset-table()</a></code></h2>
-                    <p class="desc">重置表格样式。</p>
+                    <p class="desc">重置表格样式。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKdGFibGUgewogICAgLnJlc2V0LXRhYmxlKCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">table {
     .reset-table();
 }</code></pre>
@@ -948,7 +948,7 @@ audio:not([controls]),
                 </li>
                 <li>
                     <h2><a name="reset-table-cell"></a><code><a href="#reset-table-cell">.reset-table-cell()</a></code></h2>
-                    <p class="desc">重置表格单元格样式（<code>td</code>、<code>th</code>）。</p>
+                    <p class="desc">重置表格单元格样式（<code>td</code>、<code>th</code>）。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKdGQsIHRoIHsKICAgIC5yZXNldC10YWJsZS1jZWxsKCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">td, th {
     .reset-table-cell();
 }</code></pre>
@@ -963,7 +963,7 @@ th {
                 </li>
                 <li>
                     <h2><a name="reset-list-style"></a><code><a href="#reset-list-style">.reset-list-style()</a></code></h2>
-                    <p class="desc">重置列表项目符号样式。</p>
+                    <p class="desc">重置列表项目符号样式。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKdWwsIG9sIHsKICAgIC5yZXNldC1saXN0LXN0eWxlKCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">ul, ol {
     .reset-list-style();
 }</code></pre>
@@ -976,7 +976,7 @@ ol {
                 </li>
                 <li>
                     <h2><a name="reset-html5"></a><code><a href="#reset-html5">.reset-html5()</a></code></h2>
-                    <p class="desc">重置 HTML5 元素的样式。</p>
+                    <p class="desc">重置 HTML5 元素的样式。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLy8gZ2xvYmFsIHNjb3BlCi5yZXNldC1odG1sNSgpOwo=" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">// global scope
 .reset-html5();
 </code></pre>
@@ -1046,7 +1046,7 @@ audio:not([controls]),
                             <dl>
                                 <dt><code>@sizing</code></dt>
                                 <dd>模型计算方式，可以为 <code>border-box</code> / <code>padding-box</code> / <code>content-box</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuYm94LXNpemluZyhib3JkZXItYm94KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .box-sizing(border-box);
 }</code></pre>
@@ -1070,7 +1070,7 @@ audio:not([controls]),
                             <dl>
                                 <dt><code>@color</code></dt>
                                 <dd>文字颜色。可选，默认值：<a href="#default-input-placeholder-color"><code class="default-value">@default-input-placeholder-color</code></a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKdGV4dGFyZWEgewogICAgLnBsYWNlaG9sZGVyKGxpZ2h0Ymx1ZSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">textarea {
     .placeholder(lightblue);
 }</code></pre>
@@ -1104,7 +1104,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@type</code></dt>
                                 <dd>处理选区的方式。可用取值有 <code>text</code> / <code>none</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1lbnUtaXRlbSB7CiAgICAudXNlci1zZWxlY3Qobm9uZSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.menu-item {
     .user-select(none);
 }</code></pre>
@@ -1129,7 +1129,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@opacity</code></dt>
                                 <dd>不透明度值。可取 <code>0</code> – <code>100</code>（可以带 <code>%</code>）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm92ZXJsYXkgewogICAgLm9wYWNpdHkoNzAlKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.overlay {
     .opacity(70%);
 }</code></pre>
@@ -1151,7 +1151,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@rgba</code></dt>
                                 <dd>RGBA 格式色值。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm92ZXJsYXkgewogICAgLnJnYmEtYmFja2dyb3VuZChyZ2JhKDAsIDAsIDAsIDAuNykpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.overlay {
     .rgba-background(rgba(0, 0, 0, 0.7));
 }</code></pre>
@@ -1175,7 +1175,7 @@ textarea:-ms-input-placeholder {
                                 <dd>不带 alpha 通道的色值。</dd>
                                 <dt><code>@opacity</code></dt>
                                 <dd>不透明度。可取 <code>0</code> – <code>100</code>（可以带 <code>%</code>）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm92ZXJsYXkgewogICAgLnJnYmEtYmFja2dyb3VuZCgjMDAwLCA3MCUpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.overlay {
     .rgba-background(#000, 70%);
 }</code></pre>
@@ -1204,7 +1204,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@radius</code></dt>
                                 <dd>圆角半径。可包含 1 – 4 个空格分隔的半径值同时指定多个角的圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmJvcmRlci1yYWRpdXMoM3B4KTsKfQoKLmJveC10d28gewogICAgLmJvcmRlci1yYWRpdXMoM3B4IDJweCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .border-radius(3px);
 }
@@ -1233,7 +1233,7 @@ textarea:-ms-input-placeholder {
                                 <dd>水平方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
                                 <dt><code>@radius-y</code></dt>
                                 <dd>垂直方向的圆角半径。可含 1–4 个空格分隔的半径值同时指定多个角的圆角半径。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmJvcmRlci1yYWRpdXMoM3B4LCA1cHgpOwp9CgouYm94LXR3byB7CiAgICAuYm9yZGVyLXJhZGl1cygzcHggNnB4LCA1cHggNXB4IDNweCAzcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .border-radius(3px, 5px);
 }
@@ -1267,7 +1267,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@radius</code></dt>
                                 <dd>圆角半径。可选，默认值：<a href="#default-border-radius"><code class="default-value">@default-border-radius</code></a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuYm9yZGVyLXRvcC1sZWZ0LXJhZGl1cygzcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .border-top-left-radius(3px);
 }</code></pre>
@@ -1286,7 +1286,7 @@ textarea:-ms-input-placeholder {
                                 <dd>水平方向的圆角半径。</dd>
                                 <dt><code>@radius-y</code></dt>
                                 <dd>垂直方向的圆角半径。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuYm9yZGVyLXRvcC1sZWZ0LXJhZGl1cygzcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .border-top-left-radius(3px);
 }</code></pre>
@@ -1348,7 +1348,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@shadow</code></dt>
                                 <dd>单个阴影参数。可选，默认值：<a href="#default-box-shadow"><code class="default-value">@default-box-shadow</code></a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmJveC1zaGFkb3coMCAwIDVweCByZ2JhKDAsIDAsIDAsIDAuNSkpOwp9CgouYm94LXR3byB7CiAgICAuYm94LXNoYWRvdygwIC0xcHggMCAjMDAwLCBpbnNldCAwIDFweCAxcHggcmdiKDI1NSwgMCwgMCkpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
@@ -1382,7 +1382,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@transition</code></dt>
                                 <dd>单个过渡设定。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnRyYW5zaXRpb24oYmFja2dyb3VuZC1jb2xvciAxcyBsaW5lYXIpOwp9CgouYm94LXR3byB7CiAgICAudHJhbnNpdGlvbihoZWlnaHQgMC41cyBlYXNlLCBvcGFjaXR5IDJzIGxpbmVhciAwLjVzKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .transition(background-color 1s linear);
 }
@@ -1425,7 +1425,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@property</code></dt>
                                 <dd>参与单个过渡的属性名称。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnRyYW5zaXRpb24tcHJvcGVydHkoYmFja2dyb3VuZC1jb2xvcik7Cn0KCi5ib3gtdHdvIHsKICAgIC50cmFuc2l0aW9uLXByb3BlcnR5KGhlaWdodCwgb3BhY2l0eSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .transition-property(background-color);
 }
@@ -1462,7 +1462,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@duration</code></dt>
                                 <dd>单个过渡的持续时间。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnRyYW5zaXRpb24tZHVyYXRpb24oMXMpOwp9CgouYm94LXR3byB7CiAgICAudHJhbnNpdGlvbi1kdXJhdGlvbigwLjVzLCAycyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .transition-duration(1s);
 }
@@ -1498,7 +1498,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@timing-function</code></dt>
                                 <dd>单个过渡的时间函数。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uKGxpbmVhcik7Cn0KCi5ib3gtdHdvIHsKICAgIC50cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbihlYXNlLCBsaW5lYXIpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .transition-timing-function(linear);
 }
@@ -1534,7 +1534,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@delay</code></dt>
                                 <dd>单个过渡的延迟时间。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnRyYW5zaXRpb24tZGVsYXkoMHMpOwp9CgouYm94LXR3byB7CiAgICAudHJhbnNpdGlvbi1kZWxheSgwcywgMC41cyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .transition-delay(0s);
 }
@@ -1570,7 +1570,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@animation</code></dt>
                                 <dd>单个动画设定。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbihyb3RhdGUgMnMgbGluZWFyKTsKfQoKLmJveC10d28gewogICAgLmFuaW1hdGlvbihmbHktaW4gMC41cyBlYXNlLW91dCwgZmFkZS1pbiAwLjVzIGVhc2Utb3V0KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation(rotate 2s linear);
 }
@@ -1613,7 +1613,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@name</code></dt>
                                 <dd>单个动画对应的 <code>@keyframes</code> 规则名称。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi1uYW1lKHJvdGF0ZSk7Cn0KCi5ib3gtdHdvIHsKICAgIC5hbmltYXRpb24tbmFtZShmbHktaW4sIGZhZGUtaW4pOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-name(rotate);
 }
@@ -1649,7 +1649,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@duration</code></dt>
                                 <dd>单个动画的持续时间。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi1kdXJhdGlvbigzcyk7Cn0KCi5ib3gtdHdvIHsKICAgIC5hbmltYXRpb24tZHVyYXRpb24oMC41cywgM3MpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-duration(3s);
 }
@@ -1685,7 +1685,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@timing-function</code></dt>
                                 <dd>单个动画的时间函数。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi10aW1pbmctZnVuY3Rpb24obGluZWFyKTsKfQoKLmJveC10d28gewogICAgLmFuaW1hdGlvbi10aW1pbmctZnVuY3Rpb24oZWFzZSwgbGluZWFyKTsKfQo=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-timing-function(linear);
 }
@@ -1722,7 +1722,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@count</code></dt>
                                 <dd>单个动画的循环次数。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQoNSk7Cn0KCi5ib3gtdHdvIHsKICAgIC5hbmltYXRpb24taXRlcmF0aW9uLWNvdW50KDMsIGluZmluaXRlKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-iteration-count(5);
 }
@@ -1758,7 +1758,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@direction</code></dt>
                                 <dd>单个动画播放的正反方向。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi1kaXJlY3Rpb24ocmV2ZXJzZSk7Cn0KCi5ib3gtdHdvIHsKICAgIC5hbmltYXRpb24tZGlyZWN0aW9uKG5vcm1hbCwgYWx0ZXJuYXRlKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-direction(reverse);
 }
@@ -1794,7 +1794,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@state</code></dt>
                                 <dd>单个动画的播放状态。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi1wbGF5LXN0YXRlKHBhdXNlZCk7Cn0KCi5ib3gtdHdvIHsKICAgIC5hbmltYXRpb24tcGxheS1zdGF0ZShwYXVzZWQsIHJ1bm5pbmcpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-play-state(paused);
 }
@@ -1830,7 +1830,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@delay</code></dt>
                                 <dd>单个动画的播放延迟时间。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi1kZWxheSgycyk7Cn0KCi5ib3gtdHdvIHsKICAgIC5hbmltYXRpb24tZGVsYXkoMHMsIDFzKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-delay(2s);
 }
@@ -1866,7 +1866,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@mode</code></dt>
                                 <dd>单个动画的属性填充方式。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmFuaW1hdGlvbi1maWxsLW1vZGUoYmFja3dhcmRzKTsKfQoKLmJveC10d28gewogICAgLmFuaW1hdGlvbi1maWxsLW1vZGUoZm9yd2FyZHMsIGJvdGgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .animation-fill-mode(backwards);
 }
@@ -1902,7 +1902,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@transform-function</code></dt>
                                 <dd>变换函数。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnRyYW5zZm9ybShtYXRyaXgoMS4wLCAyLjAsIDMuMCwgNC4wLCA1LjAsIDYuMCkpOwp9CgouYm94LXR3byB7CiAgICAudHJhbnNmb3JtKHRyYW5zbGF0ZVgoMTBweCksIHJvdGF0ZSgxMGRlZyksIHRyYW5zbGF0ZVkoNXB4KSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .transform(matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
 }
@@ -1947,7 +1947,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@style</code></dt>
                                 <dd>对 3D 变换的支持方式。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudHJhbnNmb3JtLXN0eWxlKHByZXNlcnZlLTNkKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .transform-style(preserve-3d);
 }</code></pre>
@@ -1971,7 +1971,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@origin</code></dt>
                                 <dd>坐标原点位置。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnRyYW5zZm9ybS1vcmlnaW4oMnB4IGxlZnQpOwp9CgouYm94LXR3byB7CiAgICAudHJhbnNmb3JtLW9yaWdpbigycHggMzAlIDEwcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .transform-origin(2px left);
 }
@@ -2009,7 +2009,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@visibility</code></dt>
                                 <dd>背面是否可见。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuYmFja2ZhY2UtdmlzaWJpbGl0eShoaWRkZW4pOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .backface-visibility(hidden);
 }</code></pre>
@@ -2033,7 +2033,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@d</code></dt>
                                 <dd>透视距离。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucGVyc3BlY3RpdmUoMTUwMHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .perspective(1500px);
 }</code></pre>
@@ -2052,7 +2052,7 @@ textarea:-ms-input-placeholder {
                     <p class="desc">根据指定的矩阵进行 2D 变换。</p>
                     <ul class="signatures">
                         <li>
-                            <h3><a name="matrix-1"></a><code><a href="#matrix-1">.matrix(@a, @b, @c, @d, @tx, @ty)</a></code></h3>
+                            <h3><a name="matrix-1"></a><code><a href="#matrix-1">.matrix(@a, @b, @c, @d, @tx, @ty)</a></code></h3><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAubWF0cml4KDEsIC0wLjIsIDAsIDEsIDAsIDApOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .matrix(1, -0.2, 0, 1, 0, 0);
 }</code></pre>
@@ -2078,7 +2078,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@tx</code></dt>
                                 <dd>X 轴方向上的平移距离。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudHJhbnNsYXRlKDgwcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .translate(80px);
 }</code></pre>
@@ -2100,7 +2100,7 @@ textarea:-ms-input-placeholder {
                                 <dd>X 轴方向上的平移距离。</dd>
                                 <dt><code>@ty</code></dt>
                                 <dd>Y 轴方向上的平移距离。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudHJhbnNsYXRlKDMwcHgsIDUwcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .translate(30px, 50px);
 }</code></pre>
@@ -2125,7 +2125,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@tx</code></dt>
                                 <dd>平移距离。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudHJhbnNsYXRlWCg4MHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .translateX(80px);
 }</code></pre>
@@ -2151,7 +2151,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@ty</code></dt>
                                 <dd>平移距离。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudHJhbnNsYXRlWSg4MHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .translateY(80px);
 }</code></pre>
@@ -2177,7 +2177,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@s</code></dt>
                                 <dd>缩放比例。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2NhbGUoMi4xKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .scale(2.1);
 }</code></pre>
@@ -2199,7 +2199,7 @@ textarea:-ms-input-placeholder {
                                 <dd>X 轴方向上的缩放比例。</dd>
                                 <dt><code>@sy</code></dt>
                                 <dd>Y 轴方向上的缩放比例。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2NhbGUoMi4xLCA0KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .scale(2.1, 4);
 }</code></pre>
@@ -2224,7 +2224,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@sx</code></dt>
                                 <dd>缩放比例。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2NhbGVYKDAuNSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .scaleX(0.5);
 }</code></pre>
@@ -2250,7 +2250,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@sy</code></dt>
                                 <dd>缩放比例。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2NhbGVZKDIuNyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .scaleY(2.7);
 }</code></pre>
@@ -2275,7 +2275,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@angle</code></dt>
                                 <dd>旋转角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucm90YXRlKDMwZGVnKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .rotate(30deg);
 }</code></pre>
@@ -2300,7 +2300,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@ax</code></dt>
                                 <dd>沿 X 轴倾斜拉伸的角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2tldygzMGRlZyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .skew(30deg);
 }</code></pre>
@@ -2322,7 +2322,7 @@ textarea:-ms-input-placeholder {
                                 <dd>沿 X 轴倾斜拉伸的角度。</dd>
                                 <dt><code>@ay</code></dt>
                                 <dd>沿 Y 轴倾斜拉伸的角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2tldygzMGRlZywgMTVkZWcpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .skew(30deg, 15deg);
 }</code></pre>
@@ -2348,7 +2348,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@ax</code></dt>
                                 <dd>倾斜拉伸的角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2tld1goMzBkZWcpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .skewX(30deg);
 }</code></pre>
@@ -2374,7 +2374,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@ay</code></dt>
                                 <dd>倾斜拉伸的角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2tld1koMTVkZWcpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .skewY(15deg);
 }</code></pre>
@@ -2398,7 +2398,7 @@ textarea:-ms-input-placeholder {
                             <h3><a name="matrix3d-1"></a><code>.matrix3d(@a1, @b1, @c1, @d1,
       @a2, @b2, @c2, @d2,
       @a3, @b3, @c3, @d3,
-      @a4, @b4, @c4, @d4)</code></h3>
+      @a4, @b4, @c4, @d4)</code></h3><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAubWF0cml4M2QoMSwgMCwgMCwgMCwgMCwgMSwgMCwgMCwgMCwgMCwgMSwgMCwgMCwgMCwgMCwgMSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }</code></pre>
@@ -2428,7 +2428,7 @@ textarea:-ms-input-placeholder {
                                 <dd>Y 轴方向上的平移距离。</dd>
                                 <dt><code>@tz</code></dt>
                                 <dd>Z 轴方向上的平移距离。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudHJhbnNsYXRlM2QoMTJweCwgNTAlLCAzZW0pOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .translate3d(12px, 50%, 3em);
 }</code></pre>
@@ -2453,7 +2453,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@tz</code></dt>
                                 <dd>平移距离。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudHJhbnNsYXRlWigzZW0pOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .translateZ(3em);
 }</code></pre>
@@ -2483,7 +2483,7 @@ textarea:-ms-input-placeholder {
                                 <dd>Y 轴方向上的缩放比例。</dd>
                                 <dt><code>@sz</code></dt>
                                 <dd>Z 轴方向上的缩放比例。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2NhbGUzZCgyLjUsIDEuMiwgMC4zKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .scale3d(2.5, 1.2, 0.3);
 }</code></pre>
@@ -2508,7 +2508,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@sz</code></dt>
                                 <dd>缩放比例。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuc2NhbGVaKDAuMyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .scaleZ(0.3);
 }</code></pre>
@@ -2540,7 +2540,7 @@ textarea:-ms-input-placeholder {
                                 <dd>旋转轴方向向量在 Z 轴方向上的分量。</dd>
                                 <dt><code>@angle</code></dt>
                                 <dd>旋转角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucm90YXRlM2QoMSwgMi4wLCAzLjAsIDEwZGVnKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .rotate3d(1, 2.0, 3.0, 10deg);
 }</code></pre>
@@ -2565,7 +2565,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@angle</code></dt>
                                 <dd>旋转角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucm90YXRlWCg2MGRlZyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .rotateX(60deg);
 }</code></pre>
@@ -2591,7 +2591,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@angle</code></dt>
                                 <dd>旋转角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucm90YXRlWSg2MGRlZyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .rotateY(60deg);
 }</code></pre>
@@ -2617,7 +2617,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@angle</code></dt>
                                 <dd>旋转角度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucm90YXRlWig2MGRlZyk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .rotateZ(60deg);
 }</code></pre>
@@ -2644,7 +2644,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@clip</code></dt>
                                 <dd>单个背景的渲染范围。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmJhY2tncm91bmQtY2xpcChwYWRkaW5nLWJveCk7Cn0KCi5ib3gtdHdvIHsKICAgIC5iYWNrZ3JvdW5kLWNsaXAoYm9yZGVyLWJveCwgY29udGVudC1ib3gpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .background-clip(padding-box);
 }
@@ -2680,7 +2680,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@size</code></dt>
                                 <dd></dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmJhY2tncm91bmQtc2l6ZShjb3Zlcik7Cn0KCi5ib3gtdHdvIHsKICAgIC5iYWNrZ3JvdW5kLXNpemUoNTAlIGF1dG8sIGNvbnRhaW4pOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .background-size(cover);
 }
@@ -2716,7 +2716,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@origin</code></dt>
                                 <dd></dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmJhY2tncm91bmQtb3JpZ2luKGJvcmRlci1ib3gpOwp9CgouYm94LXR3byB7CiAgICAuYmFja2dyb3VuZC1vcmlnaW4oYm9yZGVyLWJveCwgcGFkZGluZy1ib3gpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .background-origin(border-box);
 }
@@ -2754,7 +2754,7 @@ textarea:-ms-input-placeholder {
                                 <dd>渐变线的方向。取值可以是角度值，也可以使用关键字，如 <code>to top</code> / <code>to right</code> / <code>to bottom left</code>等。可参考 <a href="http://dev.w3.org/csswg/css-images-3/#linear-gradient-syntax"> linear-gradient() Syntax</a>。</dd>
                                 <dt><code>@color-stops</code></dt>
                                 <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLmxpbmVhci1ncmFkaWVudCh0byByaWdodCwgd2hpdGUsIGJsYWNrKTsKfQoKLmJveC10d28gewogICAgLmxpbmVhci1ncmFkaWVudCh0byB0b3AgcmlnaHQsIHdoaXRlLCBibGFjayk7Cn0KCi5ib3gtdGhyZWUgewogICAgLmxpbmVhci1ncmFkaWVudCgyNzNkZWcsIHJlZCwgeWVsbG93IDMwJSwgZ3JlZW4gNzAlLCBwdXJwbGUpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .linear-gradient(to right, white, black);
 }
@@ -2809,7 +2809,7 @@ textarea:-ms-input-placeholder {
                                 <dd>起始颜色。</dd>
                                 <dt><code>@end-color</code></dt>
                                 <dd>结束颜色。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuaG9yaXpvbnRhbC1ncmFkaWVudChibGFjaywgd2hpdGUpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .horizontal-gradient(black, white);
 }</code></pre>
@@ -2839,7 +2839,7 @@ textarea:-ms-input-placeholder {
                                 <dd>起始颜色。</dd>
                                 <dt><code>@end-color</code></dt>
                                 <dd>结束颜色。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAudmVydGljYWwtZ3JhZGllbnQoYmxhY2ssIHdoaXRlKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .vertical-gradient(black, white);
 }</code></pre>
@@ -2870,7 +2870,7 @@ textarea:-ms-input-placeholder {
                                 <dd>渐变线的方向。</dd>
                                 <dt><code>@color-stops</code></dt>
                                 <dd>色标，至少有两个参数值。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQodG8gdG9wIHJpZ2h0LCB3aGl0ZSwgYmxhY2sgMjBweCk7Cn0KCi5ib3gtdHdvIHsKICAgIC5yZXBlYXRpbmctbGluZWFyLWdyYWRpZW50KDI3M2RlZywgcmVkLCB5ZWxsb3cgMzAlLCBncmVlbiA3MCUpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .repeating-linear-gradient(to top right, white, black 20px);
 }
@@ -2910,7 +2910,7 @@ textarea:-ms-input-placeholder {
                                 <dd>渐变的形状、范围、位置。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#radial-gradient-syntax">radial-gradient() Syntax</a>。书写方式按草案的标准写法书写，格式为 <code>[&lt;shape&gt;] ? [&lt;extent&gt;] ? [at &lt;position&gt;] ?</code>，其中每一部分都为可选。整个 <code>@shape</code> 参数省略不写时，默认输出圆形径向渐变。</dd>
                                 <dt><code>@color-stops</code></dt>
                                 <dd>色标，至少有两个参数值。写法可参考 <a href="http://dev.w3.org/csswg/css-images-3/#color-stop-syntax">Gradient Color-Stops</a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnJhZGlhbC1ncmFkaWVudChibGFjaywgd2hpdGUpOwp9CgouYm94LXR3byB7CiAgICAucmFkaWFsLWdyYWRpZW50KGNsb3Nlc3QtY29ybmVyIGF0IDMwJSAzMCUsIHJnYmEoMCwgMCwgMCwgMC4yKSwgcmdiYSgwLCAwLCAyMjUsIDAuOCkpOwp9CgouYm94LXRocmVlIHsKICAgIC5yYWRpYWwtZ3JhZGllbnQoZWxsaXBzZSwgbGltZWdyZWVuLCBza3libHVlIDMwJSwgY3JpbXNvbiA3MCUpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .radial-gradient(black, white);
 }
@@ -2960,7 +2960,7 @@ textarea:-ms-input-placeholder {
                                 <dd>渐变的形状、范围、位置。</dd>
                                 <dt><code>@color-stops</code></dt>
                                 <dd>色标，至少有两个参数值。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC1vbmUgewogICAgLnJlcGVhdGluZy1yYWRpYWwtZ3JhZGllbnQod2hpdGUsIGJsYWNrIDIwcHgpOwp9CgouYm94LXR3byB7CiAgICAucmVwZWF0aW5nLXJhZGlhbC1ncmFkaWVudChlbGxpcHNlIGZhcnRoZXN0LXNpZGUsIHdoaXRlLCBibGFjayAyMHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-one {
     .repeating-radial-gradient(white, black 20px);
 }
@@ -2997,7 +2997,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@display</code></dt>
                                 <dd>元素的显示方式，可用值参见 <a href="http://www.w3.org/TR/CSS21/visuren.html#display-prop">Visual formatting model</a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNhcmQgewogICAgLmRpc3BsYXkoZmxleCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.card {
     .display(flex);
 }</code></pre>
@@ -3022,7 +3022,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@flex-direction</code></dt>
                                 <dd>布局方向，可用值为 <code>row</code> / <code>row-reverse</code> / <code>column</code> / <code>column-reverse</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbnRhaW5lciB7CiAgICAuZmxleC1kaXJlY3Rpb24ocm93LXJldmVyc2UpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.container {
     .flex-direction(row-reverse);
 }</code></pre>
@@ -3046,7 +3046,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@wrap</code></dt>
                                 <dd>折行方式。<code>wrap</code> 表示可以折行，<code>nowrap</code> 表示必须排列在同一行中。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbnRhaW5lciB7CiAgICAuZmxleC13cmFwKHdyYXApOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.container {
     .flex-wrap(wrap);
 }</code></pre>
@@ -3070,7 +3070,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@flow</code></dt>
                                 <dd>排列方式，写法参见 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow">flex-flow - CSS | MDN</a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbnRhaW5lciB7CiAgICAuZmxleC1mbG93KGNvbHVtbi1yZXZlcnNlIG5vd3JhcCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.container {
     .flex-flow(column-reverse nowrap);
 }</code></pre>
@@ -3094,7 +3094,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@order</code></dt>
                                 <dd>排列次序。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNhcmQtbWFpbiB7CiAgICAub3JkZXIoMSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.card-main {
     .order(1);
 }</code></pre>
@@ -3118,7 +3118,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@flex</code></dt>
                                 <dd>定义伸缩盒项目元素的伸缩因子和初始尺寸。写法请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">flex - CSS | MDN</a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1haW4gewogICAgLmZsZXgoMiAxIDYwMHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.main {
     .flex(2 1 600px);
 }</code></pre>
@@ -3142,7 +3142,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@flex</code></dt>
                                 <dd>伸展因子。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1haW4gewogICAgLmZsZXgtZ3JvdygyKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.main {
     .flex-grow(2);
 }</code></pre>
@@ -3166,7 +3166,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@flex</code></dt>
                                 <dd>收缩因子。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1haW4gewogICAgLmZsZXgtc2hyaW5rKDEpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.main {
     .flex-shrink(1);
 }</code></pre>
@@ -3190,7 +3190,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@size</code></dt>
                                 <dd>初始尺寸。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1haW4gewogICAgLmZsZXgtYmFzaXMoNjAwcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.main {
     .flex-basis(600px);
 }</code></pre>
@@ -3214,7 +3214,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@align</code></dt>
                                 <dd>多余空间分配方式。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmdhbGxlcnkgewogICAgLmp1c3RpZnktY29udGVudChzcGFjZS1hcm91bmQpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.gallery {
     .justify-content(space-around);
 }</code></pre>
@@ -3242,7 +3242,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@align</code></dt>
                                 <dd>多余空间分配方式。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmdhbGxlcnkgewogICAgLmFsaWduLWl0ZW1zKGNlbnRlcik7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.gallery {
     .align-items(center);
 }</code></pre>
@@ -3270,7 +3270,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@align</code></dt>
                                 <dd>多余空间分配方式。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBob3RvIHsKICAgIC5hbGlnbi1zZWxmKGZsZXgtc3RhcnQpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.photo {
     .align-self(flex-start);
 }</code></pre>
@@ -3295,7 +3295,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@align</code></dt>
                                 <dd>多余空间分配方式。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBob3RvIHsKICAgIC5hbGlnbi1jb250ZW50KGZsZXgtc3RhcnQpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.photo {
     .align-content(flex-start);
 }</code></pre>
@@ -3323,7 +3323,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@orient</code></dt>
                                 <dd>排列方向。可用值为 <code>horizontal</code> / <code>vertical</code> / <code>inline-axis</code> / <code>block-axis</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmdhbGxlcnkgewogICAgLmJveC1vcmllbnQoaG9yaXpvbnRhbCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.gallery {
     .box-orient(horizontal);
 }</code></pre>
@@ -3347,7 +3347,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@direction</code></dt>
                                 <dd>排列方向。可用值为 <code>normal</code> / <code>reverse</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmdhbGxlcnkgewogICAgLmJveC1kaXJlY3Rpb24ocmV2ZXJzZSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.gallery {
     .box-direction(reverse);
 }</code></pre>
@@ -3371,7 +3371,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@group</code></dt>
                                 <dd>分组序号。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmN1cnJlbnQtaXRlbSB7CiAgICAuYm94LW9yZGluYWwtZ3JvdXAoMSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.current-item {
     .box-ordinal-group(1);
 }</code></pre>
@@ -3395,7 +3395,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@group</code></dt>
                                 <dd>分组序号。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1haW4taXRlbSB7CiAgICAuYm94LWZsZXgtZ3JvdXAoMSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.main-item {
     .box-flex-group(1);
 }</code></pre>
@@ -3419,7 +3419,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@flex</code></dt>
                                 <dd>伸展因子。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm1haW4taXRlbSB7CiAgICAuYm94LWZsZXgoMik7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.main-item {
     .box-flex(2);
 }</code></pre>
@@ -3443,7 +3443,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@align</code></dt>
                                 <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>baseline</code> / <code>stretch</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbnRhaW5lciB7CiAgICAuYm94LWFsaWduKGJhc2VsaW5lKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.container {
     .box-align(baseline);
 }</code></pre>
@@ -3468,7 +3468,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@align</code></dt>
                                 <dd>分配方式，可用值为 <code>start</code> / <code>center</code> / <code>end</code> / <code>justify</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbnRhaW5lciB7CiAgICAuYm94LXBhY2soanVzdGlmeSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.container {
     .box-pack(justify);
 }</code></pre>
@@ -3497,7 +3497,7 @@ textarea:-ms-input-placeholder {
             <ul class="mixins">
                 <li>
                     <h2><a name="clearfix"></a><code><a href="#clearfix">.clearfix()</a></code></h2>
-                    <p class="desc">建立 <abbr title="block formatting context">BFC</abbr> 清除元素内部的浮动，使元素获得应有的高度。参见 <a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>。</p>
+                    <p class="desc">建立 <abbr title="block formatting context">BFC</abbr> 清除元素内部的浮动，使元素获得应有的高度。参见 <a href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbnRhaW5lciB7CiAgICAuY2xlYXJmaXgoKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.container {
     .clearfix();
 }</code></pre>
@@ -3526,7 +3526,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@side-length</code></dt>
                                 <dd>正方形边长。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnNxdWFyZSB7CiAgICAuc2l6ZSgxNnB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.square {
     .size(16px);
 }</code></pre>
@@ -3544,7 +3544,7 @@ textarea:-ms-input-placeholder {
                                 <dd>矩形宽度。</dd>
                                 <dt><code>@height</code></dt>
                                 <dd>矩形高度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnJlY3QgewogICAgLnNpemUoMzIwcHgsIDgwcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.rect {
     .size(320px, 80px);
 }</code></pre>
@@ -3566,7 +3566,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@px-size</code></dt>
                                 <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 margin 属性。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLm1hcmdpbi1yZW0oMjRweCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .margin-rem(24px);
 }</code></pre>
@@ -3588,7 +3588,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@px-size</code></dt>
                                 <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLm1hcmdpbi10b3AtcmVtKDEycHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .margin-top-rem(12px);
 }</code></pre>
@@ -3627,7 +3627,7 @@ textarea:-ms-input-placeholder {
                                 <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 margin 属性。</dd>
                                 <dt><code>@context-margin</code></dt>
                                 <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLm1hcmdpbi1lbSgyNHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .margin-em(24px);
 }</code></pre>
@@ -3648,7 +3648,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@px-size</code></dt>
                                 <dd>以 <code>px</code> 为单位的外边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLm1hcmdpbi10b3AtZW0oMTJweCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .margin-top-em(12px);
 }</code></pre>
@@ -3684,7 +3684,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@px-size</code></dt>
                                 <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 padding 属性。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLnBhZGRpbmctcmVtKDI0cHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .padding-rem(24px);
 }</code></pre>
@@ -3706,7 +3706,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@px-size</code></dt>
                                 <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLnBhZGRpbmctdG9wLXJlbSgxMnB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .padding-top-rem(12px);
 }</code></pre>
@@ -3745,7 +3745,7 @@ textarea:-ms-input-placeholder {
                                 <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。支持 1 – 4 个空格分隔的值，写法参考 CSS 的 padding 属性。</dd>
                                 <dt><code>@context-padding</code></dt>
                                 <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLnBhZGRpbmctZW0oMjRweCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .padding-em(24px);
 }</code></pre>
@@ -3766,7 +3766,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@px-size</code></dt>
                                 <dd>以 <code>px</code> 为单位的内边距。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBvc3QgewogICAgLnBhZGRpbmctdG9wLWVtKDEycHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.post {
     .padding-top-em(12px);
 }</code></pre>
@@ -3815,7 +3815,7 @@ textarea:-ms-input-placeholder {
                             <dl>
                                 <dt><code>@type</code></dt>
                                 <dd>预设字体类型，可取值为 <code>base</code> / <code>heading</code> / <code>code</code>，分别对应普通文本、标题、代码。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKcHJlIGNvZGUgewogICAgLmZvbnQtZmFtaWx5KGNvZGUpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">pre code {
     .font-family(code);
 }</code></pre>
@@ -3832,7 +3832,7 @@ textarea:-ms-input-placeholder {
                     <p class="desc">省略号样式，当文字超过容器宽度时，超出部分文字隐藏并显示省略号。</p>
                     <ul class="signatures">
                         <li>
-                            <h3><a name="ellipsis-1"></a><code><a href="#ellipsis-1">.ellipsis()</a></code></h3>
+                            <h3><a name="ellipsis-1"></a><code><a href="#ellipsis-1">.ellipsis()</a></code></h3><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNlbGwgewp3aWR0aDogMTIwcHg7CiAgICAuZWxsaXBzaXMoKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.cell {
 width: 120px;
     .ellipsis();
@@ -3853,7 +3853,7 @@ width: 120px;
                             <dl>
                                 <dt><code>@line-number</code></dt>
                                 <dd>最多显示的行数。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm5ld3MgewogICAgd2lkdGg6IDMwMHB4OwogICAgLmVsbGlwc2lzKDMpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.news {
     width: 300px;
     .ellipsis(3);
@@ -3873,7 +3873,7 @@ width: 120px;
                 </li>
                 <li>
                     <h2><a name="force-wrap"></a><code><a href="#force-wrap">.force-wrap()</a></code></h2>
-                    <p class="desc">强制换行，阻止长字符串（例如 URL 或很长的连续英文字符）打破布局。</p>
+                    <p class="desc">强制换行，阻止长字符串（例如 URL 或很长的连续英文字符）打破布局。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbW1lbnQgewogICAgLmZvcmNlLXdyYXAoKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.comment {
     .force-wrap();
 }</code></pre>
@@ -3892,7 +3892,7 @@ width: 120px;
                 </li>
                 <li>
                     <h2><a name="hide-text"></a><code><a href="#hide-text">.hide-text()</a></code></h2>
-                    <p class="desc">用于隐藏元素内文字，一般在文字隐藏之后使用背景图片替代显示。如果使用此 mixin 的元素是 <code>inline-block</code> 元素，请确保为其设置宽度。</p>
+                    <p class="desc">用于隐藏元素内文字，一般在文字隐藏之后使用背景图片替代显示。如果使用此 mixin 的元素是 <code>inline-block</code> 元素，请确保为其设置宽度。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmxvZ28gewogICAgLmhpZGUtdGV4dCgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.logo {
     .hide-text();
 }</code></pre>
@@ -3906,7 +3906,7 @@ width: 120px;
                 </li>
                 <li>
                     <h2><a name="invisible"></a><code><a href="#invisible">.invisible()</a></code></h2>
-                    <p class="desc">用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p>
+                    <p class="desc">用于隐藏整个元素，一般处理那些仅仅用于增加可访问性的文字或元素。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnNjcmVlbi1yZWFkZXItbm90ZXMgewogICAgLmludmlzaWJsZSgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.screen-reader-notes {
     .invisible();
 }</code></pre>
@@ -3935,7 +3935,7 @@ width: 120px;
                                 <dd>背景图 <code>background-position</code> 的水平方向位置。可选，默认值：<code>0</code>。</dd>
                                 <dt><code>@img-y</code></dt>
                                 <dd>背景图 <code>background-position</code> 的垂直方向位置。可选，默认值：<code>0</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmxvZ28tb25lIHsKICAgIC5pbmxpbmUtYmxvY2soKTsKICAgIC5pbWctcmVwbGFjZSgiaHR0cDovL3d3dy5iYWlkdS5jb20vaW1nL2JkbG9nby5naWYiKTsKICAgIHdpZHRoOiAyNzBweDsKICAgIGhlaWdodDogMTI5cHg7Cn0KCi5sb2dvLXR3byB7CiAgICAuaW5saW5lLWJsb2NrKCk7CiAgICAuaW1nLXJlcGxhY2UodXJsKCIuLi9sb2dvLmdpZiIpKTsKICAgIHdpZHRoOiAyNzBweDsKICAgIGhlaWdodDogMTI5cHg7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.logo-one {
     .inline-block();
     .img-replace("http://www.baidu.com/img/bdlogo.gif");
@@ -3987,7 +3987,7 @@ width: 120px;
                             <dl>
                                 <dt><code>@px-size</code></dt>
                                 <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnRleHQgewogICAgLmZvbnQtc2l6ZS1yZW0oMzJweCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.text {
     .font-size-rem(32px);
 }</code></pre>
@@ -4011,7 +4011,7 @@ width: 120px;
                                 <dd>以 <code>px</code> 为单位的字体大小。可以是纯数字（如 <code>14</code>）也可以是带 <code>px</code> 单位的值（如 <code>14px</code>）。</dd>
                                 <dt><code>@context-font-size</code></dt>
                                 <dd>上下文的字体大小，格式与 <code>@px-size</code> 一致。可选，默认值：<a href="#default-font-size"><code>@default-font-size</code></a>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnRleHQgewogICAgLmZvbnQtc2l6ZS1lbSgyNHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.text {
     .font-size-em(24px);
 }</code></pre>
@@ -4040,7 +4040,7 @@ width: 120px;
                                 <dd>字体的风格。可选，默认值：<code>normal</code> 。</dd>
                                 <dt><code>@include-svg</code></dt>
                                 <dd>是否使用 svg 格式的字体。可取 <code>true</code> 或 <code>false</code>。可选，默认值：<code>false</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmZvbnQtZmFjZSgiRmFtaWx5TmFtZSIsICIvc29tZS9mb250L3VybCIpOw==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.font-face("FamilyName", "/some/font/url");</code></pre>
 
                             <pre class="output"><code class="css">@font-face {
@@ -4059,7 +4059,7 @@ width: 120px;
                 </li>
                 <li>
                     <h2><a name="hover-link"></a><code><a href="#hover-link">.hover-link()</a></code></h2>
-                    <p class="desc">用于实现链接默认无下划线，hover后有下划线的样式。</p>
+                    <p class="desc">用于实现链接默认无下划线，hover后有下划线的样式。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYSB7CiAgICAuaG92ZXItbGluaygpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">a {
     .hover-link();
 }</code></pre>
@@ -4075,7 +4075,7 @@ a:hover {
                 </li>
                 <li>
                     <h2><a name="unstyled-link"></a><code><a href="#unstyled-link">.unstyled-link()</a></code></h2>
-                    <p class="desc">用于将链接变成默认的文字样式。</p>
+                    <p class="desc">用于将链接变成默认的文字样式。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBsYWluLWxpbmsgewogICAgLnVuc3R5bGVkLWxpbmsoKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.plain-link {
     .unstyled-link();
 }</code></pre>
@@ -4106,7 +4106,7 @@ a:hover {
                                 <dt><code>@margin-right</code></dt>
                                 <dd>下沉文字与普通文字的间隔。可选，默认值：<code>1em</code>（相对普通文字大小计算）。</dd>
                             </dl>
-                            <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p>
+                            <p class="note"><code>@margin-right</code> 直接设为 <code>1em</code> 时为相对下沉文字的字体大小，不设会自动转换为相对普通文字字体大小的 <code>1em</code>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYXJ0aWNsZSBwIHsKICAgIGxpbmUtaGVpZ2h0OiAyNHB4OwogICAgLmRyb3AtY2FwKDI0cHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">article p {
     line-height: 24px;
     .drop-cap(24px);
@@ -4146,7 +4146,7 @@ article p:first-letter {
                             <pre class="setup"><code class="html">&lt;p&gt;
 &lt;span class="drop"&gt;Lorem ipsum&lt;/span&gt; dolor sit amet, consectetur adipisicing elit. Nesciunt, eos, beatae error quaerat blanditiis repudiandae laudantium debitis officiis veritatis quasi dicta deserunt quo ipsum. Excepturi numquam nesciunt voluptates veniam eligendi.
 &lt;/p&gt;
-</code></pre>
+</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKcCB7CiAgICBsaW5lLWhlaWdodDogMjRweDsKCiAgICAuZHJvcCB7CiAgICAgICAgLmRyb3AtY2FwLWlubGluZSgyNHB4LCAyKTsKICAgIH0KfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">p {
     line-height: 24px;
 
@@ -4248,7 +4248,7 @@ p .drop {
                                 <dd>下边框样式，格式与 CSS <code>border</code> 属性相同。可选，默认值：<code>false</code>，此时没有边框。</dd>
                             </dl>
                         </li>
-                    </ul>
+                    </ul><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmVudHJ5IHsKICAgIC5yaHl0aG0oMTRweCwgMik7CiAgICBibG9ja3F1b3RlIHsKICAgICAgICAucmh5dGhtLW1hcmdpbigxKTsKICAgICAgICAucmh5dGhtLXBhZGRpbmcoMSwgMXB4IHNvbGlkICNDQ0MpOwogICAgfQogICAgcCB7CiAgICAgICAgLnJoeXRobS1saW5lLWhlaWdodCgyKTsKICAgICAgICAucmh5dGhtLW1hcmdpbigyKTsKICAgICAgICAucmh5dGhtLXBhZGRpbmcoMik7CiAgICB9Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                     <pre class="usage"><code class="less">.entry {
     .rhythm(14px, 2);
     blockquote {
@@ -4339,7 +4339,7 @@ p .drop {
                             <dl>
                                 <dt><code>@height</code></dt>
                                 <dd>行高。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKcHJlIGNvZGUgewogICAgLmNlbnRlcmVkLWxpbmUoMjRweCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">pre code {
     .centered-line(24px);
 }</code></pre>
@@ -4357,7 +4357,7 @@ p .drop {
                                 <dd>行高。</dd>
                                 <dt><code>@is-input</code></dt>
                                 <dd>相关元素是否为输入框。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKcHJlIGNvZGUgewogICAgLmNlbnRlcmVkLWxpbmUoMjRweCwgdHJ1ZSk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">pre code {
     .centered-line(24px, true);
 }</code></pre>
@@ -4389,7 +4389,7 @@ p .drop {
                     <p class="desc">创建栅格外部容器。</p>
                     <ul class="signatures">
                         <li>
-                            <h3><a name="make-row-1"></a><code><a href="#make-row-1">.make-row()</a></code></h3>
+                            <h3><a name="make-row-1"></a><code><a href="#make-row-1">.make-row()</a></code></h3><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYm9keSB7CiAgICAubWFrZS1yb3coKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">body {
     .make-row();
 }</code></pre>
@@ -4425,7 +4425,7 @@ body:after {
                                 <dd>间隔宽度占全部宽度的百分比。可选，默认值为 <a href="#default-column-gutter"><code class="default-value">@default-column-gutter</code></a>。</dd>
                                 <dt><code>@offset</code></dt>
                                 <dd>偏移量。可选，默认为 <code>0</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKbWFpbiB7CiAgICAubWFrZS1jb2x1bW4oMi8zLCA1JSk7Cn0KCmFzaWRlIHsKICAgIC5tYWtlLWNvbHVtbigxLzMsIDUlKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">main {
     .make-column(2/3, 5%);
 }
@@ -4469,7 +4469,7 @@ aside:first-child {
                                 <dd>总宽度值，不可使用百分比。</dd>
                                 <dt><code>@offset</code></dt>
                                 <dd>偏移量。可选，默认为 <code>0</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKbWFpbiB7CiAgICAubWFrZS1jb2x1bW4oMi8zLCAxNXB4LCA5NjBweCk7Cn0KCmFzaWRlIHsKICAgIC5tYWtlLWNvbHVtbigxLzMsIDE1cHgsIDk2MHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">main {
     .make-column(2/3, 15px, 960px);
 }
@@ -4536,7 +4536,7 @@ aside:first-child {
                             <pre class="setup"><code class="html">&lt;body&gt;
 &lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;est-body&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYm9keSB7CiAgICAuZXN0LWxheW91dC1maXhlZC1oZWFkZXIoODBweCwgfiIuaGVhZGVyIik7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">body {
     .est-layout-fixed-header(80px, ~".header");
 }</code></pre>
@@ -4586,7 +4586,7 @@ body > .est-body:after {
                             <pre class="setup"><code class="html">&lt;body&gt;
 &lt;div class=&quot;body&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;est-footer&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYm9keSB7CiAgICAuZXN0LWxheW91dC1maXhlZC1mb290ZXIoODBweCwgfiIuYm9keSIpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">body {
     .est-layout-fixed-footer(80px, ~".body");
 }</code></pre>
@@ -4643,7 +4643,7 @@ body > .est-footer {
     &lt;div class="est-footer-placeholder"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="est-footer"&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKaHRtbCwKYm9keSB7CmhlaWdodDogMTAwJTsKfQoKYm9keSB7CiAgICAuZXN0LWxheW91dC1zdGlja3ktZm9vdGVyKDEwMHB4LCB+Ii5ib2R5Iik7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">html,
 body {
 height: 100%;
@@ -4696,7 +4696,7 @@ body > .est-footer {
                             <dl>
                                 <dt><code>@width</code></dt>
                                 <dd>页面内容区域宽度。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnBhZ2UgewogICAgLmVzdC1sYXlvdXQtcGFnZSg5ODBweCk7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.page {
     .est-layout-page(980px);
 }</code></pre>
@@ -4730,7 +4730,7 @@ body > .est-footer {
                             <pre class="setup"><code class="html">&lt;body&gt;
 &lt;div class="main"&gt;&lt;/div&gt;
 &lt;div class="est-sidebar"&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYm9keSB7CiAgICAuZXN0LWxheW91dC1zaWRlYmFyKGxlZnQsIDIwMHB4LCB+Ii5tYWluIik7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">body {
     .est-layout-sidebar(left, 200px, ~".main");
 }</code></pre>
@@ -4772,7 +4772,7 @@ body > .est-sidebar {
 &lt;div class="main"&gt;&lt;/div&gt;
 &lt;div class="est-sidebar-primary"&gt;&lt;/div&gt;
 &lt;div class="est-sidebar-secondary"&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKYm9keSB7CiAgICAuZXN0LWxheW91dC1zaWRlYmFyKDIwMHB4LCAxNjBweCwgfiIubWFpbiIpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">body {
     .est-layout-sidebar(200px, 160px, ~".main");
 }</code></pre>
@@ -4830,7 +4830,7 @@ body > .est-sidebar-secondary {
 
     &lt;div class="popup"&gt;Popup Content&lt;/div&gt;
 &lt;/div&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLm92ZXJsYXkgewogICAgLmVzdC1sYXlvdXQtcG9wdXAoY2VudGVyLCA4MCwgfiJwb3B1cCIpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.overlay {
     .est-layout-popup(center, 80, ~"popup");
 }</code></pre>
@@ -4889,7 +4889,7 @@ body > .est-sidebar-secondary {
     &lt;li&gt;Thor&lt;/li&gt;
     &lt;li&gt;Loki&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnVzZXJzIHsKICAgIC5lc3QtbGF5b3V0LWhvcml6b250YWwtbGlzdCgxMHB4LCBsZWZ0KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.users {
     .est-layout-horizontal-list(10px, left);
 }</code></pre>
@@ -4943,7 +4943,7 @@ body > .est-sidebar-secondary {
                             </dl>
                             <pre class="setup"><code class="html">&lt;div class="fluid-wrap"&gt;
 &lt;img src="http://placehold.it/800x600" alt="" /&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code></pre><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmZsdWlkLXdyYXAgewogICAgLmVzdC1sYXlvdXQtZmx1aWQtZml4ZWQtcmF0aW8oODAwLCA2MDApOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.fluid-wrap {
     .est-layout-fluid-fixed-ratio(800, 600);
 }</code></pre>
@@ -4997,7 +4997,7 @@ body > .est-sidebar-secondary {
                                 <dd>文字所在区域的背景色。</dd>
                                 <dt><code>@fg-color</code></dt>
                                 <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind emboss”）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJsaW5kLWVtYm9zc2VkIHsKICAgIC5lbWJvc3NlZC10ZXh0KGxpZ2h0Ymx1ZSk7Cn0KCi5lbWJvc3NlZCB7CiAgICAuZW1ib3NzZWQtdGV4dChsaWdodGJsdWUsICM2Njk5Q0MpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.blind-embossed {
     .embossed-text(lightblue);
 }
@@ -5030,7 +5030,7 @@ body > .est-sidebar-secondary {
                                 <dd>文字所在区域的背景色。</dd>
                                 <dt><code>@fg-color</code></dt>
                                 <dd>文字前景色。可选，不填写则根据 <code>@bg-color</code> 生成（即“blind deboss”）。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJsaW5kLWRlYm9zc2VkIHsKICAgIC5kZWJvc3NlZC10ZXh0KGxpZ2h0Ymx1ZSk7Cn0KCi5kZWJvc3NlZCB7CiAgICAuZGVib3NzZWQtdGV4dChsaWdodGJsdWUsICM2Njk5Q0MpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.blind-debossed {
     .debossed-text(lightblue);
 }
@@ -5061,7 +5061,7 @@ body > .est-sidebar-secondary {
                             <dl>
                                 <dt><code>@color</code></dt>
                                 <dd>文字颜色。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnRocmVlLWQgewogICAgLjNkLXRleHQobGlnaHRibHVlKTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.three-d {
     .3d-text(lightblue);
 }</code></pre>
@@ -5094,7 +5094,7 @@ body > .est-sidebar-secondary {
                             <dl>
                                 <dt><code>@radius</code></dt>
                                 <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmdsb3ctdGV4dCB7CiAgICAuZ2xvdy10ZXh0KDEwcHgpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.glow-text {
     .glow-text(10px);
 }</code></pre>
@@ -5112,7 +5112,7 @@ body > .est-sidebar-secondary {
                                 <dd>发光颜色。</dd>
                                 <dt><code>@radius</code></dt>
                                 <dd>发光半径。可选，默认值：<code>5px</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLnRocmVlLWQgewogICAgLmdsb3ctdGV4dChnb2xkLCAyMHB4KTsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.three-d {
     .glow-text(gold, 20px);
 }</code></pre>
@@ -5135,7 +5135,7 @@ body > .est-sidebar-secondary {
                                 <dd>文字颜色。</dd>
                                 <dt><code>@radius</code></dt>
                                 <dd>模糊半径。可选，默认值：<code>0.15em</code>。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJsdXJyeSB7CiAgICAuYmx1cnJ5LXRleHQoI0ZGRkZGRik7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.blurry {
     .blurry-text(#FFFFFF);
 }</code></pre>
@@ -5181,7 +5181,7 @@ body > .est-sidebar-secondary {
                             <figure class="note">
                                 <figcaption><code>direction</code> 和 <code>origin</code> 的不同组合效果见下图：</figcaption>
                                 <img src="img/triangle.png" alt="direction + origin">
-                            </figure>
+                            </figure><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmNvbW1lbnQ6YWZ0ZXIgewogICAgLnRyaWFuZ2xlKHRvcCBsZWZ0LCAjY2NjLCAxMHB4LCBjb3JuZXIpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.comment:after {
     .triangle(top left, #ccc, 10px, corner);
 }</code></pre>
@@ -5208,7 +5208,7 @@ body > .est-sidebar-secondary {
                             <dl>
                                 <dt><code>@size</code></dt>
                                 <dd>所绘圆形的直径。支持绝对长度或百分比。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJhbGwgewogICAgLmNpcmNsZSgzMCUpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.ball {
     .circle(30%);
 }</code></pre>
@@ -5229,7 +5229,7 @@ body > .est-sidebar-secondary {
                                 <dd>所绘圆形的直径。支持绝对长度或百分比。</dd>
                                 <dt><code>@bg</code></dt>
                                 <dd>圆形背景，可以为颜色或其他合法的 <code>background</code> 属性值。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJhbGwgewogICAgLmNpcmNsZSgzMCUsIHVybChpbWcvdGV4dHVyZS5wbmcpIGxpZ2h0Z3JlZW4gbm8tcmVwZWF0IGNlbnRlciBjZW50ZXIpOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.ball {
     .circle(30%, url(img/texture.png) lightgreen no-repeat center center);
 }</code></pre>
@@ -5261,7 +5261,7 @@ body > .est-sidebar-secondary {
                             <dl>
                                 <dt><code>@offset</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的偏移量。写法参考 CSS <code>margin</code> 属性的值。可以使用 <code>_</code> 作为占位符，表明此方向上的值无需覆盖。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveC0xIHsKICAgIC5hYnNvbHV0ZSgwLCBfLCBfLCAwKTsgLy8gcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IGxlZnQ6IDA7Cn0KCi5ib3gtMiB7CiAgICAuYWJzb2x1dGUoMCwgMTBweCwgNXB4KTsgLy8gcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IHJpZ2h0OiAxMHB4OyBib3R0b206IDVweDsgbGVmdDogMTBweDsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box-1 {
     .absolute(0, _, _, 0); // position: absolute; top: 0; left: 0;
 }
@@ -5297,7 +5297,7 @@ body > .est-sidebar-secondary {
                                 <dt><code>@offset</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的偏移量。</dd>
                             </dl>
-                            <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p>
+                            <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucmVsYXRpdmUoMCwgXywgXywgMCk7IC8vIHBvc2l0aW9uOiByZWxhdGl2ZTsgdG9wOiAwOyBsZWZ0OiAwOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .relative(0, _, _, 0); // position: relative; top: 0; left: 0;
 }</code></pre>
@@ -5321,7 +5321,7 @@ body > .est-sidebar-secondary {
                                 <dt><code>@offset</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的偏移量。</dd>
                             </dl>
-                            <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p>
+                            <p class="note">偏移量说明请参考 <a href="#absolute"><code class="mixin">.absolute()</code></a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuZml4ZWQoMCwgXywgXywgMCk7IC8vIHBvc2l0aW9uOiBmaXhlZDsgdG9wOiAwOyBsZWZ0OiAwOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .fixed(0, _, _, 0); // position: fixed; top: 0; left: 0;
 }</code></pre>
@@ -5344,7 +5344,7 @@ body > .est-sidebar-secondary {
                             <dl>
                                 <dt><code>@margin</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的外边距。写法参考 CSS <code>margin</code> 属性的值。可以使用 <code>_</code> 作为占位符，表明此方向上的值无需覆盖。</dd>
-                            </dl>
+                            </dl><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAubWFyZ2luKDEwcHgsIDVweCwgXywgMCk7IC8vIG1hcmdpbi10b3A6IDEwcHg7IG1hcmdpbi1yaWdodDogNXB4OyBtYXJnaW4tbGVmdDogMDsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .margin(10px, 5px, _, 0); // margin-top: 10px; margin-right: 5px; margin-left: 0;
 }</code></pre>
@@ -5368,7 +5368,7 @@ body > .est-sidebar-secondary {
                                 <dt><code>@padding</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的内边距。</dd>
                             </dl>
-                            <p class="note">边距参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
+                            <p class="note">边距参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAucGFkZGluZygxMHB4LCBfKTsgLy8gcGFkZGluZy10b3A6IDEwcHg7IHBhZGRpbmctYm90dG9tOiAxMHB4Owp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .padding(10px, _); // padding-top: 10px; padding-bottom: 10px;
 }</code></pre>
@@ -5391,7 +5391,7 @@ body > .est-sidebar-secondary {
                                 <dt><code>@color</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的边框颜色。</dd>
                             </dl>
-                            <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
+                            <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuYm9yZGVyLWNvbG9yKHJlZCwgXywgXywgYmx1ZSk7IC8vIGJvcmRlci10b3AtY29sb3I6ICNmZjAwMDA7IGJvcmRlci1sZWZ0LWNvbG9yOiAjMDAwMGZmOwp9" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .border-color(red, _, _, blue); // border-top-color: #ff0000; border-left-color: #0000ff;
 }</code></pre>
@@ -5414,7 +5414,7 @@ body > .est-sidebar-secondary {
                                 <dt><code>@style</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的边框颜色。</dd>
                             </dl>
-                            <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
+                            <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuYm9yZGVyLXN0eWxlKHNvbGlkLCBfLCBfKTsgLy8gYm9yZGVyLXRvcC1zdHlsZTogc29saWQ7Cn0=" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .border-style(solid, _, _); // border-top-style: solid;
 }</code></pre>
@@ -5436,7 +5436,7 @@ body > .est-sidebar-secondary {
                                 <dt><code>@width</code></dt>
                                 <dd>元素在 <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> 方向上的边框宽度。</dd>
                             </dl>
-                            <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p>
+                            <p class="note">参数说明请参考 <a href="#margin"><code class="mixin">.margin()</code></a>。</p><p><a class="fiddle-link" href="fiddle#code=QHN1cHBvcnQtaWUtdmVyc2lvbjogODsKQHVzZS1hdXRvcHJlZml4ZXI6IGZhbHNlOwoKLmJveCB7CiAgICAuYm9yZGVyLXdpZHRoKF8sIF8sIDNweCwgXyk7IC8vIGJvcmRlci1ib3R0b20td2lkdGg6IDNweDsKfQ==" target="_blank">前往 estFiddle 查看</a></p>
                             <pre class="usage"><code class="less">.box {
     .border-width(_, _, 3px, _); // border-bottom-width: 3px;
 }</code></pre>

@@ -1,6 +1,7 @@
 var fs = require('fs');
 var less = require('less');
 var ProgressBar = require('progress');
+var btoa = require('btoa');
 var Est = require('./lib/index');
 
 // Compile main.less
@@ -12,7 +13,7 @@ if (styles) {
     less.render(styles, {
         plugins: [new Est()],
         modifyVars: {
-            'support-ie-version': '11',
+            'support-ie-version': '8',
             'use-autoprefixer': 'false'
         },
         compress: true
@@ -84,7 +85,8 @@ function compileDemos() {
         if (remaining === 0) {
             var newIndex = index.replace(pattern, function (match, indent, start, code, end) {
                 var compiled = out[code] ? '\n' + indent + '<pre class="output"><code class="css">' + out[code] + end : '';
-                return indent + start + code + end + compiled;
+                var modCode = '@support-ie-version: 8;\n@use-autoprefixer: false;\n\n' + code;
+                return '<p><a class="fiddle-link" href="fiddle#code=' + btoa(modCode) + '" target="_blank">前往 estFiddle 查看</a></p>' + indent + start + code + end + compiled;
             });
 
             fs.writeFileSync(__dirname + '/index.html', newIndex, {
