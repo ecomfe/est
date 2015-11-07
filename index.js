@@ -34,24 +34,6 @@ $(function () {
     // code highlight
     hljs.initHighlightingOnLoad();
 
-    // random ribbon
-    var flavors = [
-        'red',
-        'green',
-        'graphite',
-        'orange',
-        'grey',
-        'chocolate',
-        'old-burgundy',
-        'chardonnay',
-        'dusk-blue',
-        'turquoise',
-        'cerulean'
-    ];
-    var flavor = flavors[Math.floor(Math.random() * flavors.length)];
-    var $fork = $('#fork');
-    $fork.attr('src', $fork.attr('data-src').replace('${flavor}', flavor)).show();
-
     // search
     var haystack = [];
     function wrapKey(me, type) {
