@@ -25,11 +25,14 @@ https://twitter.com/JoelBesada/status/670343885655293952
     var cmNode;
     var cm;
     var ctx;
+    var canvas;
+    var rafId;
     var throttledShake = throttle(shake, 100);
     var throttledSpawnParticles = throttle(spawnParticles, 100);
+    var instanceCount = 0;
 
     function initCanvas() {
-        var canvas = document.createElement('canvas');
+        canvas = document.createElement('canvas');
         ctx = canvas.getContext('2d'),
 
         canvas.style.position = 'absolute';
@@ -41,6 +44,12 @@ https://twitter.com/JoelBesada/status/670343885655293952
         canvas.height = h;
 
         document.body.appendChild(canvas);
+    }
+
+    function destroyCanvas() {
+        if (canvas) {
+            canvas.parentNode.removeChild(canvas);
+        }
     }
 
     function getRGBComponents(node) {
@@ -172,21 +181,60 @@ https://twitter.com/JoelBesada/status/670343885655293952
             cmNode.style.transform = 'translate(' + shakeX + 'px,' + shakeY + 'px)';
         }
         drawParticles();
-        requestAnimationFrame(loop);
+        rafId = requestAnimationFrame(loop);
     }
 
-    CodeMirror.defineOption("blastCode", false, function(c, val, old) {
-        if (val) {
+    function stopLoop() {
+        cancelAnimationFrame(rafId);
+    }
+
+    function blast() {
+        throttledShake(0.3);
+        throttledSpawnParticles();
+    }
+
+    // falsy or empty collections
+    function isEmpty(val) {
+        if (!val) {
+            return true;
+        }
+        if (Object.prototype.toString.call(val) === '[object Array]') {
+            return !val.length;
+        }
+        if (Object.prototype.toString.call(val) === '[object Object]') {
+            var result = true;
+            for (var key in val) {
+                if (val.hasOwnProperty(key) && key !== 'toString') { // weird value from CodeMirror
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+        return false;
+    }
+
+    CodeMirror.defineOption('blastCode', false, function(c, val, old) {
+        if (val) { // enable or update
             cm = c;
             cm.state.blastCode = true;
             effect = val.effect || 2;
             cmNode = cm.getWrapperElement();
-            initCanvas();
-            loop();
-            cm.on("change", function (instance, change) {
-                throttledShake(0.3);
-                throttledSpawnParticles();
-            });
+            if (instanceCount === 0) {
+                initCanvas();
+                loop();
+            }
+            if (isEmpty(old)) { // enable
+                instanceCount++;
+                cm.on('change', blast);
+            }
+        } else if (!isEmpty(old)) { // disable
+            c.off('change', blast);
+            instanceCount--;
+            if (instanceCount === 0) {
+                destroyCanvas();
+                stopLoop();
+            }
         }
     });
 })();

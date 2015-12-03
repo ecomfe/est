@@ -142,7 +142,7 @@
     vm.autorun = vm.autorun !== 'false';
     vm.versions = lessVersions;
     vm.autoprefix = vm.autoprefix === 'true';
-    vm.blast = vm.autoprefix === 'true';
+    vm.blast = vm.blast === 'true';
 
     vm.message = '';
     vm.toast = '';
@@ -156,6 +156,23 @@
      * Initialize Less
      */
     var lessInstances = {};
+
+    /**
+     * Custom directive to bring back options
+     */
+    Vue.directive('options', {
+        update: function (value) {
+            this.el.innerHTML = value.map(function (group) {
+                var opts = group.options.map(function (option) {
+                    return '<option value="' + option + '">' + option + '</option>';
+                }).join('');
+                return '<optgroup label="' + group.label + '">' + opts + '</optgroup>';
+            }).join('');
+            if (this.el.__v_model) {
+                this.el.__v_model.forceUpdate();
+            }
+        }
+    });
 
     /**
      * Initialize ViewModel
@@ -230,8 +247,8 @@
                 est.setOption('blastCode', this.blast ? { effect: 2 } : false);
             },
 
-            updateVersion: function (version) {
-                version = version || this.version;
+            updateVersion: function () {
+                var version = this.version;
                 if (this.isReady) {
                     this.compiling = true;
                 }
@@ -307,6 +324,15 @@
                     return;
                 }
 
+                function autoprefix(code) {
+                    var autoprefixer = window['autoprefixer'];
+                    var compiled = code;
+                    if (me.autoprefix && autoprefixer) {
+                        compiled = autoprefixer.process(compiled, { browsers: '> 1%' }).css;
+                    }
+                    return compiled;
+                }
+
                 var src = this.imports + est.getValue();
                 if (less.render) { // 2.0.0 and above
                     var options = {};
@@ -316,12 +342,7 @@
                     }
                     less.render(src, options)
                         .then(function (output) {
-                            var autoprefixer = window['autoprefixer'];
-                            var compiled = output.css;
-                            if (me.autoprefix && autoprefixer) {
-                                compiled = autoprefixer.process(compiled, { browsers: '> 1%' }).css;
-                            }
-                            css.setValue(compiled);
+                            css.setValue(autoprefix(output.css));
                             me.isError = false;
                         }, function (error) {
                             me.showError(error);
@@ -330,7 +351,7 @@
                     parser.parse(src, function (e, tree) {
                         if (!e) {
                             try {
-                                css.setValue(tree.toCSS());
+                                css.setValue(autoprefix(tree.toCSS()));
                                 me.isError = false;
                             }
                             catch (e) {
@@ -411,6 +432,7 @@
                 }, 200);
             });
             this.updateVersion();
+            this.toggleBlast();
 
             ZeroClipboard.config({ swfPath: 'js/ZeroClipboard.swf' });
             var client = new ZeroClipboard($('share'));

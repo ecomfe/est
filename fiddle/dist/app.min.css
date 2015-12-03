@@ -610,6 +610,7 @@ h1,header{height:60px}
 #settings,h1{line-height:60px;margin:0}
 #settings,button,h1,header{margin:0}
 button,label{cursor:pointer}
+#run .fa-refresh,.auto #run .fa-play,[v-show]{display:none}
 #comments,header{box-shadow:0 0 5px #000}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 body,html{margin:0;padding:0;height:100%;overflow:hidden;background-color:#272822;font-size:14px}
@@ -630,7 +631,6 @@ button{width:32px;border:2px solid rgba(0,0,0,.2);border-radius:2px;padding:4px 
 button:hover{background-color:#fff;border-color:rgba(0,0,0,.3)}
 .auto #run:hover{border-color:rgba(0,0,0,.2)}
 #run:active,.auto #run{background-color:#90ee90;color:#409e40;cursor:default}
-#run .fa-refresh,.auto #run .fa-play{display:none}
 .auto #run .fa-refresh{display:inline-block;-webkit-animation:rotate 2s linear infinite;animation:rotate 2s linear infinite}
 #toggle,.backdrop.show{display:block}
 #run:active .fa,.auto #run .fa{color:#409e40}

@@ -65,6 +65,10 @@ h1 a {
     border-bottom: 1px dotted #999;
 }
 
+[v-show] {
+    display: none;
+}
+
 #settings {
     float: right;
     margin: 0;
