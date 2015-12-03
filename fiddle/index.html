@@ -10,6 +10,7 @@
     <header>
         <h1>estFiddle <small>Powered by <a href="http://lesscss.org/" target="_blank">Less</a> and <a href="http://ecomfe.github.io/est/" target="_blank">est</a>.</small></h1>
         <ul id="settings">
+            <li><i class="fa fa-cog"></i> <label title="Enable code blast"><input type="checkbox" v-on="change: toggleBlast()" v-model="blast"> Blast</label></select></li>
             <li><i class="fa fa-cog"></i> <b>Less</b> <select id="less-version" v-model="version" options="versions" v-on="change: updateVersion(version)"></select></li>
             <li><i class="fa fa-cog"></i> <label title="Enable est"><input type="checkbox" v-on="change: parse(false)" v-model="est"> <b>est</b></label></li>
             <li><i class="fa fa-cog"></i> <label title="Enable Autoprefixer"><input type="checkbox" v-on="change: parse(false)" v-model="autoprefix"> <b>Autoprefixer</b></label></li>

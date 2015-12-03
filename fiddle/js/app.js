@@ -81,22 +81,22 @@
     var timers = {};
 
     /**
-     * Initialize code editors
+     * Code editor handles
      */
     var est = CodeMirror.fromTextArea($('est'), {
         mode: 'text/x-less',
         theme: 'monokai',
         indentUnit: 4,
-        lineNumbers : true,
-        matchBrackets : true
+        lineNumbers: true,
+        matchBrackets: true
     });
 
     var css = CodeMirror.fromTextArea($('css'), {
         mode: 'css',
         theme: 'monokai',
         indentUnit: 4,
-        lineNumbers : true,
-        matchBrackets : true,
+        lineNumbers: true,
+        matchBrackets: true,
         readOnly: true
     });
 
@@ -142,6 +142,7 @@
     vm.autorun = vm.autorun !== 'false';
     vm.versions = lessVersions;
     vm.autoprefix = vm.autoprefix === 'true';
+    vm.blast = vm.autoprefix === 'true';
 
     vm.message = '';
     vm.toast = '';
@@ -223,6 +224,10 @@
                 util.formPost(api, {
                     data: JSON.stringify(data)
                 });
+            },
+
+            toggleBlast: function () {
+                est.setOption('blastCode', this.blast ? { effect: 2 } : false);
             },
 
             updateVersion: function (version) {
@@ -348,7 +353,7 @@
         },
         created: function () {
             var me = this;
-            ['est', 'autoprefix', 'autorun', 'version'].forEach(function (key) {
+            ['est', 'autoprefix', 'autorun', 'version', 'blast'].forEach(function (key) {
                 me.$watch(key, function (newVal, oldVal) {
                     util.saveSetting(key, newVal, true);
                 });
