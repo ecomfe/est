@@ -429,7 +429,7 @@
 
                 t = setTimeout(function () {
                     me.parse();
-                }, 200);
+                }, 1000);
             });
             this.updateVersion();
             this.toggleBlast();
