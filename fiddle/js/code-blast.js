@@ -173,13 +173,13 @@ https://twitter.com/JoelBesada/status/670343885655293952
         var dt = (current_time - lastTime) / 1000;
         lastTime = current_time;
 
-        if (shakeTime > 0) {
-            shakeTime -= dt;
-            var magnitude = (shakeTime / shakeTimeMax) * shakeIntensity;
-            var shakeX = random(-magnitude, magnitude);
-            var shakeY = random(-magnitude, magnitude);
-            cmNode.style.transform = 'translate(' + shakeX + 'px,' + shakeY + 'px)';
-        }
+        // if (shakeTime > 0) {
+        //     shakeTime -= dt;
+        //     var magnitude = (shakeTime / shakeTimeMax) * shakeIntensity;
+        //     var shakeX = random(-magnitude, magnitude);
+        //     var shakeY = random(-magnitude, magnitude);
+        //     cmNode.style.transform = 'translate(' + shakeX + 'px,' + shakeY + 'px)';
+        // }
         drawParticles();
         rafId = requestAnimationFrame(loop);
     }
