@@ -261,6 +261,7 @@
                     less = lessInstances[version];
                     this.updateParser();
                 } else {
+                    window.less = { onReady: false };
                     var url = 'https://rawgit.com/less/less.js/v' + version
                         + '/dist/less' + (version.charAt(0) === '1' ? '-' + version : '') + '.min.js';
                     var me = this;
