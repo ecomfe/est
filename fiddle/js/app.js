@@ -106,6 +106,9 @@
     var vm = util.parseQuery(window.location.hash);
 
     var lessVersions = [{
+        label: '2.7.x',
+        options: ['2.7.0']
+    }, {
         label: '2.6.x',
         options: ['2.6.1', '2.6.0']
     }, {
