@@ -87,7 +87,7 @@ $ lessc style.less --est="autoImport=false&uniqueDirectives=false"
 
 ### 注意事项
 
-est 支持的 Less 最低版本号为 `2.0.0`。
+**作为插件引入时，est 支持的 Less 最低版本号为 `2.0.0`。通过在 Less 文件中 `@import` 引入时，最低版本号为 `2.3.0`。**
 
 Less 只在 `2.4.0` 之后的版本才支持通过插件自动引入代码。所以如果您正在使用更老的版本，就只能通过在 Less 代码中使用 `@import` 来引入 est 了。
 
