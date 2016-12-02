@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 .username::placeholder {
-  color: #333333;
+  color: #333;
 }
 .password::placeholder {
   color: #345;
@@ -81,8 +81,8 @@
   border-bottom-left-radius: 5em / 5px;
 }
 .bs-1 {
-  box-shadow: 0 0 1px #000000;
+  box-shadow: 0 0 1px #000;
 }
 .bs-2 {
-  box-shadow: 0 0 1px #000000, 5em 5em 3em #cccccc;
+  box-shadow: 0 0 1px #000, 5em 5em 3em #ccc;
 }
