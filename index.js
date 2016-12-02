@@ -7,14 +7,14 @@ $(function () {
 
     // highlight nav while scrolling
     $('.module, .overview').waypoint(function (direction) {
-        var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
-        var $links = $('.nav a[href="#' + name + '"]');
+        var id = $(this).hasClass('overview') ? 'top' : $(this).find('.anchor').eq(0).attr('id');
+        var $links = $('.nav a[href="#' + id + '"]');
         $links.toggleClass('active', direction === 'down');
     }, {
         offset: '100%'
     }).waypoint(function (direction) {
-        var name = $(this).hasClass('overview') ? 'top' : $(this).find('a[name]').eq(0).attr('name');
-        var $links = $('.nav a[href="#' + name + '"]');
+        var id = $(this).hasClass('overview') ? 'top' : $(this).find('.anchor').eq(0).attr('id');
+        var $links = $('.nav a[href="#' + id + '"]');
         $links.toggleClass('active', direction === 'up');
     }, {
         offset: function () {
