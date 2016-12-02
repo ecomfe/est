@@ -39,7 +39,7 @@ $(function () {
     function wrapKey(me, type) {
         var $me = $(me);
         return {
-            key: $me.attr('name'),
+            key: $me.attr('id'),
             type: type,
             desc: $me.parent().nextAll('.desc').eq(0).html().replace(/<a .*?>(.+?)<\/a>/g, '$1') || ''
         };
@@ -48,10 +48,10 @@ $(function () {
         return html.replace(/<[^>]+>/g, '');
     }
 
-    $('.mixins h2 > a[name]').each(function () {
+    $('.mixins h2 > .anchor').each(function () {
         haystack.push(wrapKey(this, 'mixin'));
     });
-    $('.variables h2 > a[name]').each(function () {
+    $('.variables h2 > .anchor').each(function () {
         haystack.push(wrapKey(this, 'variable'));
     });
 
