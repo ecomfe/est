@@ -219,14 +219,6 @@
             }
         },
         methods: {
-            updateUrl: function (e) {
-                var code = est.getValue();
-                var hash = util.saveSetting('code', btoa(code), false);
-                var url = window.location.href.split('#')[0] + '#' + hash;
-                link.value = url;
-                link.select();
-            },
-
             launchJSFiddle: function () {
                 var api = 'http://jsfiddle.net/api/post/library/pure/';
                 var data = {
@@ -313,7 +305,7 @@
             },
 
             showLoading: function (msg) {
-                this.showMessage('<i class="fa fa-spinner"></i> ' + msg);
+                this.showMessage('<i class="fa fa-spinner fa-pulse"></i> ' + msg);
             },
 
             parse: function (isForce) {
@@ -441,22 +433,20 @@
             this.updateVersion();
             this.toggleBlast();
 
-            ZeroClipboard.config({ swfPath: 'js/ZeroClipboard.swf' });
-            var client = new ZeroClipboard($('share'));
-            client.on('ready', function () {
-                client.on('copy', function (e) {
-                    me.updateUrl();
-                    e.clipboardData.setData('text/plain', $('link').value);
-                });
-                client.on('aftercopy', function (e) {
-                    me.toast = '<i class="fa fa-check"></i> Copied!';
-                    if (timers.toast) {
-                        clearTimeout(timers.toast);
-                    }
-                    timers.toast = setTimeout(function () {
-                        me.toast = '';
-                    }, 2000);
-                });
+            (new Clipboard('#share', {
+                text: function (share) {
+                    var code = est.getValue();
+                    var hash = util.saveSetting('code', btoa(code), false);
+                    return window.location.href.split('#')[0] + '#' + hash;
+                }
+            })).on('success', function () {
+                me.toast = '<i class="fa fa-check"></i> Copied!';
+                if (timers.toast) {
+                    clearTimeout(timers.toast);
+                }
+                timers.toast = setTimeout(function () {
+                    me.toast = '';
+                }, 2000);
             });
         }
     });

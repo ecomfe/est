@@ -635,8 +635,6 @@ button:hover{background-color:#fff;border-color:rgba(0,0,0,.3)}
 #toggle,.backdrop.show{display:block}
 #run:active .fa,.auto #run .fa{color:#409e40}
 #run span{display:none}
-#link{width:0;padding:3px 0;border:none;border-radius:3px;background:0 0;background-color:rgba(0,0,0,.1);transition:width .3s,padding .3s}
-#link:focus{padding:3px 8px;width:240px}
 section{position:absolute;top:60px;bottom:30px;width:50%;opacity:0;transition:opacity 1s}
 .ready section{opacity:1}
 .compiling #compiled{opacity:0}

@@ -15,8 +15,8 @@
             <li><i class="fa fa-cog"></i> <label title="Enable est"><input type="checkbox" v-on:change="parse(false)" v-model="est"> <b>est</b></label></li>
             <li><i class="fa fa-cog"></i> <label title="Enable Autoprefixer"><input type="checkbox" v-on:change="parse(false)" v-model="autoprefix"> <b>Autoprefixer</b></label></li>
             <li><i class="fa fa-cog"></i> <label title="Enable auto-run"><input type="checkbox" v-on:change="parse(false)" v-model="autorun"> Auto-run</label></li>
-            <li><label id="share" title="Copy share link"><i class="fa fa-share-alt"></i> <input type="text" id="link" readonly></label></li>
-            <li><button v-on:click="parse(true)" id="run" :title="autorun ? 'Running' : 'Run'"><i class="fa fa-play"></i><i class="fa fa-refresh"></i></button></li>
+            <li><button id="run" v-on:click="parse(true)" :title="autorun ? 'Running' : 'Run'"><i class="fa fa-play"></i><i class="fa fa-refresh"></i></button></li>
+            <li><button id="share" title="Copy share link"><i class="fa fa-share-alt"></i></button></li>
             <li><button v-on:click="launchJSFiddle" title="View compiled code in JSFiddle"><i class="fa fa-jsfiddle"></i></button></li>
             <li><button v-on:click="launchCodePen" title="View compiled code in CodePen"><i class="fa fa-codepen"></i></button></li>
         </ul>
@@ -45,9 +45,5 @@
     </div>
     <div class="toast" v-show="toast" v-html="toast"></div>
     <script src="dist/app.min.js"></script>
-    <script>
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe54713fce14836e2458aa4415fc09707' type='text/javascript'%3E%3C/script%3E"));
-    </script>
 </body>
 </html>

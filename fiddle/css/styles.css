@@ -154,21 +154,6 @@ button:hover {
     display: none;
 }
 
-#link {
-    width: 0;
-    padding: 3px 0;
-    border: none;
-    border-radius: 3px;
-    background: transparent;
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: width 0.3s, padding 0.3s;
-}
-
-#link:focus {
-    padding: 3px 8px;
-    width: 240px;
-}
-
 section {
     position: absolute;
     top: 60px;
