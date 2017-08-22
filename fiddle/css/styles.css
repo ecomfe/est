@@ -120,6 +120,14 @@ button:hover {
     border-color: rgba(0, 0, 0, 0.3);
 }
 
+button:active {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+#settings button:active .fa {
+    color: #333;
+}
+
 .auto #run:hover {
     border-color: rgba(0, 0, 0, 0.2);
 }

@@ -629,6 +629,8 @@ h1 a{color:#666;text-decoration:none;border-bottom:1px dotted #999}
 button::-moz-focus-inner{padding:0;border:0}
 button{width:32px;border:2px solid rgba(0,0,0,.2);border-radius:2px;padding:4px 8px;background-color:rgba(255,255,255,.8);line-height:1.5;outline:0}
 button:hover{background-color:#fff;border-color:rgba(0,0,0,.3)}
+button:active{border-color:rgba(0,0,0,.5)}
+#settings button:active .fa{color:#333}
 .auto #run:hover{border-color:rgba(0,0,0,.2)}
 #run:active,.auto #run{background-color:#90ee90;color:#409e40;cursor:default}
 .auto #run .fa-refresh{display:inline-block;-webkit-animation:rotate 2s linear infinite;animation:rotate 2s linear infinite}
