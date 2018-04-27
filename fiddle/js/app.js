@@ -337,7 +337,10 @@
 
                 var src = this.imports + est.getValue();
                 if (less.render) { // 2.0.0 and above
-                    var options = {};
+                    var options = {
+                        javascriptEnabled: true,
+                        inlineJavaScript: true
+                    };
 
                     if (me.est) {
                         options.plugins = [lessPluginUniqueDirectives];
