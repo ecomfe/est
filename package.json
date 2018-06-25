@@ -1,6 +1,6 @@
 {
   "name": "less-plugin-est",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "EFE Styling Toolkit",
   "devDependencies": {
     "chalk": "^1.0.0",
@@ -20,6 +20,7 @@
     "est",
     "ecosystem:less"
   ],
+  "license": "BSD",
   "contributors": [
     {
       "name": "justineo",
