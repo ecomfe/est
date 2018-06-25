@@ -1,0 +1,83 @@
+.emoji {
+    .inline-block();
+}
+
+.username {
+    .box-sizing(border-box);
+    .placeholder(#333);
+}
+
+.password {
+    @style: {
+        color: #345;
+        font-weight: 700;
+    };
+    .placeholder(@style);
+}
+
+.banner {
+    .user-select(none);
+}
+
+.layer {
+    .opacity(50%);
+}
+
+.overlay-1 {
+    .rgba-background(#000, 60%);
+}
+
+.overlay-2 {
+    .rgba-background(rgba(0, 0, 0, 0.6));
+}
+
+.ball {
+    .border-radius(50%);
+}
+
+.leaf {
+    .border-radius(20px, 0);
+}
+
+.br-1 {
+    .border-top-left-radius(5px);
+    .border-top-right-radius(5em);
+    .border-bottom-right-radius(5%);
+    .border-bottom-left-radius(5rem);
+}
+
+.br-2 {
+    .border-top-left-radius(5px, 5em);
+    .border-top-right-radius(5em, 5%);
+    .border-bottom-right-radius(5%, 5rem);
+    .border-bottom-left-radius(5rem, 5px);
+}
+
+.br-3 {
+    .border-top-radius(5px);
+    .border-bottom-radius(5em);
+}
+
+.br-4 {
+    .border-right-radius(5px);
+    .border-left-radius(5em);
+}
+
+
+.br-5 {
+    .border-top-radius(5px, 5em);
+    .border-bottom-radius(5em, 5px);
+}
+
+.br-6 {
+    .border-right-radius(5px, 5em);
+    .border-left-radius(5em, 5px);
+}
+
+.bs-1 {
+    .box-shadow(0 0 1px #000);
+}
+
+.bs-2 {
+    .box-shadow(0 0 1px #000, 5em 5em 3em #ccc);
+}

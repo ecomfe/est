@@ -1,0 +1,369 @@
+.fh-1 > .est-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+.fh-1 > .est-body {
+  margin-top: 60px;
+  *zoom: 1;
+}
+.fh-1 > .est-body:before,
+.fh-1 > .est-body:after {
+  display: table;
+  content: "";
+}
+.fh-1 > .est-body:after {
+  clear: both;
+}
+.fh-2 > #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 5em;
+}
+.fh-2 > main {
+  margin-top: 5em;
+  *zoom: 1;
+}
+.fh-2 > main:before,
+.fh-2 > main:after {
+  display: table;
+  content: "";
+}
+.fh-2 > main:after {
+  clear: both;
+}
+.ff-1 > .est-body {
+  margin-bottom: 60px;
+  *zoom: 1;
+}
+.ff-1 > .est-body:before,
+.ff-1 > .est-body:after {
+  display: table;
+  content: "";
+}
+.ff-1 > .est-body:after {
+  clear: both;
+}
+.ff-1 > .est-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
+.ff-2 > #footer {
+  margin-bottom: 5em;
+  *zoom: 1;
+}
+.ff-2 > #footer:before,
+.ff-2 > #footer:after {
+  display: table;
+  content: "";
+}
+.ff-2 > #footer:after {
+  clear: both;
+}
+.ff-2 > main {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 5em;
+}
+.sf-1 > .est-body {
+  min-height: 100%;
+  margin-bottom: -30px;
+  *zoom: 1;
+}
+.sf-1 > .est-body:before,
+.sf-1 > .est-body:after {
+  display: table;
+  content: "";
+}
+.sf-1 > .est-body:after {
+  clear: both;
+}
+.sf-1 > .est-body .est-footer-placeholder {
+  display: block;
+  height: 30px;
+}
+.sf-1 > .est-footer {
+  height: 30px;
+}
+.sf-2 > main {
+  min-height: 100%;
+  margin-bottom: -30px;
+  *zoom: 1;
+}
+.sf-2 > main:before,
+.sf-2 > main:after {
+  display: table;
+  content: "";
+}
+.sf-2 > main:after {
+  clear: both;
+}
+.sf-2 > main .ghost {
+  display: block;
+  height: 30px;
+}
+.sf-2 > #footer {
+  height: 30px;
+}
+.page {
+  width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ls-1 {
+  position: relative;
+}
+.ls-1 > .est-main {
+  overflow: hidden;
+  margin-left: 220px;
+}
+.ls-1 > .est-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+}
+.ls-2 {
+  position: relative;
+}
+.ls-2 > main {
+  overflow: hidden;
+  margin-left: 220px;
+}
+.ls-2 > aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+}
+.ls-3 {
+  position: relative;
+}
+.ls-3 > .est-main {
+  overflow: hidden;
+  margin-right: 180px;
+}
+.ls-3 > .est-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+}
+.ls-4 {
+  position: relative;
+}
+.ls-4 > main {
+  overflow: hidden;
+  margin-right: 180px;
+}
+.ls-4 > aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+}
+.ls-5 {
+  position: relative;
+}
+.ls-5 > .est-main {
+  overflow: hidden;
+  margin-right: 180px;
+  margin-left: 220px;
+}
+.ls-5 > .est-sidebar-primary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+}
+.ls-5 > .est-sidebar-secondary {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+}
+.ls-6 {
+  position: relative;
+}
+.ls-6 > main {
+  overflow: hidden;
+  margin-right: 180px;
+  margin-left: 220px;
+}
+.ls-6 > #nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+}
+.ls-6 > #ad {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+}
+.popup-1 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: -0.5em;
+  text-align: center;
+  pointer-events: none;
+}
+.popup-1 .est-valign-ghost {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.popup-1 > .est-popup {
+  display: inline-block;
+  vertical-align: middle;
+}
+.popup-1 > .est-popup {
+  pointer-events: all;
+}
+.popup-2 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: -0.5em;
+  text-align: center;
+  pointer-events: none;
+}
+.popup-2 .ghost {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.popup-2 > .popup {
+  display: inline-block;
+  vertical-align: middle;
+}
+.popup-2 > .popup {
+  pointer-events: all;
+}
+.popup-3 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: -0.5em;
+  text-align: center;
+  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4d000000,endColorstr=#4d000000)\0;
+  zoom: 1\0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.popup-3 .est-valign-ghost {
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+}
+.popup-3 > .est-popup {
+  display: inline-block;
+  vertical-align: top;
+}
+:root .popup-3 {
+  filter: none\9;
+}
+.hl-1 {
+  *zoom: 1;
+  overflow: hidden;
+}
+.hl-1:before,
+.hl-1:after {
+  display: table;
+  content: "";
+}
+.hl-1:after {
+  clear: both;
+}
+.hl-1 ul,
+.hl-1 ol {
+  list-style: none;
+  float: left;
+  margin-left: -5px;
+}
+.hl-1 ul li,
+.hl-1 ol li {
+  float: left;
+  margin-left: 5px;
+}
+.hl-2 {
+  *zoom: 1;
+  overflow: hidden;
+}
+.hl-2:before,
+.hl-2:after {
+  display: table;
+  content: "";
+}
+.hl-2:after {
+  clear: both;
+}
+.hl-2 ul,
+.hl-2 ol {
+  list-style: none;
+  float: right;
+  margin-right: -10px;
+}
+.hl-2 ul li,
+.hl-2 ol li {
+  float: left;
+  margin-right: 10px;
+}
+.ffr-1 {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 32px;
+  height: 0;
+}
+.ffr-1 object,
+.ffr-1 embed,
+.ffr-1 iframe,
+.ffr-1 img,
+.ffr-1 .est-fixed-ratio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ffr-2 {
+  position: relative;
+  padding-bottom: 75%;
+  padding-top: 20px;
+  height: 0;
+}
+.ffr-2 object,
+.ffr-2 embed,
+.ffr-2 iframe,
+.ffr-2 img,
+.ffr-2 .media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

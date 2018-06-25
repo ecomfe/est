@@ -1,0 +1,72 @@
+.me-1 {
+  margin: 2em;
+}
+.me-2 {
+  margin: 0.5em 1em;
+}
+.me-3 {
+  margin: 0.75em 1em 1.25em;
+}
+.me-4 {
+  margin: 0.75em 1em 1.25em 1.5em;
+}
+.me-5 {
+  margin: 1em;
+}
+.me-6 {
+  margin: 1em 0.5em;
+}
+.me-7 {
+  margin: 1em 0em;
+}
+.me-8 {
+  margin: 1em 0.75em 0.5em;
+}
+.mte {
+  margin-top: 0.75em;
+}
+.mre {
+  margin-right: 0.25em;
+}
+.mbe {
+  margin-bottom: 0.75em;
+}
+.mle {
+  margin-left: 0.75em;
+}
+.pe-1 {
+  padding: 2em;
+}
+.pe-2 {
+  padding: 0.5em 1em;
+}
+.pe-3 {
+  padding: 0.75em 1em 1.25em;
+}
+.pe-4 {
+  padding: 0.75em 1em 1.25em 1.5em;
+}
+.pe-5 {
+  padding: 1em;
+}
+.pe-6 {
+  padding: 1em 0.5em;
+}
+.pe-7 {
+  padding: 1em 0em;
+}
+.pe-8 {
+  padding: 1em 0.75em 0.5em;
+}
+.pte {
+  padding-top: 0.75em;
+}
+.pre {
+  padding-right: 0.25em;
+}
+.pbe {
+  padding-bottom: 0.75em;
+}
+.ple {
+  padding-left: 0.75em;
+}

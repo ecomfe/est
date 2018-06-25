@@ -1,0 +1,96 @@
+.mr-1 {
+  margin: 16px;
+  margin: 1rem;
+}
+.mr-2 {
+  margin: 12px 24px;
+  margin: 0.75rem 1.5rem;
+}
+.mr-3 {
+  margin: 12px 16px 20px;
+  margin: 0.75rem 1rem 1.25rem;
+}
+.mr-4 {
+  margin: 12px 16px 20px 24px;
+  margin: 0.75rem 1rem 1.25rem 1.5rem;
+}
+.mr-5 {
+  margin: 16px;
+  margin: 1rem;
+}
+.mr-6 {
+  margin: 16px 8px;
+  margin: 1rem 0.5rem;
+}
+.mr-7 {
+  margin: 16px 0px;
+  margin: 1rem 0rem;
+}
+.mr-8 {
+  margin: 16px 12px 8px;
+  margin: 1rem 0.75rem 0.5rem;
+}
+.mtr {
+  margin-top: 12px;
+  margin-top: 0.75rem;
+}
+.mrr {
+  margin-right: 3px;
+  margin-right: 0.1875rem;
+}
+.mbr {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+}
+.mlr {
+  margin-left: 12px;
+  margin-left: 0.75rem;
+}
+.pr-1 {
+  padding: 16px;
+  padding: 1rem;
+}
+.pr-2 {
+  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
+}
+.pr-3 {
+  padding: 12px 16px 20px;
+  padding: 0.75rem 1rem 1.25rem;
+}
+.pr-4 {
+  padding: 12px 16px 20px 24px;
+  padding: 0.75rem 1rem 1.25rem 1.5rem;
+}
+.pr-5 {
+  padding: 16px;
+  padding: 1rem;
+}
+.pr-6 {
+  padding: 16px 8px;
+  padding: 1rem 0.5rem;
+}
+.pr-7 {
+  padding: 16px 0px;
+  padding: 1rem 0rem;
+}
+.pr-8 {
+  padding: 16px 12px 8px;
+  padding: 1rem 0.75rem 0.5rem;
+}
+.ptr {
+  padding-top: 12px;
+  padding-top: 0.75rem;
+}
+.prr {
+  padding-right: 3px;
+  padding-right: 0.1875rem;
+}
+.pbr {
+  padding-bottom: 12px;
+  padding-bottom: 0.75rem;
+}
+.plr {
+  padding-left: 12px;
+  padding-left: 0.75rem;
+}

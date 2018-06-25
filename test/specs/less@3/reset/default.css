@@ -1,0 +1,286 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+main {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]),
+[hidden] {
+  display: none;
+}
+.nr div,
+.nr span,
+.nr object,
+.nr iframe,
+.nr h1,
+.nr h2,
+.nr h3,
+.nr h4,
+.nr h5,
+.nr h6,
+.nr p,
+.nr pre,
+.nr a,
+.nr abbr,
+.nr acronym,
+.nr address,
+.nr code,
+.nr del,
+.nr dfn,
+.nr em,
+.nr img,
+.nr dl,
+.nr dt,
+.nr dd,
+.nr ol,
+.nr ul,
+.nr li,
+.nr fieldset,
+.nr form,
+.nr label,
+.nr legend,
+.nr caption,
+.nr tbody,
+.nr tfoot,
+.nr thead,
+.nr tr {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.nr table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+.nr caption,
+.nr th,
+.nr td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.nr a img {
+  border: none;
+}
+.nr article,
+.nr aside,
+.nr details,
+.nr figcaption,
+.nr figure,
+.nr footer,
+.nr header,
+.nr hgroup,
+.nr menu,
+.nr nav,
+.nr section,
+.nr summary,
+.nr main {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.nr audio,
+.nr canvas,
+.nr video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.nr audio:not([controls]),
+.nr [hidden] {
+  display: none;
+}
+.rbm {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.rfocus {
+  outline: 0;
+}
+.rfont {
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.rb {
+  line-height: 1;
+}
+.rt {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+.rtc {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.rls {
+  list-style: none;
+}
+.rh5 article,
+.rh5 aside,
+.rh5 details,
+.rh5 figcaption,
+.rh5 figure,
+.rh5 footer,
+.rh5 header,
+.rh5 hgroup,
+.rh5 menu,
+.rh5 nav,
+.rh5 section,
+.rh5 summary,
+.rh5 main {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.rh5 audio,
+.rh5 canvas,
+.rh5 video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.rh5 audio:not([controls]),
+.rh5 [hidden] {
+  display: none;
+}

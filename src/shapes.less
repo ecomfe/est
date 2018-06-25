@@ -11,8 +11,8 @@
 .triangle(@direction, @size, @color, @origin: corner) {
     position: absolute;
     .size(0);
-    @horizontal: ~`(function() { var match = '@{direction}'.match(/\b(?:right|left)\b/); return match ? match[0] : false; })()`;
-    @vertical: ~`(function() { var match = '@{direction}'.match(/\b(?:top|bottom)\b/); return match ? match[0] : false; })()`;
+    @horizontal: ~`(function() { var match = '@{direction}'.match(/\b(?:right|left)\b/); return match ? match[0] : 'false'; })()`;
+    @vertical: ~`(function() { var match = '@{direction}'.match(/\b(?:top|bottom)\b/); return match ? match[0] : 'false'; })()`;
 
     // diagonal
     .output() when not (@horizontal = false) and not (@vertical = false) {

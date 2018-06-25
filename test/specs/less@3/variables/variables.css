@@ -1,0 +1,9 @@
+.test {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-family: sans-serif;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
