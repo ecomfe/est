@@ -1,0 +1,52 @@
+.ch-1 {
+  top: 1px;
+  right: 2px;
+  bottom: 3px;
+  left: 4px;
+}
+.ch-2 {
+  prefix-top-suffix: 1px;
+  prefix-right-suffix: 2px;
+  prefix-bottom-suffix: 3px;
+  prefix-left-suffix: 2px;
+}
+.a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.f {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+.r {
+  position: relative;
+  left: 5px;
+}
+.p-1 {
+  padding: 1em 2em;
+}
+.p-2 {
+  padding: 1em 3em;
+}
+.m-1 {
+  margin-bottom: 2em;
+}
+.m-2 {
+  margin: 3em;
+}
+.bc {
+  border-top-color: red;
+  border-right-color: blue;
+}
+.bs {
+  border-right-style: solid;
+  border-bottom-style: dotted;
+}
+.bw {
+  border-right-width: 2px;
+  border-left-width: 2px;
+}

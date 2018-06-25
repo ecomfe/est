@@ -1,0 +1,35 @@
+@bg-color: lightblue;
+
+.est-embossed {
+    .embossed-text(@bg-color, #69c);
+}
+
+.est-blind-embossed {
+    .embossed-text(@bg-color);
+}
+
+.est-debossed {
+    .debossed-text(@bg-color, #69c);
+}
+
+.est-blind-debossed {
+    .debossed-text(@bg-color);
+}
+
+.est-3d {
+    .3d-text(#fff);
+}
+
+.est-glow-1 {
+    color: #fff;
+    .glow-text(10px);
+}
+
+.est-glow-2 {
+    color: #fff;
+    .glow-text(gold, 20px);
+}
+
+.est-blurry {
+    .blurry-text(#fff);
+}

@@ -1,0 +1,88 @@
+.emoji {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.username {
+  box-sizing: border-box;
+}
+.username::placeholder {
+  color: #333;
+}
+.password::placeholder {
+  color: #345;
+  font-weight: 700;
+}
+.banner {
+  user-select: none;
+}
+.layer {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.overlay-1 {
+  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)\0;
+  zoom: 1\0;
+  background: rgba(0, 0, 0, 0.6);
+}
+:root .overlay-1 {
+  filter: none\9;
+}
+.overlay-2 {
+  background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) repeat\0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)\0;
+  zoom: 1\0;
+  background: rgba(0, 0, 0, 0.6);
+}
+:root .overlay-2 {
+  filter: none\9;
+}
+.ball {
+  border-radius: 50%;
+}
+.leaf {
+  border-radius: 20px / 0;
+}
+.br-1 {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5rem;
+}
+.br-2 {
+  border-top-left-radius: 5px / 5em;
+  border-top-right-radius: 5em / 5%;
+  border-bottom-right-radius: 5% / 5rem;
+  border-bottom-left-radius: 5rem / 5px;
+}
+.br-3 {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5em;
+  border-bottom-left-radius: 5em;
+}
+.br-4 {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5em;
+  border-bottom-left-radius: 5em;
+}
+.br-5 {
+  border-top-left-radius: 5px / 5em;
+  border-top-right-radius: 5px / 5em;
+  border-bottom-right-radius: 5em / 5px;
+  border-bottom-left-radius: 5em / 5px;
+}
+.br-6 {
+  border-top-right-radius: 5px / 5em;
+  border-bottom-right-radius: 5px / 5em;
+  border-top-left-radius: 5em / 5px;
+  border-bottom-left-radius: 5em / 5px;
+}
+.bs-1 {
+  box-shadow: 0 0 1px #000;
+}
+.bs-2 {
+  box-shadow: 0 0 1px #000, 5em 5em 3em #ccc;
+}
