@@ -5,7 +5,7 @@
   "devDependencies": {
     "chalk": "^1.0.0",
     "diff": "^1.4.0",
-    "less": ">=2.5.1 <4.0.0"
+    "less": "^3.7.1"
   },
   "main": "lib/index.js",
   "scripts": {
