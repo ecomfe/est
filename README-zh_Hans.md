@@ -48,6 +48,12 @@ est 可以以三种方式引入您的项目：
         $ lessc styles.less --est
         ```
 
+        如果你在使用 >= `3.0.0` 版本的 Less，必须用一个额外的参数来指定开启 JavaScript 计算：
+
+        ```bash
+        $ lessc styles.less --est --js
+        ```
+
 3. 在 Node.js 中以编程方式调用:
 
     ```js
@@ -59,7 +65,8 @@ est 可以以三种方式引入您的项目：
     less.render(src, {
         plugins: [
             new Est()
-        ]
+        ],
+        javascriptEnabled: true // 对于 3.0.0 以上版本的 Less 必须开启
     }).then(function (result) {
         // handle compiling result
     });

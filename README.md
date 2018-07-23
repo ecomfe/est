@@ -48,6 +48,12 @@ est can be included in three ways:
         $ lessc styles.less --est
         ```
 
+        If you are using Less version >= `3.0.0`, you have to enable JavaScript evaluation with an extra argument:
+
+        ```bash
+        $ lessc styles.less --est --js
+        ```
+
 3. use it programatically in Node.js apps:
 
     ```js
@@ -59,7 +65,8 @@ est can be included in three ways:
     less.render(src, {
         plugins: [
             new Est()
-        ]
+        ],
+        javascriptEnabled: true // essential for Less version >= 3.0.0
     }).then(function (result) {
         // handle compiling result
     });
