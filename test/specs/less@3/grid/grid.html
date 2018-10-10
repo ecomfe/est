@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[Test] Grid</title>
+<link rel="stylesheet" href="grid.css" />
+<link rel="stylesheet" href="../../../monokai_sublime.css">
+<style>
+.container {
+    width: 960px;
+    margin-bottom: 20px;
+    background-color: lightblue;
+}
+.c {
+    height: 120px;
+    background-color: rgba(64, 128, 64, .1);
+}
+.c:hover {
+    background-color: rgba(64, 64, 192, .5);
+}
+
+pre {
+    width: 960px;
+    border-radius: 3px;
+    background-color: #272822;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 300;
+    white-space: pre;
+    word-wrap: normal;
+}
+pre .less .hljs-variable,
+pre .less .hljs-tag,
+pre .less .hljs-function {
+    color: #f92672;
+}
+pre .less .hljs-class,
+pre .less .hljs-id {
+    color: #a6e22a;
+}
+</style>
+</head>
+<body>
+<h2>Making rows</h2>
+<pre><code class="less">.container {
+    .make-row();
+}
+</code></pre>
+
+<h2>Case 1</h2>
+<div class="container">
+    <div class="c c1">
+        <div class="c c1-1"></div>
+        <div class="c c1-1"></div>
+    </div>
+    <div class="c c2">
+        <div class="c c2-1"></div>
+        <div class="c c2-1"></div>
+        <div class="c c2-1"></div>
+        <div class="c c2-1"></div>
+        <div class="c c2-1"></div>
+    </div>
+</div>
+<pre><code class="html">&lt;div class="container"&gt;
+    &lt;div class="c1"&gt;
+        &lt;div class="c1-1"&gt;&lt;/div&gt;
+        &lt;div class="c1-1"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="c2"&gt;
+        &lt;div class="c2-1"&gt;&lt;/div&gt;
+        &lt;div class="c2-1"&gt;&lt;/div&gt;
+        &lt;div class="c2-1"&gt;&lt;/div&gt;
+        &lt;div class="c2-1"&gt;&lt;/div&gt;
+        &lt;div class="c2-1"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="less">.c1 {
+    .make-column(1/3);
+}
+
+.c2 {
+    .make-column(2/3);
+}
+
+.c1-1 {
+    .make-column(1/2 1/3);
+}
+
+.c2-1 {
+    .make-column(1/5 2/3);
+}
+</code></pre>
+
+<h2>Case 2</h2>
+<div class="container">
+    <div class="c c3"></div>
+    <div class="c c4"></div>
+</div>
+<pre><code class="html">&lt;div class="container"&gt;
+    &lt;div class="c3"&gt;&lt;/div&gt;
+    &lt;div class="c4"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="less">.c3 {
+    .make-column(1/2, 0%, 1/2);
+}
+
+.c4 {
+    .make-column(1/2, 0%, -1);
+}
+</code></pre>
+
+<h2>Case 3</h2>
+<div class="container">
+    <div class="c c5"></div>
+    <div class="c c5"></div>
+    <div class="c c5"></div>
+    <div class="c c5"></div>
+    <div class="c c5"></div>
+    <div class="c c5"></div>
+</div>
+<pre><code class="html">&lt;div class="container"&gt;
+    &lt;div class="c5"&gt;&lt;/div&gt;
+    &lt;div class="c5"&gt;&lt;/div&gt;
+    &lt;div class="c5"&gt;&lt;/div&gt;
+    &lt;div class="c5"&gt;&lt;/div&gt;
+    &lt;div class="c5"&gt;&lt;/div&gt;
+    &lt;div class="c5"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="less">.c5 {
+    .make-column(1/6, 15px, 960px);
+}
+</code></pre>
+
+<script src="../../../highlight.js"></script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

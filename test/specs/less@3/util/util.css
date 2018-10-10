@@ -1,0 +1,19 @@
+.cf {
+  *zoom: 1;
+}
+.cf:before,
+.cf:after {
+  display: table;
+  content: "";
+}
+.cf:after {
+  clear: both;
+}
+.square {
+  width: 5em;
+  height: 5em;
+}
+.rect {
+  width: 10px;
+  height: 5px;
+}

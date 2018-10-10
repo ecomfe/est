@@ -1,0 +1,81 @@
+.d-1 {
+  display: flex;
+}
+.d-2 {
+  display: inline-flex;
+}
+.d-3 {
+  display: -webkit-box;
+  display: -moz-box;
+}
+.d-4 {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+}
+.d-5 {
+  display: block;
+}
+.fd {
+  flex-direction: row-reverse;
+}
+.fw {
+  flex-wrap: nowrap;
+}
+.ff {
+  flex-flow: column-reverse nowrap;
+}
+.o {
+  order: 1;
+}
+.f {
+  flex: 2 1 600px;
+}
+.fg {
+  flex-grow: 2;
+}
+.fs {
+  flex-shrink: 1;
+}
+.fb {
+  flex-basis: 600px;
+}
+.jc {
+  justify-content: space-around;
+}
+.ai {
+  align-items: stretch;
+}
+.as {
+  align-self: flex-start;
+}
+.ac {
+  align-content: space-between;
+}
+.bo {
+  -webkit-box-orient: block-axis;
+  -moz-box-orient: block-axis;
+}
+.bd {
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+}
+.bog {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+}
+.bfg {
+  -webkit-box-flex-group: 1;
+  -moz-box-flex-group: 1;
+}
+.bf {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+}
+.ba {
+  -webkit-box-align: baseline;
+  -moz-box-align: baseline;
+}
+.bp {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+}

@@ -1,0 +1,74 @@
+.container {
+  *zoom: 1;
+}
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+}
+.container:after {
+  clear: both;
+}
+.c1 {
+  display: block;
+  float: left;
+  width: 31.33333333%;
+  margin-left: 3%;
+}
+.c1:first-child {
+  margin-left: 0%;
+}
+.c2 {
+  display: block;
+  float: left;
+  width: 65.66666667%;
+  margin-left: 3%;
+}
+.c2:first-child {
+  margin-left: 0%;
+}
+.c1-1 {
+  display: block;
+  float: left;
+  width: 45.21276596%;
+  margin-left: 9.57446809%;
+}
+.c1-1:first-child {
+  margin-left: 0%;
+}
+.c2-1 {
+  display: block;
+  float: left;
+  width: 16.34517766%;
+  margin-left: 4.56852792%;
+}
+.c2-1:first-child {
+  margin-left: 0%;
+}
+.c3 {
+  display: block;
+  float: left;
+  width: 50%;
+  margin-left: 50%;
+}
+.c3:first-child {
+  margin-left: 50%;
+}
+.c4 {
+  display: block;
+  float: left;
+  width: 50%;
+  margin-left: -100%;
+}
+.c4:first-child {
+  margin-left: -100%;
+}
+.c5 {
+  display: block;
+  float: left;
+  width: 147.5px;
+  margin-left: 15px;
+}
+.c5:first-child {
+  margin-left: 0px;
+}

@@ -20,7 +20,7 @@ gulp.task('plugin', function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('js', ['plugin'], function () {
+gulp.task('js', gulp.series('plugin', function () {
   return gulp.src([
       './js/vue.min.js',
       './js/codemirror.js',
@@ -33,6 +33,6 @@ gulp.task('js', ['plugin'], function () {
     .pipe(uglify())
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest('./dist'));
-});
+}));
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', gulp.series('css', 'js'));

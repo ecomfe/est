@@ -17,7 +17,7 @@
   background-origin: padding-box, border-box;
 }
 .lg-1 {
-  background-image: linear-gradient(to top right, #cc0000 0%, #0000cc 50%, #00cc00 100%);
+  background-image: linear-gradient(to top right, #c00 0%, #00c 50%, #0c0 100%);
   background-repeat: repeat;
 }
 .lg-2 {
@@ -25,7 +25,7 @@
   background-repeat: repeat;
 }
 .lg-3 {
-  background-image: linear-gradient(to top, #000000, #ffffff);
+  background-image: linear-gradient(to top, #000, #fff);
   background-repeat: repeat;
 }
 .hg {
@@ -39,35 +39,35 @@
   filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr='#ffff0000', endColorstr='#ff0000ff', GradientType=0);
 }
 .rlg-1 {
-  background-image: repeating-linear-gradient(to top right, #cc0000 0%, #0000cc 5%, #00cc00 10%);
+  background-image: repeating-linear-gradient(to top right, #c00 0%, #00c 5%, #0c0 10%);
 }
 .rlg-2 {
   background-image: repeating-linear-gradient(30deg, red, blue 10px, green 20px);
 }
 .lg-3 {
-  background-image: repeating-linear-gradient(to top, #000000, #ffffff 10px);
+  background-image: repeating-linear-gradient(to top, #000, #fff 10px);
 }
 .rg-1 {
-  background-image: radial-gradient(circle 10px at 0 0, #cc0000 0%, #0000cc 50%, #00cc00 100%);
+  background-image: radial-gradient(circle 10px at 0 0, #c00 0%, #00c 50%, #0c0 100%);
 }
 .rg-2 {
-  background-image: radial-gradient(ellipse farthest-corner at 10px 20px, #ffffff 20%, #cccccc 60%);
+  background-image: radial-gradient(ellipse farthest-corner at 10px 20px, #fff 20%, #ccc 60%);
 }
 .rg-3 {
-  background-image: radial-gradient(circle, #cc0000 0%, #00cc00 100%);
+  background-image: radial-gradient(circle, #c00 0%, #0c0 100%);
 }
 .rg-4 {
-  background-image: radial-gradient(closest-side, #ffffff 20%, #cccccc 60%);
+  background-image: radial-gradient(closest-side, #fff 20%, #ccc 60%);
 }
 .rrg-1 {
-  background-image: repeating-radial-gradient(circle 10px at 0 0, #cc0000 0%, #0000cc 50%, #00cc00 100%);
+  background-image: repeating-radial-gradient(circle 10px at 0 0, #c00 0%, #00c 50%, #0c0 100%);
 }
 .rrg-2 {
-  background-image: repeating-radial-gradient(ellipse farthest-corner at 10px 20px, #ffffff 20%, #cccccc 60%);
+  background-image: repeating-radial-gradient(ellipse farthest-corner at 10px 20px, #fff 20%, #ccc 60%);
 }
 .rrg-3 {
-  background-image: repeating-radial-gradient(circle, #cc0000 0%, #00cc00 100%);
+  background-image: repeating-radial-gradient(circle, #c00 0%, #0c0 100%);
 }
 .rrg-4 {
-  background-image: repeating-radial-gradient(closest-side, #ffffff 20%, #cccccc 60%);
+  background-image: repeating-radial-gradient(closest-side, #fff 20%, #ccc 60%);
 }

@@ -106,8 +106,20 @@
     var vm = util.parseQuery(window.location.hash);
 
     var lessVersions = [{
+        label: '3.8.x',
+        options: ['3.8.1', '3.8.0']
+    }, {
+        label: '3.7.x',
+        options: ['3.7.1', '3.7.0']
+    }, {
+        label: '3.6.x',
+        options: ['3.6.0']
+    }, {
+        label: '3.5.x',
+        options: ['3.5.3', '3.5.2', '3.5.1', '3.5.0', '3.5.0-beta.7', '3.5.0-beta.6', '3.5.0-beta.5', '3.5.0-beta.4', '3.5.0-beta.3', '3.5.0-beta.2', '3.5.0-beta']
+    }, {
         label: '3.0.x',
-        options: ['3.0.0']
+        options: ['3.0.4', '3.0.3', '3.0.1', '3.0.0']
     }, {
         label: '2.7.x',
         options: ['2.7.3', '2.7.2', '2.7.1', '2.7.0']
@@ -260,7 +272,7 @@
                     this.updateParser();
                 } else {
                     window.less = { onReady: false };
-                    var url = 'https://rawgit.com/less/less.js/v' + version
+                    var url = 'https://rawcdn.githack.com/less/less.js/v' + version
                         + '/dist/less' + (version.charAt(0) === '1' ? '-' + version : '') + '.min.js';
                     var me = this;
                     me.showLoading('Loading Less v' + version + '...');

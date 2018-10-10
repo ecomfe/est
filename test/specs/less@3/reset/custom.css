@@ -1,0 +1,181 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+.nr div,
+.nr span,
+.nr object,
+.nr iframe,
+.nr h1,
+.nr h2,
+.nr h3,
+.nr h4,
+.nr h5,
+.nr h6,
+.nr p,
+.nr pre,
+.nr a,
+.nr abbr,
+.nr acronym,
+.nr address,
+.nr code,
+.nr del,
+.nr dfn,
+.nr em,
+.nr img,
+.nr dl,
+.nr dt,
+.nr dd,
+.nr ol,
+.nr ul,
+.nr li,
+.nr fieldset,
+.nr form,
+.nr label,
+.nr legend,
+.nr caption,
+.nr tbody,
+.nr tfoot,
+.nr thead,
+.nr tr {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.nr table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+.nr caption,
+.nr th,
+.nr td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.nr a img {
+  border: none;
+}
+.rbm {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.rfocus {
+  outline: 0;
+}
+.rfont {
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.rb {
+  line-height: 1;
+}
+.rt {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+.rtc {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+.rls {
+  list-style: none;
+}

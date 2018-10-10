@@ -10,8 +10,8 @@
 }
 .e {
   overflow: hidden;
-  text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 .e-l {

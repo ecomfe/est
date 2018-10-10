@@ -1,0 +1,42 @@
+.test-spin(@count) {
+    @-webkit-keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+        }
+    }
+    @keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+        }
+    }
+
+    -webkit-animation: rotate 1s linear @count;
+            animation: rotate 1s linear @count;
+}
+
+@media (orientation: landscape) {
+    .spinner {
+        display: block;
+        .test-spin(infinite);
+    }
+}
+
+.avatar:hover {
+    .test-spin(1);
+}
+
+@media (orientation: landscape) {
+    .icon {
+        .test-spin(infinite);
+    }
+}
