@@ -203,7 +203,7 @@
         }
         .src(@is-url-exp) when (@is-url-exp) {
             @path: ~`/^url\(([^()]+?)\)$/i.exec("@{decoded}")[1]`;
-            src: ~'url(@{path}.eot)';
+            src: ~"url(@{path}.eot)";
             .more(@include-svg) when not (@include-svg) {
                 src: ~"url(@{path}.eot?#iefix)" format("embedded-opentype"),
                      ~"url(@{path}.woff)" format("woff"),
